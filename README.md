@@ -16,6 +16,7 @@
   <a href="#-ai-agent-skill--python-api">Agent Skill</a>
 </p>
 
+[![Live Studio](https://img.shields.io/badge/Live_Studio-danqing.onrender.com-C84B31?style=flat-square&logo=googlechrome&logoColor=white)](https://danqing.onrender.com)
 [![CI Status](https://github.com/owehann/danqing/actions/workflows/ci.yml/badge.svg)](https://github.com/owehann/danqing/actions/workflows/ci.yml)
 [![Deploy to Render](https://img.shields.io/badge/Deploy_to_Render-Free_%240_Blueprint-0D9488?style=flat-square&logo=render)](https://render.com/deploy?repo=https://github.com/owehann/danqing)
 [![Palettes: 277 Verified](https://img.shields.io/badge/Palettes-277_Primary--Source_Verified-C84B31?style=flat-square)](#-the-277-verified-palettes)
