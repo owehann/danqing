@@ -12,11 +12,6 @@ requires-python = ">=3.11"
 authors = [
   { name = "owehann" }
 ]
-
-[project.urls]
-Homepage = "https://github.com/owehann/danqing"
-Repository = "https://github.com/owehann/danqing"
-Issues = "https://github.com/owehann/danqing/issues"
 dependencies = [
   "numpy>=1.26",
   "scipy>=1.12",
@@ -32,6 +27,11 @@ dependencies = [
   "pydantic>=2.7",
 ]
 
+[project.urls]
+Homepage = "https://github.com/owehann/danqing"
+Repository = "https://github.com/owehann/danqing"
+Issues = "https://github.com/owehann/danqing/issues"
+
 [project.optional-dependencies]
 dev = [
   "pytest>=8.0",
@@ -40,6 +40,9 @@ dev = [
 
 [tool.setuptools.packages.find]
 where = ["core"]
+
+[tool.setuptools.package-data]
+"danqing.palettes" = ["data/*.json", "VERIFICATION.md"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -7,7 +7,7 @@
 # Stage 1: Build Frontend SPA
 FROM node:22-slim AS frontend-builder
 WORKDIR /build/web/frontend
-RUN corepack enable
+RUN npm install -g pnpm@9.15.4
 COPY web/frontend/package.json web/frontend/pnpm-lock.yaml* ./
 RUN pnpm install --frozen-lockfile || pnpm install
 COPY web/frontend/ ./
@@ -18,9 +18,14 @@ FROM python:3.11-slim AS runtime
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \
-    PORT=7860
+    PYTHONPATH=/app/core \
+    PORT=10000
 
-RUN useradd -m -u 1000 danqing
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends fonts-liberation fonts-dejavu-core && \
+    rm -rf /var/lib/apt/lists/* && \
+    useradd -m -u 1000 danqing
+
 WORKDIR /app
 
 COPY pyproject.toml README.md* ./
@@ -34,5 +39,5 @@ COPY --from=frontend-builder /build/web/frontend/dist ./web/frontend/dist
 RUN chown -R danqing:danqing /app
 USER danqing
 
-EXPOSE 7860
-CMD ["sh", "-c", "uvicorn web.backend.app:app --host 0.0.0.0 --port ${PORT:-7860} --no-access-log"]
+EXPOSE 10000
+CMD ["sh", "-c", "uvicorn web.backend.app:app --host 0.0.0.0 --port ${PORT:-10000} --no-access-log"]
