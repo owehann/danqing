@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "danqing"
-version = "0.2.0"
-description = "Semantic & Artifact-Inspired Color Engine for Scientific Figures (Lossless Vector PDF/SVG Recoloring, Coupled Gradients, and Gate G0 Evidence Shield)"
+version = "0.3.0"
+description = "Lossless Scientific Figure & Manuscript Recoloring Studio, 277 Verified Palettes, and MCP Engine"
 readme = "README.md"
 license = { text = "Apache-2.0" }
 requires-python = ">=3.11"
 authors = [
-  { name = "owehann" }
+  { name = "Xinyin Han" }
 ]
 dependencies = [
   "numpy>=1.26",
@@ -27,8 +27,11 @@ dependencies = [
   "pydantic>=2.7",
 ]
 
+[project.scripts]
+danqing-mcp = "danqing.mcp_server:main"
+
 [project.urls]
-Homepage = "https://github.com/owehann/danqing"
+Homepage = "https://danqing.onrender.com"
 Repository = "https://github.com/owehann/danqing"
 Issues = "https://github.com/owehann/danqing/issues"
 

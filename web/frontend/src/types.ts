@@ -221,3 +221,10 @@ export interface ExportChecksResult {
     integrity_passed: boolean;
   };
 }
+
+export type ManuscriptPresetKey = "cns_clean" | "clinical" | "omics" | "museum";
+
+export interface ManuscriptRecommendation {
+  palette_id: string;
+  reason: LocalizedText;
+}

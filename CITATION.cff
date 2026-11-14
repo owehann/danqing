@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If Danqing saves you time on scientific figures, please cite the software using these metadata."
+type: software
+title: "Danqing (丹青): Lossless Scientific Figure & Manuscript Recoloring Studio"
+abstract: >-
+  Open-source lossless vector PDF/SVG scientific figure and manuscript recoloring studio,
+  MCP server, and AI agent plugin. Eliminates hours of tedious trial-and-error hex tweaking
+  with 277 primary-source-verified accessible, journal, museum, and CC0 Eastern mineral palettes
+  while keeping every coordinate, glyph, and raw experimental image (Western blots, H&E) intact.
+authors:
+  - family-names: "Han"
+    given-names: "Xinyin"
+    alias: "owehann"
+version: "0.3.0"
+date-released: "2026-11-14"
+license: "Apache-2.0"
+repository-code: "https://github.com/owehann/danqing"
+url: "https://danqing.onrender.com"
+keywords:
+  - scientific-visualization
+  - color-palettes
+  - accessibility
+  - colorblind-safe
+  - pdf
+  - svg
+  - mcp-server
+  - agent-skill

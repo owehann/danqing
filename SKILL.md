@@ -1,52 +1,68 @@
 ---
 name: danqing
-description: Recolor existing vector scientific figures (PDF or SVG from R/ggplot2, Python/matplotlib, GraphPad Prism, or Illustrator) using verified accessible, journal-inspired, museum, and CC0 Eastern artifact palettes without modifying geometry, text, or raw experimental images (Western blots, H&E, microscopy). Includes interactive Web Studio (`http://127.0.0.1:8765`) and Python programmatic API.
+description: >-
+  Losslessly recolor finished scientific vector figures (.pdf or .svg from R/ggplot2,
+  Python/matplotlib/scanpy, GraphPad Prism, or Illustrator) and match whole manuscript
+  figure sets to comfortable, reviewer-safe palettes without re-running plotting scripts
+  or altering raw experimental images (Western blots, H&E, microscopy). Includes 277
+  verified palettes, Manuscript Match (Gemini + perceptual comfort ranker), MCP server
+  (`danqing_mcp`), and interactive Web Studio.
 ---
 
-# Danqing (丹青) — Scientific Figure Recoloring Skill
+# Danqing (丹青) — Scientific Figure & Manuscript Recoloring Skill
 
-Use this skill whenever the user wants to:
-1. Recolor an existing scientific PDF or SVG figure without re-running upstream plotting scripts.
-2. Preview or compare color-blind safe, journal-inspired, museum (`MetBrewer`), or CC0 Eastern museum artifact palettes on multi-panel figures.
-3. Emphasize (`focus`), de-emphasize (`background`), or lock specific categories while keeping raw experimental images (blots, H&E, fluorescence crops) untouched.
-4. Export byte-verified vector PDF/SVG figures alongside reusable `ggplot2` (R) and `matplotlib` (Python) palette code.
+**Author**: Xinyin Han (`@owehann`) · **License**: Apache-2.0
 
-## Interactive Web Studio
+Use this skill whenever a researcher wants to stop wasting time tweaking hex codes and:
+1. **Match a manuscript's tone (`Manuscript Match` / `论文配色定调`)**: Recommend 3 visually comfortable, eye-friendly, reviewer-safe palettes tailored to a target journal (*Nature / Science / Cell*, *NEJM / Lancet / JAMA*, single-cell omics, or museum mineral glazes).
+2. **Recolor finished PDF or SVG figures losslessly**: Replace colors across multi-panel vector figures without re-running upstream R/Python code while keeping raw experimental images (Western blots, H&E, immunofluorescence) bit-identical.
+3. **Unify multi-figure manuscripts**: Enforce `same_name` color consistency across Panels A–F or across Figure 1–Figure 6, and export ready-to-paste `ggplot2` (`.R`) and `matplotlib` (`.py`) code snippets.
 
-Start the local studio server:
+## 1. MCP Tools (`danqing_mcp`)
 
-```bash
-./scripts/start_studio.sh
-```
+When the `danqing_mcp` MCP server is enabled (`danqing-mcp` or `python -m danqing.mcp_server`), prefer calling its deterministic tools directly:
+- `danqing_inspect_figure`: Inspect discrete groups, panels, continuous scales, protected raw images, and deuteranopia diagnostics on any `.pdf` or `.svg`.
+- `danqing_match_manuscript_palettes`: Get the top 3 comfortable palette matches for a figure + journal/topic brief (`preset`: `"cns_clean"`, `"clinical"`, `"omics"`, `"museum"`).
+- `danqing_recolor_figure`: Write a byte-verified recolored `.pdf`/`.svg` alongside `.palette.R`, `.palette.py`, and `.changes.csv`.
+- `danqing_list_palettes`: Search the 277 verified palettes by collection, group count, or color-blind safety.
 
-Open `http://127.0.0.1:8765` in a desktop browser (`≥ 1024 px`).
+## 2. Interactive Web Studio
 
-## Programmatic Python Usage
+- **24/7 Cloud Studio**: `https://danqing.onrender.com`
+- **Local Studio**:
+  ```bash
+  ./scripts/start_studio.sh
+  ```
+  Then open `http://127.0.0.1:8765` (use **Manuscript Match / 论文配色定调** in the right sidebar to pick a comfortable tone in one click).
+
+## 3. Programmatic Python API
 
 ```python
 from pathlib import Path
+from danqing.manuscript_matcher import match_manuscript_palettes
 from danqing.pdf_engine import parse_pdf_scene, export_recolored_pdf
 from danqing.solver import solve_scene_colors
-from danqing.exporter import generate_r_ggplot_snippet, generate_python_mpl_snippet
 
-raw_pdf = Path("figure.pdf").read_bytes()
-scene = parse_pdf_scene(raw_pdf, "figure.pdf", "fig1", page_index=0)
+scene = parse_pdf_scene(Path("figure.pdf").read_bytes(), "figure.pdf", "fig1", page_index=0)
 
-# Optional: set an element to focus or lock a custom hex color
-for ent in scene.entities.values():
-    if ent.label == "Gentoo":
-        ent.tier = "focus"
+# 1. Recommend 3 comfortable palettes for the manuscript
+recs = match_manuscript_palettes(
+    required_k=len(scene.entities),
+    has_continuous=bool(scene.continuous_scales),
+    preset="cns_clean",
+    brief="Nature Medicine tumor immunology",
+)
+best_palette_id = recs["recommendations"][0]["palette_id"]
 
-result = solve_scene_colors(
+# 2. Recolor losslessly with geometry & raw-image verification
+solved = solve_scene_colors(
     scene.entities,
     scene.continuous_scales,
     scene.evidence_regions,
-    style_id="east_ru_celadon",          # or "okabe_ito", "npg_inspired", "met_hiroshige", etc.
-    collision_scope="panel_scoped",      # "panel_scoped" (Same name, same color) or "global_strict" (Every element unique)
-    vibrancy="standard",                 # "muted" | "standard" | "vivid"
+    style_id=best_palette_id,
+    collision_scope="panel_scoped",
 )
-
-out_pdf, audit = export_recolored_pdf(scene, result.group_hex, result.scale_stops, verify=True)
+out_pdf, audit = export_recolored_pdf(scene, solved.group_hex, solved.scale_stops, verify=True)
 assert audit["g6_geometry_identical"] and audit["g0_evidence_bit_identical"]
 Path("figure_danqing.pdf").write_bytes(out_pdf)
 ```

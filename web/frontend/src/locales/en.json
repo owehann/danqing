@@ -109,6 +109,23 @@
     "sourceInfo": "Palette source",
     "emptyMatch": "No palettes match current filters.",
     "resetOriginal": "Original colors",
+    "manuscript": {
+      "toggle": "Manuscript Match",
+      "lead": "Pick a journal tone or describe your paper to skip tedious hex tweaking.",
+      "presets": {
+        "cns_clean": "CNS Clean",
+        "clinical": "Clinical",
+        "omics": "Omics Atlas",
+        "museum": "Mineral & Museum"
+      },
+      "briefPlaceholder": "Target journal or field (e.g., Nature Medicine immunology)…",
+      "matchAction": "Match",
+      "matching": "Matching…",
+      "resultsHeading": "Matched for this manuscript",
+      "clearResults": "Clear",
+      "keyToggle": "Gemini key (optional)",
+      "keyPlaceholder": "Paste free Google AI Studio key (session-only)"
+    },
     "provenance": {
       "author": "Author",
       "year": "Date",

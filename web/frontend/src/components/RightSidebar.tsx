@@ -1,5 +1,6 @@
 import React, { useEffect, useId, useMemo, useRef, useState } from "react";
 import {
+  BookOpen,
   ChevronDown,
   ExternalLink,
   Info,
@@ -10,7 +11,15 @@ import {
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useStudioStore } from "../store";
-import type { CvdMode, ElementRole, FigureElement, PaletteItem, VibrancyMode } from "../types";
+import type {
+  CvdMode,
+  ElementRole,
+  FigureElement,
+  ManuscriptPresetKey,
+  ManuscriptRecommendation,
+  PaletteItem,
+  VibrancyMode,
+} from "../types";
 import { tetherPopoverFallback } from "./ModalDialog";
 
 type TabCategory =
@@ -377,6 +386,47 @@ export function RightSidebar(): React.ReactElement | null {
   const [filterEnoughColors, setFilterEnoughColors] = useState(true);
   const [filterPrintFriendly, setFilterPrintFriendly] = useState(false);
 
+  const [manuscriptOpen, setManuscriptOpen] = useState(false);
+  const [manuscriptPreset, setManuscriptPreset] = useState<ManuscriptPresetKey | null>(null);
+  const [manuscriptBrief, setManuscriptBrief] = useState("");
+  const [manuscriptLoading, setManuscriptLoading] = useState(false);
+  const [manuscriptRecs, setManuscriptRecs] = useState<ManuscriptRecommendation[]>([]);
+  const [geminiKeyOpen, setGeminiKeyOpen] = useState(false);
+  const [geminiKey, setGeminiKey] = useState<string>(() => {
+    try {
+      return window.sessionStorage.getItem("danqing_gemini_key") || "";
+    } catch {
+      return "";
+    }
+  });
+
+  const runManuscriptMatch = async (presetOverride?: ManuscriptPresetKey | null): Promise<void> => {
+    if (!figure) return;
+    const chosenPreset = presetOverride !== undefined ? presetOverride : manuscriptPreset;
+    setManuscriptLoading(true);
+    try {
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      if (geminiKey.trim()) {
+        headers["X-Gemini-Key"] = geminiKey.trim();
+      }
+      const res = await fetch(`/api/v2/figures/${encodeURIComponent(figure.figure_id)}/manuscript-match`, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          preset: chosenPreset,
+          brief: manuscriptBrief.trim(),
+        }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setManuscriptRecs(data.recommendations || []);
+        setActiveTab("all");
+      }
+    } finally {
+      setManuscriptLoading(false);
+    }
+  };
+
   const tablistRef = useRef<HTMLDivElement | null>(null);
   const hoverTimerRef = useRef<number | null>(null);
   const searchId = useId();
@@ -580,6 +630,17 @@ export function RightSidebar(): React.ReactElement | null {
               {t("palettes.heading")}
             </h2>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+              <button
+                type="button"
+                className="dq-chip"
+                aria-expanded={manuscriptOpen}
+                aria-pressed={manuscriptOpen}
+                style={{ display: "inline-flex", alignItems: "center", gap: 4 }}
+                onClick={() => setManuscriptOpen((v) => !v)}
+              >
+                <BookOpen size={12} strokeWidth={1.6} aria-hidden="true" />
+                <span>{t("palettes.manuscript.toggle")}</span>
+              </button>
               {canResetScoped ? (
                 <button
                   type="button"
@@ -602,6 +663,85 @@ export function RightSidebar(): React.ReactElement | null {
               </button>
             </div>
           </div>
+
+          {manuscriptOpen ? (
+            <div className="dq-manuscript-box">
+              <p className="dq-manuscript-lead">{t("palettes.manuscript.lead")}</p>
+              <div className="dq-filter-chips">
+                {(["cns_clean", "clinical", "omics", "museum"] as ManuscriptPresetKey[]).map((pk) => (
+                  <button
+                    key={pk}
+                    type="button"
+                    className="dq-chip"
+                    aria-pressed={manuscriptPreset === pk}
+                    onClick={() => {
+                      setManuscriptPreset(pk);
+                      void runManuscriptMatch(pk);
+                    }}
+                  >
+                    {t(`palettes.manuscript.presets.${pk}`)}
+                  </button>
+                ))}
+              </div>
+              <div className="dq-manuscript-row">
+                <input
+                  type="text"
+                  className="dq-manuscript-input"
+                  placeholder={t("palettes.manuscript.briefPlaceholder")}
+                  aria-label={t("palettes.manuscript.briefPlaceholder")}
+                  value={manuscriptBrief}
+                  onChange={(e) => setManuscriptBrief(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      void runManuscriptMatch();
+                    }
+                  }}
+                />
+                <button
+                  type="button"
+                  className="dq-btn dq-btn--primary"
+                  style={{ minBlockSize: 28, padding: "3px 9px", fontSize: 12 }}
+                  disabled={manuscriptLoading}
+                  onClick={() => void runManuscriptMatch()}
+                >
+                  {manuscriptLoading
+                    ? t("palettes.manuscript.matching")
+                    : t("palettes.manuscript.matchAction")}
+                </button>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  className="dq-btn dq-btn--ghost"
+                  style={{ fontSize: 11, padding: "1px 4px", minBlockSize: 20, color: "var(--text-3)" }}
+                  aria-expanded={geminiKeyOpen}
+                  onClick={() => setGeminiKeyOpen((v) => !v)}
+                >
+                  {t("palettes.manuscript.keyToggle")}
+                </button>
+                {geminiKeyOpen ? (
+                  <input
+                    type="password"
+                    className="dq-manuscript-input"
+                    style={{ width: "100%", marginTop: 4 }}
+                    placeholder={t("palettes.manuscript.keyPlaceholder")}
+                    aria-label={t("palettes.manuscript.keyPlaceholder")}
+                    value={geminiKey}
+                    onChange={(e) => {
+                      const v = e.target.value;
+                      setGeminiKey(v);
+                      try {
+                        if (v) window.sessionStorage.setItem("danqing_gemini_key", v);
+                        else window.sessionStorage.removeItem("danqing_gemini_key");
+                      } catch {
+                        // ignore storage quota errors
+                      }
+                    }}
+                  />
+                ) : null}
+              </div>
+            </div>
+          ) : null}
 
           {hasMultiplePanels ? (
             <div className="dq-scope-row" role="group" aria-label={t("a11y.panelScope")}>
@@ -722,6 +862,43 @@ export function RightSidebar(): React.ReactElement | null {
           aria-labelledby={`${tabIdPrefix}-${activeTab}`}
           className="dq-palette-list"
         >
+          {manuscriptRecs.length > 0 && activeTab === "all" && !query ? (
+            <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 6 }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <span style={{ fontSize: 11.5, fontWeight: 600, color: "var(--text-1)" }}>
+                  {t("palettes.manuscript.resultsHeading")}
+                </span>
+                <button
+                  type="button"
+                  className="dq-btn dq-btn--ghost"
+                  style={{ fontSize: 11, padding: "1px 5px", minBlockSize: 20 }}
+                  onClick={() => setManuscriptRecs([])}
+                >
+                  {t("palettes.manuscript.clearResults")}
+                </button>
+              </div>
+              {manuscriptRecs.map((rec) => {
+                const palObj = palettes.find((x) => x.id === rec.palette_id);
+                if (!palObj) return null;
+                return (
+                  <div key={`ms-${palObj.id}`} style={{ display: "flex", flexDirection: "column" }}>
+                    <PaletteCard
+                      palette={palObj}
+                      active={activePaletteForScope === palObj.id}
+                      langKey={langKey}
+                      onHoverStart={handleHoverStart}
+                      onHoverEnd={handleHoverEnd}
+                      onApply={(pid) => void applyPalette(pid)}
+                    />
+                    <div className="dq-manuscript-reason">
+                      {rec.reason[langKey] || rec.reason.en}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ) : null}
+
           {recommendedList.length > 0 && activeTab === "all" && !query ? (
             <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 4 }}>
               <div style={{ fontSize: 11.5, fontWeight: 600, color: "var(--text-2)" }}>

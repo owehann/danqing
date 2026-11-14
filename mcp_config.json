@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "danqing_mcp": {
+      "command": "danqing-mcp",
+      "args": []
+    }
+  }
+}

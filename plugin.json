@@ -1,0 +1,18 @@
+{
+  "name": "danqing",
+  "displayName": "Danqing (丹青)",
+  "version": "0.3.0",
+  "description": "Lossless vector PDF/SVG scientific figure & manuscript recoloring engine and MCP server with 277 verified accessible, journal, museum, and Eastern mineral palettes.",
+  "logo": "assets/logo.svg",
+  "author": {
+    "name": "Xinyin Han",
+    "url": "https://github.com/owehann"
+  },
+  "homepage": "https://danqing.onrender.com",
+  "repository": "https://github.com/owehann/danqing",
+  "suggestedPrompts": [
+    "Match my manuscript figures to a comfortable Nature-inspired colorblind-safe palette and export ggplot2 code",
+    "Inspect Figure1.pdf and recolor it without altering any embedded Western blot or H&E images",
+    "Recommend 3 harmonious palettes for a 10-cluster single-cell UMAP manuscript"
+  ]
+}

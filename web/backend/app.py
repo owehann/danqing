@@ -37,7 +37,7 @@ from typing import Any, Literal
 
 import numpy as np
 import pypdfium2 as pdfium
-from fastapi import FastAPI, File, Form, HTTPException, Query, Request, Response, UploadFile
+from fastapi import FastAPI, File, Form, Header, HTTPException, Query, Request, Response, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
@@ -45,6 +45,7 @@ from PIL import Image
 from pydantic import BaseModel
 
 from danqing.color_science import interpolate_oklch_lut, srgb01_to_hex
+from danqing.manuscript_matcher import match_manuscript_palettes
 from danqing.exporter import (
     build_verification_certificate,
     generate_change_report_csv,
@@ -2058,6 +2059,51 @@ def clear_visitor_session() -> dict[str, Any]:
     vsid = _current_visitor_sid()
     removed = _purge_visitor_workspace(vsid)
     return {"cleared": True, "removed_figures": removed}
+
+
+class ManuscriptMatchRequest(BaseModel):
+    preset: str | None = None
+    brief: str = ""
+
+
+@app.post("/api/v2/figures/{figure_id}/manuscript-match")
+def match_v2_figure_manuscript(
+    figure_id: str,
+    req: ManuscriptMatchRequest,
+    x_gemini_key: str | None = Header(default=None, alias="X-Gemini-Key"),
+) -> dict[str, Any]:
+    vsid = _current_visitor_sid()
+    sess = _get_owned_scene(figure_id, vsid)
+    if not sess or sess.status != "ready" or sess.parsed is None:
+        raise HTTPException(status_code=404, detail="Figure not found")
+    sess.touch()
+    p = sess.parsed
+
+    req_k = max(1, sum(1 for e in p.entities.values() if e.tier != "background"))
+    has_cont = len(p.continuous_scales) > 0
+    has_div = any(s.kind == "continuous_diverging" for s in p.continuous_scales.values())
+    labels = [e.label for e in p.entities.values()]
+
+    ws = _get_visitor_workspace(vsid)
+    if ws.keep_consistent:
+        for other in list(SCENES.values()):
+            if other.owner_sid == vsid and not other.is_preset and other.parsed is not None:
+                other_k = sum(1 for e in other.parsed.entities.values() if e.tier != "background")
+                req_k = max(req_k, other_k)
+                has_cont = has_cont or (len(other.parsed.continuous_scales) > 0)
+                has_div = has_div or any(
+                    s.kind == "continuous_diverging" for s in other.parsed.continuous_scales.values()
+                )
+
+    return match_manuscript_palettes(
+        required_k=req_k,
+        has_continuous=has_cont,
+        has_diverging=has_div,
+        element_labels=labels,
+        preset=req.preset,
+        brief=req.brief[:300],
+        gemini_api_key=(x_gemini_key or "").strip() or None,
+    )
 
 
 @app.get("/api/v2/health")
