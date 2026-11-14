@@ -1,0 +1,63 @@
+{
+  "id": "pypal_prettycols_neon",
+  "name": {
+    "en": "Neon (PrettyCols)",
+    "zh": "Neon（PrettyCols）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF9062",
+    "#FD6598",
+    "#CB64C0",
+    "#3294DD",
+    "#75FB8A",
+    "#D0EB60"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CBD5",
+      "#D1A8C3",
+      "#BE85B0",
+      "#AA639E",
+      "#953F8B",
+      "#7F0D78"
+    ],
+    "paired_diverging_stops": [
+      "#3294DD",
+      "#7BB5E6",
+      "#B8D4ED",
+      "#F4F3F2",
+      "#E7F1C7",
+      "#DBEF99",
+      "#D0EB60"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (PrettyCols: Neon)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 15.49,
+    "min_de2000_deutan_first6": 6.72,
+    "min_de2000_protan_first6": 5.15,
+    "min_de2000_tritan_first6": 7.46,
+    "optimal6_min_de2000": 15.49,
+    "optimal6_min_de2000_deutan": 6.72,
+    "optimal6_min_de2000_protan": 5.15,
+    "grayscale_L_spread": 0.249,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

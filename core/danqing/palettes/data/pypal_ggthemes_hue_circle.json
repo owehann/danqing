@@ -1,0 +1,76 @@
+{
+  "id": "pypal_ggthemes_hue_circle",
+  "name": {
+    "en": "Hue_Circle (ggthemes)",
+    "zh": "Hue_Circle（ggthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1BA3C6",
+    "#2CB5C0",
+    "#30BCAD",
+    "#21B087",
+    "#33A65C",
+    "#57A337",
+    "#A2B627",
+    "#D5BB21",
+    "#F8B620",
+    "#F89217",
+    "#F06719",
+    "#E03426",
+    "#F64971",
+    "#FC719E",
+    "#EB73B3",
+    "#CE69BE",
+    "#A26DC2",
+    "#7873C0",
+    "#4F7CBA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9BE",
+      "#E5A495",
+      "#D87E6D",
+      "#C95745",
+      "#B82417",
+      "#A50000"
+    ],
+    "paired_diverging_stops": [
+      "#F8B620",
+      "#F8CC7D",
+      "#F6E0BA",
+      "#F4F3F2",
+      "#C8C8E3",
+      "#9F9DD2",
+      "#7873C0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemes: Hue_Circle)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 19,
+    "max_colors": 19,
+    "min_de2000_first6": 7.91,
+    "min_de2000_deutan_first6": 6.98,
+    "min_de2000_protan_first6": 6.49,
+    "min_de2000_tritan_first6": 1.77,
+    "optimal6_min_de2000": 7.91,
+    "optimal6_min_de2000_deutan": 6.98,
+    "optimal6_min_de2000_protan": 6.49,
+    "grayscale_L_spread": 0.235,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

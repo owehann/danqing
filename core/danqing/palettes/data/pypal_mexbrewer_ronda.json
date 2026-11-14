@@ -1,0 +1,67 @@
+{
+  "id": "pypal_mexbrewer_ronda",
+  "name": {
+    "en": "Ronda (MexBrewer)",
+    "zh": "Ronda（MexBrewer）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#49295F",
+    "#894D9F",
+    "#BD6DC2",
+    "#DA91E0",
+    "#E2A9DC",
+    "#C19A8D",
+    "#B2877D",
+    "#A26867",
+    "#964754",
+    "#7E3146"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DECDD7",
+      "#C6ADC6",
+      "#AF8DB5",
+      "#986DA4",
+      "#814D93",
+      "#6B2C81"
+    ],
+    "paired_diverging_stops": [
+      "#49295F",
+      "#7E688F",
+      "#B7ACC0",
+      "#F4F3F2",
+      "#E3D5CF",
+      "#D2B7AE",
+      "#C19A8D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MexBrewer: Ronda)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 7.33,
+    "min_de2000_deutan_first6": 7.05,
+    "min_de2000_protan_first6": 7.27,
+    "min_de2000_tritan_first6": 5.17,
+    "optimal6_min_de2000": 16.8,
+    "optimal6_min_de2000_deutan": 14.15,
+    "optimal6_min_de2000_protan": 15.64,
+    "grayscale_L_spread": 0.456,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

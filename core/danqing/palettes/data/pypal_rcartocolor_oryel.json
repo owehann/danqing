@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_oryel",
+  "name": {
+    "en": "OrYel (rcartocolor)",
+    "zh": "OrYel（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#ECDA9A",
+    "#EFC47E",
+    "#F3AD6A",
+    "#F7945D",
+    "#F97B57",
+    "#F66356",
+    "#EE4D5A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDC9C2",
+      "#E2A49E",
+      "#D57F7B",
+      "#C5585A",
+      "#B42A38",
+      "#A00015"
+    ],
+    "paired_diverging_stops": [
+      "#ECDA9A",
+      "#EFE3B8",
+      "#F1EBD5",
+      "#F4F3F2",
+      "#F9C0BE",
+      "#F78B8C",
+      "#EE4D5A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: OrYel)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 7.43,
+    "min_de2000_deutan_first6": 3.19,
+    "min_de2000_protan_first6": 4.85,
+    "min_de2000_tritan_first6": 4.81,
+    "optimal6_min_de2000": 8.41,
+    "optimal6_min_de2000_deutan": 3.19,
+    "optimal6_min_de2000_protan": 4.85,
+    "grayscale_L_spread": 0.241,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

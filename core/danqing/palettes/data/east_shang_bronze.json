@@ -20,7 +20,25 @@
   "neutral": "#A2A4AA",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD5CC",
+      "#A9BCB2",
+      "#84A398",
+      "#5E8A7F",
+      "#377267",
+      "#005B4F"
+    ],
+    "paired_diverging_stops": [
+      "#586A47",
+      "#89967D",
+      "#BDC4B6",
+      "#F4F3F2",
+      "#A7BBBD",
+      "#5D858B",
+      "#00525C"
+    ]
   },
   "source": {
     "title": "Ritual Wine Vessels (Jia & Jue)",

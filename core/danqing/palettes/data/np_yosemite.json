@@ -18,7 +18,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D2D5",
+      "#B1B6C2",
+      "#909BAF",
+      "#70819D",
+      "#51668A",
+      "#334D77"
+    ],
+    "paired_diverging_stops": [
+      "#293633",
+      "#66706D",
+      "#AAAFAD",
+      "#F4F3F2",
+      "#B9C2CE",
+      "#8192AA",
+      "#4C6487"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (Yosemite)",

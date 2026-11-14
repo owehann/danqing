@@ -21,7 +21,25 @@
   "neutral": "#DDDDDD",
   "partners": {
     "sequential": "batlow",
-    "diverging": "PuOr"
+    "diverging": "PuOr",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CBD4",
+      "#D2A8C0",
+      "#BF85AD",
+      "#AB6399",
+      "#963F86",
+      "#810F72"
+    ],
+    "paired_diverging_stops": [
+      "#332288",
+      "#696AAE",
+      "#ABADD2",
+      "#F4F3F2",
+      "#C7C2A7",
+      "#9C925D",
+      "#746300"
+    ]
   },
   "source": {
     "title": "Colour Schemes (SRON/EPS/TN/09-002)",

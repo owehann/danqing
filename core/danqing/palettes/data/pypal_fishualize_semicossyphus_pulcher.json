@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_semicossyphus_pulcher",
+  "name": {
+    "en": "Semicossyphus_pulcher (fishualize)",
+    "zh": "Semicossyphus_pulcher（fishualize）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#242427",
+    "#794B3E",
+    "#9D6359",
+    "#CDAD9D",
+    "#E8DDD7"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CFC6",
+      "#CBB0A6",
+      "#B59187",
+      "#9F736A",
+      "#89574D",
+      "#733A31"
+    ],
+    "paired_diverging_stops": [
+      "#242427",
+      "#626264",
+      "#A8A8A8",
+      "#F4F3F2",
+      "#F0ECE9",
+      "#ECE4E0",
+      "#E8DDD7"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Semicossyphus_pulcher)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.61,
+    "min_de2000_deutan_first6": 10.7,
+    "min_de2000_protan_first6": 9.48,
+    "min_de2000_tritan_first6": 10.43,
+    "optimal6_min_de2000": 10.61,
+    "optimal6_min_de2000_deutan": 10.7,
+    "optimal6_min_de2000_protan": 9.48,
+    "grayscale_L_spread": 0.643,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "pypal_ochre_olsen_seq",
+  "name": {
+    "en": "olsen_seq (ochRe)",
+    "zh": "olsen_seq（ochRe）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#701C00",
+    "#8C3800",
+    "#A85400",
+    "#C47000",
+    "#C48C1C",
+    "#E0A81C",
+    "#E0C48C",
+    "#E0E0E0",
+    "#C4C4C4",
+    "#8CA8C4",
+    "#708CA8",
+    "#1C54A8",
+    "#385438",
+    "#38381C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEBD",
+      "#D2AE94",
+      "#C08E6C",
+      "#AD6F43",
+      "#995010",
+      "#842E00"
+    ],
+    "paired_diverging_stops": [
+      "#E0A81C",
+      "#E7C279",
+      "#EEDBB7",
+      "#F4F3F2",
+      "#AABEDC",
+      "#6489C3",
+      "#1C54A8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ochRe: olsen_seq)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 8.76,
+    "min_de2000_deutan_first6": 5.13,
+    "min_de2000_protan_first6": 8.0,
+    "min_de2000_tritan_first6": 7.69,
+    "optimal6_min_de2000": 8.76,
+    "optimal6_min_de2000_deutan": 5.13,
+    "optimal6_min_de2000_protan": 8.0,
+    "grayscale_L_spread": 0.574,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

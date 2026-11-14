@@ -1,0 +1,75 @@
+{
+  "id": "pypal_dichromat_darkredtoblue_18",
+  "name": {
+    "en": "DarkRedtoBlue_18 (dichromat)",
+    "zh": "DarkRedtoBlue_18（dichromat）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#2400D9",
+    "#191DF7",
+    "#2957FF",
+    "#3D87FF",
+    "#57B0FF",
+    "#75D3FF",
+    "#99EBFF",
+    "#BDF9FF",
+    "#EBFFFF",
+    "#FFFFEB",
+    "#FFF2BD",
+    "#FFD699",
+    "#FFAC75",
+    "#FF7857",
+    "#FF3D3D",
+    "#F72836",
+    "#D91630",
+    "#A60021"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C8D2EF",
+      "#9CB5F4",
+      "#7195F6",
+      "#4873F6",
+      "#2549F4",
+      "#1A00F1"
+    ],
+    "paired_diverging_stops": [
+      "#191DF7",
+      "#517EFC",
+      "#A0BBFB",
+      "#F4F3F2",
+      "#FFBFB7",
+      "#FF877C",
+      "#FF3D3D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (dichromat: DarkRedtoBlue_18)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 18,
+    "max_colors": 18,
+    "min_de2000_first6": 5.01,
+    "min_de2000_deutan_first6": 4.97,
+    "min_de2000_protan_first6": 6.07,
+    "min_de2000_tritan_first6": 6.19,
+    "optimal6_min_de2000": 23.1,
+    "optimal6_min_de2000_deutan": 11.96,
+    "optimal6_min_de2000_protan": 14.53,
+    "grayscale_L_spread": 0.585,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

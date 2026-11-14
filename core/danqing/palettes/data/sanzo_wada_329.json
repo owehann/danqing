@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_329",
+  "name": {
+    "en": "Sanzo Wada #329 (Cream Yellow · Grayish Lavender - B · Cotinga Purple)",
+    "zh": "和田三造 #329（Cream Yellow · Grayish Lavender - B · Cotinga Purple）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FDBF68",
+    "#C0A9B3",
+    "#501345",
+    "#34454C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DAC8CB",
+      "#BFA1AF",
+      "#A37D94",
+      "#885979",
+      "#6D365F",
+      "#511046"
+    ],
+    "paired_diverging_stops": [
+      "#FDBF68",
+      "#FBD19A",
+      "#F8E3C7",
+      "#F4F3F2",
+      "#BDA5B5",
+      "#875B7B",
+      "#501345"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#329)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 22.67,
+    "min_de2000_deutan_first6": 7.03,
+    "min_de2000_protan_first6": 14.09,
+    "min_de2000_tritan_first6": 13.44,
+    "optimal6_min_de2000": 22.67,
+    "optimal6_min_de2000_deutan": 7.03,
+    "optimal6_min_de2000_protan": 14.09,
+    "grayscale_L_spread": 0.533,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

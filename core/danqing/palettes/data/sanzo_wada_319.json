@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_319",
+  "name": {
+    "en": "Sanzo Wada #319 (Raw Sienna · Apricot Yellow · Yellow Orange)",
+    "zh": "和田三造 #319（Raw Sienna · Apricot Yellow · Yellow Orange）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BB7125",
+    "#FFDD00",
+    "#F99D1B",
+    "#437742"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D5C5",
+      "#AEBCA3",
+      "#8BA382",
+      "#698A62",
+      "#477243",
+      "#245B24"
+    ],
+    "paired_diverging_stops": [
+      "#FFDD00",
+      "#FBE680",
+      "#F7EDBD",
+      "#F4F3F2",
+      "#B7C9B5",
+      "#7D9F7A",
+      "#437742"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#319)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 16.24,
+    "min_de2000_deutan_first6": 10.12,
+    "min_de2000_protan_first6": 8.81,
+    "min_de2000_tritan_first6": 13.21,
+    "optimal6_min_de2000": 16.24,
+    "optimal6_min_de2000_deutan": 10.12,
+    "optimal6_min_de2000_protan": 8.81,
+    "grayscale_L_spread": 0.38,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

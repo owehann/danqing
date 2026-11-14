@@ -1,0 +1,62 @@
+{
+  "id": "pypal_soilpalettes_redox2",
+  "name": {
+    "en": "redox2 (soilpalettes)",
+    "zh": "redox2（soilpalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2E5894",
+    "#FFE733",
+    "#FFB200",
+    "#EC5800",
+    "#96001B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBA",
+      "#E1A78E",
+      "#D38362",
+      "#C35E33",
+      "#B23400",
+      "#9E0000"
+    ],
+    "paired_diverging_stops": [
+      "#2E5894",
+      "#6D8AB4",
+      "#AFBED4",
+      "#F4F3F2",
+      "#F7F0C1",
+      "#FBEC89",
+      "#FFE733"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (soilpalettes: redox2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 17.38,
+    "min_de2000_deutan_first6": 7.53,
+    "min_de2000_protan_first6": 10.76,
+    "min_de2000_tritan_first6": 15.69,
+    "optimal6_min_de2000": 17.38,
+    "optimal6_min_de2000_deutan": 7.53,
+    "optimal6_min_de2000_protan": 10.76,
+    "grayscale_L_spread": 0.495,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

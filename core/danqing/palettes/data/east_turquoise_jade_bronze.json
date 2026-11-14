@@ -20,7 +20,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "YlGnBu",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD6CC",
+      "#A1BEB2",
+      "#77A698",
+      "#498F7F",
+      "#007767",
+      "#006050"
+    ],
+    "paired_diverging_stops": [
+      "#005064",
+      "#5C8491",
+      "#A6BAC1",
+      "#F4F3F2",
+      "#C8C0AE",
+      "#9E8F6E",
+      "#76602D"
+    ]
   },
   "source": {
     "title": "Mirror with Jade Disk Inset & Gilt-Turquoise Belt Hook",

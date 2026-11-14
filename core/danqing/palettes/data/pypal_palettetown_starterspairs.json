@@ -1,0 +1,63 @@
+{
+  "id": "pypal_palettetown_starterspairs",
+  "name": {
+    "en": "starterspairs (palettetown)",
+    "zh": "starterspairs（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#209058",
+    "#58C890",
+    "#903000",
+    "#F89040",
+    "#484880",
+    "#68A8E0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC0",
+      "#D6AC99",
+      "#C48B74",
+      "#B26A4F",
+      "#9F4928",
+      "#8A2400"
+    ],
+    "paired_diverging_stops": [
+      "#F89040",
+      "#FAB383",
+      "#F8D4BB",
+      "#F4F3F2",
+      "#B6B7CC",
+      "#7C7EA6",
+      "#484880"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: starterspairs)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 17.15,
+    "min_de2000_deutan_first6": 16.56,
+    "min_de2000_protan_first6": 12.33,
+    "min_de2000_tritan_first6": 8.39,
+    "optimal6_min_de2000": 17.15,
+    "optimal6_min_de2000_deutan": 16.56,
+    "optimal6_min_de2000_protan": 12.33,
+    "grayscale_L_spread": 0.324,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

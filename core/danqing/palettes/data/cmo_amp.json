@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "cmo_amp",
-    "diverging": "cmo_balance"
+    "diverging": "cmo_balance",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC1",
+      "#DCA89B",
+      "#CD8577",
+      "#BC6253",
+      "#A93C2E",
+      "#950000"
+    ],
+    "paired_diverging_stops": [
+      "#666261",
+      "#93908F",
+      "#C2C0BF",
+      "#F4F3F2",
+      "#B69F9F",
+      "#795253",
+      "#3C0912"
+    ]
   },
   "source": {
     "title": "True Colors of Oceanography: cmocean (amp)",

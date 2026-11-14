@@ -1,0 +1,63 @@
+{
+  "id": "pypal_natparkspalettes_cuyahoga",
+  "name": {
+    "en": "Cuyahoga (NatParksPalettes)",
+    "zh": "Cuyahoga（NatParksPalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E07529",
+    "#FAAE32",
+    "#7F7991",
+    "#A84A00",
+    "#5D4F36",
+    "#B39085"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CEBE",
+      "#D5AD95",
+      "#C38C6D",
+      "#B16C45",
+      "#9D4B15",
+      "#892700"
+    ],
+    "paired_diverging_stops": [
+      "#FAAE32",
+      "#F9C681",
+      "#F7DDBB",
+      "#F4F3F2",
+      "#CBC9D1",
+      "#A4A0B1",
+      "#7F7991"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NatParksPalettes: Cuyahoga)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 17.32,
+    "min_de2000_deutan_first6": 11.79,
+    "min_de2000_protan_first6": 12.41,
+    "min_de2000_tritan_first6": 12.97,
+    "optimal6_min_de2000": 17.32,
+    "optimal6_min_de2000_deutan": 11.79,
+    "optimal6_min_de2000_protan": 12.41,
+    "grayscale_L_spread": 0.37,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

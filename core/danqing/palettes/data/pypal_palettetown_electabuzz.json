@@ -1,0 +1,67 @@
+{
+  "id": "pypal_palettetown_electabuzz",
+  "name": {
+    "en": "electabuzz (palettetown)",
+    "zh": "electabuzz（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8D068",
+    "#E0A050",
+    "#A05000",
+    "#F8E098",
+    "#F8F8D0",
+    "#707070",
+    "#F8F8F8",
+    "#F85020",
+    "#B83008",
+    "#D8D8D8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBBE",
+      "#DEA896",
+      "#D0846F",
+      "#BF6047",
+      "#AD391A",
+      "#990000"
+    ],
+    "paired_diverging_stops": [
+      "#A05000",
+      "#BF8660",
+      "#DBBCA8",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: electabuzz)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 6.93,
+    "min_de2000_deutan_first6": 6.16,
+    "min_de2000_protan_first6": 6.9,
+    "min_de2000_tritan_first6": 5.99,
+    "optimal6_min_de2000": 6.93,
+    "optimal6_min_de2000_deutan": 6.16,
+    "optimal6_min_de2000_protan": 6.9,
+    "grayscale_L_spread": 0.461,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "pypal_islamicart_samarqand2",
+  "name": {
+    "en": "samarqand2 (IslamicArt)",
+    "zh": "samarqand2（IslamicArt）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#002594",
+    "#E0B2CD",
+    "#54C4E3",
+    "#F3AA4F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C9CEDD",
+      "#9DAED2",
+      "#738EC6",
+      "#4A6DB8",
+      "#234BA9",
+      "#002299"
+    ],
+    "paired_diverging_stops": [
+      "#002594",
+      "#4B6FB7",
+      "#9DB0D7",
+      "#F4F3F2",
+      "#F5DCC0",
+      "#F5C38B",
+      "#F3AA4F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (IslamicArt: samarqand2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 36.41,
+    "min_de2000_deutan_first6": 13.83,
+    "min_de2000_protan_first6": 6.05,
+    "min_de2000_tritan_first6": 11.14,
+    "optimal6_min_de2000": 36.41,
+    "optimal6_min_de2000_deutan": 13.83,
+    "optimal6_min_de2000_protan": 6.05,
+    "grayscale_L_spread": 0.472,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

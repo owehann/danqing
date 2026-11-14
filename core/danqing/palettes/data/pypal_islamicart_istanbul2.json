@@ -1,0 +1,68 @@
+{
+  "id": "pypal_islamicart_istanbul2",
+  "name": {
+    "en": "istanbul2 (IslamicArt)",
+    "zh": "istanbul2（IslamicArt）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#083ED0",
+    "#AE904E",
+    "#503329",
+    "#C18155",
+    "#9E3E1C",
+    "#DB7C3C",
+    "#EACB85",
+    "#9CA897",
+    "#BDA173",
+    "#63BDD3",
+    "#9399A5"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CAD3E7",
+      "#A0B6E5",
+      "#7799E1",
+      "#4F7BDC",
+      "#2759D4",
+      "#002FCC"
+    ],
+    "paired_diverging_stops": [
+      "#083ED0",
+      "#5682E1",
+      "#A3BCEC",
+      "#F4F3F2",
+      "#EFCCB8",
+      "#E6A57D",
+      "#DB7C3C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (IslamicArt: istanbul2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 6.47,
+    "min_de2000_deutan_first6": 1.42,
+    "min_de2000_protan_first6": 3.39,
+    "min_de2000_tritan_first6": 5.93,
+    "optimal6_min_de2000": 6.47,
+    "optimal6_min_de2000_deutan": 1.42,
+    "optimal6_min_de2000_protan": 3.39,
+    "grayscale_L_spread": 0.5,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

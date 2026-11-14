@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ghibli_kikimedium",
+  "name": {
+    "en": "KikiMedium (ghibli)",
+    "zh": "KikiMedium（ghibli）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1C1A1F",
+    "#333544",
+    "#B50A2A",
+    "#0E84B4",
+    "#9E8356",
+    "#7EBAC2",
+    "#D1B79E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCAC2",
+      "#E2A59D",
+      "#D4807A",
+      "#C55958",
+      "#B32C36",
+      "#9F0010"
+    ],
+    "paired_diverging_stops": [
+      "#B50A2A",
+      "#D26C6B",
+      "#E7B0AD",
+      "#F4F3F2",
+      "#B2CEDE",
+      "#6EA9CA",
+      "#0E84B4"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ghibli: KikiMedium)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 9.98,
+    "min_de2000_deutan_first6": 9.95,
+    "min_de2000_protan_first6": 10.08,
+    "min_de2000_tritan_first6": 10.23,
+    "optimal6_min_de2000": 9.98,
+    "optimal6_min_de2000_deutan": 9.95,
+    "optimal6_min_de2000_protan": 10.08,
+    "grayscale_L_spread": 0.573,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

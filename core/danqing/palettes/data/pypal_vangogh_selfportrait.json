@@ -1,0 +1,62 @@
+{
+  "id": "pypal_vangogh_selfportrait",
+  "name": {
+    "en": "SelfPortrait (vangogh)",
+    "zh": "SelfPortrait（vangogh）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#27708C",
+    "#B4D9CE",
+    "#85A693",
+    "#BFA575",
+    "#A6511F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEBF",
+      "#D3AD98",
+      "#C08E72",
+      "#AD6E4C",
+      "#994F24",
+      "#842D00"
+    ],
+    "paired_diverging_stops": [
+      "#27708C",
+      "#6F9BAE",
+      "#B1C6D0",
+      "#F4F3F2",
+      "#DDBDAC",
+      "#C38769",
+      "#A6511F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vangogh: SelfPortrait)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 14.09,
+    "min_de2000_deutan_first6": 14.31,
+    "min_de2000_protan_first6": 10.97,
+    "min_de2000_tritan_first6": 13.79,
+    "optimal6_min_de2000": 14.09,
+    "optimal6_min_de2000_deutan": 14.31,
+    "optimal6_min_de2000_protan": 10.97,
+    "grayscale_L_spread": 0.343,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

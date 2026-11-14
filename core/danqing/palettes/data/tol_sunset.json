@@ -21,7 +21,25 @@
   "neutral": "#EAECCC",
   "partners": {
     "sequential": "tol_iridescent",
-    "diverging": "tol_sunset"
+    "diverging": "tol_sunset",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCABE",
+      "#E3A596",
+      "#D5806F",
+      "#C65A48",
+      "#B52C1D",
+      "#A10000"
+    ],
+    "paired_diverging_stops": [
+      "#364B9A",
+      "#6F82B9",
+      "#AFBAD7",
+      "#F4F3F2",
+      "#CBC0A7",
+      "#A48E5D",
+      "#7E5E00"
+    ]
   },
   "source": {
     "title": "Paul Tol Colour Schemes (tol_sunset)",

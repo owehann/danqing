@@ -1,0 +1,64 @@
+{
+  "id": "pypal_mexbrewer_concha",
+  "name": {
+    "en": "Concha (MexBrewer)",
+    "zh": "Concha（MexBrewer）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#D6D8D0",
+    "#D4D5BF",
+    "#708469",
+    "#506446",
+    "#3D4D34",
+    "#37402B",
+    "#2A3326"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D3C7",
+      "#B5B8A8",
+      "#969E8A",
+      "#78856C",
+      "#5B6C50",
+      "#405435"
+    ],
+    "paired_diverging_stops": [
+      "#D6D8D0",
+      "#E0E1DB",
+      "#EAEAE6",
+      "#F4F3F2",
+      "#ABAEA8",
+      "#676D63",
+      "#2A3326"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MexBrewer: Concha)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 4.85,
+    "min_de2000_deutan_first6": 3.74,
+    "min_de2000_protan_first6": 4.12,
+    "min_de2000_tritan_first6": 2.84,
+    "optimal6_min_de2000": 5.65,
+    "optimal6_min_de2000_deutan": 5.44,
+    "optimal6_min_de2000_protan": 5.58,
+    "grayscale_L_spread": 0.57,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

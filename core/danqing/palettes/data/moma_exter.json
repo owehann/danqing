@@ -22,7 +22,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC0",
+      "#E1A69B",
+      "#D38176",
+      "#C35C52",
+      "#B1312D",
+      "#9D0000"
+    ],
+    "paired_diverging_stops": [
+      "#746207",
+      "#9D9161",
+      "#C7C1A8",
+      "#F4F3F2",
+      "#A29F9F",
+      "#575353",
+      "#161212"
+    ]
   },
   "source": {
     "title": "Don Juan, Hell (Don Juan, l’enfer) from Alexandra Exter: Stage Sets (Alexandra Exter: Décors de théâtre), 1929, Alexandra Exter, Mediun",

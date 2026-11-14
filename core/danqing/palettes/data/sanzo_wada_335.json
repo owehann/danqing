@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_335",
+  "name": {
+    "en": "Sanzo Wada #335 (Vandyke Red · Yellow Orange · Violet)",
+    "zh": "和田三造 #335（Vandyke Red · Yellow Orange · Violet）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#82241F",
+    "#F99D1B",
+    "#4F4086",
+    "#34454C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CCC3",
+      "#D4AAA0",
+      "#C2887E",
+      "#AE675D",
+      "#9A463D",
+      "#84201C"
+    ],
+    "paired_diverging_stops": [
+      "#F99D1B",
+      "#FABB79",
+      "#F8D8B7",
+      "#F4F3F2",
+      "#B8B5CF",
+      "#817AAB",
+      "#4F4086"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#335)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 14.85,
+    "min_de2000_deutan_first6": 15.23,
+    "min_de2000_protan_first6": 16.6,
+    "min_de2000_tritan_first6": 11.31,
+    "optimal6_min_de2000": 14.85,
+    "optimal6_min_de2000_deutan": 15.23,
+    "optimal6_min_de2000_protan": 16.6,
+    "grayscale_L_spread": 0.393,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

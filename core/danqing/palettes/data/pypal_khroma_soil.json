@@ -1,0 +1,81 @@
+{
+  "id": "pypal_khroma_soil",
+  "name": {
+    "en": "soil (khroma)",
+    "zh": "soil（khroma）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#795F35",
+    "#FBC1AF",
+    "#EF2C30",
+    "#706D6E",
+    "#F4D49D",
+    "#FFEE00",
+    "#FBC41E",
+    "#B45241",
+    "#5A69B2",
+    "#1AB3EF",
+    "#DD9785",
+    "#938ABB",
+    "#FFF4A4",
+    "#86817E",
+    "#D8D7D7",
+    "#F58971",
+    "#E56D4C",
+    "#F2833F",
+    "#28B45D",
+    "#FDE09F",
+    "#EE1A95",
+    "#F6C4E5",
+    "#618F75",
+    "#9D4076"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC7CE",
+      "#E69FB5",
+      "#DA759D",
+      "#CB4886",
+      "#B9006F",
+      "#A50058"
+    ],
+    "paired_diverging_stops": [
+      "#FFEE00",
+      "#FBF183",
+      "#F7F3BF",
+      "#F4F3F2",
+      "#BDC4DE",
+      "#8A96C9",
+      "#5A69B2"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (khroma: soil)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 24,
+    "max_colors": 24,
+    "min_de2000_first6": 16.73,
+    "min_de2000_deutan_first6": 6.32,
+    "min_de2000_protan_first6": 1.75,
+    "min_de2000_tritan_first6": 5.49,
+    "optimal6_min_de2000": 16.73,
+    "optimal6_min_de2000_deutan": 6.32,
+    "optimal6_min_de2000_protan": 1.75,
+    "grayscale_L_spread": 0.456,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

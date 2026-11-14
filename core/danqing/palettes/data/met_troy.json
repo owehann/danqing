@@ -20,7 +20,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEC3",
+      "#D2ADA1",
+      "#BF8D7F",
+      "#AB6D5E",
+      "#974E3E",
+      "#822D1E"
+    ],
+    "paired_diverging_stops": [
+      "#421401",
+      "#7C594B",
+      "#B7A39B",
+      "#F4F3F2",
+      "#B7C3C9",
+      "#7D95A1",
+      "#45697B"
+    ]
   },
   "source": {
     "title": "The Declaration of Love, 1724, Jean François de Troy, French",

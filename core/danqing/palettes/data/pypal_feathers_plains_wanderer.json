@@ -1,0 +1,64 @@
+{
+  "id": "pypal_feathers_plains_wanderer",
+  "name": {
+    "en": "plains_wanderer (feathers)",
+    "zh": "plains_wanderer（feathers）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EDD8C5",
+    "#D09A5E",
+    "#E7AA01",
+    "#AC570F",
+    "#73481B",
+    "#442C0E",
+    "#0D0403"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEBE",
+      "#D3AE95",
+      "#C08E6D",
+      "#AD6F45",
+      "#994F14",
+      "#842E00"
+    ],
+    "paired_diverging_stops": [
+      "#E7AA01",
+      "#ECC476",
+      "#F0DCB6",
+      "#F4F3F2",
+      "#9E9896",
+      "#504644",
+      "#0D0403"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (feathers: plains_wanderer)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 12.12,
+    "min_de2000_deutan_first6": 10.65,
+    "min_de2000_protan_first6": 9.82,
+    "min_de2000_tritan_first6": 5.43,
+    "optimal6_min_de2000": 12.12,
+    "optimal6_min_de2000_deutan": 10.65,
+    "optimal6_min_de2000_protan": 9.82,
+    "grayscale_L_spread": 0.771,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

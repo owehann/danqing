@@ -21,7 +21,25 @@
   "neutral": "#3C3C3C",
   "partners": {
     "sequential": "seaborn_crest",
-    "diverging": "seaborn_vlag"
+    "diverging": "seaborn_vlag",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CBD1",
+      "#D4A7BC",
+      "#C285A6",
+      "#AF6291",
+      "#9B3D7C",
+      "#860968"
+    ],
+    "paired_diverging_stops": [
+      "#001C7F",
+      "#4867A9",
+      "#9AACCF",
+      "#F4F3F2",
+      "#D0BFA0",
+      "#AD8B4E",
+      "#895800"
+    ]
   },
   "source": {
     "title": "Seaborn Statistical Data Visualization (Seaborn Dark 10)",

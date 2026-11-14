@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_doduo",
+  "name": {
+    "en": "doduo (palettetown)",
+    "zh": "doduo（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B88850",
+    "#906848",
+    "#706830",
+    "#E8D8A8",
+    "#584020",
+    "#B8A878",
+    "#D8A870",
+    "#F8F8F8",
+    "#606060"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D9D2C2",
+      "#BDB69E",
+      "#A29B7B",
+      "#888158",
+      "#6F6736",
+      "#574E0E"
+    ],
+    "paired_diverging_stops": [
+      "#584020",
+      "#897862",
+      "#BDB4A7",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: doduo)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 12.34,
+    "min_de2000_deutan_first6": 5.19,
+    "min_de2000_protan_first6": 5.66,
+    "min_de2000_tritan_first6": 11.66,
+    "optimal6_min_de2000": 12.34,
+    "optimal6_min_de2000_deutan": 5.19,
+    "optimal6_min_de2000_protan": 5.66,
+    "grayscale_L_spread": 0.589,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

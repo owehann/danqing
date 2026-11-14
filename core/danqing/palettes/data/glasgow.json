@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "glasgow",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8D3C1",
+      "#BAB89C",
+      "#9E9D78",
+      "#828354",
+      "#686A30",
+      "#4F5100"
+    ],
+    "paired_diverging_stops": [
+      "#361338",
+      "#715772",
+      "#B1A2B0",
+      "#F4F3F2",
+      "#C1BFCC",
+      "#918CA7",
+      "#655D83"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (glasgow)",

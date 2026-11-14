@@ -1,0 +1,66 @@
+{
+  "id": "pypal_prettycols_tangerineblues",
+  "name": {
+    "en": "TangerineBlues (PrettyCols)",
+    "zh": "TangerineBlues（PrettyCols）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#552000",
+    "#8A4D00",
+    "#C17D17",
+    "#F8B150",
+    "#F5F5F5",
+    "#93C6E1",
+    "#5F93AC",
+    "#2E627A",
+    "#00344A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CFBF",
+      "#CDB098",
+      "#B89271",
+      "#A3744B",
+      "#8E5720",
+      "#783A00"
+    ],
+    "paired_diverging_stops": [
+      "#F8B150",
+      "#F8C88D",
+      "#F7DEC1",
+      "#F4F3F2",
+      "#A0AFB7",
+      "#526F7F",
+      "#00344A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (PrettyCols: TangerineBlues)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 15.3,
+    "min_de2000_deutan_first6": 14.83,
+    "min_de2000_protan_first6": 16.06,
+    "min_de2000_tritan_first6": 14.21,
+    "optimal6_min_de2000": 17.51,
+    "optimal6_min_de2000_deutan": 16.5,
+    "optimal6_min_de2000_protan": 16.14,
+    "grayscale_L_spread": 0.664,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

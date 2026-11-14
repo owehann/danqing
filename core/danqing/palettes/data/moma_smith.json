@@ -17,7 +17,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CDBA",
+      "#DAAB8E",
+      "#CA8962",
+      "#B96833",
+      "#A64400",
+      "#921600"
+    ],
+    "paired_diverging_stops": [
+      "#6F641C",
+      "#999266",
+      "#C5C2AB",
+      "#F4F3F2",
+      "#AAACAF",
+      "#676A71",
+      "#2A2E38"
+    ]
   },
   "source": {
     "title": "White Rope, 1973, Richard Smith, Synthetic polymer paint on canvas with metal rods, rope, and string",

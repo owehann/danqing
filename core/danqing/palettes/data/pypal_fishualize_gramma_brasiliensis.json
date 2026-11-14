@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_gramma_brasiliensis",
+  "name": {
+    "en": "Gramma_brasiliensis (fishualize)",
+    "zh": "Gramma_brasiliensis（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D94AB3",
+    "#8404D9",
+    "#6503A6",
+    "#F27405",
+    "#0D0D0D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDCCE5",
+      "#C5A8E2",
+      "#AE84DC",
+      "#985DD5",
+      "#832DCD",
+      "#6F00C3"
+    ],
+    "paired_diverging_stops": [
+      "#8404D9",
+      "#A771E6",
+      "#CCB4EF",
+      "#F4F3F2",
+      "#F8CBB2",
+      "#F7A26F",
+      "#F27405"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Gramma_brasiliensis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.47,
+    "min_de2000_deutan_first6": 9.06,
+    "min_de2000_protan_first6": 9.25,
+    "min_de2000_tritan_first6": 8.47,
+    "optimal6_min_de2000": 8.47,
+    "optimal6_min_de2000_deutan": 9.06,
+    "optimal6_min_de2000_protan": 9.25,
+    "grayscale_L_spread": 0.537,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "pypal_ggthemr_light",
+  "name": {
+    "en": "light (ggthemr)",
+    "zh": "light（ggthemr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#785D37",
+    "#62BBA5",
+    "#FFB84D",
+    "#AAA488",
+    "#B2432F",
+    "#3A6589",
+    "#9B5672",
+    "#908150",
+    "#373634"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCC1",
+      "#D9AA9C",
+      "#C88878",
+      "#B76654",
+      "#A34330",
+      "#8F1801"
+    ],
+    "paired_diverging_stops": [
+      "#FFB84D",
+      "#FDCD8D",
+      "#F9E1C1",
+      "#F4F3F2",
+      "#B4C2CF",
+      "#7693AC",
+      "#3A6589"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemr: light)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 21.29,
+    "min_de2000_deutan_first6": 6.96,
+    "min_de2000_protan_first6": 2.11,
+    "min_de2000_tritan_first6": 16.03,
+    "optimal6_min_de2000": 21.29,
+    "optimal6_min_de2000_deutan": 6.96,
+    "optimal6_min_de2000_protan": 2.11,
+    "grayscale_L_spread": 0.497,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

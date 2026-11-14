@@ -1,0 +1,62 @@
+{
+  "id": "pypal_taylorswift_midnightsbloodmoon",
+  "name": {
+    "en": "midnightsBloodMoon (tayloRswift)",
+    "zh": "midnightsBloodMoon（tayloRswift）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#651D32",
+    "#80433F",
+    "#BC7B55",
+    "#AD9291",
+    "#E9E8E4"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CEC7",
+      "#CCAFA7",
+      "#B79089",
+      "#A2726B",
+      "#8C544F",
+      "#763734"
+    ],
+    "paired_diverging_stops": [
+      "#651D32",
+      "#97626C",
+      "#C6A9AD",
+      "#F4F3F2",
+      "#F0F0ED",
+      "#EDECE9",
+      "#E9E8E4"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tayloRswift: midnightsBloodMoon)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.73,
+    "min_de2000_deutan_first6": 11.18,
+    "min_de2000_protan_first6": 14.61,
+    "min_de2000_tritan_first6": 9.84,
+    "optimal6_min_de2000": 12.73,
+    "optimal6_min_de2000_deutan": 11.18,
+    "optimal6_min_de2000_protan": 14.61,
+    "grayscale_L_spread": 0.579,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

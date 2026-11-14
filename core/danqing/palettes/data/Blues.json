@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "Blues",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD4DB",
+      "#A4B9CE",
+      "#7D9EC0",
+      "#5584B2",
+      "#2969A3",
+      "#004E93"
+    ],
+    "paired_diverging_stops": [
+      "#606467",
+      "#8F9193",
+      "#C0C1C1",
+      "#F4F3F2",
+      "#A1AFC5",
+      "#536F99",
+      "#08306B"
+    ]
   },
   "source": {
     "title": "ColorBrewer 2.0 (Blues, 9-class)",

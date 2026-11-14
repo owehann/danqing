@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_scarus_zelindae",
+  "name": {
+    "en": "Scarus_zelindae (fishualize)",
+    "zh": "Scarus_zelindae（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#009690",
+    "#68A66D",
+    "#725475",
+    "#BF8C60",
+    "#009AB8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD6CE",
+      "#A1BEB6",
+      "#76A69E",
+      "#488E87",
+      "#007670",
+      "#005F5A"
+    ],
+    "paired_diverging_stops": [
+      "#BF8C60",
+      "#D1AE90",
+      "#E3D0C1",
+      "#F4F3F2",
+      "#B5D6DF",
+      "#73B8CC",
+      "#009AB8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Scarus_zelindae)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.76,
+    "min_de2000_deutan_first6": 5.51,
+    "min_de2000_protan_first6": 3.93,
+    "min_de2000_tritan_first6": 3.94,
+    "optimal6_min_de2000": 13.76,
+    "optimal6_min_de2000_deutan": 5.51,
+    "optimal6_min_de2000_protan": 3.93,
+    "grayscale_L_spread": 0.19,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

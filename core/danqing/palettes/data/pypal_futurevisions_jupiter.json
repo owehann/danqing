@@ -1,0 +1,63 @@
+{
+  "id": "pypal_futurevisions_jupiter",
+  "name": {
+    "en": "jupiter (futurevisions)",
+    "zh": "jupiter（futurevisions）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#882B6A",
+    "#EB9FAF",
+    "#4E9678",
+    "#303251",
+    "#0C0D0E",
+    "#BDC1D4"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CCD0",
+      "#D2A9B9",
+      "#BF87A3",
+      "#AB668D",
+      "#964478",
+      "#801D62"
+    ],
+    "paired_diverging_stops": [
+      "#0C0D0E",
+      "#4E4F4F",
+      "#9D9D9D",
+      "#F4F3F2",
+      "#E1E2E8",
+      "#CFD2DE",
+      "#BDC1D4"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (futurevisions: jupiter)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 18.75,
+    "min_de2000_deutan_first6": 12.35,
+    "min_de2000_protan_first6": 5.99,
+    "min_de2000_tritan_first6": 14.12,
+    "optimal6_min_de2000": 18.75,
+    "optimal6_min_de2000_deutan": 12.35,
+    "optimal6_min_de2000_protan": 5.99,
+    "grayscale_L_spread": 0.655,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

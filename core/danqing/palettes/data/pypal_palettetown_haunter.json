@@ -1,0 +1,67 @@
+{
+  "id": "pypal_palettetown_haunter",
+  "name": {
+    "en": "haunter (palettetown)",
+    "zh": "haunter（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8058A0",
+    "#503060",
+    "#C080C8",
+    "#B01818",
+    "#680000",
+    "#D83030",
+    "#F8F8F8",
+    "#D0A0D8",
+    "#D0D0D0",
+    "#707070"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EECABF",
+      "#E4A498",
+      "#D77F72",
+      "#C8574D",
+      "#B62725",
+      "#A30000"
+    ],
+    "paired_diverging_stops": [
+      "#680000",
+      "#9B594F",
+      "#CAA49D",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: haunter)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 9.81,
+    "min_de2000_deutan_first6": 10.69,
+    "min_de2000_protan_first6": 7.99,
+    "min_de2000_tritan_first6": 9.66,
+    "optimal6_min_de2000": 9.81,
+    "optimal6_min_de2000_deutan": 10.69,
+    "optimal6_min_de2000_protan": 7.99,
+    "grayscale_L_spread": 0.654,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

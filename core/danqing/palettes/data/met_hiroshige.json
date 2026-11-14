@@ -22,7 +22,25 @@
   "neutral": "#B8BEC4",
   "partners": {
     "sequential": "Blues",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC1",
+      "#DDA89B",
+      "#CE8577",
+      "#BD6153",
+      "#AA3B2F",
+      "#960000"
+    ],
+    "paired_diverging_stops": [
+      "#855A00",
+      "#A98C51",
+      "#CEBFA2",
+      "#F4F3F2",
+      "#A9B7C5",
+      "#627D99",
+      "#1E466E"
+    ]
   },
   "source": {
     "title": "MetBrewer: Hiroshige (Met Object 36534)",

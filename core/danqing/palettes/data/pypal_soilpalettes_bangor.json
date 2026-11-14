@@ -1,0 +1,62 @@
+{
+  "id": "pypal_soilpalettes_bangor",
+  "name": {
+    "en": "bangor (soilpalettes)",
+    "zh": "bangor（soilpalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#564735",
+    "#855A30",
+    "#BA6C00",
+    "#D4C394",
+    "#A48D2F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CFBC",
+      "#D1AF91",
+      "#BD9067",
+      "#AA723A",
+      "#955300",
+      "#813300"
+    ],
+    "paired_diverging_stops": [
+      "#564735",
+      "#887C6F",
+      "#BCB6AE",
+      "#F4F3F2",
+      "#E3C6AD",
+      "#D09A68",
+      "#BA6C00"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (soilpalettes: bangor)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.82,
+    "min_de2000_deutan_first6": 4.98,
+    "min_de2000_protan_first6": 8.46,
+    "min_de2000_tritan_first6": 13.21,
+    "optimal6_min_de2000": 13.82,
+    "optimal6_min_de2000_deutan": 4.98,
+    "optimal6_min_de2000_protan": 8.46,
+    "grayscale_L_spread": 0.412,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "pypal_tvthemes_airnomads",
+  "name": {
+    "en": "AirNomads (tvthemes)",
+    "zh": "AirNomads（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF9933",
+    "#C24841",
+    "#FFFF33",
+    "#8B5B45",
+    "#87AFD1",
+    "#EEB05A",
+    "#DBC5A0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC2",
+      "#DBA99E",
+      "#CB867B",
+      "#BA6359",
+      "#A73E37",
+      "#930912"
+    ],
+    "paired_diverging_stops": [
+      "#FFFF33",
+      "#FAFC8D",
+      "#F7F9C4",
+      "#F4F3F2",
+      "#CFDCE7",
+      "#ABC6DC",
+      "#87AFD1"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: AirNomads)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 9.17,
+    "min_de2000_deutan_first6": 4.2,
+    "min_de2000_protan_first6": 1.26,
+    "min_de2000_tritan_first6": 6.79,
+    "optimal6_min_de2000": 9.17,
+    "optimal6_min_de2000_deutan": 4.2,
+    "optimal6_min_de2000_protan": 1.26,
+    "grayscale_L_spread": 0.451,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

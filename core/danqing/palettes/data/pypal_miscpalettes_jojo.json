@@ -1,0 +1,65 @@
+{
+  "id": "pypal_miscpalettes_jojo",
+  "name": {
+    "en": "jojo (miscpalettes)",
+    "zh": "jojo（miscpalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FAB5C8",
+    "#F67E99",
+    "#F54E6C",
+    "#AB553E",
+    "#EDC580",
+    "#E0A55F",
+    "#FDAB7B",
+    "#9E3B00"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9C4",
+      "#E3A3A3",
+      "#D67D82",
+      "#C65662",
+      "#B52544",
+      "#A10026"
+    ],
+    "paired_diverging_stops": [
+      "#FAB5C8",
+      "#F9CAD6",
+      "#F7DFE4",
+      "#F4F3F2",
+      "#DCB6A6",
+      "#BF7A5D",
+      "#9E3B00"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (miscpalettes: jojo)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 9.06,
+    "min_de2000_deutan_first6": 6.61,
+    "min_de2000_protan_first6": 7.87,
+    "min_de2000_tritan_first6": 5.68,
+    "optimal6_min_de2000": 9.06,
+    "optimal6_min_de2000_deutan": 6.61,
+    "optimal6_min_de2000_protan": 7.87,
+    "grayscale_L_spread": 0.358,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

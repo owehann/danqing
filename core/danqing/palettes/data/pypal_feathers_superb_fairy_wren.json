@@ -1,0 +1,62 @@
+{
+  "id": "pypal_feathers_superb_fairy_wren",
+  "name": {
+    "en": "superb_fairy_wren (feathers)",
+    "zh": "superb_fairy_wren（feathers）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4F3321",
+    "#AA7853",
+    "#D9C4A7",
+    "#B03F05",
+    "#020503"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCBE",
+      "#D9AA96",
+      "#C9886E",
+      "#B86746",
+      "#A54318",
+      "#911600"
+    ],
+    "paired_diverging_stops": [
+      "#D9C4A7",
+      "#E2D4C0",
+      "#EBE3D9",
+      "#F4F3F2",
+      "#969996",
+      "#424744",
+      "#020503"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (feathers: superb_fairy_wren)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 17.72,
+    "min_de2000_deutan_first6": 12.91,
+    "min_de2000_protan_first6": 16.1,
+    "min_de2000_tritan_first6": 16.82,
+    "optimal6_min_de2000": 17.72,
+    "optimal6_min_de2000_deutan": 12.91,
+    "optimal6_min_de2000_protan": 16.1,
+    "grayscale_L_spread": 0.723,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

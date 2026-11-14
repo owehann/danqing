@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_opisthonema_oglinum",
+  "name": {
+    "en": "Opisthonema_oglinum (fishualize)",
+    "zh": "Opisthonema_oglinum（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#366698",
+    "#52838C",
+    "#767F8F",
+    "#72ABB1",
+    "#E3ECE9"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D3D7",
+      "#ABB8C6",
+      "#879DB6",
+      "#6483A5",
+      "#416993",
+      "#1B4F82"
+    ],
+    "paired_diverging_stops": [
+      "#366698",
+      "#7494B7",
+      "#B3C3D5",
+      "#F4F3F2",
+      "#EEF1EF",
+      "#E9EEEC",
+      "#E3ECE9"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Opisthonema_oglinum)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.31,
+    "min_de2000_deutan_first6": 2.29,
+    "min_de2000_protan_first6": 1.3,
+    "min_de2000_tritan_first6": 9.08,
+    "optimal6_min_de2000": 13.31,
+    "optimal6_min_de2000_deutan": 2.29,
+    "optimal6_min_de2000_protan": 1.3,
+    "grayscale_L_spread": 0.435,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

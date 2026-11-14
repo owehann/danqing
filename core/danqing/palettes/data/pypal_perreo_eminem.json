@@ -1,0 +1,66 @@
+{
+  "id": "pypal_perreo_eminem",
+  "name": {
+    "en": "eminem (peRReo)",
+    "zh": "eminem（peRReo）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#04101D",
+    "#1B768F",
+    "#8CBE63",
+    "#74131D",
+    "#1D3A1B",
+    "#AC4051",
+    "#102347",
+    "#226D37",
+    "#494347"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC7",
+      "#D7A9A7",
+      "#C68788",
+      "#B4656B",
+      "#A0424F",
+      "#8B1934"
+    ],
+    "paired_diverging_stops": [
+      "#8CBE63",
+      "#AED094",
+      "#D1E2C3",
+      "#F4F3F2",
+      "#A0A8B7",
+      "#54637E",
+      "#102347"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (peRReo: eminem)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 15.68,
+    "min_de2000_deutan_first6": 7.51,
+    "min_de2000_protan_first6": 5.12,
+    "min_de2000_tritan_first6": 13.24,
+    "optimal6_min_de2000": 15.68,
+    "optimal6_min_de2000_deutan": 7.51,
+    "optimal6_min_de2000_protan": 5.12,
+    "grayscale_L_spread": 0.576,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

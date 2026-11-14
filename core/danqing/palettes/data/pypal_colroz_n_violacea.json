@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_n_violacea",
+  "name": {
+    "en": "n_violacea (colRoz)",
+    "zh": "n_violacea（colRoz）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#301E48",
+    "#796D9D",
+    "#DDDAEF",
+    "#F9E011",
+    "#D9B523",
+    "#946D2A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED1C0",
+      "#C6B399",
+      "#AF9773",
+      "#987A4D",
+      "#815F25",
+      "#6B4400"
+    ],
+    "paired_diverging_stops": [
+      "#301E48",
+      "#6B5F7E",
+      "#ADA6B7",
+      "#F4F3F2",
+      "#F5EEBE",
+      "#F7E882",
+      "#F9E011"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: n_violacea)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 10.97,
+    "min_de2000_deutan_first6": 9.71,
+    "min_de2000_protan_first6": 10.27,
+    "min_de2000_tritan_first6": 10.36,
+    "optimal6_min_de2000": 10.97,
+    "optimal6_min_de2000_deutan": 9.71,
+    "optimal6_min_de2000_protan": 10.27,
+    "grayscale_L_spread": 0.619,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

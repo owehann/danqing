@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CDC2",
+      "#D6AB9F",
+      "#C5897C",
+      "#B3685A",
+      "#9F4739",
+      "#8A2116"
+    ],
+    "paired_diverging_stops": [
+      "#031326",
+      "#485564",
+      "#9AA1A8",
+      "#F4F3F2",
+      "#C4C1B7",
+      "#969180",
+      "#6A634C"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (lipari)",

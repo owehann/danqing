@@ -1,0 +1,64 @@
+{
+  "id": "pypal_pnwcolors_sunset",
+  "name": {
+    "en": "Sunset (PNWColors)",
+    "zh": "Sunset（PNWColors）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#41476B",
+    "#675478",
+    "#9E6374",
+    "#C67B6F",
+    "#DE9B71",
+    "#EFBC82",
+    "#FBDFA2"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CECB",
+      "#CAAFAF",
+      "#B49095",
+      "#9E727B",
+      "#885562",
+      "#71384A"
+    ],
+    "paired_diverging_stops": [
+      "#41476B",
+      "#787D97",
+      "#B4B6C4",
+      "#F4F3F2",
+      "#F6EDD8",
+      "#F9E6BE",
+      "#FBDFA2"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (PNWColors: Sunset)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 10.54,
+    "min_de2000_deutan_first6": 7.0,
+    "min_de2000_protan_first6": 5.64,
+    "min_de2000_tritan_first6": 7.99,
+    "optimal6_min_de2000": 10.56,
+    "optimal6_min_de2000_deutan": 7.54,
+    "optimal6_min_de2000_protan": 5.64,
+    "grayscale_L_spread": 0.504,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

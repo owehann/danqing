@@ -1,0 +1,63 @@
+{
+  "id": "pypal_warhol_basquiat_85",
+  "name": {
+    "en": "basquiat_85 (waRhol)",
+    "zh": "basquiat_85（waRhol）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B5712E",
+    "#CA0106",
+    "#EFAA4D",
+    "#7BAFD9",
+    "#F8968C",
+    "#E1D7CF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BE",
+      "#E6A495",
+      "#DA7D6D",
+      "#CB5545",
+      "#BA1F16",
+      "#A70000"
+    ],
+    "paired_diverging_stops": [
+      "#EFAA4D",
+      "#F2C38A",
+      "#F4DCBF",
+      "#F4F3F2",
+      "#CCDDEA",
+      "#A4C6E2",
+      "#7BAFD9"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (waRhol: basquiat_85)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 18.13,
+    "min_de2000_deutan_first6": 8.63,
+    "min_de2000_protan_first6": 14.94,
+    "min_de2000_tritan_first6": 4.94,
+    "optimal6_min_de2000": 18.13,
+    "optimal6_min_de2000_deutan": 8.63,
+    "optimal6_min_de2000_protan": 14.94,
+    "grayscale_L_spread": 0.358,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

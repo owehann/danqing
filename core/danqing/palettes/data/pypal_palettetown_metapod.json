@@ -1,0 +1,62 @@
+{
+  "id": "pypal_palettetown_metapod",
+  "name": {
+    "en": "metapod (palettetown)",
+    "zh": "metapod（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#70A830",
+    "#98D048",
+    "#506028",
+    "#B8F870",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D6BD",
+      "#AEBE93",
+      "#8BA56A",
+      "#698D3F",
+      "#487500",
+      "#275D00"
+    ],
+    "paired_diverging_stops": [
+      "#506028",
+      "#838F69",
+      "#BAC0AC",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: metapod)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.09,
+    "min_de2000_deutan_first6": 9.0,
+    "min_de2000_protan_first6": 8.93,
+    "min_de2000_tritan_first6": 9.15,
+    "optimal6_min_de2000": 9.09,
+    "optimal6_min_de2000_deutan": 9.0,
+    "optimal6_min_de2000_protan": 8.93,
+    "grayscale_L_spread": 0.517,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

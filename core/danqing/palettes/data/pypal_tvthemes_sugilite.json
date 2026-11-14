@@ -1,0 +1,63 @@
+{
+  "id": "pypal_tvthemes_sugilite",
+  "name": {
+    "en": "Sugilite (tvthemes)",
+    "zh": "Sugilite（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BB55E1",
+    "#16041F",
+    "#7E34D4",
+    "#54157B",
+    "#CCCCFA",
+    "#839FE2"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DBCDE3",
+      "#C0ABDD",
+      "#A789D6",
+      "#8F66CD",
+      "#793EC3",
+      "#6500B8"
+    ],
+    "paired_diverging_stops": [
+      "#16041F",
+      "#57495F",
+      "#A29AA6",
+      "#F4F3F2",
+      "#E6E6F5",
+      "#D9D9F8",
+      "#CCCCFA"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Sugilite)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.9,
+    "min_de2000_deutan_first6": 8.31,
+    "min_de2000_protan_first6": 10.38,
+    "min_de2000_tritan_first6": 16.67,
+    "optimal6_min_de2000": 14.9,
+    "optimal6_min_de2000_deutan": 8.31,
+    "optimal6_min_de2000_protan": 10.38,
+    "grayscale_L_spread": 0.7,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "pypal_nationalparkcolors_acadia",
+  "name": {
+    "en": "Acadia (nationalparkcolors)",
+    "zh": "Acadia（nationalparkcolors）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FED789",
+    "#023743",
+    "#72874E",
+    "#476F84",
+    "#A4BED5",
+    "#453947"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D3D1",
+      "#AEB8BB",
+      "#8C9EA6",
+      "#6B8491",
+      "#4A6B7C",
+      "#285368"
+    ],
+    "paired_diverging_stops": [
+      "#FED789",
+      "#FBE1AE",
+      "#F8EAD1",
+      "#F4F3F2",
+      "#A1B0B4",
+      "#547179",
+      "#023743"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nationalparkcolors: Acadia)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 19.7,
+    "min_de2000_deutan_first6": 7.06,
+    "min_de2000_protan_first6": 2.77,
+    "min_de2000_tritan_first6": 15.85,
+    "optimal6_min_de2000": 19.7,
+    "optimal6_min_de2000_deutan": 7.06,
+    "optimal6_min_de2000_protan": 2.77,
+    "grayscale_L_spread": 0.584,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

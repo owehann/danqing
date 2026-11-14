@@ -1,0 +1,64 @@
+{
+  "id": "thiagodnf_apple_imac_2021_back",
+  "name": {
+    "en": "Apple iMac 2021 - Back",
+    "zh": "Apple iMac 2021 - Back（UI/可视化）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A8BED2",
+    "#A4BEB2",
+    "#EEB8B0",
+    "#C7C8CA",
+    "#EACA96",
+    "#E9AA95",
+    "#ABACCA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CFC5",
+      "#CBB0A4",
+      "#B59283",
+      "#9F7464",
+      "#895746",
+      "#733B28"
+    ],
+    "paired_diverging_stops": [
+      "#EACA96",
+      "#EED8B5",
+      "#F1E6D4",
+      "#F4F3F2",
+      "#DBDBE5",
+      "#C3C3D7",
+      "#ABACCA"
+    ]
+  },
+  "source": {
+    "title": "color-palettes (Apple iMac 2021 - Back)",
+    "author": "Thiago Ferreira",
+    "year": 2021,
+    "url": "https://github.com/thiagodnf/color-palettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 6.05,
+    "min_de2000_deutan_first6": 5.53,
+    "min_de2000_protan_first6": 2.99,
+    "min_de2000_tritan_first6": 2.87,
+    "optimal6_min_de2000": 6.05,
+    "optimal6_min_de2000_deutan": 5.53,
+    "optimal6_min_de2000_protan": 2.99,
+    "grayscale_L_spread": 0.1,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

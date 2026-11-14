@@ -1,0 +1,62 @@
+{
+  "id": "pypal_yarrr_cars",
+  "name": {
+    "en": "cars (yarrr)",
+    "zh": "cars（yarrr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E7B08F",
+    "#884C49",
+    "#E0363A",
+    "#6A1D1A",
+    "#9DDAE6"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9C0",
+      "#E4A499",
+      "#D77E74",
+      "#C8564F",
+      "#B72529",
+      "#A30000"
+    ],
+    "paired_diverging_stops": [
+      "#6A1D1A",
+      "#9B635D",
+      "#C8A9A4",
+      "#F4F3F2",
+      "#D8EBEE",
+      "#BBE3EA",
+      "#9DDAE6"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (yarrr: cars)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.4,
+    "min_de2000_deutan_first6": 12.99,
+    "min_de2000_protan_first6": 10.27,
+    "min_de2000_tritan_first6": 13.38,
+    "optimal6_min_de2000": 13.4,
+    "optimal6_min_de2000_deutan": 12.99,
+    "optimal6_min_de2000_protan": 10.27,
+    "grayscale_L_spread": 0.495,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

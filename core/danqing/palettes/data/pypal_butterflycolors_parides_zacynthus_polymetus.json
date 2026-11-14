@@ -1,0 +1,62 @@
+{
+  "id": "pypal_butterflycolors_parides_zacynthus_polymetus",
+  "name": {
+    "en": "parides_zacynthus_polymetus (ButterflyColors)",
+    "zh": "parides_zacynthus_polymetus（ButterflyColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#37738D",
+    "#9B8170",
+    "#D98B79",
+    "#BF6860",
+    "#292325"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD4D3",
+      "#AAB9BE",
+      "#859FAA",
+      "#618696",
+      "#3C6D82",
+      "#0C556F"
+    ],
+    "paired_diverging_stops": [
+      "#D98B79",
+      "#E4AEA1",
+      "#EDD0C9",
+      "#F4F3F2",
+      "#AAA7A7",
+      "#666162",
+      "#292325"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ButterflyColors: parides_zacynthus_polymetus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.96,
+    "min_de2000_deutan_first6": 5.28,
+    "min_de2000_protan_first6": 5.25,
+    "min_de2000_tritan_first6": 10.4,
+    "optimal6_min_de2000": 10.96,
+    "optimal6_min_de2000_deutan": 5.28,
+    "optimal6_min_de2000_protan": 5.25,
+    "grayscale_L_spread": 0.449,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

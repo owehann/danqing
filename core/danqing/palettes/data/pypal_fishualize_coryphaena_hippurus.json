@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_coryphaena_hippurus",
+  "name": {
+    "en": "Coryphaena_hippurus (fishualize)",
+    "zh": "Coryphaena_hippurus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#003C74",
+    "#4A88F8",
+    "#02B6A3",
+    "#9DCE03",
+    "#F1E700"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD3E1",
+      "#A4B7DA",
+      "#7D9BD1",
+      "#567EC8",
+      "#2F61BD",
+      "#0040B1"
+    ],
+    "paired_diverging_stops": [
+      "#4A88F8",
+      "#83AEF9",
+      "#BBD1F7",
+      "#F4F3F2",
+      "#F2F1BE",
+      "#F1EC81",
+      "#F1E700"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Coryphaena_hippurus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 14.82,
+    "min_de2000_deutan_first6": 9.92,
+    "min_de2000_protan_first6": 7.56,
+    "min_de2000_tritan_first6": 12.11,
+    "optimal6_min_de2000": 14.82,
+    "optimal6_min_de2000_deutan": 9.92,
+    "optimal6_min_de2000_protan": 7.56,
+    "grayscale_L_spread": 0.55,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "pypal_mexbrewer_naturaleza",
+  "name": {
+    "en": "Naturaleza (MexBrewer)",
+    "zh": "Naturaleza（MexBrewer）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#FAF7D2",
+    "#E1CA89",
+    "#BE852C",
+    "#99300C",
+    "#80100C",
+    "#660607",
+    "#470607"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CDC0",
+      "#D8AB9A",
+      "#C78974",
+      "#B5684F",
+      "#A24629",
+      "#8D1D00"
+    ],
+    "paired_diverging_stops": [
+      "#FAF7D2",
+      "#F8F6DD",
+      "#F6F5E7",
+      "#F4F3F2",
+      "#BBA09C",
+      "#82534E",
+      "#470607"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MexBrewer: Naturaleza)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 5.63,
+    "min_de2000_deutan_first6": 5.93,
+    "min_de2000_protan_first6": 5.09,
+    "min_de2000_tritan_first6": 5.54,
+    "optimal6_min_de2000": 9.06,
+    "optimal6_min_de2000_deutan": 7.92,
+    "optimal6_min_de2000_protan": 8.81,
+    "grayscale_L_spread": 0.712,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

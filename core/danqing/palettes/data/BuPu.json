@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "BuPu",
-    "diverging": "RdYlBu"
+    "diverging": "RdYlBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFCDD8",
+      "#C9ABC8",
+      "#B28AB8",
+      "#9C6AA7",
+      "#864897",
+      "#702385"
+    ],
+    "paired_diverging_stops": [
+      "#606465",
+      "#8E9191",
+      "#C0C1C0",
+      "#F4F3F2",
+      "#BCA2B8",
+      "#855580",
+      "#4D004B"
+    ]
   },
   "source": {
     "title": "ColorBrewer 2.0 (BuPu, 9-class)",

@@ -1,0 +1,68 @@
+{
+  "id": "pypal_impressionist_colors_paysage_tropical_avec_masureset_palmiers",
+  "name": {
+    "en": "paysage_tropical_avec_masureset_palmiers (impressionist.colors)",
+    "zh": "paysage_tropical_avec_masureset_palmiers（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A5B4A5",
+    "#B4B496",
+    "#C3C396",
+    "#A59669",
+    "#87694B",
+    "#4B2D1E",
+    "#3C1E1E",
+    "#5A3C2D",
+    "#875A3C",
+    "#D2A569",
+    "#D2B478"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD0C4",
+      "#C8B2A1",
+      "#B19480",
+      "#9A7760",
+      "#845B40",
+      "#6D4021"
+    ],
+    "paired_diverging_stops": [
+      "#3C1E1E",
+      "#765E5D",
+      "#B3A6A4",
+      "#F4F3F2",
+      "#E9DECA",
+      "#DDC9A1",
+      "#D2B478"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: paysage_tropical_avec_masureset_palmiers)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 5.56,
+    "min_de2000_deutan_first6": 5.47,
+    "min_de2000_protan_first6": 5.54,
+    "min_de2000_tritan_first6": 4.07,
+    "optimal6_min_de2000": 5.56,
+    "optimal6_min_de2000_deutan": 5.47,
+    "optimal6_min_de2000_protan": 5.54,
+    "grayscale_L_spread": 0.53,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

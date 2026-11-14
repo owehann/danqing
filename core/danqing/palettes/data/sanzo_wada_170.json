@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_170",
+  "name": {
+    "en": "Sanzo Wada #170 (Rosolanc Purple · Orange Yellow · Red Violet)",
+    "zh": "和田三造 #170（Rosolanc Purple · Orange Yellow · Red Violet）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B73F74",
+    "#FCB315",
+    "#59256A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CBCC",
+      "#D8A7B1",
+      "#C88498",
+      "#B6607F",
+      "#A23B66",
+      "#8D024F"
+    ],
+    "paired_diverging_stops": [
+      "#FCB315",
+      "#FBCA7B",
+      "#F8DFB9",
+      "#F4F3F2",
+      "#BEACC4",
+      "#8B6897",
+      "#59256A"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#170)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 22.56,
+    "min_de2000_deutan_first6": 27.47,
+    "min_de2000_protan_first6": 15.28,
+    "min_de2000_tritan_first6": 23.4,
+    "optimal6_min_de2000": 22.56,
+    "optimal6_min_de2000_deutan": 27.47,
+    "optimal6_min_de2000_protan": 15.28,
+    "grayscale_L_spread": 0.444,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

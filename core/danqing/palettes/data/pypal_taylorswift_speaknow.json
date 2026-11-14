@@ -1,0 +1,62 @@
+{
+  "id": "pypal_taylorswift_speaknow",
+  "name": {
+    "en": "speakNow (tayloRswift)",
+    "zh": "speakNow（tayloRswift）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4B2671",
+    "#5E291C",
+    "#F3D8C4",
+    "#F3BF73",
+    "#FFFFFF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D7CCD5",
+      "#B9A9C2",
+      "#9C87AF",
+      "#80679C",
+      "#654688",
+      "#4C2474"
+    ],
+    "paired_diverging_stops": [
+      "#4B2671",
+      "#7F689D",
+      "#B7ACC7",
+      "#F4F3F2",
+      "#F4E2C9",
+      "#F4D1A0",
+      "#F3BF73"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tayloRswift: speakNow)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.9,
+    "min_de2000_deutan_first6": 12.78,
+    "min_de2000_protan_first6": 12.48,
+    "min_de2000_tritan_first6": 9.97,
+    "optimal6_min_de2000": 13.9,
+    "optimal6_min_de2000_deutan": 12.78,
+    "optimal6_min_de2000_protan": 12.48,
+    "grayscale_L_spread": 0.648,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

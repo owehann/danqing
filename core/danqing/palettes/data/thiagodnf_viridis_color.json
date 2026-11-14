@@ -1,0 +1,67 @@
+{
+  "id": "thiagodnf_viridis_color",
+  "name": {
+    "en": "Viridis Color",
+    "zh": "Viridis Color（UI/可视化）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#340042",
+    "#371865",
+    "#2F3776",
+    "#26547B",
+    "#20707B",
+    "#1F8F76",
+    "#2FAC66",
+    "#5EC747",
+    "#A7DB22",
+    "#FCE51E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD8BD",
+      "#A4C193",
+      "#7CAA69",
+      "#52923D",
+      "#207B00",
+      "#006300"
+    ],
+    "paired_diverging_stops": [
+      "#371865",
+      "#6F6095",
+      "#AFA7C4",
+      "#F4F3F2",
+      "#F6F0BF",
+      "#F9EB85",
+      "#FCE51E"
+    ]
+  },
+  "source": {
+    "title": "color-palettes (Viridis Color)",
+    "author": "Thiago Ferreira",
+    "year": 2021,
+    "url": "https://github.com/thiagodnf/color-palettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 7.99,
+    "min_de2000_deutan_first6": 5.39,
+    "min_de2000_protan_first6": 6.65,
+    "min_de2000_tritan_first6": 8.7,
+    "optimal6_min_de2000": 7.99,
+    "optimal6_min_de2000_deutan": 5.39,
+    "optimal6_min_de2000_protan": 6.65,
+    "grayscale_L_spread": 0.673,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

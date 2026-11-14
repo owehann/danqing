@@ -1,0 +1,63 @@
+{
+  "id": "pypal_ggthemes_excel_marquee",
+  "name": {
+    "en": "excel_Marquee (ggthemes)",
+    "zh": "excel_Marquee（ggthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#418AB3",
+    "#A6B727",
+    "#F69200",
+    "#838383",
+    "#FEC306",
+    "#DF5327"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBBD",
+      "#DFA894",
+      "#D1846B",
+      "#C06041",
+      "#AF370B",
+      "#9B0000"
+    ],
+    "paired_diverging_stops": [
+      "#418AB3",
+      "#7FADC9",
+      "#BAD0DE",
+      "#F4F3F2",
+      "#F8E5BA",
+      "#FBD57C",
+      "#FEC306"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemes: excel_Marquee)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 16.35,
+    "min_de2000_deutan_first6": 3.41,
+    "min_de2000_protan_first6": 5.24,
+    "min_de2000_tritan_first6": 12.15,
+    "optimal6_min_de2000": 16.35,
+    "optimal6_min_de2000_deutan": 3.41,
+    "optimal6_min_de2000_protan": 5.24,
+    "grayscale_L_spread": 0.243,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

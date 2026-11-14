@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_169",
+  "name": {
+    "en": "Sanzo Wada #169 (Corinthian Pink · Pale Lemon Yellow · Warm Gray)",
+    "zh": "和田三造 #169（Corinthian Pink · Pale Lemon Yellow · Warm Gray）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8B6BA",
+    "#FFEFAE",
+    "#A1A39A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CFC9",
+      "#CAAFAB",
+      "#B5908E",
+      "#9F7273",
+      "#895558",
+      "#72393F"
+    ],
+    "paired_diverging_stops": [
+      "#FFEFAE",
+      "#FBF1C6",
+      "#F7F2DC",
+      "#F4F3F2",
+      "#D8D8D4",
+      "#BCBDB6",
+      "#A1A39A"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#169)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 24.83,
+    "min_de2000_deutan_first6": 12.02,
+    "min_de2000_protan_first6": 8.39,
+    "min_de2000_tritan_first6": 16.77,
+    "optimal6_min_de2000": 24.83,
+    "optimal6_min_de2000_deutan": 12.02,
+    "optimal6_min_de2000_protan": 8.39,
+    "grayscale_L_spread": 0.239,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

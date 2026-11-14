@@ -1,0 +1,60 @@
+{
+  "id": "pypal_nbapalettes_supersonics",
+  "name": {
+    "en": "supersonics (nbapalettes)",
+    "zh": "supersonics（nbapalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#173F35",
+    "#FFA400",
+    "#010101"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CFB7",
+      "#D3AF87",
+      "#C19055",
+      "#AE7113",
+      "#9A5100",
+      "#862E00"
+    ],
+    "paired_diverging_stops": [
+      "#FFA400",
+      "#FDC077",
+      "#FADAB7",
+      "#F4F3F2",
+      "#949493",
+      "#3F3F3E",
+      "#010101"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nbapalettes: supersonics)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 21.98,
+    "min_de2000_deutan_first6": 14.35,
+    "min_de2000_protan_first6": 16.24,
+    "min_de2000_tritan_first6": 22.76,
+    "optimal6_min_de2000": 21.98,
+    "optimal6_min_de2000_deutan": 14.35,
+    "optimal6_min_de2000_protan": 16.24,
+    "grayscale_L_spread": 0.724,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

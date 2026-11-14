@@ -1,0 +1,60 @@
+{
+  "id": "pypal_ltc_trio3",
+  "name": {
+    "en": "trio3 (ltc)",
+    "zh": "trio3（ltc）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E69F00",
+    "#56B4E9",
+    "#009E73"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD7C8",
+      "#A0BFAA",
+      "#75A88C",
+      "#479170",
+      "#007954",
+      "#00623A"
+    ],
+    "paired_diverging_stops": [
+      "#E69F00",
+      "#ECBC74",
+      "#F1D8B5",
+      "#F4F3F2",
+      "#C3DFF0",
+      "#90CAED",
+      "#56B4E9"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ltc: trio3)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 34.69,
+    "min_de2000_deutan_first6": 26.5,
+    "min_de2000_protan_first6": 17.9,
+    "min_de2000_tritan_first6": 12.09,
+    "optimal6_min_de2000": 34.69,
+    "optimal6_min_de2000_deutan": 26.5,
+    "optimal6_min_de2000_protan": 17.9,
+    "grayscale_L_spread": 0.133,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

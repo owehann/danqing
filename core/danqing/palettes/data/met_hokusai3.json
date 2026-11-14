@@ -18,7 +18,25 @@
   "neutral": "#B6BFC2",
   "partners": {
     "sequential": "YlGnBu",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D3D7",
+      "#ACB7C6",
+      "#899DB5",
+      "#6682A4",
+      "#446893",
+      "#214E81"
+    ],
+    "paired_diverging_stops": [
+      "#696800",
+      "#94955A",
+      "#C3C3A6",
+      "#F4F3F2",
+      "#A1ADBD",
+      "#546C89",
+      "#0A2E57"
+    ]
   },
   "source": {
     "title": "MetBrewer: Hokusai3 (Met Object 56146)",

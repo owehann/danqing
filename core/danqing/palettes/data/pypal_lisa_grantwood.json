@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lisa_grantwood",
+  "name": {
+    "en": "GrantWood (lisa)",
+    "zh": "GrantWood（lisa）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A6BDB0",
+    "#8B842F",
+    "#41240B",
+    "#9C4823",
+    "#D6AA7E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEC1",
+      "#D3AD9B",
+      "#C08D77",
+      "#AD6E53",
+      "#984E2E",
+      "#832D00"
+    ],
+    "paired_diverging_stops": [
+      "#A6BDB0",
+      "#C0CFC6",
+      "#DAE1DB",
+      "#F4F3F2",
+      "#B5A89F",
+      "#796352",
+      "#41240B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (lisa: GrantWood)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 21.23,
+    "min_de2000_deutan_first6": 11.12,
+    "min_de2000_protan_first6": 13.11,
+    "min_de2000_tritan_first6": 19.17,
+    "optimal6_min_de2000": 21.23,
+    "optimal6_min_de2000_deutan": 11.12,
+    "optimal6_min_de2000_protan": 13.11,
+    "grayscale_L_spread": 0.484,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

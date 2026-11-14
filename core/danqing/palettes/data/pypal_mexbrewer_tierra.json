@@ -1,0 +1,64 @@
+{
+  "id": "pypal_mexbrewer_tierra",
+  "name": {
+    "en": "Tierra (MexBrewer)",
+    "zh": "Tierra（MexBrewer）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#CCC5C3",
+    "#8D7E4F",
+    "#7A6431",
+    "#69542B",
+    "#573C22",
+    "#4F330A",
+    "#3B221A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DBD2C2",
+      "#C1B59E",
+      "#A8997B",
+      "#8F7E59",
+      "#776336",
+      "#60490F"
+    ],
+    "paired_diverging_stops": [
+      "#CCC5C3",
+      "#D9D4D2",
+      "#E6E4E2",
+      "#F4F3F2",
+      "#B3A7A3",
+      "#75615A",
+      "#3B221A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MexBrewer: Tierra)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 5.24,
+    "min_de2000_deutan_first6": 4.68,
+    "min_de2000_protan_first6": 5.4,
+    "min_de2000_tritan_first6": 3.16,
+    "optimal6_min_de2000": 6.21,
+    "optimal6_min_de2000_deutan": 6.18,
+    "optimal6_min_de2000_protan": 6.0,
+    "grayscale_L_spread": 0.546,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

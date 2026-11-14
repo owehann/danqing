@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_322",
+  "name": {
+    "en": "Sanzo Wada #322 (Spectrum Red · Brick Red · Eupatorium Purple)",
+    "zh": "和田三造 #322（Spectrum Red · Brick Red · Eupatorium Purple）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E31F26",
+    "#A84222",
+    "#BF5892",
+    "#6450A1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BE",
+      "#E7A296",
+      "#DC7B6E",
+      "#CE5147",
+      "#BD141A",
+      "#AA0000"
+    ],
+    "paired_diverging_stops": [
+      "#E31F26",
+      "#F1796E",
+      "#F8B8AF",
+      "#F4F3F2",
+      "#C0BCD9",
+      "#9085BE",
+      "#6450A1"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#322)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 11.86,
+    "min_de2000_deutan_first6": 9.96,
+    "min_de2000_protan_first6": 1.79,
+    "min_de2000_tritan_first6": 13.05,
+    "optimal6_min_de2000": 11.86,
+    "optimal6_min_de2000_deutan": 9.96,
+    "optimal6_min_de2000_protan": 1.79,
+    "grayscale_L_spread": 0.115,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

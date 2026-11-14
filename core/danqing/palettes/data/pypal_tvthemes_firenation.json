@@ -1,0 +1,65 @@
+{
+  "id": "pypal_tvthemes_firenation",
+  "name": {
+    "en": "FireNation (tvthemes)",
+    "zh": "FireNation（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#ECB100",
+    "#A10000",
+    "#7E605E",
+    "#FF4500",
+    "#994823",
+    "#4B4C4E",
+    "#572530",
+    "#000000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BA",
+      "#E7A38D",
+      "#DC7D61",
+      "#CE5331",
+      "#BE1800",
+      "#AB0000"
+    ],
+    "paired_diverging_stops": [
+      "#ECB100",
+      "#EFC877",
+      "#F2DEB7",
+      "#F4F3F2",
+      "#8D8D8C",
+      "#333333",
+      "#000000"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: FireNation)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 11.21,
+    "min_de2000_deutan_first6": 5.27,
+    "min_de2000_protan_first6": 9.15,
+    "min_de2000_tritan_first6": 12.04,
+    "optimal6_min_de2000": 11.21,
+    "optimal6_min_de2000_deutan": 5.27,
+    "optimal6_min_de2000_protan": 9.15,
+    "grayscale_L_spread": 0.793,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

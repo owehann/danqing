@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_ho_oh",
+  "name": {
+    "en": "ho_oh (palettetown)",
+    "zh": "ho_oh（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F85800",
+    "#40D050",
+    "#F8F8F8",
+    "#C84000",
+    "#981000",
+    "#109010",
+    "#A06800",
+    "#F8E000",
+    "#E0A800",
+    "#F8A800",
+    "#98F0A8",
+    "#686868",
+    "#C0C0C0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD8BE",
+      "#A3C195",
+      "#7AAA6D",
+      "#4F9344",
+      "#177B0D",
+      "#006400"
+    ],
+    "paired_diverging_stops": [
+      "#F8E000",
+      "#F6E880",
+      "#F5EEBD",
+      "#F4F3F2",
+      "#C3C3C2",
+      "#949494",
+      "#686868"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: ho_oh)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 12.07,
+    "min_de2000_deutan_first6": 3.26,
+    "min_de2000_protan_first6": 4.11,
+    "min_de2000_tritan_first6": 8.57,
+    "optimal6_min_de2000": 12.07,
+    "optimal6_min_de2000_deutan": 3.26,
+    "optimal6_min_de2000_protan": 4.11,
+    "grayscale_L_spread": 0.546,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

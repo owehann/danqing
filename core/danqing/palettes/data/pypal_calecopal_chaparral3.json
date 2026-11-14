@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_chaparral3",
+  "name": {
+    "en": "chaparral3 (calecopal)",
+    "zh": "chaparral3（calecopal）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#D3E3CA",
+    "#BED6B3",
+    "#92A587",
+    "#4A5438",
+    "#2F3525"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D3C7",
+      "#B8B8A8",
+      "#9A9D89",
+      "#7D836C",
+      "#626A4F",
+      "#475234"
+    ],
+    "paired_diverging_stops": [
+      "#D3E3CA",
+      "#DEE8D7",
+      "#E9EEE5",
+      "#F4F3F2",
+      "#ADAFA7",
+      "#6A6F63",
+      "#2F3525"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: chaparral3)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 5.27,
+    "min_de2000_deutan_first6": 4.44,
+    "min_de2000_protan_first6": 4.55,
+    "min_de2000_tritan_first6": 4.71,
+    "optimal6_min_de2000": 5.27,
+    "optimal6_min_de2000_deutan": 4.44,
+    "optimal6_min_de2000_protan": 4.55,
+    "grayscale_L_spread": 0.579,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

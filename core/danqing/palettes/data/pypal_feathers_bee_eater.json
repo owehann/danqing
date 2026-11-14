@@ -1,0 +1,64 @@
+{
+  "id": "pypal_feathers_bee_eater",
+  "name": {
+    "en": "bee_eater (feathers)",
+    "zh": "bee_eater（feathers）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#00346E",
+    "#007CBF",
+    "#06ABDF",
+    "#EDD03E",
+    "#F5A200",
+    "#6D8600",
+    "#424D0C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD4DB",
+      "#A1BACE",
+      "#77A0C0",
+      "#4B86B2",
+      "#106CA3",
+      "#005194"
+    ],
+    "paired_diverging_stops": [
+      "#00346E",
+      "#52719B",
+      "#A0B1C7",
+      "#F4F3F2",
+      "#F6DAB6",
+      "#F6BF76",
+      "#F5A200"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (feathers: bee_eater)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 16.58,
+    "min_de2000_deutan_first6": 6.52,
+    "min_de2000_protan_first6": 9.55,
+    "min_de2000_tritan_first6": 12.76,
+    "optimal6_min_de2000": 16.58,
+    "optimal6_min_de2000_deutan": 6.52,
+    "optimal6_min_de2000_protan": 9.55,
+    "grayscale_L_spread": 0.525,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

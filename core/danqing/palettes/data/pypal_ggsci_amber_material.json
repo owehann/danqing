@@ -1,0 +1,67 @@
+{
+  "id": "pypal_ggsci_amber_material",
+  "name": {
+    "en": "amber_material (ggsci)",
+    "zh": "amber_material（ggsci）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#FFF8E1",
+    "#FFECB3",
+    "#FFE082",
+    "#FFD54F",
+    "#FFCA28",
+    "#FFC107",
+    "#FFB300",
+    "#FFA000",
+    "#FF8F00",
+    "#FF6F00"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCCB9",
+      "#DFA88B",
+      "#D2855D",
+      "#C26028",
+      "#B03700",
+      "#9D0000"
+    ],
+    "paired_diverging_stops": [
+      "#FFF8E1",
+      "#FBF6E7",
+      "#F8F5EC",
+      "#F4F3F2",
+      "#F8E4BA",
+      "#FCD37C",
+      "#FFC107"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggsci: amber_material)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 2.83,
+    "min_de2000_deutan_first6": 1.54,
+    "min_de2000_protan_first6": 1.89,
+    "min_de2000_tritan_first6": 2.62,
+    "optimal6_min_de2000": 7.46,
+    "optimal6_min_de2000_deutan": 4.76,
+    "optimal6_min_de2000_protan": 7.13,
+    "grayscale_L_spread": 0.271,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

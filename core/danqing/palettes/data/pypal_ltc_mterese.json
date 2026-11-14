@@ -1,0 +1,62 @@
+{
+  "id": "pypal_ltc_mterese",
+  "name": {
+    "en": "mterese (ltc)",
+    "zh": "mterese（ltc）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F7DDAA",
+    "#FAC3AD",
+    "#F897A1",
+    "#9298BA",
+    "#9CBEED"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CDC8",
+      "#D2ABA9",
+      "#C08B8B",
+      "#AC6B6F",
+      "#984A53",
+      "#822939"
+    ],
+    "paired_diverging_stops": [
+      "#F7DDAA",
+      "#F6E5C3",
+      "#F5ECDA",
+      "#F4F3F2",
+      "#D6E2F1",
+      "#B9D0EF",
+      "#9CBEED"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ltc: mterese)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.49,
+    "min_de2000_deutan_first6": 5.26,
+    "min_de2000_protan_first6": 7.82,
+    "min_de2000_tritan_first6": 7.8,
+    "optimal6_min_de2000": 13.49,
+    "optimal6_min_de2000_deutan": 5.26,
+    "optimal6_min_de2000_protan": 7.82,
+    "grayscale_L_spread": 0.22,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

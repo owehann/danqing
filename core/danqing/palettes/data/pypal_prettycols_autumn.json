@@ -1,0 +1,69 @@
+{
+  "id": "pypal_prettycols_autumn",
+  "name": {
+    "en": "Autumn (PrettyCols)",
+    "zh": "Autumn（PrettyCols）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#774762",
+    "#BA6E1D",
+    "#D6BB3B",
+    "#755028",
+    "#F2DD78",
+    "#205F4B",
+    "#913914",
+    "#585854",
+    "#F0A430",
+    "#768048",
+    "#800000",
+    "#1B3A54"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CDC1",
+      "#D4AD9B",
+      "#C28C76",
+      "#AF6C52",
+      "#9B4C2D",
+      "#862A00"
+    ],
+    "paired_diverging_stops": [
+      "#F0A430",
+      "#F3C07E",
+      "#F4DABA",
+      "#F4F3F2",
+      "#A6B1BB",
+      "#5E7386",
+      "#1B3A54"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (PrettyCols: Autumn)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 8.89,
+    "min_de2000_deutan_first6": 8.37,
+    "min_de2000_protan_first6": 9.34,
+    "min_de2000_tritan_first6": 4.62,
+    "optimal6_min_de2000": 8.89,
+    "optimal6_min_de2000_deutan": 8.37,
+    "optimal6_min_de2000_protan": 9.34,
+    "grayscale_L_spread": 0.556,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

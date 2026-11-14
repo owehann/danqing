@@ -17,7 +17,25 @@
   "neutral": "#8B8B8B",
   "partners": {
     "sequential": "Blues",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFCABC",
+      "#E5A492",
+      "#D97E69",
+      "#CA563E",
+      "#B92300",
+      "#A60000"
+    ],
+    "paired_diverging_stops": [
+      "#8B5800",
+      "#AE8B47",
+      "#D1BF9E",
+      "#F4F3F2",
+      "#D1ABCB",
+      "#AB65A4",
+      "#810F7C"
+    ]
   },
   "source": {
     "title": "FiveThirtyEight Style Cycle (Matplotlib stylelib)",

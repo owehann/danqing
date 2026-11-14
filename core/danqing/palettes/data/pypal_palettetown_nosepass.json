@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_nosepass",
+  "name": {
+    "en": "nosepass (palettetown)",
+    "zh": "nosepass（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8090A0",
+    "#90B8B0",
+    "#607078",
+    "#383850",
+    "#B8D0D8",
+    "#181818",
+    "#F08828",
+    "#C85818",
+    "#883818",
+    "#485050",
+    "#F8C0A0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CDBD",
+      "#D9AB93",
+      "#C9896A",
+      "#B76841",
+      "#A44507",
+      "#901900"
+    ],
+    "paired_diverging_stops": [
+      "#383850",
+      "#717183",
+      "#B0B0B9",
+      "#F4F3F2",
+      "#F6D1B6",
+      "#F5AE78",
+      "#F08828"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: nosepass)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 12.09,
+    "min_de2000_deutan_first6": 8.96,
+    "min_de2000_protan_first6": 9.84,
+    "min_de2000_tritan_first6": 8.64,
+    "optimal6_min_de2000": 12.09,
+    "optimal6_min_de2000_deutan": 8.96,
+    "optimal6_min_de2000_protan": 9.84,
+    "grayscale_L_spread": 0.641,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

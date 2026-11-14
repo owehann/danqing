@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_dudleya",
+  "name": {
+    "en": "dudleya (calecopal)",
+    "zh": "dudleya（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7E8C69",
+    "#E7A655",
+    "#E59D7F",
+    "#E38377",
+    "#6D4847"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CDC4",
+      "#D3ACA2",
+      "#C18B81",
+      "#AE6B60",
+      "#9A4B41",
+      "#842922"
+    ],
+    "paired_diverging_stops": [
+      "#E7A655",
+      "#EDC08E",
+      "#F1DAC0",
+      "#F4F3F2",
+      "#C6B7B5",
+      "#997E7C",
+      "#6D4847"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: dudleya)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.5,
+    "min_de2000_deutan_first6": 4.42,
+    "min_de2000_protan_first6": 3.84,
+    "min_de2000_tritan_first6": 2.41,
+    "optimal6_min_de2000": 9.5,
+    "optimal6_min_de2000_deutan": 4.42,
+    "optimal6_min_de2000_protan": 3.84,
+    "grayscale_L_spread": 0.329,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "pypal_vapeplot_mallsoft",
+  "name": {
+    "en": "mallsoft (vapeplot)",
+    "zh": "mallsoft（vapeplot）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FBCFF3",
+    "#F7C0BB",
+    "#ACD0F4",
+    "#8690FF",
+    "#30BFDD",
+    "#7FD4C1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D1DF",
+      "#B1B3D6",
+      "#9096CB",
+      "#7178C0",
+      "#555AB4",
+      "#3C39A6"
+    ],
+    "paired_diverging_stops": [
+      "#F7C0BB",
+      "#F7D1CD",
+      "#F6E2DF",
+      "#F4F3F2",
+      "#CDD3F9",
+      "#A8B3FD",
+      "#8690FF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vapeplot: mallsoft)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.8,
+    "min_de2000_deutan_first6": 8.87,
+    "min_de2000_protan_first6": 1.27,
+    "min_de2000_tritan_first6": 5.23,
+    "optimal6_min_de2000": 14.8,
+    "optimal6_min_de2000_deutan": 8.87,
+    "optimal6_min_de2000_protan": 1.27,
+    "grayscale_L_spread": 0.208,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

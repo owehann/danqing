@@ -19,7 +19,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC4",
+      "#D7AAA2",
+      "#C68881",
+      "#B46762",
+      "#A04543",
+      "#8B1D24"
+    ],
+    "paired_diverging_stops": [
+      "#251C4A",
+      "#615E80",
+      "#A7A6B8",
+      "#F4F3F2",
+      "#B4C5C7",
+      "#76979D",
+      "#386C76"
+    ]
   },
   "source": {
     "title": "May 24 from the series Doomscrolling, 2020-2021, Zorawar Sidhu, Rob Swainston, Woodcut",

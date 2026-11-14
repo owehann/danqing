@@ -1,0 +1,62 @@
+{
+  "id": "pypal_vangogh_starrynight",
+  "name": {
+    "en": "StarryNight (vangogh)",
+    "zh": "StarryNight（vangogh）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#0B1E38",
+    "#4988BF",
+    "#82C9D9",
+    "#F2E96B",
+    "#D9851E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED4D8",
+      "#A8B9C8",
+      "#829EB8",
+      "#5D84A8",
+      "#366A97",
+      "#005086"
+    ],
+    "paired_diverging_stops": [
+      "#0B1E38",
+      "#505E72",
+      "#9EA6B0",
+      "#F4F3F2",
+      "#F3F1CA",
+      "#F2ED9F",
+      "#F2E96B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vangogh: StarryNight)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 22.68,
+    "min_de2000_deutan_first6": 18.19,
+    "min_de2000_protan_first6": 19.96,
+    "min_de2000_tritan_first6": 17.32,
+    "optimal6_min_de2000": 22.68,
+    "optimal6_min_de2000_deutan": 18.19,
+    "optimal6_min_de2000_protan": 19.96,
+    "grayscale_L_spread": 0.682,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

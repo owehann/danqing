@@ -1,0 +1,67 @@
+{
+  "id": "pypal_palettetown_krabby",
+  "name": {
+    "en": "krabby (palettetown)",
+    "zh": "krabby（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D86020",
+    "#B03010",
+    "#F07838",
+    "#705010",
+    "#D8C068",
+    "#F0E8A0",
+    "#F8A060",
+    "#A08840",
+    "#F8F8F8",
+    "#D8D8D8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBBF",
+      "#DCA898",
+      "#CD8671",
+      "#BD624B",
+      "#AA3C22",
+      "#960000"
+    ],
+    "paired_diverging_stops": [
+      "#B03010",
+      "#CD7662",
+      "#E4B5A9",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: krabby)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 7.49,
+    "min_de2000_deutan_first6": 6.94,
+    "min_de2000_protan_first6": 1.88,
+    "min_de2000_tritan_first6": 6.52,
+    "optimal6_min_de2000": 7.49,
+    "optimal6_min_de2000_deutan": 6.94,
+    "optimal6_min_de2000_protan": 1.88,
+    "grayscale_L_spread": 0.525,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "pypal_ggthemes_tableau_20",
+  "name": {
+    "en": "Tableau_20 (ggthemes)",
+    "zh": "Tableau_20（ggthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4E79A7",
+    "#A0CBE8",
+    "#F28E2B",
+    "#FFBE7D",
+    "#59A14F",
+    "#8CD17D",
+    "#B6992D",
+    "#F1CE63",
+    "#499894",
+    "#86BCB6",
+    "#E15759",
+    "#FF9D9A",
+    "#79706E",
+    "#BAB0AC",
+    "#D37295",
+    "#FABFD2",
+    "#B07AA1",
+    "#D4A6C8",
+    "#9D7660",
+    "#D7B5A6"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC3",
+      "#DEA79F",
+      "#CF837C",
+      "#BE5F5B",
+      "#AC373A",
+      "#980017"
+    ],
+    "paired_diverging_stops": [
+      "#4E79A7",
+      "#84A1C1",
+      "#BBCADA",
+      "#F4F3F2",
+      "#F6D3B7",
+      "#F6B17A",
+      "#F28E2B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemes: Tableau_20)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 20,
+    "max_colors": 20,
+    "min_de2000_first6": 12.61,
+    "min_de2000_deutan_first6": 6.36,
+    "min_de2000_protan_first6": 0.69,
+    "min_de2000_tritan_first6": 7.03,
+    "optimal6_min_de2000": 12.61,
+    "optimal6_min_de2000_deutan": 6.36,
+    "optimal6_min_de2000_protan": 0.69,
+    "grayscale_L_spread": 0.31,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

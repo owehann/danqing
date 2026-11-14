@@ -1,0 +1,63 @@
+{
+  "id": "pypal_lacroixcolor_mango",
+  "name": {
+    "en": "Mango (LaCroixColoR)",
+    "zh": "Mango（LaCroixColoR）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF5300",
+    "#9ED80B",
+    "#43B629",
+    "#1BB6AF",
+    "#8F92A1",
+    "#172869"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFCABA",
+      "#E5A58D",
+      "#D97F60",
+      "#CB572E",
+      "#BA2400",
+      "#A70000"
+    ],
+    "paired_diverging_stops": [
+      "#9ED80B",
+      "#BAE37B",
+      "#D7ECB9",
+      "#F4F3F2",
+      "#A2ACC5",
+      "#586998",
+      "#172869"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (LaCroixColoR: Mango)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.22,
+    "min_de2000_deutan_first6": 4.0,
+    "min_de2000_protan_first6": 9.28,
+    "min_de2000_tritan_first6": 5.81,
+    "optimal6_min_de2000": 14.22,
+    "optimal6_min_de2000_deutan": 4.0,
+    "optimal6_min_de2000_protan": 9.28,
+    "grayscale_L_spread": 0.504,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

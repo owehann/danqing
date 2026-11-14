@@ -1,0 +1,70 @@
+{
+  "id": "pypal_impressionist_colors_dans_la_serre",
+  "name": {
+    "en": "dans_la_serre (impressionist.colors)",
+    "zh": "dans_la_serre（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#879696",
+    "#5A5A5A",
+    "#3C4B78",
+    "#1E2D2D",
+    "#2D3C2D",
+    "#4B694B",
+    "#878778",
+    "#D2D2B4",
+    "#E1D296",
+    "#B4A569",
+    "#B4874B",
+    "#96695A",
+    "#D2A587"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D4C7",
+      "#B2B9A9",
+      "#929F8B",
+      "#73866E",
+      "#556E52",
+      "#375638"
+    ],
+    "paired_diverging_stops": [
+      "#3C4B78",
+      "#7480A0",
+      "#B2B8C9",
+      "#F4F3F2",
+      "#EDE8D4",
+      "#E7DDB5",
+      "#E1D296"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: dans_la_serre)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 9.25,
+    "min_de2000_deutan_first6": 9.7,
+    "min_de2000_protan_first6": 9.56,
+    "min_de2000_tritan_first6": 4.92,
+    "optimal6_min_de2000": 9.25,
+    "optimal6_min_de2000_deutan": 9.7,
+    "optimal6_min_de2000_protan": 9.56,
+    "grayscale_L_spread": 0.578,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

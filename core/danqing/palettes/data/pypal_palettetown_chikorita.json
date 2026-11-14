@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_chikorita",
+  "name": {
+    "en": "chikorita (palettetown)",
+    "zh": "chikorita（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C8E860",
+    "#98C008",
+    "#60A848",
+    "#487000",
+    "#388028",
+    "#005800",
+    "#D8F880",
+    "#003800",
+    "#900000",
+    "#C8C8C8",
+    "#989898"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD6C1",
+      "#AABE9B",
+      "#85A676",
+      "#618E51",
+      "#3B762A",
+      "#085F00"
+    ],
+    "paired_diverging_stops": [
+      "#D8F880",
+      "#E1F7AB",
+      "#EAF6D0",
+      "#F4F3F2",
+      "#A0B19D",
+      "#52734E",
+      "#003800"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: chikorita)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 7.89,
+    "min_de2000_deutan_first6": 4.98,
+    "min_de2000_protan_first6": 5.38,
+    "min_de2000_tritan_first6": 8.77,
+    "optimal6_min_de2000": 7.89,
+    "optimal6_min_de2000_deutan": 4.98,
+    "optimal6_min_de2000_protan": 5.38,
+    "grayscale_L_spread": 0.636,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

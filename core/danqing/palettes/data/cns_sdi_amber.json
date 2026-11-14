@@ -21,7 +21,25 @@
   "neutral": "#C9D6DF",
   "partners": {
     "sequential": "cns_sdi_amber",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC3",
+      "#D6AB9F",
+      "#C58A7D",
+      "#B2695B",
+      "#9F473A",
+      "#8A2218"
+    ],
+    "paired_diverging_stops": [
+      "#67635B",
+      "#93908A",
+      "#C2C1BD",
+      "#F4F3F2",
+      "#CEABA7",
+      "#A56661",
+      "#781E20"
+    ]
   },
   "source": {
     "title": "CNS Spatial Transcriptomics White-Background Ramp (cns_sdi_amber)",

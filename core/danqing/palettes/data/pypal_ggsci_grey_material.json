@@ -1,0 +1,67 @@
+{
+  "id": "pypal_ggsci_grey_material",
+  "name": {
+    "en": "grey_material (ggsci)",
+    "zh": "grey_material（ggsci）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#FAFAFA",
+    "#F5F5F5",
+    "#EEEEEE",
+    "#E0E0E0",
+    "#BDBDBD",
+    "#9E9E9E",
+    "#757575",
+    "#616161",
+    "#424242",
+    "#212121"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D7D2CC",
+      "#BAB5B1",
+      "#9D9A96",
+      "#817F7D",
+      "#676664",
+      "#4D4D4D"
+    ],
+    "paired_diverging_stops": [
+      "#FAFAFA",
+      "#F8F8F7",
+      "#F6F6F5",
+      "#F4F3F2",
+      "#A7A6A5",
+      "#605F5F",
+      "#212121"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggsci: grey_material)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 1.02,
+    "min_de2000_deutan_first6": 1.02,
+    "min_de2000_protan_first6": 1.02,
+    "min_de2000_tritan_first6": 1.02,
+    "optimal6_min_de2000": 8.8,
+    "optimal6_min_de2000_deutan": 8.8,
+    "optimal6_min_de2000_protan": 8.8,
+    "grayscale_L_spread": 0.737,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "pypal_colroz_uluru",
+  "name": {
+    "en": "uluru (colRoz)",
+    "zh": "uluru（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#543813",
+    "#E4733B",
+    "#D9842A",
+    "#DAB77F",
+    "#CFE0D8",
+    "#9CC3E0",
+    "#5981BC"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CDBD",
+      "#D8AB94",
+      "#C88A6B",
+      "#B66842",
+      "#A3450C",
+      "#8F1B00"
+    ],
+    "paired_diverging_stops": [
+      "#D9842A",
+      "#E4AA77",
+      "#EDCFB5",
+      "#F4F3F2",
+      "#BFCDE1",
+      "#8BA7CF",
+      "#5981BC"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: uluru)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 10.51,
+    "min_de2000_deutan_first6": 2.18,
+    "min_de2000_protan_first6": 5.29,
+    "min_de2000_tritan_first6": 4.08,
+    "optimal6_min_de2000": 10.51,
+    "optimal6_min_de2000_deutan": 2.18,
+    "optimal6_min_de2000_protan": 5.29,
+    "grayscale_L_spread": 0.526,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

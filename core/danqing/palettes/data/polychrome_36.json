@@ -46,7 +46,25 @@
   "neutral": "#A8A8A8",
   "partners": {
     "sequential": "viridis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD1EF",
+      "#A4B2F4",
+      "#7E91F7",
+      "#5C6DF7",
+      "#423FF5",
+      "#3700F2"
+    ],
+    "paired_diverging_stops": [
+      "#7B6200",
+      "#A19328",
+      "#C9C394",
+      "#F4F3F2",
+      "#A8B9FD",
+      "#657AFF",
+      "#3B00FB"
+    ]
   },
   "source": {
     "title": "Polychrome: Creating and Assessing Qualitative Palettes with Many Colors (palette36)",

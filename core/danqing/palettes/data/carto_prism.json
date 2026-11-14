@@ -23,7 +23,25 @@
   "neutral": "#666666",
   "partners": {
     "sequential": "navia",
-    "diverging": "RdYlBu"
+    "diverging": "RdYlBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CDD4",
+      "#CBABC0",
+      "#B68AAD",
+      "#A16A99",
+      "#8B4A86",
+      "#752872"
+    ],
+    "paired_diverging_stops": [
+      "#5F4690",
+      "#8D7EB2",
+      "#BFB8D2",
+      "#F4F3F2",
+      "#D3BE99",
+      "#B2893A",
+      "#905400"
+    ]
   },
   "source": {
     "title": "CARTOColors Qualitative Scheme (Prism)",

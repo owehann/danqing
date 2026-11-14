@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_geyser",
+  "name": {
+    "en": "Geyser (rcartocolor)",
+    "zh": "Geyser（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#008080",
+    "#70A494",
+    "#B4C8A8",
+    "#F6EDBD",
+    "#EDBB8A",
+    "#DE8A5A",
+    "#CA562C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCBE",
+      "#DAAA96",
+      "#CA886F",
+      "#B86648",
+      "#A5431C",
+      "#911500"
+    ],
+    "paired_diverging_stops": [
+      "#008080",
+      "#6BA6A5",
+      "#B0CCCB",
+      "#F4F3F2",
+      "#EBC0B1",
+      "#DD8D71",
+      "#CA562C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: Geyser)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 13.88,
+    "min_de2000_deutan_first6": 9.2,
+    "min_de2000_protan_first6": 7.21,
+    "min_de2000_tritan_first6": 12.62,
+    "optimal6_min_de2000": 14.34,
+    "optimal6_min_de2000_deutan": 9.2,
+    "optimal6_min_de2000_protan": 7.21,
+    "grayscale_L_spread": 0.398,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

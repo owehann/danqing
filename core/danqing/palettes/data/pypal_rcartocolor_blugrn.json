@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_blugrn",
+  "name": {
+    "en": "BluGrn (rcartocolor)",
+    "zh": "BluGrn（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#C4E6C3",
+    "#96D2A4",
+    "#6DBC90",
+    "#4DA284",
+    "#36877A",
+    "#266B6E",
+    "#1D4F60"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED5CC",
+      "#A8BCB2",
+      "#81A398",
+      "#5B8B7F",
+      "#317367",
+      "#005C50"
+    ],
+    "paired_diverging_stops": [
+      "#C4E6C3",
+      "#D4EBD3",
+      "#E4EFE2",
+      "#F4F3F2",
+      "#AABABF",
+      "#64838E",
+      "#1D4F60"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: BluGrn)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 7.17,
+    "min_de2000_deutan_first6": 6.49,
+    "min_de2000_protan_first6": 6.06,
+    "min_de2000_tritan_first6": 7.49,
+    "optimal6_min_de2000": 8.69,
+    "optimal6_min_de2000_deutan": 9.18,
+    "optimal6_min_de2000_protan": 8.51,
+    "grayscale_L_spread": 0.489,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

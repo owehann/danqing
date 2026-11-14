@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_desert_dusk",
+  "name": {
+    "en": "desert_dusk (colRoz)",
+    "zh": "desert_dusk（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#040605",
+    "#0A183F",
+    "#1C407A",
+    "#A1A4B7",
+    "#F2BFA4",
+    "#FFD585"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED0D6",
+      "#A8B3C5",
+      "#8395B4",
+      "#5F78A2",
+      "#3C5C8F",
+      "#19407D"
+    ],
+    "paired_diverging_stops": [
+      "#0A183F",
+      "#4E5B78",
+      "#9DA4B4",
+      "#F4F3F2",
+      "#F8EAD0",
+      "#FCE0AC",
+      "#FFD585"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: desert_dusk)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.1,
+    "min_de2000_deutan_first6": 9.96,
+    "min_de2000_protan_first6": 11.88,
+    "min_de2000_tritan_first6": 5.37,
+    "optimal6_min_de2000": 14.1,
+    "optimal6_min_de2000_deutan": 9.96,
+    "optimal6_min_de2000_protan": 11.88,
+    "grayscale_L_spread": 0.774,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

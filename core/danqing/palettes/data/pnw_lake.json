@@ -20,7 +20,25 @@
   "neutral": "#B5B8BA",
   "partners": {
     "sequential": "navia",
-    "diverging": "broc"
+    "diverging": "broc",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D5C1",
+      "#B2BB9D",
+      "#91A279",
+      "#718955",
+      "#537131",
+      "#355900"
+    ],
+    "paired_diverging_stops": [
+      "#362904",
+      "#70664F",
+      "#B0AA9D",
+      "#F4F3F2",
+      "#BFC1C4",
+      "#8E9197",
+      "#5F636D"
+    ]
   },
   "source": {
     "title": "PNWColors Pacific Northwest Nature Palette (Lake)",

@@ -1,0 +1,63 @@
+{
+  "id": "thiagodnf_gazeta_do_povo",
+  "name": {
+    "en": "Gazeta do Povo",
+    "zh": "Gazeta do Povo（UI/可视化）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FC6451",
+    "#FF932F",
+    "#FFD000",
+    "#00F7C6",
+    "#00DF87",
+    "#00C3E5"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCABF",
+      "#E1A698",
+      "#D38271",
+      "#C35C4B",
+      "#B13122",
+      "#9E0000"
+    ],
+    "paired_diverging_stops": [
+      "#FFD000",
+      "#FBDD7E",
+      "#F8E9BC",
+      "#F4F3F2",
+      "#BCE4EE",
+      "#7ED4EA",
+      "#00C3E5"
+    ]
+  },
+  "source": {
+    "title": "color-palettes (Gazeta do Povo)",
+    "author": "Thiago Ferreira",
+    "year": 2021,
+    "url": "https://github.com/thiagodnf/color-palettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 10.39,
+    "min_de2000_deutan_first6": 8.54,
+    "min_de2000_protan_first6": 11.23,
+    "min_de2000_tritan_first6": 6.45,
+    "optimal6_min_de2000": 10.39,
+    "optimal6_min_de2000_deutan": 8.54,
+    "optimal6_min_de2000_protan": 11.23,
+    "grayscale_L_spread": 0.179,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

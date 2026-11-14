@@ -1,0 +1,66 @@
+{
+  "id": "pypal_ggthemes_jewel_bright",
+  "name": {
+    "en": "Jewel_Bright (ggthemes)",
+    "zh": "Jewel_Bright（ggthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EB1E2C",
+    "#FD6F30",
+    "#F9A729",
+    "#F9D23C",
+    "#5FBB68",
+    "#64CDCC",
+    "#91DCEA",
+    "#A4A4D5",
+    "#BBC9E5"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F1C8BE",
+      "#E9A296",
+      "#DE7A6E",
+      "#D04F47",
+      "#BF071B",
+      "#AC0000"
+    ],
+    "paired_diverging_stops": [
+      "#F9D23C",
+      "#F7DE89",
+      "#F6E9C0",
+      "#F4F3F2",
+      "#D8D9E9",
+      "#BEBEDF",
+      "#A4A4D5"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemes: Jewel_Bright)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 15.18,
+    "min_de2000_deutan_first6": 6.36,
+    "min_de2000_protan_first6": 8.98,
+    "min_de2000_tritan_first6": 8.55,
+    "optimal6_min_de2000": 15.18,
+    "optimal6_min_de2000_deutan": 6.36,
+    "optimal6_min_de2000_protan": 8.98,
+    "grayscale_L_spread": 0.272,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

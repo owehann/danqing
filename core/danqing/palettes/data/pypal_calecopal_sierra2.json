@@ -1,0 +1,63 @@
+{
+  "id": "pypal_calecopal_sierra2",
+  "name": {
+    "en": "sierra2 (calecopal)",
+    "zh": "sierra2（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FDD989",
+    "#8BAD57",
+    "#516238",
+    "#4CA2B0",
+    "#5A8B92",
+    "#395B5F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D3C5",
+      "#B6B9A4",
+      "#989E84",
+      "#7A8564",
+      "#5E6C46",
+      "#435428"
+    ],
+    "paired_diverging_stops": [
+      "#FDD989",
+      "#FAE2AE",
+      "#F7EBD1",
+      "#F4F3F2",
+      "#B2BEBE",
+      "#748B8D",
+      "#395B5F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: sierra2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 8.3,
+    "min_de2000_deutan_first6": 7.55,
+    "min_de2000_protan_first6": 7.99,
+    "min_de2000_tritan_first6": 8.73,
+    "optimal6_min_de2000": 8.3,
+    "optimal6_min_de2000_deutan": 7.55,
+    "optimal6_min_de2000_protan": 7.99,
+    "grayscale_L_spread": 0.452,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

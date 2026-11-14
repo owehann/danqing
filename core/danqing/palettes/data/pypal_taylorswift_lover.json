@@ -1,0 +1,63 @@
+{
+  "id": "pypal_taylorswift_lover",
+  "name": {
+    "en": "lover (tayloRswift)",
+    "zh": "lover（tayloRswift）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B8396B",
+    "#FFD1D7",
+    "#FFF5CC",
+    "#76BAE0",
+    "#B28F81",
+    "#54483E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CACB",
+      "#DAA6AF",
+      "#CA8394",
+      "#B95F7A",
+      "#A53861",
+      "#910049"
+    ],
+    "paired_diverging_stops": [
+      "#FFF5CC",
+      "#FBF5D9",
+      "#F8F4E6",
+      "#F4F3F2",
+      "#BBB6B2",
+      "#867D75",
+      "#54483E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tayloRswift: lover)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 20.89,
+    "min_de2000_deutan_first6": 11.35,
+    "min_de2000_protan_first6": 15.47,
+    "min_de2000_tritan_first6": 12.74,
+    "optimal6_min_de2000": 20.89,
+    "optimal6_min_de2000_deutan": 11.35,
+    "optimal6_min_de2000_protan": 15.47,
+    "grayscale_L_spread": 0.557,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

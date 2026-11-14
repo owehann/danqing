@@ -20,7 +20,25 @@
   "neutral": "#ACA397",
   "partners": {
     "sequential": "davos",
-    "diverging": "broc"
+    "diverging": "broc",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CDC1",
+      "#D7AB9D",
+      "#C68A79",
+      "#B36856",
+      "#A04733",
+      "#8B2008"
+    ],
+    "paired_diverging_stops": [
+      "#553A0E",
+      "#877458",
+      "#BCB2A3",
+      "#F4F3F2",
+      "#CBBFAC",
+      "#A38E69",
+      "#7C5E25"
+    ]
   },
   "source": {
     "title": "Buddhist Retreat by Stream and Mountains (Juran) & Mountain Market",

@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_229",
+  "name": {
+    "en": "Sanzo Wada #229 (Golden Yellow · Deep Slate Olive · Neutral Gray)",
+    "zh": "和田三造 #229（Golden Yellow · Deep Slate Olive · Neutral Gray）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F3A257",
+    "#253122",
+    "#B6BFC1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CFBD",
+      "#D0AF93",
+      "#BD9069",
+      "#A9723F",
+      "#955300",
+      "#803400"
+    ],
+    "paired_diverging_stops": [
+      "#F3A257",
+      "#F5BE8F",
+      "#F6D9C1",
+      "#F4F3F2",
+      "#A9ADA6",
+      "#636C60",
+      "#253122"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#229)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 28.23,
+    "min_de2000_deutan_first6": 27.0,
+    "min_de2000_protan_first6": 25.78,
+    "min_de2000_tritan_first6": 31.69,
+    "optimal6_min_de2000": 28.23,
+    "optimal6_min_de2000_deutan": 27.0,
+    "optimal6_min_de2000_protan": 25.78,
+    "grayscale_L_spread": 0.501,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

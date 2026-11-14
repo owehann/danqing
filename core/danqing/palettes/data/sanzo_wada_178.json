@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_178",
+  "name": {
+    "en": "Sanzo Wada #178 (Ivory Buff · Light Glaucous Blue · Green Blue)",
+    "zh": "和田三造 #178（Ivory Buff · Light Glaucous Blue · Green Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EBD3A2",
+    "#A5C8D1",
+    "#099197"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD6D0",
+      "#A1BDBA",
+      "#77A5A3",
+      "#4A8C8E",
+      "#017478",
+      "#005D64"
+    ],
+    "paired_diverging_stops": [
+      "#EBD3A2",
+      "#EEDEBD",
+      "#F1E9D8",
+      "#F4F3F2",
+      "#B3D2D3",
+      "#71B2B5",
+      "#099197"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#178)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 22.48,
+    "min_de2000_deutan_first6": 20.89,
+    "min_de2000_protan_first6": 17.51,
+    "min_de2000_tritan_first6": 19.59,
+    "optimal6_min_de2000": 22.48,
+    "optimal6_min_de2000_deutan": 20.89,
+    "optimal6_min_de2000_protan": 17.51,
+    "grayscale_L_spread": 0.277,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

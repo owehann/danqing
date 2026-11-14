@@ -1,0 +1,69 @@
+{
+  "id": "pypal_palettetown_togepi",
+  "name": {
+    "en": "togepi (palettetown)",
+    "zh": "togepi（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8F0A8",
+    "#F0F0F8",
+    "#A89048",
+    "#D8C070",
+    "#F8F8C8",
+    "#683800",
+    "#C8C8C8",
+    "#686878",
+    "#D87070",
+    "#C01800",
+    "#6880D8",
+    "#0048D0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCABE",
+      "#E3A595",
+      "#D6806E",
+      "#C75A46",
+      "#B52B17",
+      "#A20000"
+    ],
+    "paired_diverging_stops": [
+      "#C01800",
+      "#D9715F",
+      "#EBB3A7",
+      "#F4F3F2",
+      "#A4BEEC",
+      "#5887E0",
+      "#0048D0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: togepi)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 5.89,
+    "min_de2000_deutan_first6": 5.74,
+    "min_de2000_protan_first6": 5.87,
+    "min_de2000_tritan_first6": 4.56,
+    "optimal6_min_de2000": 5.89,
+    "optimal6_min_de2000_deutan": 5.74,
+    "optimal6_min_de2000_protan": 5.87,
+    "grayscale_L_spread": 0.574,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

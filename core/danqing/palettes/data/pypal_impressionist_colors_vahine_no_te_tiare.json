@@ -1,0 +1,72 @@
+{
+  "id": "pypal_impressionist_colors_vahine_no_te_tiare",
+  "name": {
+    "en": "vahine_no_te_tiare (impressionist.colors)",
+    "zh": "vahine_no_te_tiare（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#785A3C",
+    "#96694B",
+    "#A5784B",
+    "#C3965A",
+    "#F0C35A",
+    "#F0D269",
+    "#B43C3C",
+    "#B44B4B",
+    "#D2D2D2",
+    "#787896",
+    "#5A5A78",
+    "#4B3C5A",
+    "#3C2D3C",
+    "#2D1E2D",
+    "#69875A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC3",
+      "#DAA9A0",
+      "#CB867D",
+      "#B9635C",
+      "#A63F3C",
+      "#920B1A"
+    ],
+    "paired_diverging_stops": [
+      "#F0D269",
+      "#F1DE9C",
+      "#F3E9C8",
+      "#F4F3F2",
+      "#ACA5AB",
+      "#695D69",
+      "#2D1E2D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: vahine_no_te_tiare)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 15,
+    "max_colors": 15,
+    "min_de2000_first6": 5.16,
+    "min_de2000_deutan_first6": 2.47,
+    "min_de2000_protan_first6": 3.16,
+    "min_de2000_tritan_first6": 4.48,
+    "optimal6_min_de2000": 5.16,
+    "optimal6_min_de2000_deutan": 2.47,
+    "optimal6_min_de2000_protan": 3.16,
+    "grayscale_L_spread": 0.608,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

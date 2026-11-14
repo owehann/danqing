@@ -36,7 +36,25 @@
   "neutral": "#9E9E9E",
   "partners": {
     "sequential": "viridis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D0ED",
+      "#ABB0F1",
+      "#8A8FF1",
+      "#6C6AF0",
+      "#543DED",
+      "#4500E8"
+    ],
+    "paired_diverging_stops": [
+      "#CD0000",
+      "#E56051",
+      "#F3ADA1",
+      "#F4F3F2",
+      "#9EB0DF",
+      "#506DC5",
+      "#1616A7"
+    ]
   },
   "source": {
     "title": "Polychrome Dark24 Multi-Cluster Palette",

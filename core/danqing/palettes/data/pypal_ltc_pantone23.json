@@ -1,0 +1,62 @@
+{
+  "id": "pypal_ltc_pantone23",
+  "name": {
+    "en": "pantone23 (ltc)",
+    "zh": "pantone23（ltc）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7A92A5",
+    "#1F2C43",
+    "#FFB000",
+    "#842C48",
+    "#46483D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CCCA",
+      "#D3ABAD",
+      "#C08A92",
+      "#AC6977",
+      "#98485D",
+      "#822545"
+    ],
+    "paired_diverging_stops": [
+      "#1F2C43",
+      "#5E697A",
+      "#A6ABB4",
+      "#F4F3F2",
+      "#F9DEB8",
+      "#FDC879",
+      "#FFB000"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ltc: pantone23)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 21.24,
+    "min_de2000_deutan_first6": 3.98,
+    "min_de2000_protan_first6": 9.5,
+    "min_de2000_tritan_first6": 15.26,
+    "optimal6_min_de2000": 21.24,
+    "optimal6_min_de2000_deutan": 3.98,
+    "optimal6_min_de2000_protan": 9.5,
+    "grayscale_L_spread": 0.52,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

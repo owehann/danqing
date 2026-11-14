@@ -27,7 +27,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F3C6C5",
+      "#EC9EA3",
+      "#E27482",
+      "#D44463",
+      "#C40045",
+      "#B10028"
+    ],
+    "paired_diverging_stops": [
+      "#686900",
+      "#939652",
+      "#C2C4A2",
+      "#F4F3F2",
+      "#9AA7BC",
+      "#495F86",
+      "#011A51"
+    ]
   },
   "source": {
     "title": "Collection of Marilyns, 1967, Andy Warhol, Portfolio of ten screenprints, [Link]()",

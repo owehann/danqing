@@ -1,0 +1,63 @@
+{
+  "id": "pypal_khroma_pale",
+  "name": {
+    "en": "pale (khroma)",
+    "zh": "pale（khroma）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BBCCEE",
+    "#CCEEFF",
+    "#CCDDAA",
+    "#EEEEBB",
+    "#FFCCCC",
+    "#DDDDDD"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D3C4",
+      "#B7B8A2",
+      "#999E81",
+      "#7C8561",
+      "#606C42",
+      "#465323"
+    ],
+    "paired_diverging_stops": [
+      "#BBCCEE",
+      "#CED9F0",
+      "#E1E6F1",
+      "#F4F3F2",
+      "#F2F2E0",
+      "#F0F0CE",
+      "#EEEEBB"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (khroma: pale)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 6.71,
+    "min_de2000_deutan_first6": 4.92,
+    "min_de2000_protan_first6": 4.2,
+    "min_de2000_tritan_first6": 6.37,
+    "optimal6_min_de2000": 6.71,
+    "optimal6_min_de2000_deutan": 4.92,
+    "optimal6_min_de2000_protan": 4.2,
+    "grayscale_L_spread": 0.093,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

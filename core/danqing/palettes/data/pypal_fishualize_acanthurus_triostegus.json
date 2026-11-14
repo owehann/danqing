@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_acanthurus_triostegus",
+  "name": {
+    "en": "Acanthurus_triostegus (fishualize)",
+    "zh": "Acanthurus_triostegus（fishualize）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#110F0E",
+    "#673821",
+    "#BD9931",
+    "#EEE436",
+    "#E9E9DC"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDD2BC",
+      "#C5B591",
+      "#AD9866",
+      "#967C39",
+      "#806100",
+      "#6A4600"
+    ],
+    "paired_diverging_stops": [
+      "#110F0E",
+      "#53514F",
+      "#9F9E9D",
+      "#F4F3F2",
+      "#F1EFC1",
+      "#EFEA89",
+      "#EEE436"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Acanthurus_triostegus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 20.45,
+    "min_de2000_deutan_first6": 17.4,
+    "min_de2000_protan_first6": 19.26,
+    "min_de2000_tritan_first6": 13.59,
+    "optimal6_min_de2000": 20.45,
+    "optimal6_min_de2000_deutan": 17.4,
+    "optimal6_min_de2000_protan": 19.26,
+    "grayscale_L_spread": 0.76,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

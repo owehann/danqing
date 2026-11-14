@@ -1,0 +1,63 @@
+{
+  "id": "pypal_natparkspalettes_southdowns",
+  "name": {
+    "en": "SouthDowns (NatParksPalettes)",
+    "zh": "SouthDowns（NatParksPalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#948D2A",
+    "#D5B44D",
+    "#89A4BF",
+    "#F1D6B6",
+    "#9B8358",
+    "#577291"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D9D3BD",
+      "#BDB894",
+      "#A29D6C",
+      "#888242",
+      "#706809",
+      "#584F00"
+    ],
+    "paired_diverging_stops": [
+      "#D5B44D",
+      "#DFCA8A",
+      "#EADFBF",
+      "#F4F3F2",
+      "#BDC7D1",
+      "#899CB1",
+      "#577291"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NatParksPalettes: SouthDowns)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 12.21,
+    "min_de2000_deutan_first6": 8.24,
+    "min_de2000_protan_first6": 10.53,
+    "min_de2000_tritan_first6": 6.06,
+    "optimal6_min_de2000": 12.21,
+    "optimal6_min_de2000_deutan": 8.24,
+    "optimal6_min_de2000_protan": 10.53,
+    "grayscale_L_spread": 0.347,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

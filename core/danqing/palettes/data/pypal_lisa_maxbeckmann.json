@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lisa_maxbeckmann",
+  "name": {
+    "en": "MaxBeckmann (lisa)",
+    "zh": "MaxBeckmann（lisa）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4B3A51",
+    "#A77A4B",
+    "#ECC6A2",
+    "#A43020",
+    "#722D24"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCC1",
+      "#DAA99C",
+      "#CA8777",
+      "#B96554",
+      "#A64130",
+      "#911101"
+    ],
+    "paired_diverging_stops": [
+      "#4B3A51",
+      "#807383",
+      "#B8B1B9",
+      "#F4F3F2",
+      "#F2E4D7",
+      "#EFD5BD",
+      "#ECC6A2"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (lisa: MaxBeckmann)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.79,
+    "min_de2000_deutan_first6": 11.5,
+    "min_de2000_protan_first6": 8.17,
+    "min_de2000_tritan_first6": 10.67,
+    "optimal6_min_de2000": 10.79,
+    "optimal6_min_de2000_deutan": 11.5,
+    "optimal6_min_de2000_protan": 8.17,
+    "grayscale_L_spread": 0.474,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

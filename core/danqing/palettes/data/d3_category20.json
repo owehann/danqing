@@ -32,7 +32,25 @@
   "neutral": "#C7C7C7",
   "partners": {
     "sequential": "Blues",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9BF",
+      "#E5A497",
+      "#D87E71",
+      "#C9564B",
+      "#B82421",
+      "#A50000"
+    ],
+    "paired_diverging_stops": [
+      "#0368A4",
+      "#6496C0",
+      "#ACC4D9",
+      "#F4F3F2",
+      "#C3C49C",
+      "#959642",
+      "#6B6800"
+    ]
   },
   "source": {
     "title": "D3 Category20 / Matplotlib tab20",

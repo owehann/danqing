@@ -20,7 +20,25 @@
   "neutral": "#ABA497",
   "partners": {
     "sequential": "YlGnBu",
-    "diverging": "roma"
+    "diverging": "roma",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CFC5",
+      "#C9B0A4",
+      "#B39284",
+      "#9D7566",
+      "#875948",
+      "#713D2B"
+    ],
+    "paired_diverging_stops": [
+      "#784B01",
+      "#A1815B",
+      "#CAB9A5",
+      "#F4F3F2",
+      "#B0C6C5",
+      "#6C9B9A",
+      "#207072"
+    ]
   },
   "source": {
     "title": "River Village: Fisherman's Joy (Zhao Mengfu) & Landscape after Zhao Mengfu (Wang Yuanqi)",

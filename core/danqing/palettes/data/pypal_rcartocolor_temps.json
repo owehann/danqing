@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_temps",
+  "name": {
+    "en": "Temps (rcartocolor)",
+    "zh": "Temps（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#009392",
+    "#39B185",
+    "#9CCB86",
+    "#E9E29C",
+    "#EEB479",
+    "#E88471",
+    "#CF597E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CBCA",
+      "#D8A8AD",
+      "#C78592",
+      "#B56277",
+      "#A23E5D",
+      "#8D0D45"
+    ],
+    "paired_diverging_stops": [
+      "#009392",
+      "#70B3B1",
+      "#B3D3D1",
+      "#F4F3F2",
+      "#F0EED6",
+      "#ECE8BA",
+      "#E9E29C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: Temps)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 15.01,
+    "min_de2000_deutan_first6": 5.23,
+    "min_de2000_protan_first6": 2.59,
+    "min_de2000_tritan_first6": 7.92,
+    "optimal6_min_de2000": 16.7,
+    "optimal6_min_de2000_deutan": 5.32,
+    "optimal6_min_de2000_protan": 5.66,
+    "grayscale_L_spread": 0.302,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

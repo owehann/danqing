@@ -1,0 +1,63 @@
+{
+  "id": "pypal_lacroixcolor_peachpear",
+  "name": {
+    "en": "PeachPear (LaCroixColoR)",
+    "zh": "PeachPear（LaCroixColoR）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#FF3200",
+    "#E9A17C",
+    "#E9E4A6",
+    "#1BB6AF",
+    "#0076BB",
+    "#172869"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F2C8BA",
+      "#EAA28E",
+      "#E07A62",
+      "#D24E33",
+      "#C20000",
+      "#AF0000"
+    ],
+    "paired_diverging_stops": [
+      "#FF3200",
+      "#FF836A",
+      "#FFBEAE",
+      "#F4F3F2",
+      "#A2ACC5",
+      "#586998",
+      "#172869"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (LaCroixColoR: PeachPear)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 21.68,
+    "min_de2000_deutan_first6": 10.55,
+    "min_de2000_protan_first6": 14.22,
+    "min_de2000_tritan_first6": 17.28,
+    "optimal6_min_de2000": 21.68,
+    "optimal6_min_de2000_deutan": 10.55,
+    "optimal6_min_de2000_protan": 14.22,
+    "grayscale_L_spread": 0.6,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "id": "pypal_colorblindness_blue2darkred18steps",
+  "name": {
+    "en": "Blue2DarkRed18Steps (colorBlindness)",
+    "zh": "Blue2DarkRed18Steps（colorBlindness）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#2400D8",
+    "#181CF7",
+    "#2857FF",
+    "#3D87FF",
+    "#56B0FF",
+    "#75D3FF",
+    "#99EAFF",
+    "#BCF9FF",
+    "#EAFFFF",
+    "#FFFFEA",
+    "#FFF1BC",
+    "#FFD699",
+    "#FFAC75",
+    "#FF7856",
+    "#FF3D3D",
+    "#F72735",
+    "#D8152F",
+    "#A50021"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C8D2EF",
+      "#9CB5F4",
+      "#7196F6",
+      "#4873F6",
+      "#2449F4",
+      "#1900F1"
+    ],
+    "paired_diverging_stops": [
+      "#181CF7",
+      "#507EFC",
+      "#9FBBFB",
+      "#F4F3F2",
+      "#FFBFB7",
+      "#FF877C",
+      "#FF3D3D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colorBlindness: Blue2DarkRed18Steps)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 18,
+    "max_colors": 18,
+    "min_de2000_first6": 5.03,
+    "min_de2000_deutan_first6": 5.05,
+    "min_de2000_protan_first6": 6.17,
+    "min_de2000_tritan_first6": 6.27,
+    "optimal6_min_de2000": 22.73,
+    "optimal6_min_de2000_deutan": 11.79,
+    "optimal6_min_de2000_protan": 14.34,
+    "grayscale_L_spread": 0.586,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

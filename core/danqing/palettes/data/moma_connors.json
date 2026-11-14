@@ -17,7 +17,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFCABC",
+      "#E5A493",
+      "#D97F69",
+      "#CA573F",
+      "#B92403",
+      "#A60000"
+    ],
+    "paired_diverging_stops": [
+      "#BF0000",
+      "#D96C56",
+      "#EBB1A3",
+      "#F4F3F2",
+      "#AACAB9",
+      "#5FA183",
+      "#007850"
+    ]
   },
   "source": {
     "title": "Egypt, Hard G, 2015, Matt Connors, Acrylic on canvas with painted wood frame",

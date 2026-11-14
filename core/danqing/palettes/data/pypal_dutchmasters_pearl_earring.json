@@ -1,0 +1,68 @@
+{
+  "id": "pypal_dutchmasters_pearl_earring",
+  "name": {
+    "en": "pearl_earring (dutchmasters)",
+    "zh": "pearl_earring（dutchmasters）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A65141",
+    "#E7CDC2",
+    "#80A0C7",
+    "#394165",
+    "#FCF9F0",
+    "#B1934A",
+    "#DCA258",
+    "#100F14",
+    "#8B9DAF",
+    "#EEDA9D",
+    "#E8DCCF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CDC3",
+      "#D2ADA1",
+      "#BF8D7F",
+      "#AC6D5E",
+      "#984D3E",
+      "#822C1E"
+    ],
+    "paired_diverging_stops": [
+      "#FCF9F0",
+      "#F9F7F1",
+      "#F7F5F1",
+      "#F4F3F2",
+      "#9F9EA0",
+      "#525155",
+      "#100F14"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (dutchmasters: pearl_earring)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 13.15,
+    "min_de2000_deutan_first6": 8.94,
+    "min_de2000_protan_first6": 9.36,
+    "min_de2000_tritan_first6": 14.01,
+    "optimal6_min_de2000": 13.15,
+    "optimal6_min_de2000_deutan": 8.94,
+    "optimal6_min_de2000_protan": 9.36,
+    "grayscale_L_spread": 0.81,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

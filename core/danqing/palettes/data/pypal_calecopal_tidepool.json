@@ -1,0 +1,63 @@
+{
+  "id": "pypal_calecopal_tidepool",
+  "name": {
+    "en": "tidepool (calecopal)",
+    "zh": "tidepool（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#84A6A2",
+    "#4A5352",
+    "#151E2F",
+    "#D7C8C6",
+    "#BE5A47",
+    "#604A76"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC2",
+      "#D6AB9E",
+      "#C48A7B",
+      "#B26A59",
+      "#9E4837",
+      "#892312"
+    ],
+    "paired_diverging_stops": [
+      "#151E2F",
+      "#565D6B",
+      "#A1A5AC",
+      "#F4F3F2",
+      "#EAE5E3",
+      "#E1D6D4",
+      "#D7C8C6"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: tidepool)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 20.23,
+    "min_de2000_deutan_first6": 13.62,
+    "min_de2000_protan_first6": 10.87,
+    "min_de2000_tritan_first6": 15.83,
+    "optimal6_min_de2000": 20.23,
+    "optimal6_min_de2000_deutan": 13.62,
+    "optimal6_min_de2000_protan": 10.87,
+    "grayscale_L_spread": 0.609,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

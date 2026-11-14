@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_grassdry",
+  "name": {
+    "en": "grassdry (calecopal)",
+    "zh": "grassdry（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E1BC8D",
+    "#845B3E",
+    "#5B4E23",
+    "#35301C",
+    "#4C5454"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED0C4",
+      "#C6B2A2",
+      "#AF9581",
+      "#987861",
+      "#815D42",
+      "#6B4223"
+    ],
+    "paired_diverging_stops": [
+      "#E1BC8D",
+      "#E8CFAF",
+      "#EEE1D0",
+      "#F4F3F2",
+      "#AFADA4",
+      "#6F6B5C",
+      "#35301C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: grassdry)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.44,
+    "min_de2000_deutan_first6": 8.36,
+    "min_de2000_protan_first6": 7.11,
+    "min_de2000_tritan_first6": 11.64,
+    "optimal6_min_de2000": 12.44,
+    "optimal6_min_de2000_deutan": 8.36,
+    "optimal6_min_de2000_protan": 7.11,
+    "grayscale_L_spread": 0.508,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

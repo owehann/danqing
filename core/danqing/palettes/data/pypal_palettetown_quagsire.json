@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_quagsire",
+  "name": {
+    "en": "quagsire (palettetown)",
+    "zh": "quagsire（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#60A0E0",
+    "#A8C8E8",
+    "#4888C8",
+    "#385898",
+    "#204060",
+    "#103040",
+    "#906090",
+    "#C0E8F0",
+    "#605078"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D2D9",
+      "#ADB6CB",
+      "#8A9BBC",
+      "#6980AC",
+      "#49659C",
+      "#294A8C"
+    ],
+    "paired_diverging_stops": [
+      "#103040",
+      "#576C77",
+      "#A2ADB3",
+      "#F4F3F2",
+      "#E3F0F1",
+      "#D2ECF1",
+      "#C0E8F0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: quagsire)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 7.94,
+    "min_de2000_deutan_first6": 7.29,
+    "min_de2000_protan_first6": 7.59,
+    "min_de2000_tritan_first6": 6.15,
+    "optimal6_min_de2000": 7.94,
+    "optimal6_min_de2000_deutan": 7.29,
+    "optimal6_min_de2000_protan": 7.59,
+    "grayscale_L_spread": 0.612,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_cyndaquil",
+  "name": {
+    "en": "cyndaquil (palettetown)",
+    "zh": "cyndaquil（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F86000",
+    "#F8E8A0",
+    "#E0C868",
+    "#405088",
+    "#E80000",
+    "#886020",
+    "#182850",
+    "#284060",
+    "#6080B8",
+    "#F8D800",
+    "#B09850",
+    "#F89800",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F2C8BC",
+      "#EAA191",
+      "#E07967",
+      "#D24D3C",
+      "#C20000",
+      "#AF0000"
+    ],
+    "paired_diverging_stops": [
+      "#182850",
+      "#596784",
+      "#A3ABBA",
+      "#F4F3F2",
+      "#F5ECBC",
+      "#F6E27F",
+      "#F8D800"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: cyndaquil)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 8.58,
+    "min_de2000_deutan_first6": 8.17,
+    "min_de2000_protan_first6": 4.42,
+    "min_de2000_tritan_first6": 8.76,
+    "optimal6_min_de2000": 8.58,
+    "optimal6_min_de2000_deutan": 8.17,
+    "optimal6_min_de2000_protan": 4.42,
+    "grayscale_L_spread": 0.692,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

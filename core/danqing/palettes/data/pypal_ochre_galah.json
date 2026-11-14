@@ -1,0 +1,63 @@
+{
+  "id": "pypal_ochre_galah",
+  "name": {
+    "en": "galah (ochRe)",
+    "zh": "galah（ochRe）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#903030",
+    "#D84860",
+    "#F0A8C0",
+    "#FFFFFF",
+    "#A8A8A8",
+    "#787878"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCAC5",
+      "#DFA6A4",
+      "#D08184",
+      "#C05C65",
+      "#AD3347",
+      "#99002B"
+    ],
+    "paired_diverging_stops": [
+      "#903030",
+      "#B6726D",
+      "#D7B1AD",
+      "#F4F3F2",
+      "#F8F7F6",
+      "#FBFBFB",
+      "#FFFFFF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ochRe: galah)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 16.29,
+    "min_de2000_deutan_first6": 6.92,
+    "min_de2000_protan_first6": 6.92,
+    "min_de2000_tritan_first6": 16.29,
+    "optimal6_min_de2000": 16.29,
+    "optimal6_min_de2000_deutan": 6.92,
+    "optimal6_min_de2000_protan": 6.92,
+    "grayscale_L_spread": 0.549,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

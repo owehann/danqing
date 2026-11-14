@@ -1,0 +1,66 @@
+{
+  "id": "pypal_ggthemes_classic_traffic_light",
+  "name": {
+    "en": "Classic_Traffic_Light (ggthemes)",
+    "zh": "Classic_Traffic_Light（ggthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B10318",
+    "#DBA13A",
+    "#309343",
+    "#D82526",
+    "#FFC156",
+    "#69B764",
+    "#F26C64",
+    "#FFDD71",
+    "#9FCD99"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BE",
+      "#E5A497",
+      "#D97E70",
+      "#CA5549",
+      "#B9211F",
+      "#A60000"
+    ],
+    "paired_diverging_stops": [
+      "#B10318",
+      "#CF6A62",
+      "#E6AFA8",
+      "#F4F3F2",
+      "#F8EDCB",
+      "#FBE5A1",
+      "#FFDD71"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemes: Classic_Traffic_Light)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 8.54,
+    "min_de2000_deutan_first6": 7.4,
+    "min_de2000_protan_first6": 6.2,
+    "min_de2000_tritan_first6": 7.43,
+    "optimal6_min_de2000": 8.54,
+    "optimal6_min_de2000_deutan": 7.4,
+    "optimal6_min_de2000_protan": 6.2,
+    "grayscale_L_spread": 0.425,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

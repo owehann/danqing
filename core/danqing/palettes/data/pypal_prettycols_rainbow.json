@@ -1,0 +1,69 @@
+{
+  "id": "pypal_prettycols_rainbow",
+  "name": {
+    "en": "Rainbow (PrettyCols)",
+    "zh": "Rainbow（PrettyCols）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E51E32",
+    "#FF782A",
+    "#FDA805",
+    "#E2CF04",
+    "#B1CA05",
+    "#98C217",
+    "#779815",
+    "#029E77",
+    "#09989C",
+    "#059CCD",
+    "#3F64CE",
+    "#7E2B8E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C8BF",
+      "#E8A298",
+      "#DC7B72",
+      "#CE504C",
+      "#BD1024",
+      "#AA0000"
+    ],
+    "paired_diverging_stops": [
+      "#E2CF04",
+      "#E7DC7C",
+      "#EDE8BA",
+      "#F4F3F2",
+      "#B4C5E9",
+      "#7795DD",
+      "#3F64CE"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (PrettyCols: Rainbow)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 4.8,
+    "min_de2000_deutan_first6": 1.49,
+    "min_de2000_protan_first6": 2.09,
+    "min_de2000_tritan_first6": 8.91,
+    "optimal6_min_de2000": 4.8,
+    "optimal6_min_de2000_deutan": 1.49,
+    "optimal6_min_de2000_protan": 2.09,
+    "grayscale_L_spread": 0.389,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

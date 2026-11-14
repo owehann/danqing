@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_chaetodon_larvatus",
+  "name": {
+    "en": "Chaetodon_larvatus (fishualize)",
+    "zh": "Chaetodon_larvatus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#010310",
+    "#3886C4",
+    "#D0D8DA",
+    "#FEF99A",
+    "#E0700A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CDBA",
+      "#D9AC8E",
+      "#C88A62",
+      "#B76932",
+      "#A44600",
+      "#901B00"
+    ],
+    "paired_diverging_stops": [
+      "#3886C4",
+      "#7BABD5",
+      "#B7CFE4",
+      "#F4F3F2",
+      "#F1C9B0",
+      "#EB9E6D",
+      "#E0700A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Chaetodon_larvatus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 25.83,
+    "min_de2000_deutan_first6": 24.27,
+    "min_de2000_protan_first6": 26.06,
+    "min_de2000_tritan_first6": 14.12,
+    "optimal6_min_de2000": 25.83,
+    "optimal6_min_de2000_deutan": 24.27,
+    "optimal6_min_de2000_protan": 26.06,
+    "grayscale_L_spread": 0.861,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

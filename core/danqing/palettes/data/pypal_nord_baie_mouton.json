@@ -1,0 +1,64 @@
+{
+  "id": "pypal_nord_baie_mouton",
+  "name": {
+    "en": "baie_mouton (nord)",
+    "zh": "baie_mouton（nord）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#304890",
+    "#7890A8",
+    "#90A8C0",
+    "#A8A8A8",
+    "#C0C0A8",
+    "#6A7E4F",
+    "#304848"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D2DB",
+      "#AEB6CD",
+      "#8C9ABF",
+      "#6B7EB1",
+      "#4B62A2",
+      "#2E4692"
+    ],
+    "paired_diverging_stops": [
+      "#304890",
+      "#6C80B2",
+      "#ADB9D3",
+      "#F4F3F2",
+      "#E2E2D9",
+      "#D1D1C0",
+      "#C0C0A8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nord: baie_mouton)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 7.63,
+    "min_de2000_deutan_first6": 7.72,
+    "min_de2000_protan_first6": 7.5,
+    "min_de2000_tritan_first6": 7.05,
+    "optimal6_min_de2000": 7.63,
+    "optimal6_min_de2000_deutan": 7.72,
+    "optimal6_min_de2000_protan": 7.5,
+    "grayscale_L_spread": 0.419,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

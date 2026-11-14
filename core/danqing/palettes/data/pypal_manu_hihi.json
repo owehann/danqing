@@ -1,0 +1,62 @@
+{
+  "id": "pypal_manu_hihi",
+  "name": {
+    "en": "Hihi (Manu)",
+    "zh": "Hihi（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#070604",
+    "#F9E211",
+    "#797A87",
+    "#A8ACAD",
+    "#D6CBB5"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DBD3B4",
+      "#C2B781",
+      "#A99C4B",
+      "#928100",
+      "#7B6500",
+      "#654A00"
+    ],
+    "paired_diverging_stops": [
+      "#070604",
+      "#4A4845",
+      "#9A9997",
+      "#F4F3F2",
+      "#F5EFBE",
+      "#F7E982",
+      "#F9E211"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Hihi)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.9,
+    "min_de2000_deutan_first6": 14.4,
+    "min_de2000_protan_first6": 13.27,
+    "min_de2000_tritan_first6": 9.05,
+    "optimal6_min_de2000": 13.9,
+    "optimal6_min_de2000_deutan": 14.4,
+    "optimal6_min_de2000_protan": 13.27,
+    "grayscale_L_spread": 0.781,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_tropic",
+  "name": {
+    "en": "Tropic (rcartocolor)",
+    "zh": "Tropic（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#009B9E",
+    "#42B7B9",
+    "#A7D3D4",
+    "#F1F1F1",
+    "#E4C1D9",
+    "#D691C1",
+    "#C75DAB"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CBD2",
+      "#D3A8BD",
+      "#C085A9",
+      "#AD6394",
+      "#983F80",
+      "#83106C"
+    ],
+    "paired_diverging_stops": [
+      "#009B9E",
+      "#72B9B9",
+      "#B5D6D5",
+      "#F4F3F2",
+      "#F3F3F2",
+      "#F2F2F1",
+      "#F1F1F1"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: Tropic)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 8.82,
+    "min_de2000_deutan_first6": 1.29,
+    "min_de2000_protan_first6": 5.62,
+    "min_de2000_tritan_first6": 8.1,
+    "optimal6_min_de2000": 12.95,
+    "optimal6_min_de2000_deutan": 1.29,
+    "optimal6_min_de2000_protan": 5.62,
+    "grayscale_L_spread": 0.333,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "pypal_feathers_eastern_rosella",
+  "name": {
+    "en": "eastern_rosella (feathers)",
+    "zh": "eastern_rosella（feathers）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#CD3122",
+    "#F4C623",
+    "#BEE183",
+    "#6C905E",
+    "#2F533C",
+    "#B8C9DC",
+    "#2F7AB9"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCABF",
+      "#E2A697",
+      "#D48170",
+      "#C55B49",
+      "#B32E1F",
+      "#9F0000"
+    ],
+    "paired_diverging_stops": [
+      "#F4C623",
+      "#F4D680",
+      "#F4E5BC",
+      "#F4F3F2",
+      "#B4CBE1",
+      "#74A2CE",
+      "#2F7AB9"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (feathers: eastern_rosella)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 22.08,
+    "min_de2000_deutan_first6": 9.98,
+    "min_de2000_protan_first6": 9.72,
+    "min_de2000_tritan_first6": 7.99,
+    "optimal6_min_de2000": 22.08,
+    "optimal6_min_de2000_deutan": 9.98,
+    "optimal6_min_de2000_protan": 9.72,
+    "grayscale_L_spread": 0.456,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

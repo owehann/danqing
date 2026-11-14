@@ -1,0 +1,73 @@
+{
+  "id": "pypal_impressionist_colors_les_peupliers",
+  "name": {
+    "en": "les_peupliers (impressionist.colors)",
+    "zh": "les_peupliers（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A54B2D",
+    "#874B3C",
+    "#A5694B",
+    "#D29678",
+    "#B49696",
+    "#A57878",
+    "#695A69",
+    "#4B4B5A",
+    "#3C3C5A",
+    "#5A69A5",
+    "#96A5C3",
+    "#96A5A5",
+    "#788787",
+    "#5A5A4B",
+    "#557C45",
+    "#577E2F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CDC1",
+      "#D4AC9C",
+      "#C28C78",
+      "#AF6C55",
+      "#9B4C31",
+      "#862903"
+    ],
+    "paired_diverging_stops": [
+      "#A54B2D",
+      "#C3836E",
+      "#DDBBAF",
+      "#F4F3F2",
+      "#BDC4D9",
+      "#8A96C0",
+      "#5A69A5"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: les_peupliers)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 16,
+    "max_colors": 16,
+    "min_de2000_first6": 8.01,
+    "min_de2000_deutan_first6": 7.12,
+    "min_de2000_protan_first6": 6.98,
+    "min_de2000_tritan_first6": 7.08,
+    "optimal6_min_de2000": 8.01,
+    "optimal6_min_de2000_deutan": 7.12,
+    "optimal6_min_de2000_protan": 6.98,
+    "grayscale_L_spread": 0.354,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

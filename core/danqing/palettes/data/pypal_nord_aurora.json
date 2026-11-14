@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nord_aurora",
+  "name": {
+    "en": "aurora (nord)",
+    "zh": "aurora（nord）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BF616A",
+    "#D08770",
+    "#EBCB8B",
+    "#A3BE8C",
+    "#B48EAD"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CDC7",
+      "#D3ABA8",
+      "#C18A8A",
+      "#AD6A6C",
+      "#994950",
+      "#842736"
+    ],
+    "paired_diverging_stops": [
+      "#EBCB8B",
+      "#EED9AE",
+      "#F1E6D0",
+      "#F4F3F2",
+      "#DFD1DB",
+      "#C9AFC4",
+      "#B48EAD"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nord: aurora)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.09,
+    "min_de2000_deutan_first6": 6.86,
+    "min_de2000_protan_first6": 6.72,
+    "min_de2000_tritan_first6": 10.12,
+    "optimal6_min_de2000": 15.09,
+    "optimal6_min_de2000_deutan": 6.86,
+    "optimal6_min_de2000_protan": 6.72,
+    "grayscale_L_spread": 0.249,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

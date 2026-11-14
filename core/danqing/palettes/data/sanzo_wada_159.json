@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_159",
+  "name": {
+    "en": "Sanzo Wada #159 (Khaki · Calamine BLue · Grayish Lavender - A)",
+    "zh": "和田三造 #159（Khaki · Calamine BLue · Grayish Lavender - A）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BC892B",
+    "#78CDD0",
+    "#B5B1D8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD1BC",
+      "#C9B392",
+      "#B39568",
+      "#9D793D",
+      "#875C00",
+      "#724000"
+    ],
+    "paired_diverging_stops": [
+      "#BC892B",
+      "#CFAD76",
+      "#E2D0B4",
+      "#F4F3F2",
+      "#DEDDEA",
+      "#C9C7E1",
+      "#B5B1D8"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#159)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 27.45,
+    "min_de2000_deutan_first6": 4.38,
+    "min_de2000_protan_first6": 9.97,
+    "min_de2000_tritan_first6": 21.42,
+    "optimal6_min_de2000": 27.45,
+    "optimal6_min_de2000_deutan": 4.38,
+    "optimal6_min_de2000_protan": 9.97,
+    "grayscale_L_spread": 0.132,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

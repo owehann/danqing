@@ -1,0 +1,67 @@
+{
+  "id": "pypal_werpals_mountcook",
+  "name": {
+    "en": "mountcook (werpals)",
+    "zh": "mountcook（werpals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FEFBE8",
+    "#DFDEBF",
+    "#AECEBF",
+    "#90B7B4",
+    "#30A0A4",
+    "#017987",
+    "#332D15",
+    "#866E52",
+    "#D9B28B",
+    "#FFEED8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD5D1",
+      "#A4BCBC",
+      "#7BA3A6",
+      "#528A92",
+      "#1F727D",
+      "#005A69"
+    ],
+    "paired_diverging_stops": [
+      "#FEFBE8",
+      "#FBF8EB",
+      "#F7F6EF",
+      "#F4F3F2",
+      "#AEACA2",
+      "#6D6958",
+      "#332D15"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (werpals: mountcook)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 7.83,
+    "min_de2000_deutan_first6": 7.4,
+    "min_de2000_protan_first6": 7.63,
+    "min_de2000_tritan_first6": 6.57,
+    "optimal6_min_de2000": 7.83,
+    "optimal6_min_de2000_deutan": 7.4,
+    "optimal6_min_de2000_protan": 7.63,
+    "grayscale_L_spread": 0.688,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_taylorswift_midnights",
+  "name": {
+    "en": "midnights (tayloRswift)",
+    "zh": "midnights（tayloRswift）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#586891",
+    "#8897A4",
+    "#B3A6A3",
+    "#2B152C",
+    "#F1F3F2"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D2D4",
+      "#B3B6C1",
+      "#949AAE",
+      "#757F9A",
+      "#586587",
+      "#3C4B74"
+    ],
+    "paired_diverging_stops": [
+      "#2B152C",
+      "#685768",
+      "#ACA2AB",
+      "#F4F3F2",
+      "#F3F3F2",
+      "#F2F3F2",
+      "#F1F3F2"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tayloRswift: midnights)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.16,
+    "min_de2000_deutan_first6": 13.39,
+    "min_de2000_protan_first6": 10.71,
+    "min_de2000_tritan_first6": 17.33,
+    "optimal6_min_de2000": 15.16,
+    "optimal6_min_de2000_deutan": 13.39,
+    "optimal6_min_de2000_protan": 10.71,
+    "grayscale_L_spread": 0.725,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

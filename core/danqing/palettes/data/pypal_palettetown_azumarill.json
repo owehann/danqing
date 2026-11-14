@@ -1,0 +1,67 @@
+{
+  "id": "pypal_palettetown_azumarill",
+  "name": {
+    "en": "azumarill (palettetown)",
+    "zh": "azumarill（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#58A8E0",
+    "#3080C0",
+    "#F8F8F8",
+    "#80C8F8",
+    "#484880",
+    "#C8C8C8",
+    "#E05000",
+    "#C02800",
+    "#686868",
+    "#989898"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBD",
+      "#E1A695",
+      "#D3826D",
+      "#C45D44",
+      "#B23214",
+      "#9E0000"
+    ],
+    "paired_diverging_stops": [
+      "#3080C0",
+      "#76A7D2",
+      "#B5CDE3",
+      "#F4F3F2",
+      "#F4C1AD",
+      "#ED8C68",
+      "#E05000"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: azumarill)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 8.95,
+    "min_de2000_deutan_first6": 9.29,
+    "min_de2000_protan_first6": 8.5,
+    "min_de2000_tritan_first6": 8.13,
+    "optimal6_min_de2000": 8.95,
+    "optimal6_min_de2000_deutan": 9.29,
+    "optimal6_min_de2000_protan": 8.5,
+    "grayscale_L_spread": 0.55,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

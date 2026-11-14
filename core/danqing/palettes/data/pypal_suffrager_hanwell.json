@@ -1,0 +1,62 @@
+{
+  "id": "pypal_suffrager_hanwell",
+  "name": {
+    "en": "hanwell (suffrager)",
+    "zh": "hanwell（suffrager）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#200E6A",
+    "#B01824",
+    "#90468C",
+    "#326529",
+    "#82D0F0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC1",
+      "#E0A69C",
+      "#D28278",
+      "#C25C55",
+      "#B03232",
+      "#9C0007"
+    ],
+    "paired_diverging_stops": [
+      "#200E6A",
+      "#595D9A",
+      "#A2A6C7",
+      "#F4F3F2",
+      "#E5B1AB",
+      "#CE6E68",
+      "#B01824"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (suffrager: hanwell)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 24.56,
+    "min_de2000_deutan_first6": 7.32,
+    "min_de2000_protan_first6": 9.9,
+    "min_de2000_tritan_first6": 19.5,
+    "optimal6_min_de2000": 24.56,
+    "optimal6_min_de2000_deutan": 7.32,
+    "optimal6_min_de2000_protan": 9.9,
+    "grayscale_L_spread": 0.547,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

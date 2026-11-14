@@ -20,7 +20,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC0",
+      "#DDA89A",
+      "#CF8475",
+      "#BE6051",
+      "#AC392B",
+      "#970000"
+    ],
+    "paired_diverging_stops": [
+      "#8D5600",
+      "#B08A4A",
+      "#D2BE9F",
+      "#F4F3F2",
+      "#A8B8D6",
+      "#607EB8",
+      "#1D4497"
+    ]
   },
   "source": {
     "title": "\"Laila and Majnun in School\", Folio 129 from a Khamsa (Quintet) of Nizami of Ganja, A.H. 931/A.D. 1524–25, Nizami, Made in present-day Afghanistan, Herat",

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_pareiorhaphis_garbei",
+  "name": {
+    "en": "Pareiorhaphis_garbei (fishualize)",
+    "zh": "Pareiorhaphis_garbei（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#49351C",
+    "#624D1E",
+    "#A13601",
+    "#C67E22",
+    "#BA8D55"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CDBF",
+      "#D8AB97",
+      "#C88971",
+      "#B6684A",
+      "#A34520",
+      "#8E1B00"
+    ],
+    "paired_diverging_stops": [
+      "#49351C",
+      "#7E6F5E",
+      "#B8AFA5",
+      "#F4F3F2",
+      "#E6CCB2",
+      "#D7A672",
+      "#C67E22"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Pareiorhaphis_garbei)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 7.98,
+    "min_de2000_deutan_first6": 6.71,
+    "min_de2000_protan_first6": 3.55,
+    "min_de2000_tritan_first6": 6.71,
+    "optimal6_min_de2000": 7.98,
+    "optimal6_min_de2000_deutan": 6.71,
+    "optimal6_min_de2000_protan": 3.55,
+    "grayscale_L_spread": 0.329,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

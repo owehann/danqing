@@ -1,0 +1,67 @@
+{
+  "id": "pypal_palettetown_forretress",
+  "name": {
+    "en": "forretress (palettetown)",
+    "zh": "forretress（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A84888",
+    "#C080B8",
+    "#E0B0E0",
+    "#602858",
+    "#B82840",
+    "#F0D8E8",
+    "#801030",
+    "#F06070",
+    "#F8F8F8",
+    "#F8B8C8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCAC4",
+      "#DFA6A2",
+      "#D08281",
+      "#C05D61",
+      "#AE3342",
+      "#990023"
+    ],
+    "paired_diverging_stops": [
+      "#602858",
+      "#916889",
+      "#C2ACBC",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: forretress)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 12.7,
+    "min_de2000_deutan_first6": 10.93,
+    "min_de2000_protan_first6": 12.08,
+    "min_de2000_tritan_first6": 9.99,
+    "optimal6_min_de2000": 12.7,
+    "optimal6_min_de2000_deutan": 10.93,
+    "optimal6_min_de2000_protan": 12.08,
+    "grayscale_L_spread": 0.605,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

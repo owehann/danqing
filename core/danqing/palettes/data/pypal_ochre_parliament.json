@@ -1,0 +1,65 @@
+{
+  "id": "pypal_ochre_parliament",
+  "name": {
+    "en": "parliament (ochRe)",
+    "zh": "parliament（ochRe）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A84848",
+    "#F0D8D8",
+    "#304830",
+    "#909078",
+    "#607890",
+    "#90A8A8",
+    "#906030",
+    "#C0A890"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC5",
+      "#D5ABA4",
+      "#C38A83",
+      "#B06964",
+      "#9C4846",
+      "#872429"
+    ],
+    "paired_diverging_stops": [
+      "#F0D8D8",
+      "#F1E1E1",
+      "#F3EAE9",
+      "#F4F3F2",
+      "#AEB7AC",
+      "#6C7D6B",
+      "#304830"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ochRe: parliament)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 14.71,
+    "min_de2000_deutan_first6": 14.08,
+    "min_de2000_protan_first6": 7.81,
+    "min_de2000_tritan_first6": 16.07,
+    "optimal6_min_de2000": 14.71,
+    "optimal6_min_de2000_deutan": 14.08,
+    "optimal6_min_de2000_protan": 7.81,
+    "grayscale_L_spread": 0.527,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

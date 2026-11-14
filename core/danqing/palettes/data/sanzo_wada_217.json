@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_217",
+  "name": {
+    "en": "Sanzo Wada #217 (Pale Burnt Lake · Ochraceous Salmon · Diamine Green)",
+    "zh": "和田三造 #217（Pale Burnt Lake · Ochraceous Salmon · Diamine Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#802626",
+    "#D8A37B",
+    "#1A7444"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED6C6",
+      "#A8BEA6",
+      "#81A586",
+      "#5B8D68",
+      "#31764A",
+      "#005F2E"
+    ],
+    "paired_diverging_stops": [
+      "#802626",
+      "#AB6B65",
+      "#D1AEA9",
+      "#F4F3F2",
+      "#ECD8CA",
+      "#E2BEA3",
+      "#D8A37B"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#217)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 44.22,
+    "min_de2000_deutan_first6": 8.95,
+    "min_de2000_protan_first6": 17.8,
+    "min_de2000_tritan_first6": 41.9,
+    "optimal6_min_de2000": 44.22,
+    "optimal6_min_de2000_deutan": 8.95,
+    "optimal6_min_de2000_protan": 17.8,
+    "grayscale_L_spread": 0.347,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

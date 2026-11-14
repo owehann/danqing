@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_ostorhinchus_angustatus",
+  "name": {
+    "en": "Ostorhinchus_angustatus (fishualize)",
+    "zh": "Ostorhinchus_angustatus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FBFCEB",
+    "#F0E990",
+    "#DB9CAB",
+    "#6C402C",
+    "#291E15"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD0C5",
+      "#C8B1A4",
+      "#B19384",
+      "#9A7665",
+      "#845A47",
+      "#6D3F2A"
+    ],
+    "paired_diverging_stops": [
+      "#F0E990",
+      "#F1EDB3",
+      "#F2F0D3",
+      "#F4F3F2",
+      "#AAA5A0",
+      "#665D56",
+      "#291E15"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Ostorhinchus_angustatus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 17.27,
+    "min_de2000_deutan_first6": 16.73,
+    "min_de2000_protan_first6": 13.88,
+    "min_de2000_tritan_first6": 11.09,
+    "optimal6_min_de2000": 17.27,
+    "optimal6_min_de2000_deutan": 16.73,
+    "optimal6_min_de2000_protan": 13.88,
+    "grayscale_L_spread": 0.74,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

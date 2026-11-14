@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_trimma_lantana",
+  "name": {
+    "en": "Trimma_lantana (fishualize)",
+    "zh": "Trimma_lantana（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4AB2B8",
+    "#EDBA36",
+    "#F6871F",
+    "#ED1C24",
+    "#791214"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F1C8BD",
+      "#E9A194",
+      "#DE7A6C",
+      "#D14E43",
+      "#C00212",
+      "#AD0000"
+    ],
+    "paired_diverging_stops": [
+      "#4AB2B8",
+      "#8AC8CB",
+      "#C0DEDE",
+      "#F4F3F2",
+      "#F2E1BC",
+      "#F0CE83",
+      "#EDBA36"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Trimma_lantana)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 19.54,
+    "min_de2000_deutan_first6": 6.65,
+    "min_de2000_protan_first6": 11.06,
+    "min_de2000_tritan_first6": 12.97,
+    "optimal6_min_de2000": 19.54,
+    "optimal6_min_de2000_deutan": 6.65,
+    "optimal6_min_de2000_protan": 11.06,
+    "grayscale_L_spread": 0.44,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

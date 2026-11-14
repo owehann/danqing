@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lisa_theovandoesburg",
+  "name": {
+    "en": "TheovanDoesburg (lisa)",
+    "zh": "TheovanDoesburg（lisa）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BD748F",
+    "#3D578E",
+    "#BFAB68",
+    "#DAD7D0",
+    "#272928"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D2D7",
+      "#AFB6C7",
+      "#8E9BB7",
+      "#6D80A6",
+      "#4E6595",
+      "#304B83"
+    ],
+    "paired_diverging_stops": [
+      "#3D578E",
+      "#7689B0",
+      "#B3BDD1",
+      "#F4F3F2",
+      "#E2DBC4",
+      "#D0C397",
+      "#BFAB68"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (lisa: TheovanDoesburg)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 20.58,
+    "min_de2000_deutan_first6": 20.23,
+    "min_de2000_protan_first6": 19.31,
+    "min_de2000_tritan_first6": 15.49,
+    "optimal6_min_de2000": 20.58,
+    "optimal6_min_de2000_deutan": 20.23,
+    "optimal6_min_de2000_protan": 19.31,
+    "grayscale_L_spread": 0.601,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

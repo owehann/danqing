@@ -1,0 +1,62 @@
+{
+  "id": "pypal_futurevisions_enceladus",
+  "name": {
+    "en": "enceladus (futurevisions)",
+    "zh": "enceladus（futurevisions）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1C1113",
+    "#1A2A29",
+    "#D1DCCE",
+    "#CE512C",
+    "#5D1722"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCBE",
+      "#DCA996",
+      "#CC866F",
+      "#BB6448",
+      "#A93E1D",
+      "#950500"
+    ],
+    "paired_diverging_stops": [
+      "#1C1113",
+      "#5C5354",
+      "#A59F9F",
+      "#F4F3F2",
+      "#E8EBE6",
+      "#DDE4DA",
+      "#D1DCCE"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (futurevisions: enceladus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 18.52,
+    "min_de2000_deutan_first6": 6.41,
+    "min_de2000_protan_first6": 4.17,
+    "min_de2000_tritan_first6": 20.13,
+    "optimal6_min_de2000": 18.52,
+    "optimal6_min_de2000_deutan": 6.41,
+    "optimal6_min_de2000_protan": 4.17,
+    "grayscale_L_spread": 0.689,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

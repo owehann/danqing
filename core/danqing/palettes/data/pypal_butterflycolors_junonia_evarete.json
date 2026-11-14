@@ -1,0 +1,62 @@
+{
+  "id": "pypal_butterflycolors_junonia_evarete",
+  "name": {
+    "en": "junonia_evarete (ButterflyColors)",
+    "zh": "junonia_evarete（ButterflyColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6A6758",
+    "#A68160",
+    "#D96F32",
+    "#BF522A",
+    "#734432"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CDBF",
+      "#D8AB98",
+      "#C88971",
+      "#B6684B",
+      "#A34522",
+      "#8E1C00"
+    ],
+    "paired_diverging_stops": [
+      "#6A6758",
+      "#969388",
+      "#C4C2BC",
+      "#F4F3F2",
+      "#EFC8B5",
+      "#E69D77",
+      "#D96F32"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ButterflyColors: junonia_evarete)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.67,
+    "min_de2000_deutan_first6": 9.07,
+    "min_de2000_protan_first6": 9.81,
+    "min_de2000_tritan_first6": 9.44,
+    "optimal6_min_de2000": 10.67,
+    "optimal6_min_de2000_deutan": 9.07,
+    "optimal6_min_de2000_protan": 9.81,
+    "grayscale_L_spread": 0.217,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

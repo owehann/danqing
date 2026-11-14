@@ -1,0 +1,62 @@
+{
+  "id": "pypal_taylorswift_evermore",
+  "name": {
+    "en": "evermore (tayloRswift)",
+    "zh": "evermore（tayloRswift）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EFEFEF",
+    "#827D73",
+    "#3D2620",
+    "#E89264",
+    "#474247"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEC0",
+      "#D1AE99",
+      "#BE8F74",
+      "#AB6F4F",
+      "#965028",
+      "#813000"
+    ],
+    "paired_diverging_stops": [
+      "#EFEFEF",
+      "#F1F0F0",
+      "#F2F2F1",
+      "#F4F3F2",
+      "#B3A9A5",
+      "#76645F",
+      "#3D2620"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tayloRswift: evermore)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.16,
+    "min_de2000_deutan_first6": 12.42,
+    "min_de2000_protan_first6": 12.07,
+    "min_de2000_tritan_first6": 14.64,
+    "optimal6_min_de2000": 13.16,
+    "optimal6_min_de2000_deutan": 12.42,
+    "optimal6_min_de2000_protan": 12.07,
+    "grayscale_L_spread": 0.657,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

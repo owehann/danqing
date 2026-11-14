@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_199",
+  "name": {
+    "en": "Sanzo Wada #199 (Ochre Red · Light Brownish Olive · Deep Lyons Blue)",
+    "zh": "和田三造 #199（Ochre Red · Light Brownish Olive · Deep Lyons Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#AB544D",
+    "#806E4B",
+    "#1C4286"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CDC5",
+      "#D2ACA3",
+      "#C08C83",
+      "#AC6C63",
+      "#984C45",
+      "#832B27"
+    ],
+    "paired_diverging_stops": [
+      "#AB544D",
+      "#C78981",
+      "#DFBDB8",
+      "#F4F3F2",
+      "#A7B6CF",
+      "#607CAC",
+      "#1C4286"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#199)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 23.37,
+    "min_de2000_deutan_first6": 1.39,
+    "min_de2000_protan_first6": 6.13,
+    "min_de2000_tritan_first6": 15.44,
+    "optimal6_min_de2000": 23.37,
+    "optimal6_min_de2000_deutan": 1.39,
+    "optimal6_min_de2000_protan": 6.13,
+    "grayscale_L_spread": 0.158,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

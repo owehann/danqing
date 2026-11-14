@@ -24,7 +24,25 @@
   "neutral": "#9498A0",
   "partners": {
     "sequential": "Blues",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BD",
+      "#E8A294",
+      "#DD7B6C",
+      "#CF5143",
+      "#BE1111",
+      "#AB0000"
+    ],
+    "paired_diverging_stops": [
+      "#6A3D9A",
+      "#957AB9",
+      "#C3B6D6",
+      "#F4F3F2",
+      "#C3C3A4",
+      "#959557",
+      "#6A6700"
+    ]
   },
   "source": {
     "title": "D3 Scale Chromatic / Observable (ColorBrewer Paired 12)",

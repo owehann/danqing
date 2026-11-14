@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "lajolla",
-    "diverging": "roma"
+    "diverging": "roma",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC5",
+      "#D5ABA3",
+      "#C38A82",
+      "#B06963",
+      "#9C4844",
+      "#872427"
+    ],
+    "paired_diverging_stops": [
+      "#191900",
+      "#595A46",
+      "#A3A398",
+      "#F4F3F2",
+      "#C3C2B1",
+      "#949374",
+      "#686638"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (lajolla)",

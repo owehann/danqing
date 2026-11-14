@@ -1,0 +1,64 @@
+{
+  "id": "pypal_yarrr_usualsuspects",
+  "name": {
+    "en": "usualsuspects (yarrr)",
+    "zh": "usualsuspects（yarrr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#323337",
+    "#534C53",
+    "#3F516A",
+    "#9B6659",
+    "#E83B41",
+    "#9F9CA2",
+    "#EAAE9D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9C0",
+      "#E5A49A",
+      "#D87E74",
+      "#C95550",
+      "#B8222A",
+      "#A40000"
+    ],
+    "paired_diverging_stops": [
+      "#3F516A",
+      "#778496",
+      "#B3BAC3",
+      "#F4F3F2",
+      "#F8BCB6",
+      "#F4837C",
+      "#E83B41"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (yarrr: usualsuspects)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 10.25,
+    "min_de2000_deutan_first6": 9.09,
+    "min_de2000_protan_first6": 6.46,
+    "min_de2000_tritan_first6": 10.88,
+    "optimal6_min_de2000": 10.25,
+    "optimal6_min_de2000_deutan": 9.09,
+    "optimal6_min_de2000_protan": 6.46,
+    "grayscale_L_spread": 0.481,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

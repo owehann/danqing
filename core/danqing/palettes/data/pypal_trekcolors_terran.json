@@ -1,0 +1,66 @@
+{
+  "id": "pypal_trekcolors_terran",
+  "name": {
+    "en": "terran (trekcolors)",
+    "zh": "terran（trekcolors）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#000000",
+    "#2A1C0F",
+    "#54391E",
+    "#7C5936",
+    "#A27F5E",
+    "#C7A585",
+    "#D3B9A2",
+    "#D1C3B9",
+    "#D0CED1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDD1C4",
+      "#C5B3A1",
+      "#AD9680",
+      "#967A5F",
+      "#7E5F3F",
+      "#68441F"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#E8E7E7",
+      "#DCDADC",
+      "#D0CED1"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (trekcolors: terran)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 11.73,
+    "min_de2000_deutan_first6": 11.84,
+    "min_de2000_protan_first6": 10.49,
+    "min_de2000_tritan_first6": 11.66,
+    "optimal6_min_de2000": 12.1,
+    "optimal6_min_de2000_deutan": 11.84,
+    "optimal6_min_de2000_protan": 10.49,
+    "grayscale_L_spread": 0.854,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

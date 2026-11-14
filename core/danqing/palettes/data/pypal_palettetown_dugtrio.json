@@ -1,0 +1,69 @@
+{
+  "id": "pypal_palettetown_dugtrio",
+  "name": {
+    "en": "dugtrio (palettetown)",
+    "zh": "dugtrio（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C07840",
+    "#A05820",
+    "#682000",
+    "#B0A870",
+    "#E0A060",
+    "#E0E0B0",
+    "#585020",
+    "#807848",
+    "#F86858",
+    "#F04030",
+    "#F8C8C0",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BD",
+      "#E5A494",
+      "#D97E6C",
+      "#CB5544",
+      "#BA2113",
+      "#A60000"
+    ],
+    "paired_diverging_stops": [
+      "#682000",
+      "#996552",
+      "#C7AA9F",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: dugtrio)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 12.08,
+    "min_de2000_deutan_first6": 6.13,
+    "min_de2000_protan_first6": 3.52,
+    "min_de2000_tritan_first6": 11.56,
+    "optimal6_min_de2000": 12.08,
+    "optimal6_min_de2000_deutan": 6.13,
+    "optimal6_min_de2000_protan": 3.52,
+    "grayscale_L_spread": 0.626,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

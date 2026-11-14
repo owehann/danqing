@@ -1,0 +1,62 @@
+{
+  "id": "pypal_butterflycolors_danaus_eresimus",
+  "name": {
+    "en": "danaus_eresimus (ButterflyColors)",
+    "zh": "danaus_eresimus（ButterflyColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C0C9CE",
+    "#BF7839",
+    "#A65C32",
+    "#8C4830",
+    "#422622"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC1",
+      "#D0AF9B",
+      "#BC9076",
+      "#A87152",
+      "#93532E",
+      "#7E3400"
+    ],
+    "paired_diverging_stops": [
+      "#C0C9CE",
+      "#D1D7DA",
+      "#E2E5E6",
+      "#F4F3F2",
+      "#B6A9A6",
+      "#7A6460",
+      "#422622"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ButterflyColors: danaus_eresimus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.19,
+    "min_de2000_deutan_first6": 8.87,
+    "min_de2000_protan_first6": 8.39,
+    "min_de2000_tritan_first6": 7.69,
+    "optimal6_min_de2000": 9.19,
+    "optimal6_min_de2000_deutan": 8.87,
+    "optimal6_min_de2000_protan": 8.39,
+    "grayscale_L_spread": 0.527,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

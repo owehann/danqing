@@ -17,7 +17,25 @@
   "neutral": "#B5B8BA",
   "partners": {
     "sequential": "navia",
-    "diverging": "broc"
+    "diverging": "broc",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCABD",
+      "#E2A694",
+      "#D5816C",
+      "#C55B44",
+      "#B42E13",
+      "#A00000"
+    ],
+    "paired_diverging_stops": [
+      "#00496F",
+      "#5A7F9A",
+      "#A5B8C6",
+      "#F4F3F2",
+      "#C9C29A",
+      "#A0923D",
+      "#796200"
+    ]
   },
   "source": {
     "title": "PNWColors Pacific Northwest Nature Palette (Bay)",

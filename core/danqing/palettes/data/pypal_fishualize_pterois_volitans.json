@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_pterois_volitans",
+  "name": {
+    "en": "Pterois_volitans (fishualize)",
+    "zh": "Pterois_volitans（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BFAB82",
+    "#EED17E",
+    "#D15217",
+    "#842D18",
+    "#2F2723"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBD",
+      "#DCA993",
+      "#CD876A",
+      "#BC633F",
+      "#AA3E03",
+      "#960100"
+    ],
+    "paired_diverging_stops": [
+      "#EED17E",
+      "#F0DDA7",
+      "#F2E8CD",
+      "#F4F3F2",
+      "#ADA9A6",
+      "#6B6461",
+      "#2F2723"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Pterois_volitans)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.91,
+    "min_de2000_deutan_first6": 12.85,
+    "min_de2000_protan_first6": 12.88,
+    "min_de2000_tritan_first6": 10.81,
+    "optimal6_min_de2000": 12.91,
+    "optimal6_min_de2000_deutan": 12.85,
+    "optimal6_min_de2000_protan": 12.88,
+    "grayscale_L_spread": 0.587,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

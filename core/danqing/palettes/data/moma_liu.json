@@ -18,7 +18,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CFBF",
+      "#CDB098",
+      "#B89271",
+      "#A3744B",
+      "#8E5721",
+      "#793A00"
+    ],
+    "paired_diverging_stops": [
+      "#3A7059",
+      "#779A89",
+      "#B5C6BC",
+      "#F4F3F2",
+      "#BFB7AE",
+      "#8C7F6D",
+      "#5C4A32"
+    ]
   },
   "source": {
     "title": "Tulou Collective Housing, Nanhai, Guandong, China, 2005-08, Xiao Du Liu, Yan Meng, Hui Wang, Digital rendering",

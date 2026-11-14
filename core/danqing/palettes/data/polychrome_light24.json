@@ -36,7 +36,25 @@
   "neutral": "#B0B0B0",
   "partners": {
     "sequential": "viridis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6C8E2",
+      "#D6A1DC",
+      "#C478D4",
+      "#B24ACB",
+      "#9F00C0",
+      "#8C00B4"
+    ],
+    "paired_diverging_stops": [
+      "#494DD0",
+      "#7A88E0",
+      "#B5BEEB",
+      "#F4F3F2",
+      "#C3C592",
+      "#96971D",
+      "#6C6900"
+    ]
   },
   "source": {
     "title": "Polychrome Light24 Multi-Cluster Palette",

@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ghibli_ponyodark",
+  "name": {
+    "en": "PonyoDark (ghibli)",
+    "zh": "PonyoDark（ghibli）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#262020",
+    "#2D3740",
+    "#14454C",
+    "#742D33",
+    "#6E3C31",
+    "#6C581D",
+    "#746353"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DBD2C1",
+      "#C1B59D",
+      "#A79979",
+      "#8E7E55",
+      "#766432",
+      "#5F4A03"
+    ],
+    "paired_diverging_stops": [
+      "#14454C",
+      "#5E7B80",
+      "#A7B6B7",
+      "#F4F3F2",
+      "#C4BDAA",
+      "#978964",
+      "#6C581D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ghibli: PonyoDark)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 7.66,
+    "min_de2000_deutan_first6": 2.11,
+    "min_de2000_protan_first6": 3.69,
+    "min_de2000_tritan_first6": 4.5,
+    "optimal6_min_de2000": 7.66,
+    "optimal6_min_de2000_deutan": 2.11,
+    "optimal6_min_de2000_protan": 3.69,
+    "grayscale_L_spread": 0.261,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

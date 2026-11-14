@@ -1,0 +1,63 @@
+{
+  "id": "pypal_natparkspalettes_iguazufalls",
+  "name": {
+    "en": "IguazuFalls (NatParksPalettes)",
+    "zh": "IguazuFalls（NatParksPalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#415521",
+    "#97AD3D",
+    "#4C3425",
+    "#7F6552",
+    "#5A8093",
+    "#9FBAD3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D5BD",
+      "#B6BB93",
+      "#98A169",
+      "#7B883E",
+      "#5F6F00",
+      "#455600"
+    ],
+    "paired_diverging_stops": [
+      "#97AD3D",
+      "#B5C580",
+      "#D4DCB9",
+      "#F4F3F2",
+      "#BFCCD2",
+      "#8CA5B2",
+      "#5A8093"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NatParksPalettes: IguazuFalls)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 17.03,
+    "min_de2000_deutan_first6": 8.56,
+    "min_de2000_protan_first6": 12.24,
+    "min_de2000_tritan_first6": 15.3,
+    "optimal6_min_de2000": 17.03,
+    "optimal6_min_de2000_deutan": 8.56,
+    "optimal6_min_de2000_protan": 12.24,
+    "grayscale_L_spread": 0.428,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

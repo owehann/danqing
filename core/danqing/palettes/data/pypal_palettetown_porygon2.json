@@ -1,0 +1,69 @@
+{
+  "id": "pypal_palettetown_porygon2",
+  "name": {
+    "en": "porygon2 (palettetown)",
+    "zh": "porygon2（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D86050",
+    "#F89088",
+    "#68C8F8",
+    "#40A0D8",
+    "#90E8F8",
+    "#003098",
+    "#2078C0",
+    "#F8F8F8",
+    "#B02010",
+    "#F8D0A8",
+    "#D0D0D0",
+    "#686878"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBBF",
+      "#DFA798",
+      "#D18372",
+      "#C15E4D",
+      "#AF3625",
+      "#9B0000"
+    ],
+    "paired_diverging_stops": [
+      "#003098",
+      "#5074BA",
+      "#9FB3D8",
+      "#F4F3F2",
+      "#E5B2A8",
+      "#CE7060",
+      "#B02010"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: porygon2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 11.36,
+    "min_de2000_deutan_first6": 10.42,
+    "min_de2000_protan_first6": 10.61,
+    "min_de2000_tritan_first6": 6.9,
+    "optimal6_min_de2000": 11.36,
+    "optimal6_min_de2000_deutan": 10.42,
+    "optimal6_min_de2000_protan": 10.61,
+    "grayscale_L_spread": 0.615,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ggthemr_camouflage",
+  "name": {
+    "en": "camouflage (ggthemr)",
+    "zh": "camouflage（ggthemr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F4F4A9",
+    "#6D9A58",
+    "#E5CA28",
+    "#4E4E36",
+    "#F6F6F6",
+    "#C8CC9F",
+    "#353525"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D5C3",
+      "#B0BB9F",
+      "#8EA27C",
+      "#6E8A5B",
+      "#4E7239",
+      "#2E5A13"
+    ],
+    "paired_diverging_stops": [
+      "#E5CA28",
+      "#EAD981",
+      "#EFE7BC",
+      "#F4F3F2",
+      "#AFAFA8",
+      "#6F6F63",
+      "#353525"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemr: camouflage)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 10.86,
+    "min_de2000_deutan_first6": 10.81,
+    "min_de2000_protan_first6": 10.68,
+    "min_de2000_tritan_first6": 8.63,
+    "optimal6_min_de2000": 10.86,
+    "optimal6_min_de2000_deutan": 10.81,
+    "optimal6_min_de2000_protan": 10.68,
+    "grayscale_L_spread": 0.649,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

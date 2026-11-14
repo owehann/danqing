@@ -1,0 +1,65 @@
+{
+  "id": "pypal_ltc_reading",
+  "name": {
+    "en": "reading (ltc)",
+    "zh": "reading（ltc）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EFBC68",
+    "#919F89",
+    "#EDBDAE",
+    "#57717C",
+    "#5F97A4",
+    "#CAEAC8",
+    "#95A1AE",
+    "#C8CFD6"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D3CF",
+      "#B2B8B7",
+      "#929D9F",
+      "#738388",
+      "#546A72",
+      "#37515C"
+    ],
+    "paired_diverging_stops": [
+      "#EFBC68",
+      "#F1CF9A",
+      "#F3E1C6",
+      "#F4F3F2",
+      "#BDC6C9",
+      "#899BA2",
+      "#57717C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ltc: reading)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 14.62,
+    "min_de2000_deutan_first6": 5.45,
+    "min_de2000_protan_first6": 8.33,
+    "min_de2000_tritan_first6": 4.32,
+    "optimal6_min_de2000": 14.62,
+    "optimal6_min_de2000_deutan": 5.45,
+    "optimal6_min_de2000_protan": 8.33,
+    "grayscale_L_spread": 0.373,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

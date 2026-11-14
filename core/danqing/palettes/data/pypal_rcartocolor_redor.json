@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_redor",
+  "name": {
+    "en": "RedOr (rcartocolor)",
+    "zh": "RedOr（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#F6D2A9",
+    "#F5B78E",
+    "#F19C7C",
+    "#EA8171",
+    "#DD686C",
+    "#CA5268",
+    "#B13F64"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CBCA",
+      "#D8A8AD",
+      "#C78591",
+      "#B56376",
+      "#A13F5C",
+      "#8C0F44"
+    ],
+    "paired_diverging_stops": [
+      "#F6D2A9",
+      "#F6DDC2",
+      "#F5E8DA",
+      "#F4F3F2",
+      "#E3B8C0",
+      "#CC7D91",
+      "#B13F64"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: RedOr)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 8.22,
+    "min_de2000_deutan_first6": 4.52,
+    "min_de2000_protan_first6": 5.86,
+    "min_de2000_tritan_first6": 6.05,
+    "optimal6_min_de2000": 8.47,
+    "optimal6_min_de2000_deutan": 4.52,
+    "optimal6_min_de2000_protan": 5.86,
+    "grayscale_L_spread": 0.348,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

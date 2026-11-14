@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_346",
+  "name": {
+    "en": "Sanzo Wada #346 (Rosolanc Purple · Turquoise Green · Light Green Yellow)",
+    "zh": "和田三造 #346（Rosolanc Purple · Turquoise Green · Light Green Yellow）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B73F74",
+    "#B5DECC",
+    "#C7D14F",
+    "#6D7E77"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CBCC",
+      "#D8A7B1",
+      "#C88498",
+      "#B6607F",
+      "#A23B66",
+      "#8D024F"
+    ],
+    "paired_diverging_stops": [
+      "#B73F74",
+      "#D17E9C",
+      "#E5B8C6",
+      "#F4F3F2",
+      "#E4E9C1",
+      "#D5DD8E",
+      "#C7D14F"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#346)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 24.26,
+    "min_de2000_deutan_first6": 2.18,
+    "min_de2000_protan_first6": 18.52,
+    "min_de2000_tritan_first6": 22.04,
+    "optimal6_min_de2000": 24.26,
+    "optimal6_min_de2000_deutan": 2.18,
+    "optimal6_min_de2000_protan": 18.52,
+    "grayscale_L_spread": 0.315,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

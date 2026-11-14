@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_cloyster",
+  "name": {
+    "en": "cloyster (palettetown)",
+    "zh": "cloyster（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#785080",
+    "#A878B8",
+    "#482050",
+    "#D8B0E8",
+    "#404040",
+    "#909090",
+    "#F8F8F8",
+    "#C0C0C0",
+    "#606060"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DCCFD2",
+      "#C3B0BD",
+      "#AA91A9",
+      "#927494",
+      "#7B5780",
+      "#633B6C"
+    ],
+    "paired_diverging_stops": [
+      "#482050",
+      "#7E6284",
+      "#B8A8BA",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: cloyster)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 15.55,
+    "min_de2000_deutan_first6": 14.63,
+    "min_de2000_protan_first6": 15.43,
+    "min_de2000_tritan_first6": 15.57,
+    "optimal6_min_de2000": 15.55,
+    "optimal6_min_de2000_deutan": 14.63,
+    "optimal6_min_de2000_protan": 15.43,
+    "grayscale_L_spread": 0.657,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

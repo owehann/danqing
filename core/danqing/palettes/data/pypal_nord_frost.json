@@ -1,0 +1,61 @@
+{
+  "id": "pypal_nord_frost",
+  "name": {
+    "en": "frost (nord)",
+    "zh": "frost（nord）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8FBCBB",
+    "#88C0D0",
+    "#81A1C1",
+    "#5E81AC"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D3D5",
+      "#AFB7C2",
+      "#8D9CB0",
+      "#6B829D",
+      "#4B688B",
+      "#2C4E78"
+    ],
+    "paired_diverging_stops": [
+      "#8FBCBB",
+      "#B1CECD",
+      "#D2E1DF",
+      "#F4F3F2",
+      "#C0CCDB",
+      "#8EA6C4",
+      "#5E81AC"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nord: frost)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 6.89,
+    "min_de2000_deutan_first6": 6.75,
+    "min_de2000_protan_first6": 7.33,
+    "min_de2000_tritan_first6": 3.62,
+    "optimal6_min_de2000": 6.89,
+    "optimal6_min_de2000_deutan": 6.75,
+    "optimal6_min_de2000_protan": 7.33,
+    "grayscale_L_spread": 0.18,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

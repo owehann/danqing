@@ -1,0 +1,69 @@
+{
+  "id": "pypal_palettetown_shuckle",
+  "name": {
+    "en": "shuckle (palettetown)",
+    "zh": "shuckle（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#802000",
+    "#F8F8F8",
+    "#C03810",
+    "#F8F858",
+    "#E8C048",
+    "#E09880",
+    "#F0C8B0",
+    "#B88828",
+    "#F07038",
+    "#705010",
+    "#F8B078",
+    "#908070"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBBE",
+      "#DEA895",
+      "#D0846E",
+      "#BF6046",
+      "#AD3918",
+      "#990000"
+    ],
+    "paired_diverging_stops": [
+      "#802000",
+      "#AB6856",
+      "#D1ADA1",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: shuckle)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 14.0,
+    "min_de2000_deutan_first6": 9.64,
+    "min_de2000_protan_first6": 11.43,
+    "min_de2000_tritan_first6": 9.36,
+    "optimal6_min_de2000": 14.0,
+    "optimal6_min_de2000_deutan": 9.64,
+    "optimal6_min_de2000_protan": 11.43,
+    "grayscale_L_spread": 0.581,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

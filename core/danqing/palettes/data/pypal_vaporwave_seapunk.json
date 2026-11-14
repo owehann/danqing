@@ -1,0 +1,62 @@
+{
+  "id": "pypal_vaporwave_seapunk",
+  "name": {
+    "en": "seaPunk (vapoRwave)",
+    "zh": "seaPunk（vapoRwave）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#296656",
+    "#569874",
+    "#7EC488",
+    "#A997AB",
+    "#532E57"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D5CB",
+      "#ABBBAF",
+      "#88A294",
+      "#64897A",
+      "#407161",
+      "#155A49"
+    ],
+    "paired_diverging_stops": [
+      "#7EC488",
+      "#A7D4AB",
+      "#CDE4CE",
+      "#F4F3F2",
+      "#BCADBC",
+      "#866B88",
+      "#532E57"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vapoRwave: seaPunk)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.85,
+    "min_de2000_deutan_first6": 14.39,
+    "min_de2000_protan_first6": 13.75,
+    "min_de2000_tritan_first6": 12.75,
+    "optimal6_min_de2000": 13.85,
+    "optimal6_min_de2000_deutan": 14.39,
+    "optimal6_min_de2000_protan": 13.75,
+    "grayscale_L_spread": 0.393,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

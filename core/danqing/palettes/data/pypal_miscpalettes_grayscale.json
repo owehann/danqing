@@ -1,0 +1,73 @@
+{
+  "id": "pypal_miscpalettes_grayscale",
+  "name": {
+    "en": "grayscale (miscpalettes)",
+    "zh": "grayscale（miscpalettes）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#C8C8C8",
+    "#BDBDBD",
+    "#B2B2B2",
+    "#A7A7A7",
+    "#9C9C9C",
+    "#919191",
+    "#868686",
+    "#7B7B7B",
+    "#707070",
+    "#656565",
+    "#5A5A5A",
+    "#4F4F4F",
+    "#444444",
+    "#393939",
+    "#2E2E2E",
+    "#232323"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D7D2CC",
+      "#BAB5B1",
+      "#9D9A96",
+      "#817F7D",
+      "#676664",
+      "#4D4D4D"
+    ],
+    "paired_diverging_stops": [
+      "#C8C8C8",
+      "#D6D6D6",
+      "#E5E5E4",
+      "#F4F3F2",
+      "#A7A7A6",
+      "#616161",
+      "#232323"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (miscpalettes: grayscale)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 16,
+    "max_colors": 16,
+    "min_de2000_first6": 2.8,
+    "min_de2000_deutan_first6": 2.8,
+    "min_de2000_protan_first6": 2.8,
+    "min_de2000_tritan_first6": 2.8,
+    "optimal6_min_de2000": 7.01,
+    "optimal6_min_de2000_deutan": 7.01,
+    "optimal6_min_de2000_protan": 7.01,
+    "grayscale_L_spread": 0.577,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

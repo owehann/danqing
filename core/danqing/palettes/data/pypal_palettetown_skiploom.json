@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_skiploom",
+  "name": {
+    "en": "skiploom (palettetown)",
+    "zh": "skiploom（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#60C838",
+    "#40A820",
+    "#186000",
+    "#88E838",
+    "#A85800",
+    "#F8D000",
+    "#F0A000",
+    "#F8E870",
+    "#A0A0A0",
+    "#D0D0D0",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD8BC",
+      "#A4C192",
+      "#7CA968",
+      "#53923C",
+      "#237B00",
+      "#006300"
+    ],
+    "paired_diverging_stops": [
+      "#F8D000",
+      "#F7DD7E",
+      "#F5E9BB",
+      "#F4F3F2",
+      "#D7D7D6",
+      "#BBBBBB",
+      "#A0A0A0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: skiploom)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 8.66,
+    "min_de2000_deutan_first6": 4.58,
+    "min_de2000_protan_first6": 2.2,
+    "min_de2000_tritan_first6": 8.23,
+    "optimal6_min_de2000": 8.66,
+    "optimal6_min_de2000_deutan": 4.58,
+    "optimal6_min_de2000_protan": 2.2,
+    "grayscale_L_spread": 0.551,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

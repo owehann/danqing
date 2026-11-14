@@ -1,0 +1,63 @@
+{
+  "id": "pypal_nbapalettes_nuggets_80s",
+  "name": {
+    "en": "nuggets_80s (nbapalettes)",
+    "zh": "nuggets_80s（nbapalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#041E42",
+    "#FFCD00",
+    "#E4002B",
+    "#FF6720",
+    "#0032A0",
+    "#AC145A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F1C8BF",
+      "#E9A197",
+      "#DE7970",
+      "#D14D4A",
+      "#C00021",
+      "#AD0000"
+    ],
+    "paired_diverging_stops": [
+      "#FFCD00",
+      "#FCDB7E",
+      "#F8E8BB",
+      "#F4F3F2",
+      "#A0B4DB",
+      "#5076BF",
+      "#0032A0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nbapalettes: nuggets_80s)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.6,
+    "min_de2000_deutan_first6": 12.59,
+    "min_de2000_protan_first6": 13.33,
+    "min_de2000_tritan_first6": 11.76,
+    "optimal6_min_de2000": 14.6,
+    "optimal6_min_de2000_deutan": 12.59,
+    "optimal6_min_de2000_protan": 13.33,
+    "grayscale_L_spread": 0.627,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

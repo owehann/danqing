@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_tealgrn",
+  "name": {
+    "en": "TealGrn (rcartocolor)",
+    "zh": "TealGrn（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#B0F2BC",
+    "#89E8AC",
+    "#67DBA5",
+    "#4CC8A3",
+    "#38B2A3",
+    "#2C98A0",
+    "#257D98"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD5D3",
+      "#A5BBC0",
+      "#7EA1AC",
+      "#568899",
+      "#297085",
+      "#005772"
+    ],
+    "paired_diverging_stops": [
+      "#B0F2BC",
+      "#C8F3CE",
+      "#DEF3E0",
+      "#F4F3F2",
+      "#B3CBD4",
+      "#71A4B6",
+      "#257D98"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: TealGrn)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 4.53,
+    "min_de2000_deutan_first6": 3.56,
+    "min_de2000_protan_first6": 2.98,
+    "min_de2000_tritan_first6": 4.45,
+    "optimal6_min_de2000": 6.36,
+    "optimal6_min_de2000_deutan": 7.69,
+    "optimal6_min_de2000_protan": 5.97,
+    "grayscale_L_spread": 0.352,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

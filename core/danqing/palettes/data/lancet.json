@@ -21,7 +21,25 @@
   "neutral": "#ADB6B6",
   "partners": {
     "sequential": "Blues",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F2C8BC",
+      "#EBA191",
+      "#E07967",
+      "#D34C3B",
+      "#C30000",
+      "#B00000"
+    ],
+    "paired_diverging_stops": [
+      "#924E32",
+      "#B58370",
+      "#D5BAAF",
+      "#F4F3F2",
+      "#A4A3A2",
+      "#5B5959",
+      "#1B1919"
+    ]
   },
   "source": {
     "title": "Factual journal color table curated in ggsci (pal_lancet)",

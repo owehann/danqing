@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_elekid",
+  "name": {
+    "en": "elekid (palettetown)",
+    "zh": "elekid（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E0A800",
+    "#F0C048",
+    "#B06800",
+    "#F8E098",
+    "#303040",
+    "#686868",
+    "#C8C8C8",
+    "#F8F8F8",
+    "#701000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CFBC",
+      "#CFB092",
+      "#BB9168",
+      "#A7733D",
+      "#935500",
+      "#7E3600"
+    ],
+    "paired_diverging_stops": [
+      "#E0A800",
+      "#E7C275",
+      "#EEDBB6",
+      "#F4F3F2",
+      "#ADADB3",
+      "#6B6B77",
+      "#303040"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: elekid)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 6.53,
+    "min_de2000_deutan_first6": 5.9,
+    "min_de2000_protan_first6": 6.28,
+    "min_de2000_tritan_first6": 6.03,
+    "optimal6_min_de2000": 6.53,
+    "optimal6_min_de2000_deutan": 5.9,
+    "optimal6_min_de2000_protan": 6.28,
+    "grayscale_L_spread": 0.663,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

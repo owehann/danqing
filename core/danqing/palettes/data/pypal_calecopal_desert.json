@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_desert",
+  "name": {
+    "en": "desert (calecopal)",
+    "zh": "desert（calecopal）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#F6EECF",
+    "#ECD6AB",
+    "#B09175",
+    "#632D1F",
+    "#291611"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DECCC2",
+      "#C6AA9F",
+      "#AD897D",
+      "#95695C",
+      "#7D4A3C",
+      "#652C1D"
+    ],
+    "paired_diverging_stops": [
+      "#F6EECF",
+      "#F5F0DB",
+      "#F5F2E6",
+      "#F4F3F2",
+      "#ABA29E",
+      "#675753",
+      "#291611"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: desert)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 7.48,
+    "min_de2000_deutan_first6": 6.26,
+    "min_de2000_protan_first6": 6.54,
+    "min_de2000_tritan_first6": 8.31,
+    "optimal6_min_de2000": 7.48,
+    "optimal6_min_de2000_deutan": 6.26,
+    "optimal6_min_de2000_protan": 6.54,
+    "grayscale_L_spread": 0.723,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

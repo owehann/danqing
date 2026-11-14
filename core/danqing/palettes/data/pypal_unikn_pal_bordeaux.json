@@ -1,0 +1,62 @@
+{
+  "id": "pypal_unikn_pal_bordeaux",
+  "name": {
+    "en": "pal_bordeaux (unikn)",
+    "zh": "pal_bordeaux（unikn）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#D2A6B4",
+    "#BC7A8F",
+    "#A54D69",
+    "#8E2043",
+    "#771434"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CDCB",
+      "#D2ABAF",
+      "#BF8A93",
+      "#AB6A79",
+      "#964960",
+      "#812748"
+    ],
+    "paired_diverging_stops": [
+      "#D2A6B4",
+      "#DEBFC8",
+      "#E9D9DD",
+      "#F4F3F2",
+      "#CFA9AE",
+      "#A5616E",
+      "#771434"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (unikn: pal_bordeaux)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 5.15,
+    "min_de2000_deutan_first6": 5.34,
+    "min_de2000_protan_first6": 4.44,
+    "min_de2000_tritan_first6": 5.01,
+    "optimal6_min_de2000": 5.15,
+    "optimal6_min_de2000_deutan": 5.34,
+    "optimal6_min_de2000_protan": 4.44,
+    "grayscale_L_spread": 0.392,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_gadus_morhua",
+  "name": {
+    "en": "Gadus_morhua (fishualize)",
+    "zh": "Gadus_morhua（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#5D784C",
+    "#ADDAB3",
+    "#778E3F",
+    "#B1F0EE",
+    "#6E927D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D4C0",
+      "#B5BA9A",
+      "#96A075",
+      "#798750",
+      "#5C6E29",
+      "#425600"
+    ],
+    "paired_diverging_stops": [
+      "#778E3F",
+      "#9FAF7C",
+      "#C8D1B6",
+      "#F4F3F2",
+      "#DFF2F1",
+      "#C9F1EF",
+      "#B1F0EE"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Gadus_morhua)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 11.39,
+    "min_de2000_deutan_first6": 11.41,
+    "min_de2000_protan_first6": 11.07,
+    "min_de2000_tritan_first6": 8.11,
+    "optimal6_min_de2000": 11.39,
+    "optimal6_min_de2000_deutan": 11.41,
+    "optimal6_min_de2000_protan": 11.07,
+    "grayscale_L_spread": 0.373,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

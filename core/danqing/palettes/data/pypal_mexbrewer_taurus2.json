@@ -1,0 +1,64 @@
+{
+  "id": "pypal_mexbrewer_taurus2",
+  "name": {
+    "en": "Taurus2 (MexBrewer)",
+    "zh": "Taurus2（MexBrewer）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#A19E97",
+    "#8F887A",
+    "#7B7466",
+    "#635C4A",
+    "#4E4735",
+    "#37352E",
+    "#23211A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D9D2C8",
+      "#BCB5A9",
+      "#A19A8C",
+      "#867F6F",
+      "#6C6554",
+      "#544C3A"
+    ],
+    "paired_diverging_stops": [
+      "#A19E97",
+      "#BCBAB4",
+      "#D8D6D3",
+      "#F4F3F2",
+      "#A7A6A2",
+      "#615F5A",
+      "#23211A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MexBrewer: Taurus2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 7.3,
+    "min_de2000_deutan_first6": 7.32,
+    "min_de2000_protan_first6": 7.27,
+    "min_de2000_tritan_first6": 7.28,
+    "optimal6_min_de2000": 7.3,
+    "optimal6_min_de2000_deutan": 7.32,
+    "optimal6_min_de2000_protan": 7.27,
+    "grayscale_L_spread": 0.452,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

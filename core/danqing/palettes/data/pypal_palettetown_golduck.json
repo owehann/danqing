@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_golduck",
+  "name": {
+    "en": "golduck (palettetown)",
+    "zh": "golduck（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#90B0D0",
+    "#5878A8",
+    "#305068",
+    "#A8D8F8",
+    "#F8F8F8",
+    "#D0D068",
+    "#F8F8A0",
+    "#A0A038",
+    "#707010",
+    "#880000",
+    "#C0C0C0",
+    "#D81818",
+    "#F8A8A8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BE",
+      "#E6A395",
+      "#DB7C6D",
+      "#CC5345",
+      "#BB1B16",
+      "#A80000"
+    ],
+    "paired_diverging_stops": [
+      "#305068",
+      "#6E8394",
+      "#AFBAC2",
+      "#F4F3F2",
+      "#F5F5D8",
+      "#F6F7BD",
+      "#F8F8A0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: golduck)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 10.53,
+    "min_de2000_deutan_first6": 9.57,
+    "min_de2000_protan_first6": 9.76,
+    "min_de2000_tritan_first6": 10.24,
+    "optimal6_min_de2000": 10.53,
+    "optimal6_min_de2000_deutan": 9.57,
+    "optimal6_min_de2000_protan": 9.76,
+    "grayscale_L_spread": 0.586,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

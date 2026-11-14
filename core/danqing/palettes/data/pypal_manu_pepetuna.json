@@ -1,0 +1,62 @@
+{
+  "id": "pypal_manu_pepetuna",
+  "name": {
+    "en": "Pepetuna (Manu)",
+    "zh": "Pepetuna（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#719E56",
+    "#71702F",
+    "#947163",
+    "#623711",
+    "#425266"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8D3C1",
+      "#BBB79C",
+      "#9F9D78",
+      "#848255",
+      "#6B6931",
+      "#525000"
+    ],
+    "paired_diverging_stops": [
+      "#719E56",
+      "#9CBA8A",
+      "#C7D7BD",
+      "#F4F3F2",
+      "#B5BAC1",
+      "#798493",
+      "#425266"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Pepetuna)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 18.28,
+    "min_de2000_deutan_first6": 10.97,
+    "min_de2000_protan_first6": 13.51,
+    "min_de2000_tritan_first6": 13.57,
+    "optimal6_min_de2000": 18.28,
+    "optimal6_min_de2000_deutan": 10.97,
+    "optimal6_min_de2000_protan": 13.51,
+    "grayscale_L_spread": 0.266,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

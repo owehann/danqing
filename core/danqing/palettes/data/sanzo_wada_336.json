@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_336",
+  "name": {
+    "en": "Sanzo Wada #336 (Eosine Pink · Hay's Russet · Pale Lemon Yellow)",
+    "zh": "和田三造 #336（Eosine Pink · Hay's Russet · Pale Lemon Yellow）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F37F94",
+    "#793327",
+    "#FFEFAE",
+    "#42533E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CEC4",
+      "#CFADA2",
+      "#BB8E81",
+      "#A66F62",
+      "#915043",
+      "#7B3125"
+    ],
+    "paired_diverging_stops": [
+      "#FFEFAE",
+      "#FBF1C6",
+      "#F7F2DC",
+      "#F4F3F2",
+      "#B5BBB2",
+      "#798576",
+      "#42533E"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#336)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 34.37,
+    "min_de2000_deutan_first6": 8.97,
+    "min_de2000_protan_first6": 6.23,
+    "min_de2000_tritan_first6": 27.82,
+    "optimal6_min_de2000": 34.37,
+    "optimal6_min_de2000_deutan": 8.97,
+    "optimal6_min_de2000_protan": 6.23,
+    "grayscale_L_spread": 0.535,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

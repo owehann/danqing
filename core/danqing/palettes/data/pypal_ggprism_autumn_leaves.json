@@ -1,0 +1,65 @@
+{
+  "id": "pypal_ggprism_autumn_leaves",
+  "name": {
+    "en": "autumn_leaves (ggprism)",
+    "zh": "autumn_leaves（ggprism）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A00000",
+    "#FF0000",
+    "#CE0665",
+    "#FF8080",
+    "#9F044D",
+    "#F94040",
+    "#FF6000",
+    "#C06000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC8C9",
+      "#E4A1AC",
+      "#D77A8F",
+      "#C85074",
+      "#B6175A",
+      "#A20041"
+    ],
+    "paired_diverging_stops": [
+      "#9F044D",
+      "#C36680",
+      "#DFACB7",
+      "#F4F3F2",
+      "#FEC7B1",
+      "#FF976E",
+      "#FF6000"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggprism: autumn_leaves)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 8.16,
+    "min_de2000_deutan_first6": 4.42,
+    "min_de2000_protan_first6": 7.02,
+    "min_de2000_tritan_first6": 6.55,
+    "optimal6_min_de2000": 8.16,
+    "optimal6_min_de2000_deutan": 4.42,
+    "optimal6_min_de2000_protan": 7.02,
+    "grayscale_L_spread": 0.301,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

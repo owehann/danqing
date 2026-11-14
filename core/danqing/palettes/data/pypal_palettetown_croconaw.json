@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_croconaw",
+  "name": {
+    "en": "croconaw (palettetown)",
+    "zh": "croconaw（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#58A8E0",
+    "#3080C0",
+    "#484880",
+    "#E0B050",
+    "#780000",
+    "#F8E060",
+    "#C82818",
+    "#80C8F8",
+    "#987008",
+    "#F85820",
+    "#E04020",
+    "#F8A858",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCABE",
+      "#E2A596",
+      "#D5816F",
+      "#C65A48",
+      "#B42D1D",
+      "#A00000"
+    ],
+    "paired_diverging_stops": [
+      "#3080C0",
+      "#76A7D2",
+      "#B5CDE3",
+      "#F4F3F2",
+      "#F5EEC7",
+      "#F6E799",
+      "#F8E060"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: croconaw)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 13.27,
+    "min_de2000_deutan_first6": 9.6,
+    "min_de2000_protan_first6": 11.19,
+    "min_de2000_tritan_first6": 11.9,
+    "optimal6_min_de2000": 13.27,
+    "optimal6_min_de2000_deutan": 9.6,
+    "optimal6_min_de2000_protan": 11.19,
+    "grayscale_L_spread": 0.62,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

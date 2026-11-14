@@ -1,0 +1,63 @@
+{
+  "id": "pypal_dresdencolor_ghoststory",
+  "name": {
+    "en": "ghoststory (DresdenColor)",
+    "zh": "ghoststory（DresdenColor）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#33645F",
+    "#9D1B1F",
+    "#CEA0B5",
+    "#F6F5F1",
+    "#7B7987",
+    "#1D2731"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC2",
+      "#DCA89E",
+      "#CD857A",
+      "#BC6158",
+      "#A93B36",
+      "#950010"
+    ],
+    "paired_diverging_stops": [
+      "#F6F5F1",
+      "#F5F4F1",
+      "#F5F4F2",
+      "#F4F3F2",
+      "#A5A9AC",
+      "#5D646C",
+      "#1D2731"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (DresdenColor: ghoststory)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 21.98,
+    "min_de2000_deutan_first6": 12.93,
+    "min_de2000_protan_first6": 12.71,
+    "min_de2000_tritan_first6": 21.04,
+    "optimal6_min_de2000": 21.98,
+    "optimal6_min_de2000_deutan": 12.93,
+    "optimal6_min_de2000_protan": 12.71,
+    "grayscale_L_spread": 0.702,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

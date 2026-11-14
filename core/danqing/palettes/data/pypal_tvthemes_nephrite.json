@@ -1,0 +1,64 @@
+{
+  "id": "pypal_tvthemes_nephrite",
+  "name": {
+    "en": "Nephrite (tvthemes)",
+    "zh": "Nephrite（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#202E13",
+    "#83C874",
+    "#35782B",
+    "#0C120B",
+    "#3B3616",
+    "#6E7469",
+    "#204519"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D6C2",
+      "#ABBD9D",
+      "#87A579",
+      "#638D56",
+      "#3E7532",
+      "#115E02"
+    ],
+    "paired_diverging_stops": [
+      "#83C874",
+      "#AAD79F",
+      "#CFE5C8",
+      "#F4F3F2",
+      "#9DA09B",
+      "#4F534D",
+      "#0C120B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Nephrite)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 10.16,
+    "min_de2000_deutan_first6": 5.23,
+    "min_de2000_protan_first6": 3.83,
+    "min_de2000_tritan_first6": 8.89,
+    "optimal6_min_de2000": 10.16,
+    "optimal6_min_de2000_deutan": 5.23,
+    "optimal6_min_de2000_protan": 3.83,
+    "grayscale_L_spread": 0.593,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

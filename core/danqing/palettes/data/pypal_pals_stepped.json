@@ -1,0 +1,81 @@
+{
+  "id": "pypal_pals_stepped",
+  "name": {
+    "en": "stepped (pals)",
+    "zh": "stepped（pals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#990F26",
+    "#B33E52",
+    "#CC7A88",
+    "#E6B8BF",
+    "#99600F",
+    "#B3823E",
+    "#CCAA7A",
+    "#E6D2B8",
+    "#54990F",
+    "#78B33E",
+    "#A3CC7A",
+    "#CFE6B8",
+    "#0F8299",
+    "#3E9FB3",
+    "#7ABECC",
+    "#B8DEE6",
+    "#3D0F99",
+    "#653EB3",
+    "#967ACC",
+    "#C7B8E6",
+    "#333333",
+    "#666666",
+    "#999999",
+    "#CCCCCC"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8CFDF",
+      "#BBAFD5",
+      "#A08FCB",
+      "#8670BF",
+      "#6D4FB3",
+      "#5729A5"
+    ],
+    "paired_diverging_stops": [
+      "#54990F",
+      "#89B86C",
+      "#BED6AF",
+      "#F4F3F2",
+      "#AEACD9",
+      "#6F66BB",
+      "#3D0F99"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (pals: stepped)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 24,
+    "max_colors": 24,
+    "min_de2000_first6": 11.38,
+    "min_de2000_deutan_first6": 11.21,
+    "min_de2000_protan_first6": 12.47,
+    "min_de2000_tritan_first6": 6.17,
+    "optimal6_min_de2000": 11.38,
+    "optimal6_min_de2000_deutan": 11.21,
+    "optimal6_min_de2000_protan": 12.47,
+    "grayscale_L_spread": 0.575,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

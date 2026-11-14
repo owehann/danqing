@@ -1,0 +1,63 @@
+{
+  "id": "pypal_wesanderson_asteroidcity2",
+  "name": {
+    "en": "AsteroidCity2 (wesanderson)",
+    "zh": "AsteroidCity2（wesanderson）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C52E19",
+    "#AC9765",
+    "#54D8B1",
+    "#B67C3B",
+    "#175149",
+    "#AF4E24"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCABE",
+      "#E1A697",
+      "#D38270",
+      "#C35C49",
+      "#B2311D",
+      "#9E0000"
+    ],
+    "paired_diverging_stops": [
+      "#C52E19",
+      "#DC7967",
+      "#ECB7AB",
+      "#F4F3F2",
+      "#A9BAB6",
+      "#62847D",
+      "#175149"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (wesanderson: AsteroidCity2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 7.87,
+    "min_de2000_deutan_first6": 2.23,
+    "min_de2000_protan_first6": 3.76,
+    "min_de2000_tritan_first6": 6.82,
+    "optimal6_min_de2000": 7.87,
+    "optimal6_min_de2000_deutan": 2.23,
+    "optimal6_min_de2000_protan": 3.76,
+    "grayscale_L_spread": 0.403,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

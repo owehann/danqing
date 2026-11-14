@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_142",
+  "name": {
+    "en": "Sanzo Wada #142 (Hydrangea Red · Sulphine Yellow · Salvia Blue)",
+    "zh": "和田三造 #142（Hydrangea Red · Sulphine Yellow · Salvia Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A94151",
+    "#C19F2C",
+    "#97ACC8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC7",
+      "#D6AAA7",
+      "#C58889",
+      "#B3666C",
+      "#9F444F",
+      "#8A1C35"
+    ],
+    "paired_diverging_stops": [
+      "#C19F2C",
+      "#D2BB79",
+      "#E3D8B7",
+      "#F4F3F2",
+      "#D4DBE4",
+      "#B5C3D6",
+      "#97ACC8"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#142)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 41.53,
+    "min_de2000_deutan_first6": 25.65,
+    "min_de2000_protan_first6": 36.19,
+    "min_de2000_tritan_first6": 25.74,
+    "optimal6_min_de2000": 41.53,
+    "optimal6_min_de2000_deutan": 25.65,
+    "optimal6_min_de2000_protan": 36.19,
+    "grayscale_L_spread": 0.217,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "pypal_wesanderson_moonrise2",
+  "name": {
+    "en": "Moonrise2 (wesanderson)",
+    "zh": "Moonrise2（wesanderson）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#798E87",
+    "#C27D38",
+    "#CCC591",
+    "#29211F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CFBE",
+      "#CEB095",
+      "#B9926E",
+      "#A57445",
+      "#905615",
+      "#7B3800"
+    ],
+    "paired_diverging_stops": [
+      "#CCC591",
+      "#D9D4B2",
+      "#E6E4D2",
+      "#F4F3F2",
+      "#AAA6A4",
+      "#665F5D",
+      "#29211F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (wesanderson: Moonrise2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 24.11,
+    "min_de2000_deutan_first6": 16.54,
+    "min_de2000_protan_first6": 20.12,
+    "min_de2000_tritan_first6": 23.55,
+    "optimal6_min_de2000": 24.11,
+    "optimal6_min_de2000_deutan": 16.54,
+    "optimal6_min_de2000_protan": 20.12,
+    "grayscale_L_spread": 0.56,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

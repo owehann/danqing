@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_sunkern",
+  "name": {
+    "en": "sunkern (palettetown)",
+    "zh": "sunkern（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8F800",
+    "#B0A030",
+    "#50A038",
+    "#504828",
+    "#D0C830",
+    "#686030",
+    "#70D028",
+    "#A0F038",
+    "#206010",
+    "#483828",
+    "#F800F8",
+    "#707088",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECC6DE",
+      "#E09CD5",
+      "#D270CA",
+      "#C23DBD",
+      "#B000B0",
+      "#9C00A2"
+    ],
+    "paired_diverging_stops": [
+      "#F8F800",
+      "#F6F885",
+      "#F4F6C0",
+      "#F4F3F2",
+      "#FCBCF7",
+      "#FD7EF9",
+      "#F800F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: sunkern)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 9.1,
+    "min_de2000_deutan_first6": 8.37,
+    "min_de2000_protan_first6": 3.61,
+    "min_de2000_tritan_first6": 8.14,
+    "optimal6_min_de2000": 9.1,
+    "optimal6_min_de2000_deutan": 8.37,
+    "optimal6_min_de2000_protan": 3.61,
+    "grayscale_L_spread": 0.625,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_149",
+  "name": {
+    "en": "Sanzo Wada #149 (Olive Ocher · Orange · Deep Slate Green)",
+    "zh": "和田三造 #149（Olive Ocher · Orange · Deep Slate Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D6B43E",
+    "#F37420",
+    "#112F2C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCBA",
+      "#DCAA8E",
+      "#CD8862",
+      "#BC6532",
+      "#AA4000",
+      "#960600"
+    ],
+    "paired_diverging_stops": [
+      "#D6B43E",
+      "#E0CA84",
+      "#EADFBC",
+      "#F4F3F2",
+      "#A2ACAA",
+      "#576B68",
+      "#112F2C"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#149)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 27.62,
+    "min_de2000_deutan_first6": 6.77,
+    "min_de2000_protan_first6": 13.44,
+    "min_de2000_tritan_first6": 17.62,
+    "optimal6_min_de2000": 27.62,
+    "optimal6_min_de2000_deutan": 6.77,
+    "optimal6_min_de2000_protan": 13.44,
+    "grayscale_L_spread": 0.498,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

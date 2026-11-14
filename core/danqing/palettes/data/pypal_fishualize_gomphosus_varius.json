@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_gomphosus_varius",
+  "name": {
+    "en": "Gomphosus_varius (fishualize)",
+    "zh": "Gomphosus_varius（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6D62AF",
+    "#163885",
+    "#41DEFF",
+    "#A9FC21",
+    "#107E68"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D0D9",
+      "#B8B2CB",
+      "#9B95BC",
+      "#7F78AC",
+      "#655B9C",
+      "#4C3E8B"
+    ],
+    "paired_diverging_stops": [
+      "#163885",
+      "#5A76AB",
+      "#A4B3D0",
+      "#F4F3F2",
+      "#DCF8BF",
+      "#C3FB85",
+      "#A9FC21"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Gomphosus_varius)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 17.73,
+    "min_de2000_deutan_first6": 16.81,
+    "min_de2000_protan_first6": 15.31,
+    "min_de2000_tritan_first6": 13.88,
+    "optimal6_min_de2000": 17.73,
+    "optimal6_min_de2000_deutan": 16.81,
+    "optimal6_min_de2000_protan": 15.31,
+    "grayscale_L_spread": 0.536,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

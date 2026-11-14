@@ -1,0 +1,63 @@
+{
+  "id": "pypal_natparkspalettes_kingscanyon",
+  "name": {
+    "en": "KingsCanyon (NatParksPalettes)",
+    "zh": "KingsCanyon（NatParksPalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#613921",
+    "#A77652",
+    "#F2C27B",
+    "#AAC9ED",
+    "#44637D",
+    "#8E949F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D3D2",
+      "#B0B7BD",
+      "#8F9DA8",
+      "#6F8393",
+      "#4F697F",
+      "#30506B"
+    ],
+    "paired_diverging_stops": [
+      "#F2C27B",
+      "#F3D3A5",
+      "#F4E3CC",
+      "#F4F3F2",
+      "#B6C1CA",
+      "#7C91A3",
+      "#44637D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NatParksPalettes: KingsCanyon)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 17.23,
+    "min_de2000_deutan_first6": 16.87,
+    "min_de2000_protan_first6": 17.36,
+    "min_de2000_tritan_first6": 18.74,
+    "optimal6_min_de2000": 17.23,
+    "optimal6_min_de2000_deutan": 16.87,
+    "optimal6_min_de2000_protan": 17.36,
+    "grayscale_L_spread": 0.454,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

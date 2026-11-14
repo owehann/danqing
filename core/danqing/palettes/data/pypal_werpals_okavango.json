@@ -1,0 +1,67 @@
+{
+  "id": "pypal_werpals_okavango",
+  "name": {
+    "en": "okavango (werpals)",
+    "zh": "okavango（werpals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F7EDCA",
+    "#F5DC9A",
+    "#8EB155",
+    "#497367",
+    "#2B3F00",
+    "#764000",
+    "#E19E57",
+    "#020570",
+    "#3165B1",
+    "#B8F7FE"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED3DC",
+      "#A8B7CF",
+      "#839CC2",
+      "#5E81B5",
+      "#3A66A6",
+      "#114A97"
+    ],
+    "paired_diverging_stops": [
+      "#F5DC9A",
+      "#F5E4B9",
+      "#F4ECD6",
+      "#F4F3F2",
+      "#96A7CA",
+      "#415D9F",
+      "#020570"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (werpals: okavango)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 8.78,
+    "min_de2000_deutan_first6": 8.43,
+    "min_de2000_protan_first6": 4.52,
+    "min_de2000_tritan_first6": 7.59,
+    "optimal6_min_de2000": 8.78,
+    "optimal6_min_de2000_deutan": 8.43,
+    "optimal6_min_de2000_protan": 4.52,
+    "grayscale_L_spread": 0.692,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

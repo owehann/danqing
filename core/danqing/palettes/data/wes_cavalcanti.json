@@ -17,7 +17,25 @@
   "neutral": "#B9B4AB",
   "partners": {
     "sequential": "lajolla",
-    "diverging": "RdYlBu"
+    "diverging": "RdYlBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC1",
+      "#D8AA9B",
+      "#C78977",
+      "#B56753",
+      "#A2452F",
+      "#8D1C00"
+    ],
+    "paired_diverging_stops": [
+      "#7F5F00",
+      "#A4903B",
+      "#CBC199",
+      "#F4F3F2",
+      "#A2B4A4",
+      "#56785D",
+      "#02401B"
+    ]
   },
   "source": {
     "title": "wesanderson Cinema Color Palette (Cavalcanti1)",

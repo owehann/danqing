@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_antennarius_commerson",
+  "name": {
+    "en": "Antennarius_commerson (fishualize)",
+    "zh": "Antennarius_commerson（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#26677F",
+    "#635C72",
+    "#89374F",
+    "#C46F3E",
+    "#B79E4B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CDCA",
+      "#D1ABAD",
+      "#BE8B92",
+      "#AA6B77",
+      "#954B5D",
+      "#7F2A45"
+    ],
+    "paired_diverging_stops": [
+      "#26677F",
+      "#6D94A4",
+      "#AFC3CB",
+      "#F4F3F2",
+      "#DFD7BC",
+      "#CBBA86",
+      "#B79E4B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Antennarius_commerson)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 19.89,
+    "min_de2000_deutan_first6": 6.12,
+    "min_de2000_protan_first6": 3.47,
+    "min_de2000_tritan_first6": 15.23,
+    "optimal6_min_de2000": 19.89,
+    "optimal6_min_de2000_deutan": 6.12,
+    "optimal6_min_de2000_protan": 3.47,
+    "grayscale_L_spread": 0.248,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

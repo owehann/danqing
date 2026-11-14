@@ -20,7 +20,25 @@
   "neutral": "#A6A49F",
   "partners": {
     "sequential": "oslo",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DBD2C1",
+      "#C1B59C",
+      "#A89978",
+      "#8F7E55",
+      "#776331",
+      "#604A01"
+    ],
+    "paired_diverging_stops": [
+      "#5A6949",
+      "#8A957E",
+      "#BEC3B7",
+      "#F4F3F2",
+      "#A7BBBF",
+      "#5C848E",
+      "#005160"
+    ]
   },
   "source": {
     "title": "Brush Washer (Ru ware) & Jar with Cover (Jun ware)",

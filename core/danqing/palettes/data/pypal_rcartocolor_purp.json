@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_purp",
+  "name": {
+    "en": "Purp (rcartocolor)",
+    "zh": "Purp（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#F3E0F7",
+    "#E4C7F1",
+    "#D1AFE8",
+    "#B998DD",
+    "#9F82CE",
+    "#826DBA",
+    "#63589F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D7D0D8",
+      "#B8B2C9",
+      "#9B95B9",
+      "#7F78A9",
+      "#655C98",
+      "#4D3F87"
+    ],
+    "paired_diverging_stops": [
+      "#F3E0F7",
+      "#F3E6F5",
+      "#F4EDF4",
+      "#F4F3F2",
+      "#C0BED7",
+      "#908ABC",
+      "#63589F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: Purp)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 6.62,
+    "min_de2000_deutan_first6": 6.45,
+    "min_de2000_protan_first6": 6.46,
+    "min_de2000_tritan_first6": 5.42,
+    "optimal6_min_de2000": 7.31,
+    "optimal6_min_de2000_deutan": 6.94,
+    "optimal6_min_de2000_protan": 6.87,
+    "grayscale_L_spread": 0.425,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

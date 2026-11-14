@@ -1,0 +1,67 @@
+{
+  "id": "pypal_werpals_jozi",
+  "name": {
+    "en": "jozi (werpals)",
+    "zh": "jozi（werpals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D1B88B",
+    "#ECD8A1",
+    "#E4CC79",
+    "#DDB400",
+    "#D57B4B",
+    "#AA4812",
+    "#588176",
+    "#ABB5B4",
+    "#6290A4",
+    "#193146"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDBF",
+      "#D6AC97",
+      "#C58B70",
+      "#B26B49",
+      "#9F491E",
+      "#8A2400"
+    ],
+    "paired_diverging_stops": [
+      "#DDB400",
+      "#E5CA77",
+      "#ECDFB7",
+      "#F4F3F2",
+      "#A5AEB5",
+      "#5C6C7C",
+      "#193146"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (werpals: jozi)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 6.21,
+    "min_de2000_deutan_first6": 5.96,
+    "min_de2000_protan_first6": 6.61,
+    "min_de2000_tritan_first6": 4.03,
+    "optimal6_min_de2000": 6.21,
+    "optimal6_min_de2000_deutan": 5.96,
+    "optimal6_min_de2000_protan": 6.61,
+    "grayscale_L_spread": 0.581,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

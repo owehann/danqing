@@ -1,0 +1,63 @@
+{
+  "id": "pypal_nationalparkcolors_mtmckinley",
+  "name": {
+    "en": "MtMckinley (nationalparkcolors)",
+    "zh": "MtMckinley（nationalparkcolors）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D5AE63",
+    "#6E6C81",
+    "#F7ECD8",
+    "#3F3939",
+    "#93AD90",
+    "#C9B793"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D7D1CF",
+      "#B9B5B8",
+      "#9D99A1",
+      "#817D8A",
+      "#666374",
+      "#4C4A5F"
+    ],
+    "paired_diverging_stops": [
+      "#F7ECD8",
+      "#F6EEE1",
+      "#F5F1E9",
+      "#F4F3F2",
+      "#B3B0AF",
+      "#777271",
+      "#3F3939"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nationalparkcolors: MtMckinley)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 9.73,
+    "min_de2000_deutan_first6": 8.52,
+    "min_de2000_protan_first6": 5.43,
+    "min_de2000_tritan_first6": 8.4,
+    "optimal6_min_de2000": 9.73,
+    "optimal6_min_de2000_deutan": 8.52,
+    "optimal6_min_de2000_protan": 5.43,
+    "grayscale_L_spread": 0.596,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

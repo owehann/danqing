@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_125",
+  "name": {
+    "en": "Sanzo Wada #125 (Fawn · Cerulian Blue · Violet Blue)",
+    "zh": "和田三造 #125（Fawn · Cerulian Blue · Violet Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D1B0A7",
+    "#0093A5",
+    "#40456A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD6D2",
+      "#A0BDBE",
+      "#75A4AA",
+      "#478C95",
+      "#007482",
+      "#005C6E"
+    ],
+    "paired_diverging_stops": [
+      "#D1B0A7",
+      "#DDC6BF",
+      "#E9DDD8",
+      "#F4F3F2",
+      "#B3B6C3",
+      "#777B96",
+      "#40456A"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#125)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 34.16,
+    "min_de2000_deutan_first6": 21.33,
+    "min_de2000_protan_first6": 21.55,
+    "min_de2000_tritan_first6": 29.58,
+    "optimal6_min_de2000": 34.16,
+    "optimal6_min_de2000_deutan": 21.33,
+    "optimal6_min_de2000_protan": 21.55,
+    "grayscale_L_spread": 0.381,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

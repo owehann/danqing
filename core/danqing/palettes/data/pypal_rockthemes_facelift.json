@@ -1,0 +1,61 @@
+{
+  "id": "pypal_rockthemes_facelift",
+  "name": {
+    "en": "facelift (rockthemes)",
+    "zh": "facelift（rockthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A2DA3C",
+    "#C12A45",
+    "#8B4F82",
+    "#44486D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC4",
+      "#E0A5A2",
+      "#D28081",
+      "#C25B61",
+      "#B03042",
+      "#9C0023"
+    ],
+    "paired_diverging_stops": [
+      "#A2DA3C",
+      "#BDE486",
+      "#D8ECBE",
+      "#F4F3F2",
+      "#B5B7C4",
+      "#7A7E98",
+      "#44486D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rockthemes: facelift)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 18.55,
+    "min_de2000_deutan_first6": 11.19,
+    "min_de2000_protan_first6": 6.46,
+    "min_de2000_tritan_first6": 17.85,
+    "optimal6_min_de2000": 18.55,
+    "optimal6_min_de2000_deutan": 11.19,
+    "optimal6_min_de2000_protan": 6.46,
+    "grayscale_L_spread": 0.406,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

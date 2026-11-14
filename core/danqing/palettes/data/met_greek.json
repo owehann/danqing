@@ -17,7 +17,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCC1",
+      "#D9AA9B",
+      "#C98877",
+      "#B76653",
+      "#A4422F",
+      "#901600"
+    ],
+    "paired_diverging_stops": [
+      "#3C0D03",
+      "#78544A",
+      "#B5A09A",
+      "#F4F3F2",
+      "#CFBF9D",
+      "#AB8C46",
+      "#885A00"
+    ]
   },
   "source": {
     "title": "Terracotta neck-amphora (jar), ca. 550–540 B.C., Greek",

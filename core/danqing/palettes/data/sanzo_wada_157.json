@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_157",
+  "name": {
+    "en": "Sanzo Wada #157 (Pansy Purple · Olive Ocher · Olympic Blue)",
+    "zh": "和田三造 #157（Pansy Purple · Olive Ocher · Olympic Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7D133A",
+    "#D6B43E",
+    "#5A82B3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CAC8",
+      "#D3A6A9",
+      "#C0828B",
+      "#AC5F6F",
+      "#963B53",
+      "#7F0C39"
+    ],
+    "paired_diverging_stops": [
+      "#D6B43E",
+      "#E0CA84",
+      "#EADFBC",
+      "#F4F3F2",
+      "#BFCDDE",
+      "#8CA7C9",
+      "#5A82B3"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#157)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 43.17,
+    "min_de2000_deutan_first6": 35.13,
+    "min_de2000_protan_first6": 32.17,
+    "min_de2000_tritan_first6": 43.76,
+    "optimal6_min_de2000": 43.17,
+    "optimal6_min_de2000_deutan": 35.13,
+    "optimal6_min_de2000_protan": 32.17,
+    "grayscale_L_spread": 0.389,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

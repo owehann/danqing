@@ -21,7 +21,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBBD",
+      "#DEA893",
+      "#CF856A",
+      "#BF6140",
+      "#AD3A04",
+      "#990000"
+    ],
+    "paired_diverging_stops": [
+      "#212E52",
+      "#606B85",
+      "#A7ADBB",
+      "#F4F3F2",
+      "#D5BD99",
+      "#B6873A",
+      "#955100"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (Acadia)",

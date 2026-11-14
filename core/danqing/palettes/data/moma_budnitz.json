@@ -17,7 +17,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFCABA",
+      "#E5A58D",
+      "#D98060",
+      "#CA582F",
+      "#B92600",
+      "#A60000"
+    ],
+    "paired_diverging_stops": [
+      "#766400",
+      "#9D9424",
+      "#C7C494",
+      "#F4F3F2",
+      "#BCB2D1",
+      "#8773AF",
+      "#57348B"
+    ]
   },
   "source": {
     "title": "Cycle Dunny, 2005, Paul Budnitz, Tristan Eaton, Cycle, Vinyl",

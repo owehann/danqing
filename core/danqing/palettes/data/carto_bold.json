@@ -23,7 +23,25 @@
   "neutral": "#A5AA99",
   "partners": {
     "sequential": "viridis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECC8D0",
+      "#E0A1BA",
+      "#D27AA4",
+      "#C2508E",
+      "#B01878",
+      "#9B0063"
+    ],
+    "paired_diverging_stops": [
+      "#8D5600",
+      "#B08B35",
+      "#D2BF98",
+      "#F4F3F2",
+      "#B7B9D2",
+      "#7E81B1",
+      "#4B4B8F"
+    ]
   },
   "source": {
     "title": "CARTOColors Qualitative Scheme (Bold)",

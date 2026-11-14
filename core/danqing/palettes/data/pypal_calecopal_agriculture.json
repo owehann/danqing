@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_agriculture",
+  "name": {
+    "en": "agriculture (calecopal)",
+    "zh": "agriculture（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A45C44",
+    "#5A7F3C",
+    "#CACA91",
+    "#2C3B26",
+    "#88B063"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D5C2",
+      "#B1BB9E",
+      "#91A27B",
+      "#718959",
+      "#527136",
+      "#34590D"
+    ],
+    "paired_diverging_stops": [
+      "#CACA91",
+      "#D8D8B2",
+      "#E6E6D2",
+      "#F4F3F2",
+      "#ACB1A8",
+      "#697464",
+      "#2C3B26"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: agriculture)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.6,
+    "min_de2000_deutan_first6": 0.71,
+    "min_de2000_protan_first6": 9.24,
+    "min_de2000_tritan_first6": 16.57,
+    "optimal6_min_de2000": 13.6,
+    "optimal6_min_de2000_deutan": 0.71,
+    "optimal6_min_de2000_protan": 9.24,
+    "grayscale_L_spread": 0.493,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

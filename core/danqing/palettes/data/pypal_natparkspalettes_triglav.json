@@ -1,0 +1,63 @@
+{
+  "id": "pypal_natparkspalettes_triglav",
+  "name": {
+    "en": "Triglav (NatParksPalettes)",
+    "zh": "Triglav（NatParksPalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#386EC2",
+    "#B5B5B2",
+    "#990006",
+    "#625D0A",
+    "#B9741F",
+    "#213958"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED3DD",
+      "#A7B7D2",
+      "#829CC6",
+      "#5D80B9",
+      "#3865AB",
+      "#0C489D"
+    ],
+    "paired_diverging_stops": [
+      "#386EC2",
+      "#769BD4",
+      "#B4C7E4",
+      "#F4F3F2",
+      "#E2C9B0",
+      "#CE9F6F",
+      "#B9741F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NatParksPalettes: Triglav)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 20.86,
+    "min_de2000_deutan_first6": 3.0,
+    "min_de2000_protan_first6": 12.7,
+    "min_de2000_tritan_first6": 21.68,
+    "optimal6_min_de2000": 20.86,
+    "optimal6_min_de2000_deutan": 3.0,
+    "optimal6_min_de2000_protan": 12.7,
+    "grayscale_L_spread": 0.431,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -18,7 +18,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D5C0",
+      "#B0BC9A",
+      "#8EA374",
+      "#6E8B4F",
+      "#4E7227",
+      "#2F5B00"
+    ],
+    "paired_diverging_stops": [
+      "#5E3B49",
+      "#8E747D",
+      "#C0B2B6",
+      "#F4F3F2",
+      "#B7C7AA",
+      "#7E9C65",
+      "#477117"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (Redwood)",

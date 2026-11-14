@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ghibli_marniemedium1",
+  "name": {
+    "en": "MarnieMedium1 (ghibli)",
+    "zh": "MarnieMedium1（ghibli）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#28231D",
+    "#5E2D30",
+    "#008E90",
+    "#1C77A3",
+    "#C5A387",
+    "#67B8D6",
+    "#E9D097"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD4D7",
+      "#A5BAC6",
+      "#7DA0B5",
+      "#5487A4",
+      "#266D92",
+      "#005480"
+    ],
+    "paired_diverging_stops": [
+      "#1C77A3",
+      "#6DA0BE",
+      "#B0C9D8",
+      "#F4F3F2",
+      "#F0E8D4",
+      "#EDDCB6",
+      "#E9D097"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ghibli: MarnieMedium1)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 18.19,
+    "min_de2000_deutan_first6": 9.68,
+    "min_de2000_protan_first6": 5.93,
+    "min_de2000_tritan_first6": 6.87,
+    "optimal6_min_de2000": 18.19,
+    "optimal6_min_de2000_deutan": 9.68,
+    "optimal6_min_de2000_protan": 5.93,
+    "grayscale_L_spread": 0.605,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

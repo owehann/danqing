@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_slugma",
+  "name": {
+    "en": "slugma (palettetown)",
+    "zh": "slugma（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D85820",
+    "#F88048",
+    "#902000",
+    "#F8B868",
+    "#F8D070",
+    "#F8E898",
+    "#F8F8F8",
+    "#F0A000",
+    "#686868"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBD",
+      "#DCA993",
+      "#CD866A",
+      "#BD633F",
+      "#AA3E03",
+      "#960000"
+    ],
+    "paired_diverging_stops": [
+      "#F0A000",
+      "#F3BD75",
+      "#F4D9B6",
+      "#F4F3F2",
+      "#C3C3C2",
+      "#949494",
+      "#686868"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: slugma)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 8.25,
+    "min_de2000_deutan_first6": 3.61,
+    "min_de2000_protan_first6": 5.11,
+    "min_de2000_tritan_first6": 6.71,
+    "optimal6_min_de2000": 8.25,
+    "optimal6_min_de2000_deutan": 3.61,
+    "optimal6_min_de2000_protan": 5.11,
+    "grayscale_L_spread": 0.55,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

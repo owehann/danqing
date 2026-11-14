@@ -1,0 +1,65 @@
+{
+  "id": "pypal_miscpalettes_waterfall",
+  "name": {
+    "en": "waterfall (miscpalettes)",
+    "zh": "waterfall（miscpalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#91969A",
+    "#6A7473",
+    "#565551",
+    "#383B34",
+    "#AAE8FF",
+    "#15100C",
+    "#004E5B",
+    "#10AEC9"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C9D6D4",
+      "#9DBDC1",
+      "#70A5AF",
+      "#3D8C9C",
+      "#007489",
+      "#005C76"
+    ],
+    "paired_diverging_stops": [
+      "#AAE8FF",
+      "#C4ECFB",
+      "#DCF0F7",
+      "#F4F3F2",
+      "#A19F9C",
+      "#56524E",
+      "#15100C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (miscpalettes: waterfall)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 9.72,
+    "min_de2000_deutan_first6": 9.25,
+    "min_de2000_protan_first6": 9.14,
+    "min_de2000_tritan_first6": 9.59,
+    "optimal6_min_de2000": 9.72,
+    "optimal6_min_de2000_deutan": 9.25,
+    "optimal6_min_de2000_protan": 9.14,
+    "grayscale_L_spread": 0.719,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

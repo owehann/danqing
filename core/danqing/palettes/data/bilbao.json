@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "bilbao",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC7",
+      "#CFADA8",
+      "#BB8D8A",
+      "#A76E6D",
+      "#925051",
+      "#7C3136"
+    ],
+    "paired_diverging_stops": [
+      "#4C0001",
+      "#86524A",
+      "#BEA09A",
+      "#F4F3F2",
+      "#C1C1C0",
+      "#919090",
+      "#636363"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (bilbao)",

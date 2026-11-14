@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nationalparkcolors_grandteton",
+  "name": {
+    "en": "GrandTeton (nationalparkcolors)",
+    "zh": "GrandTeton（nationalparkcolors）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F0EEE2",
+    "#5B6C88",
+    "#48594E",
+    "#A8D0CF",
+    "#BABBB1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D2D2",
+      "#B4B6BC",
+      "#949BA7",
+      "#768092",
+      "#59667E",
+      "#3D4E69"
+    ],
+    "paired_diverging_stops": [
+      "#F0EEE2",
+      "#F1F0E7",
+      "#F3F2ED",
+      "#F4F3F2",
+      "#B7BDB8",
+      "#7D8981",
+      "#48594E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nationalparkcolors: GrandTeton)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.22,
+    "min_de2000_deutan_first6": 9.93,
+    "min_de2000_protan_first6": 7.95,
+    "min_de2000_tritan_first6": 9.8,
+    "optimal6_min_de2000": 12.22,
+    "optimal6_min_de2000_deutan": 9.93,
+    "optimal6_min_de2000_protan": 7.95,
+    "grayscale_L_spread": 0.501,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "pypal_tvthemes_jasper",
+  "name": {
+    "en": "Jasper (tvthemes)",
+    "zh": "Jasper（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2E0F16",
+    "#A32A2F",
+    "#EB9352",
+    "#F8E3DB",
+    "#91837D",
+    "#37947E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC3",
+      "#DBA8A0",
+      "#CB867E",
+      "#BA635D",
+      "#A73E3D",
+      "#92081C"
+    ],
+    "paired_diverging_stops": [
+      "#2E0F16",
+      "#6C5356",
+      "#AE9FA0",
+      "#F4F3F2",
+      "#F5EEEA",
+      "#F7E8E3",
+      "#F8E3DB"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Jasper)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 23.27,
+    "min_de2000_deutan_first6": 4.77,
+    "min_de2000_protan_first6": 3.78,
+    "min_de2000_tritan_first6": 21.93,
+    "optimal6_min_de2000": 23.27,
+    "optimal6_min_de2000_deutan": 4.77,
+    "optimal6_min_de2000_protan": 3.78,
+    "grayscale_L_spread": 0.71,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

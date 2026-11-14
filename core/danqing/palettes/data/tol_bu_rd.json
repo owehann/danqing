@@ -21,7 +21,25 @@
   "neutral": "#F7F7F7",
   "partners": {
     "sequential": "tol_iridescent",
-    "diverging": "tol_bu_rd"
+    "diverging": "tol_bu_rd",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC2",
+      "#E0A69E",
+      "#D2817A",
+      "#C25C58",
+      "#B03136",
+      "#9C0011"
+    ],
+    "paired_diverging_stops": [
+      "#1F65AA",
+      "#6A94C4",
+      "#AEC3DC",
+      "#F4F3F2",
+      "#D6BAAE",
+      "#B6836D",
+      "#944D2C"
+    ]
   },
   "source": {
     "title": "Paul Tol Colour Schemes (tol_bu_rd)",

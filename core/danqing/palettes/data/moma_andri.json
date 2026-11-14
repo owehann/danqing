@@ -16,7 +16,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC0",
+      "#DFA79A",
+      "#D18374",
+      "#C15E50",
+      "#AF352A",
+      "#9B0000"
+    ],
+    "paired_diverging_stops": [
+      "#15134B",
+      "#535982",
+      "#9FA4B9",
+      "#F4F3F2",
+      "#B3C8B1",
+      "#759D73",
+      "#367336"
+    ]
   },
   "source": {
     "title": "Poster for the Twenty-sixth Secession Exhibition, 1906, Ferdinand Andri, Lithograph",

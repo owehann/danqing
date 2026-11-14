@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "Oranges",
-    "diverging": "RdYlBu"
+    "diverging": "RdYlBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBC",
+      "#E0A791",
+      "#D28367",
+      "#C25F3B",
+      "#B13500",
+      "#9D0000"
+    ],
+    "paired_diverging_stops": [
+      "#6A6259",
+      "#968F89",
+      "#C4C0BC",
+      "#F4F3F2",
+      "#D0AEA2",
+      "#AA6B57",
+      "#7F2704"
+    ]
   },
   "source": {
     "title": "ColorBrewer 2.0 (Oranges, 9-class)",

@@ -1,0 +1,60 @@
+{
+  "id": "pypal_trekcolors_starfleet",
+  "name": {
+    "en": "starfleet (trekcolors)",
+    "zh": "starfleet（trekcolors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#5B1414",
+    "#AD722C",
+    "#1A6384"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1D0BE",
+      "#CBB196",
+      "#B6936F",
+      "#A17648",
+      "#8C591A",
+      "#763C00"
+    ],
+    "paired_diverging_stops": [
+      "#AD722C",
+      "#C69D72",
+      "#DDC8B2",
+      "#F4F3F2",
+      "#ADC2CD",
+      "#6892A8",
+      "#1A6384"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (trekcolors: starfleet)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 34.94,
+    "min_de2000_deutan_first6": 30.3,
+    "min_de2000_protan_first6": 31.51,
+    "min_de2000_tritan_first6": 28.0,
+    "optimal6_min_de2000": 34.94,
+    "optimal6_min_de2000_deutan": 30.3,
+    "optimal6_min_de2000_protan": 31.51,
+    "grayscale_L_spread": 0.287,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

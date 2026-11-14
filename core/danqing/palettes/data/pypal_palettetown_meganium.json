@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_meganium",
+  "name": {
+    "en": "meganium (palettetown)",
+    "zh": "meganium（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#98E050",
+    "#F83858",
+    "#68B830",
+    "#C82038",
+    "#208810",
+    "#F0A098",
+    "#F8F8F8",
+    "#F8D820",
+    "#781038",
+    "#604800",
+    "#B8F878",
+    "#686868",
+    "#E0A800",
+    "#C8C8C8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDC9C2",
+      "#E3A49D",
+      "#D67F7A",
+      "#C65758",
+      "#B52836",
+      "#A10010"
+    ],
+    "paired_diverging_stops": [
+      "#F8D820",
+      "#F6E283",
+      "#F5EBBE",
+      "#F4F3F2",
+      "#CFA8AF",
+      "#A66071",
+      "#781038"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: meganium)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 10.76,
+    "min_de2000_deutan_first6": 2.63,
+    "min_de2000_protan_first6": 10.08,
+    "min_de2000_tritan_first6": 8.64,
+    "optimal6_min_de2000": 10.76,
+    "optimal6_min_de2000_deutan": 2.63,
+    "optimal6_min_de2000_protan": 10.08,
+    "grayscale_L_spread": 0.601,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

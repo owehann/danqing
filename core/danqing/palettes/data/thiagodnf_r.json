@@ -1,0 +1,64 @@
+{
+  "id": "thiagodnf_r",
+  "name": {
+    "en": "R",
+    "zh": "R（UI/可视化）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#9E77A1",
+    "#9A8FBB",
+    "#8AA9C0",
+    "#7BC1BF",
+    "#7ED9B1",
+    "#B2ED90",
+    "#FDF57A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DCCFD1",
+      "#C3B0BB",
+      "#AA92A5",
+      "#927590",
+      "#7A587A",
+      "#623D66"
+    ],
+    "paired_diverging_stops": [
+      "#9A8FBB",
+      "#B7B0CE",
+      "#D5D1E0",
+      "#F4F3F2",
+      "#F6F5CF",
+      "#FAF5A8",
+      "#FDF57A"
+    ]
+  },
+  "source": {
+    "title": "color-palettes (R)",
+    "author": "Thiago Ferreira",
+    "year": 2021,
+    "url": "https://github.com/thiagodnf/color-palettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 10.01,
+    "min_de2000_deutan_first6": 4.99,
+    "min_de2000_protan_first6": 7.28,
+    "min_de2000_tritan_first6": 5.38,
+    "optimal6_min_de2000": 10.01,
+    "optimal6_min_de2000_deutan": 4.99,
+    "optimal6_min_de2000_protan": 7.28,
+    "grayscale_L_spread": 0.33,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

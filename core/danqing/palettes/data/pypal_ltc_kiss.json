@@ -1,0 +1,62 @@
+{
+  "id": "pypal_ltc_kiss",
+  "name": {
+    "en": "kiss (ltc)",
+    "zh": "kiss（ltc）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF7C7E",
+    "#FEC300",
+    "#9E3F71",
+    "#31BCBA",
+    "#E20035"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F1C8C0",
+      "#E9A19A",
+      "#DE7974",
+      "#D04E50",
+      "#BF022A",
+      "#AC0000"
+    ],
+    "paired_diverging_stops": [
+      "#FEC300",
+      "#FBD57C",
+      "#F8E5BA",
+      "#F4F3F2",
+      "#BEE1DF",
+      "#83CFCC",
+      "#31BCBA"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ltc: kiss)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 19.52,
+    "min_de2000_deutan_first6": 16.62,
+    "min_de2000_protan_first6": 17.19,
+    "min_de2000_tritan_first6": 16.03,
+    "optimal6_min_de2000": 19.52,
+    "optimal6_min_de2000_deutan": 16.62,
+    "optimal6_min_de2000_protan": 17.19,
+    "grayscale_L_spread": 0.335,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

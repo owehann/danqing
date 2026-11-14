@@ -1,0 +1,69 @@
+{
+  "id": "pypal_rcartocolor_prism",
+  "name": {
+    "en": "Prism (rcartocolor)",
+    "zh": "Prism（rcartocolor）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#5F4690",
+    "#1D6996",
+    "#38A6A5",
+    "#0F8554",
+    "#73AF48",
+    "#EDAD08",
+    "#E17C05",
+    "#CC503E",
+    "#94346E",
+    "#6F4070",
+    "#994E95",
+    "#666666"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CDD4",
+      "#CBABC0",
+      "#B68AAD",
+      "#A16A99",
+      "#8B4A86",
+      "#752872"
+    ],
+    "paired_diverging_stops": [
+      "#5F4690",
+      "#8D7EB2",
+      "#BFB8D2",
+      "#F4F3F2",
+      "#F3DDB7",
+      "#F0C678",
+      "#EDAD08"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: Prism)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 19.72,
+    "min_de2000_deutan_first6": 4.19,
+    "min_de2000_protan_first6": 6.4,
+    "min_de2000_tritan_first6": 8.69,
+    "optimal6_min_de2000": 19.72,
+    "optimal6_min_de2000_deutan": 4.19,
+    "optimal6_min_de2000_protan": 6.4,
+    "grayscale_L_spread": 0.341,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

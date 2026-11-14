@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_wooper",
+  "name": {
+    "en": "wooper (palettetown)",
+    "zh": "wooper（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#88C0F0",
+    "#4898D0",
+    "#304880",
+    "#C0E0E0",
+    "#9060A0",
+    "#C078C0",
+    "#603868",
+    "#E8A8F8",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDCED4",
+      "#C4AFC1",
+      "#AC8FAF",
+      "#94719C",
+      "#7D5389",
+      "#663576"
+    ],
+    "paired_diverging_stops": [
+      "#304880",
+      "#6C7FA7",
+      "#AEB8CC",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: wooper)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 12.36,
+    "min_de2000_deutan_first6": 6.86,
+    "min_de2000_protan_first6": 4.4,
+    "min_de2000_tritan_first6": 11.22,
+    "optimal6_min_de2000": 12.36,
+    "optimal6_min_de2000_deutan": 6.86,
+    "optimal6_min_de2000_protan": 4.4,
+    "grayscale_L_spread": 0.57,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

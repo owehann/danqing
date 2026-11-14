@@ -1,0 +1,61 @@
+{
+  "id": "pypal_taylorswift_folklore",
+  "name": {
+    "en": "folklore (tayloRswift)",
+    "zh": "folklore（tayloRswift）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#272727",
+    "#5C5C5C",
+    "#BABABA",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D7D2CC",
+      "#BAB5B1",
+      "#9D9A96",
+      "#817F7D",
+      "#676664",
+      "#4D4D4D"
+    ],
+    "paired_diverging_stops": [
+      "#272727",
+      "#646464",
+      "#A9A9A8",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tayloRswift: folklore)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 14.29,
+    "min_de2000_deutan_first6": 14.29,
+    "min_de2000_protan_first6": 14.29,
+    "min_de2000_tritan_first6": 14.29,
+    "optimal6_min_de2000": 14.29,
+    "optimal6_min_de2000_deutan": 14.29,
+    "optimal6_min_de2000_protan": 14.29,
+    "grayscale_L_spread": 0.706,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

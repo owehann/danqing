@@ -1,0 +1,65 @@
+{
+  "id": "pypal_ochre_namatjira_div",
+  "name": {
+    "en": "namatjira_div (ochRe)",
+    "zh": "namatjira_div（ochRe）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#786060",
+    "#486090",
+    "#A890A8",
+    "#D8F0F0",
+    "#F0A860",
+    "#D8C0A8",
+    "#A89078",
+    "#A86030"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CFC0",
+      "#CFAF9A",
+      "#BB9075",
+      "#A77250",
+      "#92542A",
+      "#7D3500"
+    ],
+    "paired_diverging_stops": [
+      "#486090",
+      "#7E8FB1",
+      "#B7C0D2",
+      "#F4F3F2",
+      "#F4DBC3",
+      "#F3C294",
+      "#F0A860"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ochRe: namatjira_div)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 14.56,
+    "min_de2000_deutan_first6": 13.55,
+    "min_de2000_protan_first6": 14.23,
+    "min_de2000_tritan_first6": 12.99,
+    "optimal6_min_de2000": 14.56,
+    "optimal6_min_de2000_deutan": 13.55,
+    "optimal6_min_de2000_protan": 14.23,
+    "grayscale_L_spread": 0.446,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

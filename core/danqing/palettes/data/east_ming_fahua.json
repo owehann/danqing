@@ -20,7 +20,25 @@
   "neutral": "#A9A498",
   "partners": {
     "sequential": "GnBu",
-    "diverging": "PRGn"
+    "diverging": "PRGn",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0D0BE",
+      "#CBB295",
+      "#B5946D",
+      "#A07744",
+      "#8A5A11",
+      "#753D00"
+    ],
+    "paired_diverging_stops": [
+      "#282D4E",
+      "#656A82",
+      "#A9ACB9",
+      "#F4F3F2",
+      "#C3C2B3",
+      "#949277",
+      "#68653E"
+    ]
   },
   "source": {
     "title": "Fahua Prunus Vase (Meiping) with Blossoming Lotus & Chrysanthemum Jar",

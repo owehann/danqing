@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_weedle",
+  "name": {
+    "en": "weedle (palettetown)",
+    "zh": "weedle（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E8A840",
+    "#C87010",
+    "#882810",
+    "#181818",
+    "#F8E078",
+    "#808090",
+    "#F8F8F8",
+    "#C8C8C8",
+    "#C82800",
+    "#E06830",
+    "#C89858"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCABD",
+      "#E2A694",
+      "#D5816B",
+      "#C65B42",
+      "#B42D0F",
+      "#A10000"
+    ],
+    "paired_diverging_stops": [
+      "#181818",
+      "#585858",
+      "#A3A2A1",
+      "#F4F3F2",
+      "#F5EECD",
+      "#F6E7A5",
+      "#F8E078"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: weedle)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 16.38,
+    "min_de2000_deutan_first6": 10.27,
+    "min_de2000_protan_first6": 12.55,
+    "min_de2000_tritan_first6": 14.91,
+    "optimal6_min_de2000": 16.38,
+    "optimal6_min_de2000_deutan": 10.27,
+    "optimal6_min_de2000_protan": 12.55,
+    "grayscale_L_spread": 0.77,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

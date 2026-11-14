@@ -1,0 +1,62 @@
+{
+  "id": "pypal_rtist_raphael",
+  "name": {
+    "en": "raphael (rtist)",
+    "zh": "raphael（rtist）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FBE6C0",
+    "#6B502C",
+    "#BF2A1D",
+    "#666581",
+    "#E5A55E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCABF",
+      "#E0A698",
+      "#D28272",
+      "#C35D4C",
+      "#B13224",
+      "#9D0000"
+    ],
+    "paired_diverging_stops": [
+      "#666581",
+      "#9392A6",
+      "#C2C2CB",
+      "#F4F3F2",
+      "#F0DAC2",
+      "#EBC092",
+      "#E5A55E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rtist: raphael)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 18.35,
+    "min_de2000_deutan_first6": 12.43,
+    "min_de2000_protan_first6": 3.39,
+    "min_de2000_tritan_first6": 18.88,
+    "optimal6_min_de2000": 18.35,
+    "optimal6_min_de2000_deutan": 12.43,
+    "optimal6_min_de2000_protan": 3.39,
+    "grayscale_L_spread": 0.481,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

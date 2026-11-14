@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_glalie",
+  "name": {
+    "en": "glalie (palettetown)",
+    "zh": "glalie（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#282838",
+    "#C8C8D8",
+    "#E0E0F0",
+    "#A0A0B8",
+    "#505058",
+    "#505068",
+    "#F8F8F8",
+    "#787890",
+    "#787880",
+    "#A0C8F8",
+    "#4888C0",
+    "#C8C8D0",
+    "#78A0E0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED4D8",
+      "#A8B9C8",
+      "#829EB9",
+      "#5C84A8",
+      "#356A98",
+      "#005087"
+    ],
+    "paired_diverging_stops": [
+      "#282838",
+      "#656571",
+      "#A9A9AF",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: glalie)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 5.61,
+    "min_de2000_deutan_first6": 5.62,
+    "min_de2000_protan_first6": 5.6,
+    "min_de2000_tritan_first6": 3.31,
+    "optimal6_min_de2000": 5.61,
+    "optimal6_min_de2000_deutan": 5.62,
+    "optimal6_min_de2000_protan": 5.6,
+    "grayscale_L_spread": 0.695,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

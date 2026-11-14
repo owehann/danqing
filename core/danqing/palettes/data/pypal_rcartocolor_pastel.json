@@ -1,0 +1,69 @@
+{
+  "id": "pypal_rcartocolor_pastel",
+  "name": {
+    "en": "Pastel (rcartocolor)",
+    "zh": "Pastel（rcartocolor）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#66C5CC",
+    "#F6CF71",
+    "#F89C74",
+    "#DCB0F2",
+    "#87C55F",
+    "#9EB9F3",
+    "#FE88B1",
+    "#C9DB74",
+    "#8BE0A4",
+    "#B497E7",
+    "#D3B484",
+    "#B3B3B3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D6BF",
+      "#ADBE97",
+      "#89A570",
+      "#678D48",
+      "#457519",
+      "#205D00"
+    ],
+    "paired_diverging_stops": [
+      "#F6CF71",
+      "#F6DCA0",
+      "#F5E8CA",
+      "#F4F3F2",
+      "#DED5F0",
+      "#C9B6EC",
+      "#B497E7"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: Pastel)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 18.11,
+    "min_de2000_deutan_first6": 2.44,
+    "min_de2000_protan_first6": 0.29,
+    "min_de2000_tritan_first6": 10.17,
+    "optimal6_min_de2000": 18.11,
+    "optimal6_min_de2000_deutan": 2.44,
+    "optimal6_min_de2000_protan": 0.29,
+    "grayscale_L_spread": 0.137,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

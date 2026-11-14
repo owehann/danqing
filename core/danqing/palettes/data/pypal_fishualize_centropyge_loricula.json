@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_centropyge_loricula",
+  "name": {
+    "en": "Centropyge_loricula (fishualize)",
+    "zh": "Centropyge_loricula（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8F1D1E",
+    "#EA3228",
+    "#FFC737",
+    "#3E52A1",
+    "#000000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BD",
+      "#E6A394",
+      "#DB7D6C",
+      "#CC5344",
+      "#BC1B13",
+      "#A80000"
+    ],
+    "paired_diverging_stops": [
+      "#FFC737",
+      "#FCD786",
+      "#F8E6BE",
+      "#F4F3F2",
+      "#B2BDD9",
+      "#7587BE",
+      "#3E52A1"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Centropyge_loricula)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 19.83,
+    "min_de2000_deutan_first6": 21.74,
+    "min_de2000_protan_first6": 15.48,
+    "min_de2000_tritan_first6": 20.27,
+    "optimal6_min_de2000": 19.83,
+    "optimal6_min_de2000_deutan": 21.74,
+    "optimal6_min_de2000_protan": 15.48,
+    "grayscale_L_spread": 0.857,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

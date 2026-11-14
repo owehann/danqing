@@ -1,0 +1,73 @@
+{
+  "id": "pypal_pals_watlington",
+  "name": {
+    "en": "watlington (pals)",
+    "zh": "watlington（pals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#000000",
+    "#575757",
+    "#AD2323",
+    "#2A4BD7",
+    "#1D6914",
+    "#814A19",
+    "#8126C0",
+    "#A0A0A0",
+    "#81C57A",
+    "#9DAFFF",
+    "#29D0D0",
+    "#FF9233",
+    "#FFEE33",
+    "#E9DEBB",
+    "#FFCDF3",
+    "#F2F3F4"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DECCE1",
+      "#C6A9D9",
+      "#AF87D0",
+      "#9863C5",
+      "#833BBA",
+      "#6E00AD"
+    ],
+    "paired_diverging_stops": [
+      "#2A4BD7",
+      "#6689E5",
+      "#ABBFEE",
+      "#F4F3F2",
+      "#F7F3C2",
+      "#FBF18B",
+      "#FFEE33"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (pals: watlington)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 16,
+    "max_colors": 16,
+    "min_de2000_first6": 18.53,
+    "min_de2000_deutan_first6": 2.01,
+    "min_de2000_protan_first6": 5.99,
+    "min_de2000_tritan_first6": 11.42,
+    "optimal6_min_de2000": 18.53,
+    "optimal6_min_de2000_deutan": 2.01,
+    "optimal6_min_de2000_protan": 5.99,
+    "grayscale_L_spread": 0.964,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

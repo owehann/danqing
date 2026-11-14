@@ -1,0 +1,62 @@
+{
+  "id": "pypal_ltc_gaby",
+  "name": {
+    "en": "gaby (ltc)",
+    "zh": "gaby（ltc）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FCEAAB",
+    "#F1A890",
+    "#A8C4CC",
+    "#82A0C2",
+    "#85496F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CECF",
+      "#CAAEB7",
+      "#B48E9F",
+      "#9E7088",
+      "#875272",
+      "#71345C"
+    ],
+    "paired_diverging_stops": [
+      "#FCEAAB",
+      "#F9EDC4",
+      "#F7F0DB",
+      "#F4F3F2",
+      "#D0B8C4",
+      "#AB8099",
+      "#85496F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ltc: gaby)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 14.28,
+    "min_de2000_deutan_first6": 11.04,
+    "min_de2000_protan_first6": 12.77,
+    "min_de2000_tritan_first6": 10.06,
+    "optimal6_min_de2000": 14.28,
+    "optimal6_min_de2000_deutan": 11.04,
+    "optimal6_min_de2000_protan": 12.77,
+    "grayscale_L_spread": 0.447,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

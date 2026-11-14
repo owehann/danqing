@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_deoxys",
+  "name": {
+    "en": "deoxys (palettetown)",
+    "zh": "deoxys（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#181818",
+    "#CE6363",
+    "#7B7352",
+    "#FF844A",
+    "#73D6AD",
+    "#734A31",
+    "#84A59C",
+    "#9C9C84",
+    "#524A42",
+    "#39635A",
+    "#FFAD84",
+    "#DE6BE7",
+    "#8C08CE",
+    "#C6C6D6"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFCBE3",
+      "#C9A7DD",
+      "#B482D6",
+      "#9E5CCD",
+      "#8A2CC3",
+      "#7600B7"
+    ],
+    "paired_diverging_stops": [
+      "#FF844A",
+      "#FFAC86",
+      "#FCD0BD",
+      "#F4F3F2",
+      "#D1B3EB",
+      "#AE70DE",
+      "#8C08CE"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: deoxys)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 19.54,
+    "min_de2000_deutan_first6": 9.5,
+    "min_de2000_protan_first6": 5.16,
+    "min_de2000_tritan_first6": 8.27,
+    "optimal6_min_de2000": 19.54,
+    "optimal6_min_de2000_deutan": 9.5,
+    "optimal6_min_de2000_protan": 5.16,
+    "grayscale_L_spread": 0.622,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

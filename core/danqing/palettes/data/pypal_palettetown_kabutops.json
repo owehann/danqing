@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_kabutops",
+  "name": {
+    "en": "kabutops (palettetown)",
+    "zh": "kabutops（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D8C088",
+    "#B09860",
+    "#685820",
+    "#D8D8D0",
+    "#B8B8B0",
+    "#686868",
+    "#989890",
+    "#F8F8F8",
+    "#F8E0A8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DAD2C2",
+      "#C0B69E",
+      "#A69A7A",
+      "#8C7F57",
+      "#746535",
+      "#5C4B0B"
+    ],
+    "paired_diverging_stops": [
+      "#685820",
+      "#948966",
+      "#C3BDAA",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: kabutops)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 7.97,
+    "min_de2000_deutan_first6": 7.97,
+    "min_de2000_protan_first6": 7.98,
+    "min_de2000_tritan_first6": 7.98,
+    "optimal6_min_de2000": 7.97,
+    "optimal6_min_de2000_deutan": 7.97,
+    "optimal6_min_de2000_protan": 7.98,
+    "grayscale_L_spread": 0.515,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

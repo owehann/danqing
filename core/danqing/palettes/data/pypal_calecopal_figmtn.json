@@ -1,0 +1,66 @@
+{
+  "id": "pypal_calecopal_figmtn",
+  "name": {
+    "en": "figmtn (calecopal)",
+    "zh": "figmtn（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E29244",
+    "#FFAA00",
+    "#D46F10",
+    "#4CA49E",
+    "#69B9FA",
+    "#59A3F8",
+    "#4B8FF7",
+    "#5A7ECB",
+    "#6B6D9F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD3E0",
+      "#A4B8D8",
+      "#7C9CCE",
+      "#5480C4",
+      "#2B63B8",
+      "#0044AB"
+    ],
+    "paired_diverging_stops": [
+      "#FFAA00",
+      "#FDC478",
+      "#F9DCB7",
+      "#F4F3F2",
+      "#BCD3F7",
+      "#85B2F8",
+      "#4B8FF7"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: figmtn)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 6.62,
+    "min_de2000_deutan_first6": 6.18,
+    "min_de2000_protan_first6": 5.89,
+    "min_de2000_tritan_first6": 4.64,
+    "optimal6_min_de2000": 6.62,
+    "optimal6_min_de2000_deutan": 6.18,
+    "optimal6_min_de2000_protan": 5.89,
+    "grayscale_L_spread": 0.248,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

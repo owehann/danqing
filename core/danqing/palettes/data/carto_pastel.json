@@ -23,7 +23,25 @@
   "neutral": "#B3B3B3",
   "partners": {
     "sequential": "seaborn_crest",
-    "diverging": "PiYG"
+    "diverging": "PiYG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D6BF",
+      "#ADBE97",
+      "#89A570",
+      "#678D48",
+      "#457519",
+      "#205D00"
+    ],
+    "paired_diverging_stops": [
+      "#815D00",
+      "#A68E54",
+      "#CCC0A3",
+      "#F4F3F2",
+      "#C5BCD6",
+      "#9886B9",
+      "#6E519B"
+    ]
   },
   "source": {
     "title": "CARTOColors Qualitative Scheme (Pastel)",

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nineteeneightyr_seventies_aint_done_yet",
+  "name": {
+    "en": "seventies_aint_done_yet (NineteenEightyR)",
+    "zh": "seventies_aint_done_yet（NineteenEightyR）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FEDF37",
+    "#FCA811",
+    "#D25117",
+    "#8A4C19",
+    "#573420"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBD",
+      "#DDA993",
+      "#CE866A",
+      "#BD633F",
+      "#AB3D03",
+      "#970000"
+    ],
+    "paired_diverging_stops": [
+      "#FEDF37",
+      "#FAE789",
+      "#F7EEC1",
+      "#F4F3F2",
+      "#BEAFA7",
+      "#8A6F60",
+      "#573420"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NineteenEightyR: seventies_aint_done_yet)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 14.0,
+    "min_de2000_deutan_first6": 8.18,
+    "min_de2000_protan_first6": 8.54,
+    "min_de2000_tritan_first6": 12.61,
+    "optimal6_min_de2000": 14.0,
+    "optimal6_min_de2000_deutan": 8.18,
+    "optimal6_min_de2000_protan": 8.54,
+    "grayscale_L_spread": 0.54,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

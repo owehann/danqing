@@ -20,7 +20,25 @@
   "neutral": "#A3A699",
   "partners": {
     "sequential": "batlow",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBC",
+      "#DDA993",
+      "#CE8669",
+      "#BE623F",
+      "#AC3C01",
+      "#980000"
+    ],
+    "paired_diverging_stops": [
+      "#05636E",
+      "#639198",
+      "#ABC1C4",
+      "#F4F3F2",
+      "#D4BD9E",
+      "#B38848",
+      "#915300"
+    ]
   },
   "source": {
     "title": "Canopy with Dragon among Flowers & Dragons Chasing Flaming Pearls (Kesi)",

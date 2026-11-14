@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_exallias_brevis",
+  "name": {
+    "en": "Exallias_brevis (fishualize)",
+    "zh": "Exallias_brevis（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3D1614",
+    "#861705",
+    "#C02909",
+    "#AB6B64",
+    "#BAE3E4"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBE",
+      "#E1A695",
+      "#D3826E",
+      "#C35D46",
+      "#B23218",
+      "#9E0000"
+    ],
+    "paired_diverging_stops": [
+      "#3D1614",
+      "#785955",
+      "#B5A3A0",
+      "#F4F3F2",
+      "#E1EEED",
+      "#CEE9E9",
+      "#BAE3E4"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Exallias_brevis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.34,
+    "min_de2000_deutan_first6": 13.66,
+    "min_de2000_protan_first6": 10.06,
+    "min_de2000_tritan_first6": 12.72,
+    "optimal6_min_de2000": 12.34,
+    "optimal6_min_de2000_deutan": 13.66,
+    "optimal6_min_de2000_protan": 10.06,
+    "grayscale_L_spread": 0.627,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

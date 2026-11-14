@@ -18,7 +18,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC4",
+      "#CFAEA2",
+      "#BB8E82",
+      "#A77062",
+      "#925143",
+      "#7C3325"
+    ],
+    "paired_diverging_stops": [
+      "#8A5149",
+      "#AF857E",
+      "#D2BBB6",
+      "#F4F3F2",
+      "#C0B0B0",
+      "#8D7072",
+      "#5C363A"
+    ]
   },
   "source": {
     "title": "Les Demoiselles d'Avignon, 1907, Pablo Picaso, Oil on canvas",

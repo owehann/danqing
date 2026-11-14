@@ -1,0 +1,64 @@
+{
+  "id": "thiagodnf_apple_imac_2021_front",
+  "name": {
+    "en": "Apple iMac 2021 - Front",
+    "zh": "Apple iMac 2021 - Front（UI/可视化）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#25476D",
+    "#10505B",
+    "#B72C31",
+    "#C7C8CA",
+    "#D48207",
+    "#E36942",
+    "#353A71"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC2",
+      "#DEA79D",
+      "#D0837A",
+      "#BF5E58",
+      "#AD3636",
+      "#99000F"
+    ],
+    "paired_diverging_stops": [
+      "#D48207",
+      "#E1A96E",
+      "#EBCEB1",
+      "#F4F3F2",
+      "#AEB2C7",
+      "#6E759C",
+      "#353A71"
+    ]
+  },
+  "source": {
+    "title": "color-palettes (Apple iMac 2021 - Front)",
+    "author": "Thiago Ferreira",
+    "year": 2021,
+    "url": "https://github.com/thiagodnf/color-palettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 15.08,
+    "min_de2000_deutan_first6": 5.36,
+    "min_de2000_protan_first6": 8.5,
+    "min_de2000_tritan_first6": 3.47,
+    "optimal6_min_de2000": 15.08,
+    "optimal6_min_de2000_deutan": 5.36,
+    "optimal6_min_de2000_protan": 8.5,
+    "grayscale_L_spread": 0.459,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

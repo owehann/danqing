@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_220",
+  "name": {
+    "en": "Sanzo Wada #220 (Pomegranite Purple · Ochraceous Salmon · Aconite Violet)",
+    "zh": "和田三造 #220（Pomegranite Purple · Ochraceous Salmon · Aconite Violet）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B71F57",
+    "#D8A37B",
+    "#A36AA5"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCAC8",
+      "#DFA5AA",
+      "#D0808D",
+      "#C05A71",
+      "#AE2E56",
+      "#99003D"
+    ],
+    "paired_diverging_stops": [
+      "#D8A37B",
+      "#E2BEA3",
+      "#ECD8CA",
+      "#F4F3F2",
+      "#D9C5D8",
+      "#BE97BF",
+      "#A36AA5"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#220)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 21.37,
+    "min_de2000_deutan_first6": 25.92,
+    "min_de2000_protan_first6": 20.07,
+    "min_de2000_tritan_first6": 17.1,
+    "optimal6_min_de2000": 21.37,
+    "optimal6_min_de2000_deutan": 25.92,
+    "optimal6_min_de2000_protan": 20.07,
+    "grayscale_L_spread": 0.242,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

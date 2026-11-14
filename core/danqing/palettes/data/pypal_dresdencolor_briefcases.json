@@ -1,0 +1,63 @@
+{
+  "id": "pypal_dresdencolor_briefcases",
+  "name": {
+    "en": "briefcases (DresdenColor)",
+    "zh": "briefcases（DresdenColor）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C2697F",
+    "#FDDFA4",
+    "#B4B9E0",
+    "#513965",
+    "#201B43",
+    "#2C3778"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CDCA",
+      "#D1ABAD",
+      "#BE8B91",
+      "#AA6B76",
+      "#964B5D",
+      "#802944"
+    ],
+    "paired_diverging_stops": [
+      "#FDDFA4",
+      "#FAE6BF",
+      "#F7EDD9",
+      "#F4F3F2",
+      "#ABB2CA",
+      "#6773A2",
+      "#2C3778"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (DresdenColor: briefcases)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 11.38,
+    "min_de2000_deutan_first6": 7.86,
+    "min_de2000_protan_first6": 5.4,
+    "min_de2000_tritan_first6": 13.58,
+    "optimal6_min_de2000": 11.38,
+    "optimal6_min_de2000_deutan": 7.86,
+    "optimal6_min_de2000_protan": 5.4,
+    "grayscale_L_spread": 0.662,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

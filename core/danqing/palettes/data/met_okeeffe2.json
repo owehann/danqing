@@ -19,7 +19,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC2",
+      "#D6AB9D",
+      "#C48A79",
+      "#B16A57",
+      "#9E4934",
+      "#89240A"
+    ],
+    "paired_diverging_stops": [
+      "#745F42",
+      "#9D8E7A",
+      "#C8C0B4",
+      "#F4F3F2",
+      "#D7B3A9",
+      "#B77564",
+      "#92351E"
+    ]
   },
   "source": {
     "title": "Red and Yellow Cliffs, 1940, Georgia O'Keeffe, American",

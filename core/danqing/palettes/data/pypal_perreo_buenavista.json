@@ -1,0 +1,66 @@
+{
+  "id": "pypal_perreo_buenavista",
+  "name": {
+    "en": "buenavista (peRReo)",
+    "zh": "buenavista（peRReo）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4EA4B3",
+    "#DFD29B",
+    "#2A1812",
+    "#B12913",
+    "#80AB79",
+    "#219089",
+    "#937D57",
+    "#0D3D49",
+    "#C5DFE0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBBF",
+      "#DEA898",
+      "#CF8472",
+      "#BF604C",
+      "#AD3924",
+      "#990000"
+    ],
+    "paired_diverging_stops": [
+      "#DFD29B",
+      "#E6DDB9",
+      "#EDE8D5",
+      "#F4F3F2",
+      "#ABA39F",
+      "#685953",
+      "#2A1812"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (peRReo: buenavista)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 12.37,
+    "min_de2000_deutan_first6": 10.49,
+    "min_de2000_protan_first6": 11.78,
+    "min_de2000_tritan_first6": 7.5,
+    "optimal6_min_de2000": 12.37,
+    "optimal6_min_de2000_deutan": 10.49,
+    "optimal6_min_de2000_protan": 11.78,
+    "grayscale_L_spread": 0.654,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

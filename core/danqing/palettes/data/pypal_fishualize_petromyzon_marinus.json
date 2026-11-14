@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_petromyzon_marinus",
+  "name": {
+    "en": "Petromyzon_marinus (fishualize)",
+    "zh": "Petromyzon_marinus（fishualize）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#514337",
+    "#7B533E",
+    "#9C7148",
+    "#AC955F",
+    "#ADA185"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED0C3",
+      "#C7B29F",
+      "#B0957C",
+      "#99795A",
+      "#825D39",
+      "#6C4214"
+    ],
+    "paired_diverging_stops": [
+      "#514337",
+      "#847970",
+      "#BAB4AF",
+      "#F4F3F2",
+      "#DBD3C0",
+      "#C4B490",
+      "#AC955F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Petromyzon_marinus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.21,
+    "min_de2000_deutan_first6": 7.95,
+    "min_de2000_protan_first6": 8.28,
+    "min_de2000_tritan_first6": 7.04,
+    "optimal6_min_de2000": 8.21,
+    "optimal6_min_de2000_deutan": 7.95,
+    "optimal6_min_de2000_protan": 8.28,
+    "grayscale_L_spread": 0.318,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

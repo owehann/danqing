@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "buda",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8C9DA",
+      "#D8A2CD",
+      "#C87CBF",
+      "#B652B0",
+      "#A21BA0",
+      "#8E0090"
+    ],
+    "paired_diverging_stops": [
+      "#A600A7",
+      "#C567C2",
+      "#DFAEDB",
+      "#F4F3F2",
+      "#C3C599",
+      "#969639",
+      "#6D6800"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (buda)",

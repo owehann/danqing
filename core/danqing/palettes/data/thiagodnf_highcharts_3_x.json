@@ -1,0 +1,67 @@
+{
+  "id": "thiagodnf_highcharts_3_x",
+  "name": {
+    "en": "Highcharts 3.x",
+    "zh": "Highcharts 3.x（UI/可视化）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2F7ED8",
+    "#0D233A",
+    "#8BBC21",
+    "#910000",
+    "#1AADCE",
+    "#492970",
+    "#F28F43",
+    "#77A1E5",
+    "#C42525",
+    "#A6C96A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCAC0",
+      "#E2A599",
+      "#D48074",
+      "#C55A4F",
+      "#B32D28",
+      "#9F0000"
+    ],
+    "paired_diverging_stops": [
+      "#2F7ED8",
+      "#75A6E3",
+      "#B4CDEC",
+      "#F4F3F2",
+      "#D0E2B7",
+      "#ADCF78",
+      "#8BBC21"
+    ]
+  },
+  "source": {
+    "title": "color-palettes (Highcharts 3.x)",
+    "author": "Thiago Ferreira",
+    "year": 2021,
+    "url": "https://github.com/thiagodnf/color-palettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 15.85,
+    "min_de2000_deutan_first6": 10.96,
+    "min_de2000_protan_first6": 11.52,
+    "min_de2000_tritan_first6": 12.2,
+    "optimal6_min_de2000": 15.85,
+    "optimal6_min_de2000_deutan": 10.96,
+    "optimal6_min_de2000_protan": 11.52,
+    "grayscale_L_spread": 0.538,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

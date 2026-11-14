@@ -1,8 +1,8 @@
 {
   "name": "danqing",
   "displayName": "Danqing (丹青)",
-  "version": "0.3.0",
-  "description": "Lossless vector PDF/SVG scientific figure & manuscript recoloring engine and MCP server with 277 verified accessible, journal, museum, and Eastern mineral palettes.",
+  "version": "0.4.0",
+  "description": "Lossless vector PDF/SVG scientific figure & manuscript recoloring engine and MCP server with 3,406 verified accessible, journal, museum, and Eastern mineral palettes plus homologous paired ramps.",
   "logo": "assets/logo.svg",
   "author": {
     "name": "Xinyin Han",

@@ -1,0 +1,63 @@
+{
+  "id": "pypal_tvthemes_spinel",
+  "name": {
+    "en": "Spinel (tvthemes)",
+    "zh": "Spinel（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C92D7E",
+    "#3C1A2D",
+    "#E7A6CD",
+    "#94043A",
+    "#E0BED3",
+    "#FFFFFF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBC9CD",
+      "#DFA3B4",
+      "#D07D9B",
+      "#BF5682",
+      "#AD286B",
+      "#980054"
+    ],
+    "paired_diverging_stops": [
+      "#3C1A2D",
+      "#765B68",
+      "#B4A4AB",
+      "#F4F3F2",
+      "#F8F7F6",
+      "#FBFBFB",
+      "#FFFFFF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Spinel)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 8.48,
+    "min_de2000_deutan_first6": 3.91,
+    "min_de2000_protan_first6": 6.34,
+    "min_de2000_tritan_first6": 8.69,
+    "optimal6_min_de2000": 8.48,
+    "optimal6_min_de2000_deutan": 3.91,
+    "optimal6_min_de2000_protan": 6.34,
+    "grayscale_L_spread": 0.726,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

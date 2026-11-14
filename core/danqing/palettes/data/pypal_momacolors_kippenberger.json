@@ -1,0 +1,68 @@
+{
+  "id": "pypal_momacolors_kippenberger",
+  "name": {
+    "en": "Kippenberger (MoMAColors)",
+    "zh": "Kippenberger（MoMAColors）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#8B174D",
+    "#AE2565",
+    "#C1447E",
+    "#D06C9B",
+    "#DA9FB8",
+    "#D9D2CC",
+    "#ADBE7C",
+    "#8BA749",
+    "#6E8537",
+    "#4F5F28",
+    "#343D1F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACACC",
+      "#DCA5B1",
+      "#CC8196",
+      "#BB5C7D",
+      "#A83465",
+      "#93004D"
+    ],
+    "paired_diverging_stops": [
+      "#D9D2CC",
+      "#E2DDD8",
+      "#EBE8E5",
+      "#F4F3F2",
+      "#AFB2A6",
+      "#6E755F",
+      "#343D1F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MoMAColors: Kippenberger)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 7.85,
+    "min_de2000_deutan_first6": 8.27,
+    "min_de2000_protan_first6": 6.57,
+    "min_de2000_tritan_first6": 7.77,
+    "optimal6_min_de2000": 15.29,
+    "optimal6_min_de2000_deutan": 9.96,
+    "optimal6_min_de2000_protan": 14.37,
+    "grayscale_L_spread": 0.524,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "id": "pypal_trekcolors_lcars_series",
+  "name": {
+    "en": "lcars_series (trekcolors)",
+    "zh": "lcars_series（trekcolors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FFFF99",
+    "#FFCC99",
+    "#FFCC66",
+    "#FF9933",
+    "#664466",
+    "#CC99CC",
+    "#99CCFF",
+    "#3366CC",
+    "#006699",
+    "#9999CC",
+    "#9999FF",
+    "#CC6699",
+    "#CC6666",
+    "#FF9966",
+    "#FF9900",
+    "#6688CC",
+    "#4455BB",
+    "#9977AA",
+    "#774466",
+    "#DD6644",
+    "#AA5533",
+    "#BB6622",
+    "#EE9955",
+    "#CCDDFF",
+    "#5599FF",
+    "#3366FF",
+    "#0011EE",
+    "#000088",
+    "#BBAA55",
+    "#BB4411",
+    "#882211"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C7D3EF",
+      "#99B6F3",
+      "#6D97F5",
+      "#4175F5",
+      "#144CF4",
+      "#0500F0"
+    ],
+    "paired_diverging_stops": [
+      "#FF9900",
+      "#FEB975",
+      "#FAD7B6",
+      "#F4F3F2",
+      "#9BBAF9",
+      "#467AF7",
+      "#0011EE"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (trekcolors: lcars_series)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 31,
+    "max_colors": 31,
+    "min_de2000_first6": 10.22,
+    "min_de2000_deutan_first6": 7.66,
+    "min_de2000_protan_first6": 9.14,
+    "min_de2000_tritan_first6": 2.31,
+    "optimal6_min_de2000": 10.22,
+    "optimal6_min_de2000_deutan": 7.66,
+    "optimal6_min_de2000_protan": 9.14,
+    "grayscale_L_spread": 0.695,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

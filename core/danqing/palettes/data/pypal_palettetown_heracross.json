@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_heracross",
+  "name": {
+    "en": "heracross (palettetown)",
+    "zh": "heracross（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6068B0",
+    "#303860",
+    "#7888D8",
+    "#98B0F8",
+    "#F8F8F8",
+    "#D0D0D0",
+    "#686868",
+    "#989898",
+    "#886800",
+    "#C0A028",
+    "#F8F888"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDD1BE",
+      "#C4B595",
+      "#AC986D",
+      "#957D44",
+      "#7E6112",
+      "#674700"
+    ],
+    "paired_diverging_stops": [
+      "#7888D8",
+      "#9FACE2",
+      "#C8D0EB",
+      "#F4F3F2",
+      "#E2D8B6",
+      "#D1BC78",
+      "#C0A028"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: heracross)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 8.79,
+    "min_de2000_deutan_first6": 8.79,
+    "min_de2000_protan_first6": 8.79,
+    "min_de2000_tritan_first6": 8.79,
+    "optimal6_min_de2000": 8.79,
+    "optimal6_min_de2000_deutan": 8.79,
+    "optimal6_min_de2000_protan": 8.79,
+    "grayscale_L_spread": 0.625,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

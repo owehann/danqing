@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_251",
+  "name": {
+    "en": "Sanzo Wada #251 (Red · Yellow · Diamine Green)",
+    "zh": "和田三造 #251（Red · Yellow · Diamine Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A72144",
+    "#FFF200",
+    "#1A7444",
+    "#34454C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACAC6",
+      "#DCA6A7",
+      "#CD8388",
+      "#BC5F6A",
+      "#A9374E",
+      "#950032"
+    ],
+    "paired_diverging_stops": [
+      "#FFF200",
+      "#FBF484",
+      "#F7F4BF",
+      "#F4F3F2",
+      "#AFB5B7",
+      "#6F7B80",
+      "#34454C"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#251)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 27.18,
+    "min_de2000_deutan_first6": 1.98,
+    "min_de2000_protan_first6": 6.31,
+    "min_de2000_tritan_first6": 17.22,
+    "optimal6_min_de2000": 27.18,
+    "optimal6_min_de2000_deutan": 1.98,
+    "optimal6_min_de2000_protan": 6.31,
+    "grayscale_L_spread": 0.563,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

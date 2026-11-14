@@ -1,0 +1,64 @@
+{
+  "id": "pypal_tvthemes_rosequartz",
+  "name": {
+    "en": "RoseQuartz (tvthemes)",
+    "zh": "RoseQuartz（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E284B3",
+    "#84043C",
+    "#AC74C4",
+    "#F68CEC",
+    "#C43CC4",
+    "#9B5275",
+    "#B5DAE3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6C9D9",
+      "#D6A4CB",
+      "#C47FBC",
+      "#B258AD",
+      "#9E299C",
+      "#89008C"
+    ],
+    "paired_diverging_stops": [
+      "#84043C",
+      "#AF6074",
+      "#D4A9B1",
+      "#F4F3F2",
+      "#F7D2F1",
+      "#F8B0EF",
+      "#F68CEC"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: RoseQuartz)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 10.67,
+    "min_de2000_deutan_first6": 5.16,
+    "min_de2000_protan_first6": 10.82,
+    "min_de2000_tritan_first6": 6.07,
+    "optimal6_min_de2000": 10.67,
+    "optimal6_min_de2000_deutan": 5.16,
+    "optimal6_min_de2000_protan": 10.82,
+    "grayscale_L_spread": 0.468,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

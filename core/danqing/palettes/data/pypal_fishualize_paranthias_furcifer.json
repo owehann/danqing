@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_paranthias_furcifer",
+  "name": {
+    "en": "Paranthias_furcifer (fishualize)",
+    "zh": "Paranthias_furcifer（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#725C76",
+    "#60272C",
+    "#F29F05",
+    "#B6A6AC",
+    "#D94929"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBE",
+      "#E0A795",
+      "#D2836E",
+      "#C25E46",
+      "#B03517",
+      "#9C0000"
+    ],
+    "paired_diverging_stops": [
+      "#725C76",
+      "#9C8C9E",
+      "#C7BEC7",
+      "#F4F3F2",
+      "#F5D9B6",
+      "#F5BD75",
+      "#F29F05"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Paranthias_furcifer)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 21.05,
+    "min_de2000_deutan_first6": 16.4,
+    "min_de2000_protan_first6": 21.89,
+    "min_de2000_tritan_first6": 18.61,
+    "optimal6_min_de2000": 21.05,
+    "optimal6_min_de2000_deutan": 16.4,
+    "optimal6_min_de2000_protan": 21.89,
+    "grayscale_L_spread": 0.411,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

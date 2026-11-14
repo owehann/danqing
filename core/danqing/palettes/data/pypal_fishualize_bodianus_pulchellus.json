@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_bodianus_pulchellus",
+  "name": {
+    "en": "Bodianus_pulchellus (fishualize)",
+    "zh": "Bodianus_pulchellus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DE0502",
+    "#D44D78",
+    "#C190B2",
+    "#78BBDC",
+    "#FDF50A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F1C9BC",
+      "#E8A292",
+      "#DD7B69",
+      "#D0503F",
+      "#BF0E03",
+      "#AC0000"
+    ],
+    "paired_diverging_stops": [
+      "#78BBDC",
+      "#A3CEE4",
+      "#CCE1EB",
+      "#F4F3F2",
+      "#F6F5C0",
+      "#F9F685",
+      "#FDF50A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Bodianus_pulchellus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 18.51,
+    "min_de2000_deutan_first6": 10.32,
+    "min_de2000_protan_first6": 9.48,
+    "min_de2000_tritan_first6": 15.85,
+    "optimal6_min_de2000": 18.51,
+    "optimal6_min_de2000_deutan": 10.32,
+    "optimal6_min_de2000_protan": 9.48,
+    "grayscale_L_spread": 0.379,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

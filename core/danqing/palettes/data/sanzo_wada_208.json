@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_208",
+  "name": {
+    "en": "Sanzo Wada #208 (Sulpher Yellow · Green Blue · Antwarp Blue)",
+    "zh": "和田三造 #208（Sulpher Yellow · Green Blue · Antwarp Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F5ECC2",
+    "#099197",
+    "#007190"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD5D4",
+      "#A4BBC2",
+      "#7CA1AF",
+      "#53889C",
+      "#237089",
+      "#005777"
+    ],
+    "paired_diverging_stops": [
+      "#F5ECC2",
+      "#F5EFD2",
+      "#F4F1E2",
+      "#F4F3F2",
+      "#ADC7D1",
+      "#679CB1",
+      "#007190"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#208)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 15.54,
+    "min_de2000_deutan_first6": 11.89,
+    "min_de2000_protan_first6": 13.29,
+    "min_de2000_tritan_first6": 10.6,
+    "optimal6_min_de2000": 15.54,
+    "optimal6_min_de2000_deutan": 11.89,
+    "optimal6_min_de2000_protan": 13.29,
+    "grayscale_L_spread": 0.429,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "pypal_futurevisions_mars",
+  "name": {
+    "en": "mars (futurevisions)",
+    "zh": "mars（futurevisions）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DB3A2F",
+    "#EAB33A",
+    "#275D8E",
+    "#902A57",
+    "#F7EBD3",
+    "#0B0C0B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCABF",
+      "#E3A597",
+      "#D68071",
+      "#C6594A",
+      "#B52B21",
+      "#A10000"
+    ],
+    "paired_diverging_stops": [
+      "#EAB33A",
+      "#EEC983",
+      "#F1DFBC",
+      "#F4F3F2",
+      "#AEC0D1",
+      "#6B8EB0",
+      "#275D8E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (futurevisions: mars)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 22.4,
+    "min_de2000_deutan_first6": 19.33,
+    "min_de2000_protan_first6": 12.79,
+    "min_de2000_tritan_first6": 18.12,
+    "optimal6_min_de2000": 22.4,
+    "optimal6_min_de2000_deutan": 19.33,
+    "optimal6_min_de2000_protan": 12.79,
+    "grayscale_L_spread": 0.791,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

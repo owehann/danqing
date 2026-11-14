@@ -22,7 +22,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CDC0",
+      "#D7AB9B",
+      "#C68A76",
+      "#B36952",
+      "#A0472D",
+      "#8B2000"
+    ],
+    "paired_diverging_stops": [
+      "#885800",
+      "#AC8B53",
+      "#D0BEA2",
+      "#F4F3F2",
+      "#A9ACB4",
+      "#636979",
+      "#262D42"
+    ]
   },
   "source": {
     "title": "I Saw the Figure 5 in Gold, 1928, Charles Demuth, American",

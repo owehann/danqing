@@ -1,0 +1,69 @@
+{
+  "id": "pypal_islamicart_shiraz",
+  "name": {
+    "en": "shiraz (IslamicArt)",
+    "zh": "shiraz（IslamicArt）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#402733",
+    "#8F6052",
+    "#2F6349",
+    "#AE2B47",
+    "#7BC17D",
+    "#68D8F2",
+    "#7982F7",
+    "#E03E4A",
+    "#FFF759",
+    "#ECA987",
+    "#705549",
+    "#9F4739"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC6",
+      "#DCA7A6",
+      "#CD8386",
+      "#BC5F68",
+      "#A9394B",
+      "#94002F"
+    ],
+    "paired_diverging_stops": [
+      "#7982F7",
+      "#9FAAF8",
+      "#C8CFF7",
+      "#F4F3F2",
+      "#F7F6C8",
+      "#FBF799",
+      "#FFF759"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (IslamicArt: shiraz)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 16.81,
+    "min_de2000_deutan_first6": 3.6,
+    "min_de2000_protan_first6": 3.4,
+    "min_de2000_tritan_first6": 11.8,
+    "optimal6_min_de2000": 16.81,
+    "optimal6_min_de2000_deutan": 3.6,
+    "optimal6_min_de2000_protan": 3.4,
+    "grayscale_L_spread": 0.646,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

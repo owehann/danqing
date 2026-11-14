@@ -23,7 +23,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D5BD",
+      "#B1BC94",
+      "#90A36C",
+      "#708B42",
+      "#527207",
+      "#345A00"
+    ],
+    "paired_diverging_stops": [
+      "#65635F",
+      "#92908D",
+      "#C2C1BE",
+      "#F4F3F2",
+      "#B8C7A5",
+      "#809C59",
+      "#4B7100"
+    ]
   },
   "source": {
     "title": "George Harrison, 1967, Richard Avedon, Lithograph",

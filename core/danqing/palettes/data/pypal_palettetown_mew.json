@@ -1,0 +1,63 @@
+{
+  "id": "pypal_palettetown_mew",
+  "name": {
+    "en": "mew (palettetown)",
+    "zh": "mew（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8C0C8",
+    "#F88078",
+    "#B02030",
+    "#D04850",
+    "#282828",
+    "#F0D0E0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCAC3",
+      "#DFA69F",
+      "#D0827C",
+      "#C05D5B",
+      "#AE353A",
+      "#990018"
+    ],
+    "paired_diverging_stops": [
+      "#282828",
+      "#656564",
+      "#AAA9A8",
+      "#F4F3F2",
+      "#F3E8EC",
+      "#F2DCE6",
+      "#F0D0E0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: mew)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 7.42,
+    "min_de2000_deutan_first6": 8.13,
+    "min_de2000_protan_first6": 6.24,
+    "min_de2000_tritan_first6": 7.57,
+    "optimal6_min_de2000": 7.42,
+    "optimal6_min_de2000_deutan": 8.13,
+    "optimal6_min_de2000_protan": 6.24,
+    "grayscale_L_spread": 0.612,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

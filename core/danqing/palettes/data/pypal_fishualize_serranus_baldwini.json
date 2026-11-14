@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_serranus_baldwini",
+  "name": {
+    "en": "Serranus_baldwini (fishualize)",
+    "zh": "Serranus_baldwini（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#048ABF",
+    "#474F3E",
+    "#F2B705",
+    "#A64F03",
+    "#BF3030"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC1",
+      "#DFA69C",
+      "#D18278",
+      "#C15E54",
+      "#AF3531",
+      "#9A0003"
+    ],
+    "paired_diverging_stops": [
+      "#048ABF",
+      "#6FAED1",
+      "#B2D0E2",
+      "#F4F3F2",
+      "#F4E0B8",
+      "#F3CC79",
+      "#F2B705"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Serranus_baldwini)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 17.85,
+    "min_de2000_deutan_first6": 4.3,
+    "min_de2000_protan_first6": 7.57,
+    "min_de2000_tritan_first6": 5.91,
+    "optimal6_min_de2000": 17.85,
+    "optimal6_min_de2000_deutan": 4.3,
+    "optimal6_min_de2000_protan": 7.57,
+    "grayscale_L_spread": 0.396,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

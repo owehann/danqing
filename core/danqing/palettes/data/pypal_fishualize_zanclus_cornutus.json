@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_zanclus_cornutus",
+  "name": {
+    "en": "Zanclus_cornutus (fishualize)",
+    "zh": "Zanclus_cornutus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#000000",
+    "#FB9406",
+    "#FEFF45",
+    "#BBEE00",
+    "#8EEAF5"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CEB8",
+      "#D6AE89",
+      "#C58D59",
+      "#B36D1E",
+      "#A04C00",
+      "#8B2500"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#F6F8C6",
+      "#FAFC92",
+      "#FEFF45"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Zanclus_cornutus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.31,
+    "min_de2000_deutan_first6": 7.51,
+    "min_de2000_protan_first6": 6.09,
+    "min_de2000_tritan_first6": 17.26,
+    "optimal6_min_de2000": 10.31,
+    "optimal6_min_de2000_deutan": 7.51,
+    "optimal6_min_de2000_protan": 6.09,
+    "grayscale_L_spread": 0.969,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

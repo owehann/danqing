@@ -1,0 +1,62 @@
+{
+  "id": "pypal_butterflycolors_archaeoprepona_demophon_thalpius",
+  "name": {
+    "en": "archaeoprepona_demophon_thalpius (ButterflyColors)",
+    "zh": "archaeoprepona_demophon_thalpius（ButterflyColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3C36D9",
+    "#322EA6",
+    "#25B8D9",
+    "#39BFB2",
+    "#4C2E23"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD1E8",
+      "#A9B3E7",
+      "#8594E3",
+      "#6474DE",
+      "#4850D8",
+      "#341AD0"
+    ],
+    "paired_diverging_stops": [
+      "#3C36D9",
+      "#6D7FE7",
+      "#ADBAF0",
+      "#F4F3F2",
+      "#B9ACA7",
+      "#816A62",
+      "#4C2E23"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ButterflyColors: archaeoprepona_demophon_thalpius)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 7.28,
+    "min_de2000_deutan_first6": 7.73,
+    "min_de2000_protan_first6": 8.74,
+    "min_de2000_tritan_first6": 2.72,
+    "optimal6_min_de2000": 7.28,
+    "optimal6_min_de2000_deutan": 7.73,
+    "optimal6_min_de2000_protan": 8.74,
+    "grayscale_L_spread": 0.396,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

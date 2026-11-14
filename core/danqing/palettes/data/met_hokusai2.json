@@ -18,7 +18,25 @@
   "neutral": "#B8C2C4",
   "partners": {
     "sequential": "Blues",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED4D7",
+      "#A8B9C7",
+      "#829EB6",
+      "#5D84A5",
+      "#366B94",
+      "#005182"
+    ],
+    "paired_diverging_stops": [
+      "#4E6969",
+      "#829594",
+      "#BAC3C2",
+      "#F4F3F2",
+      "#A2AFBA",
+      "#556F84",
+      "#0A3351"
+    ]
   },
   "source": {
     "title": "MetBrewer: Hokusai2 (Met Object 56240)",

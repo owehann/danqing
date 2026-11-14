@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_flaaffy",
+  "name": {
+    "en": "flaaffy (palettetown)",
+    "zh": "flaaffy（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E85840",
+    "#F8F8F8",
+    "#F89078",
+    "#C8C8D8",
+    "#9898B0",
+    "#707088",
+    "#C83818",
+    "#A80000",
+    "#484848",
+    "#F8C0A0",
+    "#5080C0",
+    "#80C0F8",
+    "#284088"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBE",
+      "#E0A796",
+      "#D2836E",
+      "#C25E46",
+      "#B03518",
+      "#9C0000"
+    ],
+    "paired_diverging_stops": [
+      "#C83818",
+      "#DD7D67",
+      "#ECB9AC",
+      "#F4F3F2",
+      "#AAB6D0",
+      "#667AAD",
+      "#284088"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: flaaffy)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 12.9,
+    "min_de2000_deutan_first6": 11.11,
+    "min_de2000_protan_first6": 12.45,
+    "min_de2000_tritan_first6": 10.7,
+    "optimal6_min_de2000": 12.9,
+    "optimal6_min_de2000_deutan": 11.11,
+    "optimal6_min_de2000_protan": 12.45,
+    "grayscale_L_spread": 0.584,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

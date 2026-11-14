@@ -1,0 +1,66 @@
+{
+  "id": "pypal_ggthemes_few_dark",
+  "name": {
+    "en": "few_Dark (ggthemes)",
+    "zh": "few_Dark（ggthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#000000",
+    "#265DAB",
+    "#DF5C24",
+    "#059748",
+    "#E5126F",
+    "#9D722A",
+    "#7B3A96",
+    "#C7B42E",
+    "#CB2027"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C7C8",
+      "#E7A0AA",
+      "#DB778D",
+      "#CC4C71",
+      "#BB0057",
+      "#A7003D"
+    ],
+    "paired_diverging_stops": [
+      "#265DAB",
+      "#6A8FC5",
+      "#AEC1DD",
+      "#F4F3F2",
+      "#E4DFB9",
+      "#D5CA7D",
+      "#C7B42E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemes: few_Dark)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 20.82,
+    "min_de2000_deutan_first6": 6.34,
+    "min_de2000_protan_first6": 0.76,
+    "min_de2000_tritan_first6": 3.55,
+    "optimal6_min_de2000": 20.82,
+    "optimal6_min_de2000_deutan": 6.34,
+    "optimal6_min_de2000_protan": 0.76,
+    "grayscale_L_spread": 0.764,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

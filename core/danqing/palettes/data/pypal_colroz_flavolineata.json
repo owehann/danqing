@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_flavolineata",
+  "name": {
+    "en": "flavolineata (colRoz)",
+    "zh": "flavolineata（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#573333",
+    "#E0C5BE",
+    "#FDD41A",
+    "#D3AD64",
+    "#7A5D55",
+    "#DE5C00"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBB",
+      "#DDA98F",
+      "#CE8764",
+      "#BD6336",
+      "#AB3D00",
+      "#970000"
+    ],
+    "paired_diverging_stops": [
+      "#573333",
+      "#8A6E6D",
+      "#BEAFAD",
+      "#F4F3F2",
+      "#F7EABD",
+      "#FAE081",
+      "#FDD41A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: flavolineata)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.42,
+    "min_de2000_deutan_first6": 13.29,
+    "min_de2000_protan_first6": 13.82,
+    "min_de2000_tritan_first6": 7.61,
+    "optimal6_min_de2000": 14.42,
+    "optimal6_min_de2000_deutan": 13.29,
+    "optimal6_min_de2000_protan": 13.82,
+    "grayscale_L_spread": 0.514,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

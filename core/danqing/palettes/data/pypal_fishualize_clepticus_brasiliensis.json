@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_clepticus_brasiliensis",
+  "name": {
+    "en": "Clepticus_brasiliensis (fishualize)",
+    "zh": "Clepticus_brasiliensis（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A6036D",
+    "#D9A404",
+    "#BF6B04",
+    "#A62103",
+    "#A07DAF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EAC9CF",
+      "#DCA4B7",
+      "#CD7FA0",
+      "#BC5889",
+      "#A92C73",
+      "#94005D"
+    ],
+    "paired_diverging_stops": [
+      "#D9A404",
+      "#E3BF74",
+      "#EBDAB5",
+      "#F4F3F2",
+      "#D7CBDC",
+      "#BCA3C5",
+      "#A07DAF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Clepticus_brasiliensis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 20.01,
+    "min_de2000_deutan_first6": 13.47,
+    "min_de2000_protan_first6": 17.17,
+    "min_de2000_tritan_first6": 10.19,
+    "optimal6_min_de2000": 20.01,
+    "optimal6_min_de2000_deutan": 13.47,
+    "optimal6_min_de2000_protan": 17.17,
+    "grayscale_L_spread": 0.276,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

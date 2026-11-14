@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nineteeneightyr_hotpink",
+  "name": {
+    "en": "hotpink (NineteenEightyR)",
+    "zh": "hotpink（NineteenEightyR）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#FF69B4",
+    "#FF6EB4",
+    "#EE6AA7",
+    "#CD6090",
+    "#8B3A62"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CDCD",
+      "#D0ABB4",
+      "#BC8A9B",
+      "#A86A82",
+      "#934A6B",
+      "#7D2954"
+    ],
+    "paired_diverging_stops": [
+      "#FF6EB4",
+      "#FF9EC8",
+      "#FDCADD",
+      "#F4F3F2",
+      "#D3B4BF",
+      "#B1778F",
+      "#8B3A62"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NineteenEightyR: hotpink)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 0.97,
+    "min_de2000_deutan_first6": 1.02,
+    "min_de2000_protan_first6": 1.25,
+    "min_de2000_tritan_first6": 0.89,
+    "optimal6_min_de2000": 0.97,
+    "optimal6_min_de2000_deutan": 1.02,
+    "optimal6_min_de2000_protan": 1.25,
+    "grayscale_L_spread": 0.264,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

@@ -22,7 +22,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D4C7",
+      "#B1BAA8",
+      "#8FA18A",
+      "#6F886D",
+      "#506F51",
+      "#305836"
+    ],
+    "paired_diverging_stops": [
+      "#715B6E",
+      "#9B8B98",
+      "#C7BEC4",
+      "#F4F3F2",
+      "#A0AA9F",
+      "#536553",
+      "#0E2810"
+    ]
   },
   "source": {
     "title": "Lilacs in a Window (Vase de Lilas a la Fenetre), 1880–83, Mary Cassatt, American",

@@ -1,0 +1,72 @@
+{
+  "id": "pypal_palettetown_vaporeon",
+  "name": {
+    "en": "vaporeon (palettetown)",
+    "zh": "vaporeon（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#38A088",
+    "#282828",
+    "#304078",
+    "#80E8D0",
+    "#106850",
+    "#60C8B0",
+    "#E0E0E0",
+    "#F8F8F8",
+    "#887828",
+    "#587098",
+    "#E0B848",
+    "#F8E878",
+    "#A8A8C8",
+    "#585870",
+    "#7088B0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DAD2BF",
+      "#C0B698",
+      "#A69B71",
+      "#8D804B",
+      "#746620",
+      "#5D4C00"
+    ],
+    "paired_diverging_stops": [
+      "#304078",
+      "#6B79A1",
+      "#ADB5CA",
+      "#F4F3F2",
+      "#F5F0CD",
+      "#F6ECA6",
+      "#F8E878"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: vaporeon)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 15,
+    "max_colors": 15,
+    "min_de2000_first6": 7.84,
+    "min_de2000_deutan_first6": 7.98,
+    "min_de2000_protan_first6": 7.67,
+    "min_de2000_tritan_first6": 7.84,
+    "optimal6_min_de2000": 7.84,
+    "optimal6_min_de2000_deutan": 7.98,
+    "optimal6_min_de2000_protan": 7.67,
+    "grayscale_L_spread": 0.702,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "turku",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8D2C5",
+      "#BBB7A5",
+      "#9F9B85",
+      "#848166",
+      "#696848",
+      "#504F2B"
+    ],
+    "paired_diverging_stops": [
+      "#0E0E0D",
+      "#50504F",
+      "#9E9E9C",
+      "#F4F3F2",
+      "#C7BFBE",
+      "#9C8C8C",
+      "#725D5D"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (turku)",

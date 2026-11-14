@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "bamako",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D5BE",
+      "#B5BB96",
+      "#96A16E",
+      "#798846",
+      "#5C6F15",
+      "#425700"
+    ],
+    "paired_diverging_stops": [
+      "#003B47",
+      "#55747C",
+      "#A2B2B5",
+      "#F4F3F2",
+      "#C9C0AE",
+      "#9F8F6C",
+      "#77602B"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (bamako)",

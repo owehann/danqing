@@ -343,6 +343,40 @@ function PaletteCard({
           )}
           <dt>{t("palettes.provenance.license")}</dt>
           <dd>{palette.artifact?.image_license || palette.source.license}</dd>
+          {palette.partners.paired_sequential_stops && palette.partners.paired_sequential_stops.length >= 2 ? (
+            <>
+              <dt>{t("palettes.provenance.pairedSequential")}</dt>
+              <dd>
+                <span
+                  style={{
+                    display: "block",
+                    height: 8,
+                    borderRadius: 3,
+                    marginTop: 4,
+                    background: `linear-gradient(to right, ${palette.partners.paired_sequential_stops.join(", ")})`,
+                    border: "1px solid var(--border-subtle)",
+                  }}
+                />
+              </dd>
+            </>
+          ) : null}
+          {palette.partners.paired_diverging_stops && palette.partners.paired_diverging_stops.length >= 2 ? (
+            <>
+              <dt>{t("palettes.provenance.pairedDiverging")}</dt>
+              <dd>
+                <span
+                  style={{
+                    display: "block",
+                    height: 8,
+                    borderRadius: 3,
+                    marginTop: 4,
+                    background: `linear-gradient(to right, ${palette.partners.paired_diverging_stops.join(", ")})`,
+                    border: "1px solid var(--border-subtle)",
+                  }}
+                />
+              </dd>
+            </>
+          ) : null}
         </dl>
         {(palette.artifact?.url || palette.source.url) ? (
           <a
@@ -385,6 +419,11 @@ export function RightSidebar(): React.ReactElement | null {
   const [filterCbSafe, setFilterCbSafe] = useState(false);
   const [filterEnoughColors, setFilterEnoughColors] = useState(true);
   const [filterPrintFriendly, setFilterPrintFriendly] = useState(false);
+  const [visibleLimit, setVisibleLimit] = useState(80);
+
+  useEffect(() => {
+    setVisibleLimit(80);
+  }, [activeTab, query, filterCbSafe, filterEnoughColors, filterPrintFriendly]);
 
   const [manuscriptOpen, setManuscriptOpen] = useState(false);
   const [manuscriptPreset, setManuscriptPreset] = useState<ManuscriptPresetKey | null>(null);
@@ -565,6 +604,14 @@ export function RightSidebar(): React.ReactElement | null {
       }
       return true;
     });
+
+    if (activeTab === "all" && !q) {
+      const isBulk = (id: string): number =>
+        id.startsWith("pypal_") || id.startsWith("nice_cl_") || id.startsWith("thiagodnf_")
+          ? 1
+          : 0;
+      filtered.sort((a, b) => isBulk(a.id) - isBulk(b.id));
+    }
 
     return { recommendedList: rec, mainList: filtered };
   }, [
@@ -861,6 +908,12 @@ export function RightSidebar(): React.ReactElement | null {
           role="tabpanel"
           aria-labelledby={`${tabIdPrefix}-${activeTab}`}
           className="dq-palette-list"
+          onScroll={(e) => {
+            const el = e.currentTarget;
+            if (el.scrollHeight - el.scrollTop - el.clientHeight < 280) {
+              setVisibleLimit((prev) => (prev < mainList.length ? prev + 80 : prev));
+            }
+          }}
         >
           {manuscriptRecs.length > 0 && activeTab === "all" && !query ? (
             <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 6 }}>
@@ -923,17 +976,29 @@ export function RightSidebar(): React.ReactElement | null {
               {t("palettes.emptyMatch")}
             </div>
           ) : (
-            mainList.map((p) => (
-              <PaletteCard
-                key={p.id}
-                palette={p}
-                active={activePaletteForScope === p.id}
-                langKey={langKey}
-                onHoverStart={handleHoverStart}
-                onHoverEnd={handleHoverEnd}
-                onApply={(pid) => void applyPalette(pid)}
-              />
-            ))
+            <>
+              {mainList.slice(0, visibleLimit).map((p) => (
+                <PaletteCard
+                  key={p.id}
+                  palette={p}
+                  active={activePaletteForScope === p.id}
+                  langKey={langKey}
+                  onHoverStart={handleHoverStart}
+                  onHoverEnd={handleHoverEnd}
+                  onApply={(pid) => void applyPalette(pid)}
+                />
+              ))}
+              {mainList.length > visibleLimit ? (
+                <button
+                  type="button"
+                  className="dq-btn dq-btn--ghost"
+                  style={{ width: "100%", marginTop: 4, fontSize: 12 }}
+                  onClick={() => setVisibleLimit((prev) => prev + 120)}
+                >
+                  {t("palettes.showMore", { count: mainList.length - visibleLimit })}
+                </button>
+              ) : null}
+            </>
           )}
         </div>
       </div>

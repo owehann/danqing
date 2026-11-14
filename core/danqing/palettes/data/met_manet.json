@@ -23,7 +23,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D1DC",
+      "#B2B4D0",
+      "#9297C4",
+      "#737AB6",
+      "#575DA8",
+      "#3D3F99"
+    ],
+    "paired_diverging_stops": [
+      "#825C00",
+      "#A78D5D",
+      "#CDBFA7",
+      "#F4F3F2",
+      "#A5B1C8",
+      "#5B729D",
+      "#183571"
+    ]
   },
   "source": {
     "title": "Boating, 1874, Edouard Manet, French",

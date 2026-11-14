@@ -21,7 +21,25 @@
   "neutral": "#7F7F7F",
   "partners": {
     "sequential": "viridis",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DECBE5",
+      "#C7A7E0",
+      "#B183DA",
+      "#9B5CD3",
+      "#872ACA",
+      "#7300BF"
+    ],
+    "paired_diverging_stops": [
+      "#AE3300",
+      "#CB7943",
+      "#E2B69C",
+      "#F4F3F2",
+      "#CEB3EE",
+      "#AB70E4",
+      "#8800D5"
+    ]
   },
   "source": {
     "title": "Scanpy Colorblind-Adjusted Vega-10 (vega_10_scanpy)",

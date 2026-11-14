@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_152",
+  "name": {
+    "en": "Sanzo Wada #152 (Etruscan Red · Hay's Russet · Light Glaucous Blue)",
+    "zh": "和田三造 #152（Etruscan Red · Hay's Russet · Light Glaucous Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C55347",
+    "#793327",
+    "#A5C8D1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCC2",
+      "#D9AA9E",
+      "#C9887B",
+      "#B76659",
+      "#A44237",
+      "#8F1612"
+    ],
+    "paired_diverging_stops": [
+      "#793327",
+      "#A47166",
+      "#CDB1AA",
+      "#F4F3F2",
+      "#DAE5E7",
+      "#BFD6DC",
+      "#A5C8D1"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#152)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 18.01,
+    "min_de2000_deutan_first6": 19.26,
+    "min_de2000_protan_first6": 14.42,
+    "min_de2000_tritan_first6": 18.08,
+    "optimal6_min_de2000": 18.01,
+    "optimal6_min_de2000_deutan": 19.26,
+    "optimal6_min_de2000_protan": 14.42,
+    "grayscale_L_spread": 0.395,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

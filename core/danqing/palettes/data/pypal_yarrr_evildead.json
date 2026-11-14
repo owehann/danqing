@@ -1,0 +1,63 @@
+{
+  "id": "pypal_yarrr_evildead",
+  "name": {
+    "en": "evildead (yarrr)",
+    "zh": "evildead（yarrr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#19180D",
+    "#212510",
+    "#2E100B",
+    "#392E12",
+    "#57512B",
+    "#968E4C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D9D3C1",
+      "#BDB79B",
+      "#A29C77",
+      "#888153",
+      "#6F672E",
+      "#574E00"
+    ],
+    "paired_diverging_stops": [
+      "#19180D",
+      "#59584F",
+      "#A3A29D",
+      "#F4F3F2",
+      "#D3D1BA",
+      "#B4AF84",
+      "#968E4C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (yarrr: evildead)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 7.08,
+    "min_de2000_deutan_first6": 2.73,
+    "min_de2000_protan_first6": 0.88,
+    "min_de2000_tritan_first6": 5.09,
+    "optimal6_min_de2000": 7.08,
+    "optimal6_min_de2000_deutan": 2.73,
+    "optimal6_min_de2000_protan": 0.88,
+    "grayscale_L_spread": 0.432,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

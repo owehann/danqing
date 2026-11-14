@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_wetland",
+  "name": {
+    "en": "wetland (calecopal)",
+    "zh": "wetland（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DED4C8",
+    "#AD6F4F",
+    "#AEC96F",
+    "#2B3851",
+    "#3F320D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CFC3",
+      "#CCB09F",
+      "#B7927D",
+      "#A1745B",
+      "#8C573B",
+      "#763A18"
+    ],
+    "paired_diverging_stops": [
+      "#AEC96F",
+      "#C5D89D",
+      "#DCE6C8",
+      "#F4F3F2",
+      "#ABB0BA",
+      "#687284",
+      "#2B3851"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: wetland)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 22.03,
+    "min_de2000_deutan_first6": 16.8,
+    "min_de2000_protan_first6": 18.78,
+    "min_de2000_tritan_first6": 18.3,
+    "optimal6_min_de2000": 22.03,
+    "optimal6_min_de2000_deutan": 16.8,
+    "optimal6_min_de2000_protan": 18.78,
+    "grayscale_L_spread": 0.551,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

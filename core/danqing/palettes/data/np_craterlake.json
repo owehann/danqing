@@ -19,7 +19,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D7D3C4",
+      "#B8B8A2",
+      "#9B9D80",
+      "#7F8460",
+      "#646B40",
+      "#4A5220"
+    ],
+    "paired_diverging_stops": [
+      "#1D4A79",
+      "#6380A1",
+      "#A9B8CA",
+      "#F4F3F2",
+      "#CCBEB6",
+      "#A58A7E",
+      "#7E5A49"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (CraterLake)",

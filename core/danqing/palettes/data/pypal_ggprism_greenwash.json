@@ -1,0 +1,67 @@
+{
+  "id": "pypal_ggprism_greenwash",
+  "name": {
+    "en": "greenwash (ggprism)",
+    "zh": "greenwash（ggprism）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#512305",
+    "#73130F",
+    "#AF4B1B",
+    "#181818",
+    "#435D14",
+    "#993D38",
+    "#845852",
+    "#E98440",
+    "#5A5448",
+    "#818C5A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDBF",
+      "#D6AC97",
+      "#C58B71",
+      "#B36A4A",
+      "#A04920",
+      "#8B2300"
+    ],
+    "paired_diverging_stops": [
+      "#181818",
+      "#585858",
+      "#A3A2A1",
+      "#F4F3F2",
+      "#F4CFBA",
+      "#F0AB80",
+      "#E98440"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggprism: greenwash)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 11.2,
+    "min_de2000_deutan_first6": 4.47,
+    "min_de2000_protan_first6": 1.86,
+    "min_de2000_tritan_first6": 5.81,
+    "optimal6_min_de2000": 11.2,
+    "optimal6_min_de2000_deutan": 4.47,
+    "optimal6_min_de2000_protan": 1.86,
+    "grayscale_L_spread": 0.503,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

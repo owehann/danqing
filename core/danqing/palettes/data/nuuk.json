@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "nuuk",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED4D8",
+      "#A6B9C8",
+      "#809FB8",
+      "#5985A8",
+      "#316B97",
+      "#005186"
+    ],
+    "paired_diverging_stops": [
+      "#05598C",
+      "#608BAF",
+      "#A9BED1",
+      "#F4F3F2",
+      "#C3C3AB",
+      "#949466",
+      "#69671A"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (nuuk)",

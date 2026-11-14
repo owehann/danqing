@@ -1,0 +1,64 @@
+{
+  "id": "pypal_dutchmasters_staalmeesters",
+  "name": {
+    "en": "staalmeesters (dutchmasters)",
+    "zh": "staalmeesters（dutchmasters）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A13826",
+    "#701B06",
+    "#4C3114",
+    "#7A491E",
+    "#D7E1D6",
+    "#060A0D",
+    "#D39C7B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC1",
+      "#D8AA9D",
+      "#C78979",
+      "#B56756",
+      "#A14533",
+      "#8D1D09"
+    ],
+    "paired_diverging_stops": [
+      "#D7E1D6",
+      "#E1E7DF",
+      "#EAEDE9",
+      "#F4F3F2",
+      "#9A9C9C",
+      "#494D4F",
+      "#060A0D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (dutchmasters: staalmeesters)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 11.63,
+    "min_de2000_deutan_first6": 4.15,
+    "min_de2000_protan_first6": 2.41,
+    "min_de2000_tritan_first6": 9.73,
+    "optimal6_min_de2000": 11.63,
+    "optimal6_min_de2000_deutan": 4.15,
+    "optimal6_min_de2000_protan": 2.41,
+    "grayscale_L_spread": 0.758,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

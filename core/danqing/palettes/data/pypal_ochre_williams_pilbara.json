@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ochre_williams_pilbara",
+  "name": {
+    "en": "williams_pilbara (ochRe)",
+    "zh": "williams_pilbara（ochRe）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D23C1E",
+    "#965A3C",
+    "#B4783C",
+    "#B4D2D2",
+    "#96B4B4",
+    "#96B4D2",
+    "#7896B4"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBE",
+      "#E1A695",
+      "#D3826D",
+      "#C45D45",
+      "#B23216",
+      "#9E0000"
+    ],
+    "paired_diverging_stops": [
+      "#D23C1E",
+      "#E4806B",
+      "#F0BBAE",
+      "#F4F3F2",
+      "#D4DEE8",
+      "#B5C9DD",
+      "#96B4D2"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ochRe: williams_pilbara)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 7.84,
+    "min_de2000_deutan_first6": 5.62,
+    "min_de2000_protan_first6": 6.54,
+    "min_de2000_tritan_first6": 3.22,
+    "optimal6_min_de2000": 7.84,
+    "optimal6_min_de2000_deutan": 5.62,
+    "optimal6_min_de2000_protan": 6.54,
+    "grayscale_L_spread": 0.313,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

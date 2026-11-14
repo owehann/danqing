@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_histiophryne_psychedelica",
+  "name": {
+    "en": "Histiophryne_psychedelica (fishualize)",
+    "zh": "Histiophryne_psychedelica（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#80CCE1",
+    "#9DA376",
+    "#9F7707",
+    "#764409",
+    "#6A0A09"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED1BC",
+      "#C6B492",
+      "#AF9769",
+      "#997B3E",
+      "#825F00",
+      "#6C4400"
+    ],
+    "paired_diverging_stops": [
+      "#80CCE1",
+      "#A9D9E7",
+      "#CFE7ED",
+      "#F4F3F2",
+      "#D7C9AD",
+      "#BBA068",
+      "#9F7707"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Histiophryne_psychedelica)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 19.9,
+    "min_de2000_deutan_first6": 9.44,
+    "min_de2000_protan_first6": 14.44,
+    "min_de2000_tritan_first6": 11.11,
+    "optimal6_min_de2000": 19.9,
+    "optimal6_min_de2000_deutan": 9.44,
+    "optimal6_min_de2000_protan": 14.44,
+    "grayscale_L_spread": 0.467,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

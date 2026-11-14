@@ -1,0 +1,61 @@
+{
+  "id": "pypal_vapeplot_crystal_pepsi",
+  "name": {
+    "en": "crystal_pepsi (vapeplot)",
+    "zh": "crystal_pepsi（vapeplot）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FFCCFF",
+    "#F1DAFF",
+    "#E3E8FF",
+    "#CCFFFF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDCFD1",
+      "#C5AFBC",
+      "#AC91A6",
+      "#957391",
+      "#7D567C",
+      "#663A67"
+    ],
+    "paired_diverging_stops": [
+      "#FFCCFF",
+      "#FCD9FB",
+      "#F8E6F7",
+      "#F4F3F2",
+      "#E7F7F6",
+      "#DAFBFB",
+      "#CCFFFF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vapeplot: crystal_pepsi)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 6.7,
+    "min_de2000_deutan_first6": 1.48,
+    "min_de2000_protan_first6": 3.2,
+    "min_de2000_tritan_first6": 8.85,
+    "optimal6_min_de2000": 6.7,
+    "optimal6_min_de2000_deutan": 1.48,
+    "optimal6_min_de2000_protan": 3.2,
+    "grayscale_L_spread": 0.06,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

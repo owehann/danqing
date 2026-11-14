@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lisa_katsushikahokusai",
+  "name": {
+    "en": "KatsushikaHokusai (lisa)",
+    "zh": "KatsushikaHokusai（lisa）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1F284C",
+    "#2D4472",
+    "#6E6352",
+    "#D9CCAC",
+    "#ECE2C6"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D9D2C8",
+      "#BDB5A9",
+      "#A2998C",
+      "#887E70",
+      "#6F6454",
+      "#564B3A"
+    ],
+    "paired_diverging_stops": [
+      "#1F284C",
+      "#5E6681",
+      "#A6AAB8",
+      "#F4F3F2",
+      "#F1EEE3",
+      "#EFE8D5",
+      "#ECE2C6"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (lisa: KatsushikaHokusai)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 5.27,
+    "min_de2000_deutan_first6": 5.15,
+    "min_de2000_protan_first6": 5.35,
+    "min_de2000_tritan_first6": 5.33,
+    "optimal6_min_de2000": 5.27,
+    "optimal6_min_de2000_deutan": 5.15,
+    "optimal6_min_de2000_protan": 5.35,
+    "grayscale_L_spread": 0.625,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

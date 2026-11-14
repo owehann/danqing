@@ -1,0 +1,72 @@
+{
+  "id": "pypal_palettetown_nincada",
+  "name": {
+    "en": "nincada (palettetown)",
+    "zh": "nincada（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E0D0D0",
+    "#585050",
+    "#988878",
+    "#B0A890",
+    "#C8B8B0",
+    "#787060",
+    "#282828",
+    "#704838",
+    "#987050",
+    "#C8A068",
+    "#80C068",
+    "#F0E8E0",
+    "#487858",
+    "#60A068",
+    "#A88860"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D5C8",
+      "#AEBBA9",
+      "#8CA18C",
+      "#6A896F",
+      "#497154",
+      "#265939"
+    ],
+    "paired_diverging_stops": [
+      "#282828",
+      "#656564",
+      "#AAA9A8",
+      "#F4F3F2",
+      "#F3F0EC",
+      "#F1ECE6",
+      "#F0E8E0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: nincada)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 15,
+    "max_colors": 15,
+    "min_de2000_first6": 7.34,
+    "min_de2000_deutan_first6": 6.96,
+    "min_de2000_protan_first6": 7.27,
+    "min_de2000_tritan_first6": 6.0,
+    "optimal6_min_de2000": 7.34,
+    "optimal6_min_de2000_deutan": 6.96,
+    "optimal6_min_de2000_protan": 7.27,
+    "grayscale_L_spread": 0.658,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

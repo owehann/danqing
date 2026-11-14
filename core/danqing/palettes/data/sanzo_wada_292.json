@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_292",
+  "name": {
+    "en": "Sanzo Wada #292 (Pale Lemon Yellow · Pinkish Cinnamon · Isabella Color)",
+    "zh": "和田三造 #292（Pale Lemon Yellow · Pinkish Cinnamon · Isabella Color）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FFEFAE",
+    "#EEB480",
+    "#C5A56E",
+    "#C2AE93"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DCD1C1",
+      "#C3B49D",
+      "#AB9879",
+      "#937C55",
+      "#7C6132",
+      "#654703"
+    ],
+    "paired_diverging_stops": [
+      "#FFEFAE",
+      "#FBF1C6",
+      "#F7F2DC",
+      "#F4F3F2",
+      "#E3DCD2",
+      "#D3C5B2",
+      "#C2AE93"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#292)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 8.04,
+    "min_de2000_deutan_first6": 6.5,
+    "min_de2000_protan_first6": 5.38,
+    "min_de2000_tritan_first6": 6.1,
+    "optimal6_min_de2000": 8.04,
+    "optimal6_min_de2000_deutan": 6.5,
+    "optimal6_min_de2000_protan": 5.38,
+    "grayscale_L_spread": 0.212,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

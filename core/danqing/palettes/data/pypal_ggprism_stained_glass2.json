@@ -1,0 +1,65 @@
+{
+  "id": "pypal_ggprism_stained_glass2",
+  "name": {
+    "en": "stained_glass2 (ggprism)",
+    "zh": "stained_glass2（ggprism）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF0000",
+    "#FFFF00",
+    "#00FF00",
+    "#55A0FB",
+    "#B856D7",
+    "#F74ED6",
+    "#FF8000",
+    "#0000C0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F3C7BB",
+      "#EDA08F",
+      "#E47663",
+      "#D74736",
+      "#C70000",
+      "#B50000"
+    ],
+    "paired_diverging_stops": [
+      "#FFFF00",
+      "#FAFC86",
+      "#F7F9C1",
+      "#F4F3F2",
+      "#98B3E8",
+      "#416FD7",
+      "#0000C0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggprism: stained_glass2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 11.38,
+    "min_de2000_deutan_first6": 7.12,
+    "min_de2000_protan_first6": 4.07,
+    "min_de2000_tritan_first6": 13.38,
+    "optimal6_min_de2000": 11.38,
+    "optimal6_min_de2000_deutan": 7.12,
+    "optimal6_min_de2000_protan": 4.07,
+    "grayscale_L_spread": 0.603,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

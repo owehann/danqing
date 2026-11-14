@@ -1,0 +1,60 @@
+{
+  "id": "pypal_nbapalettes_raptors_statement",
+  "name": {
+    "en": "raptors_statement (nbapalettes)",
+    "zh": "raptors_statement（nbapalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BA0C2F",
+    "#545859",
+    "#010101"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCAC2",
+      "#E2A49E",
+      "#D57F7B",
+      "#C65859",
+      "#B42A37",
+      "#A00013"
+    ],
+    "paired_diverging_stops": [
+      "#BA0C2F",
+      "#D66D6E",
+      "#E9B1AE",
+      "#F4F3F2",
+      "#949493",
+      "#3F3F3E",
+      "#010101"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nbapalettes: raptors_statement)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 25.23,
+    "min_de2000_deutan_first6": 22.84,
+    "min_de2000_protan_first6": 13.9,
+    "min_de2000_tritan_first6": 25.34,
+    "optimal6_min_de2000": 25.23,
+    "optimal6_min_de2000_deutan": 22.84,
+    "optimal6_min_de2000_protan": 13.9,
+    "grayscale_L_spread": 0.435,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

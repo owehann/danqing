@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_salvelinus_fontinalis",
+  "name": {
+    "en": "Salvelinus_fontinalis (fishualize)",
+    "zh": "Salvelinus_fontinalis（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E6452E",
+    "#E49A36",
+    "#F9DD4C",
+    "#5B4A4C",
+    "#01040E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCABE",
+      "#E3A595",
+      "#D6806D",
+      "#C75945",
+      "#B52B16",
+      "#A20000"
+    ],
+    "paired_diverging_stops": [
+      "#F9DD4C",
+      "#F7E590",
+      "#F5EDC3",
+      "#F4F3F2",
+      "#95989D",
+      "#404651",
+      "#01040E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Salvelinus_fontinalis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 21.09,
+    "min_de2000_deutan_first6": 11.43,
+    "min_de2000_protan_first6": 15.5,
+    "min_de2000_tritan_first6": 17.17,
+    "optimal6_min_de2000": 21.09,
+    "optimal6_min_de2000_deutan": 11.43,
+    "optimal6_min_de2000_protan": 15.5,
+    "grayscale_L_spread": 0.788,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

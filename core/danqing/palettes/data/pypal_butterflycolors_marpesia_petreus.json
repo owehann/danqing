@@ -1,0 +1,62 @@
+{
+  "id": "pypal_butterflycolors_marpesia_petreus",
+  "name": {
+    "en": "marpesia_petreus (ButterflyColors)",
+    "zh": "marpesia_petreus（ButterflyColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D98B48",
+    "#BC5918",
+    "#BF4B21",
+    "#8C311C",
+    "#5F291C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCBE",
+      "#DAAA97",
+      "#CA8870",
+      "#B96649",
+      "#A6421D",
+      "#911300"
+    ],
+    "paired_diverging_stops": [
+      "#D98B48",
+      "#E4AE84",
+      "#EDD1BB",
+      "#F4F3F2",
+      "#C2ACA5",
+      "#91685E",
+      "#5F291C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ButterflyColors: marpesia_petreus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 6.38,
+    "min_de2000_deutan_first6": 2.01,
+    "min_de2000_protan_first6": 4.1,
+    "min_de2000_tritan_first6": 2.95,
+    "optimal6_min_de2000": 6.38,
+    "optimal6_min_de2000_deutan": 2.01,
+    "optimal6_min_de2000_protan": 4.1,
+    "grayscale_L_spread": 0.351,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

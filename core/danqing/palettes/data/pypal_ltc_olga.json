@@ -1,0 +1,62 @@
+{
+  "id": "pypal_ltc_olga",
+  "name": {
+    "en": "olga (ltc)",
+    "zh": "olga（ltc）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C9E3C2",
+    "#8BC8CB",
+    "#ECCD80",
+    "#F5AB70",
+    "#9C87A1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DAD0CF",
+      "#BEB3B7",
+      "#A496A0",
+      "#8A7A89",
+      "#715F73",
+      "#59455D"
+    ],
+    "paired_diverging_stops": [
+      "#ECCD80",
+      "#EFDAA8",
+      "#F1E7CE",
+      "#F4F3F2",
+      "#D6CED6",
+      "#B9AABB",
+      "#9C87A1"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ltc: olga)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.28,
+    "min_de2000_deutan_first6": 4.42,
+    "min_de2000_protan_first6": 6.94,
+    "min_de2000_tritan_first6": 9.89,
+    "optimal6_min_de2000": 15.28,
+    "optimal6_min_de2000_deutan": 4.42,
+    "optimal6_min_de2000_protan": 6.94,
+    "grayscale_L_spread": 0.237,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

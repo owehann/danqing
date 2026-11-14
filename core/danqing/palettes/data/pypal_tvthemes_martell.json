@@ -1,0 +1,65 @@
+{
+  "id": "pypal_tvthemes_martell",
+  "name": {
+    "en": "Martell (tvthemes)",
+    "zh": "Martell（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF8000",
+    "#CC6600",
+    "#B81B18",
+    "#73110F",
+    "#F8FC23",
+    "#FAFD7B",
+    "#4C2600",
+    "#A57642"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCABF",
+      "#E1A699",
+      "#D38173",
+      "#C45B4E",
+      "#B23026",
+      "#9E0000"
+    ],
+    "paired_diverging_stops": [
+      "#F8FC23",
+      "#F6FA89",
+      "#F4F8C2",
+      "#F4F3F2",
+      "#BAAA9D",
+      "#82654F",
+      "#4C2600"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Martell)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 6.58,
+    "min_de2000_deutan_first6": 6.29,
+    "min_de2000_protan_first6": 6.24,
+    "min_de2000_tritan_first6": 2.02,
+    "optimal6_min_de2000": 6.58,
+    "optimal6_min_de2000_deutan": 6.29,
+    "optimal6_min_de2000_protan": 6.24,
+    "grayscale_L_spread": 0.653,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

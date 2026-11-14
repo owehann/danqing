@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_physalia",
+  "name": {
+    "en": "physalia (colRoz)",
+    "zh": "physalia（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#061349",
+    "#44618C",
+    "#82B4DE",
+    "#492772",
+    "#C78EF0",
+    "#3D5537"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D3D5",
+      "#B0B7C3",
+      "#8E9CB0",
+      "#6E819E",
+      "#4E678C",
+      "#304D79"
+    ],
+    "paired_diverging_stops": [
+      "#C78EF0",
+      "#D6B1F2",
+      "#E5D2F3",
+      "#F4F3F2",
+      "#B3BCAF",
+      "#768771",
+      "#3D5537"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: physalia)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 12.39,
+    "min_de2000_deutan_first6": 4.36,
+    "min_de2000_protan_first6": 9.21,
+    "min_de2000_tritan_first6": 11.57,
+    "optimal6_min_de2000": 12.39,
+    "optimal6_min_de2000_deutan": 4.36,
+    "optimal6_min_de2000_protan": 9.21,
+    "grayscale_L_spread": 0.529,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

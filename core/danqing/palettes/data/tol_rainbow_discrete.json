@@ -32,7 +32,25 @@
   "neutral": "#777777",
   "partners": {
     "sequential": "viridis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BD",
+      "#E8A293",
+      "#DD7B6B",
+      "#CF5141",
+      "#BE100C",
+      "#AB0000"
+    ],
+    "paired_diverging_stops": [
+      "#42150A",
+      "#7C5950",
+      "#B7A39D",
+      "#F4F3F2",
+      "#C5C499",
+      "#999539",
+      "#716600"
+    ]
   },
   "source": {
     "title": "Paul Tol Discrete Rainbow Scheme (SRON/EPS/TN/09-002)",

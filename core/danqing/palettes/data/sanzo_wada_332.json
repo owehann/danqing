@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_332",
+  "name": {
+    "en": "Sanzo Wada #332 (Coral Red · Scarlet · Deep Slate Olive)",
+    "zh": "和田三造 #332（Coral Red · Scarlet · Deep Slate Olive）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F58E84",
+    "#CB2F43",
+    "#253122",
+    "#004F46"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCAC3",
+      "#E1A59F",
+      "#D3807D",
+      "#C45A5C",
+      "#B22D3B",
+      "#9E0019"
+    ],
+    "paired_diverging_stops": [
+      "#F58E84",
+      "#F8B1A8",
+      "#F8D2CD",
+      "#F4F3F2",
+      "#A9ADA6",
+      "#636C60",
+      "#253122"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#332)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 14.81,
+    "min_de2000_deutan_first6": 11.55,
+    "min_de2000_protan_first6": 9.23,
+    "min_de2000_tritan_first6": 15.34,
+    "optimal6_min_de2000": 14.81,
+    "optimal6_min_de2000_deutan": 11.55,
+    "optimal6_min_de2000_protan": 9.23,
+    "grayscale_L_spread": 0.457,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

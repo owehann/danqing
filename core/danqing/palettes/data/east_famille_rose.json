@@ -20,7 +20,25 @@
   "neutral": "#B3B4AE",
   "partners": {
     "sequential": "lajolla",
-    "diverging": "PuOr"
+    "diverging": "PuOr",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CFC2",
+      "#CDAF9E",
+      "#B9917B",
+      "#A47259",
+      "#8F5538",
+      "#793712"
+    ],
+    "paired_diverging_stops": [
+      "#776107",
+      "#9F9061",
+      "#C8C1A8",
+      "#F4F3F2",
+      "#ADB1BC",
+      "#6C7288",
+      "#313956"
+    ]
   },
   "source": {
     "title": "Miniature Vase with Birds and Chrysanthemums (Famille Rose)",

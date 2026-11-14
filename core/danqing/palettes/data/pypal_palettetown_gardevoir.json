@@ -1,0 +1,69 @@
+{
+  "id": "pypal_palettetown_gardevoir",
+  "name": {
+    "en": "gardevoir (palettetown)",
+    "zh": "gardevoir（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E8E8F8",
+    "#C0C8D8",
+    "#307848",
+    "#70B870",
+    "#C8F8A8",
+    "#8090B0",
+    "#90E090",
+    "#A0B0C8",
+    "#E05038",
+    "#785050",
+    "#F89880",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBF",
+      "#DFA797",
+      "#D18370",
+      "#C15E4A",
+      "#AF351F",
+      "#9C0000"
+    ],
+    "paired_diverging_stops": [
+      "#8090B0",
+      "#A5B0C6",
+      "#CCD1DC",
+      "#F4F3F2",
+      "#F4C0B4",
+      "#ED8B78",
+      "#E05038"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: gardevoir)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 8.63,
+    "min_de2000_deutan_first6": 7.97,
+    "min_de2000_protan_first6": 7.57,
+    "min_de2000_tritan_first6": 9.08,
+    "optimal6_min_de2000": 8.63,
+    "optimal6_min_de2000_deutan": 7.97,
+    "optimal6_min_de2000_protan": 7.57,
+    "grayscale_L_spread": 0.504,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

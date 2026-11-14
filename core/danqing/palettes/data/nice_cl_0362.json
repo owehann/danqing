@@ -1,0 +1,62 @@
+{
+  "id": "nice_cl_0362",
+  "name": {
+    "en": "Curated Aesthetic #0362",
+    "zh": "精选设计色卡 #0362"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FCFDEB",
+    "#E3CEBD",
+    "#C1A2A0",
+    "#725B75",
+    "#322030"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DAD0CF",
+      "#BFB2B7",
+      "#A595A0",
+      "#8B798A",
+      "#735E73",
+      "#5B445E"
+    ],
+    "paired_diverging_stops": [
+      "#FCFDEB",
+      "#F9FAED",
+      "#F7F7F0",
+      "#F4F3F2",
+      "#AEA6AC",
+      "#6D5F6B",
+      "#322030"
+    ]
+  },
+  "source": {
+    "title": "nice-color-palettes (#0362)",
+    "author": "Experience-Monks / ColourLovers Top 1000",
+    "year": 2018,
+    "url": "https://github.com/Experience-Monks/nice-color-palettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 14.05,
+    "min_de2000_deutan_first6": 9.06,
+    "min_de2000_protan_first6": 9.69,
+    "min_de2000_tritan_first6": 11.07,
+    "optimal6_min_de2000": 14.05,
+    "optimal6_min_de2000_deutan": 9.06,
+    "optimal6_min_de2000_protan": 9.69,
+    "grayscale_L_spread": 0.716,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

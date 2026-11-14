@@ -20,7 +20,25 @@
   "neutral": "#A6ADAD",
   "partners": {
     "sequential": "Blues",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCC1",
+      "#DAA99D",
+      "#CB8779",
+      "#B96456",
+      "#A64033",
+      "#920D09"
+    ],
+    "paired_diverging_stops": [
+      "#A93527",
+      "#C8786A",
+      "#E1B5AC",
+      "#F4F3F2",
+      "#A8B0BE",
+      "#62718D",
+      "#23375C"
+    ]
   },
   "source": {
     "title": "Wine Cup with Children at Play (Chenghua Doucai & Underglaze Cobalt)",

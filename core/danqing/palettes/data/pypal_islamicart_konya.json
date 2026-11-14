@@ -1,0 +1,65 @@
+{
+  "id": "pypal_islamicart_konya",
+  "name": {
+    "en": "konya (IslamicArt)",
+    "zh": "konya（IslamicArt）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#94856E",
+    "#E2BE8A",
+    "#BFBDBA",
+    "#2A696E",
+    "#69C1C5",
+    "#8BDFE5",
+    "#CEC4A8",
+    "#848A8A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D4CF",
+      "#AABAB7",
+      "#86A1A0",
+      "#628889",
+      "#3D6F73",
+      "#0D585D"
+    ],
+    "paired_diverging_stops": [
+      "#E2BE8A",
+      "#E8D0AD",
+      "#EEE2D0",
+      "#F4F3F2",
+      "#B0C3C4",
+      "#6F9598",
+      "#2A696E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (IslamicArt: konya)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 7.74,
+    "min_de2000_deutan_first6": 7.86,
+    "min_de2000_protan_first6": 7.39,
+    "min_de2000_tritan_first6": 7.7,
+    "optimal6_min_de2000": 7.74,
+    "optimal6_min_de2000_deutan": 7.86,
+    "optimal6_min_de2000_protan": 7.39,
+    "grayscale_L_spread": 0.37,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

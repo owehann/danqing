@@ -24,7 +24,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD2E0",
+      "#AAB5D7",
+      "#8699CE",
+      "#637CC3",
+      "#425FB7",
+      "#253FAA"
+    ],
+    "paired_diverging_stops": [
+      "#725D64",
+      "#9B8C90",
+      "#C7BEC0",
+      "#F4F3F2",
+      "#A4B2D2",
+      "#5A72B0",
+      "#1A318B"
+    ]
   },
   "source": {
     "title": "Relais, 1930 : quinze planches donnant quarante-deux motifs décoratifs : enluminure d'art de J. Saudé : préliminaires de Y. Rambosson, 1930, Edouard Bénedictus, French",

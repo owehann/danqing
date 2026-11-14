@@ -1,0 +1,61 @@
+{
+  "id": "pypal_warhol_skull_76_1",
+  "name": {
+    "en": "skull_76_1 (waRhol)",
+    "zh": "skull_76_1（waRhol）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#CFE690",
+    "#FEC5A0",
+    "#F2AB70",
+    "#FCF813"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D9D4B3",
+      "#BEBA7F",
+      "#A39F45",
+      "#8A8400",
+      "#726A00",
+      "#5B4F00"
+    ],
+    "paired_diverging_stops": [
+      "#FEC5A0",
+      "#FCD5BC",
+      "#F8E4D7",
+      "#F4F3F2",
+      "#F6F6C1",
+      "#F8F886",
+      "#FCF813"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (waRhol: skull_76_1)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 8.11,
+    "min_de2000_deutan_first6": 4.19,
+    "min_de2000_protan_first6": 8.8,
+    "min_de2000_tritan_first6": 7.58,
+    "optimal6_min_de2000": 8.11,
+    "optimal6_min_de2000_deutan": 4.19,
+    "optimal6_min_de2000_protan": 8.8,
+    "grayscale_L_spread": 0.155,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

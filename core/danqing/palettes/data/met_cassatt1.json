@@ -20,7 +20,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC6",
+      "#D0ADA5",
+      "#BD8D86",
+      "#A96E67",
+      "#944F4A",
+      "#7E302E"
+    ],
+    "paired_diverging_stops": [
+      "#715E60",
+      "#9B8D8E",
+      "#C6BFBE",
+      "#F4F3F2",
+      "#BDBECC",
+      "#8A8BA8",
+      "#5A5A83"
+    ]
   },
   "source": {
     "title": "The Cup of Tea, 1880-1881, Mary Cassatt, American",

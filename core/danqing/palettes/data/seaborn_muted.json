@@ -21,7 +21,25 @@
   "neutral": "#797979",
   "partners": {
     "sequential": "seaborn_crest",
-    "diverging": "seaborn_vlag"
+    "diverging": "seaborn_vlag",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED3DD",
+      "#A8B7D2",
+      "#839BC7",
+      "#5F7FBA",
+      "#3C63AD",
+      "#17469E"
+    ],
+    "paired_diverging_stops": [
+      "#315FB5",
+      "#7091CC",
+      "#B0C2E0",
+      "#F4F3F2",
+      "#C9C1A6",
+      "#A0905C",
+      "#796000"
+    ]
   },
   "source": {
     "title": "Seaborn Statistical Data Visualization (Seaborn Muted 10)",

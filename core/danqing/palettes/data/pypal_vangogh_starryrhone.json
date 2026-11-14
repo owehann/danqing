@@ -1,0 +1,62 @@
+{
+  "id": "pypal_vangogh_starryrhone",
+  "name": {
+    "en": "StarryRhone (vangogh)",
+    "zh": "StarryRhone（vangogh）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#0D4373",
+    "#27668C",
+    "#5A98BF",
+    "#637340",
+    "#D9C873"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD4D5",
+      "#A9B9C3",
+      "#849FB1",
+      "#5F859E",
+      "#396C8C",
+      "#04537A"
+    ],
+    "paired_diverging_stops": [
+      "#0D4373",
+      "#5B7B9D",
+      "#A5B6C8",
+      "#F4F3F2",
+      "#EBE5C9",
+      "#E2D7A0",
+      "#D9C873"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vangogh: StarryRhone)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.42,
+    "min_de2000_deutan_first6": 10.72,
+    "min_de2000_protan_first6": 11.46,
+    "min_de2000_tritan_first6": 11.18,
+    "optimal6_min_de2000": 12.42,
+    "optimal6_min_de2000_deutan": 10.72,
+    "optimal6_min_de2000_protan": 11.46,
+    "grayscale_L_spread": 0.452,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

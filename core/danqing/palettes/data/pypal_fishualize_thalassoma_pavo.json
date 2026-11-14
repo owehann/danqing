@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_thalassoma_pavo",
+  "name": {
+    "en": "Thalassoma_pavo (fishualize)",
+    "zh": "Thalassoma_pavo（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#01040E",
+    "#4581C5",
+    "#63991D",
+    "#BDE653",
+    "#BB7B3A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D6BD",
+      "#AEBD93",
+      "#8BA56A",
+      "#6A8D3F",
+      "#497500",
+      "#285D00"
+    ],
+    "paired_diverging_stops": [
+      "#4581C5",
+      "#80A7D6",
+      "#B9CDE5",
+      "#F4F3F2",
+      "#E1F0C4",
+      "#CFEC92",
+      "#BDE653"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Thalassoma_pavo)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 21.93,
+    "min_de2000_deutan_first6": 2.54,
+    "min_de2000_protan_first6": 7.49,
+    "min_de2000_tritan_first6": 12.79,
+    "optimal6_min_de2000": 21.93,
+    "optimal6_min_de2000_deutan": 2.54,
+    "optimal6_min_de2000_protan": 7.49,
+    "grayscale_L_spread": 0.759,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_pronotogrammus_martinicensis",
+  "name": {
+    "en": "Pronotogrammus_martinicensis (fishualize)",
+    "zh": "Pronotogrammus_martinicensis（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#66ADD9",
+    "#D9B504",
+    "#D96725",
+    "#544691",
+    "#D52220"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BE",
+      "#E5A496",
+      "#D97E6F",
+      "#CA5648",
+      "#B9221C",
+      "#A50000"
+    ],
+    "paired_diverging_stops": [
+      "#D9B504",
+      "#E2CB77",
+      "#EBDFB7",
+      "#F4F3F2",
+      "#BAB8D3",
+      "#847EB3",
+      "#544691"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Pronotogrammus_martinicensis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 16.72,
+    "min_de2000_deutan_first6": 8.38,
+    "min_de2000_protan_first6": 14.44,
+    "min_de2000_tritan_first6": 10.52,
+    "optimal6_min_de2000": 16.72,
+    "optimal6_min_de2000_deutan": 8.38,
+    "optimal6_min_de2000_protan": 14.44,
+    "grayscale_L_spread": 0.335,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

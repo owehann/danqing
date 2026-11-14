@@ -1,0 +1,62 @@
+{
+  "id": "pypal_natparkspalettes_halekala",
+  "name": {
+    "en": "Halekala (NatParksPalettes)",
+    "zh": "Halekala（NatParksPalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#722710",
+    "#A3844D",
+    "#675243",
+    "#A85017",
+    "#838BAA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CEBF",
+      "#D3AD97",
+      "#C18D70",
+      "#AE6D49",
+      "#9A4E1E",
+      "#852B00"
+    ],
+    "paired_diverging_stops": [
+      "#A85017",
+      "#C58766",
+      "#DEBDAB",
+      "#F4F3F2",
+      "#CDD0DA",
+      "#A7ADC2",
+      "#838BAA"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NatParksPalettes: Halekala)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 16.27,
+    "min_de2000_deutan_first6": 11.61,
+    "min_de2000_protan_first6": 12.97,
+    "min_de2000_tritan_first6": 14.52,
+    "optimal6_min_de2000": 16.27,
+    "optimal6_min_de2000_deutan": 11.61,
+    "optimal6_min_de2000_protan": 12.97,
+    "grayscale_L_spread": 0.259,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

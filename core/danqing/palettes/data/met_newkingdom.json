@@ -17,7 +17,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD0C3",
+      "#C9B1A1",
+      "#B3937F",
+      "#9D765E",
+      "#875A3E",
+      "#713E1D"
+    ],
+    "paired_diverging_stops": [
+      "#4F638A",
+      "#8391AD",
+      "#BAC1CF",
+      "#F4F3F2",
+      "#D0BCB1",
+      "#AC8873",
+      "#885537"
+    ]
   },
   "source": {
     "title": "Blue-Painted Ibex Amphora from Malqata, ca. 1390–1353 B.C., New Kingdom",

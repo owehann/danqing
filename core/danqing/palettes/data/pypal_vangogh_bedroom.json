@@ -1,0 +1,62 @@
+{
+  "id": "pypal_vangogh_bedroom",
+  "name": {
+    "en": "Bedroom (vangogh)",
+    "zh": "Bedroom（vangogh）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A2A63F",
+    "#A67F0A",
+    "#A6710F",
+    "#8C6D46",
+    "#731D0A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0D0BD",
+      "#CAB293",
+      "#B4956A",
+      "#9F783F",
+      "#895B00",
+      "#733F00"
+    ],
+    "paired_diverging_stops": [
+      "#A2A63F",
+      "#BCC080",
+      "#D7DAB9",
+      "#F4F3F2",
+      "#CCAAA2",
+      "#A26556",
+      "#731D0A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vangogh: Bedroom)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 6.66,
+    "min_de2000_deutan_first6": 3.14,
+    "min_de2000_protan_first6": 4.41,
+    "min_de2000_tritan_first6": 4.7,
+    "optimal6_min_de2000": 6.66,
+    "optimal6_min_de2000_deutan": 3.14,
+    "optimal6_min_de2000_protan": 4.41,
+    "grayscale_L_spread": 0.331,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

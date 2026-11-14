@@ -1,0 +1,63 @@
+{
+  "id": "pypal_calecopal_seagrass",
+  "name": {
+    "en": "seagrass (calecopal)",
+    "zh": "seagrass（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#5A870A",
+    "#BDD0A2",
+    "#555B53",
+    "#6A4D3B",
+    "#BEAB91",
+    "#8F9BAB"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D6BD",
+      "#B0BD94",
+      "#8EA46C",
+      "#6E8B42",
+      "#4E7308",
+      "#2F5B00"
+    ],
+    "paired_diverging_stops": [
+      "#5A870A",
+      "#8BAB67",
+      "#BECFAC",
+      "#F4F3F2",
+      "#D1D5DA",
+      "#B0B8C2",
+      "#8F9BAB"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: seagrass)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 17.84,
+    "min_de2000_deutan_first6": 6.94,
+    "min_de2000_protan_first6": 7.62,
+    "min_de2000_tritan_first6": 14.11,
+    "optimal6_min_de2000": 17.84,
+    "optimal6_min_de2000_deutan": 6.94,
+    "optimal6_min_de2000_protan": 7.62,
+    "grayscale_L_spread": 0.385,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

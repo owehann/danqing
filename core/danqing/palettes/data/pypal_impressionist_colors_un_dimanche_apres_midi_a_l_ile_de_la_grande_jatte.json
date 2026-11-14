@@ -1,0 +1,73 @@
+{
+  "id": "pypal_impressionist_colors_un_dimanche_apres_midi_a_l_ile_de_la_grande_jatte",
+  "name": {
+    "en": "un_dimanche_apres_midi_a_l_ile_de_la_grande_jatte (impressionist.colors)",
+    "zh": "un_dimanche_apres_midi_a_l_ile_de_la_grande_jatte（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1E3C2D",
+    "#2D5A3C",
+    "#78873C",
+    "#C3C378",
+    "#F0E1C3",
+    "#A58778",
+    "#B4785A",
+    "#875A5A",
+    "#784B69",
+    "#695A5A",
+    "#877878",
+    "#A5A5A5",
+    "#B4C3C3",
+    "#A5B4C3",
+    "#5A5A69",
+    "#4B4B69"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D4C1",
+      "#B7B99B",
+      "#999F76",
+      "#7D8651",
+      "#616D2B",
+      "#475400"
+    ],
+    "paired_diverging_stops": [
+      "#C3C378",
+      "#D3D3A2",
+      "#E3E3CA",
+      "#F4F3F2",
+      "#B8B8C3",
+      "#7F8095",
+      "#4B4B69"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: un_dimanche_apres_midi_a_l_ile_de_la_grande_jatte)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 16,
+    "max_colors": 16,
+    "min_de2000_first6": 10.57,
+    "min_de2000_deutan_first6": 9.88,
+    "min_de2000_protan_first6": 10.61,
+    "min_de2000_tritan_first6": 9.49,
+    "optimal6_min_de2000": 10.57,
+    "optimal6_min_de2000_deutan": 9.88,
+    "optimal6_min_de2000_protan": 10.61,
+    "grayscale_L_spread": 0.586,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

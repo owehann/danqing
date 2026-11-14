@@ -15,7 +15,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "Blues",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC3",
+      "#D8AAA0",
+      "#C7887E",
+      "#B5675D",
+      "#A1443D",
+      "#8D1B1D"
+    ],
+    "paired_diverging_stops": [
+      "#A53A36",
+      "#C47972",
+      "#DEB6B0",
+      "#F4F3F2",
+      "#B3C3D4",
+      "#7494B5",
+      "#366696"
+    ]
   },
   "source": {
     "title": "Standard Differential Expression Volcano Convention",

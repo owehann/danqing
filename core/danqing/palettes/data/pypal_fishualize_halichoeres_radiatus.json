@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_halichoeres_radiatus",
+  "name": {
+    "en": "Halichoeres_radiatus (fishualize)",
+    "zh": "Halichoeres_radiatus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F1CECC",
+    "#F4A647",
+    "#65D1B2",
+    "#4E8672",
+    "#5B4A4C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D5CA",
+      "#ACBBAE",
+      "#89A293",
+      "#668978",
+      "#43715F",
+      "#1B5946"
+    ],
+    "paired_diverging_stops": [
+      "#F4A647",
+      "#F6C188",
+      "#F6DABE",
+      "#F4F3F2",
+      "#BEB7B7",
+      "#8B7E7F",
+      "#5B4A4C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Halichoeres_radiatus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 21.97,
+    "min_de2000_deutan_first6": 8.43,
+    "min_de2000_protan_first6": 6.69,
+    "min_de2000_tritan_first6": 14.89,
+    "optimal6_min_de2000": 21.97,
+    "optimal6_min_de2000_deutan": 8.43,
+    "optimal6_min_de2000_protan": 6.69,
+    "grayscale_L_spread": 0.453,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

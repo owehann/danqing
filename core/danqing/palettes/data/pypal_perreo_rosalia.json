@@ -1,0 +1,66 @@
+{
+  "id": "pypal_perreo_rosalia",
+  "name": {
+    "en": "rosalia (peRReo)",
+    "zh": "rosalia（peRReo）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8092B0",
+    "#EACF9E",
+    "#FADC16",
+    "#4F607D",
+    "#BCC7D2",
+    "#BBA24C",
+    "#AA8C56",
+    "#8D6E35",
+    "#64481F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DCD1C1",
+      "#C4B49C",
+      "#AB9877",
+      "#947C54",
+      "#7C612F",
+      "#664700"
+    ],
+    "paired_diverging_stops": [
+      "#FADC16",
+      "#F8E582",
+      "#F5EDBD",
+      "#F4F3F2",
+      "#BAC0CA",
+      "#838FA3",
+      "#4F607D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (peRReo: rosalia)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 14.61,
+    "min_de2000_deutan_first6": 13.92,
+    "min_de2000_protan_first6": 15.05,
+    "min_de2000_tritan_first6": 4.13,
+    "optimal6_min_de2000": 14.61,
+    "optimal6_min_de2000_deutan": 13.92,
+    "optimal6_min_de2000_protan": 15.05,
+    "grayscale_L_spread": 0.469,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

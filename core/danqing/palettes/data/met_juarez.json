@@ -18,7 +18,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBBF",
+      "#DDA898",
+      "#CF8571",
+      "#BE614B",
+      "#AC3A22",
+      "#980000"
+    ],
+    "paired_diverging_stops": [
+      "#905400",
+      "#B28945",
+      "#D3BD9D",
+      "#F4F3F2",
+      "#A2B2C3",
+      "#547495",
+      "#003967"
+    ]
   },
   "source": {
     "title": "The Entombment of Christ, 1702, Juan Rodríguez Juárez, Mexican",

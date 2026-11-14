@@ -20,7 +20,25 @@
   "neutral": "#A7A597",
   "partners": {
     "sequential": "hawaii",
-    "diverging": "roma"
+    "diverging": "roma",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCC1",
+      "#DAA99B",
+      "#CB8777",
+      "#B96453",
+      "#A7402F",
+      "#920D00"
+    ],
+    "paired_diverging_stops": [
+      "#282E4D",
+      "#656A81",
+      "#A9ACB8",
+      "#F4F3F2",
+      "#CFBF9E",
+      "#AB8C47",
+      "#875A00"
+    ]
   },
   "source": {
     "title": "Green Tara & Yongle Thangka with the Seventh Bodhisattva",

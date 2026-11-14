@@ -1,0 +1,63 @@
+{
+  "id": "pypal_ggprism_wool_muffler",
+  "name": {
+    "en": "wool_muffler (ggprism)",
+    "zh": "wool_muffler（ggprism）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6699CC",
+    "#FF9933",
+    "#4169E1",
+    "#87CEFA",
+    "#FF6600",
+    "#CCCCFF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED2E2",
+      "#A7B6DC",
+      "#8199D5",
+      "#5D7BCC",
+      "#3B5DC2",
+      "#1C3AB6"
+    ],
+    "paired_diverging_stops": [
+      "#4169E1",
+      "#799AEA",
+      "#B5C7F0",
+      "#F4F3F2",
+      "#FEC8B1",
+      "#FF9B6E",
+      "#FF6600"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggprism: wool_muffler)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 13.33,
+    "min_de2000_deutan_first6": 4.39,
+    "min_de2000_protan_first6": 1.3,
+    "min_de2000_tritan_first6": 11.84,
+    "optimal6_min_de2000": 13.33,
+    "optimal6_min_de2000_deutan": 4.39,
+    "optimal6_min_de2000_protan": 1.3,
+    "grayscale_L_spread": 0.302,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

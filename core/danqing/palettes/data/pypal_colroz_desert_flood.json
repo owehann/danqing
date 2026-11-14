@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_desert_flood",
+  "name": {
+    "en": "desert_flood (colRoz)",
+    "zh": "desert_flood（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#552C10",
+    "#865B48",
+    "#343611",
+    "#515530",
+    "#977F7D",
+    "#D3B696"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED0C6",
+      "#C7B1A5",
+      "#B09486",
+      "#997767",
+      "#825B4A",
+      "#6B412D"
+    ],
+    "paired_diverging_stops": [
+      "#343611",
+      "#6E7057",
+      "#AEAFA1",
+      "#F4F3F2",
+      "#E9DFD3",
+      "#DECAB4",
+      "#D3B696"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: desert_flood)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 10.19,
+    "min_de2000_deutan_first6": 3.1,
+    "min_de2000_protan_first6": 0.92,
+    "min_de2000_tritan_first6": 10.13,
+    "optimal6_min_de2000": 10.19,
+    "optimal6_min_de2000_deutan": 3.1,
+    "optimal6_min_de2000_protan": 0.92,
+    "grayscale_L_spread": 0.471,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

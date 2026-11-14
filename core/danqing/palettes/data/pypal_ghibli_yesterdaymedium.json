@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ghibli_yesterdaymedium",
+  "name": {
+    "en": "YesterdayMedium (ghibli)",
+    "zh": "YesterdayMedium（ghibli）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#061A21",
+    "#132E41",
+    "#26432F",
+    "#4D6D93",
+    "#6FB382",
+    "#DCCA2C",
+    "#92BBD9"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D3D4",
+      "#AFB7C1",
+      "#8E9CAE",
+      "#6D829B",
+      "#4D6888",
+      "#2E4F75"
+    ],
+    "paired_diverging_stops": [
+      "#061A21",
+      "#4C5A5F",
+      "#9CA3A6",
+      "#F4F3F2",
+      "#EBE7BC",
+      "#E3D981",
+      "#DCCA2C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ghibli: YesterdayMedium)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 8.57,
+    "min_de2000_deutan_first6": 8.1,
+    "min_de2000_protan_first6": 8.47,
+    "min_de2000_tritan_first6": 6.23,
+    "optimal6_min_de2000": 8.57,
+    "optimal6_min_de2000_deutan": 8.1,
+    "optimal6_min_de2000_protan": 8.47,
+    "grayscale_L_spread": 0.624,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

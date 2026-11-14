@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_rhinecanthus_assasi",
+  "name": {
+    "en": "Rhinecanthus_assasi (fishualize)",
+    "zh": "Rhinecanthus_assasi（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FA9108",
+    "#F7DF7F",
+    "#0258EC",
+    "#CFAFCC",
+    "#E4DFEA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C9D3E8",
+      "#9EB7E6",
+      "#739AE3",
+      "#487BDE",
+      "#195AD7",
+      "#002FCF"
+    ],
+    "paired_diverging_stops": [
+      "#FA9108",
+      "#FBB474",
+      "#F9D4B5",
+      "#F4F3F2",
+      "#A8C4F5",
+      "#5E92F3",
+      "#0258EC"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Rhinecanthus_assasi)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.02,
+    "min_de2000_deutan_first6": 10.03,
+    "min_de2000_protan_first6": 11.73,
+    "min_de2000_tritan_first6": 11.4,
+    "optimal6_min_de2000": 15.02,
+    "optimal6_min_de2000_deutan": 10.03,
+    "optimal6_min_de2000_protan": 11.73,
+    "grayscale_L_spread": 0.39,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

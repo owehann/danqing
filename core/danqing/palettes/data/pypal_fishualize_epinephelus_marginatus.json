@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_epinephelus_marginatus",
+  "name": {
+    "en": "Epinephelus_marginatus (fishualize)",
+    "zh": "Epinephelus_marginatus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7D8556",
+    "#784849",
+    "#553748",
+    "#C1892D",
+    "#95C0A1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0D0BC",
+      "#CAB292",
+      "#B59568",
+      "#9F783D",
+      "#8A5B00",
+      "#743E00"
+    ],
+    "paired_diverging_stops": [
+      "#553748",
+      "#88717D",
+      "#BDB0B5",
+      "#F4F3F2",
+      "#E4D0B5",
+      "#D3AD77",
+      "#C1892D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Epinephelus_marginatus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 11.61,
+    "min_de2000_deutan_first6": 13.97,
+    "min_de2000_protan_first6": 11.11,
+    "min_de2000_tritan_first6": 9.89,
+    "optimal6_min_de2000": 11.61,
+    "optimal6_min_de2000_deutan": 13.97,
+    "optimal6_min_de2000_protan": 11.11,
+    "grayscale_L_spread": 0.39,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

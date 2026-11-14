@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_oxymonacanthus_longirostris",
+  "name": {
+    "en": "Oxymonacanthus_longirostris (fishualize)",
+    "zh": "Oxymonacanthus_longirostris（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#15110B",
+    "#4A7B80",
+    "#7AC7DB",
+    "#E4C041",
+    "#D9822F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEBC",
+      "#D2AF91",
+      "#C08F67",
+      "#AC703A",
+      "#995000",
+      "#842F00"
+    ],
+    "paired_diverging_stops": [
+      "#15110B",
+      "#56524D",
+      "#A19F9B",
+      "#F4F3F2",
+      "#EFE3BE",
+      "#E9D287",
+      "#E4C041"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Oxymonacanthus_longirostris)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 22.43,
+    "min_de2000_deutan_first6": 11.37,
+    "min_de2000_protan_first6": 15.55,
+    "min_de2000_tritan_first6": 15.77,
+    "optimal6_min_de2000": 22.43,
+    "optimal6_min_de2000_deutan": 11.37,
+    "optimal6_min_de2000_protan": 15.55,
+    "grayscale_L_spread": 0.637,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "pypal_impressionist_colors_lestaque_aux_toits_rouges",
+  "name": {
+    "en": "lestaque_aux_toits_rouges (impressionist.colors)",
+    "zh": "lestaque_aux_toits_rouges（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2D3C2D",
+    "#3C5A87",
+    "#4B78A5",
+    "#87A596",
+    "#B4B4A5",
+    "#879669",
+    "#69784B",
+    "#5A694B",
+    "#875A3C",
+    "#D2693C",
+    "#D2874B",
+    "#D2A55A",
+    "#96784B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CDBF",
+      "#D7AC97",
+      "#C68B70",
+      "#B46A4A",
+      "#A0481F",
+      "#8C2100"
+    ],
+    "paired_diverging_stops": [
+      "#3C5A87",
+      "#768BAB",
+      "#B3BECE",
+      "#F4F3F2",
+      "#E9D9C1",
+      "#DEBF8F",
+      "#D2A55A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: lestaque_aux_toits_rouges)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 11.16,
+    "min_de2000_deutan_first6": 7.51,
+    "min_de2000_protan_first6": 5.4,
+    "min_de2000_tritan_first6": 10.57,
+    "optimal6_min_de2000": 11.16,
+    "optimal6_min_de2000_deutan": 7.51,
+    "optimal6_min_de2000_protan": 5.4,
+    "grayscale_L_spread": 0.428,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

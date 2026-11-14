@@ -1,0 +1,64 @@
+{
+  "id": "pypal_mexbrewer_aurora",
+  "name": {
+    "en": "Aurora (MexBrewer)",
+    "zh": "Aurora（MexBrewer）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#E7C7A8",
+    "#C29786",
+    "#874D4A",
+    "#5F2F2D",
+    "#3B141A",
+    "#331718",
+    "#27170B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CFC7",
+      "#CBAFA8",
+      "#B5908A",
+      "#A0736D",
+      "#8A5651",
+      "#743937"
+    ],
+    "paired_diverging_stops": [
+      "#E7C7A8",
+      "#ECD6C1",
+      "#F0E5D9",
+      "#F4F3F2",
+      "#AAA29C",
+      "#65584E",
+      "#27170B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MexBrewer: Aurora)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 3.94,
+    "min_de2000_deutan_first6": 0.85,
+    "min_de2000_protan_first6": 1.39,
+    "min_de2000_tritan_first6": 3.59,
+    "optimal6_min_de2000": 9.76,
+    "optimal6_min_de2000_deutan": 3.3,
+    "optimal6_min_de2000_protan": 6.06,
+    "grayscale_L_spread": 0.626,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

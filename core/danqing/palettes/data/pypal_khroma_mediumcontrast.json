@@ -1,0 +1,63 @@
+{
+  "id": "pypal_khroma_mediumcontrast",
+  "name": {
+    "en": "mediumcontrast (khroma)",
+    "zh": "mediumcontrast（khroma）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EECC66",
+    "#EE99AA",
+    "#6699CC",
+    "#997700",
+    "#994455",
+    "#004488"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CDC9",
+      "#D2ACAB",
+      "#BF8B8E",
+      "#AB6B72",
+      "#964B58",
+      "#812A3E"
+    ],
+    "paired_diverging_stops": [
+      "#EECC66",
+      "#F0DA9A",
+      "#F2E7C7",
+      "#F4F3F2",
+      "#A4B7D0",
+      "#587DAD",
+      "#004488"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (khroma: mediumcontrast)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 25.1,
+    "min_de2000_deutan_first6": 20.33,
+    "min_de2000_protan_first6": 16.83,
+    "min_de2000_tritan_first6": 11.96,
+    "optimal6_min_de2000": 25.1,
+    "optimal6_min_de2000_deutan": 20.33,
+    "optimal6_min_de2000_protan": 16.83,
+    "grayscale_L_spread": 0.462,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

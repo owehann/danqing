@@ -1,0 +1,63 @@
+{
+  "id": "pypal_taylorswift_taylorswift",
+  "name": {
+    "en": "taylorSwift (tayloRswift)",
+    "zh": "taylorSwift（tayloRswift）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#61B6CC",
+    "#577F3F",
+    "#E3E9F3",
+    "#0A1605",
+    "#FDDAC7",
+    "#81A757"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D5C3",
+      "#B1BB9F",
+      "#8FA27D",
+      "#6F895B",
+      "#507139",
+      "#315913"
+    ],
+    "paired_diverging_stops": [
+      "#E3E9F3",
+      "#E9ECF3",
+      "#EEF0F2",
+      "#F4F3F2",
+      "#9DA299",
+      "#4D5749",
+      "#0A1605"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tayloRswift: taylorSwift)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.34,
+    "min_de2000_deutan_first6": 14.55,
+    "min_de2000_protan_first6": 13.97,
+    "min_de2000_tritan_first6": 14.24,
+    "optimal6_min_de2000": 14.34,
+    "optimal6_min_de2000_deutan": 14.55,
+    "optimal6_min_de2000_protan": 13.97,
+    "grayscale_L_spread": 0.749,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

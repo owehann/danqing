@@ -16,7 +16,25 @@
   "neutral": "#9CA3AF",
   "partners": {
     "sequential": "Blues",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC1",
+      "#DCA89B",
+      "#CC8677",
+      "#BB6353",
+      "#A83D2F",
+      "#940400"
+    ],
+    "paired_diverging_stops": [
+      "#2365A8",
+      "#6B94C3",
+      "#AEC3DB",
+      "#F4F3F2",
+      "#D3BE9E",
+      "#B18949",
+      "#8F5500"
+    ]
   },
   "source": {
     "title": "Sanger Chromatogram & IGV Nucleotide Base Convention",

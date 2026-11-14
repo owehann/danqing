@@ -17,7 +17,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CDBC",
+      "#DAAB92",
+      "#CA8968",
+      "#B9673C",
+      "#A64300",
+      "#921400"
+    ],
+    "paired_diverging_stops": [
+      "#845265",
+      "#A98592",
+      "#CFBBC1",
+      "#F4F3F2",
+      "#E1B7A3",
+      "#C87A54",
+      "#AA3800"
+    ]
   },
   "source": {
     "title": "Maharana Sarup Singh Inspects a Prize Stallion, 1845–46, Tara, Western India, Rajasthan, Mewar",

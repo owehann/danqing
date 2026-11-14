@@ -1,0 +1,67 @@
+{
+  "id": "pypal_ggsci_pink_material",
+  "name": {
+    "en": "pink_material (ggsci)",
+    "zh": "pink_material（ggsci）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#FCE4EC",
+    "#F8BBD0",
+    "#F48FB1",
+    "#F06292",
+    "#EC407A",
+    "#E91E63",
+    "#D81B60",
+    "#C2185B",
+    "#AD1457",
+    "#880E4F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDC9C8",
+      "#E1A3AA",
+      "#D47D8D",
+      "#C45671",
+      "#B22656",
+      "#9E003C"
+    ],
+    "paired_diverging_stops": [
+      "#FCE4EC",
+      "#F9E9EE",
+      "#F7EEF0",
+      "#F4F3F2",
+      "#D5AAB8",
+      "#B26382",
+      "#880E4F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggsci: pink_material)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 5.34,
+    "min_de2000_deutan_first6": 5.64,
+    "min_de2000_protan_first6": 6.94,
+    "min_de2000_tritan_first6": 5.55,
+    "optimal6_min_de2000": 9.59,
+    "optimal6_min_de2000_deutan": 6.33,
+    "optimal6_min_de2000_protan": 8.59,
+    "grayscale_L_spread": 0.525,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

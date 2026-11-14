@@ -1,0 +1,82 @@
+{
+  "id": "pypal_colorblindness_steppedsequential5steps",
+  "name": {
+    "en": "SteppedSequential5Steps (colorBlindness)",
+    "zh": "SteppedSequential5Steps（colorBlindness）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#990F0F",
+    "#B22C2C",
+    "#CC5151",
+    "#E57E7E",
+    "#FFB2B2",
+    "#99540F",
+    "#B26F2C",
+    "#CC8E51",
+    "#E5B17E",
+    "#FFD8B2",
+    "#6B990F",
+    "#85B22C",
+    "#A3CC51",
+    "#C3E57E",
+    "#E5FFB2",
+    "#0F6B99",
+    "#2C85B2",
+    "#51A3CC",
+    "#7EC3E5",
+    "#B2E5FF",
+    "#260F99",
+    "#422CB2",
+    "#6551CC",
+    "#8F7EE5",
+    "#BFB2FF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D0E1",
+      "#B5B1D9",
+      "#9792D0",
+      "#7B73C6",
+      "#6152BA",
+      "#4B2CAE"
+    ],
+    "paired_diverging_stops": [
+      "#A3CC51",
+      "#BDDA8D",
+      "#D8E7C1",
+      "#F4F3F2",
+      "#A3ADD9",
+      "#5B67BC",
+      "#260F99"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colorBlindness: SteppedSequential5Steps)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 25,
+    "max_colors": 25,
+    "min_de2000_first6": 7.57,
+    "min_de2000_deutan_first6": 3.58,
+    "min_de2000_protan_first6": 7.25,
+    "min_de2000_tritan_first6": 7.57,
+    "optimal6_min_de2000": 7.57,
+    "optimal6_min_de2000_deutan": 3.58,
+    "optimal6_min_de2000_protan": 7.25,
+    "grayscale_L_spread": 0.627,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

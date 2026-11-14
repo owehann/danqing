@@ -1,0 +1,69 @@
+{
+  "id": "pypal_ggsci_planetexpress_futurama",
+  "name": {
+    "en": "planetexpress_futurama (ggsci)",
+    "zh": "planetexpress_futurama（ggsci）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF6F00",
+    "#C71000",
+    "#008EA0",
+    "#8A4198",
+    "#5A9599",
+    "#FF6348",
+    "#84D7E1",
+    "#FF95A8",
+    "#3D3B25",
+    "#ADE2D0",
+    "#1A5354",
+    "#3F4041"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EECABD",
+      "#E4A495",
+      "#D87F6D",
+      "#C95744",
+      "#B82514",
+      "#A50000"
+    ],
+    "paired_diverging_stops": [
+      "#FF6F00",
+      "#FFA06F",
+      "#FDCBB2",
+      "#F4F3F2",
+      "#D1B7D5",
+      "#AE7DB7",
+      "#8A4198"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggsci: planetexpress_futurama)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 7.48,
+    "min_de2000_deutan_first6": 5.55,
+    "min_de2000_protan_first6": 6.91,
+    "min_de2000_tritan_first6": 2.0,
+    "optimal6_min_de2000": 7.48,
+    "optimal6_min_de2000_deutan": 5.55,
+    "optimal6_min_de2000_protan": 6.91,
+    "grayscale_L_spread": 0.523,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

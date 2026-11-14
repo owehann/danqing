@@ -1,0 +1,70 @@
+{
+  "id": "pypal_dutchmasters_milkmaid",
+  "name": {
+    "en": "milkmaid (dutchmasters)",
+    "zh": "milkmaid（dutchmasters）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#48211A",
+    "#376597",
+    "#537270",
+    "#556246",
+    "#928F6B",
+    "#CCAF69",
+    "#ECE5D3",
+    "#104A8A",
+    "#C5AC8E",
+    "#889F95",
+    "#7C4728",
+    "#00295D",
+    "#D9B196"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D3D7",
+      "#ABB8C6",
+      "#889DB5",
+      "#6582A4",
+      "#426893",
+      "#1D4F81"
+    ],
+    "paired_diverging_stops": [
+      "#CCAF69",
+      "#D9C698",
+      "#E7DDC5",
+      "#F4F3F2",
+      "#9EACC0",
+      "#4E698F",
+      "#00295D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (dutchmasters: milkmaid)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 13.53,
+    "min_de2000_deutan_first6": 14.65,
+    "min_de2000_protan_first6": 13.29,
+    "min_de2000_tritan_first6": 7.28,
+    "optimal6_min_de2000": 13.53,
+    "optimal6_min_de2000_deutan": 14.65,
+    "optimal6_min_de2000_protan": 13.29,
+    "grayscale_L_spread": 0.632,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

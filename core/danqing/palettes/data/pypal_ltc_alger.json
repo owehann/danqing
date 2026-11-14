@@ -1,0 +1,62 @@
+{
+  "id": "pypal_ltc_alger",
+  "name": {
+    "en": "alger (ltc)",
+    "zh": "alger（ltc）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#000000",
+    "#1A5B5B",
+    "#ACC8BE",
+    "#F4AB5C",
+    "#D1422F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBF",
+      "#DFA798",
+      "#D18372",
+      "#C15E4C",
+      "#AF3523",
+      "#9B0000"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#F5DCC3",
+      "#F5C492",
+      "#F4AB5C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ltc: alger)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 29.54,
+    "min_de2000_deutan_first6": 19.9,
+    "min_de2000_protan_first6": 21.5,
+    "min_de2000_tritan_first6": 24.18,
+    "optimal6_min_de2000": 29.54,
+    "optimal6_min_de2000_deutan": 19.9,
+    "optimal6_min_de2000_protan": 21.5,
+    "grayscale_L_spread": 0.809,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

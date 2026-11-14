@@ -21,7 +21,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC1",
+      "#CFAF9C",
+      "#BC8F78",
+      "#A77155",
+      "#935331",
+      "#7D3403"
+    ],
+    "paired_diverging_stops": [
+      "#3A4330",
+      "#73796B",
+      "#B1B4AC",
+      "#F4F3F2",
+      "#CAC19E",
+      "#A29149",
+      "#7B6000"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (Olympic)",

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_ltc_paloma",
+  "name": {
+    "en": "paloma (ltc)",
+    "zh": "paloma（ltc）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#83AF9B",
+    "#C8C8A9",
+    "#F8DA8A",
+    "#F7BF95",
+    "#FE8CA1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC8",
+      "#D6A9AA",
+      "#C5878D",
+      "#B26671",
+      "#9F4356",
+      "#8A1B3C"
+    ],
+    "paired_diverging_stops": [
+      "#83AF9B",
+      "#A8C5B7",
+      "#CEDCD4",
+      "#F4F3F2",
+      "#F5EBD1",
+      "#F7E3AF",
+      "#F8DA8A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ltc: paloma)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 14.33,
+    "min_de2000_deutan_first6": 4.42,
+    "min_de2000_protan_first6": 5.24,
+    "min_de2000_tritan_first6": 7.65,
+    "optimal6_min_de2000": 14.33,
+    "optimal6_min_de2000_deutan": 4.42,
+    "optimal6_min_de2000_protan": 5.24,
+    "grayscale_L_spread": 0.18,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

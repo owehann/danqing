@@ -20,7 +20,25 @@
   "neutral": "#BABBB6",
   "partners": {
     "sequential": "lajolla",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD1BC",
+      "#C8B391",
+      "#B29666",
+      "#9B7A39",
+      "#855E00",
+      "#704200"
+    ],
+    "paired_diverging_stops": [
+      "#4D5070",
+      "#81839A",
+      "#B8BAC5",
+      "#F4F3F2",
+      "#D1BF99",
+      "#AE8B3A",
+      "#8B5800"
+    ]
   },
   "source": {
     "title": "Maki-e Reading Stand with Chrysanthemums & Muromachi Suzuribako",

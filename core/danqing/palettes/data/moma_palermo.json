@@ -16,7 +16,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC1",
+      "#DFA79D",
+      "#D08379",
+      "#C05E56",
+      "#AE3533",
+      "#9A000A"
+    ],
+    "paired_diverging_stops": [
+      "#B32429",
+      "#CF726B",
+      "#E5B3AD",
+      "#F4F3F2",
+      "#A4B3C0",
+      "#59758F",
+      "#0C3C5F"
+    ]
   },
   "source": {
     "title": "4 White Forms, 1975, Blinky Palermo, Synthetic polymer paint on aluminum, four panels",

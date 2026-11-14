@@ -1,0 +1,63 @@
+{
+  "id": "pypal_werpals_monet",
+  "name": {
+    "en": "monet (werpals)",
+    "zh": "monet（werpals）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#08221C",
+    "#113719",
+    "#36611B",
+    "#72972F",
+    "#A4B77D",
+    "#CDC597"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D5BE",
+      "#B2BC96",
+      "#92A36E",
+      "#728A45",
+      "#547112",
+      "#375900"
+    ],
+    "paired_diverging_stops": [
+      "#08221C",
+      "#4F615B",
+      "#9EA7A3",
+      "#F4F3F2",
+      "#E7E4D4",
+      "#DAD4B5",
+      "#CDC597"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (werpals: monet)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 10.02,
+    "min_de2000_deutan_first6": 5.88,
+    "min_de2000_protan_first6": 5.33,
+    "min_de2000_tritan_first6": 6.24,
+    "optimal6_min_de2000": 10.02,
+    "optimal6_min_de2000_deutan": 5.88,
+    "optimal6_min_de2000_protan": 5.33,
+    "grayscale_L_spread": 0.589,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

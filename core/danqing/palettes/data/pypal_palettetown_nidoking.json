@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_nidoking",
+  "name": {
+    "en": "nidoking (palettetown)",
+    "zh": "nidoking（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B860B8",
+    "#882880",
+    "#E098D0",
+    "#C0C0A0",
+    "#F8D0F8",
+    "#E0E0D0",
+    "#707058",
+    "#F8F8F8",
+    "#00A070",
+    "#005040",
+    "#18C898"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CBD5",
+      "#D0A9C2",
+      "#BD86AF",
+      "#A8649C",
+      "#934189",
+      "#7E1476"
+    ],
+    "paired_diverging_stops": [
+      "#F8F8F8",
+      "#F7F6F6",
+      "#F5F5F4",
+      "#F4F3F2",
+      "#A6BAB2",
+      "#5B8477",
+      "#005040"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: nidoking)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 9.81,
+    "min_de2000_deutan_first6": 9.55,
+    "min_de2000_protan_first6": 9.85,
+    "min_de2000_tritan_first6": 8.3,
+    "optimal6_min_de2000": 9.81,
+    "optimal6_min_de2000_deutan": 9.55,
+    "optimal6_min_de2000_protan": 9.85,
+    "grayscale_L_spread": 0.595,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

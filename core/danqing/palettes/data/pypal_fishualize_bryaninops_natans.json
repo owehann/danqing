@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_bryaninops_natans",
+  "name": {
+    "en": "Bryaninops_natans (fishualize)",
+    "zh": "Bryaninops_natans（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EA3DF6",
+    "#DD2F24",
+    "#D6822F",
+    "#F9D449",
+    "#DCDBEA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8C8DE",
+      "#DAA0D4",
+      "#CA78C8",
+      "#B84BBC",
+      "#A500AE",
+      "#9100A0"
+    ],
+    "paired_diverging_stops": [
+      "#EA3DF6",
+      "#F289F7",
+      "#F5C0F6",
+      "#F4F3F2",
+      "#F6EAC2",
+      "#F7DF8E",
+      "#F9D449"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Bryaninops_natans)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 24.09,
+    "min_de2000_deutan_first6": 9.48,
+    "min_de2000_protan_first6": 19.38,
+    "min_de2000_tritan_first6": 13.53,
+    "optimal6_min_de2000": 24.09,
+    "optimal6_min_de2000_deutan": 9.48,
+    "optimal6_min_de2000_protan": 19.38,
+    "grayscale_L_spread": 0.312,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

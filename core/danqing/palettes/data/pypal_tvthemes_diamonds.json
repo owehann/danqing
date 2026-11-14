@@ -1,0 +1,66 @@
+{
+  "id": "pypal_tvthemes_diamonds",
+  "name": {
+    "en": "Diamonds (tvthemes)",
+    "zh": "Diamonds（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FFFF00",
+    "#CCCC00",
+    "#00BFFF",
+    "#0000FF",
+    "#FF1493",
+    "#FFB6C1",
+    "#FFFFFF",
+    "#000000",
+    "#D3D3D3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C6D3F1",
+      "#97B5F8",
+      "#6996FC",
+      "#3B73FE",
+      "#0C46FD",
+      "#0C00FC"
+    ],
+    "paired_diverging_stops": [
+      "#FFFF00",
+      "#FAFC86",
+      "#F7F9C1",
+      "#F4F3F2",
+      "#9ABBFF",
+      "#447CFF",
+      "#0000FF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Diamonds)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 11.53,
+    "min_de2000_deutan_first6": 11.5,
+    "min_de2000_protan_first6": 11.35,
+    "min_de2000_tritan_first6": 11.95,
+    "optimal6_min_de2000": 11.53,
+    "optimal6_min_de2000_deutan": 11.5,
+    "optimal6_min_de2000_protan": 11.35,
+    "grayscale_L_spread": 1.0,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

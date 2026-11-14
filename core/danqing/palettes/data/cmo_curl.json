@@ -21,7 +21,25 @@
   "neutral": "#FEF6F5",
   "partners": {
     "sequential": "cmo_deep",
-    "diverging": "cmo_curl"
+    "diverging": "cmo_curl",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CBCF",
+      "#D4A8B7",
+      "#C286A0",
+      "#AE648A",
+      "#9A4173",
+      "#85165E"
+    ],
+    "paired_diverging_stops": [
+      "#151D44",
+      "#555E7C",
+      "#A1A6B6",
+      "#F4F3F2",
+      "#C3C0BF",
+      "#948F8E",
+      "#686161"
+    ]
   },
   "source": {
     "title": "True Colors of Oceanography: cmocean (curl)",

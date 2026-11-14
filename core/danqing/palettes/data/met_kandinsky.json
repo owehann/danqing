@@ -16,7 +16,25 @@
   "neutral": "#B4B7C0",
   "partners": {
     "sequential": "oslo",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D5CC",
+      "#AABBB1",
+      "#86A297",
+      "#62897E",
+      "#3C7166",
+      "#0A5A4E"
+    ],
+    "paired_diverging_stops": [
+      "#8B5600",
+      "#AE8A57",
+      "#D1BEA4",
+      "#F4F3F2",
+      "#B1B1B1",
+      "#737375",
+      "#3B3A3E"
+    ]
   },
   "source": {
     "title": "MetBrewer: Kandinsky (Met Object 369093)",

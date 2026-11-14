@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ghibli_laputamedium",
+  "name": {
+    "en": "LaputaMedium (ghibli)",
+    "zh": "LaputaMedium（ghibli）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#14191F",
+    "#1D2645",
+    "#403369",
+    "#5C5992",
+    "#AE93BE",
+    "#B4DAE5",
+    "#F0D77B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D1D6",
+      "#B7B3C5",
+      "#9A97B4",
+      "#7D7BA2",
+      "#625F90",
+      "#48447E"
+    ],
+    "paired_diverging_stops": [
+      "#1D2645",
+      "#5C647C",
+      "#A5A9B5",
+      "#F4F3F2",
+      "#F2EACD",
+      "#F1E1A6",
+      "#F0D77B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ghibli: LaputaMedium)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 9.78,
+    "min_de2000_deutan_first6": 7.72,
+    "min_de2000_protan_first6": 7.8,
+    "min_de2000_tritan_first6": 8.43,
+    "optimal6_min_de2000": 9.78,
+    "optimal6_min_de2000_deutan": 7.72,
+    "optimal6_min_de2000_protan": 7.8,
+    "grayscale_L_spread": 0.67,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

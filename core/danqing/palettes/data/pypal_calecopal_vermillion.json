@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_vermillion",
+  "name": {
+    "en": "vermillion (calecopal)",
+    "zh": "vermillion（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C39CA4",
+    "#E05959",
+    "#AC181D",
+    "#713D3F",
+    "#381F21"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC1",
+      "#DFA69B",
+      "#D18277",
+      "#C15E53",
+      "#AF342F",
+      "#9B0000"
+    ],
+    "paired_diverging_stops": [
+      "#C39CA4",
+      "#D4B9BD",
+      "#E4D6D7",
+      "#F4F3F2",
+      "#B1A6A5",
+      "#735E5F",
+      "#381F21"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: vermillion)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 14.25,
+    "min_de2000_deutan_first6": 13.86,
+    "min_de2000_protan_first6": 11.45,
+    "min_de2000_tritan_first6": 14.48,
+    "optimal6_min_de2000": 14.25,
+    "optimal6_min_de2000_deutan": 13.86,
+    "optimal6_min_de2000_protan": 11.45,
+    "grayscale_L_spread": 0.458,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

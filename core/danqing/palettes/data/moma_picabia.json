@@ -23,7 +23,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED0C7",
+      "#C7B1A7",
+      "#B09389",
+      "#9A766B",
+      "#835A4F",
+      "#6C3F34"
+    ],
+    "paired_diverging_stops": [
+      "#6A615F",
+      "#958F8D",
+      "#C4C0BE",
+      "#F4F3F2",
+      "#B2B2B5",
+      "#75757C",
+      "#3D3D47"
+    ]
   },
   "source": {
     "title": "The Spring, 1912, Francis Picabia, Oil on canvas",

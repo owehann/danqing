@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lisa_diegovelazquez",
+  "name": {
+    "en": "DiegoVelazquez (lisa)",
+    "zh": "DiegoVelazquez（lisa）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#413A2C",
+    "#241F1A",
+    "#C5B49B",
+    "#A57F5B",
+    "#5C351E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDD0C4",
+      "#C5B3A1",
+      "#AD967F",
+      "#967A5F",
+      "#7F5E3F",
+      "#68441E"
+    ],
+    "paired_diverging_stops": [
+      "#241F1A",
+      "#625E5A",
+      "#A8A5A2",
+      "#F4F3F2",
+      "#E4DED4",
+      "#D4C9B7",
+      "#C5B49B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (lisa: DiegoVelazquez)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.69,
+    "min_de2000_deutan_first6": 7.76,
+    "min_de2000_protan_first6": 5.84,
+    "min_de2000_tritan_first6": 8.79,
+    "optimal6_min_de2000": 9.69,
+    "optimal6_min_de2000_deutan": 7.76,
+    "optimal6_min_de2000_protan": 5.84,
+    "grayscale_L_spread": 0.534,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

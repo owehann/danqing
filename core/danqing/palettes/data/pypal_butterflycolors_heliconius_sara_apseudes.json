@@ -1,0 +1,62 @@
+{
+  "id": "pypal_butterflycolors_heliconius_sara_apseudes",
+  "name": {
+    "en": "heliconius_sara_apseudes (ButterflyColors)",
+    "zh": "heliconius_sara_apseudes（ButterflyColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1F5373",
+    "#243C56",
+    "#CCD99C",
+    "#B9BF8E",
+    "#261514"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D4D4",
+      "#ABB9C1",
+      "#889EAD",
+      "#64849A",
+      "#416B87",
+      "#1A5274"
+    ],
+    "paired_diverging_stops": [
+      "#CCD99C",
+      "#D9E2B9",
+      "#E6EBD6",
+      "#F4F3F2",
+      "#AAA1A0",
+      "#645655",
+      "#261514"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ButterflyColors: heliconius_sara_apseudes)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 6.65,
+    "min_de2000_deutan_first6": 6.21,
+    "min_de2000_protan_first6": 6.51,
+    "min_de2000_tritan_first6": 6.91,
+    "optimal6_min_de2000": 6.65,
+    "optimal6_min_de2000_deutan": 6.21,
+    "optimal6_min_de2000_protan": 6.51,
+    "grayscale_L_spread": 0.642,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

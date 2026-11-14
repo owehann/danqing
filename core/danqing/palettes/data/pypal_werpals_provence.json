@@ -1,0 +1,67 @@
+{
+  "id": "pypal_werpals_provence",
+  "name": {
+    "en": "provence (werpals)",
+    "zh": "provence（werpals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DEF7FB",
+    "#00D0FE",
+    "#00A0DE",
+    "#2B161D",
+    "#5F2C57",
+    "#CA5CBB",
+    "#FF71BD",
+    "#B79289",
+    "#FEC4B9",
+    "#FDEBD2"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CBD5",
+      "#D3A7C2",
+      "#C084B0",
+      "#AC619D",
+      "#983B8B",
+      "#830077"
+    ],
+    "paired_diverging_stops": [
+      "#2B161D",
+      "#69575C",
+      "#ACA2A4",
+      "#F4F3F2",
+      "#F7F1E7",
+      "#FAEEDD",
+      "#FDEBD2"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (werpals: provence)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 14.33,
+    "min_de2000_deutan_first6": 7.18,
+    "min_de2000_protan_first6": 12.08,
+    "min_de2000_tritan_first6": 11.9,
+    "optimal6_min_de2000": 14.33,
+    "optimal6_min_de2000_deutan": 7.18,
+    "optimal6_min_de2000_protan": 12.08,
+    "grayscale_L_spread": 0.727,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

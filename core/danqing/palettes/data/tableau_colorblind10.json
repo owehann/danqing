@@ -22,7 +22,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "Blues",
-    "diverging": "PuOr"
+    "diverging": "PuOr",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCBC",
+      "#DAAA92",
+      "#CB8868",
+      "#BA663D",
+      "#A74200",
+      "#931100"
+    ],
+    "paired_diverging_stops": [
+      "#0069A2",
+      "#6397BE",
+      "#ABC5D9",
+      "#F4F3F2",
+      "#E2B79C",
+      "#CB7943",
+      "#AE3400"
+    ]
   },
   "source": {
     "title": "Tableau Colorblind 10 (Matplotlib stylelib)",

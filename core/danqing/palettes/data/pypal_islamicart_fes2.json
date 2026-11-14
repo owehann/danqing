@@ -1,0 +1,66 @@
+{
+  "id": "pypal_islamicart_fes2",
+  "name": {
+    "en": "fes2 (IslamicArt)",
+    "zh": "fes2（IslamicArt）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4E4B4D",
+    "#AE9366",
+    "#7F7657",
+    "#A6A48D",
+    "#7F6960",
+    "#C9CBC8",
+    "#95949B",
+    "#507A69",
+    "#344A47"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D4CA",
+      "#AFBAAE",
+      "#8EA093",
+      "#6D8778",
+      "#4C6F5F",
+      "#2B5747"
+    ],
+    "paired_diverging_stops": [
+      "#C9CBC8",
+      "#D7D8D6",
+      "#E5E6E4",
+      "#F4F3F2",
+      "#AFB7B5",
+      "#6F7F7C",
+      "#344A47"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (IslamicArt: fes2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 11.82,
+    "min_de2000_deutan_first6": 6.54,
+    "min_de2000_protan_first6": 8.29,
+    "min_de2000_tritan_first6": 6.04,
+    "optimal6_min_de2000": 11.82,
+    "optimal6_min_de2000_deutan": 6.54,
+    "optimal6_min_de2000_protan": 8.29,
+    "grayscale_L_spread": 0.45,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

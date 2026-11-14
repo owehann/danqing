@@ -1,0 +1,65 @@
+{
+  "id": "pypal_tvthemes_watertribe",
+  "name": {
+    "en": "WaterTribe (tvthemes)",
+    "zh": "WaterTribe（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#0047AB",
+    "#1DB4D3",
+    "#A2CAED",
+    "#AFB5B8",
+    "#120976",
+    "#FFFAFA",
+    "#174D79",
+    "#949BBC"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD3E0",
+      "#A4B7D8",
+      "#7C9BCF",
+      "#557FC5",
+      "#2D62B9",
+      "#0043AD"
+    ],
+    "paired_diverging_stops": [
+      "#120976",
+      "#4C5FA3",
+      "#9CA8CC",
+      "#F4F3F2",
+      "#F8F6F5",
+      "#FBF8F7",
+      "#FFFAFA"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: WaterTribe)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 13.49,
+    "min_de2000_deutan_first6": 10.45,
+    "min_de2000_protan_first6": 7.28,
+    "min_de2000_tritan_first6": 10.43,
+    "optimal6_min_de2000": 13.49,
+    "optimal6_min_de2000_deutan": 10.45,
+    "optimal6_min_de2000_protan": 7.28,
+    "grayscale_L_spread": 0.717,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

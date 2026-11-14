@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_canary",
+  "name": {
+    "en": "canary (calecopal)",
+    "zh": "canary（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FFDBA5",
+    "#FAB455",
+    "#F28023",
+    "#A5683C",
+    "#B4450E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CDBE",
+      "#D9AB96",
+      "#C9896E",
+      "#B76746",
+      "#A44418",
+      "#901900"
+    ],
+    "paired_diverging_stops": [
+      "#FFDBA5",
+      "#FCE3BF",
+      "#F8EBD9",
+      "#F4F3F2",
+      "#E4BAAA",
+      "#CE8164",
+      "#B4450E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: canary)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 11.18,
+    "min_de2000_deutan_first6": 6.83,
+    "min_de2000_protan_first6": 9.39,
+    "min_de2000_tritan_first6": 10.18,
+    "optimal6_min_de2000": 11.18,
+    "optimal6_min_de2000_deutan": 6.83,
+    "optimal6_min_de2000_protan": 9.39,
+    "grayscale_L_spread": 0.374,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

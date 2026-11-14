@@ -1,0 +1,63 @@
+{
+  "id": "pypal_futurevisions_cancri",
+  "name": {
+    "en": "cancri (futurevisions)",
+    "zh": "cancri（futurevisions）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#343854",
+    "#8C384D",
+    "#CF2438",
+    "#D95E31",
+    "#F0C742",
+    "#F8F0E5"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9C1",
+      "#E3A49C",
+      "#D77E78",
+      "#C75755",
+      "#B62632",
+      "#A20008"
+    ],
+    "paired_diverging_stops": [
+      "#343854",
+      "#6E7286",
+      "#AEB0BB",
+      "#F4F3F2",
+      "#F3E5BF",
+      "#F1D789",
+      "#F0C742"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (futurevisions: cancri)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 16.1,
+    "min_de2000_deutan_first6": 9.0,
+    "min_de2000_protan_first6": 11.78,
+    "min_de2000_tritan_first6": 8.66,
+    "optimal6_min_de2000": 16.1,
+    "optimal6_min_de2000_deutan": 9.0,
+    "optimal6_min_de2000_protan": 11.78,
+    "grayscale_L_spread": 0.609,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

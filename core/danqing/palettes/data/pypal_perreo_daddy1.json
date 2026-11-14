@@ -1,0 +1,66 @@
+{
+  "id": "pypal_perreo_daddy1",
+  "name": {
+    "en": "daddy1 (peRReo)",
+    "zh": "daddy1（peRReo）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#AB1314",
+    "#E47368",
+    "#E1E0D9",
+    "#59493A",
+    "#E24445",
+    "#BD916E",
+    "#262016",
+    "#BAB2A2",
+    "#8C7A67"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC0",
+      "#E0A69A",
+      "#D28275",
+      "#C25D50",
+      "#B0342B",
+      "#9C0000"
+    ],
+    "paired_diverging_stops": [
+      "#E1E0D9",
+      "#E7E6E1",
+      "#EEEDEA",
+      "#F4F3F2",
+      "#A9A6A1",
+      "#645F57",
+      "#262016"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (peRReo: daddy1)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 9.73,
+    "min_de2000_deutan_first6": 1.99,
+    "min_de2000_protan_first6": 5.58,
+    "min_de2000_tritan_first6": 10.04,
+    "optimal6_min_de2000": 9.73,
+    "optimal6_min_de2000_deutan": 1.99,
+    "optimal6_min_de2000_protan": 5.58,
+    "grayscale_L_spread": 0.658,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

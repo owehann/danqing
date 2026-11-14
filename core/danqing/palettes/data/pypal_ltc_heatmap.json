@@ -1,0 +1,66 @@
+{
+  "id": "pypal_ltc_heatmap",
+  "name": {
+    "en": "heatmap (ltc)",
+    "zh": "heatmap（ltc）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#001219",
+    "#005F73",
+    "#0A9396",
+    "#94D2BD",
+    "#E9D8A6",
+    "#EE9B00",
+    "#CA6702",
+    "#AE2012",
+    "#9B2226"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBBF",
+      "#DFA799",
+      "#D08373",
+      "#C05F4E",
+      "#AE3727",
+      "#9A0000"
+    ],
+    "paired_diverging_stops": [
+      "#001219",
+      "#455459",
+      "#98A0A2",
+      "#F4F3F2",
+      "#F4D7B5",
+      "#F2BA74",
+      "#EE9B00"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ltc: heatmap)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 20.33,
+    "min_de2000_deutan_first6": 16.31,
+    "min_de2000_protan_first6": 11.35,
+    "min_de2000_tritan_first6": 18.38,
+    "optimal6_min_de2000": 20.33,
+    "optimal6_min_de2000_deutan": 16.31,
+    "optimal6_min_de2000_protan": 11.35,
+    "grayscale_L_spread": 0.715,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_ochre_nolan_ned",
+  "name": {
+    "en": "nolan_ned (ochRe)",
+    "zh": "nolan_ned（ochRe）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A89030",
+    "#004878",
+    "#78A890",
+    "#000000",
+    "#481800"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DBD2BD",
+      "#C2B694",
+      "#A99A6B",
+      "#917F40",
+      "#796403",
+      "#624A00"
+    ],
+    "paired_diverging_stops": [
+      "#A89030",
+      "#C1B177",
+      "#DAD2B5",
+      "#F4F3F2",
+      "#A5B8C9",
+      "#597FA1",
+      "#004878"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ochRe: nolan_ned)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 22.71,
+    "min_de2000_deutan_first6": 19.47,
+    "min_de2000_protan_first6": 15.02,
+    "min_de2000_tritan_first6": 24.42,
+    "optimal6_min_de2000": 22.71,
+    "optimal6_min_de2000_deutan": 19.47,
+    "optimal6_min_de2000_protan": 15.02,
+    "grayscale_L_spread": 0.69,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

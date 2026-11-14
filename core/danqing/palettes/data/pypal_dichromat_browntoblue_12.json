@@ -1,0 +1,69 @@
+{
+  "id": "pypal_dichromat_browntoblue_12",
+  "name": {
+    "en": "BrowntoBlue_12 (dichromat)",
+    "zh": "BrowntoBlue_12（dichromat）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#331A00",
+    "#663000",
+    "#996136",
+    "#CC9B7A",
+    "#D9AF98",
+    "#F2DACE",
+    "#CCFDFF",
+    "#99F8FF",
+    "#66F0FF",
+    "#33E4FF",
+    "#00AACC",
+    "#007A99"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD5D4",
+      "#A3BBC2",
+      "#7AA2AF",
+      "#50899C",
+      "#1B708A",
+      "#005877"
+    ],
+    "paired_diverging_stops": [
+      "#331A00",
+      "#6F5B49",
+      "#AFA49A",
+      "#F4F3F2",
+      "#E7F7F6",
+      "#DAFAFB",
+      "#CCFDFF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (dichromat: BrowntoBlue_12)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 6.33,
+    "min_de2000_deutan_first6": 6.02,
+    "min_de2000_protan_first6": 6.74,
+    "min_de2000_tritan_first6": 5.83,
+    "optimal6_min_de2000": 17.51,
+    "optimal6_min_de2000_deutan": 15.63,
+    "optimal6_min_de2000_protan": 12.01,
+    "grayscale_L_spread": 0.714,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

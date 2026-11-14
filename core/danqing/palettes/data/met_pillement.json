@@ -18,7 +18,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D3C6",
+      "#B7B8A5",
+      "#989E86",
+      "#7B8467",
+      "#5F6B49",
+      "#45532D"
+    ],
+    "paired_diverging_stops": [
+      "#7E5B33",
+      "#A58C71",
+      "#CCBEB0",
+      "#F4F3F2",
+      "#A0A8AC",
+      "#54636A",
+      "#0F252F"
+    ]
   },
   "source": {
     "title": "A Shipwreck in a Storm, 1782, Jean Pillement, French",

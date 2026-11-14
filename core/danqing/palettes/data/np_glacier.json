@@ -17,7 +17,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD5D3",
+      "#A3BCBF",
+      "#7AA3AB",
+      "#4F8A97",
+      "#197283",
+      "#005970"
+    ],
+    "paired_diverging_stops": [
+      "#01353D",
+      "#536F75",
+      "#A1AFB1",
+      "#F4F3F2",
+      "#B1C6C5",
+      "#719A99",
+      "#2C6F70"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (Glacier)",

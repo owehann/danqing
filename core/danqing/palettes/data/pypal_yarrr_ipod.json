@@ -1,0 +1,64 @@
+{
+  "id": "pypal_yarrr_ipod",
+  "name": {
+    "en": "ipod (yarrr)",
+    "zh": "ipod（yarrr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D7D7D7",
+    "#F3AEAF",
+    "#AEADB0",
+    "#9ED9BF",
+    "#5CCBEB",
+    "#DEEB61",
+    "#F2F2F2"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD5D5",
+      "#A0BCC2",
+      "#75A3B0",
+      "#478A9D",
+      "#00728A",
+      "#005978"
+    ],
+    "paired_diverging_stops": [
+      "#5CCBEB",
+      "#96D9EE",
+      "#C7E7F0",
+      "#F4F3F2",
+      "#ECF1C8",
+      "#E5EF9A",
+      "#DEEB61"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (yarrr: ipod)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 10.79,
+    "min_de2000_deutan_first6": 5.46,
+    "min_de2000_protan_first6": 6.73,
+    "min_de2000_tritan_first6": 8.49,
+    "optimal6_min_de2000": 10.79,
+    "optimal6_min_de2000_deutan": 5.46,
+    "optimal6_min_de2000_protan": 6.73,
+    "grayscale_L_spread": 0.212,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

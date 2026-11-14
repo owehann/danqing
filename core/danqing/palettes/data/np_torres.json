@@ -22,7 +22,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D4C0",
+      "#B6BA9A",
+      "#98A075",
+      "#7B8650",
+      "#5F6E29",
+      "#445500"
+    ],
+    "paired_diverging_stops": [
+      "#2F397A",
+      "#6975A3",
+      "#ACB3CB",
+      "#F4F3F2",
+      "#D6B9B4",
+      "#B68279",
+      "#944B41"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (Torres)",

@@ -19,7 +19,25 @@
   "neutral": "#999999",
   "partners": {
     "sequential": "cividis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD4DA",
+      "#A2BACD",
+      "#79A0BF",
+      "#4F85B0",
+      "#1C6BA1",
+      "#005191"
+    ],
+    "paired_diverging_stops": [
+      "#0068A8",
+      "#6197C2",
+      "#AAC5DB",
+      "#F4F3F2",
+      "#C6C498",
+      "#9B9435",
+      "#746500"
+    ]
   },
   "source": {
     "title": "ggpubfigs: Colorblind-Friendly Palettes for Life-Science Publications (ito_seven)",

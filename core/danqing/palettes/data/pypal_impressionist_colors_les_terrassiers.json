@@ -1,0 +1,70 @@
+{
+  "id": "pypal_impressionist_colors_les_terrassiers",
+  "name": {
+    "en": "les_terrassiers (impressionist.colors)",
+    "zh": "les_terrassiers（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#5A4B4B",
+    "#695A4B",
+    "#87694B",
+    "#A5875A",
+    "#D2A569",
+    "#B4874B",
+    "#A5783C",
+    "#69784B",
+    "#5A693C",
+    "#3C5A4B",
+    "#6996C3",
+    "#A5C3D2",
+    "#A5B4B4"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D3C5",
+      "#B7B8A3",
+      "#989E82",
+      "#7B8562",
+      "#5F6C43",
+      "#455425"
+    ],
+    "paired_diverging_stops": [
+      "#A5783C",
+      "#C0A07A",
+      "#DAC9B5",
+      "#F4F3F2",
+      "#C5D4E3",
+      "#97B5D3",
+      "#6996C3"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: les_terrassiers)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 4.96,
+    "min_de2000_deutan_first6": 4.35,
+    "min_de2000_protan_first6": 4.03,
+    "min_de2000_tritan_first6": 4.68,
+    "optimal6_min_de2000": 4.96,
+    "optimal6_min_de2000_deutan": 4.35,
+    "optimal6_min_de2000_protan": 4.03,
+    "grayscale_L_spread": 0.372,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

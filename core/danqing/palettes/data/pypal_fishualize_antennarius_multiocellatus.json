@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_antennarius_multiocellatus",
+  "name": {
+    "en": "Antennarius_multiocellatus (fishualize)",
+    "zh": "Antennarius_multiocellatus（fishualize）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#420A01",
+    "#854007",
+    "#C39328",
+    "#DBC51C",
+    "#F3F33A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CFC0",
+      "#CFAF9A",
+      "#BB9075",
+      "#A77250",
+      "#92542A",
+      "#7D3500"
+    ],
+    "paired_diverging_stops": [
+      "#420A01",
+      "#7D544A",
+      "#B8A19A",
+      "#F4F3F2",
+      "#F3F4C3",
+      "#F3F48D",
+      "#F3F33A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Antennarius_multiocellatus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.96,
+    "min_de2000_deutan_first6": 8.71,
+    "min_de2000_protan_first6": 9.83,
+    "min_de2000_tritan_first6": 12.98,
+    "optimal6_min_de2000": 10.96,
+    "optimal6_min_de2000_deutan": 8.71,
+    "optimal6_min_de2000_protan": 9.83,
+    "grayscale_L_spread": 0.685,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

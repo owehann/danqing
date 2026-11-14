@@ -1,0 +1,64 @@
+{
+  "id": "pypal_mexbrewer_frida",
+  "name": {
+    "en": "Frida (MexBrewer)",
+    "zh": "Frida（MexBrewer）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#D6D8D0",
+    "#A4ABB0",
+    "#4C6C94",
+    "#435E7F",
+    "#2F415F",
+    "#232C43",
+    "#0B1829"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D3D4",
+      "#AFB7C2",
+      "#8D9CAF",
+      "#6D829C",
+      "#4D6889",
+      "#2E4E76"
+    ],
+    "paired_diverging_stops": [
+      "#D6D8D0",
+      "#E0E1DB",
+      "#EAEAE6",
+      "#F4F3F2",
+      "#9DA3AA",
+      "#4F5966",
+      "#0B1829"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MexBrewer: Frida)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 5.4,
+    "min_de2000_deutan_first6": 5.27,
+    "min_de2000_protan_first6": 5.76,
+    "min_de2000_tritan_first6": 5.51,
+    "optimal6_min_de2000": 7.22,
+    "optimal6_min_de2000_deutan": 6.74,
+    "optimal6_min_de2000_protan": 6.81,
+    "grayscale_L_spread": 0.671,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

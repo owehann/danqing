@@ -1,0 +1,66 @@
+{
+  "id": "pypal_ggthemr_dust",
+  "name": {
+    "en": "dust (ggthemr)",
+    "zh": "dust（ggthemr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#555555",
+    "#DB735C",
+    "#EFA86E",
+    "#9A8A76",
+    "#F3C57B",
+    "#7A6752",
+    "#2A91A2",
+    "#87F28A",
+    "#6EDCEF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC2",
+      "#D6AB9D",
+      "#C58A7A",
+      "#B26957",
+      "#9E4834",
+      "#8A230C"
+    ],
+    "paired_diverging_stops": [
+      "#F3C57B",
+      "#F4D5A5",
+      "#F4E4CC",
+      "#F4F3F2",
+      "#B6D2D7",
+      "#78B2BC",
+      "#2A91A2"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemr: dust)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 10.7,
+    "min_de2000_deutan_first6": 4.82,
+    "min_de2000_protan_first6": 6.58,
+    "min_de2000_tritan_first6": 7.52,
+    "optimal6_min_de2000": 10.7,
+    "optimal6_min_de2000_deutan": 4.82,
+    "optimal6_min_de2000_protan": 6.58,
+    "grayscale_L_spread": 0.423,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

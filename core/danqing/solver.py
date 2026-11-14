@@ -611,7 +611,7 @@ def solve_scene_colors(
             for gid in entities[eid].member_group_ids:
                 group_hex[gid] = hx
 
-    # 6. Continuous scales (Section 8.2.7: sequential/diverging partner, ΔE >= 15 vs Focus)
+    # 6. Continuous scales (Section 8.2.7: homologous paired ramp first, then named partner, ΔE >= 15 vs Focus)
     focus_srgbs = [
         hex_to_srgb01(var_hex[cv.var_id])
         for cv in ordered_vars
@@ -628,17 +628,27 @@ def solve_scene_colors(
             scale_stops[sid] = list(cs.current_stops_hex)
             continue
         is_div = cs.kind == "continuous_diverging"
+        cand_specs: list[tuple[str, list[str]]] = []
         if is_div:
-            cand_ids = ([pal.id] if pal.kind == "diverging" else []) + div_fallbacks
+            if pal.kind == "diverging":
+                cand_specs.append((pal.id, list(pal.colors)))
+            elif pal.paired_diverging_stops:
+                cand_specs.append((f"{pal.id}__paired_div", list(pal.paired_diverging_stops)))
+            for cid in dict.fromkeys(div_fallbacks):
+                cand_specs.append((cid, list(get_palette(cid).colors)))
         else:
-            cand_ids = ([pal.id] if pal.kind == "sequential" else []) + seq_fallbacks
+            if pal.kind == "sequential":
+                cand_specs.append((pal.id, list(pal.colors)))
+            elif pal.paired_sequential_stops:
+                cand_specs.append((f"{pal.id}__paired_seq", list(pal.paired_sequential_stops)))
+            for cid in dict.fromkeys(seq_fallbacks):
+                cand_specs.append((cid, list(get_palette(cid).colors)))
 
         chosen_stops: list[str] | None = None
-        for cid in dict.fromkeys(cand_ids):
-            if not is_div and cid in used_seq_partners and len(continuous_scales) > 1:
+        for tag, raw_stops in cand_specs:
+            if not is_div and tag in used_seq_partners and len(continuous_scales) > 1:
                 continue
-            cpal = get_palette(cid)
-            stops = apply_vibrancy(list(cpal.colors), vib)
+            stops = apply_vibrancy(raw_stops, vib)
             if focus_arr is not None and len(stops) >= 2:
                 # High-end stops (both dark and intense poles) should stay >= 15 ΔE away from Focus marks
                 hi_poles = np.stack([hex_to_srgb01(stops[0]), hex_to_srgb01(stops[-1])], axis=0)
@@ -647,12 +657,17 @@ def solve_scene_colors(
                     continue
             chosen_stops = stops
             if not is_div:
-                used_seq_partners.add(cid)
+                used_seq_partners.add(tag)
             break
 
         if chosen_stops is None:
-            fallback_pal = get_palette(pal.partner_diverging if is_div else pal.partner_sequential)
-            chosen_stops = apply_vibrancy(list(fallback_pal.colors), vib)
+            if is_div and pal.paired_diverging_stops:
+                chosen_stops = apply_vibrancy(list(pal.paired_diverging_stops), vib)
+            elif not is_div and pal.paired_sequential_stops:
+                chosen_stops = apply_vibrancy(list(pal.paired_sequential_stops), vib)
+            else:
+                fallback_pal = get_palette(pal.partner_diverging if is_div else pal.partner_sequential)
+                chosen_stops = apply_vibrancy(list(fallback_pal.colors), vib)
         scale_stops[sid] = chosen_stops
 
     # 7. Inspector swatches: ALL palette colors (+ neutral + generated), sorted by min ΔE2000 vs co-panel elements

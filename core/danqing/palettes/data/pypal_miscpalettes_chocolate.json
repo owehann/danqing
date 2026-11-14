@@ -1,0 +1,67 @@
+{
+  "id": "pypal_miscpalettes_chocolate",
+  "name": {
+    "en": "chocolate (miscpalettes)",
+    "zh": "chocolate（miscpalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A0522D",
+    "#D2691E",
+    "#8B0000",
+    "#CD853F",
+    "#A52A2A",
+    "#F4A460",
+    "#8B4513",
+    "#C04000",
+    "#B22222",
+    "#B65C3A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC1",
+      "#DFA79B",
+      "#D18377",
+      "#C15E53",
+      "#AE352E",
+      "#9A0000"
+    ],
+    "paired_diverging_stops": [
+      "#8B0000",
+      "#B56255",
+      "#D7AAA1",
+      "#F4F3F2",
+      "#F6DAC3",
+      "#F6BF94",
+      "#F4A460"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (miscpalettes: chocolate)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 8.99,
+    "min_de2000_deutan_first6": 4.73,
+    "min_de2000_protan_first6": 7.77,
+    "min_de2000_tritan_first6": 7.48,
+    "optimal6_min_de2000": 8.99,
+    "optimal6_min_de2000_deutan": 4.73,
+    "optimal6_min_de2000_protan": 7.77,
+    "grayscale_L_spread": 0.384,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

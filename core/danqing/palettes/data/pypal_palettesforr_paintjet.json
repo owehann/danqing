@@ -1,0 +1,65 @@
+{
+  "id": "pypal_palettesforr_paintjet",
+  "name": {
+    "en": "Paintjet (palettesForR)",
+    "zh": "Paintjet（palettesForR）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#18140C",
+    "#F4F0E8",
+    "#C44448",
+    "#30845C",
+    "#F0E848",
+    "#343074",
+    "#BC306C",
+    "#2874C4"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACACB",
+      "#DDA5AF",
+      "#CD8195",
+      "#BC5B7B",
+      "#A93262",
+      "#95004A"
+    ],
+    "paired_diverging_stops": [
+      "#F0E848",
+      "#F1ED90",
+      "#F2F1C3",
+      "#F4F3F2",
+      "#B2C9E5",
+      "#709FD6",
+      "#2874C4"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettesForR: Paintjet)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 25.8,
+    "min_de2000_deutan_first6": 10.48,
+    "min_de2000_protan_first6": 10.72,
+    "min_de2000_tritan_first6": 11.54,
+    "optimal6_min_de2000": 25.8,
+    "optimal6_min_de2000_deutan": 10.48,
+    "optimal6_min_de2000_protan": 10.72,
+    "grayscale_L_spread": 0.763,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

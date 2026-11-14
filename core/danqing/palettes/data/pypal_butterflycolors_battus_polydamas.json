@@ -1,0 +1,62 @@
+{
+  "id": "pypal_butterflycolors_battus_polydamas",
+  "name": {
+    "en": "battus_polydamas (ButterflyColors)",
+    "zh": "battus_polydamas（ButterflyColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#372D21",
+    "#A67538",
+    "#D99A4E",
+    "#593827",
+    "#221713"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD0C0",
+      "#C9B299",
+      "#B29573",
+      "#9C784E",
+      "#865C26",
+      "#704000"
+    ],
+    "paired_diverging_stops": [
+      "#D99A4E",
+      "#E3B888",
+      "#ECD6BD",
+      "#F4F3F2",
+      "#A7A29F",
+      "#615854",
+      "#221713"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ButterflyColors: battus_polydamas)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.56,
+    "min_de2000_deutan_first6": 7.48,
+    "min_de2000_protan_first6": 5.82,
+    "min_de2000_tritan_first6": 6.68,
+    "optimal6_min_de2000": 8.56,
+    "optimal6_min_de2000_deutan": 7.48,
+    "optimal6_min_de2000_protan": 5.82,
+    "grayscale_L_spread": 0.516,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

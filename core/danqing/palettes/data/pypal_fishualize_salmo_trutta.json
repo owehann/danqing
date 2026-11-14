@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_salmo_trutta",
+  "name": {
+    "en": "Salmo_trutta (fishualize)",
+    "zh": "Salmo_trutta（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F7F7F7",
+    "#E6452E",
+    "#EED58C",
+    "#4B5957",
+    "#303030"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCABE",
+      "#E3A595",
+      "#D6806D",
+      "#C75945",
+      "#B52B16",
+      "#A20000"
+    ],
+    "paired_diverging_stops": [
+      "#EED58C",
+      "#F0DFB0",
+      "#F2EAD1",
+      "#F4F3F2",
+      "#ADADAC",
+      "#6B6B6B",
+      "#303030"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Salmo_trutta)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 14.68,
+    "min_de2000_deutan_first6": 12.46,
+    "min_de2000_protan_first6": 13.12,
+    "min_de2000_tritan_first6": 15.48,
+    "optimal6_min_de2000": 14.68,
+    "optimal6_min_de2000_deutan": 12.46,
+    "optimal6_min_de2000_protan": 13.12,
+    "grayscale_L_spread": 0.667,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

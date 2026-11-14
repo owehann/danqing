@@ -1,0 +1,69 @@
+{
+  "id": "pypal_palettetown_magmar",
+  "name": {
+    "en": "magmar (palettetown)",
+    "zh": "magmar（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E83000",
+    "#F8D000",
+    "#F87010",
+    "#F8F068",
+    "#A01000",
+    "#282828",
+    "#D8A020",
+    "#985810",
+    "#686868",
+    "#F8F8F8",
+    "#D0D0D0",
+    "#F8A040"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BB",
+      "#E7A490",
+      "#DB7D66",
+      "#CD543A",
+      "#BC1C00",
+      "#A90000"
+    ],
+    "paired_diverging_stops": [
+      "#F8D000",
+      "#F7DD7E",
+      "#F5E9BB",
+      "#F4F3F2",
+      "#AAA9A8",
+      "#656564",
+      "#282828"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: magmar)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 10.73,
+    "min_de2000_deutan_first6": 6.83,
+    "min_de2000_protan_first6": 6.99,
+    "min_de2000_tritan_first6": 9.92,
+    "optimal6_min_de2000": 10.73,
+    "optimal6_min_de2000_deutan": 6.83,
+    "optimal6_min_de2000_protan": 6.99,
+    "grayscale_L_spread": 0.702,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

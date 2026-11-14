@@ -18,7 +18,25 @@
   "neutral": "#BBBBBB",
   "partners": {
     "sequential": "batlow",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CBCF",
+      "#D7A7B7",
+      "#C6839F",
+      "#B46088",
+      "#A03A71",
+      "#8B005B"
+    ],
+    "paired_diverging_stops": [
+      "#346698",
+      "#7394B7",
+      "#B2C3D5",
+      "#F4F3F2",
+      "#C7C2A0",
+      "#9D924C",
+      "#756300"
+    ]
   },
   "source": {
     "title": "Colour Schemes (SRON/EPS/TN/09-002)",

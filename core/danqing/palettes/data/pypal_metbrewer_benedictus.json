@@ -1,0 +1,70 @@
+{
+  "id": "pypal_metbrewer_benedictus",
+  "name": {
+    "en": "Benedictus (MetBrewer)",
+    "zh": "Benedictus（MetBrewer）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#9A133D",
+    "#B93961",
+    "#D8527C",
+    "#F28AAA",
+    "#F9B4C9",
+    "#F9E0E8",
+    "#FFFFFF",
+    "#EAF3FF",
+    "#C5DAF6",
+    "#A1C2ED",
+    "#6996E3",
+    "#4060C8",
+    "#1A318B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD2E0",
+      "#AAB5D7",
+      "#8699CE",
+      "#637CC3",
+      "#425FB7",
+      "#253FAA"
+    ],
+    "paired_diverging_stops": [
+      "#FFFFFF",
+      "#FBFBFB",
+      "#F8F7F6",
+      "#F4F3F2",
+      "#A4B2D2",
+      "#5A72B0",
+      "#1A318B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MetBrewer: Benedictus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 9.78,
+    "min_de2000_deutan_first6": 6.78,
+    "min_de2000_protan_first6": 8.99,
+    "min_de2000_tritan_first6": 9.51,
+    "optimal6_min_de2000": 9.78,
+    "optimal6_min_de2000_deutan": 6.78,
+    "optimal6_min_de2000_protan": 8.99,
+    "grayscale_L_spread": 0.64,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

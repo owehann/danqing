@@ -19,7 +19,25 @@
   "neutral": "#666666",
   "partners": {
     "sequential": "GnBu",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC7CC",
+      "#E4A0B2",
+      "#D77899",
+      "#C84D80",
+      "#B60B68",
+      "#A20051"
+    ],
+    "paired_diverging_stops": [
+      "#5F599A",
+      "#8D8BB8",
+      "#BFBED6",
+      "#F4F3F2",
+      "#D2BF99",
+      "#B08A3B",
+      "#8D5600"
+    ]
   },
   "source": {
     "title": "D3 Scale Chromatic / Observable (ColorBrewer Dark2)",

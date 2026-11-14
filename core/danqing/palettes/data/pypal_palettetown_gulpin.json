@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_gulpin",
+  "name": {
+    "en": "gulpin (palettetown)",
+    "zh": "gulpin（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A0D890",
+    "#80A070",
+    "#000000",
+    "#486838",
+    "#98B888",
+    "#C0E8B0",
+    "#F8E8A0",
+    "#F0D858",
+    "#404040",
+    "#A89048",
+    "#C8A810"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D4C5",
+      "#B2BAA3",
+      "#92A182",
+      "#728863",
+      "#546F44",
+      "#375725"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#F2EBC5",
+      "#F1E294",
+      "#F0D858"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: gulpin)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 6.06,
+    "min_de2000_deutan_first6": 5.59,
+    "min_de2000_protan_first6": 5.53,
+    "min_de2000_tritan_first6": 6.2,
+    "optimal6_min_de2000": 6.06,
+    "optimal6_min_de2000_deutan": 5.59,
+    "optimal6_min_de2000_protan": 5.53,
+    "grayscale_L_spread": 0.927,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

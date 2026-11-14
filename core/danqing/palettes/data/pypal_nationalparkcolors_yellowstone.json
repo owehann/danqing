@@ -1,0 +1,63 @@
+{
+  "id": "pypal_nationalparkcolors_yellowstone",
+  "name": {
+    "en": "Yellowstone (nationalparkcolors)",
+    "zh": "Yellowstone（nationalparkcolors）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8CBEB1",
+    "#FAFAF2",
+    "#EEEAA0",
+    "#999275",
+    "#E8C533",
+    "#3A5836"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D4C7",
+      "#B2BAA7",
+      "#92A088",
+      "#73876B",
+      "#546E4E",
+      "#375633"
+    ],
+    "paired_diverging_stops": [
+      "#E8C533",
+      "#ECD583",
+      "#F0E5BD",
+      "#F4F3F2",
+      "#B2BDAF",
+      "#748970",
+      "#3A5836"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nationalparkcolors: Yellowstone)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.49,
+    "min_de2000_deutan_first6": 12.05,
+    "min_de2000_protan_first6": 13.8,
+    "min_de2000_tritan_first6": 9.66,
+    "optimal6_min_de2000": 14.49,
+    "optimal6_min_de2000_deutan": 12.05,
+    "optimal6_min_de2000_protan": 13.8,
+    "grayscale_L_spread": 0.556,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

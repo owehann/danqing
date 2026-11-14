@@ -20,7 +20,25 @@
   "neutral": "#A5A698",
   "partners": {
     "sequential": "oslo",
-    "diverging": "PuOr"
+    "diverging": "PuOr",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D7D3C5",
+      "#BAB7A4",
+      "#9D9C84",
+      "#828265",
+      "#676947",
+      "#4E502A"
+    ],
+    "paired_diverging_stops": [
+      "#47271B",
+      "#7E655C",
+      "#B8AAA4",
+      "#F4F3F2",
+      "#C9C0AE",
+      "#A08E6E",
+      "#785F2E"
+    ]
   },
   "source": {
     "title": "Yaozhou Celadon Lion Ewer & Jian Ware Hare's-Fur Tea Bowl",

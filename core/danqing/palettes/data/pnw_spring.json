@@ -18,7 +18,25 @@
   "neutral": "#B5B8BA",
   "partners": {
     "sequential": "navia",
-    "diverging": "broc"
+    "diverging": "broc",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CCD0",
+      "#CFABB9",
+      "#BB8AA3",
+      "#A6698D",
+      "#914977",
+      "#7B2662"
+    ],
+    "paired_diverging_stops": [
+      "#74528E",
+      "#9D86B0",
+      "#C7BBD1",
+      "#F4F3F2",
+      "#D1BCB1",
+      "#AD8773",
+      "#895538"
+    ]
   },
   "source": {
     "title": "PNWColors Pacific Northwest Nature Palette (Spring)",

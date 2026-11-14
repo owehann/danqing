@@ -1,0 +1,65 @@
+{
+  "id": "pypal_tvthemes_rhodonite",
+  "name": {
+    "en": "Rhodonite (tvthemes)",
+    "zh": "Rhodonite（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D776B1",
+    "#180C1D",
+    "#F0E2EF",
+    "#7B5584",
+    "#452B5B",
+    "#785069",
+    "#A4527C",
+    "#8474AC"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CDCE",
+      "#CFABB5",
+      "#BB8B9C",
+      "#A76A84",
+      "#924B6D",
+      "#7C2957"
+    ],
+    "paired_diverging_stops": [
+      "#180C1D",
+      "#594F5C",
+      "#A39DA4",
+      "#F4F3F2",
+      "#F3EEF1",
+      "#F1E8F0",
+      "#F0E2EF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Rhodonite)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 7.5,
+    "min_de2000_deutan_first6": 8.67,
+    "min_de2000_protan_first6": 7.5,
+    "min_de2000_tritan_first6": 4.71,
+    "optimal6_min_de2000": 7.5,
+    "optimal6_min_de2000_deutan": 8.67,
+    "optimal6_min_de2000_protan": 7.5,
+    "grayscale_L_spread": 0.747,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "pypal_vaporwave_hotlinebling",
+  "name": {
+    "en": "hotlineBling (vapoRwave)",
+    "zh": "hotlineBling（vapoRwave）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EB4762",
+    "#D98594",
+    "#228BDC",
+    "#D96237",
+    "#00B19D",
+    "#8B2E8B",
+    "#55FFFF",
+    "#270042"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CCD6",
+      "#CFA9C4",
+      "#BB87B3",
+      "#A664A1",
+      "#91418F",
+      "#7C147C"
+    ],
+    "paired_diverging_stops": [
+      "#228BDC",
+      "#74AFE6",
+      "#B5D2ED",
+      "#F4F3F2",
+      "#F0C4B5",
+      "#E79578",
+      "#D96237"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vapoRwave: hotlineBling)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 13.78,
+    "min_de2000_deutan_first6": 7.57,
+    "min_de2000_protan_first6": 7.8,
+    "min_de2000_tritan_first6": 3.78,
+    "optimal6_min_de2000": 13.78,
+    "optimal6_min_de2000_deutan": 7.57,
+    "optimal6_min_de2000_protan": 7.8,
+    "grayscale_L_spread": 0.697,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

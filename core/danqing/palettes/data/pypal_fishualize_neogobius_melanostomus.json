@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_neogobius_melanostomus",
+  "name": {
+    "en": "Neogobius_melanostomus (fishualize)",
+    "zh": "Neogobius_melanostomus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#64CCFC",
+    "#EDE27B",
+    "#BB904E",
+    "#825841",
+    "#1A0202"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED0C5",
+      "#C7B2A4",
+      "#B09484",
+      "#997865",
+      "#825C47",
+      "#6B4129"
+    ],
+    "paired_diverging_stops": [
+      "#EDE27B",
+      "#EFE8A7",
+      "#F1EECD",
+      "#F4F3F2",
+      "#A69896",
+      "#5D4643",
+      "#1A0202"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Neogobius_melanostomus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 23.25,
+    "min_de2000_deutan_first6": 18.52,
+    "min_de2000_protan_first6": 20.78,
+    "min_de2000_tritan_first6": 20.9,
+    "optimal6_min_de2000": 23.25,
+    "optimal6_min_de2000_deutan": 18.52,
+    "optimal6_min_de2000_protan": 20.78,
+    "grayscale_L_spread": 0.756,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

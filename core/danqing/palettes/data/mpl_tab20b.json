@@ -32,7 +32,25 @@
   "neutral": "#969696",
   "partners": {
     "sequential": "viridis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CCC5",
+      "#D6ABA3",
+      "#C48983",
+      "#B16864",
+      "#9E4746",
+      "#892128"
+    ],
+    "paired_diverging_stops": [
+      "#393B79",
+      "#7176A2",
+      "#B0B3CA",
+      "#F4F3F2",
+      "#CEBFA0",
+      "#A98D4E",
+      "#855B00"
+    ]
   },
   "source": {
     "title": "Matplotlib / Vega Structured 20-Color Palette (tab20b)",

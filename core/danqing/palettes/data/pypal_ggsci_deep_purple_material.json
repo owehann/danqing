@@ -1,0 +1,67 @@
+{
+  "id": "pypal_ggsci_deep_purple_material",
+  "name": {
+    "en": "deep_purple_material (ggsci)",
+    "zh": "deep_purple_material（ggsci）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#EDE7F6",
+    "#D1C4E9",
+    "#B39DDB",
+    "#9575CD",
+    "#7E57C2",
+    "#673AB7",
+    "#5E35B1",
+    "#512DA8",
+    "#4527A0",
+    "#311B92"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8CEE0",
+      "#BCAED7",
+      "#A18ECD",
+      "#876EC2",
+      "#6F4CB6",
+      "#5923A9"
+    ],
+    "paired_diverging_stops": [
+      "#EDE7F6",
+      "#EFEBF5",
+      "#F2EFF3",
+      "#F4F3F2",
+      "#A9ADD6",
+      "#6669B6",
+      "#311B92"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggsci: deep_purple_material)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 8.71,
+    "min_de2000_deutan_first6": 7.99,
+    "min_de2000_protan_first6": 7.46,
+    "min_de2000_tritan_first6": 7.54,
+    "optimal6_min_de2000": 10.87,
+    "optimal6_min_de2000_deutan": 9.85,
+    "optimal6_min_de2000_protan": 10.06,
+    "grayscale_L_spread": 0.59,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

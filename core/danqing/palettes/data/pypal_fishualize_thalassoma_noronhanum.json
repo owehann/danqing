@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_thalassoma_noronhanum",
+  "name": {
+    "en": "Thalassoma_noronhanum (fishualize)",
+    "zh": "Thalassoma_noronhanum（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#84D4E9",
+    "#04C4D9",
+    "#04D9C4",
+    "#A77848",
+    "#AC5E91"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CDD0",
+      "#CDACB9",
+      "#B98BA2",
+      "#A46B8C",
+      "#8E4C76",
+      "#782B60"
+    ],
+    "paired_diverging_stops": [
+      "#04C4D9",
+      "#7ED5E2",
+      "#BCE4EA",
+      "#F4F3F2",
+      "#DBC9B8",
+      "#C1A080",
+      "#A77848"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Thalassoma_noronhanum)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.57,
+    "min_de2000_deutan_first6": 7.09,
+    "min_de2000_protan_first6": 4.94,
+    "min_de2000_tritan_first6": 4.41,
+    "optimal6_min_de2000": 8.57,
+    "optimal6_min_de2000_deutan": 7.09,
+    "optimal6_min_de2000_protan": 4.94,
+    "grayscale_L_spread": 0.237,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

@@ -20,7 +20,25 @@
   "neutral": "#B9B7B1",
   "partners": {
     "sequential": "YlOrRd",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC1",
+      "#DFA79C",
+      "#D08377",
+      "#C05E54",
+      "#AE3530",
+      "#9A0002"
+    ],
+    "paired_diverging_stops": [
+      "#4A6586",
+      "#7F93AA",
+      "#B8C2CD",
+      "#F4F3F2",
+      "#C5C3A0",
+      "#99944C",
+      "#706600"
+    ]
   },
   "source": {
     "title": "Carved Polychrome Lacquer Scroll Box (Ticai)",

@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_lugia",
+  "name": {
+    "en": "lugia (palettetown)",
+    "zh": "lugia（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8F8F8",
+    "#D8D8E0",
+    "#606060",
+    "#9898B0",
+    "#B8B8C0",
+    "#0060B8",
+    "#5870F8",
+    "#004080",
+    "#78A0F0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD1E4",
+      "#A9B4E0",
+      "#8596D9",
+      "#6378D2",
+      "#4557C9",
+      "#2C30BE"
+    ],
+    "paired_diverging_stops": [
+      "#F8F8F8",
+      "#F7F6F6",
+      "#F5F5F4",
+      "#F4F3F2",
+      "#BCCAF8",
+      "#879FFA",
+      "#5870F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: lugia)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 7.91,
+    "min_de2000_deutan_first6": 7.73,
+    "min_de2000_protan_first6": 7.7,
+    "min_de2000_tritan_first6": 6.88,
+    "optimal6_min_de2000": 7.91,
+    "optimal6_min_de2000_deutan": 7.73,
+    "optimal6_min_de2000_protan": 7.7,
+    "grayscale_L_spread": 0.603,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

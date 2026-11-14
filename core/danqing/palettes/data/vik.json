@@ -21,7 +21,25 @@
   "neutral": "#ECE5E0",
   "partners": {
     "sequential": "oslo",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CDC0",
+      "#D7AB9A",
+      "#C68A74",
+      "#B4694F",
+      "#A04729",
+      "#8C2000"
+    ],
+    "paired_diverging_stops": [
+      "#001261",
+      "#445E93",
+      "#98A7C3",
+      "#F4F3F2",
+      "#C3C0BE",
+      "#94908C",
+      "#68625E"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (vik)",

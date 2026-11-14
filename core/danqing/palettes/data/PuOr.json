@@ -21,7 +21,25 @@
   "neutral": "#F7F7F7",
   "partners": {
     "sequential": "plasma",
-    "diverging": "PuOr"
+    "diverging": "PuOr",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CEBD",
+      "#D4AD94",
+      "#C28D6B",
+      "#AF6D41",
+      "#9C4D09",
+      "#872A00"
+    ],
+    "paired_diverging_stops": [
+      "#542788",
+      "#856CAD",
+      "#BAAED1",
+      "#F4F3F2",
+      "#D4BDA2",
+      "#B38754",
+      "#905200"
+    ]
   },
   "source": {
     "title": "ColorBrewer 2.0 (PuOr, 9-class)",

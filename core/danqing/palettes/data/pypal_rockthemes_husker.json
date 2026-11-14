@@ -1,0 +1,61 @@
+{
+  "id": "pypal_rockthemes_husker",
+  "name": {
+    "en": "husker (rockthemes)",
+    "zh": "husker（rockthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#422537",
+    "#D58078",
+    "#86A556",
+    "#624FB0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D0DC",
+      "#B8B1D1",
+      "#9B93C5",
+      "#7F75B7",
+      "#6556A9",
+      "#4E369B"
+    ],
+    "paired_diverging_stops": [
+      "#86A556",
+      "#A9BF8B",
+      "#CED9BE",
+      "#F4F3F2",
+      "#BFBCDE",
+      "#8E86C9",
+      "#624FB0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rockthemes: husker)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 25.88,
+    "min_de2000_deutan_first6": 6.0,
+    "min_de2000_protan_first6": 14.25,
+    "min_de2000_tritan_first6": 27.11,
+    "optimal6_min_de2000": 25.88,
+    "optimal6_min_de2000_deutan": 6.0,
+    "optimal6_min_de2000_protan": 14.25,
+    "grayscale_L_spread": 0.38,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

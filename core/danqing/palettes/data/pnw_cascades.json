@@ -18,7 +18,25 @@
   "neutral": "#B5B8BA",
   "partners": {
     "sequential": "navia",
-    "diverging": "broc"
+    "diverging": "broc",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D4C2",
+      "#B5BA9D",
+      "#96A079",
+      "#788756",
+      "#5B6E33",
+      "#3F5604"
+    ],
+    "paired_diverging_stops": [
+      "#2D4030",
+      "#6A776B",
+      "#ACB3AC",
+      "#F4F3F2",
+      "#C3C49E",
+      "#969647",
+      "#6B6800"
+    ]
   },
   "source": {
     "title": "PNWColors Pacific Northwest Nature Palette (Cascades)",

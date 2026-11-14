@@ -1,0 +1,62 @@
+{
+  "id": "pypal_manu_takahe",
+  "name": {
+    "en": "Takahe (Manu)",
+    "zh": "Takahe（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DD3C51",
+    "#313657",
+    "#1F6683",
+    "#6C90B9",
+    "#D1C7B5"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDC9C3",
+      "#E2A4A0",
+      "#D57F7E",
+      "#C5585C",
+      "#B32A3C",
+      "#A0001B"
+    ],
+    "paired_diverging_stops": [
+      "#313657",
+      "#6C7089",
+      "#ADB0BC",
+      "#F4F3F2",
+      "#E8E4DD",
+      "#DDD6C9",
+      "#D1C7B5"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Takahe)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 19.86,
+    "min_de2000_deutan_first6": 12.33,
+    "min_de2000_protan_first6": 14.72,
+    "min_de2000_tritan_first6": 17.41,
+    "optimal6_min_de2000": 19.86,
+    "optimal6_min_de2000_deutan": 12.33,
+    "optimal6_min_de2000_protan": 14.72,
+    "grayscale_L_spread": 0.489,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

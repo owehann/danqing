@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_r_aculeatus",
+  "name": {
+    "en": "r_aculeatus (colRoz)",
+    "zh": "r_aculeatus（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7B6E18",
+    "#24566D",
+    "#617764",
+    "#9DD2CB",
+    "#B3C29A",
+    "#BBCC64"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DAD2BF",
+      "#BFB798",
+      "#A49B71",
+      "#8B814A",
+      "#73661F",
+      "#5B4D00"
+    ],
+    "paired_diverging_stops": [
+      "#24566D",
+      "#688898",
+      "#ACBCC4",
+      "#F4F3F2",
+      "#E0E7C5",
+      "#CDDA97",
+      "#BBCC64"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: r_aculeatus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 12.42,
+    "min_de2000_deutan_first6": 12.21,
+    "min_de2000_protan_first6": 12.83,
+    "min_de2000_tritan_first6": 5.39,
+    "optimal6_min_de2000": 12.42,
+    "optimal6_min_de2000_deutan": 12.21,
+    "optimal6_min_de2000_protan": 12.83,
+    "grayscale_L_spread": 0.395,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_esox_lucius",
+  "name": {
+    "en": "Esox_lucius (fishualize)",
+    "zh": "Esox_lucius（fishualize）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#E1E2DD",
+    "#C6C7B6",
+    "#BBA88A",
+    "#935933",
+    "#5C2C18"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CFC2",
+      "#CBB09E",
+      "#B6927B",
+      "#A17558",
+      "#8B5836",
+      "#753B0F"
+    ],
+    "paired_diverging_stops": [
+      "#E1E2DD",
+      "#E7E8E4",
+      "#EEEDEB",
+      "#F4F3F2",
+      "#C1ADA4",
+      "#8E6A5C",
+      "#5C2C18"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Esox_lucius)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.45,
+    "min_de2000_deutan_first6": 8.16,
+    "min_de2000_protan_first6": 8.37,
+    "min_de2000_tritan_first6": 6.86,
+    "optimal6_min_de2000": 8.45,
+    "optimal6_min_de2000_deutan": 8.16,
+    "optimal6_min_de2000_protan": 8.37,
+    "grayscale_L_spread": 0.557,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_291",
+  "name": {
+    "en": "Sanzo Wada #291 (Light Green Yellow · Sea Green · Cobalt Green)",
+    "zh": "和田三造 #291（Light Green Yellow · Sea Green · Cobalt Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C7D14F",
+    "#00B49B",
+    "#96D1AA",
+    "#78CDD0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C9D7CC",
+      "#9DC0B1",
+      "#70A896",
+      "#3C917D",
+      "#007A65",
+      "#00624D"
+    ],
+    "paired_diverging_stops": [
+      "#C7D14F",
+      "#D5DD8E",
+      "#E4E9C1",
+      "#F4F3F2",
+      "#CDE7E7",
+      "#A5DADB",
+      "#78CDD0"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#291)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 14.53,
+    "min_de2000_deutan_first6": 12.4,
+    "min_de2000_protan_first6": 10.45,
+    "min_de2000_tritan_first6": 6.72,
+    "optimal6_min_de2000": 14.53,
+    "optimal6_min_de2000_deutan": 12.4,
+    "optimal6_min_de2000_protan": 10.45,
+    "grayscale_L_spread": 0.14,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

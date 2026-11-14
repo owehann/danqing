@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lisa_oskarschlemmer",
+  "name": {
+    "en": "OskarSchlemmer (lisa)",
+    "zh": "OskarSchlemmer（lisa）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#3A488A",
+    "#8785B2",
+    "#DABD61",
+    "#D95F30",
+    "#BE3428"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC0",
+      "#DEA79A",
+      "#D08475",
+      "#BF5F50",
+      "#AD372A",
+      "#990000"
+    ],
+    "paired_diverging_stops": [
+      "#3A488A",
+      "#727FAE",
+      "#B1B8D0",
+      "#F4F3F2",
+      "#EBE2C4",
+      "#E3D095",
+      "#DABD61"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (lisa: OskarSchlemmer)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.81,
+    "min_de2000_deutan_first6": 11.09,
+    "min_de2000_protan_first6": 12.76,
+    "min_de2000_tritan_first6": 11.21,
+    "optimal6_min_de2000": 13.81,
+    "optimal6_min_de2000_deutan": 11.09,
+    "optimal6_min_de2000_protan": 12.76,
+    "grayscale_L_spread": 0.38,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

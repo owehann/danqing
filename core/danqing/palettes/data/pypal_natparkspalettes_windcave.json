@@ -1,0 +1,62 @@
+{
+  "id": "pypal_natparkspalettes_windcave",
+  "name": {
+    "en": "WindCave (NatParksPalettes)",
+    "zh": "WindCave（NatParksPalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2F100E",
+    "#6C3322",
+    "#B07159",
+    "#C9A197",
+    "#E0CDCD"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CFC4",
+      "#CCB0A2",
+      "#B79180",
+      "#A17360",
+      "#8C5641",
+      "#763922"
+    ],
+    "paired_diverging_stops": [
+      "#2F100E",
+      "#6D5450",
+      "#AFA09D",
+      "#F4F3F2",
+      "#EDE6E5",
+      "#E7DAD9",
+      "#E0CDCD"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NatParksPalettes: WindCave)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.91,
+    "min_de2000_deutan_first6": 11.95,
+    "min_de2000_protan_first6": 12.65,
+    "min_de2000_tritan_first6": 13.54,
+    "optimal6_min_de2000": 12.91,
+    "optimal6_min_de2000_deutan": 11.95,
+    "optimal6_min_de2000_protan": 12.65,
+    "grayscale_L_spread": 0.642,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

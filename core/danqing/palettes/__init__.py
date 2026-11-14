@@ -48,6 +48,8 @@ class PaletteDefinition:
     partner_sequential: str
     partner_diverging: str
     source: dict[str, Any]
+    paired_sequential_stops: tuple[str, ...] = ()
+    paired_diverging_stops: tuple[str, ...] = ()
     artifact: dict[str, Any] | None = None
     qc: dict[str, Any] = field(default_factory=dict)
     dynamic_generator: str | None = None
@@ -65,6 +67,8 @@ class PaletteDefinition:
             "partners": {
                 "sequential": self.partner_sequential,
                 "diverging": self.partner_diverging,
+                "paired_sequential_stops": list(self.paired_sequential_stops),
+                "paired_diverging_stops": list(self.paired_diverging_stops),
             },
             "source": self.source,
             "artifact": self.artifact,
@@ -87,6 +91,12 @@ def _parse_palette_json(raw: dict[str, Any]) -> PaletteDefinition:
         neutral=str(raw.get("neutral") or "#BDBDBD").upper(),
         partner_sequential=str(partners.get("sequential") or "viridis"),
         partner_diverging=str(partners.get("diverging") or "vik"),
+        paired_sequential_stops=tuple(
+            str(c).upper() for c in (partners.get("paired_sequential_stops") or ())
+        ),
+        paired_diverging_stops=tuple(
+            str(c).upper() for c in (partners.get("paired_diverging_stops") or ())
+        ),
         source=dict(raw.get("source") or {}),
         artifact=dict(raw["artifact"]) if raw.get("artifact") else None,
         qc=dict(raw.get("qc") or {}),
@@ -102,7 +112,13 @@ def _load_all_cached() -> dict[str, PaletteDefinition]:
         raw = json.loads(fp.read_text(encoding="utf-8"))
         items.append(_parse_palette_json(raw))
     col_rank = {c: idx for idx, c in enumerate(COLLECTION_ORDER)}
-    items.sort(key=lambda p: (col_rank.get(p.collection, 99), p.id))
+    items.sort(
+        key=lambda p: (
+            col_rank.get(p.collection, 99),
+            1 if p.id.startswith(("pypal_", "nice_cl_", "thiagodnf_")) else 0,
+            p.id,
+        )
+    )
     return {p.id: p for p in items}
 
 

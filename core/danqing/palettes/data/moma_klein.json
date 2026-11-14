@@ -23,7 +23,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBD",
+      "#E0A794",
+      "#D2836C",
+      "#C35E44",
+      "#B13312",
+      "#9D0000"
+    ],
+    "paired_diverging_stops": [
+      "#8C5700",
+      "#AF8B30",
+      "#D1BF96",
+      "#F4F3F2",
+      "#ABAABA",
+      "#686585",
+      "#2D2651"
+    ]
   },
   "source": {
     "title": "New York Fly TWA, 1956, David Klein, Photolithograph",

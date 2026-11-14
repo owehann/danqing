@@ -17,7 +17,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D3D9",
+      "#ADB7CA",
+      "#8A9BBB",
+      "#6880AC",
+      "#47659C",
+      "#274A8B"
+    ],
+    "paired_diverging_stops": [
+      "#7D6000",
+      "#A39136",
+      "#CAC298",
+      "#F4F3F2",
+      "#B4C2D8",
+      "#7891BE",
+      "#3F62A2"
+    ]
   },
   "source": {
     "title": "Garden Gathering, 1640–50, From Iran, Isfahan",

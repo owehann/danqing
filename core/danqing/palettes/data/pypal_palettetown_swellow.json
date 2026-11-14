@@ -1,0 +1,72 @@
+{
+  "id": "pypal_palettetown_swellow",
+  "name": {
+    "en": "swellow (palettetown)",
+    "zh": "swellow（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#405078",
+    "#283058",
+    "#000000",
+    "#5868A8",
+    "#E06860",
+    "#C8D0D0",
+    "#803850",
+    "#C03030",
+    "#F89088",
+    "#7888C8",
+    "#909090",
+    "#785858",
+    "#F8F8F8",
+    "#F8E850",
+    "#E0A848"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCAC1",
+      "#DFA69C",
+      "#D18277",
+      "#C15D54",
+      "#AF3430",
+      "#9B0002"
+    ],
+    "paired_diverging_stops": [
+      "#283058",
+      "#656C8A",
+      "#A9AEBD",
+      "#F4F3F2",
+      "#F5F1C5",
+      "#F6ED93",
+      "#F8E850"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: swellow)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 15,
+    "max_colors": 15,
+    "min_de2000_first6": 10.42,
+    "min_de2000_deutan_first6": 9.83,
+    "min_de2000_protan_first6": 10.26,
+    "min_de2000_tritan_first6": 10.25,
+    "optimal6_min_de2000": 10.42,
+    "optimal6_min_de2000_deutan": 9.83,
+    "optimal6_min_de2000_protan": 10.26,
+    "grayscale_L_spread": 0.979,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

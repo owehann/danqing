@@ -1,0 +1,67 @@
+{
+  "id": "pypal_matplotlib_seaborn_builtin_tab20",
+  "name": {
+    "en": "tab20 (matplotlib/seaborn builtin)",
+    "zh": "tab20（matplotlib/seaborn builtin）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1F77B4",
+    "#AEC7E8",
+    "#FF7F0E",
+    "#FFBB78",
+    "#2CA02C",
+    "#98DF8A",
+    "#D62728",
+    "#FF9896",
+    "#9467BD",
+    "#C5B0D5"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9BF",
+      "#E5A497",
+      "#D87E71",
+      "#C9564B",
+      "#B82421",
+      "#A50000"
+    ],
+    "paired_diverging_stops": [
+      "#1F77B4",
+      "#6EA0CA",
+      "#B1CADF",
+      "#F4F3F2",
+      "#FCCFB4",
+      "#FFA973",
+      "#FF7F0E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (matplotlib/seaborn builtin: tab20)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 15.45,
+    "min_de2000_deutan_first6": 4.88,
+    "min_de2000_protan_first6": 1.25,
+    "min_de2000_tritan_first6": 9.24,
+    "optimal6_min_de2000": 15.45,
+    "optimal6_min_de2000_deutan": 4.88,
+    "optimal6_min_de2000_protan": 1.25,
+    "grayscale_L_spread": 0.292,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

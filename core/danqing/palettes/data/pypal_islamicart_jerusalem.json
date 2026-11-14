@@ -1,0 +1,66 @@
+{
+  "id": "pypal_islamicart_jerusalem",
+  "name": {
+    "en": "jerusalem (IslamicArt)",
+    "zh": "jerusalem（IslamicArt）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#CBC5B8",
+    "#4F779F",
+    "#729E93",
+    "#99985D",
+    "#699CB6",
+    "#485178",
+    "#A47443",
+    "#FAE3A0",
+    "#CEAE88"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D3D5",
+      "#ADB8C2",
+      "#8B9DAF",
+      "#69839D",
+      "#48698A",
+      "#265077"
+    ],
+    "paired_diverging_stops": [
+      "#485178",
+      "#7D84A0",
+      "#B7BAC9",
+      "#F4F3F2",
+      "#F6EED8",
+      "#F8E9BD",
+      "#FAE3A0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (IslamicArt: jerusalem)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 14.21,
+    "min_de2000_deutan_first6": 11.58,
+    "min_de2000_protan_first6": 12.66,
+    "min_de2000_tritan_first6": 4.48,
+    "optimal6_min_de2000": 14.21,
+    "optimal6_min_de2000_deutan": 11.58,
+    "optimal6_min_de2000_protan": 12.66,
+    "grayscale_L_spread": 0.475,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

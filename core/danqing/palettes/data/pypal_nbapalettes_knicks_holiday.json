@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nbapalettes_knicks_holiday",
+  "name": {
+    "en": "knicks_holiday (nbapalettes)",
+    "zh": "knicks_holiday（nbapalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#007A33",
+    "#FE5000",
+    "#0072CE",
+    "#8D9093",
+    "#010101"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD4DF",
+      "#A0B9D6",
+      "#769ECC",
+      "#4B83C0",
+      "#1467B4",
+      "#0049A7"
+    ],
+    "paired_diverging_stops": [
+      "#FE5000",
+      "#FF8F6C",
+      "#FFC3B0",
+      "#F4F3F2",
+      "#ADC9E9",
+      "#679FDD",
+      "#0072CE"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nbapalettes: knicks_holiday)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 24.13,
+    "min_de2000_deutan_first6": 24.22,
+    "min_de2000_protan_first6": 6.18,
+    "min_de2000_tritan_first6": 13.08,
+    "optimal6_min_de2000": 24.13,
+    "optimal6_min_de2000_deutan": 24.22,
+    "optimal6_min_de2000_protan": 6.18,
+    "grayscale_L_spread": 0.602,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

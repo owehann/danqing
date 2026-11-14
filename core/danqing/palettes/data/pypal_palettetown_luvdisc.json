@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_luvdisc",
+  "name": {
+    "en": "luvdisc (palettetown)",
+    "zh": "luvdisc（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8A078",
+    "#C89090",
+    "#181818",
+    "#F0D090",
+    "#703830",
+    "#E09880",
+    "#A06850",
+    "#F8F8F8",
+    "#5860B8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D1DC",
+      "#B2B4D0",
+      "#9197C4",
+      "#737AB6",
+      "#565DA8",
+      "#3C3F99"
+    ],
+    "paired_diverging_stops": [
+      "#F0D090",
+      "#F1DCB2",
+      "#F3E8D2",
+      "#F4F3F2",
+      "#BCC2E1",
+      "#8791CE",
+      "#5860B8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: luvdisc)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 5.94,
+    "min_de2000_deutan_first6": 5.84,
+    "min_de2000_protan_first6": 5.64,
+    "min_de2000_tritan_first6": 2.57,
+    "optimal6_min_de2000": 5.94,
+    "optimal6_min_de2000_deutan": 5.84,
+    "optimal6_min_de2000_protan": 5.64,
+    "grayscale_L_spread": 0.77,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

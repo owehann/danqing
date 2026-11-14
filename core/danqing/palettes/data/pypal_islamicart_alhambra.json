@@ -1,0 +1,63 @@
+{
+  "id": "pypal_islamicart_alhambra",
+  "name": {
+    "en": "alhambra (IslamicArt)",
+    "zh": "alhambra（IslamicArt）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DBC197",
+    "#372D2F",
+    "#5B7CA7",
+    "#DB9942",
+    "#8DAE87",
+    "#985A71"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CECC",
+      "#CBAEB1",
+      "#B58F97",
+      "#9F707E",
+      "#895365",
+      "#73364E"
+    ],
+    "paired_diverging_stops": [
+      "#5B7CA7",
+      "#8CA3C0",
+      "#BFCBD9",
+      "#F4F3F2",
+      "#EDD6BB",
+      "#E5B883",
+      "#DB9942"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (IslamicArt: alhambra)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.75,
+    "min_de2000_deutan_first6": 10.95,
+    "min_de2000_protan_first6": 7.41,
+    "min_de2000_tritan_first6": 13.66,
+    "optimal6_min_de2000": 14.75,
+    "optimal6_min_de2000_deutan": 10.95,
+    "optimal6_min_de2000_protan": 7.41,
+    "grayscale_L_spread": 0.514,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

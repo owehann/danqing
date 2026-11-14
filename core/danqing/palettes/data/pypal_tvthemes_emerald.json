@@ -1,0 +1,64 @@
+{
+  "id": "pypal_tvthemes_emerald",
+  "name": {
+    "en": "Emerald (tvthemes)",
+    "zh": "Emerald（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#33E059",
+    "#2CC012",
+    "#76FACC",
+    "#4C4CFF",
+    "#DCFA5A",
+    "#8EE575",
+    "#34963C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED1EA",
+      "#A8B2EB",
+      "#8493E9",
+      "#6372E6",
+      "#474BE1",
+      "#3500DA"
+    ],
+    "paired_diverging_stops": [
+      "#4C4CFF",
+      "#7A8DFF",
+      "#B4C2FC",
+      "#F4F3F2",
+      "#EBF7C8",
+      "#E3F998",
+      "#DCFA5A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Emerald)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 6.85,
+    "min_de2000_deutan_first6": 4.13,
+    "min_de2000_protan_first6": 3.67,
+    "min_de2000_tritan_first6": 7.58,
+    "optimal6_min_de2000": 6.85,
+    "optimal6_min_de2000_deutan": 4.13,
+    "optimal6_min_de2000_protan": 3.67,
+    "grayscale_L_spread": 0.393,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

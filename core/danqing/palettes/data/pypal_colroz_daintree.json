@@ -1,0 +1,62 @@
+{
+  "id": "pypal_colroz_daintree",
+  "name": {
+    "en": "daintree (colRoz)",
+    "zh": "daintree（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#020401",
+    "#101E07",
+    "#2A4613",
+    "#374E0A",
+    "#7D8B3C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D4C0",
+      "#B8B99A",
+      "#9A9F74",
+      "#7D864F",
+      "#626D27",
+      "#485400"
+    ],
+    "paired_diverging_stops": [
+      "#020401",
+      "#42463F",
+      "#969893",
+      "#F4F3F2",
+      "#CAD0B6",
+      "#A3AD7A",
+      "#7D8B3C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: daintree)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 4.65,
+    "min_de2000_deutan_first6": 4.28,
+    "min_de2000_protan_first6": 4.1,
+    "min_de2000_tritan_first6": 4.06,
+    "optimal6_min_de2000": 4.65,
+    "optimal6_min_de2000_deutan": 4.28,
+    "optimal6_min_de2000_protan": 4.1,
+    "grayscale_L_spread": 0.509,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

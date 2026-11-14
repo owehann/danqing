@@ -20,7 +20,25 @@
   "neutral": "#DDDDDD",
   "partners": {
     "sequential": "Blues",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8D4B9",
+      "#BCB98C",
+      "#A09F5D",
+      "#868428",
+      "#6D6B00",
+      "#555100"
+    ],
+    "paired_diverging_stops": [
+      "#366796",
+      "#7494B5",
+      "#B3C3D4",
+      "#F4F3F2",
+      "#BFC69C",
+      "#8E9942",
+      "#616C00"
+    ]
   },
   "source": {
     "title": "Colour Schemes (SRON/EPS/TN/09-002)",

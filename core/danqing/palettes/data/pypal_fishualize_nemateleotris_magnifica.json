@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_nemateleotris_magnifica",
+  "name": {
+    "en": "Nemateleotris_magnifica (fishualize)",
+    "zh": "Nemateleotris_magnifica（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BA9FF7",
+    "#DA8679",
+    "#661F0F",
+    "#CB480D",
+    "#D0CA80"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBD",
+      "#DDA993",
+      "#CE866A",
+      "#BE6240",
+      "#AC3C06",
+      "#980000"
+    ],
+    "paired_diverging_stops": [
+      "#BA9FF7",
+      "#CCBCF7",
+      "#E0D8F5",
+      "#F4F3F2",
+      "#ECBDAC",
+      "#DF8567",
+      "#CB480D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Nemateleotris_magnifica)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 19.96,
+    "min_de2000_deutan_first6": 11.73,
+    "min_de2000_protan_first6": 18.42,
+    "min_de2000_tritan_first6": 15.5,
+    "optimal6_min_de2000": 19.96,
+    "optimal6_min_de2000_deutan": 11.73,
+    "optimal6_min_de2000_protan": 18.42,
+    "grayscale_L_spread": 0.478,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

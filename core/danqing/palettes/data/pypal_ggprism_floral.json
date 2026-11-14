@@ -1,0 +1,69 @@
+{
+  "id": "pypal_ggprism_floral",
+  "name": {
+    "en": "floral (ggprism)",
+    "zh": "floral（ggprism）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#285291",
+    "#4F2B8E",
+    "#91188E",
+    "#539027",
+    "#0D405B",
+    "#34274D",
+    "#91181D",
+    "#2C3324",
+    "#022240",
+    "#21063F",
+    "#3D0620",
+    "#022013"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CAD7",
+      "#D3A6C7",
+      "#C082B6",
+      "#AD5EA5",
+      "#993693",
+      "#840081"
+    ],
+    "paired_diverging_stops": [
+      "#4F2B8E",
+      "#806FB2",
+      "#B8B0D3",
+      "#F4F3F2",
+      "#BDD2B1",
+      "#88B170",
+      "#539027"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggprism: floral)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 10.31,
+    "min_de2000_deutan_first6": 3.71,
+    "min_de2000_protan_first6": 2.53,
+    "min_de2000_tritan_first6": 8.83,
+    "optimal6_min_de2000": 10.31,
+    "optimal6_min_de2000_deutan": 3.71,
+    "optimal6_min_de2000_protan": 2.53,
+    "grayscale_L_spread": 0.377,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

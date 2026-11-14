@@ -1,0 +1,63 @@
+{
+  "id": "pypal_tvthemes_pearl",
+  "name": {
+    "en": "Pearl (tvthemes)",
+    "zh": "Pearl（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F6B6C2",
+    "#A6A0F2",
+    "#FBE7B8",
+    "#6DEDDD",
+    "#3E6992",
+    "#FCD47C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D3D5",
+      "#ADB8C3",
+      "#899DB1",
+      "#67839E",
+      "#45698C",
+      "#225079"
+    ],
+    "paired_diverging_stops": [
+      "#A6A0F2",
+      "#BFBCF3",
+      "#D9D8F3",
+      "#F4F3F2",
+      "#F7E9CD",
+      "#FADFA7",
+      "#FCD47C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Pearl)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 9.59,
+    "min_de2000_deutan_first6": 9.1,
+    "min_de2000_protan_first6": 8.78,
+    "min_de2000_tritan_first6": 7.62,
+    "optimal6_min_de2000": 9.59,
+    "optimal6_min_de2000_deutan": 9.1,
+    "optimal6_min_de2000_protan": 8.78,
+    "grayscale_L_spread": 0.425,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

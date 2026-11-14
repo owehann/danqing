@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_cirrhilabrus_tonozukai",
+  "name": {
+    "en": "Cirrhilabrus_tonozukai (fishualize)",
+    "zh": "Cirrhilabrus_tonozukai（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#754AB3",
+    "#0627B3",
+    "#FDC300",
+    "#BE245B",
+    "#E841BD"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECC9C8",
+      "#DFA4AA",
+      "#D17F8D",
+      "#C15971",
+      "#AE2D56",
+      "#9A003C"
+    ],
+    "paired_diverging_stops": [
+      "#0627B3",
+      "#4E74CD",
+      "#9EB4E3",
+      "#F4F3F2",
+      "#F7E5BA",
+      "#FBD57C",
+      "#FDC300"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Cirrhilabrus_tonozukai)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.09,
+    "min_de2000_deutan_first6": 14.02,
+    "min_de2000_protan_first6": 8.83,
+    "min_de2000_tritan_first6": 15.79,
+    "optimal6_min_de2000": 15.09,
+    "optimal6_min_de2000_deutan": 14.02,
+    "optimal6_min_de2000_protan": 8.83,
+    "grayscale_L_spread": 0.465,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

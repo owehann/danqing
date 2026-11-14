@@ -1,0 +1,72 @@
+{
+  "id": "pypal_palettetown_grumpig",
+  "name": {
+    "en": "grumpig (palettetown)",
+    "zh": "grumpig（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#606060",
+    "#E0A8E8",
+    "#000000",
+    "#B070B8",
+    "#909090",
+    "#484848",
+    "#D06880",
+    "#787878",
+    "#984860",
+    "#F0C8F8",
+    "#785088",
+    "#C888D0",
+    "#E888A8",
+    "#F8B0D0",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CDCA",
+      "#D0ACAE",
+      "#BC8B93",
+      "#A86C79",
+      "#934C5F",
+      "#7D2C47"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: grumpig)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 15,
+    "max_colors": 15,
+    "min_de2000_first6": 8.41,
+    "min_de2000_deutan_first6": 8.41,
+    "min_de2000_protan_first6": 8.41,
+    "min_de2000_tritan_first6": 8.41,
+    "optimal6_min_de2000": 8.41,
+    "optimal6_min_de2000_deutan": 8.41,
+    "optimal6_min_de2000_protan": 8.41,
+    "grayscale_L_spread": 0.979,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

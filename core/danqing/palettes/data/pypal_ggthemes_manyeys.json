@@ -1,0 +1,76 @@
+{
+  "id": "pypal_ggthemes_manyeys",
+  "name": {
+    "en": "manyeys (ggthemes)",
+    "zh": "manyeys（ggthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#9C9EDE",
+    "#7375B5",
+    "#4A5584",
+    "#CEDB9C",
+    "#B5CF6B",
+    "#8CA252",
+    "#637939",
+    "#E7CB94",
+    "#E7BA52",
+    "#BD9E39",
+    "#8C6D31",
+    "#E7969C",
+    "#D6616B",
+    "#AD494A",
+    "#843C39",
+    "#DE9ED6",
+    "#CE6DBD",
+    "#A55194",
+    "#7B4173"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CCC5",
+      "#D6ABA3",
+      "#C48983",
+      "#B16864",
+      "#9E4746",
+      "#892128"
+    ],
+    "paired_diverging_stops": [
+      "#4A5584",
+      "#7E87A9",
+      "#B7BCCD",
+      "#F4F3F2",
+      "#F0E1C1",
+      "#ECCE8E",
+      "#E7BA52"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemes: manyeys)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 19,
+    "max_colors": 19,
+    "min_de2000_first6": 7.7,
+    "min_de2000_deutan_first6": 7.17,
+    "min_de2000_protan_first6": 7.78,
+    "min_de2000_tritan_first6": 6.49,
+    "optimal6_min_de2000": 7.7,
+    "optimal6_min_de2000_deutan": 7.17,
+    "optimal6_min_de2000_protan": 7.78,
+    "grayscale_L_spread": 0.416,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

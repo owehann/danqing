@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_elacatinus_figaro",
+  "name": {
+    "en": "Elacatinus_figaro (fishualize)",
+    "zh": "Elacatinus_figaro（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1C1C1B",
+    "#FFEB08",
+    "#F2CB05",
+    "#F2B705",
+    "#AEB021"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8D4BA",
+      "#BBB98D",
+      "#A09F5F",
+      "#85852C",
+      "#6C6B00",
+      "#545100"
+    ],
+    "paired_diverging_stops": [
+      "#1C1C1B",
+      "#5C5B5A",
+      "#A4A4A3",
+      "#F4F3F2",
+      "#F7F2BF",
+      "#FBEF83",
+      "#FFEB08"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Elacatinus_figaro)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 6.99,
+    "min_de2000_deutan_first6": 3.08,
+    "min_de2000_protan_first6": 4.27,
+    "min_de2000_tritan_first6": 5.54,
+    "optimal6_min_de2000": 6.99,
+    "optimal6_min_de2000_deutan": 3.08,
+    "optimal6_min_de2000_protan": 4.27,
+    "grayscale_L_spread": 0.701,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

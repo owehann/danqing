@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_acanthurus_chirurgus",
+  "name": {
+    "en": "Acanthurus_chirurgus (fishualize)",
+    "zh": "Acanthurus_chirurgus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#00010D",
+    "#032CA6",
+    "#034AA6",
+    "#035AA6",
+    "#93ABBF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CAD0E1",
+      "#9FB1D9",
+      "#7692D0",
+      "#4E73C5",
+      "#2751B8",
+      "#0129AB"
+    ],
+    "paired_diverging_stops": [
+      "#00010D",
+      "#3A4251",
+      "#91969E",
+      "#F4F3F2",
+      "#9FB4DD",
+      "#4F74C4",
+      "#032CA6"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Acanthurus_chirurgus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 5.99,
+    "min_de2000_deutan_first6": 4.16,
+    "min_de2000_protan_first6": 4.07,
+    "min_de2000_tritan_first6": 4.45,
+    "optimal6_min_de2000": 5.99,
+    "optimal6_min_de2000_deutan": 4.16,
+    "optimal6_min_de2000_protan": 4.07,
+    "grayscale_L_spread": 0.647,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

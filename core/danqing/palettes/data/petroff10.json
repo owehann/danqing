@@ -22,7 +22,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "cividis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DECCDE",
+      "#C7AAD4",
+      "#B187C9",
+      "#9A64BD",
+      "#853EB0",
+      "#6F00A2"
+    ],
+    "paired_diverging_stops": [
+      "#9B4C00",
+      "#BB8438",
+      "#D8BC98",
+      "#F4F3F2",
+      "#CDB4E1",
+      "#A876CD",
+      "#832DB6"
+    ]
   },
   "source": {
     "title": "Accessible Color Sequences for Data Visualization (Matplotlib petroff10)",

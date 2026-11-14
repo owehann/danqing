@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_158",
+  "name": {
+    "en": "Sanzo Wada #158 (Lemon Yellow · Cinnamon Rufous · Night Green)",
+    "zh": "和田三造 #158（Lemon Yellow · Cinnamon Rufous · Night Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8ED43",
+    "#C27544",
+    "#87C540"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CFC0",
+      "#D0AF99",
+      "#BC9074",
+      "#A8714E",
+      "#945327",
+      "#7E3400"
+    ],
+    "paired_diverging_stops": [
+      "#F8ED43",
+      "#F6F08F",
+      "#F5F2C3",
+      "#F4F3F2",
+      "#E6C9B8",
+      "#D59F7F",
+      "#C27544"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#158)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 20.19,
+    "min_de2000_deutan_first6": 11.51,
+    "min_de2000_protan_first6": 11.71,
+    "min_de2000_tritan_first6": 30.61,
+    "optimal6_min_de2000": 20.19,
+    "optimal6_min_de2000_deutan": 11.51,
+    "optimal6_min_de2000_protan": 11.71,
+    "grayscale_L_spread": 0.291,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

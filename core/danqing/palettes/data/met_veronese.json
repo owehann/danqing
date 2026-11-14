@@ -19,7 +19,25 @@
   "neutral": "#B4B8B6",
   "partners": {
     "sequential": "batlow",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0D0BE",
+      "#CBB295",
+      "#B6946D",
+      "#A07645",
+      "#8B5A14",
+      "#753D00"
+    ],
+    "paired_diverging_stops": [
+      "#895800",
+      "#AD8B4C",
+      "#D0BF9F",
+      "#F4F3F2",
+      "#A2ACB4",
+      "#57697A",
+      "#122C43"
+    ]
   },
   "source": {
     "title": "MetBrewer: Veronese (Met Object 437891)",

@@ -1,0 +1,63 @@
+{
+  "id": "pypal_lacroixcolor_berry",
+  "name": {
+    "en": "Berry (LaCroixColoR)",
+    "zh": "Berry（LaCroixColoR）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#B25D91",
+    "#CB87B4",
+    "#EFC7E6",
+    "#1BB6AF",
+    "#088BBE",
+    "#172869"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CDCF",
+      "#CFABB8",
+      "#BB8AA1",
+      "#A7698A",
+      "#914974",
+      "#7C275E"
+    ],
+    "paired_diverging_stops": [
+      "#EFC7E6",
+      "#F1D6EA",
+      "#F3E5EE",
+      "#F4F3F2",
+      "#A2ACC5",
+      "#586998",
+      "#172869"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (LaCroixColoR: Berry)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 12.53,
+    "min_de2000_deutan_first6": 0.99,
+    "min_de2000_protan_first6": 7.23,
+    "min_de2000_tritan_first6": 11.03,
+    "optimal6_min_de2000": 12.53,
+    "optimal6_min_de2000_deutan": 0.99,
+    "optimal6_min_de2000_protan": 7.23,
+    "grayscale_L_spread": 0.566,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

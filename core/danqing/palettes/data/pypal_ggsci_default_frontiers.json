@@ -1,0 +1,67 @@
+{
+  "id": "pypal_ggsci_default_frontiers",
+  "name": {
+    "en": "default_frontiers (ggsci)",
+    "zh": "default_frontiers（ggsci）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D51317",
+    "#F39200",
+    "#EFD500",
+    "#95C11F",
+    "#007B3D",
+    "#31B7BC",
+    "#0094CD",
+    "#164194",
+    "#6F286A",
+    "#706F6F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BE",
+      "#E6A395",
+      "#DB7D6E",
+      "#CC5346",
+      "#BB1C18",
+      "#A80000"
+    ],
+    "paired_diverging_stops": [
+      "#EFD500",
+      "#F0E07E",
+      "#F2EABB",
+      "#F4F3F2",
+      "#A6B7D5",
+      "#5D7CB6",
+      "#164194"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggsci: default_frontiers)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 17.92,
+    "min_de2000_deutan_first6": 2.51,
+    "min_de2000_protan_first6": 7.2,
+    "min_de2000_tritan_first6": 16.6,
+    "optimal6_min_de2000": 17.92,
+    "optimal6_min_de2000_deutan": 2.51,
+    "optimal6_min_de2000_protan": 7.2,
+    "grayscale_L_spread": 0.468,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

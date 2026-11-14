@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "cmo_algae",
-    "diverging": "cmo_balance"
+    "diverging": "cmo_balance",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD7C4",
+      "#A3C0A1",
+      "#79A880",
+      "#4D915F",
+      "#107A3F",
+      "#00631D"
+    ],
+    "paired_diverging_stops": [
+      "#4F6D49",
+      "#83987E",
+      "#BAC5B7",
+      "#F4F3F2",
+      "#A1A8A0",
+      "#556255",
+      "#122414"
+    ]
   },
   "source": {
     "title": "True Colors of Oceanography: cmocean (algae)",

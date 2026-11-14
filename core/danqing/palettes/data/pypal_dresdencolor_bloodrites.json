@@ -1,0 +1,63 @@
+{
+  "id": "pypal_dresdencolor_bloodrites",
+  "name": {
+    "en": "bloodrites (DresdenColor)",
+    "zh": "bloodrites（DresdenColor）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#875E3B",
+    "#E37F3E",
+    "#B3C6AD",
+    "#5E6748",
+    "#384630",
+    "#0D120B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED0C3",
+      "#C6B2A1",
+      "#AF957F",
+      "#98795E",
+      "#825D3E",
+      "#6B421D"
+    ],
+    "paired_diverging_stops": [
+      "#E37F3E",
+      "#ECA77F",
+      "#F2CEB9",
+      "#F4F3F2",
+      "#9EA09B",
+      "#4F534D",
+      "#0D120B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (DresdenColor: bloodrites)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 12.15,
+    "min_de2000_deutan_first6": 6.61,
+    "min_de2000_protan_first6": 3.63,
+    "min_de2000_tritan_first6": 12.44,
+    "optimal6_min_de2000": 12.15,
+    "optimal6_min_de2000_deutan": 6.61,
+    "optimal6_min_de2000_protan": 3.63,
+    "grayscale_L_spread": 0.631,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

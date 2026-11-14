@@ -1,0 +1,66 @@
+{
+  "id": "pypal_trekcolors_iconian",
+  "name": {
+    "en": "iconian (trekcolors)",
+    "zh": "iconian（trekcolors）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#633210",
+    "#824114",
+    "#A25119",
+    "#C07039",
+    "#DBAD8E",
+    "#F6EAE2",
+    "#DAD8DA",
+    "#A29FA3",
+    "#6B666C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEBF",
+      "#D2AE98",
+      "#BF8E71",
+      "#AB6F4B",
+      "#975022",
+      "#823000"
+    ],
+    "paired_diverging_stops": [
+      "#633210",
+      "#936F59",
+      "#C3AFA3",
+      "#F4F3F2",
+      "#F5F0ED",
+      "#F5EDE7",
+      "#F6EAE2"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (trekcolors: iconian)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 7.46,
+    "min_de2000_deutan_first6": 7.83,
+    "min_de2000_protan_first6": 6.51,
+    "min_de2000_tritan_first6": 7.38,
+    "optimal6_min_de2000": 17.76,
+    "optimal6_min_de2000_deutan": 16.28,
+    "optimal6_min_de2000_protan": 16.92,
+    "grayscale_L_spread": 0.569,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

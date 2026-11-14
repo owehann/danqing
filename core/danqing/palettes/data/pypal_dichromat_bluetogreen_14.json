@@ -1,0 +1,71 @@
+{
+  "id": "pypal_dichromat_bluetogreen_14",
+  "name": {
+    "en": "BluetoGreen_14 (dichromat)",
+    "zh": "BluetoGreen_14（dichromat）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#0000FF",
+    "#3333FF",
+    "#6666FF",
+    "#9999FF",
+    "#B2B2FF",
+    "#CCCCFF",
+    "#E6E6FF",
+    "#E6FFE6",
+    "#CCFFCC",
+    "#B2FFB2",
+    "#99FF99",
+    "#66FF66",
+    "#33FF33",
+    "#00FF00"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C6D3F1",
+      "#97B5F8",
+      "#6996FC",
+      "#3B73FE",
+      "#0C46FD",
+      "#0C00FC"
+    ],
+    "paired_diverging_stops": [
+      "#0000FF",
+      "#447CFF",
+      "#9ABBFF",
+      "#F4F3F2",
+      "#C3FABC",
+      "#89FE7F",
+      "#00FF00"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (dichromat: BluetoGreen_14)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 5.8,
+    "min_de2000_deutan_first6": 4.57,
+    "min_de2000_protan_first6": 3.82,
+    "min_de2000_tritan_first6": 3.76,
+    "optimal6_min_de2000": 15.22,
+    "optimal6_min_de2000_deutan": 14.12,
+    "optimal6_min_de2000_protan": 12.24,
+    "grayscale_L_spread": 0.523,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

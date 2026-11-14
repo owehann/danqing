@@ -1,0 +1,64 @@
+{
+  "id": "pypal_lacroixcolor_kiwisandia",
+  "name": {
+    "en": "KiwiSandia (LaCroixColoR)",
+    "zh": "KiwiSandia（LaCroixColoR）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D18F55",
+    "#FF3F38",
+    "#FF8C8D",
+    "#AFDE62",
+    "#3CBC38",
+    "#4F5791",
+    "#132157"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BD",
+      "#E8A294",
+      "#DD7B6C",
+      "#CF5043",
+      "#BE1012",
+      "#AB0000"
+    ],
+    "paired_diverging_stops": [
+      "#AFDE62",
+      "#C6E698",
+      "#DDEDC6",
+      "#F4F3F2",
+      "#A0A9BE",
+      "#54638A",
+      "#132157"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (LaCroixColoR: KiwiSandia)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 14.54,
+    "min_de2000_deutan_first6": 2.4,
+    "min_de2000_protan_first6": 10.04,
+    "min_de2000_tritan_first6": 5.91,
+    "optimal6_min_de2000": 14.54,
+    "optimal6_min_de2000_deutan": 2.4,
+    "optimal6_min_de2000_protan": 10.04,
+    "grayscale_L_spread": 0.569,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

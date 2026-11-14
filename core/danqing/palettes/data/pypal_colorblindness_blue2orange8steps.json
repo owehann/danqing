@@ -1,0 +1,65 @@
+{
+  "id": "pypal_colorblindness_blue2orange8steps",
+  "name": {
+    "en": "Blue2Orange8Steps (colorBlindness)",
+    "zh": "Blue2Orange8Steps（colorBlindness）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#007FFF",
+    "#4CC3FF",
+    "#99EDFF",
+    "#CCFFFF",
+    "#FFFFCC",
+    "#FFEE99",
+    "#FFC34C",
+    "#FF7F00"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C8D4E5",
+      "#9CB8E1",
+      "#6F9DDB",
+      "#4180D4",
+      "#0061CB",
+      "#003DC1"
+    ],
+    "paired_diverging_stops": [
+      "#007FFF",
+      "#6AA9FF",
+      "#B0D0FB",
+      "#F4F3F2",
+      "#FCCFB3",
+      "#FFA971",
+      "#FF7F00"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colorBlindness: Blue2Orange8Steps)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 8.58,
+    "min_de2000_deutan_first6": 8.58,
+    "min_de2000_protan_first6": 8.35,
+    "min_de2000_tritan_first6": 8.34,
+    "optimal6_min_de2000": 14.21,
+    "optimal6_min_de2000_deutan": 9.27,
+    "optimal6_min_de2000_protan": 10.87,
+    "grayscale_L_spread": 0.374,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

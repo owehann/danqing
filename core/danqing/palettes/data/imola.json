@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "imola",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD1E3",
+      "#A4B4DE",
+      "#7D96D6",
+      "#5877CE",
+      "#3657C4",
+      "#1930B8"
+    ],
+    "paired_diverging_stops": [
+      "#1A33B3",
+      "#5979CD",
+      "#A4B6E2",
+      "#F4F3F2",
+      "#C3C599",
+      "#969639",
+      "#6D6800"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (imola)",

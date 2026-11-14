@@ -1,0 +1,63 @@
+{
+  "id": "pypal_manu_pohutukawa",
+  "name": {
+    "en": "Pohutukawa (Manu)",
+    "zh": "Pohutukawa（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#5FA1F7",
+    "#83A552",
+    "#3D4928",
+    "#9B1F1A",
+    "#B19F8E",
+    "#4E0B0C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC1",
+      "#DBA89D",
+      "#CC8679",
+      "#BB6356",
+      "#A83E33",
+      "#930509"
+    ],
+    "paired_diverging_stops": [
+      "#5FA1F7",
+      "#92BEF7",
+      "#C3D9F6",
+      "#F4F3F2",
+      "#DCAFA8",
+      "#BF6C61",
+      "#9B1F1A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Pohutukawa)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 16.3,
+    "min_de2000_deutan_first6": 8.69,
+    "min_de2000_protan_first6": 3.12,
+    "min_de2000_tritan_first6": 16.71,
+    "optimal6_min_de2000": 16.3,
+    "optimal6_min_de2000_deutan": 8.69,
+    "optimal6_min_de2000_protan": 3.12,
+    "grayscale_L_spread": 0.435,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

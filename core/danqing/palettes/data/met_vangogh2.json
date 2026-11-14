@@ -20,7 +20,25 @@
   "neutral": "#B8BEC0",
   "partners": {
     "sequential": "YlOrRd",
-    "diverging": "roma"
+    "diverging": "roma",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBBE",
+      "#DFA795",
+      "#D1846D",
+      "#C15F45",
+      "#AF3717",
+      "#9B0000"
+    ],
+    "paired_diverging_stops": [
+      "#885A00",
+      "#AB8D34",
+      "#CFC097",
+      "#F4F3F2",
+      "#B5B9CF",
+      "#7A81AB",
+      "#454B87"
+    ]
   },
   "source": {
     "title": "MetBrewer: VanGogh2 (Met Object 436532)",

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_ostracion_cubicus",
+  "name": {
+    "en": "Ostracion_cubicus (fishualize)",
+    "zh": "Ostracion_cubicus（fishualize）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#0E1326",
+    "#784E38",
+    "#99732B",
+    "#C7AA2E",
+    "#F7ED4C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED1BF",
+      "#C6B498",
+      "#AE9771",
+      "#977B4B",
+      "#815F20",
+      "#6A4500"
+    ],
+    "paired_diverging_stops": [
+      "#0E1326",
+      "#505564",
+      "#9EA0A8",
+      "#F4F3F2",
+      "#F4F2C5",
+      "#F5F092",
+      "#F7ED4C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Ostracion_cubicus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 16.56,
+    "min_de2000_deutan_first6": 14.52,
+    "min_de2000_protan_first6": 15.83,
+    "min_de2000_tritan_first6": 12.65,
+    "optimal6_min_de2000": 16.56,
+    "optimal6_min_de2000_deutan": 14.52,
+    "optimal6_min_de2000_protan": 15.83,
+    "grayscale_L_spread": 0.734,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

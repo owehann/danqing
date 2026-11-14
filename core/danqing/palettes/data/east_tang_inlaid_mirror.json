@@ -20,7 +20,25 @@
   "neutral": "#A5A59F",
   "partners": {
     "sequential": "lajolla",
-    "diverging": "roma"
+    "diverging": "roma",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC4",
+      "#CFAEA2",
+      "#BB8F81",
+      "#A77061",
+      "#925141",
+      "#7D3323"
+    ],
+    "paired_diverging_stops": [
+      "#7E5F00",
+      "#A48F4D",
+      "#CBC1A0",
+      "#F4F3F2",
+      "#ACB8AC",
+      "#69806A",
+      "#2B4B2E"
+    ]
   },
   "source": {
     "title": "Mirror with Six Circular Flowers (Shell, Amber & Turquoise Inlay)",

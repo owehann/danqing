@@ -1,0 +1,65 @@
+{
+  "id": "pypal_tvthemes_flourite",
+  "name": {
+    "en": "Flourite (tvthemes)",
+    "zh": "Flourite（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#596BE4",
+    "#3FE6F8",
+    "#202841",
+    "#957BF9",
+    "#BF7CF6",
+    "#62A7BD",
+    "#332A91",
+    "#1F76AF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D1E2",
+      "#ACB4DB",
+      "#8996D3",
+      "#6979C9",
+      "#4B59BF",
+      "#3236B3"
+    ],
+    "paired_diverging_stops": [
+      "#3FE6F8",
+      "#91EBF6",
+      "#C6F0F4",
+      "#F4F3F2",
+      "#A6AAB3",
+      "#5F6678",
+      "#202841"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Flourite)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 8.26,
+    "min_de2000_deutan_first6": 5.31,
+    "min_de2000_protan_first6": 2.25,
+    "min_de2000_tritan_first6": 15.23,
+    "optimal6_min_de2000": 8.26,
+    "optimal6_min_de2000_deutan": 5.31,
+    "optimal6_min_de2000_protan": 2.25,
+    "grayscale_L_spread": 0.568,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

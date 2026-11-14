@@ -4,7 +4,7 @@ Danqing (丹青) — Third-Party Palette Data, Artwork, Font, and Software Notic
 Danqing is distributed without any GPL or AGPL runtime or build-time code dependencies.
 We gratefully acknowledge the following researchers, museums, scientific consortia, and
 open-source projects whose published color values, public-domain museum photographs, and
-permissive libraries power Danqing's 277-palette library:
+permissive libraries power Danqing's 3,406-palette library:
 
 1. Accessible & Peer-Reviewed Scientific Color Sequences
    - Masataka Okabe & Kei Ito (2008), "Color Universal Design (CUD): How to make figures
@@ -78,6 +78,17 @@ permissive libraries power Danqing's 277-palette library:
      spectrum colors (https://github.com/AlexandrovLab/SigProfilerPlotting, BSD-2-Clause), plus
      public-domain genomics conventions (GWAS chromosome alternating, Volcano DEG, Cell Cycle,
      CNV state, Sanger/IGV nucleotide bases).
+   - Expanded MIT-Licensed Curated & Scientific Palette Collections (3,129 deduplicated palettes):
+     * Joseph Barbier & Yan Holtz, `pypalettes` (https://github.com/JosephBARBIERDARNAL/pypalettes),
+       licensed under the MIT License — curated Python & R scientific/data-visualization palettes.
+     * Sanzo Wada (1933), *A Dictionary of Color Combinations* (*Haishoku Soukan*), JSON curation by
+       Matt DesLauriers (`dictionary-of-colour-combinations`,
+       https://github.com/mattdesl/dictionary-of-colour-combinations), licensed under the MIT License.
+     * Matt DesLauriers & Experience-Monks (`nice-color-palettes`,
+       https://github.com/Experience-Monks/nice-color-palettes), top ColourLovers community
+       aesthetic palettes, licensed under the MIT License.
+     * Thiago Ferreira (`thiagodnf/color-palettes`, https://github.com/thiagodnf/color-palettes),
+       curated data-visualization and UI color palettes, licensed under the MIT License.
 
 6. Open-Source Software & Typography
    - Python runtime libraries: `pikepdf` (MPL-2.0), `pypdfium2` / PDFium (Apache-2.0 / BSD-3-Clause),

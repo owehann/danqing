@@ -1,0 +1,61 @@
+{
+  "id": "pypal_futurevisions_ceres",
+  "name": {
+    "en": "ceres (futurevisions)",
+    "zh": "ceres（futurevisions）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#181D20",
+    "#4A5F71",
+    "#6F8BA0",
+    "#F8F9FA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D3D0",
+      "#B3B7B9",
+      "#939CA3",
+      "#74828D",
+      "#576877",
+      "#3A5062"
+    ],
+    "paired_diverging_stops": [
+      "#181D20",
+      "#585C5E",
+      "#A3A5A5",
+      "#F4F3F2",
+      "#F5F5F5",
+      "#F7F7F7",
+      "#F8F9FA"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (futurevisions: ceres)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 17.05,
+    "min_de2000_deutan_first6": 16.68,
+    "min_de2000_protan_first6": 17.35,
+    "min_de2000_tritan_first6": 17.12,
+    "optimal6_min_de2000": 17.05,
+    "optimal6_min_de2000_deutan": 16.68,
+    "optimal6_min_de2000_protan": 17.35,
+    "grayscale_L_spread": 0.755,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

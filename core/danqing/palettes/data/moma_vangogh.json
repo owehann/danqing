@@ -19,7 +19,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED4D6",
+      "#A8B9C5",
+      "#829FB3",
+      "#5C85A2",
+      "#356C90",
+      "#00527E"
+    ],
+    "paired_diverging_stops": [
+      "#5C6C00",
+      "#8B985D",
+      "#BEC5A7",
+      "#F4F3F2",
+      "#9EA7B9",
+      "#506181",
+      "#0C1F4B"
+    ]
   },
   "source": {
     "title": "The Starry Night, 1889, Vincent van Gogh, Oil on canvas",

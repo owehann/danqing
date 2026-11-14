@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_phanpy",
+  "name": {
+    "en": "phanpy (palettetown)",
+    "zh": "phanpy（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#98B8E8",
+    "#6090C0",
+    "#505090",
+    "#A8D0E8",
+    "#B83830",
+    "#F06850",
+    "#800000",
+    "#F8F8F8",
+    "#F8A888"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC1",
+      "#DCA89C",
+      "#CD8578",
+      "#BC6155",
+      "#AA3B32",
+      "#950006"
+    ],
+    "paired_diverging_stops": [
+      "#505090",
+      "#8285B2",
+      "#B9BBD2",
+      "#F4F3F2",
+      "#F8C7BC",
+      "#F79A87",
+      "#F06850"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: phanpy)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 9.85,
+    "min_de2000_deutan_first6": 7.59,
+    "min_de2000_protan_first6": 7.98,
+    "min_de2000_tritan_first6": 5.43,
+    "optimal6_min_de2000": 9.85,
+    "optimal6_min_de2000_deutan": 7.59,
+    "optimal6_min_de2000_protan": 7.98,
+    "grayscale_L_spread": 0.602,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

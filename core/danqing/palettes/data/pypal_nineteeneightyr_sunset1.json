@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nineteeneightyr_sunset1",
+  "name": {
+    "en": "sunset1 (NineteenEightyR)",
+    "zh": "sunset1（NineteenEightyR）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#ECD078",
+    "#DA5B43",
+    "#C12942",
+    "#542437",
+    "#53777A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC4",
+      "#E0A5A1",
+      "#D2807F",
+      "#C25B5F",
+      "#B02F40",
+      "#9C0020"
+    ],
+    "paired_diverging_stops": [
+      "#ECD078",
+      "#EFDCA4",
+      "#F1E8CC",
+      "#F4F3F2",
+      "#BEA9AF",
+      "#896470",
+      "#542437"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NineteenEightyR: sunset1)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.57,
+    "min_de2000_deutan_first6": 11.73,
+    "min_de2000_protan_first6": 15.61,
+    "min_de2000_tritan_first6": 10.44,
+    "optimal6_min_de2000": 15.57,
+    "optimal6_min_de2000_deutan": 11.73,
+    "optimal6_min_de2000_protan": 15.61,
+    "grayscale_L_spread": 0.528,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

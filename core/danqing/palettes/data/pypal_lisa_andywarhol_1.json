@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lisa_andywarhol_1",
+  "name": {
+    "en": "AndyWarhol_1 (lisa)",
+    "zh": "AndyWarhol_1（lisa）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FD0C81",
+    "#FFED4D",
+    "#C34582",
+    "#EBA49E",
+    "#272324"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F2C6C9",
+      "#EA9DAC",
+      "#DF7390",
+      "#D14475",
+      "#C1005A",
+      "#AD0041"
+    ],
+    "paired_diverging_stops": [
+      "#FFED4D",
+      "#FBF093",
+      "#F7F2C5",
+      "#F4F3F2",
+      "#A9A7A7",
+      "#646161",
+      "#272324"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (lisa: AndyWarhol_1)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.03,
+    "min_de2000_deutan_first6": 12.35,
+    "min_de2000_protan_first6": 1.26,
+    "min_de2000_tritan_first6": 9.0,
+    "optimal6_min_de2000": 10.03,
+    "optimal6_min_de2000_deutan": 12.35,
+    "optimal6_min_de2000_protan": 1.26,
+    "grayscale_L_spread": 0.673,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

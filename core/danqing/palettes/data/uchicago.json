@@ -20,7 +20,25 @@
   "neutral": "#767676",
   "partners": {
     "sequential": "lajolla",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CEBD",
+      "#D4AD94",
+      "#C28D6C",
+      "#AF6E42",
+      "#9B4E0D",
+      "#862B00"
+    ],
+    "paired_diverging_stops": [
+      "#9E4900",
+      "#BD833C",
+      "#DABB9A",
+      "#F4F3F2",
+      "#B2A0A5",
+      "#72535E",
+      "#350E20"
+    ]
   },
   "source": {
     "title": "Factual university press palette table (pal_uchicago)",

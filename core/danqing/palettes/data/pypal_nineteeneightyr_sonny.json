@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nineteeneightyr_sonny",
+  "name": {
+    "en": "sonny (NineteenEightyR)",
+    "zh": "sonny（NineteenEightyR）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4C9385",
+    "#F2D1B3",
+    "#F2E77E",
+    "#DA7698",
+    "#E3A7C0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CCCB",
+      "#D3AAB0",
+      "#C18995",
+      "#AD687B",
+      "#994663",
+      "#83224B"
+    ],
+    "paired_diverging_stops": [
+      "#4C9385",
+      "#86B3A8",
+      "#BDD3CC",
+      "#F4F3F2",
+      "#F3F0CE",
+      "#F2ECA9",
+      "#F2E77E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NineteenEightyR: sonny)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.44,
+    "min_de2000_deutan_first6": 9.91,
+    "min_de2000_protan_first6": 11.66,
+    "min_de2000_tritan_first6": 7.19,
+    "optimal6_min_de2000": 12.44,
+    "optimal6_min_de2000_deutan": 9.91,
+    "optimal6_min_de2000_protan": 11.66,
+    "grayscale_L_spread": 0.302,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "pypal_ggprism_candy_soft",
+  "name": {
+    "en": "candy_soft (ggprism)",
+    "zh": "candy_soft（ggprism）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF8080",
+    "#FFA040",
+    "#C0C000",
+    "#00C000",
+    "#55A0FB",
+    "#AD07E3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3C9E3",
+      "#D0A4DD",
+      "#BD7DD5",
+      "#A953CC",
+      "#9614C2",
+      "#8200B6"
+    ],
+    "paired_diverging_stops": [
+      "#C0C000",
+      "#D0D277",
+      "#E1E3B7",
+      "#F4F3F2",
+      "#DEB6F1",
+      "#C675EC",
+      "#AD07E3"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggprism: candy_soft)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 21.69,
+    "min_de2000_deutan_first6": 2.34,
+    "min_de2000_protan_first6": 3.11,
+    "min_de2000_tritan_first6": 6.5,
+    "optimal6_min_de2000": 21.69,
+    "optimal6_min_de2000_deutan": 2.34,
+    "optimal6_min_de2000_protan": 3.11,
+    "grayscale_L_spread": 0.222,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

@@ -23,7 +23,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD3DE",
+      "#A6B7D3",
+      "#809CC8",
+      "#5A80BC",
+      "#3564AF",
+      "#0547A1"
+    ],
+    "paired_diverging_stops": [
+      "#87553F",
+      "#AB8878",
+      "#D0BCB3",
+      "#F4F3F2",
+      "#A5B5CC",
+      "#5B79A6",
+      "#133E7E"
+    ]
   },
   "source": {
     "title": "From the Faraway, Nearby, 1937, Georgia O'Keeffe, American",

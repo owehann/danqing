@@ -1,0 +1,62 @@
+{
+  "id": "pypal_islamicart_ottoman",
+  "name": {
+    "en": "ottoman (IslamicArt)",
+    "zh": "ottoman（IslamicArt）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#05215D",
+    "#BFC8D3",
+    "#E63833",
+    "#5E9546",
+    "#3381A8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BE",
+      "#E5A497",
+      "#D97E70",
+      "#CA5649",
+      "#B9221F",
+      "#A50000"
+    ],
+    "paired_diverging_stops": [
+      "#05215D",
+      "#4D648F",
+      "#9DAAC1",
+      "#F4F3F2",
+      "#F8BCB3",
+      "#F38175",
+      "#E63833"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (IslamicArt: ottoman)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 27.74,
+    "min_de2000_deutan_first6": 6.08,
+    "min_de2000_protan_first6": 16.18,
+    "min_de2000_tritan_first6": 9.65,
+    "optimal6_min_de2000": 27.74,
+    "optimal6_min_de2000_deutan": 6.08,
+    "optimal6_min_de2000_protan": 16.18,
+    "grayscale_L_spread": 0.556,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

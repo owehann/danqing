@@ -1,0 +1,63 @@
+{
+  "id": "pypal_dresdencolor_deathmasks",
+  "name": {
+    "en": "deathmasks (DresdenColor)",
+    "zh": "deathmasks（DresdenColor）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#926159",
+    "#87876E",
+    "#C7D2D8",
+    "#62B7C8",
+    "#43535C",
+    "#23313C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFCFC7",
+      "#C8B0A8",
+      "#B1938A",
+      "#9B756D",
+      "#845951",
+      "#6E3E37"
+    ],
+    "paired_diverging_stops": [
+      "#C7D2D8",
+      "#D6DDE1",
+      "#E5E8E9",
+      "#F4F3F2",
+      "#A8ADB1",
+      "#626C74",
+      "#23313C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (DresdenColor: deathmasks)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 11.21,
+    "min_de2000_deutan_first6": 8.17,
+    "min_de2000_protan_first6": 10.54,
+    "min_de2000_tritan_first6": 11.0,
+    "optimal6_min_de2000": 11.21,
+    "optimal6_min_de2000_deutan": 8.17,
+    "optimal6_min_de2000_protan": 10.54,
+    "grayscale_L_spread": 0.552,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

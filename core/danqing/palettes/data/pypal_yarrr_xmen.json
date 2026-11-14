@@ -1,0 +1,65 @@
+{
+  "id": "pypal_yarrr_xmen",
+  "name": {
+    "en": "xmen (yarrr)",
+    "zh": "xmen（yarrr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#026CCB",
+    "#F51E02",
+    "#05B102",
+    "#FB9F53",
+    "#9B9B9B",
+    "#FB82BE",
+    "#BA6222",
+    "#EEC229"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F2C8BB",
+      "#EAA190",
+      "#E07965",
+      "#D34D38",
+      "#C30000",
+      "#B00000"
+    ],
+    "paired_diverging_stops": [
+      "#026CCB",
+      "#659BDB",
+      "#ACC7E8",
+      "#F4F3F2",
+      "#F2E4BC",
+      "#F0D480",
+      "#EEC229"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (yarrr: xmen)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 25.61,
+    "min_de2000_deutan_first6": 3.02,
+    "min_de2000_protan_first6": 5.95,
+    "min_de2000_tritan_first6": 6.63,
+    "optimal6_min_de2000": 25.61,
+    "optimal6_min_de2000_deutan": 3.02,
+    "optimal6_min_de2000_protan": 5.95,
+    "grayscale_L_spread": 0.295,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

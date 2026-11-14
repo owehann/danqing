@@ -1,0 +1,63 @@
+{
+  "id": "pypal_tvthemes_lannister",
+  "name": {
+    "en": "Lannister (tvthemes)",
+    "zh": "Lannister（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#89080A",
+    "#C5AA73",
+    "#FEDF25",
+    "#C24841",
+    "#8B5B45",
+    "#000000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC2",
+      "#DBA99E",
+      "#CB867B",
+      "#BA6359",
+      "#A73E37",
+      "#930912"
+    ],
+    "paired_diverging_stops": [
+      "#FEDF25",
+      "#FAE785",
+      "#F7EEBF",
+      "#F4F3F2",
+      "#8D8D8C",
+      "#333333",
+      "#000000"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Lannister)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.26,
+    "min_de2000_deutan_first6": 8.39,
+    "min_de2000_protan_first6": 1.26,
+    "min_de2000_tritan_first6": 11.81,
+    "optimal6_min_de2000": 14.26,
+    "optimal6_min_de2000_deutan": 8.39,
+    "optimal6_min_de2000_protan": 1.26,
+    "grayscale_L_spread": 0.902,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "pypal_palettetown_claydol",
+  "name": {
+    "en": "claydol (palettetown)",
+    "zh": "claydol（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#505028",
+    "#686840",
+    "#909878",
+    "#C0C0D0",
+    "#F8C0A0",
+    "#F07858",
+    "#F8F8F8",
+    "#606018",
+    "#A85800",
+    "#F8D070",
+    "#B0A078",
+    "#9890B8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEBD",
+      "#D1AF94",
+      "#BE8F6C",
+      "#AB7042",
+      "#97510D",
+      "#823100"
+    ],
+    "paired_diverging_stops": [
+      "#F8D070",
+      "#F7DCA0",
+      "#F5E8CA",
+      "#F4F3F2",
+      "#D4D1DF",
+      "#B6B0CB",
+      "#9890B8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: claydol)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 8.55,
+    "min_de2000_deutan_first6": 8.57,
+    "min_de2000_protan_first6": 7.28,
+    "min_de2000_tritan_first6": 8.5,
+    "optimal6_min_de2000": 8.55,
+    "optimal6_min_de2000_deutan": 8.57,
+    "optimal6_min_de2000_protan": 7.28,
+    "grayscale_L_spread": 0.558,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_halichoeres_garnoti",
+  "name": {
+    "en": "Halichoeres_garnoti (fishualize)",
+    "zh": "Halichoeres_garnoti（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D29B02",
+    "#FAEE09",
+    "#8FAE22",
+    "#2F83A8",
+    "#1A1C2B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD4D5",
+      "#A5BAC3",
+      "#7EA1B1",
+      "#56879F",
+      "#296E8C",
+      "#00557A"
+    ],
+    "paired_diverging_stops": [
+      "#FAEE09",
+      "#F7F184",
+      "#F5F3BF",
+      "#F4F3F2",
+      "#A3A4AA",
+      "#5A5C67",
+      "#1A1C2B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Halichoeres_garnoti)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 21.26,
+    "min_de2000_deutan_first6": 3.63,
+    "min_de2000_protan_first6": 2.2,
+    "min_de2000_tritan_first6": 21.37,
+    "optimal6_min_de2000": 21.26,
+    "optimal6_min_de2000_deutan": 3.63,
+    "optimal6_min_de2000_protan": 2.2,
+    "grayscale_L_spread": 0.697,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

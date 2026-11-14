@@ -1,0 +1,69 @@
+{
+  "id": "pypal_palettetown_piloswine",
+  "name": {
+    "en": "piloswine (palettetown)",
+    "zh": "piloswine（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C0A050",
+    "#A08038",
+    "#786018",
+    "#D8C070",
+    "#503800",
+    "#F8F8F8",
+    "#D8D8D8",
+    "#B0B0B8",
+    "#F8B880",
+    "#787888",
+    "#B06028",
+    "#D88850"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEBF",
+      "#D1AE97",
+      "#BE8F71",
+      "#AA704A",
+      "#965120",
+      "#813100"
+    ],
+    "paired_diverging_stops": [
+      "#503800",
+      "#847253",
+      "#BAB1A0",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: piloswine)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 8.75,
+    "min_de2000_deutan_first6": 7.97,
+    "min_de2000_protan_first6": 8.67,
+    "min_de2000_tritan_first6": 8.62,
+    "optimal6_min_de2000": 8.75,
+    "optimal6_min_de2000_deutan": 7.97,
+    "optimal6_min_de2000_protan": 8.67,
+    "grayscale_L_spread": 0.621,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

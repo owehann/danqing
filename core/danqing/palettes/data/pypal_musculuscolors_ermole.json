@@ -1,0 +1,62 @@
+{
+  "id": "pypal_musculuscolors_ermole",
+  "name": {
+    "en": "ErMole (musculusColors)",
+    "zh": "ErMole（musculusColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#404147",
+    "#506069",
+    "#5C8689",
+    "#88929A",
+    "#AEB3BA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D4CE",
+      "#AFB9B5",
+      "#8D9F9D",
+      "#6B8685",
+      "#4B6D6E",
+      "#295558"
+    ],
+    "paired_diverging_stops": [
+      "#404147",
+      "#77787C",
+      "#B3B4B5",
+      "#F4F3F2",
+      "#DCDDDF",
+      "#C5C8CC",
+      "#AEB3BA"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (musculusColors: ErMole)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.55,
+    "min_de2000_deutan_first6": 7.23,
+    "min_de2000_protan_first6": 5.48,
+    "min_de2000_tritan_first6": 10.76,
+    "optimal6_min_de2000": 10.55,
+    "optimal6_min_de2000_deutan": 7.23,
+    "optimal6_min_de2000_protan": 5.48,
+    "grayscale_L_spread": 0.388,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -21,7 +21,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CDBE",
+      "#D9AB96",
+      "#C8896F",
+      "#B76748",
+      "#A4441C",
+      "#8F1900"
+    ],
+    "paired_diverging_stops": [
+      "#1A3D82",
+      "#5E78A9",
+      "#A6B5CE",
+      "#F4F3F2",
+      "#D3BCAC",
+      "#B28668",
+      "#8E5223"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (Arches)",

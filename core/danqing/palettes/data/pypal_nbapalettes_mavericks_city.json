@@ -1,0 +1,61 @@
+{
+  "id": "pypal_nbapalettes_mavericks_city",
+  "name": {
+    "en": "mavericks_city (nbapalettes)",
+    "zh": "mavericks_city（nbapalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#0086BF",
+    "#0C2340",
+    "#010101",
+    "#78BE21"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD5D9",
+      "#A0BBCB",
+      "#75A1BC",
+      "#4987AD",
+      "#026E9D",
+      "#00548C"
+    ],
+    "paired_diverging_stops": [
+      "#0086BF",
+      "#6DABD1",
+      "#B1CFE2",
+      "#F4F3F2",
+      "#CBE3B7",
+      "#A2D178",
+      "#78BE21"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nbapalettes: mavericks_city)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 16.59,
+    "min_de2000_deutan_first6": 16.98,
+    "min_de2000_protan_first6": 16.62,
+    "min_de2000_tritan_first6": 15.99,
+    "optimal6_min_de2000": 16.59,
+    "optimal6_min_de2000_deutan": 16.98,
+    "optimal6_min_de2000_protan": 16.62,
+    "grayscale_L_spread": 0.66,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

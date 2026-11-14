@@ -38,7 +38,25 @@
   "neutral": "#7F7F7F",
   "partners": {
     "sequential": "viridis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED2E2",
+      "#A8B5DB",
+      "#8399D2",
+      "#607BC9",
+      "#3E5DBE",
+      "#213BB2"
+    ],
+    "paired_diverging_stops": [
+      "#023FA5",
+      "#567DC2",
+      "#A3B8DC",
+      "#F4F3F2",
+      "#D9BB9B",
+      "#BC8340",
+      "#9C4A00"
+    ]
   },
   "source": {
     "title": "Escaping RGBland: HCL Palettes for Statistical Graphics (Scanpy zeileis_28)",

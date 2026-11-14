@@ -1,0 +1,77 @@
+{
+  "id": "pypal_ggsci_category20b_d3",
+  "name": {
+    "en": "category20b_d3 (ggsci)",
+    "zh": "category20b_d3（ggsci）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#393B79",
+    "#637939",
+    "#8C6D31",
+    "#843C39",
+    "#7B4173",
+    "#5254A3",
+    "#8CA252",
+    "#BD9E39",
+    "#AD494A",
+    "#A55194",
+    "#6B6ECF",
+    "#B5CF6B",
+    "#E7BA52",
+    "#D6616B",
+    "#CE6DBD",
+    "#9C9EDE",
+    "#CEDB9C",
+    "#E7CB94",
+    "#E7969C",
+    "#DE9ED6"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CCC5",
+      "#D6ABA3",
+      "#C48983",
+      "#B16864",
+      "#9E4746",
+      "#892128"
+    ],
+    "paired_diverging_stops": [
+      "#6B6ECF",
+      "#959BDD",
+      "#C3C7E9",
+      "#F4F3F2",
+      "#F0E1C1",
+      "#ECCE8E",
+      "#E7BA52"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggsci: category20b_d3)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 20,
+    "max_colors": 20,
+    "min_de2000_first6": 9.62,
+    "min_de2000_deutan_first6": 3.16,
+    "min_de2000_protan_first6": 2.08,
+    "min_de2000_tritan_first6": 9.06,
+    "optimal6_min_de2000": 9.62,
+    "optimal6_min_de2000_deutan": 3.16,
+    "optimal6_min_de2000_protan": 2.08,
+    "grayscale_L_spread": 0.482,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

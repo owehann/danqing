@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lisa_c_m_coolidge",
+  "name": {
+    "en": "C_M_Coolidge (lisa)",
+    "zh": "C_M_Coolidge（lisa）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#204035",
+    "#4A7169",
+    "#BEB59C",
+    "#735231",
+    "#49271B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D4CC",
+      "#B0B9B1",
+      "#8E9F97",
+      "#6D867E",
+      "#4D6E65",
+      "#2D564E"
+    ],
+    "paired_diverging_stops": [
+      "#BEB59C",
+      "#D0C9B8",
+      "#E2DED5",
+      "#F4F3F2",
+      "#B9AAA4",
+      "#80655C",
+      "#49271B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (lisa: C_M_Coolidge)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 16.17,
+    "min_de2000_deutan_first6": 10.44,
+    "min_de2000_protan_first6": 7.4,
+    "min_de2000_tritan_first6": 13.53,
+    "optimal6_min_de2000": 16.17,
+    "optimal6_min_de2000_deutan": 10.44,
+    "optimal6_min_de2000_protan": 7.4,
+    "grayscale_L_spread": 0.459,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

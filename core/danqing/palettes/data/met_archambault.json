@@ -19,7 +19,25 @@
   "neutral": "#B9B6BE",
   "partners": {
     "sequential": "plasma",
-    "diverging": "PuOr"
+    "diverging": "PuOr",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCC1",
+      "#DBA99D",
+      "#CB8679",
+      "#BA6456",
+      "#A73F33",
+      "#920B09"
+    ],
+    "paired_diverging_stops": [
+      "#381A61",
+      "#706092",
+      "#AFA7C2",
+      "#F4F3F2",
+      "#CDC19B",
+      "#A78F3F",
+      "#835D00"
+    ]
   },
   "source": {
     "title": "MetBrewer: Archambault (Met Object 644324)",

@@ -1,0 +1,67 @@
+{
+  "id": "pypal_ggthemes_superfishel_stone",
+  "name": {
+    "en": "Superfishel_Stone (ggthemes)",
+    "zh": "Superfishel_Stone（ggthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6388B4",
+    "#FFAE34",
+    "#EF6F6A",
+    "#8CC2CA",
+    "#55AD89",
+    "#C3BC3F",
+    "#BB7693",
+    "#BAA094",
+    "#A9B5AE",
+    "#767676"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC3",
+      "#DBA89F",
+      "#CB857D",
+      "#BA625B",
+      "#A73D3A",
+      "#930518"
+    ],
+    "paired_diverging_stops": [
+      "#6388B4",
+      "#92ABC9",
+      "#C2CFDE",
+      "#F4F3F2",
+      "#F9DDBC",
+      "#FDC782",
+      "#FFAE34"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemes: Superfishel_Stone)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 19.14,
+    "min_de2000_deutan_first6": 4.06,
+    "min_de2000_protan_first6": 1.09,
+    "min_de2000_tritan_first6": 9.59,
+    "optimal6_min_de2000": 19.14,
+    "optimal6_min_de2000_deutan": 4.06,
+    "optimal6_min_de2000_protan": 1.09,
+    "grayscale_L_spread": 0.245,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_mexbrewer_casita3",
+  "name": {
+    "en": "Casita3 (MexBrewer)",
+    "zh": "Casita3（MexBrewer）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#0424AC",
+    "#0F1342",
+    "#EFB540",
+    "#411913",
+    "#202610"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C9D0E2",
+      "#9DB1DC",
+      "#7391D3",
+      "#4B71CA",
+      "#244DBE",
+      "#031FB1"
+    ],
+    "paired_diverging_stops": [
+      "#0424AC",
+      "#4C72C9",
+      "#9DB3E0",
+      "#F4F3F2",
+      "#F3DFBE",
+      "#F1CB86",
+      "#EFB540"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MexBrewer: Casita3)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 16.89,
+    "min_de2000_deutan_first6": 2.17,
+    "min_de2000_protan_first6": 3.41,
+    "min_de2000_tritan_first6": 11.15,
+    "optimal6_min_de2000": 16.89,
+    "optimal6_min_de2000_deutan": 2.17,
+    "optimal6_min_de2000_protan": 3.41,
+    "grayscale_L_spread": 0.587,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

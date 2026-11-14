@@ -18,7 +18,25 @@
   "neutral": "#B9B6BF",
   "partners": {
     "sequential": "magma",
-    "diverging": "bam"
+    "diverging": "bam",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CCD6",
+      "#CCAAC5",
+      "#B789B4",
+      "#A267A2",
+      "#8C4590",
+      "#761E7E"
+    ],
+    "paired_diverging_stops": [
+      "#7C6000",
+      "#A29050",
+      "#CAC1A1",
+      "#F4F3F2",
+      "#B1BAD6",
+      "#7382B9",
+      "#3C4B99"
+    ]
   },
   "source": {
     "title": "MetBrewer: Klimt (Met Object 436819)",

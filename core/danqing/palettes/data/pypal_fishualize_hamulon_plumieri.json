@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_hamulon_plumieri",
+  "name": {
+    "en": "Hamulon_plumieri (fishualize)",
+    "zh": "Hamulon_plumieri（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#63BBF2",
+    "#4997F0",
+    "#5E5B04",
+    "#A66D03",
+    "#8C5D23"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD0C0",
+      "#C8B29A",
+      "#B29575",
+      "#9C7851",
+      "#865C2A",
+      "#704000"
+    ],
+    "paired_diverging_stops": [
+      "#4997F0",
+      "#85B7F3",
+      "#BDD6F4",
+      "#F4F3F2",
+      "#DBC6AC",
+      "#C19966",
+      "#A66D03"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Hamulon_plumieri)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.1,
+    "min_de2000_deutan_first6": 6.48,
+    "min_de2000_protan_first6": 3.87,
+    "min_de2000_tritan_first6": 7.41,
+    "optimal6_min_de2000": 9.1,
+    "optimal6_min_de2000_deutan": 6.48,
+    "optimal6_min_de2000_protan": 3.87,
+    "grayscale_L_spread": 0.3,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

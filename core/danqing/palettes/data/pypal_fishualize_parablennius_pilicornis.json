@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_parablennius_pilicornis",
+  "name": {
+    "en": "Parablennius_pilicornis (fishualize)",
+    "zh": "Parablennius_pilicornis（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8FC7C4",
+    "#32BDFF",
+    "#03A678",
+    "#559055",
+    "#5C7A45"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D4C4",
+      "#B3BAA2",
+      "#93A080",
+      "#748760",
+      "#566F40",
+      "#395720"
+    ],
+    "paired_diverging_stops": [
+      "#32BDFF",
+      "#84D0FC",
+      "#BEE2F8",
+      "#F4F3F2",
+      "#BFCAB6",
+      "#8CA17D",
+      "#5C7A45"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Parablennius_pilicornis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.61,
+    "min_de2000_deutan_first6": 6.3,
+    "min_de2000_protan_first6": 7.46,
+    "min_de2000_tritan_first6": 7.3,
+    "optimal6_min_de2000": 8.61,
+    "optimal6_min_de2000_deutan": 6.3,
+    "optimal6_min_de2000_protan": 7.46,
+    "grayscale_L_spread": 0.248,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

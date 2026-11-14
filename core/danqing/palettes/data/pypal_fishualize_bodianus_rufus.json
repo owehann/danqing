@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_bodianus_rufus",
+  "name": {
+    "en": "Bodianus_rufus (fishualize)",
+    "zh": "Bodianus_rufus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FCDD23",
+    "#F8B100",
+    "#CA697C",
+    "#AB74CF",
+    "#48439B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D1DC",
+      "#B4B3D0",
+      "#9595C4",
+      "#7878B6",
+      "#5C5BA8",
+      "#433C99"
+    ],
+    "paired_diverging_stops": [
+      "#FCDD23",
+      "#F9E684",
+      "#F6EDBF",
+      "#F4F3F2",
+      "#B5B7D7",
+      "#7B7DBA",
+      "#48439B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Bodianus_rufus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 14.11,
+    "min_de2000_deutan_first6": 6.83,
+    "min_de2000_protan_first6": 9.3,
+    "min_de2000_tritan_first6": 12.42,
+    "optimal6_min_de2000": 14.11,
+    "optimal6_min_de2000_deutan": 6.83,
+    "optimal6_min_de2000_protan": 9.3,
+    "grayscale_L_spread": 0.459,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

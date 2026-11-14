@@ -1,0 +1,66 @@
+{
+  "id": "pypal_trekcolors_gorn",
+  "name": {
+    "en": "gorn (trekcolors)",
+    "zh": "gorn（trekcolors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#000042",
+    "#0000B5",
+    "#145416",
+    "#639863",
+    "#BDF7C6",
+    "#FF0000",
+    "#4E0000",
+    "#A09349",
+    "#777384"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F3C7BB",
+      "#EDA08F",
+      "#E47663",
+      "#D74736",
+      "#C70000",
+      "#B50000"
+    ],
+    "paired_diverging_stops": [
+      "#0000B5",
+      "#416DD0",
+      "#97B1E4",
+      "#F4F3F2",
+      "#FFBAAD",
+      "#FF7A68",
+      "#FF0000"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (trekcolors: gorn)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 17.11,
+    "min_de2000_deutan_first6": 15.29,
+    "min_de2000_protan_first6": 8.02,
+    "min_de2000_tritan_first6": 17.17,
+    "optimal6_min_de2000": 17.11,
+    "optimal6_min_de2000_deutan": 15.29,
+    "optimal6_min_de2000_protan": 8.02,
+    "grayscale_L_spread": 0.752,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

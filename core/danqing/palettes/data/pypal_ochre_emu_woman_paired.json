@@ -1,0 +1,75 @@
+{
+  "id": "pypal_ochre_emu_woman_paired",
+  "name": {
+    "en": "emu_woman_paired (ochRe)",
+    "zh": "emu_woman_paired（ochRe）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#AB7E37",
+    "#79222A",
+    "#562323",
+    "#333B43",
+    "#B68830",
+    "#232728",
+    "#B9ACA3",
+    "#7A2529",
+    "#2C374A",
+    "#120F11",
+    "#768B99",
+    "#6F2827",
+    "#7B939C",
+    "#BD852C",
+    "#AAAEB5",
+    "#78292F",
+    "#B6B0AE",
+    "#3A3A43"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CCC4",
+      "#D0A9A3",
+      "#BD8882",
+      "#A86763",
+      "#934644",
+      "#7C2227"
+    ],
+    "paired_diverging_stops": [
+      "#120F11",
+      "#535152",
+      "#A09E9E",
+      "#F4F3F2",
+      "#E2CEB4",
+      "#D0AA76",
+      "#BD852C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ochRe: emu_woman_paired)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 18,
+    "max_colors": 18,
+    "min_de2000_first6": 4.41,
+    "min_de2000_deutan_first6": 4.01,
+    "min_de2000_protan_first6": 3.26,
+    "min_de2000_tritan_first6": 3.43,
+    "optimal6_min_de2000": 4.41,
+    "optimal6_min_de2000_deutan": 4.01,
+    "optimal6_min_de2000_protan": 3.26,
+    "grayscale_L_spread": 0.589,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

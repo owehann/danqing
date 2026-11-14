@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_lickitung",
+  "name": {
+    "en": "lickitung (palettetown)",
+    "zh": "lickitung（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E86850",
+    "#F8A080",
+    "#901000",
+    "#C85030",
+    "#F8C8B0",
+    "#E0D070",
+    "#F8F8A0",
+    "#F8F8F8",
+    "#807820"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCBF",
+      "#DBA998",
+      "#CB8772",
+      "#BA654C",
+      "#A74023",
+      "#930E00"
+    ],
+    "paired_diverging_stops": [
+      "#901000",
+      "#B86657",
+      "#D9ACA2",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: lickitung)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 9.78,
+    "min_de2000_deutan_first6": 7.37,
+    "min_de2000_protan_first6": 9.94,
+    "min_de2000_tritan_first6": 7.04,
+    "optimal6_min_de2000": 9.78,
+    "optimal6_min_de2000_deutan": 7.37,
+    "optimal6_min_de2000_protan": 9.94,
+    "grayscale_L_spread": 0.562,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

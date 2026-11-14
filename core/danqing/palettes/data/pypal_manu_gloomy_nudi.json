@@ -1,0 +1,62 @@
+{
+  "id": "pypal_manu_gloomy_nudi",
+  "name": {
+    "en": "Gloomy_Nudi (Manu)",
+    "zh": "Gloomy_Nudi（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3399FF",
+    "#666600",
+    "#003399",
+    "#999900",
+    "#000000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CAD4E0",
+      "#9EB9D8",
+      "#739ECF",
+      "#4683C5",
+      "#0366B9",
+      "#0048AD"
+    ],
+    "paired_diverging_stops": [
+      "#003399",
+      "#5176BA",
+      "#A0B4D8",
+      "#F4F3F2",
+      "#D4D5B1",
+      "#B6B76D",
+      "#999900"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Gloomy_Nudi)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 19.95,
+    "min_de2000_deutan_first6": 19.96,
+    "min_de2000_protan_first6": 19.84,
+    "min_de2000_tritan_first6": 19.47,
+    "optimal6_min_de2000": 19.95,
+    "optimal6_min_de2000_deutan": 19.96,
+    "optimal6_min_de2000_protan": 19.84,
+    "grayscale_L_spread": 0.676,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "pypal_miscpalettes_seagreen",
+  "name": {
+    "en": "seaGreen (miscpalettes)",
+    "zh": "seaGreen（miscpalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2E8B57",
+    "#66CDAA",
+    "#4682B4",
+    "#008B8B",
+    "#5F9EA0",
+    "#3CB371",
+    "#48D1CC",
+    "#B0C4DE",
+    "#8FBC8B",
+    "#87CEEB"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED6C6",
+      "#A6BEA5",
+      "#7FA686",
+      "#588E67",
+      "#2B7749",
+      "#00602C"
+    ],
+    "paired_diverging_stops": [
+      "#4682B4",
+      "#81A7CA",
+      "#BACDDE",
+      "#F4F3F2",
+      "#BDDFC6",
+      "#84C99B",
+      "#3CB371"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (miscpalettes: seaGreen)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 9.88,
+    "min_de2000_deutan_first6": 9.2,
+    "min_de2000_protan_first6": 7.27,
+    "min_de2000_tritan_first6": 3.61,
+    "optimal6_min_de2000": 9.88,
+    "optimal6_min_de2000_deutan": 9.2,
+    "optimal6_min_de2000_protan": 7.27,
+    "grayscale_L_spread": 0.246,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

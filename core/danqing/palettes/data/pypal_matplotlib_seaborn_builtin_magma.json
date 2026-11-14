@@ -1,0 +1,67 @@
+{
+  "id": "pypal_matplotlib_seaborn_builtin_magma",
+  "name": {
+    "en": "magma (matplotlib/seaborn builtin)",
+    "zh": "magma（matplotlib/seaborn builtin）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#120D31",
+    "#331067",
+    "#59157E",
+    "#7E2482",
+    "#A3307E",
+    "#C83E73",
+    "#E95462",
+    "#FA7D5E",
+    "#FEA973",
+    "#FED395"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CBD1",
+      "#D6A7BB",
+      "#C484A5",
+      "#B16090",
+      "#9E3B7A",
+      "#880065"
+    ],
+    "paired_diverging_stops": [
+      "#331067",
+      "#6B5D97",
+      "#ACA6C5",
+      "#F4F3F2",
+      "#F8E9D4",
+      "#FBDEB5",
+      "#FED395"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (matplotlib/seaborn builtin: magma)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 7.24,
+    "min_de2000_deutan_first6": 7.06,
+    "min_de2000_protan_first6": 4.84,
+    "min_de2000_tritan_first6": 9.19,
+    "optimal6_min_de2000": 7.24,
+    "optimal6_min_de2000_deutan": 7.06,
+    "optimal6_min_de2000_protan": 4.84,
+    "grayscale_L_spread": 0.698,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "pypal_palettetown_fearow",
+  "name": {
+    "en": "fearow (palettetown)",
+    "zh": "fearow（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D09838",
+    "#A87010",
+    "#784000",
+    "#F0B058",
+    "#C0B088",
+    "#605030",
+    "#C82010",
+    "#F8F8F8",
+    "#F05040",
+    "#F8C878",
+    "#F88070",
+    "#D8C8A0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EECABE",
+      "#E3A596",
+      "#D6806E",
+      "#C75946",
+      "#B62A19",
+      "#A20000"
+    ],
+    "paired_diverging_stops": [
+      "#784000",
+      "#A27959",
+      "#CBB5A4",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: fearow)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 7.64,
+    "min_de2000_deutan_first6": 7.29,
+    "min_de2000_protan_first6": 7.52,
+    "min_de2000_tritan_first6": 6.96,
+    "optimal6_min_de2000": 7.64,
+    "optimal6_min_de2000_deutan": 7.29,
+    "optimal6_min_de2000_protan": 7.52,
+    "grayscale_L_spread": 0.547,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

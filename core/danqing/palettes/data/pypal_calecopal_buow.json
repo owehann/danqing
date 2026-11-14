@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_buow",
+  "name": {
+    "en": "buow (calecopal)",
+    "zh": "buow（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DED4CB",
+    "#DBE38E",
+    "#7E7576",
+    "#A79787",
+    "#3A2C21"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D9D1CB",
+      "#BCB5B0",
+      "#A19996",
+      "#867D7C",
+      "#6C6363",
+      "#534B4C"
+    ],
+    "paired_diverging_stops": [
+      "#DBE38E",
+      "#E3E9B1",
+      "#EBEED2",
+      "#F4F3F2",
+      "#B1ABA6",
+      "#736860",
+      "#3A2C21"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: buow)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 14.9,
+    "min_de2000_deutan_first6": 14.84,
+    "min_de2000_protan_first6": 14.49,
+    "min_de2000_tritan_first6": 6.92,
+    "optimal6_min_de2000": 14.9,
+    "optimal6_min_de2000_deutan": 14.84,
+    "optimal6_min_de2000_protan": 14.49,
+    "grayscale_L_spread": 0.585,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

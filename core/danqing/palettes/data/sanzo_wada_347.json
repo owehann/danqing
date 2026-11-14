@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_347",
+  "name": {
+    "en": "Sanzo Wada #347 (Olive Yellow · Sea Green · Helvetia Blue)",
+    "zh": "和田三造 #347（Olive Yellow · Sea Green · Helvetia Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A6A159",
+    "#00B49B",
+    "#005B8D",
+    "#B984AF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD4D8",
+      "#A6B9C8",
+      "#7F9FB8",
+      "#5885A7",
+      "#2E6B97",
+      "#005286"
+    ],
+    "paired_diverging_stops": [
+      "#A6A159",
+      "#BFBC8D",
+      "#D9D8BF",
+      "#F4F3F2",
+      "#A9BFD1",
+      "#608DAF",
+      "#005B8D"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#347)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 27.22,
+    "min_de2000_deutan_first6": 8.22,
+    "min_de2000_protan_first6": 16.01,
+    "min_de2000_tritan_first6": 13.51,
+    "optimal6_min_de2000": 27.22,
+    "optimal6_min_de2000_deutan": 8.22,
+    "optimal6_min_de2000_protan": 16.01,
+    "grayscale_L_spread": 0.245,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

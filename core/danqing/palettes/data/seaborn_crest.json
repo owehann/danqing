@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "seaborn_crest",
-    "diverging": "seaborn_vlag"
+    "diverging": "seaborn_vlag",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED4D3",
+      "#A7BABF",
+      "#80A1AB",
+      "#598897",
+      "#2F6F84",
+      "#005770"
+    ],
+    "paired_diverging_stops": [
+      "#4B6F36",
+      "#819A73",
+      "#B9C6B1",
+      "#F4F3F2",
+      "#AAAFC8",
+      "#676F9D",
+      "#2C3172"
+    ]
   },
   "source": {
     "title": "Seaborn Perceptually Uniform Colormaps (crest)",

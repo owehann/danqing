@@ -1,0 +1,82 @@
+{
+  "id": "pypal_dichromat_steppedsequential_5",
+  "name": {
+    "en": "SteppedSequential_5 (dichromat)",
+    "zh": "SteppedSequential_5（dichromat）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#990F0F",
+    "#B22D2D",
+    "#CC5252",
+    "#E67E7E",
+    "#FFB2B2",
+    "#99700F",
+    "#B28B2D",
+    "#CCA852",
+    "#E6C77E",
+    "#FFE8B2",
+    "#1F990F",
+    "#3CB22D",
+    "#60CC52",
+    "#8AE67E",
+    "#BCFFB2",
+    "#710F99",
+    "#8B2DB2",
+    "#A852CC",
+    "#C77EE6",
+    "#E9B2FF",
+    "#990F20",
+    "#B22D3C",
+    "#CC5260",
+    "#E67E8A",
+    "#FFB2BC"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CCDD",
+      "#CAA9D2",
+      "#B586C6",
+      "#9F63B9",
+      "#8A3CAB",
+      "#75009C"
+    ],
+    "paired_diverging_stops": [
+      "#B28B2D",
+      "#C8AE76",
+      "#DED0B4",
+      "#F4F3F2",
+      "#C8ADD7",
+      "#9C67B9",
+      "#710F99"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (dichromat: SteppedSequential_5)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 25,
+    "max_colors": 25,
+    "min_de2000_first6": 7.74,
+    "min_de2000_deutan_first6": 7.56,
+    "min_de2000_protan_first6": 7.47,
+    "min_de2000_tritan_first6": 7.76,
+    "optimal6_min_de2000": 7.74,
+    "optimal6_min_de2000_deutan": 7.56,
+    "optimal6_min_de2000_protan": 7.47,
+    "grayscale_L_spread": 0.515,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

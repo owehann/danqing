@@ -1,0 +1,62 @@
+{
+  "id": "pypal_unikn_pal_seegruen",
+  "name": {
+    "en": "pal_seegruen (unikn)",
+    "zh": "pal_seegruen（unikn）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#71D1CC",
+    "#54BFB7",
+    "#0AA398",
+    "#0A9086",
+    "#067E79"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD6CE",
+      "#A4BDB5",
+      "#7CA49D",
+      "#528C85",
+      "#1E746F",
+      "#005D59"
+    ],
+    "paired_diverging_stops": [
+      "#71D1CC",
+      "#A1DDD9",
+      "#CCE8E5",
+      "#F4F3F2",
+      "#B0CBC8",
+      "#6BA4A0",
+      "#067E79"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (unikn: pal_seegruen)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 5.3,
+    "min_de2000_deutan_first6": 5.27,
+    "min_de2000_protan_first6": 5.0,
+    "min_de2000_tritan_first6": 4.96,
+    "optimal6_min_de2000": 5.3,
+    "optimal6_min_de2000_deutan": 5.27,
+    "optimal6_min_de2000_protan": 5.0,
+    "grayscale_L_spread": 0.265,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

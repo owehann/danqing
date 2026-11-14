@@ -1,0 +1,63 @@
+{
+  "id": "pypal_lacroixcolor_passionfruit",
+  "name": {
+    "en": "PassionFruit (LaCroixColoR)",
+    "zh": "PassionFruit（LaCroixColoR）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C70E7B",
+    "#FC6882",
+    "#A6E000",
+    "#1BB6AF",
+    "#6C6C9D",
+    "#172869"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDC8CE",
+      "#E1A1B5",
+      "#D37B9C",
+      "#C45285",
+      "#B11B6D",
+      "#9D0057"
+    ],
+    "paired_diverging_stops": [
+      "#A6E000",
+      "#C0E87C",
+      "#D9EEBA",
+      "#F4F3F2",
+      "#A2ACC5",
+      "#586998",
+      "#172869"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (LaCroixColoR: PassionFruit)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 22.12,
+    "min_de2000_deutan_first6": 14.99,
+    "min_de2000_protan_first6": 11.21,
+    "min_de2000_tritan_first6": 14.57,
+    "optimal6_min_de2000": 22.12,
+    "optimal6_min_de2000_deutan": 14.99,
+    "optimal6_min_de2000_protan": 11.21,
+    "grayscale_L_spread": 0.528,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

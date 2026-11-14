@@ -1,0 +1,64 @@
+{
+  "id": "pypal_lacroixcolor_tangerine",
+  "name": {
+    "en": "Tangerine (LaCroixColoR)",
+    "zh": "Tangerine（LaCroixColoR）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EF562A",
+    "#EC921D",
+    "#F7B449",
+    "#FFED00",
+    "#1BB6AF",
+    "#9093A2",
+    "#132157"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCBBC",
+      "#E1A692",
+      "#D48268",
+      "#C55C3E",
+      "#B33100",
+      "#9F0000"
+    ],
+    "paired_diverging_stops": [
+      "#FFED00",
+      "#FBF083",
+      "#F7F3BF",
+      "#F4F3F2",
+      "#A0A9BE",
+      "#54638A",
+      "#132157"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (LaCroixColoR: Tangerine)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 9.45,
+    "min_de2000_deutan_first6": 3.7,
+    "min_de2000_protan_first6": 8.47,
+    "min_de2000_tritan_first6": 8.39,
+    "optimal6_min_de2000": 9.45,
+    "optimal6_min_de2000_deutan": 3.7,
+    "optimal6_min_de2000_protan": 8.47,
+    "grayscale_L_spread": 0.658,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

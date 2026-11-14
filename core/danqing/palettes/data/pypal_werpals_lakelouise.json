@@ -1,0 +1,67 @@
+{
+  "id": "pypal_werpals_lakelouise",
+  "name": {
+    "en": "lakelouise (werpals)",
+    "zh": "lakelouise（werpals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F6FCFC",
+    "#81C7E0",
+    "#00B8DE",
+    "#007C94",
+    "#617CA9",
+    "#003478",
+    "#00C0C3",
+    "#017E5C",
+    "#71C100",
+    "#F3D100"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD6C9",
+      "#A4BEAB",
+      "#7CA68E",
+      "#538E73",
+      "#207758",
+      "#00603E"
+    ],
+    "paired_diverging_stops": [
+      "#003478",
+      "#5272A2",
+      "#A0B2CB",
+      "#F4F3F2",
+      "#F3E9BB",
+      "#F3DE7D",
+      "#F3D100"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (werpals: lakelouise)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 8.19,
+    "min_de2000_deutan_first6": 5.21,
+    "min_de2000_protan_first6": 5.06,
+    "min_de2000_tritan_first6": 4.37,
+    "optimal6_min_de2000": 8.19,
+    "optimal6_min_de2000_deutan": 5.21,
+    "optimal6_min_de2000_protan": 5.06,
+    "grayscale_L_spread": 0.645,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

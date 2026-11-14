@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_acanthisthius_brasilianus",
+  "name": {
+    "en": "Acanthisthius_brasilianus (fishualize)",
+    "zh": "Acanthisthius_brasilianus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#527E87",
+    "#B88244",
+    "#B8B69E",
+    "#B48F2C",
+    "#A37903"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED1BC",
+      "#C7B492",
+      "#B09768",
+      "#9A7B3C",
+      "#835F00",
+      "#6D4300"
+    ],
+    "paired_diverging_stops": [
+      "#527E87",
+      "#87A4AA",
+      "#BCCBCD",
+      "#F4F3F2",
+      "#D9CAAD",
+      "#BEA168",
+      "#A37903"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Acanthisthius_brasilianus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 7.49,
+    "min_de2000_deutan_first6": 4.22,
+    "min_de2000_protan_first6": 6.34,
+    "min_de2000_tritan_first6": 4.3,
+    "optimal6_min_de2000": 7.49,
+    "optimal6_min_de2000_deutan": 4.22,
+    "optimal6_min_de2000_protan": 6.34,
+    "grayscale_L_spread": 0.207,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

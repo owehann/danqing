@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_capricorn",
+  "name": {
+    "en": "capricorn (colRoz)",
+    "zh": "capricorn（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2F2E0F",
+    "#8D7046",
+    "#67331E",
+    "#844522",
+    "#2A61A2",
+    "#619DC1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD3DA",
+      "#A8B8CC",
+      "#839DBE",
+      "#5F82AF",
+      "#3A679F",
+      "#0E4C8F"
+    ],
+    "paired_diverging_stops": [
+      "#844522",
+      "#AB7D66",
+      "#D0B7AA",
+      "#F4F3F2",
+      "#AFC2D9",
+      "#6D91BE",
+      "#2A61A2"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: capricorn)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 8.15,
+    "min_de2000_deutan_first6": 8.32,
+    "min_de2000_protan_first6": 4.65,
+    "min_de2000_tritan_first6": 7.32,
+    "optimal6_min_de2000": 8.15,
+    "optimal6_min_de2000_deutan": 8.32,
+    "optimal6_min_de2000_protan": 4.65,
+    "grayscale_L_spread": 0.375,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

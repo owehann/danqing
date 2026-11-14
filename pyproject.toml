@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "danqing"
-version = "0.3.0"
-description = "Lossless Scientific Figure & Manuscript Recoloring Studio, 277 Verified Palettes, and MCP Engine"
+version = "0.4.0"
+description = "Lossless Scientific Figure & Manuscript Recoloring Studio, 3,406 Verified Palettes, and MCP Engine"
 readme = "README.md"
 license = { text = "Apache-2.0" }
 requires-python = ">=3.11"

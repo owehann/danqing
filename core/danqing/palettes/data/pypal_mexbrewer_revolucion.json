@@ -1,0 +1,67 @@
+{
+  "id": "pypal_mexbrewer_revolucion",
+  "name": {
+    "en": "Revolucion (MexBrewer)",
+    "zh": "Revolucion（MexBrewer）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#871C0F",
+    "#AF2213",
+    "#D9792E",
+    "#F4C659",
+    "#F9F2D8",
+    "#F0F6EB",
+    "#6FC0BA",
+    "#368990",
+    "#244E57",
+    "#22394A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBBF",
+      "#DFA799",
+      "#D08373",
+      "#C05F4E",
+      "#AE3726",
+      "#9A0000"
+    ],
+    "paired_diverging_stops": [
+      "#F4C659",
+      "#F4D693",
+      "#F4E5C4",
+      "#F4F3F2",
+      "#A8B1B7",
+      "#62727F",
+      "#22394A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MexBrewer: Revolucion)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 7.21,
+    "min_de2000_deutan_first6": 6.6,
+    "min_de2000_protan_first6": 6.02,
+    "min_de2000_tritan_first6": 8.86,
+    "optimal6_min_de2000": 23.49,
+    "optimal6_min_de2000_deutan": 14.97,
+    "optimal6_min_de2000_protan": 15.02,
+    "grayscale_L_spread": 0.632,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

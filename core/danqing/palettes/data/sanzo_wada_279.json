@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_279",
+  "name": {
+    "en": "Sanzo Wada #279 (Raw Sienna · Vinaceous Cinnamon · Ecru)",
+    "zh": "和田三造 #279（Raw Sienna · Vinaceous Cinnamon · Ecru）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BB7125",
+    "#EEA78C",
+    "#C2AE93",
+    "#12354E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CFBD",
+      "#CFB094",
+      "#BC916B",
+      "#A87242",
+      "#93540B",
+      "#7E3500"
+    ],
+    "paired_diverging_stops": [
+      "#BB7125",
+      "#D09D70",
+      "#E3C8B1",
+      "#F4F3F2",
+      "#A4AFB9",
+      "#597082",
+      "#12354E"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#279)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 14.99,
+    "min_de2000_deutan_first6": 5.72,
+    "min_de2000_protan_first6": 2.46,
+    "min_de2000_tritan_first6": 12.9,
+    "optimal6_min_de2000": 14.99,
+    "optimal6_min_de2000_deutan": 5.72,
+    "optimal6_min_de2000_protan": 2.46,
+    "grayscale_L_spread": 0.473,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

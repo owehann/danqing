@@ -1,0 +1,65 @@
+{
+  "id": "pypal_palettetown_gastly",
+  "name": {
+    "en": "gastly (palettetown)",
+    "zh": "gastly（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B890B0",
+    "#D0A8C8",
+    "#503058",
+    "#886080",
+    "#704868",
+    "#D8D8D8",
+    "#B02810",
+    "#D85038"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBBF",
+      "#DEA898",
+      "#CF8472",
+      "#BF604C",
+      "#AD3923",
+      "#990000"
+    ],
+    "paired_diverging_stops": [
+      "#503058",
+      "#846D89",
+      "#BAAEBC",
+      "#F4F3F2",
+      "#F1BFB4",
+      "#E78B77",
+      "#D85038"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: gastly)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 6.98,
+    "min_de2000_deutan_first6": 6.89,
+    "min_de2000_protan_first6": 7.12,
+    "min_de2000_tritan_first6": 6.96,
+    "optimal6_min_de2000": 6.98,
+    "optimal6_min_de2000_deutan": 6.89,
+    "optimal6_min_de2000_protan": 7.12,
+    "grayscale_L_spread": 0.517,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

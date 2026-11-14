@@ -1,0 +1,61 @@
+{
+  "id": "pypal_suffrager_london",
+  "name": {
+    "en": "london (suffrager)",
+    "zh": "london（suffrager）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BD241E",
+    "#E56B1E",
+    "#FFCD22",
+    "#15274D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCABF",
+      "#E1A699",
+      "#D38173",
+      "#C35C4E",
+      "#B13127",
+      "#9E0000"
+    ],
+    "paired_diverging_stops": [
+      "#FFCD22",
+      "#FCDB82",
+      "#F8E8BD",
+      "#F4F3F2",
+      "#A2AAB9",
+      "#576682",
+      "#15274D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (suffrager: london)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 22.13,
+    "min_de2000_deutan_first6": 16.68,
+    "min_de2000_protan_first6": 20.17,
+    "min_de2000_tritan_first6": 15.98,
+    "optimal6_min_de2000": 22.13,
+    "optimal6_min_de2000_deutan": 16.68,
+    "optimal6_min_de2000_protan": 20.17,
+    "grayscale_L_spread": 0.588,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

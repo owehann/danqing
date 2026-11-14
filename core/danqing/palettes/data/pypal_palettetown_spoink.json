@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_spoink",
+  "name": {
+    "en": "spoink (palettetown)",
+    "zh": "spoink（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#888890",
+    "#687078",
+    "#303028",
+    "#000000",
+    "#F8C8B8",
+    "#484848",
+    "#A8A8A0",
+    "#C08858",
+    "#E0A880",
+    "#F8E0F8",
+    "#904848",
+    "#F8F8F8",
+    "#181818"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CEC7",
+      "#CFADA7",
+      "#BB8E89",
+      "#A66F6B",
+      "#91514F",
+      "#7B3234"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: spoink)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 9.51,
+    "min_de2000_deutan_first6": 9.23,
+    "min_de2000_protan_first6": 9.43,
+    "min_de2000_tritan_first6": 8.22,
+    "optimal6_min_de2000": 9.51,
+    "optimal6_min_de2000_deutan": 9.23,
+    "optimal6_min_de2000_protan": 9.43,
+    "grayscale_L_spread": 0.979,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

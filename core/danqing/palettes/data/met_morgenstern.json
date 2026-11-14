@@ -20,7 +20,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CFC5",
+      "#CCAFA5",
+      "#B89085",
+      "#A27266",
+      "#8D5548",
+      "#77382C"
+    ],
+    "paired_diverging_stops": [
+      "#78576E",
+      "#A08998",
+      "#C9BDC4",
+      "#F4F3F2",
+      "#D1BEA7",
+      "#AD895E",
+      "#895700"
+    ]
   },
   "source": {
     "title": "Jungfrau, Mönch, and Eiger, 1851, Carl Morgenstern, German",

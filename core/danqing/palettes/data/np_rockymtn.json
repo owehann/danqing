@@ -19,7 +19,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D5C9",
+      "#AEBBAB",
+      "#8BA18E",
+      "#698972",
+      "#477158",
+      "#23593E"
+    ],
+    "paired_diverging_stops": [
+      "#274C31",
+      "#67806C",
+      "#ABB8AD",
+      "#F4F3F2",
+      "#BEC1C3",
+      "#8B9296",
+      "#5B656B"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (RockyMtn)",

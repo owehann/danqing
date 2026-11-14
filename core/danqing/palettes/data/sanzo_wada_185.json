@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_185",
+  "name": {
+    "en": "Sanzo Wada #185 (Light Brown Drab · Etruscan Red · Pale Lemon Yellow)",
+    "zh": "和田三造 #185（Light Brown Drab · Etruscan Red · Pale Lemon Yellow）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B59392",
+    "#C55347",
+    "#FFEFAE"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCC2",
+      "#D9AA9E",
+      "#C9887B",
+      "#B76659",
+      "#A44237",
+      "#8F1612"
+    ],
+    "paired_diverging_stops": [
+      "#C55347",
+      "#DA8A7F",
+      "#E9BFB7",
+      "#F4F3F2",
+      "#F7F2DC",
+      "#FBF1C6",
+      "#FFEFAE"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#185)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 20.77,
+    "min_de2000_deutan_first6": 17.52,
+    "min_de2000_protan_first6": 21.5,
+    "min_de2000_tritan_first6": 21.05,
+    "optimal6_min_de2000": 20.77,
+    "optimal6_min_de2000_deutan": 17.52,
+    "optimal6_min_de2000_protan": 21.5,
+    "grayscale_L_spread": 0.363,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "pypal_werpals_benagil",
+  "name": {
+    "en": "benagil (werpals)",
+    "zh": "benagil（werpals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F5F5E9",
+    "#B6CBDC",
+    "#8BA2B4",
+    "#3A749C",
+    "#00517C",
+    "#030710",
+    "#500A02",
+    "#C05100",
+    "#FBA23C",
+    "#FFED77"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CDBC",
+      "#D9AB93",
+      "#C98A69",
+      "#B7683F",
+      "#A44500",
+      "#901A00"
+    ],
+    "paired_diverging_stops": [
+      "#030710",
+      "#454A52",
+      "#979A9E",
+      "#F4F3F2",
+      "#F7F2CD",
+      "#FBF0A6",
+      "#FFED77"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (werpals: benagil)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 11.37,
+    "min_de2000_deutan_first6": 11.5,
+    "min_de2000_protan_first6": 11.16,
+    "min_de2000_tritan_first6": 11.38,
+    "optimal6_min_de2000": 11.37,
+    "optimal6_min_de2000_deutan": 11.5,
+    "optimal6_min_de2000_protan": 11.16,
+    "grayscale_L_spread": 0.839,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

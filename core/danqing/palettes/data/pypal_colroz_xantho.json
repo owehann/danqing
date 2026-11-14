@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_xantho",
+  "name": {
+    "en": "xantho (colRoz)",
+    "zh": "xantho（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#736F66",
+    "#1D1C1A",
+    "#2E3F13",
+    "#90A53E",
+    "#E1AF4C",
+    "#A36407"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1D0BD",
+      "#CDB194",
+      "#B8936B",
+      "#A37542",
+      "#8E580B",
+      "#793A00"
+    ],
+    "paired_diverging_stops": [
+      "#1D1C1A",
+      "#5C5B59",
+      "#A5A4A2",
+      "#F4F3F2",
+      "#EEDDBF",
+      "#E8C68A",
+      "#E1AF4C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: xantho)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 20.24,
+    "min_de2000_deutan_first6": 9.48,
+    "min_de2000_protan_first6": 5.75,
+    "min_de2000_tritan_first6": 13.4,
+    "optimal6_min_de2000": 20.24,
+    "optimal6_min_de2000_deutan": 9.48,
+    "optimal6_min_de2000_protan": 5.75,
+    "grayscale_L_spread": 0.555,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

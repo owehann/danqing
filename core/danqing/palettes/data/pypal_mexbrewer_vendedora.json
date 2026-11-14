@@ -1,0 +1,67 @@
+{
+  "id": "pypal_mexbrewer_vendedora",
+  "name": {
+    "en": "Vendedora (MexBrewer)",
+    "zh": "Vendedora（MexBrewer）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#26322C",
+    "#384D3F",
+    "#777768",
+    "#A6B2A5",
+    "#E3EFE2",
+    "#FFD480",
+    "#E09743",
+    "#D25A3E",
+    "#D42538",
+    "#A6162B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9C1",
+      "#E4A49B",
+      "#D87E77",
+      "#C95654",
+      "#B72330",
+      "#A40002"
+    ],
+    "paired_diverging_stops": [
+      "#26322C",
+      "#646D68",
+      "#A9AEAA",
+      "#F4F3F2",
+      "#F8E9CE",
+      "#FCDFA9",
+      "#FFD480"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MexBrewer: Vendedora)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 9.56,
+    "min_de2000_deutan_first6": 8.47,
+    "min_de2000_protan_first6": 9.02,
+    "min_de2000_tritan_first6": 8.82,
+    "optimal6_min_de2000": 16.26,
+    "optimal6_min_de2000_deutan": 12.56,
+    "optimal6_min_de2000_protan": 13.53,
+    "grayscale_L_spread": 0.636,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

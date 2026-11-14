@@ -19,7 +19,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8D3BE",
+      "#BBB895",
+      "#A09E6D",
+      "#858345",
+      "#6B6A11",
+      "#535100"
+    ],
+    "paired_diverging_stops": [
+      "#00747D",
+      "#579EA3",
+      "#A7C8CA",
+      "#F4F3F2",
+      "#BDC0AC",
+      "#888F6A",
+      "#586028"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (Banff)",

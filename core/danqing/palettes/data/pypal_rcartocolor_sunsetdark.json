@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_sunsetdark",
+  "name": {
+    "en": "SunsetDark (rcartocolor)",
+    "zh": "SunsetDark（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#FCDE9C",
+    "#FAA476",
+    "#F0746E",
+    "#E34F6F",
+    "#DC3977",
+    "#B9257A",
+    "#7C1D6F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EAC9CE",
+      "#DDA4B6",
+      "#CD7F9E",
+      "#BC5987",
+      "#A92D70",
+      "#95005A"
+    ],
+    "paired_diverging_stops": [
+      "#FCDE9C",
+      "#F9E5BA",
+      "#F7EDD6",
+      "#F4F3F2",
+      "#CFACC5",
+      "#A7679A",
+      "#7C1D6F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: SunsetDark)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 6.67,
+    "min_de2000_deutan_first6": 6.63,
+    "min_de2000_protan_first6": 9.79,
+    "min_de2000_tritan_first6": 3.8,
+    "optimal6_min_de2000": 10.46,
+    "optimal6_min_de2000_deutan": 8.51,
+    "optimal6_min_de2000_protan": 8.15,
+    "grayscale_L_spread": 0.491,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

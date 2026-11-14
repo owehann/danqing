@@ -1,0 +1,63 @@
+{
+  "id": "pypal_tvthemes_greyjoy",
+  "name": {
+    "en": "Greyjoy (tvthemes)",
+    "zh": "Greyjoy（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#000000",
+    "#708090",
+    "#D4CDB1",
+    "#DCDCDC",
+    "#F7DC27",
+    "#808080"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D2CF",
+      "#B5B6B8",
+      "#969BA0",
+      "#78818A",
+      "#5B6774",
+      "#3F4F5E"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#F4EDBF",
+      "#F6E584",
+      "#F7DC27"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Greyjoy)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 8.88,
+    "min_de2000_deutan_first6": 9.17,
+    "min_de2000_protan_first6": 8.18,
+    "min_de2000_tritan_first6": 8.42,
+    "optimal6_min_de2000": 8.88,
+    "optimal6_min_de2000_deutan": 9.17,
+    "optimal6_min_de2000_protan": 8.18,
+    "grayscale_L_spread": 0.894,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -18,7 +18,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBE",
+      "#DCA997",
+      "#CD8670",
+      "#BC6349",
+      "#A93E1E",
+      "#950300"
+    ],
+    "paired_diverging_stops": [
+      "#65150B",
+      "#985F54",
+      "#C7A7A0",
+      "#F4F3F2",
+      "#DABA9D",
+      "#BE8246",
+      "#9E4800"
+    ]
   },
   "source": {
     "title": "Tunic with Confronting Catfish, A.D. 800–850, Nasca-Wari, Peruvian",

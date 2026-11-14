@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_gramma_loreto",
+  "name": {
+    "en": "Gramma_loreto (fishualize)",
+    "zh": "Gramma_loreto（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#020122",
+    "#492AD7",
+    "#A511DF",
+    "#E3386A",
+    "#F0BF0B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CAE3",
+      "#CEA5DD",
+      "#BA7FD5",
+      "#A656CC",
+      "#921EC2",
+      "#7E00B7"
+    ],
+    "paired_diverging_stops": [
+      "#492AD7",
+      "#767AE6",
+      "#B1B8EF",
+      "#F4F3F2",
+      "#F3E3B9",
+      "#F2D27B",
+      "#F0BF0B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Gramma_loreto)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.25,
+    "min_de2000_deutan_first6": 11.3,
+    "min_de2000_protan_first6": 3.91,
+    "min_de2000_tritan_first6": 22.97,
+    "optimal6_min_de2000": 13.25,
+    "optimal6_min_de2000_deutan": 11.3,
+    "optimal6_min_de2000_protan": 3.91,
+    "grayscale_L_spread": 0.702,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "pypal_lacroixcolor_cranraspberry",
+  "name": {
+    "en": "CranRaspberry (LaCroixColoR)",
+    "zh": "CranRaspberry（LaCroixColoR）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#D9565C",
+    "#F28A8A",
+    "#EDA9AB",
+    "#1BB6AF",
+    "#088BBE",
+    "#172869"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC4",
+      "#DCA7A1",
+      "#CD8480",
+      "#BC605F",
+      "#A93A40",
+      "#950020"
+    ],
+    "paired_diverging_stops": [
+      "#F28A8A",
+      "#F6AEAC",
+      "#F7D1CF",
+      "#F4F3F2",
+      "#A2ACC5",
+      "#586998",
+      "#172869"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (LaCroixColoR: CranRaspberry)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 8.44,
+    "min_de2000_deutan_first6": 7.18,
+    "min_de2000_protan_first6": 6.14,
+    "min_de2000_tritan_first6": 8.54,
+    "optimal6_min_de2000": 8.44,
+    "optimal6_min_de2000_deutan": 7.18,
+    "optimal6_min_de2000_protan": 6.14,
+    "grayscale_L_spread": 0.492,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

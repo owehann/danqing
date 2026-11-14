@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_174",
+  "name": {
+    "en": "Sanzo Wada #174 (Corinthian Pink · Grayish Lavender - B · Taupe Brown)",
+    "zh": "和田三造 #174（Corinthian Pink · Grayish Lavender - B · Taupe Brown）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8B6BA",
+    "#C0A9B3",
+    "#7A4456"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFCECB",
+      "#C9AFB0",
+      "#B39096",
+      "#9D727C",
+      "#875563",
+      "#70394C"
+    ],
+    "paired_diverging_stops": [
+      "#F8B6BA",
+      "#F8CBCC",
+      "#F7DFDF",
+      "#F4F3F2",
+      "#CCB6BB",
+      "#A37B87",
+      "#7A4456"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#174)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 12.81,
+    "min_de2000_deutan_first6": 11.88,
+    "min_de2000_protan_first6": 8.17,
+    "min_de2000_tritan_first6": 13.02,
+    "optimal6_min_de2000": 12.81,
+    "optimal6_min_de2000_deutan": 11.88,
+    "optimal6_min_de2000_protan": 8.17,
+    "grayscale_L_spread": 0.381,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

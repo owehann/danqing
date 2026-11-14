@@ -1,0 +1,63 @@
+{
+  "id": "pypal_dresdencolor_skingame",
+  "name": {
+    "en": "skingame (DresdenColor)",
+    "zh": "skingame（DresdenColor）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3E321A",
+    "#643613",
+    "#D35127",
+    "#EB974E",
+    "#FAEAAD",
+    "#AFBBDF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBE",
+      "#DDA995",
+      "#CE866D",
+      "#BD6245",
+      "#AB3C15",
+      "#970000"
+    ],
+    "paired_diverging_stops": [
+      "#D35127",
+      "#E48B70",
+      "#EFC0B0",
+      "#F4F3F2",
+      "#DCE0EC",
+      "#C5CEE6",
+      "#AFBBDF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (DresdenColor: skingame)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 13.49,
+    "min_de2000_deutan_first6": 8.49,
+    "min_de2000_protan_first6": 6.09,
+    "min_de2000_tritan_first6": 13.11,
+    "optimal6_min_de2000": 13.49,
+    "optimal6_min_de2000_deutan": 8.49,
+    "optimal6_min_de2000_protan": 6.09,
+    "grayscale_L_spread": 0.612,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

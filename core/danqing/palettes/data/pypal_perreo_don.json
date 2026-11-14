@@ -1,0 +1,66 @@
+{
+  "id": "pypal_perreo_don",
+  "name": {
+    "en": "don (peRReo)",
+    "zh": "don（peRReo）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#000000",
+    "#BB7A55",
+    "#F3CEA4",
+    "#451F15",
+    "#993D1A",
+    "#664D41",
+    "#3B2C25",
+    "#D09283",
+    "#D1A079"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC0",
+      "#D5AC9B",
+      "#C38C76",
+      "#B06B52",
+      "#9C4B2D",
+      "#872700"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#F4E7D8",
+      "#F4DBBE",
+      "#F3CEA4"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (peRReo: don)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 14.86,
+    "min_de2000_deutan_first6": 13.35,
+    "min_de2000_protan_first6": 12.11,
+    "min_de2000_tritan_first6": 14.53,
+    "optimal6_min_de2000": 14.86,
+    "optimal6_min_de2000_deutan": 13.35,
+    "optimal6_min_de2000_protan": 12.11,
+    "grayscale_L_spread": 0.873,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

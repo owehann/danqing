@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_myrichthys_ocellatus",
+  "name": {
+    "en": "Myrichthys_ocellatus (fishualize)",
+    "zh": "Myrichthys_ocellatus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C3BF9D",
+    "#FFC700",
+    "#FFE624",
+    "#848176",
+    "#535157"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0D1B5",
+      "#CAB483",
+      "#B5974F",
+      "#A07A00",
+      "#8B5D00",
+      "#763F00"
+    ],
+    "paired_diverging_stops": [
+      "#FFE624",
+      "#FBEC86",
+      "#F7F0C0",
+      "#F4F3F2",
+      "#BBBABB",
+      "#858487",
+      "#535157"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Myrichthys_ocellatus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.86,
+    "min_de2000_deutan_first6": 4.41,
+    "min_de2000_protan_first6": 6.15,
+    "min_de2000_tritan_first6": 9.94,
+    "optimal6_min_de2000": 9.86,
+    "optimal6_min_de2000_deutan": 4.41,
+    "optimal6_min_de2000_protan": 6.15,
+    "grayscale_L_spread": 0.478,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

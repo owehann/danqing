@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_271",
+  "name": {
+    "en": "Sanzo Wada #271 (Pomegranite Purple · Cobalt Green · Green Blue)",
+    "zh": "和田三造 #271（Pomegranite Purple · Cobalt Green · Green Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B71F57",
+    "#96D1AA",
+    "#099197",
+    "#112F2C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCAC8",
+      "#DFA5AA",
+      "#D0808D",
+      "#C05A71",
+      "#AE2E56",
+      "#99003D"
+    ],
+    "paired_diverging_stops": [
+      "#96D1AA",
+      "#B6DDC2",
+      "#D5E8DA",
+      "#F4F3F2",
+      "#A2ACAA",
+      "#576B68",
+      "#112F2C"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#271)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 26.26,
+    "min_de2000_deutan_first6": 25.14,
+    "min_de2000_protan_first6": 12.56,
+    "min_de2000_tritan_first6": 18.8,
+    "optimal6_min_de2000": 26.26,
+    "optimal6_min_de2000_deutan": 25.14,
+    "optimal6_min_de2000_protan": 12.56,
+    "grayscale_L_spread": 0.528,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

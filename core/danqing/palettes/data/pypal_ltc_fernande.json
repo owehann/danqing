@@ -1,0 +1,61 @@
+{
+  "id": "pypal_ltc_fernande",
+  "name": {
+    "en": "fernande (ltc)",
+    "zh": "fernande（ltc）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF7676",
+    "#F9D662",
+    "#7CAB7D",
+    "#75B7D1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC3",
+      "#DDA7A0",
+      "#CE847D",
+      "#BD605C",
+      "#AA393C",
+      "#96001B"
+    ],
+    "paired_diverging_stops": [
+      "#F9D662",
+      "#F7E199",
+      "#F6EAC7",
+      "#F4F3F2",
+      "#CBDFE7",
+      "#A1CBDC",
+      "#75B7D1"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ltc: fernande)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 28.49,
+    "min_de2000_deutan_first6": 7.94,
+    "min_de2000_protan_first6": 7.44,
+    "min_de2000_tritan_first6": 9.81,
+    "optimal6_min_de2000": 28.49,
+    "optimal6_min_de2000_deutan": 7.94,
+    "optimal6_min_de2000_protan": 7.44,
+    "grayscale_L_spread": 0.189,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

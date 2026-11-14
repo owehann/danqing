@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ghibli_mononokemedium",
+  "name": {
+    "en": "MononokeMedium (ghibli)",
+    "zh": "MononokeMedium（ghibli）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#06141F",
+    "#742C14",
+    "#3D4F7D",
+    "#657060",
+    "#CD4F38",
+    "#E48C2A",
+    "#EAD890"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCC0",
+      "#DCA999",
+      "#CC8674",
+      "#BB634F",
+      "#A93D29",
+      "#950200"
+    ],
+    "paired_diverging_stops": [
+      "#3D4F7D",
+      "#7583A4",
+      "#B3BACB",
+      "#F4F3F2",
+      "#F1D2B6",
+      "#ECB078",
+      "#E48C2A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ghibli: MononokeMedium)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 20.58,
+    "min_de2000_deutan_first6": 13.66,
+    "min_de2000_protan_first6": 11.63,
+    "min_de2000_tritan_first6": 14.68,
+    "optimal6_min_de2000": 20.58,
+    "optimal6_min_de2000_deutan": 13.66,
+    "optimal6_min_de2000_protan": 11.63,
+    "grayscale_L_spread": 0.696,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

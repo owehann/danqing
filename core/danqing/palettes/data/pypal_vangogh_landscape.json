@@ -1,0 +1,62 @@
+{
+  "id": "pypal_vangogh_landscape",
+  "name": {
+    "en": "Landscape (vangogh)",
+    "zh": "Landscape（vangogh）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#606B81",
+    "#1E4359",
+    "#58838C",
+    "#A8BFBB",
+    "#D7CBB3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D2D0",
+      "#B6B6B9",
+      "#979AA3",
+      "#7A808D",
+      "#5D6678",
+      "#424D63"
+    ],
+    "paired_diverging_stops": [
+      "#1E4359",
+      "#627A8A",
+      "#A8B5BD",
+      "#F4F3F2",
+      "#EAE6DD",
+      "#E1D8C8",
+      "#D7CBB3"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vangogh: Landscape)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.7,
+    "min_de2000_deutan_first6": 6.62,
+    "min_de2000_protan_first6": 8.76,
+    "min_de2000_tritan_first6": 12.0,
+    "optimal6_min_de2000": 15.7,
+    "optimal6_min_de2000_deutan": 6.62,
+    "optimal6_min_de2000_protan": 8.76,
+    "grayscale_L_spread": 0.479,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

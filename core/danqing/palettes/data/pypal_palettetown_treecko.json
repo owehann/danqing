@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_treecko",
+  "name": {
+    "en": "treecko (palettetown)",
+    "zh": "treecko（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#98D048",
+    "#70A830",
+    "#506028",
+    "#488858",
+    "#F86850",
+    "#184038",
+    "#48B880",
+    "#D05038",
+    "#B8F870",
+    "#A04830",
+    "#F8C050",
+    "#E09848",
+    "#F8D078",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC0",
+      "#DCA899",
+      "#CD8673",
+      "#BC624E",
+      "#AA3D27",
+      "#950000"
+    ],
+    "paired_diverging_stops": [
+      "#184038",
+      "#5E7771",
+      "#A6B3AF",
+      "#F4F3F2",
+      "#E0F6CB",
+      "#CCF7A1",
+      "#B8F870"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: treecko)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 11.23,
+    "min_de2000_deutan_first6": 3.48,
+    "min_de2000_protan_first6": 3.17,
+    "min_de2000_tritan_first6": 11.19,
+    "optimal6_min_de2000": 11.23,
+    "optimal6_min_de2000_deutan": 3.48,
+    "optimal6_min_de2000_protan": 3.17,
+    "grayscale_L_spread": 0.639,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

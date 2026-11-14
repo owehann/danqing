@@ -19,7 +19,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC1",
+      "#D6AB9C",
+      "#C58A77",
+      "#B26A54",
+      "#9F4830",
+      "#8A2300"
+    ],
+    "paired_diverging_stops": [
+      "#945000",
+      "#B58650",
+      "#D5BCA1",
+      "#F4F3F2",
+      "#A3AEBF",
+      "#586C8C",
+      "#132F5B"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (DeathValley)",

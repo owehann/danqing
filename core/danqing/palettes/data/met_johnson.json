@@ -17,7 +17,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBC",
+      "#DDA991",
+      "#CE8667",
+      "#BE633C",
+      "#AB3C00",
+      "#980000"
+    ],
+    "paired_diverging_stops": [
+      "#8A5900",
+      "#AD8D30",
+      "#D0C096",
+      "#F4F3F2",
+      "#A2ADC5",
+      "#566B97",
+      "#132B69"
+    ]
   },
   "source": {
     "title": "MetBrewer (Johnson), The Metropolitan Museum of Art",

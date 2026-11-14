@@ -24,7 +24,25 @@
   "neutral": "#B8B6BF",
   "partners": {
     "sequential": "plasma",
-    "diverging": "PuOr"
+    "diverging": "PuOr",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC0",
+      "#DEA79A",
+      "#CF8474",
+      "#BF6050",
+      "#AD382A",
+      "#990000"
+    ],
+    "paired_diverging_stops": [
+      "#17154F",
+      "#555B85",
+      "#A0A5BB",
+      "#F4F3F2",
+      "#D1BE9F",
+      "#AF8A4B",
+      "#8C5700"
+    ]
   },
   "source": {
     "title": "MetBrewer: Renoir (Met Object 438010)",

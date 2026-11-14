@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "seaborn_flare",
-    "diverging": "seaborn_vlag"
+    "diverging": "seaborn_vlag",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CBCD",
+      "#D6A8B4",
+      "#C4859B",
+      "#B16383",
+      "#9D3F6C",
+      "#881255"
+    ],
+    "paired_diverging_stops": [
+      "#8B5426",
+      "#AE886A",
+      "#D1BCAC",
+      "#F4F3F2",
+      "#B9AAC1",
+      "#816591",
+      "#4C2362"
+    ]
   },
   "source": {
     "title": "Seaborn Perceptually Uniform Colormaps (flare)",

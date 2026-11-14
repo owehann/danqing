@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_nuzleaf",
+  "name": {
+    "en": "nuzleaf (palettetown)",
+    "zh": "nuzleaf（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#987898",
+    "#C89860",
+    "#483840",
+    "#E0E8B0",
+    "#B0C880",
+    "#181818",
+    "#789050",
+    "#685060",
+    "#407038",
+    "#E0C090",
+    "#60C080",
+    "#90E880",
+    "#F8F8F8",
+    "#C8C8E8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D5C4",
+      "#AFBCA2",
+      "#8CA380",
+      "#6B8A60",
+      "#4A7240",
+      "#285A20"
+    ],
+    "paired_diverging_stops": [
+      "#181818",
+      "#585858",
+      "#A3A2A1",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: nuzleaf)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 9.85,
+    "min_de2000_deutan_first6": 7.38,
+    "min_de2000_protan_first6": 8.98,
+    "min_de2000_tritan_first6": 12.05,
+    "optimal6_min_de2000": 9.85,
+    "optimal6_min_de2000_deutan": 7.38,
+    "optimal6_min_de2000_protan": 8.98,
+    "grayscale_L_spread": 0.77,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

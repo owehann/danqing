@@ -1,0 +1,66 @@
+{
+  "id": "pypal_ggthemes_traffic",
+  "name": {
+    "en": "Traffic (ggthemes)",
+    "zh": "Traffic（ggthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B60A1C",
+    "#E39802",
+    "#309143",
+    "#E03531",
+    "#F0BD27",
+    "#51B364",
+    "#FF684C",
+    "#FFDA66",
+    "#8ACE7E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCAC0",
+      "#E2A59A",
+      "#D58075",
+      "#C55A51",
+      "#B42C2B",
+      "#A00000"
+    ],
+    "paired_diverging_stops": [
+      "#309143",
+      "#78B27D",
+      "#B6D3B7",
+      "#F4F3F2",
+      "#F3E2BB",
+      "#F2D07F",
+      "#F0BD27"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemes: Traffic)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 11.03,
+    "min_de2000_deutan_first6": 7.1,
+    "min_de2000_protan_first6": 9.0,
+    "min_de2000_tritan_first6": 9.05,
+    "optimal6_min_de2000": 11.03,
+    "optimal6_min_de2000_deutan": 7.1,
+    "optimal6_min_de2000_protan": 9.0,
+    "grayscale_L_spread": 0.406,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

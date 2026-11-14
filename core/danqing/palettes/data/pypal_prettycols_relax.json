@@ -1,0 +1,62 @@
+{
+  "id": "pypal_prettycols_relax",
+  "name": {
+    "en": "Relax (PrettyCols)",
+    "zh": "Relax（PrettyCols）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4B3F72",
+    "#CBB3BF",
+    "#FFC857",
+    "#119DA4",
+    "#19647E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED4D3",
+      "#A8BABF",
+      "#82A0AB",
+      "#5C8797",
+      "#356E84",
+      "#005670"
+    ],
+    "paired_diverging_stops": [
+      "#4B3F72",
+      "#7F789C",
+      "#B7B4C7",
+      "#F4F3F2",
+      "#F8E6C4",
+      "#FCD793",
+      "#FFC857"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (PrettyCols: Relax)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 22.78,
+    "min_de2000_deutan_first6": 6.59,
+    "min_de2000_protan_first6": 10.45,
+    "min_de2000_tritan_first6": 11.87,
+    "optimal6_min_de2000": 22.78,
+    "optimal6_min_de2000_deutan": 6.59,
+    "optimal6_min_de2000_protan": 10.45,
+    "grayscale_L_spread": 0.457,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_334",
+  "name": {
+    "en": "Sanzo Wada #334 (Seashell Pink · Olive · Yellow Green)",
+    "zh": "和田三造 #334（Seashell Pink · Olive · Yellow Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FDD4BD",
+    "#837E31",
+    "#AFD472",
+    "#007190"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD5D4",
+      "#A4BBC2",
+      "#7CA1AF",
+      "#53889C",
+      "#237089",
+      "#005777"
+    ],
+    "paired_diverging_stops": [
+      "#AFD472",
+      "#C6DF9F",
+      "#DCE9C9",
+      "#F4F3F2",
+      "#ADC7D1",
+      "#679CB1",
+      "#007190"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#334)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 25.58,
+    "min_de2000_deutan_first6": 11.74,
+    "min_de2000_protan_first6": 14.72,
+    "min_de2000_tritan_first6": 29.0,
+    "optimal6_min_de2000": 25.58,
+    "optimal6_min_de2000_deutan": 11.74,
+    "optimal6_min_de2000_protan": 14.72,
+    "grayscale_L_spread": 0.388,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

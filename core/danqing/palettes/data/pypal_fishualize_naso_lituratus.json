@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_naso_lituratus",
+  "name": {
+    "en": "Naso_lituratus (fishualize)",
+    "zh": "Naso_lituratus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#27253B",
+    "#626175",
+    "#90B3FA",
+    "#E9EF6F",
+    "#FF9100"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CEB8",
+      "#D8AD88",
+      "#C78C58",
+      "#B56B1D",
+      "#A34900",
+      "#8F2000"
+    ],
+    "paired_diverging_stops": [
+      "#90B3FA",
+      "#B1C9F9",
+      "#D2DEF6",
+      "#F4F3F2",
+      "#FBD4B5",
+      "#FFB474",
+      "#FF9100"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Naso_lituratus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 20.04,
+    "min_de2000_deutan_first6": 12.98,
+    "min_de2000_protan_first6": 18.64,
+    "min_de2000_tritan_first6": 19.89,
+    "optimal6_min_de2000": 20.04,
+    "optimal6_min_de2000_deutan": 12.98,
+    "optimal6_min_de2000_protan": 18.64,
+    "grayscale_L_spread": 0.645,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

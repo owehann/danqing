@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_171",
+  "name": {
+    "en": "Sanzo Wada #171 (Pale Burnt Lake · Yellow Orange · Glaucous Green)",
+    "zh": "和田三造 #171（Pale Burnt Lake · Yellow Orange · Glaucous Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#802626",
+    "#F99D1B",
+    "#B4CDC2"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CCC4",
+      "#D3AAA2",
+      "#C08981",
+      "#AD6861",
+      "#984742",
+      "#822324"
+    ],
+    "paired_diverging_stops": [
+      "#F99D1B",
+      "#FABB79",
+      "#F8D8B7",
+      "#F4F3F2",
+      "#DEE6E2",
+      "#C9DAD2",
+      "#B4CDC2"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#171)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 34.22,
+    "min_de2000_deutan_first6": 26.7,
+    "min_de2000_protan_first6": 26.69,
+    "min_de2000_tritan_first6": 39.48,
+    "optimal6_min_de2000": 34.22,
+    "optimal6_min_de2000_deutan": 26.7,
+    "optimal6_min_de2000_protan": 26.69,
+    "grayscale_L_spread": 0.418,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

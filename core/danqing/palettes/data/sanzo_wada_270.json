@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_270",
+  "name": {
+    "en": "Sanzo Wada #270 (Eugenia Red | B · Sulpher Yellow · Olive Green)",
+    "zh": "和田三造 #270（Eugenia Red | B · Sulpher Yellow · Olive Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DA525D",
+    "#F5ECC2",
+    "#6B7140",
+    "#437742"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC4",
+      "#DDA7A2",
+      "#CE8380",
+      "#BD5F60",
+      "#AB3841",
+      "#960023"
+    ],
+    "paired_diverging_stops": [
+      "#F5ECC2",
+      "#F5EFD2",
+      "#F4F1E2",
+      "#F4F3F2",
+      "#B7C9B5",
+      "#7D9F7A",
+      "#437742"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#270)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 11.09,
+    "min_de2000_deutan_first6": 2.51,
+    "min_de2000_protan_first6": 0.67,
+    "min_de2000_tritan_first6": 19.55,
+    "optimal6_min_de2000": 11.09,
+    "optimal6_min_de2000_deutan": 2.51,
+    "optimal6_min_de2000_protan": 0.67,
+    "grayscale_L_spread": 0.421,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

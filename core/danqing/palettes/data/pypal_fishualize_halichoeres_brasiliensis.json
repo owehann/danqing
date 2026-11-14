@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_halichoeres_brasiliensis",
+  "name": {
+    "en": "Halichoeres_brasiliensis (fishualize)",
+    "zh": "Halichoeres_brasiliensis（fishualize）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#056CF2",
+    "#0583F2",
+    "#05AFF2",
+    "#05C7F2",
+    "#05DBF2"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C9D3E6",
+      "#9DB8E2",
+      "#729BDD",
+      "#467ED7",
+      "#0F5ECF",
+      "#0038C5"
+    ],
+    "paired_diverging_stops": [
+      "#056CF2",
+      "#659DF6",
+      "#ACCAF7",
+      "#F4F3F2",
+      "#C0ECF2",
+      "#84E4F3",
+      "#05DBF2"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Halichoeres_brasiliensis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.02,
+    "min_de2000_deutan_first6": 5.46,
+    "min_de2000_protan_first6": 5.34,
+    "min_de2000_tritan_first6": 4.2,
+    "optimal6_min_de2000": 8.02,
+    "optimal6_min_de2000_deutan": 5.46,
+    "optimal6_min_de2000_protan": 5.34,
+    "grayscale_L_spread": 0.251,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

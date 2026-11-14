@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_zebrasoma_velifer",
+  "name": {
+    "en": "Zebrasoma_velifer (fishualize)",
+    "zh": "Zebrasoma_velifer（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#283F99",
+    "#CFC9C8",
+    "#F1EB58",
+    "#AA812D",
+    "#442316"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD1DD",
+      "#AAB4D2",
+      "#8797C6",
+      "#647AB9",
+      "#445DAC",
+      "#273E9D"
+    ],
+    "paired_diverging_stops": [
+      "#283F99",
+      "#657BB9",
+      "#AAB7D7",
+      "#F4F3F2",
+      "#F2F2C6",
+      "#F1EF96",
+      "#F1EB58"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Zebrasoma_velifer)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 28.9,
+    "min_de2000_deutan_first6": 25.16,
+    "min_de2000_protan_first6": 27.84,
+    "min_de2000_tritan_first6": 11.75,
+    "optimal6_min_de2000": 28.9,
+    "optimal6_min_de2000_deutan": 25.16,
+    "optimal6_min_de2000_protan": 27.84,
+    "grayscale_L_spread": 0.621,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

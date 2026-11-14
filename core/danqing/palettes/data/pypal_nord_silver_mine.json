@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nord_silver_mine",
+  "name": {
+    "en": "silver_mine (nord)",
+    "zh": "silver_mine（nord）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#4B644B",
+    "#647D4B",
+    "#E1E1E1",
+    "#7D96AF",
+    "#647D96"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D4C4",
+      "#B4B9A2",
+      "#95A081",
+      "#778661",
+      "#5A6E42",
+      "#3E5622"
+    ],
+    "paired_diverging_stops": [
+      "#4B644B",
+      "#80917F",
+      "#B8C1B7",
+      "#F4F3F2",
+      "#EEEDEC",
+      "#E7E7E7",
+      "#E1E1E1"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nord: silver_mine)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.99,
+    "min_de2000_deutan_first6": 9.11,
+    "min_de2000_protan_first6": 8.8,
+    "min_de2000_tritan_first6": 8.48,
+    "optimal6_min_de2000": 8.99,
+    "optimal6_min_de2000_deutan": 9.11,
+    "optimal6_min_de2000_protan": 8.8,
+    "grayscale_L_spread": 0.434,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

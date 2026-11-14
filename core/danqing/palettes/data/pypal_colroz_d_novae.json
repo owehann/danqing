@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_d_novae",
+  "name": {
+    "en": "d_novae (colRoz)",
+    "zh": "d_novae（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#252523",
+    "#496161",
+    "#4C2715",
+    "#573C21",
+    "#845736",
+    "#9E7F60"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD0C3",
+      "#C8B2A1",
+      "#B1947F",
+      "#9A775E",
+      "#845C3E",
+      "#6E401D"
+    ],
+    "paired_diverging_stops": [
+      "#252523",
+      "#636361",
+      "#A8A8A6",
+      "#F4F3F2",
+      "#D7CBC0",
+      "#BAA58F",
+      "#9E7F60"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: d_novae)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 8.55,
+    "min_de2000_deutan_first6": 5.3,
+    "min_de2000_protan_first6": 6.12,
+    "min_de2000_tritan_first6": 6.47,
+    "optimal6_min_de2000": 8.55,
+    "optimal6_min_de2000_deutan": 5.3,
+    "optimal6_min_de2000_protan": 6.12,
+    "grayscale_L_spread": 0.354,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

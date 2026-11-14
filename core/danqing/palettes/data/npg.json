@@ -22,7 +22,25 @@
   "neutral": "#B09C85",
   "partners": {
     "sequential": "viridis",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F1C9BC",
+      "#E8A293",
+      "#DD7B69",
+      "#CF503F",
+      "#BF0E04",
+      "#AC0000"
+    ],
+    "paired_diverging_stops": [
+      "#3C5488",
+      "#7587AC",
+      "#B2BCCF",
+      "#F4F3F2",
+      "#D8B9AF",
+      "#BA816E",
+      "#98492F"
+    ]
   },
   "source": {
     "title": "Factual journal color table curated in ggsci (pal_npg)",

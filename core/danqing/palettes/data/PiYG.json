@@ -21,7 +21,25 @@
   "neutral": "#F7F7F7",
   "partners": {
     "sequential": "GnBu",
-    "diverging": "PiYG"
+    "diverging": "PiYG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECC8CE",
+      "#E0A2B5",
+      "#D27C9D",
+      "#C15486",
+      "#AF226F",
+      "#9A0058"
+    ],
+    "paired_diverging_stops": [
+      "#636363",
+      "#919090",
+      "#C1C1C0",
+      "#F4F3F2",
+      "#B2C9A6",
+      "#72A05C",
+      "#317600"
+    ]
   },
   "source": {
     "title": "ColorBrewer 2.0 (PiYG, 9-class)",

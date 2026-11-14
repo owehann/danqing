@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_mycteroperca_bonaci",
+  "name": {
+    "en": "Mycteroperca_bonaci (fishualize)",
+    "zh": "Mycteroperca_bonaci（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A79C9A",
+    "#775D60",
+    "#B0C9D9",
+    "#95AFBE",
+    "#5A646F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DBD0CB",
+      "#C1B3AF",
+      "#A89694",
+      "#8F7A7A",
+      "#775F60",
+      "#5F4548"
+    ],
+    "paired_diverging_stops": [
+      "#775D60",
+      "#9F8C8E",
+      "#C9BFBF",
+      "#F4F3F2",
+      "#DDE5EA",
+      "#C6D7E1",
+      "#B0C9D9"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Mycteroperca_bonaci)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 7.06,
+    "min_de2000_deutan_first6": 7.11,
+    "min_de2000_protan_first6": 6.74,
+    "min_de2000_tritan_first6": 7.04,
+    "optimal6_min_de2000": 7.06,
+    "optimal6_min_de2000_deutan": 7.11,
+    "optimal6_min_de2000_protan": 6.74,
+    "grayscale_L_spread": 0.324,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

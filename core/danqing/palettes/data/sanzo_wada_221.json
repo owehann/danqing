@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_221",
+  "name": {
+    "en": "Sanzo Wada #221 (Carmine Red · Neutral Gray · Black)",
+    "zh": "和田三造 #221（Carmine Red · Neutral Gray · Black）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A62C37",
+    "#B6BFC1",
+    "#111314"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC4",
+      "#DBA8A2",
+      "#CB8581",
+      "#BA6260",
+      "#A73D41",
+      "#920623"
+    ],
+    "paired_diverging_stops": [
+      "#B6BFC1",
+      "#CAD0D1",
+      "#DFE2E1",
+      "#F4F3F2",
+      "#9FA0A0",
+      "#535455",
+      "#111314"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#221)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 34.47,
+    "min_de2000_deutan_first6": 32.14,
+    "min_de2000_protan_first6": 20.17,
+    "min_de2000_tritan_first6": 37.27,
+    "optimal6_min_de2000": 34.47,
+    "optimal6_min_de2000_deutan": 32.14,
+    "optimal6_min_de2000_protan": 20.17,
+    "grayscale_L_spread": 0.613,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

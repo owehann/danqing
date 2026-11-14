@@ -108,6 +108,7 @@
     "moreSwatches": "+{{count}}",
     "sourceInfo": "来源说明",
     "emptyMatch": "没有符合当前筛选条件的调色板。",
+    "showMore": "显示更多（剩余 {{count}} 项）",
     "resetOriginal": "恢复原图色",
     "manuscript": {
       "toggle": "论文配色定调",
@@ -132,6 +133,8 @@
       "museum": "馆藏机构",
       "accession": "馆藏编号",
       "license": "许可协议",
+      "pairedSequential": "同源连续渐变",
+      "pairedDiverging": "同源发散渐变",
       "openLink": "查看来源"
     }
   },

@@ -1,0 +1,69 @@
+{
+  "id": "pypal_colorblindness_pairedcolor12steps",
+  "name": {
+    "en": "PairedColor12Steps (colorBlindness)",
+    "zh": "PairedColor12Steps（colorBlindness）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FFBF7F",
+    "#FF7F00",
+    "#FFFF99",
+    "#FFFF32",
+    "#B2FF8C",
+    "#32FF00",
+    "#A5EDFF",
+    "#19B2FF",
+    "#CCBFFF",
+    "#654CFF",
+    "#FF99BF",
+    "#E51932"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D0E9",
+      "#AFB0E9",
+      "#8F90E6",
+      "#726DE2",
+      "#5946DC",
+      "#4700D4"
+    ],
+    "paired_diverging_stops": [
+      "#FFFF32",
+      "#FAFC8D",
+      "#F7F9C4",
+      "#F4F3F2",
+      "#BDC2FC",
+      "#8C8DFF",
+      "#654CFF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colorBlindness: PairedColor12Steps)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 9.68,
+    "min_de2000_deutan_first6": 5.21,
+    "min_de2000_protan_first6": 2.77,
+    "min_de2000_tritan_first6": 2.87,
+    "optimal6_min_de2000": 9.68,
+    "optimal6_min_de2000_deutan": 5.21,
+    "optimal6_min_de2000_protan": 2.77,
+    "grayscale_L_spread": 0.42,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

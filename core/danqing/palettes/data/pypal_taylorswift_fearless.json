@@ -1,0 +1,62 @@
+{
+  "id": "pypal_taylorswift_fearless",
+  "name": {
+    "en": "fearless (tayloRswift)",
+    "zh": "fearless（tayloRswift）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B68F51",
+    "#5B3617",
+    "#F7EABE",
+    "#ECD59F",
+    "#825C2D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED1C2",
+      "#C6B39E",
+      "#AE967A",
+      "#977A58",
+      "#815E35",
+      "#6A440C"
+    ],
+    "paired_diverging_stops": [
+      "#5B3617",
+      "#8D715C",
+      "#BFB0A4",
+      "#F4F3F2",
+      "#F5F0E1",
+      "#F6EDD0",
+      "#F7EABE"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tayloRswift: fearless)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 5.78,
+    "min_de2000_deutan_first6": 5.11,
+    "min_de2000_protan_first6": 5.46,
+    "min_de2000_tritan_first6": 6.51,
+    "optimal6_min_de2000": 5.78,
+    "optimal6_min_de2000_deutan": 5.11,
+    "optimal6_min_de2000_protan": 5.46,
+    "grayscale_L_spread": 0.565,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

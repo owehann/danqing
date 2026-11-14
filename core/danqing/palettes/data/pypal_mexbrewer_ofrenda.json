@@ -1,0 +1,67 @@
+{
+  "id": "pypal_mexbrewer_ofrenda",
+  "name": {
+    "en": "Ofrenda (MexBrewer)",
+    "zh": "Ofrenda（MexBrewer）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#593722",
+    "#834D24",
+    "#AB5D26",
+    "#C3722A",
+    "#E1C473",
+    "#E6DAB9",
+    "#A4B591",
+    "#55804D",
+    "#416C39",
+    "#2C5724"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEBF",
+      "#D1AF98",
+      "#BD8F72",
+      "#AA704B",
+      "#955222",
+      "#803200"
+    ],
+    "paired_diverging_stops": [
+      "#593722",
+      "#8B7162",
+      "#BFB0A7",
+      "#F4F3F2",
+      "#EFEBDF",
+      "#EBE2CC",
+      "#E6DAB9"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MexBrewer: Ofrenda)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 8.73,
+    "min_de2000_deutan_first6": 8.08,
+    "min_de2000_protan_first6": 8.07,
+    "min_de2000_tritan_first6": 8.0,
+    "optimal6_min_de2000": 14.78,
+    "optimal6_min_de2000_deutan": 3.49,
+    "optimal6_min_de2000_protan": 8.11,
+    "grayscale_L_spread": 0.517,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

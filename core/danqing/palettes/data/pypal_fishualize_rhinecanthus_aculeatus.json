@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_rhinecanthus_aculeatus",
+  "name": {
+    "en": "Rhinecanthus_aculeatus (fishualize)",
+    "zh": "Rhinecanthus_aculeatus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FFBF0F",
+    "#FBE144",
+    "#8FCDCA",
+    "#0382E5",
+    "#223052"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C9D4E0",
+      "#9EB9D8",
+      "#729ECF",
+      "#4583C4",
+      "#0067B9",
+      "#0048AC"
+    ],
+    "paired_diverging_stops": [
+      "#FFBF0F",
+      "#FCD27D",
+      "#F8E3BA",
+      "#F4F3F2",
+      "#B1CFF1",
+      "#6CAAEC",
+      "#0382E5"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Rhinecanthus_aculeatus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 11.63,
+    "min_de2000_deutan_first6": 4.92,
+    "min_de2000_protan_first6": 6.61,
+    "min_de2000_tritan_first6": 10.59,
+    "optimal6_min_de2000": 11.63,
+    "optimal6_min_de2000_deutan": 4.92,
+    "optimal6_min_de2000_protan": 6.61,
+    "grayscale_L_spread": 0.59,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

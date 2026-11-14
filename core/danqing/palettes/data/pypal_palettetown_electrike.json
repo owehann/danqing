@@ -1,0 +1,67 @@
+{
+  "id": "pypal_palettetown_electrike",
+  "name": {
+    "en": "electrike (palettetown)",
+    "zh": "electrike（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#98D880",
+    "#68B078",
+    "#181818",
+    "#508858",
+    "#405040",
+    "#F8E820",
+    "#D0D018",
+    "#A8C040",
+    "#C0C8D8",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D5C6",
+      "#ADBCA5",
+      "#8AA385",
+      "#678B66",
+      "#457349",
+      "#1F5B2B"
+    ],
+    "paired_diverging_stops": [
+      "#181818",
+      "#585858",
+      "#A3A2A1",
+      "#F4F3F2",
+      "#F5F1BF",
+      "#F6ED85",
+      "#F8E820"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: electrike)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 12.53,
+    "min_de2000_deutan_first6": 12.65,
+    "min_de2000_protan_first6": 12.01,
+    "min_de2000_tritan_first6": 11.17,
+    "optimal6_min_de2000": 12.53,
+    "optimal6_min_de2000_deutan": 12.65,
+    "optimal6_min_de2000_protan": 12.01,
+    "grayscale_L_spread": 0.77,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

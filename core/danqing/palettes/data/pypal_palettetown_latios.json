@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_latios",
+  "name": {
+    "en": "latios (palettetown)",
+    "zh": "latios（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4880D0",
+    "#A8A8A8",
+    "#3860B0",
+    "#303870",
+    "#58A0F8",
+    "#C8C8C8",
+    "#706870",
+    "#98C8F8",
+    "#908890",
+    "#D04850",
+    "#D8D8D8",
+    "#F8F8F8",
+    "#F86868",
+    "#804848"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC3",
+      "#DDA7A0",
+      "#CF837E",
+      "#BE5F5E",
+      "#AB373E",
+      "#97001D"
+    ],
+    "paired_diverging_stops": [
+      "#3860B0",
+      "#7491C8",
+      "#B2C2DE",
+      "#F4F3F2",
+      "#FBC8C3",
+      "#FC9A95",
+      "#F86868"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: latios)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 8.6,
+    "min_de2000_deutan_first6": 8.6,
+    "min_de2000_protan_first6": 8.6,
+    "min_de2000_tritan_first6": 8.6,
+    "optimal6_min_de2000": 8.6,
+    "optimal6_min_de2000_deutan": 8.6,
+    "optimal6_min_de2000_protan": 8.6,
+    "grayscale_L_spread": 0.615,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

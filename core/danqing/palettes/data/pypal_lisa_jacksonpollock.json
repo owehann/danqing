@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lisa_jacksonpollock",
+  "name": {
+    "en": "JacksonPollock (lisa)",
+    "zh": "JacksonPollock（lisa）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D89CA9",
+    "#1962A0",
+    "#F1ECD7",
+    "#E8C051",
+    "#1A1C23"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD4DA",
+      "#A6B9CC",
+      "#7F9EBD",
+      "#5984AE",
+      "#30699E",
+      "#004F8E"
+    ],
+    "paired_diverging_stops": [
+      "#1962A0",
+      "#6792BD",
+      "#ACC2D8",
+      "#F4F3F2",
+      "#F0E3C1",
+      "#ECD28E",
+      "#E8C051"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (lisa: JacksonPollock)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 21.26,
+    "min_de2000_deutan_first6": 15.33,
+    "min_de2000_protan_first6": 20.44,
+    "min_de2000_tritan_first6": 8.71,
+    "optimal6_min_de2000": 21.26,
+    "optimal6_min_de2000_deutan": 15.33,
+    "optimal6_min_de2000_protan": 20.44,
+    "grayscale_L_spread": 0.714,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

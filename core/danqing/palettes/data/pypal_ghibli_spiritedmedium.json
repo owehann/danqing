@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ghibli_spiritedmedium",
+  "name": {
+    "en": "SpiritedMedium (ghibli)",
+    "zh": "SpiritedMedium（ghibli）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1F262E",
+    "#353831",
+    "#833437",
+    "#8F8093",
+    "#67B9E9",
+    "#C3AF97",
+    "#B7D9F2"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CDC6",
+      "#D1ACA6",
+      "#BE8C87",
+      "#AA6D6A",
+      "#954D4D",
+      "#802D31"
+    ],
+    "paired_diverging_stops": [
+      "#1F262E",
+      "#5E6369",
+      "#A6A8AB",
+      "#F4F3F2",
+      "#E0EBF2",
+      "#CBE2F2",
+      "#B7D9F2"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ghibli: SpiritedMedium)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 11.28,
+    "min_de2000_deutan_first6": 11.26,
+    "min_de2000_protan_first6": 5.15,
+    "min_de2000_tritan_first6": 7.97,
+    "optimal6_min_de2000": 11.28,
+    "optimal6_min_de2000_deutan": 11.26,
+    "optimal6_min_de2000_protan": 5.15,
+    "grayscale_L_spread": 0.603,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

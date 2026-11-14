@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "cividis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDCFD4",
+      "#A6AFC1",
+      "#8191AE",
+      "#5D729A",
+      "#3A5586",
+      "#183872"
+    ],
+    "paired_diverging_stops": [
+      "#00224E",
+      "#4B6383",
+      "#9CA9BA",
+      "#F4F3F2",
+      "#C9C395",
+      "#A0932C",
+      "#7A6200"
+    ]
   },
   "source": {
     "title": "Optimizing colormaps with consideration for color vision deficiency (PLOS ONE)",

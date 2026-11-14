@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_hypoplectrus_puella",
+  "name": {
+    "en": "Hypoplectrus_puella (fishualize)",
+    "zh": "Hypoplectrus_puella（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2E9FE6",
+    "#00EBF0",
+    "#E2DD4D",
+    "#E8A302",
+    "#50331C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CAD5DB",
+      "#9FBBCF",
+      "#74A1C2",
+      "#4686B4",
+      "#006CA5",
+      "#005196"
+    ],
+    "paired_diverging_stops": [
+      "#2E9FE6",
+      "#7CBCEC",
+      "#B9D8F0",
+      "#F4F3F2",
+      "#F1DAB6",
+      "#EDBF75",
+      "#E8A302"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Hypoplectrus_puella)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 20.73,
+    "min_de2000_deutan_first6": 9.02,
+    "min_de2000_protan_first6": 12.24,
+    "min_de2000_tritan_first6": 17.01,
+    "optimal6_min_de2000": 20.73,
+    "optimal6_min_de2000_deutan": 9.02,
+    "optimal6_min_de2000_protan": 12.24,
+    "grayscale_L_spread": 0.526,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

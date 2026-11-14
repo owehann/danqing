@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_scarus_quoyi",
+  "name": {
+    "en": "Scarus_quoyi (fishualize)",
+    "zh": "Scarus_quoyi（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D53288",
+    "#DC8045",
+    "#21B14B",
+    "#008AC2",
+    "#3F459B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECC9CD",
+      "#E0A2B4",
+      "#D27C9C",
+      "#C15484",
+      "#AF236D",
+      "#9A0056"
+    ],
+    "paired_diverging_stops": [
+      "#DC8045",
+      "#E7A782",
+      "#EFCDBA",
+      "#F4F3F2",
+      "#B2B8D7",
+      "#757FBA",
+      "#3F459B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Scarus_quoyi)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 27.95,
+    "min_de2000_deutan_first6": 5.09,
+    "min_de2000_protan_first6": 7.64,
+    "min_de2000_tritan_first6": 10.6,
+    "optimal6_min_de2000": 27.95,
+    "optimal6_min_de2000_deutan": 5.09,
+    "optimal6_min_de2000_protan": 7.64,
+    "grayscale_L_spread": 0.254,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

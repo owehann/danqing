@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_l_vestiens",
+  "name": {
+    "en": "l_vestiens (colRoz)",
+    "zh": "l_vestiens（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#342125",
+    "#C04D5C",
+    "#F17F2A",
+    "#EB9734",
+    "#FFB765",
+    "#FFE9C4"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CBC6",
+      "#D9A9A6",
+      "#C88687",
+      "#B66469",
+      "#A3404C",
+      "#8E1330"
+    ],
+    "paired_diverging_stops": [
+      "#342125",
+      "#6F6062",
+      "#AFA7A7",
+      "#F4F3F2",
+      "#F9E0C6",
+      "#FDCC98",
+      "#FFB765"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: l_vestiens)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 8.21,
+    "min_de2000_deutan_first6": 2.81,
+    "min_de2000_protan_first6": 5.32,
+    "min_de2000_tritan_first6": 5.85,
+    "optimal6_min_de2000": 8.21,
+    "optimal6_min_de2000_deutan": 2.81,
+    "optimal6_min_de2000_protan": 5.32,
+    "grayscale_L_spread": 0.669,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

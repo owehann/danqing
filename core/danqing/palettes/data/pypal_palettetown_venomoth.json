@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_venomoth",
+  "name": {
+    "en": "venomoth (palettetown)",
+    "zh": "venomoth（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A888C8",
+    "#F8E0F8",
+    "#E8C0F8",
+    "#683890",
+    "#D0A8D8",
+    "#A08068",
+    "#605038",
+    "#C0A888",
+    "#E0D0A8",
+    "#F8F8F8",
+    "#A8C0C0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DBCED9",
+      "#C2AECB",
+      "#A98EBC",
+      "#906FAC",
+      "#79509C",
+      "#622F8C"
+    ],
+    "paired_diverging_stops": [
+      "#683890",
+      "#9476B2",
+      "#C3B3D3",
+      "#F4F3F2",
+      "#EDE8D9",
+      "#E7DCC1",
+      "#E0D0A8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: venomoth)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 6.57,
+    "min_de2000_deutan_first6": 6.5,
+    "min_de2000_protan_first6": 6.68,
+    "min_de2000_tritan_first6": 6.42,
+    "optimal6_min_de2000": 6.57,
+    "optimal6_min_de2000_deutan": 6.5,
+    "optimal6_min_de2000_protan": 6.68,
+    "grayscale_L_spread": 0.538,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

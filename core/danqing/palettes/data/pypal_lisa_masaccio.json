@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lisa_masaccio",
+  "name": {
+    "en": "Masaccio (lisa)",
+    "zh": "Masaccio（lisa）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#0E2523",
+    "#324028",
+    "#C26B61",
+    "#5A788D",
+    "#DE7944"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDBE",
+      "#D6AC96",
+      "#C48C6E",
+      "#B26B46",
+      "#9E4A18",
+      "#892600"
+    ],
+    "paired_diverging_stops": [
+      "#0E2523",
+      "#536361",
+      "#A0A8A6",
+      "#F4F3F2",
+      "#F0CBB9",
+      "#E9A381",
+      "#DE7944"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (lisa: Masaccio)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.52,
+    "min_de2000_deutan_first6": 10.89,
+    "min_de2000_protan_first6": 12.68,
+    "min_de2000_tritan_first6": 6.66,
+    "optimal6_min_de2000": 13.52,
+    "optimal6_min_de2000_deutan": 10.89,
+    "optimal6_min_de2000_protan": 12.68,
+    "grayscale_L_spread": 0.435,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

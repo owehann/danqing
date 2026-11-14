@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_156",
+  "name": {
+    "en": "Sanzo Wada #156 (Olive Ocher · Cobalt Green · Violet)",
+    "zh": "和田三造 #156（Olive Ocher · Cobalt Green · Violet）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D6B43E",
+    "#96D1AA",
+    "#4F4086"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D7D0D8",
+      "#B9B2C9",
+      "#9C94B9",
+      "#8177A9",
+      "#675B99",
+      "#4E3E88"
+    ],
+    "paired_diverging_stops": [
+      "#D6B43E",
+      "#E0CA84",
+      "#EADFBC",
+      "#F4F3F2",
+      "#B8B5CF",
+      "#817AAB",
+      "#4F4086"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#156)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 27.8,
+    "min_de2000_deutan_first6": 18.92,
+    "min_de2000_protan_first6": 17.95,
+    "min_de2000_tritan_first6": 41.09,
+    "optimal6_min_de2000": 27.8,
+    "optimal6_min_de2000_deutan": 18.92,
+    "optimal6_min_de2000_protan": 17.95,
+    "grayscale_L_spread": 0.387,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

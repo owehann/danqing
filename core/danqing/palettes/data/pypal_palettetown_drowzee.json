@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_drowzee",
+  "name": {
+    "en": "drowzee (palettetown)",
+    "zh": "drowzee（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8D840",
+    "#D8B810",
+    "#906840",
+    "#684820",
+    "#906800",
+    "#F8F040",
+    "#482800",
+    "#B88850",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED1BD",
+      "#C6B495",
+      "#AF976C",
+      "#997B43",
+      "#825F0E",
+      "#6C4400"
+    ],
+    "paired_diverging_stops": [
+      "#F8F040",
+      "#F6F28E",
+      "#F5F3C3",
+      "#F4F3F2",
+      "#B8AA9D",
+      "#7F664F",
+      "#482800"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: drowzee)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 7.44,
+    "min_de2000_deutan_first6": 3.79,
+    "min_de2000_protan_first6": 4.63,
+    "min_de2000_tritan_first6": 2.03,
+    "optimal6_min_de2000": 7.44,
+    "optimal6_min_de2000_deutan": 3.79,
+    "optimal6_min_de2000_protan": 4.63,
+    "grayscale_L_spread": 0.668,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

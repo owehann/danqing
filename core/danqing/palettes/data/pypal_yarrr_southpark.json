@@ -1,0 +1,63 @@
+{
+  "id": "pypal_yarrr_southpark",
+  "name": {
+    "en": "southpark (yarrr)",
+    "zh": "southpark（yarrr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2F86FF",
+    "#EBAB16",
+    "#DE0012",
+    "#22C408",
+    "#FECDAA",
+    "#F14809"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F1C8BD",
+      "#E9A294",
+      "#DE7A6B",
+      "#D05042",
+      "#BF0B10",
+      "#AC0000"
+    ],
+    "paired_diverging_stops": [
+      "#2F86FF",
+      "#76ADFE",
+      "#B5D1FA",
+      "#F4F3F2",
+      "#F2DCB8",
+      "#EFC479",
+      "#EBAB16"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (yarrr: southpark)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 11.44,
+    "min_de2000_deutan_first6": 5.84,
+    "min_de2000_protan_first6": 1.11,
+    "min_de2000_tritan_first6": 9.12,
+    "optimal6_min_de2000": 11.44,
+    "optimal6_min_de2000_deutan": 5.84,
+    "optimal6_min_de2000_protan": 1.11,
+    "grayscale_L_spread": 0.316,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

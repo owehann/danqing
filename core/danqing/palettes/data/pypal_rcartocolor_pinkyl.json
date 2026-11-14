@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_pinkyl",
+  "name": {
+    "en": "PinkYl (rcartocolor)",
+    "zh": "PinkYl（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#FEF6B5",
+    "#FFDD9A",
+    "#FFC285",
+    "#FFA679",
+    "#FA8A76",
+    "#F16D7A",
+    "#E15383"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACACA",
+      "#DDA5AD",
+      "#CE8191",
+      "#BD5B76",
+      "#AA325C",
+      "#960043"
+    ],
+    "paired_diverging_stops": [
+      "#FEF6B5",
+      "#FAF5CA",
+      "#F7F4DF",
+      "#F4F3F2",
+      "#F4C0CC",
+      "#ED8DA7",
+      "#E15383"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: PinkYl)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 8.85,
+    "min_de2000_deutan_first6": 4.03,
+    "min_de2000_protan_first6": 4.89,
+    "min_de2000_tritan_first6": 5.52,
+    "optimal6_min_de2000": 10.16,
+    "optimal6_min_de2000_deutan": 4.03,
+    "optimal6_min_de2000_protan": 6.08,
+    "grayscale_L_spread": 0.321,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "pypal_tvthemes_steven",
+  "name": {
+    "en": "Steven (tvthemes)",
+    "zh": "Steven（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FC5C64",
+    "#FCCC4C",
+    "#146C94",
+    "#F5AA9D",
+    "#150C08",
+    "#143341",
+    "#5CCCF4",
+    "#F58DA9"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCAC2",
+      "#E2A59E",
+      "#D57F7B",
+      "#C55958",
+      "#B32B37",
+      "#9F0012"
+    ],
+    "paired_diverging_stops": [
+      "#FCCC4C",
+      "#FADA8E",
+      "#F7E7C2",
+      "#F4F3F2",
+      "#AEC5D3",
+      "#6898B4",
+      "#146C94"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Steven)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 17.16,
+    "min_de2000_deutan_first6": 11.66,
+    "min_de2000_protan_first6": 15.71,
+    "min_de2000_tritan_first6": 8.13,
+    "optimal6_min_de2000": 17.16,
+    "optimal6_min_de2000_deutan": 11.66,
+    "optimal6_min_de2000_protan": 15.71,
+    "grayscale_L_spread": 0.7,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

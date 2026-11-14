@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_collinsia",
+  "name": {
+    "en": "collinsia (calecopal)",
+    "zh": "collinsia（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#9E8ABC",
+    "#A99CD9",
+    "#808C91",
+    "#A7907B",
+    "#A5BA92"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D9D0D3",
+      "#BDB2BF",
+      "#A295AC",
+      "#877898",
+      "#6E5D84",
+      "#564271"
+    ],
+    "paired_diverging_stops": [
+      "#A99CD9",
+      "#C1B9E2",
+      "#DAD6EA",
+      "#F4F3F2",
+      "#D9E0D1",
+      "#BFCDB1",
+      "#A5BA92"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: collinsia)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 6.65,
+    "min_de2000_deutan_first6": 6.0,
+    "min_de2000_protan_first6": 6.33,
+    "min_de2000_tritan_first6": 9.12,
+    "optimal6_min_de2000": 6.65,
+    "optimal6_min_de2000_deutan": 6.0,
+    "optimal6_min_de2000_protan": 6.33,
+    "grayscale_L_spread": 0.13,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

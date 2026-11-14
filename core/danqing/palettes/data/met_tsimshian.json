@@ -19,7 +19,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCC0",
+      "#DAA99A",
+      "#CA8775",
+      "#B96550",
+      "#A6412A",
+      "#911100"
+    ],
+    "paired_diverging_stops": [
+      "#367500",
+      "#759F5F",
+      "#B3C9A8",
+      "#F4F3F2",
+      "#B5B4CB",
+      "#7B77A5",
+      "#473D7D"
+    ]
   },
   "source": {
     "title": "Headdress frontlet, 1820–40, Tsimshian, Native American (Canadian)",

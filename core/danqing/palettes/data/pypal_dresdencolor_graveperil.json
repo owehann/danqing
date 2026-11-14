@@ -1,0 +1,63 @@
+{
+  "id": "pypal_dresdencolor_graveperil",
+  "name": {
+    "en": "graveperil (DresdenColor)",
+    "zh": "graveperil（DresdenColor）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C7341E",
+    "#EC9C3E",
+    "#DDD2B5",
+    "#B9AA7F",
+    "#936E4C",
+    "#40382E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBE",
+      "#E0A797",
+      "#D28270",
+      "#C25D49",
+      "#B1331E",
+      "#9D0000"
+    ],
+    "paired_diverging_stops": [
+      "#EC9C3E",
+      "#F1BA82",
+      "#F3D7BB",
+      "#F4F3F2",
+      "#B4B0AB",
+      "#777169",
+      "#40382E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (DresdenColor: graveperil)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 11.25,
+    "min_de2000_deutan_first6": 9.32,
+    "min_de2000_protan_first6": 11.13,
+    "min_de2000_tritan_first6": 10.86,
+    "optimal6_min_de2000": 11.25,
+    "optimal6_min_de2000_deutan": 9.32,
+    "optimal6_min_de2000_protan": 11.13,
+    "grayscale_L_spread": 0.519,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

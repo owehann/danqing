@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_emrld",
+  "name": {
+    "en": "Emrld (rcartocolor)",
+    "zh": "Emrld（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#D3F2A3",
+    "#97E196",
+    "#6CC08B",
+    "#4C9B82",
+    "#217A79",
+    "#105965",
+    "#074050"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED5CE",
+      "#A7BCB6",
+      "#80A39E",
+      "#588A87",
+      "#2C7270",
+      "#005B5A"
+    ],
+    "paired_diverging_stops": [
+      "#D3F2A3",
+      "#DEF3BF",
+      "#E9F3D9",
+      "#F4F3F2",
+      "#A4B4B9",
+      "#587883",
+      "#074050"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: Emrld)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 9.49,
+    "min_de2000_deutan_first6": 6.59,
+    "min_de2000_protan_first6": 4.76,
+    "min_de2000_tritan_first6": 8.86,
+    "optimal6_min_de2000": 9.49,
+    "optimal6_min_de2000_deutan": 6.59,
+    "optimal6_min_de2000_protan": 4.76,
+    "grayscale_L_spread": 0.575,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

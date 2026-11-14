@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_grovyle",
+  "name": {
+    "en": "grovyle (palettetown)",
+    "zh": "grovyle（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#000000",
+    "#105048",
+    "#58B068",
+    "#50A0B8",
+    "#388090",
+    "#88E090",
+    "#E04028",
+    "#388040",
+    "#F87050",
+    "#802830",
+    "#B8F8B0",
+    "#B84040",
+    "#F8D850",
+    "#D08850"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCABE",
+      "#E3A595",
+      "#D6806D",
+      "#C65A45",
+      "#B52C15",
+      "#A10000"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#F5EBC4",
+      "#F6E291",
+      "#F8D850"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: grovyle)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 11.55,
+    "min_de2000_deutan_first6": 11.65,
+    "min_de2000_protan_first6": 11.45,
+    "min_de2000_tritan_first6": 6.05,
+    "optimal6_min_de2000": 11.55,
+    "optimal6_min_de2000_deutan": 11.65,
+    "optimal6_min_de2000_protan": 11.45,
+    "grayscale_L_spread": 0.918,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

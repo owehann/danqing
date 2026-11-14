@@ -19,7 +19,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC4",
+      "#D0ADA2",
+      "#BD8E81",
+      "#A96F61",
+      "#945041",
+      "#7E3122"
+    ],
+    "paired_diverging_stops": [
+      "#875800",
+      "#AC8B58",
+      "#D0BEA4",
+      "#F4F3F2",
+      "#9EABA9",
+      "#4F6766",
+      "#022A2A"
+    ]
   },
   "source": {
     "title": "Madame Bergeret de Frouville as Diana, 1756, Jean Marc Nattier, French",

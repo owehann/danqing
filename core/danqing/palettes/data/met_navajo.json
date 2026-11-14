@@ -17,7 +17,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0C8C2",
+      "#CAA29F",
+      "#B37D7C",
+      "#9B595B",
+      "#82353C",
+      "#68071F"
+    ],
+    "paired_diverging_stops": [
+      "#7C5F00",
+      "#A28F5B",
+      "#CAC0A6",
+      "#F4F3F2",
+      "#A5B6C3",
+      "#5B7C95",
+      "#094568"
+    ]
   },
   "source": {
     "title": "Serape, 1865–70, Navajo",

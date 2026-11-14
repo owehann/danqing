@@ -20,7 +20,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D6C3",
+      "#ABBDA1",
+      "#87A47F",
+      "#648C5E",
+      "#40743D",
+      "#155D1A"
+    ],
+    "paired_diverging_stops": [
+      "#66644F",
+      "#939282",
+      "#C2C1B8",
+      "#F4F3F2",
+      "#A4AAA0",
+      "#5A6555",
+      "#192813"
+    ]
   },
   "source": {
     "title": "First Steps, after Millet, 1890, Vincent van Gogh, Dutch",

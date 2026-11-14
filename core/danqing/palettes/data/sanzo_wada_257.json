@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_257",
+  "name": {
+    "en": "Sanzo Wada #257 (Spectrum Red · Orange Yellow · Blue)",
+    "zh": "和田三造 #257（Spectrum Red · Orange Yellow · Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E31F26",
+    "#FCB315",
+    "#006EB8",
+    "#A36AA5"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BE",
+      "#E7A296",
+      "#DC7B6E",
+      "#CE5147",
+      "#BD141A",
+      "#AA0000"
+    ],
+    "paired_diverging_stops": [
+      "#FCB315",
+      "#FBCA7B",
+      "#F8DFB9",
+      "#F4F3F2",
+      "#ADC7E1",
+      "#669BCE",
+      "#006EB8"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#257)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 31.68,
+    "min_de2000_deutan_first6": 15.22,
+    "min_de2000_protan_first6": 6.32,
+    "min_de2000_tritan_first6": 21.52,
+    "optimal6_min_de2000": 31.68,
+    "optimal6_min_de2000_deutan": 15.22,
+    "optimal6_min_de2000_protan": 6.32,
+    "grayscale_L_spread": 0.289,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

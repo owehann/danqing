@@ -15,7 +15,25 @@
   "neutral": "#CBD5E1",
   "partners": {
     "sequential": "Blues",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D2D0",
+      "#B4B6BA",
+      "#959BA4",
+      "#77808F",
+      "#5A6779",
+      "#3E4E65"
+    ],
+    "paired_diverging_stops": [
+      "#1E3A5F",
+      "#60748F",
+      "#A7B2C0",
+      "#F4F3F2",
+      "#BCC1C9",
+      "#8792A1",
+      "#55647B"
+    ]
   },
   "source": {
     "title": "GWAS Manhattan Plot Alternating Chromosome Convention",

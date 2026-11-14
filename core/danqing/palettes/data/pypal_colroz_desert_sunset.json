@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_desert_sunset",
+  "name": {
+    "en": "desert_sunset (colRoz)",
+    "zh": "desert_sunset（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#626063",
+    "#AD5E59",
+    "#FD7C45",
+    "#FABA62",
+    "#FFFFBB",
+    "#BBDADC"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC6",
+      "#D0ADA5",
+      "#BC8D86",
+      "#A86E67",
+      "#934F4A",
+      "#7E302E"
+    ],
+    "paired_diverging_stops": [
+      "#626063",
+      "#908E90",
+      "#C1C0C0",
+      "#F4F3F2",
+      "#F7E1C5",
+      "#F9CE97",
+      "#FABA62"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: desert_sunset)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 20.92,
+    "min_de2000_deutan_first6": 8.41,
+    "min_de2000_protan_first6": 11.35,
+    "min_de2000_tritan_first6": 13.97,
+    "optimal6_min_de2000": 20.92,
+    "optimal6_min_de2000_deutan": 8.41,
+    "optimal6_min_de2000_protan": 11.35,
+    "grayscale_L_spread": 0.492,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

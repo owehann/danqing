@@ -17,7 +17,25 @@
   "neutral": "#B5B8BA",
   "partners": {
     "sequential": "navia",
-    "diverging": "broc"
+    "diverging": "broc",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CDC5",
+      "#D1ADA4",
+      "#BE8D84",
+      "#AB6D64",
+      "#964E46",
+      "#812D29"
+    ],
+    "paired_diverging_stops": [
+      "#4C6292",
+      "#8091B2",
+      "#B9C1D2",
+      "#F4F3F2",
+      "#C4C2B2",
+      "#969274",
+      "#6B6439"
+    ]
   },
   "source": {
     "title": "PNWColors Pacific Northwest Nature Palette (Shuksan2)",

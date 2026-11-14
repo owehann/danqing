@@ -20,7 +20,25 @@
   "neutral": "#D6D6CE",
   "partners": {
     "sequential": "bilbao",
-    "diverging": "broc"
+    "diverging": "broc",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6C9BF",
+      "#D5A598",
+      "#C38073",
+      "#AF5C4E",
+      "#9A3529",
+      "#830000"
+    ],
+    "paired_diverging_stops": [
+      "#800000",
+      "#AD5F53",
+      "#D3A8A0",
+      "#F4F3F2",
+      "#D5BD9D",
+      "#B58746",
+      "#945100"
+    ]
   },
   "source": {
     "title": "Factual university press light palette table (pal_uchicago light)",

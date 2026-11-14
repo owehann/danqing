@@ -18,7 +18,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCAC1",
+      "#E3A59B",
+      "#D57F77",
+      "#C65853",
+      "#B52A2F",
+      "#A10000"
+    ],
+    "paired_diverging_stops": [
+      "#7C6000",
+      "#A2904D",
+      "#CAC1A0",
+      "#F4F3F2",
+      "#A2ACC4",
+      "#576896",
+      "#172767"
+    ]
   },
   "source": {
     "title": "Evening Star No. III, 1917, Georgia O'Keeffe, Watercolor on paper mounted on board",

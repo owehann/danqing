@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "cmo_matter",
-    "diverging": "cmo_balance"
+    "diverging": "cmo_balance",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CACB",
+      "#DBA6AF",
+      "#CB8294",
+      "#B95E7A",
+      "#A63760",
+      "#920048"
+    ],
+    "paired_diverging_stops": [
+      "#726228",
+      "#9B916B",
+      "#C7C1AD",
+      "#F4F3F2",
+      "#ADA1B3",
+      "#6B5577",
+      "#2F0F3E"
+    ]
   },
   "source": {
     "title": "True Colors of Oceanography: cmocean (matter)",

@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_287",
+  "name": {
+    "en": "Sanzo Wada #287 (Eosine Pink · Pyrite Yellow · Pale King's Blue)",
+    "zh": "和田三造 #287（Eosine Pink · Pyrite Yellow · Pale King's Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F37F94",
+    "#CAB356",
+    "#A7D4E4",
+    "#78CDD0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC8",
+      "#D7A9A9",
+      "#C6878C",
+      "#B46570",
+      "#A04254",
+      "#8B173A"
+    ],
+    "paired_diverging_stops": [
+      "#CAB356",
+      "#D8C98E",
+      "#E6DEC1",
+      "#F4F3F2",
+      "#DBE9ED",
+      "#C1DFE9",
+      "#A7D4E4"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#287)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 10.38,
+    "min_de2000_deutan_first6": 4.1,
+    "min_de2000_protan_first6": 4.57,
+    "min_de2000_tritan_first6": 7.45,
+    "optimal6_min_de2000": 10.38,
+    "optimal6_min_de2000_deutan": 4.1,
+    "optimal6_min_de2000_protan": 4.57,
+    "grayscale_L_spread": 0.111,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

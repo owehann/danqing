@@ -1,0 +1,62 @@
+{
+  "id": "pypal_vangogh_shoes",
+  "name": {
+    "en": "Shoes (vangogh)",
+    "zh": "Shoes（vangogh）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8C7345",
+    "#594A36",
+    "#D9BD9C",
+    "#8C4A32",
+    "#AA9B89"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CFC3",
+      "#CEAFA0",
+      "#B9907F",
+      "#A5725E",
+      "#8F543E",
+      "#7A361D"
+    ],
+    "paired_diverging_stops": [
+      "#594A36",
+      "#8A7F70",
+      "#BDB7AF",
+      "#F4F3F2",
+      "#EBE1D5",
+      "#E2CFB8",
+      "#D9BD9C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vangogh: Shoes)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 11.57,
+    "min_de2000_deutan_first6": 9.12,
+    "min_de2000_protan_first6": 5.5,
+    "min_de2000_tritan_first6": 11.67,
+    "optimal6_min_de2000": 11.57,
+    "optimal6_min_de2000_deutan": 9.12,
+    "optimal6_min_de2000_protan": 5.5,
+    "grayscale_L_spread": 0.395,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -19,7 +19,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D1D6",
+      "#B7B4C4",
+      "#9897B2",
+      "#7C7BA0",
+      "#60608E",
+      "#46467C"
+    ],
+    "paired_diverging_stops": [
+      "#2C2D54",
+      "#676A87",
+      "#ABACBB",
+      "#F4F3F2",
+      "#BAC5B4",
+      "#829879",
+      "#4E6D41"
+    ]
   },
   "source": {
     "title": "Cypresses, 1889, Vincent van Gogh, Dutch",

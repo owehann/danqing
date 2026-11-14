@@ -1,0 +1,63 @@
+{
+  "id": "pypal_dresdencolor_whitenight",
+  "name": {
+    "en": "whitenight (DresdenColor)",
+    "zh": "whitenight（DresdenColor）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#847675",
+    "#BA857C",
+    "#F9F9F9",
+    "#CBCCD1",
+    "#5D758A",
+    "#2E2E30"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D3D0",
+      "#B2B7BA",
+      "#929CA4",
+      "#73828F",
+      "#556879",
+      "#385065"
+    ],
+    "paired_diverging_stops": [
+      "#F9F9F9",
+      "#F7F7F7",
+      "#F6F5F4",
+      "#F4F3F2",
+      "#ACACAC",
+      "#6A696B",
+      "#2E2E30"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (DresdenColor: whitenight)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 10.24,
+    "min_de2000_deutan_first6": 10.26,
+    "min_de2000_protan_first6": 9.8,
+    "min_de2000_tritan_first6": 10.0,
+    "optimal6_min_de2000": 10.24,
+    "optimal6_min_de2000_deutan": 10.26,
+    "optimal6_min_de2000_protan": 9.8,
+    "grayscale_L_spread": 0.68,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

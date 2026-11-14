@@ -1,0 +1,63 @@
+{
+  "id": "pypal_severance_hell",
+  "name": {
+    "en": "Hell (severance)",
+    "zh": "Hell（severance）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#9BAAAF",
+    "#11304F",
+    "#989B6C",
+    "#3F4738",
+    "#195972",
+    "#4D251D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD4D3",
+      "#AAB9BE",
+      "#859FAA",
+      "#618696",
+      "#3C6D82",
+      "#0B556F"
+    ],
+    "paired_diverging_stops": [
+      "#11304F",
+      "#576C83",
+      "#A2AEB9",
+      "#F4F3F2",
+      "#D4D5C4",
+      "#B6B898",
+      "#989B6C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (severance: Hell)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 15.63,
+    "min_de2000_deutan_first6": 7.63,
+    "min_de2000_protan_first6": 8.4,
+    "min_de2000_tritan_first6": 13.29,
+    "optimal6_min_de2000": 15.63,
+    "optimal6_min_de2000_deutan": 7.63,
+    "optimal6_min_de2000_protan": 8.4,
+    "grayscale_L_spread": 0.424,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

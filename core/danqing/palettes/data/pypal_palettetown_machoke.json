@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_machoke",
+  "name": {
+    "en": "machoke (palettetown)",
+    "zh": "machoke（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#9078B0",
+    "#B8A8D8",
+    "#584078",
+    "#A0A828",
+    "#E8F070",
+    "#706000",
+    "#D8C8F8",
+    "#F8F8F8",
+    "#C00000",
+    "#F83838",
+    "#980000",
+    "#C0C848",
+    "#D0D0D0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EECABE",
+      "#E4A496",
+      "#D87F6E",
+      "#C95747",
+      "#B82519",
+      "#A40000"
+    ],
+    "paired_diverging_stops": [
+      "#584078",
+      "#8879A0",
+      "#BDB4C9",
+      "#F4F3F2",
+      "#EFF3CC",
+      "#EBF2A2",
+      "#E8F070"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: machoke)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 14.74,
+    "min_de2000_deutan_first6": 14.4,
+    "min_de2000_protan_first6": 14.72,
+    "min_de2000_tritan_first6": 12.6,
+    "optimal6_min_de2000": 14.74,
+    "optimal6_min_de2000_deutan": 14.4,
+    "optimal6_min_de2000_protan": 14.72,
+    "grayscale_L_spread": 0.556,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

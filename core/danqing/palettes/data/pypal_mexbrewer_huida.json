@@ -1,0 +1,67 @@
+{
+  "id": "pypal_mexbrewer_huida",
+  "name": {
+    "en": "Huida (MexBrewer)",
+    "zh": "Huida（MexBrewer）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#752305",
+    "#AC420A",
+    "#CE8A37",
+    "#F8CA7C",
+    "#FFDE90",
+    "#76A1CD",
+    "#4E79A5",
+    "#1B3A6B",
+    "#0D1D3C",
+    "#060B1F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CDBE",
+      "#D8AB96",
+      "#C78A6F",
+      "#B56848",
+      "#A2461B",
+      "#8E1D00"
+    ],
+    "paired_diverging_stops": [
+      "#FFDE90",
+      "#FBE6B3",
+      "#F8EDD3",
+      "#F4F3F2",
+      "#9A9DA6",
+      "#494F5F",
+      "#060B1F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MexBrewer: Huida)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 5.51,
+    "min_de2000_deutan_first6": 3.64,
+    "min_de2000_protan_first6": 4.28,
+    "min_de2000_tritan_first6": 6.21,
+    "optimal6_min_de2000": 17.16,
+    "optimal6_min_de2000_deutan": 16.31,
+    "optimal6_min_de2000_protan": 17.33,
+    "grayscale_L_spread": 0.754,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

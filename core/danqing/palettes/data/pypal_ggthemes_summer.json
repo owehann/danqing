@@ -1,0 +1,65 @@
+{
+  "id": "pypal_ggthemes_summer",
+  "name": {
+    "en": "Summer (ggthemes)",
+    "zh": "Summer（ggthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BFB202",
+    "#B9CA5D",
+    "#CF3E53",
+    "#F1788D",
+    "#00A2B3",
+    "#97CFD0",
+    "#F3A546",
+    "#F7C480"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCAC4",
+      "#DFA6A2",
+      "#D18181",
+      "#C05C62",
+      "#AE3243",
+      "#9A0025"
+    ],
+    "paired_diverging_stops": [
+      "#BFB202",
+      "#D0C975",
+      "#E1DEB5",
+      "#F4F3F2",
+      "#B6D9DD",
+      "#75BDC8",
+      "#00A2B3"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemes: Summer)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 11.1,
+    "min_de2000_deutan_first6": 6.96,
+    "min_de2000_protan_first6": 6.98,
+    "min_de2000_tritan_first6": 13.49,
+    "optimal6_min_de2000": 11.1,
+    "optimal6_min_de2000_deutan": 6.96,
+    "optimal6_min_de2000_protan": 6.98,
+    "grayscale_L_spread": 0.271,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

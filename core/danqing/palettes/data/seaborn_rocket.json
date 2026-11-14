@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "seaborn_rocket",
-    "diverging": "seaborn_vlag"
+    "diverging": "seaborn_vlag",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9C4",
+      "#E4A3A3",
+      "#D77D82",
+      "#C85462",
+      "#B62244",
+      "#A20027"
+    ],
+    "paired_diverging_stops": [
+      "#0D0A21",
+      "#4E4E60",
+      "#9D9DA6",
+      "#F4F3F2",
+      "#C6C0BA",
+      "#998F85",
+      "#6F6053"
+    ]
   },
   "source": {
     "title": "Seaborn Perceptually Uniform Colormaps (rocket)",

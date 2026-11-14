@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_acanthurus_sohal",
+  "name": {
+    "en": "Acanthurus_sohal (fishualize)",
+    "zh": "Acanthurus_sohal（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E96C0C",
+    "#CDEE40",
+    "#8BD4F7",
+    "#1927DD",
+    "#0D0006"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CAD2EB",
+      "#A0B5EC",
+      "#7797EC",
+      "#5076E9",
+      "#2C51E4",
+      "#1812DE"
+    ],
+    "paired_diverging_stops": [
+      "#CDEE40",
+      "#D9F18C",
+      "#E6F3C2",
+      "#F4F3F2",
+      "#A1B9F2",
+      "#547BEA",
+      "#1927DD"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Acanthurus_sohal)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 36.76,
+    "min_de2000_deutan_first6": 18.12,
+    "min_de2000_protan_first6": 28.29,
+    "min_de2000_tritan_first6": 21.68,
+    "optimal6_min_de2000": 36.76,
+    "optimal6_min_de2000_deutan": 18.12,
+    "optimal6_min_de2000_protan": 28.29,
+    "grayscale_L_spread": 0.79,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

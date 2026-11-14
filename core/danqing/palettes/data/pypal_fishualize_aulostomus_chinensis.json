@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_aulostomus_chinensis",
+  "name": {
+    "en": "Aulostomus_chinensis (fishualize)",
+    "zh": "Aulostomus_chinensis（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6A150E",
+    "#DB8165",
+    "#F1E201",
+    "#747B4E",
+    "#0A0203"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D7D3C4",
+      "#B9B8A2",
+      "#9C9D81",
+      "#808361",
+      "#656A42",
+      "#4B5223"
+    ],
+    "paired_diverging_stops": [
+      "#F1E201",
+      "#F1E980",
+      "#F2EFBD",
+      "#F4F3F2",
+      "#9D9696",
+      "#4E4344",
+      "#0A0203"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Aulostomus_chinensis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 26.04,
+    "min_de2000_deutan_first6": 14.92,
+    "min_de2000_protan_first6": 8.43,
+    "min_de2000_tritan_first6": 23.91,
+    "optimal6_min_de2000": 26.04,
+    "optimal6_min_de2000_deutan": 14.92,
+    "optimal6_min_de2000_protan": 8.43,
+    "grayscale_L_spread": 0.789,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_pomacanthus_xanthometopon",
+  "name": {
+    "en": "Pomacanthus_xanthometopon (fishualize)",
+    "zh": "Pomacanthus_xanthometopon（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#0B3DD5",
+    "#4F8EBE",
+    "#50725E",
+    "#E0F7C4",
+    "#F4DD06"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CAD3E8",
+      "#A0B6E7",
+      "#7799E3",
+      "#4E7ADE",
+      "#2758D8",
+      "#012BD0"
+    ],
+    "paired_diverging_stops": [
+      "#0B3DD5",
+      "#5682E4",
+      "#A3BCEE",
+      "#F4F3F2",
+      "#F3EDBD",
+      "#F3E680",
+      "#F4DD06"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Pomacanthus_xanthometopon)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 22.34,
+    "min_de2000_deutan_first6": 18.86,
+    "min_de2000_protan_first6": 18.58,
+    "min_de2000_tritan_first6": 14.35,
+    "optimal6_min_de2000": 22.34,
+    "optimal6_min_de2000_deutan": 18.86,
+    "optimal6_min_de2000_protan": 18.58,
+    "grayscale_L_spread": 0.494,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

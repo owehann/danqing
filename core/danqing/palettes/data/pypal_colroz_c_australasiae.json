@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_c_australasiae",
+  "name": {
+    "en": "c_australasiae (colRoz)",
+    "zh": "c_australasiae（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3C2726",
+    "#767D6D",
+    "#6D723A",
+    "#33511C",
+    "#3A6722",
+    "#547F47"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D5C2",
+      "#AFBC9E",
+      "#8DA37B",
+      "#6C8A59",
+      "#4C7236",
+      "#2B5B0D"
+    ],
+    "paired_diverging_stops": [
+      "#3C2726",
+      "#756463",
+      "#B3A9A8",
+      "#F4F3F2",
+      "#C4C7B3",
+      "#979C76",
+      "#6D723A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: c_australasiae)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 7.52,
+    "min_de2000_deutan_first6": 2.97,
+    "min_de2000_protan_first6": 3.83,
+    "min_de2000_tritan_first6": 7.71,
+    "optimal6_min_de2000": 7.52,
+    "optimal6_min_de2000_deutan": 2.97,
+    "optimal6_min_de2000_protan": 3.83,
+    "grayscale_L_spread": 0.281,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

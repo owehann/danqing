@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nationalparkcolors_hawaii",
+  "name": {
+    "en": "Hawaii (nationalparkcolors)",
+    "zh": "Hawaii（nationalparkcolors）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D67B44",
+    "#34273B",
+    "#D95B42",
+    "#150718",
+    "#F2E191"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCC0",
+      "#DCA999",
+      "#CC8674",
+      "#BB634F",
+      "#A93E28",
+      "#940500"
+    ],
+    "paired_diverging_stops": [
+      "#150718",
+      "#574B58",
+      "#A29BA2",
+      "#F4F3F2",
+      "#F3EED3",
+      "#F2E8B3",
+      "#F2E191"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nationalparkcolors: Hawaii)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.65,
+    "min_de2000_deutan_first6": 4.47,
+    "min_de2000_protan_first6": 8.92,
+    "min_de2000_tritan_first6": 7.05,
+    "optimal6_min_de2000": 9.65,
+    "optimal6_min_de2000_deutan": 4.47,
+    "optimal6_min_de2000_protan": 8.92,
+    "grayscale_L_spread": 0.745,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

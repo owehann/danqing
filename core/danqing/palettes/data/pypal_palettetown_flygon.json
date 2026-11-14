@@ -1,0 +1,72 @@
+{
+  "id": "pypal_palettetown_flygon",
+  "name": {
+    "en": "flygon (palettetown)",
+    "zh": "flygon（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#000000",
+    "#A8D870",
+    "#98B860",
+    "#D0F880",
+    "#983030",
+    "#E07070",
+    "#588058",
+    "#68A070",
+    "#789840",
+    "#90D098",
+    "#305858",
+    "#F8B0B0",
+    "#486818",
+    "#C83030",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC0",
+      "#E1A69B",
+      "#D38176",
+      "#C35B52",
+      "#B1302D",
+      "#9E0000"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#E8F6CF",
+      "#DCF7AA",
+      "#D0F880"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: flygon)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 15,
+    "max_colors": 15,
+    "min_de2000_first6": 8.0,
+    "min_de2000_deutan_first6": 7.5,
+    "min_de2000_protan_first6": 7.31,
+    "min_de2000_tritan_first6": 8.52,
+    "optimal6_min_de2000": 8.0,
+    "optimal6_min_de2000_deutan": 7.5,
+    "optimal6_min_de2000_protan": 7.31,
+    "grayscale_L_spread": 0.979,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

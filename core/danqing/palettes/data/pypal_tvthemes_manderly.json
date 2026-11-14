@@ -1,0 +1,64 @@
+{
+  "id": "pypal_tvthemes_manderly",
+  "name": {
+    "en": "Manderly (tvthemes)",
+    "zh": "Manderly（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#40E0D0",
+    "#808080",
+    "#00FF00",
+    "#282828",
+    "#015202",
+    "#195953",
+    "#FFFFFF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C5DBB6",
+      "#94C784",
+      "#60B14F",
+      "#0B9B00",
+      "#008400",
+      "#006C00"
+    ],
+    "paired_diverging_stops": [
+      "#00FF00",
+      "#89FE7F",
+      "#C3FABC",
+      "#F4F3F2",
+      "#AAA9A8",
+      "#656564",
+      "#282828"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Manderly)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 20.53,
+    "min_de2000_deutan_first6": 12.71,
+    "min_de2000_protan_first6": 14.42,
+    "min_de2000_tritan_first6": 5.08,
+    "optimal6_min_de2000": 20.53,
+    "optimal6_min_de2000_deutan": 12.71,
+    "optimal6_min_de2000_protan": 14.42,
+    "grayscale_L_spread": 0.723,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

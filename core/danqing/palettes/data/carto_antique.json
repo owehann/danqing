@@ -23,7 +23,25 @@
   "neutral": "#7C7C7C",
   "partners": {
     "sequential": "bilbao",
-    "diverging": "broc"
+    "diverging": "broc",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC5",
+      "#CFAEA4",
+      "#BB8E83",
+      "#A77064",
+      "#925146",
+      "#7C3329"
+    ],
+    "paired_diverging_stops": [
+      "#815B0E",
+      "#A78C62",
+      "#CDBFA9",
+      "#F4F3F2",
+      "#C1BBC8",
+      "#90859F",
+      "#625377"
+    ]
   },
   "source": {
     "title": "CARTOColors Qualitative Scheme (Antique)",

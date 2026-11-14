@@ -1,0 +1,62 @@
+{
+  "id": "pypal_ggprism_sunny_garden3",
+  "name": {
+    "en": "sunny_garden3 (ggprism)",
+    "zh": "sunny_garden3（ggprism）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#008000",
+    "#8B4513",
+    "#6699CC",
+    "#33CC00",
+    "#FFCC00"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD8BF",
+      "#A4C097",
+      "#7CA96F",
+      "#539247",
+      "#217A17",
+      "#006300"
+    ],
+    "paired_diverging_stops": [
+      "#6699CC",
+      "#95B7DA",
+      "#C4D5E6",
+      "#F4F3F2",
+      "#F8E8BB",
+      "#FCDA7D",
+      "#FFCC00"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggprism: sunny_garden3)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 23.75,
+    "min_de2000_deutan_first6": 4.57,
+    "min_de2000_protan_first6": 4.75,
+    "min_de2000_tritan_first6": 13.72,
+    "optimal6_min_de2000": 23.75,
+    "optimal6_min_de2000_deutan": 4.57,
+    "optimal6_min_de2000_protan": 4.75,
+    "grayscale_L_spread": 0.394,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "pypal_mexbrewer_alacena",
+  "name": {
+    "en": "Alacena (MexBrewer)",
+    "zh": "Alacena（MexBrewer）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#693829",
+    "#894B33",
+    "#A56A3E",
+    "#CFB267",
+    "#D9C5B6",
+    "#9CA9BA",
+    "#5480B5",
+    "#3D619D",
+    "#405A95",
+    "#345084"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D3D8",
+      "#ADB7C9",
+      "#8A9BBA",
+      "#6880AA",
+      "#476699",
+      "#274B88"
+    ],
+    "paired_diverging_stops": [
+      "#CFB267",
+      "#DBC897",
+      "#E8DEC5",
+      "#F4F3F2",
+      "#B4C1D7",
+      "#7791BA",
+      "#3D619D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MexBrewer: Alacena)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 8.47,
+    "min_de2000_deutan_first6": 8.87,
+    "min_de2000_protan_first6": 7.74,
+    "min_de2000_tritan_first6": 8.16,
+    "optimal6_min_de2000": 16.78,
+    "optimal6_min_de2000_deutan": 15.07,
+    "optimal6_min_de2000_protan": 16.58,
+    "grayscale_L_spread": 0.437,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

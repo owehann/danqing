@@ -1,0 +1,63 @@
+{
+  "id": "pypal_severance_jazz02",
+  "name": {
+    "en": "Jazz02 (severance)",
+    "zh": "Jazz02（severance）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6B8C81",
+    "#0E171E",
+    "#BD9A5A",
+    "#3E2423",
+    "#8797A7",
+    "#393F3B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDD1C0",
+      "#C4B49A",
+      "#AC9774",
+      "#957C4F",
+      "#7E6028",
+      "#674600"
+    ],
+    "paired_diverging_stops": [
+      "#0E171E",
+      "#51585D",
+      "#9EA2A4",
+      "#F4F3F2",
+      "#E2D5C0",
+      "#CFB88E",
+      "#BD9A5A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (severance: Jazz02)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.6,
+    "min_de2000_deutan_first6": 7.24,
+    "min_de2000_protan_first6": 7.24,
+    "min_de2000_tritan_first6": 7.57,
+    "optimal6_min_de2000": 14.6,
+    "optimal6_min_de2000_deutan": 7.24,
+    "optimal6_min_de2000_protan": 7.24,
+    "grayscale_L_spread": 0.505,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

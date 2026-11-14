@@ -1,0 +1,62 @@
+{
+  "id": "pypal_manu_takapu",
+  "name": {
+    "en": "Takapu (Manu)",
+    "zh": "Takapu（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DEB478",
+    "#976533",
+    "#D3D5D0",
+    "#76716E",
+    "#272623"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD0C1",
+      "#C9B29C",
+      "#B39477",
+      "#9D7754",
+      "#875B2F",
+      "#713F00"
+    ],
+    "paired_diverging_stops": [
+      "#DEB478",
+      "#E6C9A2",
+      "#EDDECA",
+      "#F4F3F2",
+      "#A9A8A6",
+      "#646361",
+      "#272623"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Takapu)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 19.12,
+    "min_de2000_deutan_first6": 18.26,
+    "min_de2000_protan_first6": 18.07,
+    "min_de2000_tritan_first6": 18.97,
+    "optimal6_min_de2000": 19.12,
+    "optimal6_min_de2000_deutan": 18.26,
+    "optimal6_min_de2000_protan": 18.07,
+    "grayscale_L_spread": 0.601,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

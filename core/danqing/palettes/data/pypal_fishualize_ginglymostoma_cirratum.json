@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_ginglymostoma_cirratum",
+  "name": {
+    "en": "Ginglymostoma_cirratum (fishualize)",
+    "zh": "Ginglymostoma_cirratum（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D9C5BD",
+    "#67939A",
+    "#A59D83",
+    "#AAAEA1",
+    "#949D9B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D4CF",
+      "#AEB9B7",
+      "#8C9F9F",
+      "#6A8688",
+      "#496D72",
+      "#27555C"
+    ],
+    "paired_diverging_stops": [
+      "#D9C5BD",
+      "#E2D4CE",
+      "#EBE4E0",
+      "#F4F3F2",
+      "#C4D2D4",
+      "#95B2B7",
+      "#67939A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Ginglymostoma_cirratum)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 7.44,
+    "min_de2000_deutan_first6": 7.39,
+    "min_de2000_protan_first6": 7.09,
+    "min_de2000_tritan_first6": 6.95,
+    "optimal6_min_de2000": 7.44,
+    "optimal6_min_de2000_deutan": 7.39,
+    "optimal6_min_de2000_protan": 7.09,
+    "grayscale_L_spread": 0.204,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

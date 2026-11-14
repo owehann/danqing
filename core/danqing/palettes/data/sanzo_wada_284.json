@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_284",
+  "name": {
+    "en": "Sanzo Wada #284 (Eugenia Red | A · Apricot Yellow · Sea Green)",
+    "zh": "和田三造 #284（Eugenia Red | A · Apricot Yellow · Sea Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E2625E",
+    "#FFDD00",
+    "#00B49B",
+    "#004F46"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC3",
+      "#DBA89F",
+      "#CC857C",
+      "#BB625B",
+      "#A83D3A",
+      "#940217"
+    ],
+    "paired_diverging_stops": [
+      "#FFDD00",
+      "#FBE680",
+      "#F7EDBD",
+      "#F4F3F2",
+      "#A6BAB5",
+      "#5B837B",
+      "#004F46"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#284)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 36.64,
+    "min_de2000_deutan_first6": 21.11,
+    "min_de2000_protan_first6": 16.68,
+    "min_de2000_tritan_first6": 27.92,
+    "optimal6_min_de2000": 36.64,
+    "optimal6_min_de2000_deutan": 21.11,
+    "optimal6_min_de2000_protan": 16.68,
+    "grayscale_L_spread": 0.515,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

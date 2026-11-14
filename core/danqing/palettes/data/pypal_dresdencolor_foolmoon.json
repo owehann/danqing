@@ -1,0 +1,63 @@
+{
+  "id": "pypal_dresdencolor_foolmoon",
+  "name": {
+    "en": "foolmoon (DresdenColor)",
+    "zh": "foolmoon（DresdenColor）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#532026",
+    "#BA141E",
+    "#E2E3E7",
+    "#61829C",
+    "#354C6A",
+    "#050505"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCAC0",
+      "#E2A59A",
+      "#D58074",
+      "#C55A50",
+      "#B42D2A",
+      "#A00000"
+    ],
+    "paired_diverging_stops": [
+      "#E2E3E7",
+      "#E8E8EB",
+      "#EEEEEE",
+      "#F4F3F2",
+      "#999998",
+      "#474747",
+      "#050505"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (DresdenColor: foolmoon)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 19.92,
+    "min_de2000_deutan_first6": 15.6,
+    "min_de2000_protan_first6": 10.13,
+    "min_de2000_tritan_first6": 19.31,
+    "optimal6_min_de2000": 19.92,
+    "optimal6_min_de2000_deutan": 15.6,
+    "optimal6_min_de2000_protan": 10.13,
+    "grayscale_L_spread": 0.801,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

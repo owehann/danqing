@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_magnemite",
+  "name": {
+    "en": "magnemite (palettetown)",
+    "zh": "magnemite（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#383030",
+    "#504848",
+    "#B0D0B8",
+    "#90B898",
+    "#588060",
+    "#D0F0D8",
+    "#F8F8F8",
+    "#2880A8",
+    "#888888",
+    "#B0B0B0",
+    "#D0D0D0",
+    "#E81800",
+    "#50C8F0",
+    "#F88848"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F1C9BC",
+      "#E9A291",
+      "#DE7B67",
+      "#D04F3B",
+      "#C00900",
+      "#AD0000"
+    ],
+    "paired_diverging_stops": [
+      "#E81800",
+      "#F57965",
+      "#FAB8AB",
+      "#F4F3F2",
+      "#C4E6F2",
+      "#91D7F1",
+      "#50C8F0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: magnemite)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 7.38,
+    "min_de2000_deutan_first6": 7.34,
+    "min_de2000_protan_first6": 7.15,
+    "min_de2000_tritan_first6": 7.28,
+    "optimal6_min_de2000": 7.38,
+    "optimal6_min_de2000_deutan": 7.34,
+    "optimal6_min_de2000_protan": 7.15,
+    "grayscale_L_spread": 0.661,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

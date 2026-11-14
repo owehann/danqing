@@ -19,7 +19,25 @@
   "neutral": "#80796B",
   "partners": {
     "sequential": "oslo",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC4",
+      "#D7AAA1",
+      "#C68880",
+      "#B46760",
+      "#A14440",
+      "#8C1C21"
+    ],
+    "paired_diverging_stops": [
+      "#974D00",
+      "#B88457",
+      "#D7BBA4",
+      "#F4F3F2",
+      "#A5C7D8",
+      "#529BBC",
+      "#006EA0"
+    ]
   },
   "source": {
     "title": "Factual journal color table curated in ggsci (pal_jama)",

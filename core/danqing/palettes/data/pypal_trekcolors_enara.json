@@ -1,0 +1,66 @@
+{
+  "id": "pypal_trekcolors_enara",
+  "name": {
+    "en": "enara (trekcolors)",
+    "zh": "enara（trekcolors）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#4D004D",
+    "#660066",
+    "#800080",
+    "#BA3241",
+    "#F46404",
+    "#ED9A2D",
+    "#E7D057",
+    "#E8D879",
+    "#E9E09C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC4",
+      "#DDA7A1",
+      "#CF8380",
+      "#BE5F5F",
+      "#AB3740",
+      "#970021"
+    ],
+    "paired_diverging_stops": [
+      "#4D004D",
+      "#855582",
+      "#BCA2B9",
+      "#F4F3F2",
+      "#EFE8C4",
+      "#EBDD93",
+      "#E7D057"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (trekcolors: enara)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 5.63,
+    "min_de2000_deutan_first6": 5.57,
+    "min_de2000_protan_first6": 5.04,
+    "min_de2000_tritan_first6": 5.53,
+    "optimal6_min_de2000": 11.32,
+    "optimal6_min_de2000_deutan": 6.59,
+    "optimal6_min_de2000_protan": 10.14,
+    "grayscale_L_spread": 0.603,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

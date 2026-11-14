@@ -1,0 +1,63 @@
+{
+  "id": "pypal_ochre_lorikeet",
+  "name": {
+    "en": "lorikeet (ochRe)",
+    "zh": "lorikeet（ochRe）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#486030",
+    "#C03018",
+    "#F0A800",
+    "#484878",
+    "#A8C018",
+    "#609048"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBF",
+      "#E0A797",
+      "#D18370",
+      "#C15E49",
+      "#B0351F",
+      "#9C0000"
+    ],
+    "paired_diverging_stops": [
+      "#F0A800",
+      "#F3C276",
+      "#F4DBB6",
+      "#F4F3F2",
+      "#B6B7C9",
+      "#7C7EA0",
+      "#484878"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ochRe: lorikeet)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 17.56,
+    "min_de2000_deutan_first6": 2.88,
+    "min_de2000_protan_first6": 2.75,
+    "min_de2000_tritan_first6": 9.71,
+    "optimal6_min_de2000": 17.56,
+    "optimal6_min_de2000_deutan": 2.88,
+    "optimal6_min_de2000_protan": 2.75,
+    "grayscale_L_spread": 0.357,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

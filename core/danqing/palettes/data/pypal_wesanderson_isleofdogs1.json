@@ -1,0 +1,63 @@
+{
+  "id": "pypal_wesanderson_isleofdogs1",
+  "name": {
+    "en": "IsleofDogs1 (wesanderson)",
+    "zh": "IsleofDogs1（wesanderson）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#9986A5",
+    "#79402E",
+    "#CCBA72",
+    "#0F0D0E",
+    "#D9D0D3",
+    "#8D8680"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CFC5",
+      "#CBB0A3",
+      "#B69183",
+      "#A17363",
+      "#8B5645",
+      "#753A27"
+    ],
+    "paired_diverging_stops": [
+      "#CCBA72",
+      "#D9CD9E",
+      "#E6E0C8",
+      "#F4F3F2",
+      "#9E9D9D",
+      "#514F4F",
+      "#0F0D0E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (wesanderson: IsleofDogs1)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 17.47,
+    "min_de2000_deutan_first6": 15.03,
+    "min_de2000_protan_first6": 15.83,
+    "min_de2000_tritan_first6": 4.61,
+    "optimal6_min_de2000": 17.47,
+    "optimal6_min_de2000_deutan": 15.03,
+    "optimal6_min_de2000_protan": 15.83,
+    "grayscale_L_spread": 0.704,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

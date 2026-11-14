@@ -1,0 +1,63 @@
+{
+  "id": "pypal_tvthemes_smokyquartz",
+  "name": {
+    "en": "SmokyQuartz (tvthemes)",
+    "zh": "SmokyQuartz（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8B7182",
+    "#665E85",
+    "#1B6E9C",
+    "#F95B70",
+    "#FFE43F",
+    "#9FA4CF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCAC4",
+      "#E1A4A2",
+      "#D47F81",
+      "#C45961",
+      "#B22C42",
+      "#9E0024"
+    ],
+    "paired_diverging_stops": [
+      "#1B6E9C",
+      "#6B9AB9",
+      "#AFC6D6",
+      "#F4F3F2",
+      "#F7EFC2",
+      "#FBEA8D",
+      "#FFE43F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: SmokyQuartz)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 13.15,
+    "min_de2000_deutan_first6": 6.0,
+    "min_de2000_protan_first6": 5.28,
+    "min_de2000_tritan_first6": 17.05,
+    "optimal6_min_de2000": 13.15,
+    "optimal6_min_de2000_deutan": 6.0,
+    "optimal6_min_de2000_protan": 5.28,
+    "grayscale_L_spread": 0.41,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

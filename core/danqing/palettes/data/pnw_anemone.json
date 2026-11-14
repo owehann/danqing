@@ -19,7 +19,25 @@
   "neutral": "#B5B8BA",
   "partners": {
     "sequential": "navia",
-    "diverging": "broc"
+    "diverging": "broc",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD7CA",
+      "#A1BFAD",
+      "#77A791",
+      "#4A8F76",
+      "#00785C",
+      "#006143"
+    ],
+    "paired_diverging_stops": [
+      "#007859",
+      "#5DA089",
+      "#A9CABC",
+      "#F4F3F2",
+      "#C1C1BE",
+      "#90918D",
+      "#62645F"
+    ]
   },
   "source": {
     "title": "PNWColors Pacific Northwest Nature Palette (Anemone)",

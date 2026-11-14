@@ -1,0 +1,74 @@
+{
+  "id": "pypal_khroma_nightfall",
+  "name": {
+    "en": "nightfall (khroma)",
+    "zh": "nightfall（khroma）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#125A56",
+    "#00767B",
+    "#238F9D",
+    "#42A7C6",
+    "#60BCE9",
+    "#9DCCEF",
+    "#C6DBED",
+    "#DEE6E7",
+    "#ECEADA",
+    "#F0E6B2",
+    "#F9D576",
+    "#FFB954",
+    "#FD9A44",
+    "#F57634",
+    "#E94C1F",
+    "#D11807",
+    "#A01813"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BD",
+      "#E5A494",
+      "#D97E6C",
+      "#CB5543",
+      "#BA2110",
+      "#A60000"
+    ],
+    "paired_diverging_stops": [
+      "#60BCE9",
+      "#96CFED",
+      "#C6E1F0",
+      "#F4F3F2",
+      "#F8C0B0",
+      "#F38B6F",
+      "#E94C1F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (khroma: nightfall)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 17,
+    "max_colors": 17,
+    "min_de2000_first6": 7.92,
+    "min_de2000_deutan_first6": 7.25,
+    "min_de2000_protan_first6": 5.51,
+    "min_de2000_tritan_first6": 6.38,
+    "optimal6_min_de2000": 7.92,
+    "optimal6_min_de2000_deutan": 7.25,
+    "optimal6_min_de2000_protan": 5.51,
+    "grayscale_L_spread": 0.51,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

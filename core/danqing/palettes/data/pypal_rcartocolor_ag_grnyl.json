@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_ag_grnyl",
+  "name": {
+    "en": "ag_GrnYl (rcartocolor)",
+    "zh": "ag_GrnYl（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#245668",
+    "#0F7279",
+    "#0D8F81",
+    "#39AB7E",
+    "#6EC574",
+    "#A9DC67",
+    "#EDEF5D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD5D0",
+      "#A6BCB9",
+      "#7FA3A2",
+      "#578A8C",
+      "#2A7277",
+      "#005A62"
+    ],
+    "paired_diverging_stops": [
+      "#245668",
+      "#688894",
+      "#ACBCC2",
+      "#F4F3F2",
+      "#F1F3C8",
+      "#EFF199",
+      "#EDEF5D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: ag_GrnYl)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 11.29,
+    "min_de2000_deutan_first6": 7.89,
+    "min_de2000_protan_first6": 8.53,
+    "min_de2000_tritan_first6": 7.95,
+    "optimal6_min_de2000": 12.39,
+    "optimal6_min_de2000_deutan": 7.89,
+    "optimal6_min_de2000_protan": 6.47,
+    "grayscale_L_spread": 0.497,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

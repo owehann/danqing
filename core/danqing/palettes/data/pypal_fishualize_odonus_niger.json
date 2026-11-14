@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_odonus_niger",
+  "name": {
+    "en": "Odonus_niger (fishualize)",
+    "zh": "Odonus_niger（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#264F7F",
+    "#119EFA",
+    "#3AF4F4",
+    "#3EB7A9",
+    "#B4502B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC0",
+      "#D6AC99",
+      "#C58B74",
+      "#B36A4F",
+      "#9F4928",
+      "#8A2300"
+    ],
+    "paired_diverging_stops": [
+      "#119EFA",
+      "#76BCFA",
+      "#B7D9F7",
+      "#F4F3F2",
+      "#E3BDAF",
+      "#CD876F",
+      "#B4502B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Odonus_niger)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.64,
+    "min_de2000_deutan_first6": 16.0,
+    "min_de2000_protan_first6": 16.74,
+    "min_de2000_tritan_first6": 7.37,
+    "optimal6_min_de2000": 15.64,
+    "optimal6_min_de2000_deutan": 16.0,
+    "optimal6_min_de2000_protan": 16.74,
+    "grayscale_L_spread": 0.458,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

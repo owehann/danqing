@@ -1,0 +1,65 @@
+{
+  "id": "pypal_beyonce_x40",
+  "name": {
+    "en": "X40 (beyonce)",
+    "zh": "X40（beyonce）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#042F49",
+    "#096590",
+    "#3394BB",
+    "#8DB576",
+    "#418877",
+    "#146252",
+    "#B06429",
+    "#E5AE8D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CFBF",
+      "#D0AF97",
+      "#BD9070",
+      "#A9714A",
+      "#94531F",
+      "#7F3300"
+    ],
+    "paired_diverging_stops": [
+      "#096590",
+      "#6493B1",
+      "#ABC3D2",
+      "#F4F3F2",
+      "#E0C3B0",
+      "#C9946F",
+      "#B06429"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (beyonce: X40)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 14.07,
+    "min_de2000_deutan_first6": 13.78,
+    "min_de2000_protan_first6": 14.53,
+    "min_de2000_tritan_first6": 6.36,
+    "optimal6_min_de2000": 14.07,
+    "optimal6_min_de2000_deutan": 13.78,
+    "optimal6_min_de2000_protan": 14.53,
+    "grayscale_L_spread": 0.501,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_ctenochaetus_strigosus",
+  "name": {
+    "en": "Ctenochaetus_strigosus (fishualize)",
+    "zh": "Ctenochaetus_strigosus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FEFB51",
+    "#EFA904",
+    "#8F6D67",
+    "#644C71",
+    "#20A6F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C9D5DD",
+      "#9CBBD3",
+      "#6FA1C7",
+      "#3D86BB",
+      "#006CAE",
+      "#00509F"
+    ],
+    "paired_diverging_stops": [
+      "#FEFB51",
+      "#FAFA96",
+      "#F7F7C7",
+      "#F4F3F2",
+      "#B9DBF6",
+      "#7AC1F8",
+      "#20A6F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Ctenochaetus_strigosus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 21.06,
+    "min_de2000_deutan_first6": 13.33,
+    "min_de2000_protan_first6": 16.59,
+    "min_de2000_tritan_first6": 14.74,
+    "optimal6_min_de2000": 21.06,
+    "optimal6_min_de2000_deutan": 13.33,
+    "optimal6_min_de2000_protan": 16.59,
+    "grayscale_L_spread": 0.505,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

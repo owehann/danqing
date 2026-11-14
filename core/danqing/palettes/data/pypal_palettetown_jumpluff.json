@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_jumpluff",
+  "name": {
+    "en": "jumpluff (palettetown)",
+    "zh": "jumpluff（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E8D890",
+    "#F0E8B0",
+    "#F8F8D8",
+    "#5880D0",
+    "#4068C0",
+    "#988850",
+    "#78A0F8",
+    "#C8B870",
+    "#385090",
+    "#309830",
+    "#40E038",
+    "#D04000",
+    "#604008"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBC",
+      "#E0A792",
+      "#D28369",
+      "#C25F3E",
+      "#B03500",
+      "#9D0000"
+    ],
+    "paired_diverging_stops": [
+      "#4068C0",
+      "#7997D3",
+      "#B5C5E4",
+      "#F4F3F2",
+      "#C3EFBD",
+      "#8DE984",
+      "#40E038"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: jumpluff)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 5.27,
+    "min_de2000_deutan_first6": 4.87,
+    "min_de2000_protan_first6": 5.22,
+    "min_de2000_tritan_first6": 5.41,
+    "optimal6_min_de2000": 5.27,
+    "optimal6_min_de2000_deutan": 4.87,
+    "optimal6_min_de2000_protan": 5.22,
+    "grayscale_L_spread": 0.572,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

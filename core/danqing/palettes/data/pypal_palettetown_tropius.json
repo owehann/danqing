@@ -1,0 +1,72 @@
+{
+  "id": "pypal_palettetown_tropius",
+  "name": {
+    "en": "tropius (palettetown)",
+    "zh": "tropius（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#78D888",
+    "#A07030",
+    "#38A840",
+    "#000000",
+    "#206020",
+    "#B88850",
+    "#684828",
+    "#B8F098",
+    "#50C058",
+    "#C8A068",
+    "#E8B838",
+    "#F8F868",
+    "#F8F8F8",
+    "#E06888",
+    "#A05068"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD8BF",
+      "#A3C098",
+      "#7AA972",
+      "#50924B",
+      "#197B1F",
+      "#006300"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#F5F6CB",
+      "#F6F79F",
+      "#F8F868"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: tropius)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 15,
+    "max_colors": 15,
+    "min_de2000_first6": 8.85,
+    "min_de2000_deutan_first6": 2.12,
+    "min_de2000_protan_first6": 7.49,
+    "min_de2000_tritan_first6": 8.72,
+    "optimal6_min_de2000": 8.85,
+    "optimal6_min_de2000_deutan": 2.12,
+    "optimal6_min_de2000_protan": 7.49,
+    "grayscale_L_spread": 0.979,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

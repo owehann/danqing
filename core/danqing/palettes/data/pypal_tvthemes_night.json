@@ -1,0 +1,65 @@
+{
+  "id": "pypal_tvthemes_night",
+  "name": {
+    "en": "Night (tvthemes)",
+    "zh": "Night（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E8E1E9",
+    "#C0A5AA",
+    "#4D3944",
+    "#7083A4",
+    "#B3A2B4",
+    "#C9CCEA",
+    "#3B3960",
+    "#1E2142"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D2D2",
+      "#B3B6BE",
+      "#939BA9",
+      "#758095",
+      "#576681",
+      "#3B4D6D"
+    ],
+    "paired_diverging_stops": [
+      "#E8E1E9",
+      "#ECE7EC",
+      "#F0EDEF",
+      "#F4F3F2",
+      "#A5A7B4",
+      "#5D617A",
+      "#1E2142"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Night)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 6.32,
+    "min_de2000_deutan_first6": 8.02,
+    "min_de2000_protan_first6": 6.47,
+    "min_de2000_tritan_first6": 6.04,
+    "optimal6_min_de2000": 6.32,
+    "optimal6_min_de2000_deutan": 8.02,
+    "optimal6_min_de2000_protan": 6.47,
+    "grayscale_L_spread": 0.654,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

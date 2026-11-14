@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_vibrava",
+  "name": {
+    "en": "vibrava (palettetown)",
+    "zh": "vibrava（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#000000",
+    "#308860",
+    "#60C090",
+    "#A0A0A0",
+    "#505050",
+    "#808080",
+    "#88E8B0",
+    "#B8B078",
+    "#787038",
+    "#E0D088",
+    "#F8F8A0",
+    "#C8C8C8",
+    "#B8B8D8",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED6C8",
+      "#A7BDA9",
+      "#80A58B",
+      "#598D6E",
+      "#2E7652",
+      "#005E38"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#F5F5D8",
+      "#F6F7BD",
+      "#F8F8A0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: vibrava)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 10.85,
+    "min_de2000_deutan_first6": 9.97,
+    "min_de2000_protan_first6": 10.85,
+    "min_de2000_tritan_first6": 10.85,
+    "optimal6_min_de2000": 10.85,
+    "optimal6_min_de2000_deutan": 9.97,
+    "optimal6_min_de2000_protan": 10.85,
+    "grayscale_L_spread": 0.979,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_grandis",
+  "name": {
+    "en": "grandis (colRoz)",
+    "zh": "grandis（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#911B1B",
+    "#985775",
+    "#BAAE94",
+    "#DE7184",
+    "#74892E",
+    "#FF9A6E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCC2",
+      "#DAA99E",
+      "#CA877C",
+      "#B8645A",
+      "#A54038",
+      "#911014"
+    ],
+    "paired_diverging_stops": [
+      "#985775",
+      "#B8899D",
+      "#D7BDC7",
+      "#F4F3F2",
+      "#FBD7C7",
+      "#FEB99B",
+      "#FF9A6E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: grandis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 17.87,
+    "min_de2000_deutan_first6": 6.45,
+    "min_de2000_protan_first6": 9.09,
+    "min_de2000_tritan_first6": 8.09,
+    "optimal6_min_de2000": 17.87,
+    "optimal6_min_de2000_deutan": 6.45,
+    "optimal6_min_de2000_protan": 9.09,
+    "grayscale_L_spread": 0.353,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

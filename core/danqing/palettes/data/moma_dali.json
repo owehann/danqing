@@ -21,7 +21,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0D0BF",
+      "#CBB198",
+      "#B69372",
+      "#A0764C",
+      "#8B5923",
+      "#753C00"
+    ],
+    "paired_diverging_stops": [
+      "#31333F",
+      "#6C6D76",
+      "#ADAEB2",
+      "#F4F3F2",
+      "#C7C1AE",
+      "#9D906C",
+      "#74612B"
+    ]
   },
   "source": {
     "title": "The Persistence of Memory, 1931, Salvador Dalí, Oil on canvas",

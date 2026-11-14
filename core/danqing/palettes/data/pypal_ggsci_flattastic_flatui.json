@@ -1,0 +1,69 @@
+{
+  "id": "pypal_ggsci_flattastic_flatui",
+  "name": {
+    "en": "flattastic_flatui (ggsci)",
+    "zh": "flattastic_flatui（ggsci）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DA4453",
+    "#E95546",
+    "#F6BA59",
+    "#8BC163",
+    "#34BC9D",
+    "#3BB0D6",
+    "#4B8AD6",
+    "#977BD5",
+    "#D870A9",
+    "#E6E9ED",
+    "#AAB2BC",
+    "#434A53"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC3",
+      "#E0A5A0",
+      "#D2817E",
+      "#C25B5D",
+      "#B0303D",
+      "#9C001D"
+    ],
+    "paired_diverging_stops": [
+      "#F6BA59",
+      "#F6CE92",
+      "#F5E1C3",
+      "#F4F3F2",
+      "#BCD1EB",
+      "#84AEE1",
+      "#4B8AD6"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggsci: flattastic_flatui)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 8.91,
+    "min_de2000_deutan_first6": 6.57,
+    "min_de2000_protan_first6": 3.19,
+    "min_de2000_tritan_first6": 4.27,
+    "optimal6_min_de2000": 8.91,
+    "optimal6_min_de2000_deutan": 6.57,
+    "optimal6_min_de2000_protan": 3.19,
+    "grayscale_L_spread": 0.527,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

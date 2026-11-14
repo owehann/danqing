@@ -1,0 +1,68 @@
+{
+  "id": "pypal_khroma_incandescent",
+  "name": {
+    "en": "incandescent (khroma)",
+    "zh": "incandescent（khroma）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#CEFFFF",
+    "#C6F7D6",
+    "#A2F49B",
+    "#BBE453",
+    "#D5CE04",
+    "#E7B503",
+    "#F19903",
+    "#F6790B",
+    "#F94902",
+    "#E40515",
+    "#A80003"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F1C8BD",
+      "#E9A293",
+      "#DE7A6B",
+      "#D14E41",
+      "#C0030C",
+      "#AD0000"
+    ],
+    "paired_diverging_stops": [
+      "#CEFFFF",
+      "#DBFBFB",
+      "#E8F7F6",
+      "#F4F3F2",
+      "#E9E8BA",
+      "#DEDC7B",
+      "#D5CE04"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (khroma: incandescent)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 11.92,
+    "min_de2000_deutan_first6": 2.62,
+    "min_de2000_protan_first6": 4.43,
+    "min_de2000_tritan_first6": 3.84,
+    "optimal6_min_de2000": 11.92,
+    "optimal6_min_de2000_deutan": 2.62,
+    "optimal6_min_de2000_protan": 4.43,
+    "grayscale_L_spread": 0.507,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

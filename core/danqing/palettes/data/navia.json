@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "navia",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED4D7",
+      "#A8B9C6",
+      "#829FB6",
+      "#5C85A5",
+      "#356B93",
+      "#005182"
+    ],
+    "paired_diverging_stops": [
+      "#031327",
+      "#485565",
+      "#9AA1A9",
+      "#F4F3F2",
+      "#C4C1B7",
+      "#969180",
+      "#6A634C"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (navia)",

@@ -17,7 +17,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CFBE",
+      "#CFB097",
+      "#BB916F",
+      "#A67348",
+      "#92551B",
+      "#7C3600"
+    ],
+    "paired_diverging_stops": [
+      "#944F00",
+      "#B6855E",
+      "#D6BBA7",
+      "#F4F3F2",
+      "#AEBCCC",
+      "#6C86A6",
+      "#2D5380"
+    ]
   },
   "source": {
     "title": "Portrait of a Woman, 1687, Willem Wissing, Dutch",

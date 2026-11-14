@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_hippocampus_reidi",
+  "name": {
+    "en": "Hippocampus_reidi (fishualize)",
+    "zh": "Hippocampus_reidi（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F2CB05",
+    "#F2B705",
+    "#D98E04",
+    "#D57326",
+    "#8C310F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC1",
+      "#D5AC9B",
+      "#C38C77",
+      "#B06B53",
+      "#9C4B2F",
+      "#872700"
+    ],
+    "paired_diverging_stops": [
+      "#F2CB05",
+      "#F3DA7D",
+      "#F3E7BB",
+      "#F4F3F2",
+      "#D5B2A6",
+      "#B3725D",
+      "#8C310F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Hippocampus_reidi)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 6.99,
+    "min_de2000_deutan_first6": 3.08,
+    "min_de2000_protan_first6": 4.27,
+    "min_de2000_tritan_first6": 5.54,
+    "optimal6_min_de2000": 6.99,
+    "optimal6_min_de2000_deutan": 3.08,
+    "optimal6_min_de2000_protan": 4.27,
+    "grayscale_L_spread": 0.409,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

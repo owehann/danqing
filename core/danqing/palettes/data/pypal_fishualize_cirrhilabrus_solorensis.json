@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_cirrhilabrus_solorensis",
+  "name": {
+    "en": "Cirrhilabrus_solorensis (fishualize)",
+    "zh": "Cirrhilabrus_solorensis（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#214DBE",
+    "#2FD2F6",
+    "#00F293",
+    "#FEF500",
+    "#FF7657"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD3E2",
+      "#A6B6DB",
+      "#7F9AD3",
+      "#5A7DCA",
+      "#365FC0",
+      "#123DB4"
+    ],
+    "paired_diverging_stops": [
+      "#214DBE",
+      "#6387D3",
+      "#AABDE5",
+      "#F4F3F2",
+      "#F6F5C0",
+      "#FAF684",
+      "#FEF500"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Cirrhilabrus_solorensis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 30.86,
+    "min_de2000_deutan_first6": 11.57,
+    "min_de2000_protan_first6": 12.53,
+    "min_de2000_tritan_first6": 7.33,
+    "optimal6_min_de2000": 30.86,
+    "optimal6_min_de2000_deutan": 11.57,
+    "optimal6_min_de2000_protan": 12.53,
+    "grayscale_L_spread": 0.482,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lisa_remediosvaro",
+  "name": {
+    "en": "RemediosVaro (lisa)",
+    "zh": "RemediosVaro（lisa）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C8DAAD",
+    "#989E53",
+    "#738D60",
+    "#DEBC31",
+    "#9D471A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CEC0",
+      "#D3AD99",
+      "#C18D74",
+      "#AE6D4F",
+      "#9A4E28",
+      "#852C00"
+    ],
+    "paired_diverging_stops": [
+      "#738D60",
+      "#9CAE8F",
+      "#C7D0C0",
+      "#F4F3F2",
+      "#ECE2BB",
+      "#E5CF81",
+      "#DEBC31"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (lisa: RemediosVaro)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 11.48,
+    "min_de2000_deutan_first6": 10.44,
+    "min_de2000_protan_first6": 9.21,
+    "min_de2000_tritan_first6": 15.95,
+    "optimal6_min_de2000": 11.48,
+    "optimal6_min_de2000_deutan": 10.44,
+    "optimal6_min_de2000_protan": 9.21,
+    "grayscale_L_spread": 0.361,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

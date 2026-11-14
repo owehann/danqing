@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nationalparkcolors_zion",
+  "name": {
+    "en": "Zion (nationalparkcolors)",
+    "zh": "Zion（nationalparkcolors）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#469BEC",
+    "#C9FAFF",
+    "#F1E3B6",
+    "#C4878C",
+    "#6D882B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D5BF",
+      "#B4BB98",
+      "#95A171",
+      "#77884A",
+      "#5A701E",
+      "#3F5700"
+    ],
+    "paired_diverging_stops": [
+      "#469BEC",
+      "#84BAF0",
+      "#BDD7F2",
+      "#F4F3F2",
+      "#C5CFB1",
+      "#98AB72",
+      "#6D882B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nationalparkcolors: Zion)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 24.23,
+    "min_de2000_deutan_first6": 18.39,
+    "min_de2000_protan_first6": 21.54,
+    "min_de2000_tritan_first6": 21.98,
+    "optimal6_min_de2000": 24.23,
+    "optimal6_min_de2000_deutan": 18.39,
+    "optimal6_min_de2000_protan": 21.54,
+    "grayscale_L_spread": 0.366,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

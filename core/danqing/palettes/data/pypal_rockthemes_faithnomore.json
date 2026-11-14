@@ -1,0 +1,61 @@
+{
+  "id": "pypal_rockthemes_faithnomore",
+  "name": {
+    "en": "faithnomore (rockthemes)",
+    "zh": "faithnomore（rockthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D2BAAA",
+    "#3B2320",
+    "#C02F28",
+    "#D6B63A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBC0",
+      "#E0A69A",
+      "#D18275",
+      "#C15D50",
+      "#AF342A",
+      "#9B0000"
+    ],
+    "paired_diverging_stops": [
+      "#3B2320",
+      "#75625E",
+      "#B2A8A5",
+      "#F4F3F2",
+      "#EAE0BC",
+      "#E0CB83",
+      "#D6B63A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rockthemes: faithnomore)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 21.75,
+    "min_de2000_deutan_first6": 18.87,
+    "min_de2000_protan_first6": 19.49,
+    "min_de2000_tritan_first6": 7.82,
+    "optimal6_min_de2000": 21.75,
+    "optimal6_min_de2000_deutan": 18.87,
+    "optimal6_min_de2000_protan": 19.49,
+    "grayscale_L_spread": 0.519,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

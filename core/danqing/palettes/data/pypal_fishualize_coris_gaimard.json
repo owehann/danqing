@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_coris_gaimard",
+  "name": {
+    "en": "Coris_gaimard (fishualize)",
+    "zh": "Coris_gaimard（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#006BFF",
+    "#00957E",
+    "#D0E005",
+    "#FD873E",
+    "#7C6D46"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C8D3E8",
+      "#9CB7E6",
+      "#709BE3",
+      "#437CDE",
+      "#085BD7",
+      "#0031CF"
+    ],
+    "paired_diverging_stops": [
+      "#006BFF",
+      "#649EFF",
+      "#ACCAFB",
+      "#F4F3F2",
+      "#E7EEBC",
+      "#DBE87E",
+      "#D0E005"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Coris_gaimard)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 28.28,
+    "min_de2000_deutan_first6": 10.6,
+    "min_de2000_protan_first6": 15.4,
+    "min_de2000_tritan_first6": 13.58,
+    "optimal6_min_de2000": 28.28,
+    "optimal6_min_de2000_deutan": 10.6,
+    "optimal6_min_de2000_protan": 15.4,
+    "grayscale_L_spread": 0.326,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -18,7 +18,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "cividis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DACDE6",
+      "#BFAAE3",
+      "#A688DE",
+      "#8E63D7",
+      "#7837CF",
+      "#6500C6"
+    ],
+    "paired_diverging_stops": [
+      "#9E4800",
+      "#BD8341",
+      "#DABB9B",
+      "#F4F3F2",
+      "#C7B6F0",
+      "#9D76E8",
+      "#791FDC"
+    ]
   },
   "source": {
     "title": "Accessible Color Sequences for Data Visualization (6-color cycle)",

@@ -1,0 +1,71 @@
+{
+  "id": "pypal_impressionist_colors_te_aa_no_areois",
+  "name": {
+    "en": "te_aa_no_areois (impressionist.colors)",
+    "zh": "te_aa_no_areois（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1E694B",
+    "#0F1E2D",
+    "#2D3C4B",
+    "#2D4B69",
+    "#5A6987",
+    "#8796B4",
+    "#A58787",
+    "#875A5A",
+    "#694B5A",
+    "#786978",
+    "#C3693C",
+    "#C3961E",
+    "#87782D",
+    "#5A4B2D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CEBF",
+      "#D3AD99",
+      "#C18D73",
+      "#AE6D4D",
+      "#9A4E25",
+      "#852C00"
+    ],
+    "paired_diverging_stops": [
+      "#0F1E2D",
+      "#525E69",
+      "#9FA5AB",
+      "#F4F3F2",
+      "#E4D5B4",
+      "#D4B674",
+      "#C3961E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: te_aa_no_areois)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 7.26,
+    "min_de2000_deutan_first6": 7.35,
+    "min_de2000_protan_first6": 7.64,
+    "min_de2000_tritan_first6": 8.22,
+    "optimal6_min_de2000": 7.26,
+    "optimal6_min_de2000_deutan": 7.35,
+    "optimal6_min_de2000_protan": 7.64,
+    "grayscale_L_spread": 0.467,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

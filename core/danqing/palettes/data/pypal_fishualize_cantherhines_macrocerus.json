@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_cantherhines_macrocerus",
+  "name": {
+    "en": "Cantherhines_macrocerus (fishualize)",
+    "zh": "Cantherhines_macrocerus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F3F0FA",
+    "#FFF1E0",
+    "#F2935C",
+    "#F27141",
+    "#BF604B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CDC2",
+      "#D4AC9E",
+      "#C28B7B",
+      "#AF6B59",
+      "#9B4B38",
+      "#862813"
+    ],
+    "paired_diverging_stops": [
+      "#F3F0FA",
+      "#F3F1F7",
+      "#F4F2F5",
+      "#F4F3F2",
+      "#F8CAB9",
+      "#F79F80",
+      "#F27141"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Cantherhines_macrocerus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.88,
+    "min_de2000_deutan_first6": 5.22,
+    "min_de2000_protan_first6": 8.21,
+    "min_de2000_tritan_first6": 7.06,
+    "optimal6_min_de2000": 8.88,
+    "optimal6_min_de2000_deutan": 5.22,
+    "optimal6_min_de2000_protan": 8.21,
+    "grayscale_L_spread": 0.367,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

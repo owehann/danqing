@@ -1,0 +1,67 @@
+{
+  "id": "pypal_palettetown_magby",
+  "name": {
+    "en": "magby (palettetown)",
+    "zh": "magby（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D05038",
+    "#F87860",
+    "#903020",
+    "#F8C080",
+    "#D0A800",
+    "#707078",
+    "#F8F8B0",
+    "#F8F8F8",
+    "#F0D038",
+    "#C0C0C0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC0",
+      "#DCA899",
+      "#CD8673",
+      "#BC624E",
+      "#AA3D27",
+      "#950000"
+    ],
+    "paired_diverging_stops": [
+      "#707078",
+      "#9A9A9F",
+      "#C6C6C8",
+      "#F4F3F2",
+      "#F2E9BF",
+      "#F1DD87",
+      "#F0D038"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: magby)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 12.69,
+    "min_de2000_deutan_first6": 8.91,
+    "min_de2000_protan_first6": 12.35,
+    "min_de2000_tritan_first6": 7.75,
+    "optimal6_min_de2000": 12.69,
+    "optimal6_min_de2000_deutan": 8.91,
+    "optimal6_min_de2000_protan": 12.35,
+    "grayscale_L_spread": 0.53,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

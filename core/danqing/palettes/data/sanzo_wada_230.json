@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_230",
+  "name": {
+    "en": "Sanzo Wada #230 (Grenadine Pink · Turquoise Green · Cobalt Green)",
+    "zh": "和田三造 #230（Grenadine Pink · Turquoise Green · Cobalt Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F48067",
+    "#B5DECC",
+    "#96D1AA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCC1",
+      "#D8AA9B",
+      "#C88877",
+      "#B66753",
+      "#A3442F",
+      "#8E1A00"
+    ],
+    "paired_diverging_stops": [
+      "#F48067",
+      "#F8A896",
+      "#F8CEC3",
+      "#F4F3F2",
+      "#DFECE5",
+      "#CAE5D8",
+      "#B5DECC"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#230)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 8.18,
+    "min_de2000_deutan_first6": 7.71,
+    "min_de2000_protan_first6": 7.79,
+    "min_de2000_tritan_first6": 5.71,
+    "optimal6_min_de2000": 8.18,
+    "optimal6_min_de2000_deutan": 7.71,
+    "optimal6_min_de2000_protan": 7.79,
+    "grayscale_L_spread": 0.141,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

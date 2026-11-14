@@ -20,7 +20,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBD",
+      "#E1A794",
+      "#D3826C",
+      "#C35D43",
+      "#B23210",
+      "#9E0000"
+    ],
+    "paired_diverging_stops": [
+      "#8A542D",
+      "#AE876D",
+      "#D1BCAE",
+      "#F4F3F2",
+      "#A3B4B3",
+      "#567878",
+      "#004042"
+    ]
   },
   "source": {
     "title": "Tress, 1994, Matthew Abbott, Synthetic polymer paint and modeling paste on linen",

@@ -1,0 +1,69 @@
+{
+  "id": "pypal_tvthemes_crystalgems",
+  "name": {
+    "en": "CrystalGems (tvthemes)",
+    "zh": "CrystalGems（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FC5C64",
+    "#0E0723",
+    "#FC7CF1",
+    "#6DEDDD",
+    "#C0AED9",
+    "#146C94",
+    "#84043C",
+    "#FCCC4C",
+    "#AE56DE",
+    "#F6B6C2",
+    "#2C3C8C",
+    "#000000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFCCDE",
+      "#C9A9D3",
+      "#B386C8",
+      "#9D63BB",
+      "#883CAE",
+      "#7300A0"
+    ],
+    "paired_diverging_stops": [
+      "#FCCC4C",
+      "#FADA8E",
+      "#F7E7C2",
+      "#F4F3F2",
+      "#ABB5D2",
+      "#6778B0",
+      "#2C3C8C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: CrystalGems)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 18.01,
+    "min_de2000_deutan_first6": 6.14,
+    "min_de2000_protan_first6": 11.29,
+    "min_de2000_tritan_first6": 16.31,
+    "optimal6_min_de2000": 18.01,
+    "optimal6_min_de2000_deutan": 6.14,
+    "optimal6_min_de2000_protan": 11.29,
+    "grayscale_L_spread": 0.869,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

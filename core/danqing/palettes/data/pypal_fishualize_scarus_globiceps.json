@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_scarus_globiceps",
+  "name": {
+    "en": "Scarus_globiceps (fishualize)",
+    "zh": "Scarus_globiceps（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#05BFCB",
+    "#107C88",
+    "#0293BE",
+    "#A192CE",
+    "#D87CAF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD5D1",
+      "#A4BCBB",
+      "#7CA3A5",
+      "#538A90",
+      "#21727B",
+      "#005A67"
+    ],
+    "paired_diverging_stops": [
+      "#0293BE",
+      "#71B4D0",
+      "#B4D4E2",
+      "#F4F3F2",
+      "#EDCCDB",
+      "#E4A4C5",
+      "#D87CAF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Scarus_globiceps)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.5,
+    "min_de2000_deutan_first6": 4.88,
+    "min_de2000_protan_first6": 3.7,
+    "min_de2000_tritan_first6": 10.34,
+    "optimal6_min_de2000": 13.5,
+    "optimal6_min_de2000_deutan": 4.88,
+    "optimal6_min_de2000_protan": 3.7,
+    "grayscale_L_spread": 0.196,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

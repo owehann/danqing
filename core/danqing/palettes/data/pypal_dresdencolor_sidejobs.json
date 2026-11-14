@@ -1,0 +1,63 @@
+{
+  "id": "pypal_dresdencolor_sidejobs",
+  "name": {
+    "en": "sidejobs (DresdenColor)",
+    "zh": "sidejobs（DresdenColor）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DBD8C3",
+    "#C1714D",
+    "#F1B161",
+    "#A9823B",
+    "#4B4118",
+    "#2F2111"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC1",
+      "#D0AE9C",
+      "#BD8F78",
+      "#A97055",
+      "#955131",
+      "#7F3203"
+    ],
+    "paired_diverging_stops": [
+      "#F1B161",
+      "#F3C895",
+      "#F4DEC4",
+      "#F4F3F2",
+      "#ADA79F",
+      "#6B6054",
+      "#2F2111"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (DresdenColor: sidejobs)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 13.75,
+    "min_de2000_deutan_first6": 2.67,
+    "min_de2000_protan_first6": 6.45,
+    "min_de2000_tritan_first6": 7.9,
+    "optimal6_min_de2000": 13.75,
+    "optimal6_min_de2000_deutan": 2.67,
+    "optimal6_min_de2000_protan": 6.45,
+    "grayscale_L_spread": 0.619,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

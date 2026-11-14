@@ -1,0 +1,64 @@
+{
+  "id": "pypal_tvthemes_lapislazuli",
+  "name": {
+    "en": "LapisLazuli (tvthemes)",
+    "zh": "LapisLazuli（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#0064C3",
+    "#9FEEF0",
+    "#041859",
+    "#4682B4",
+    "#00C4FA",
+    "#00005B",
+    "#000000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD4E0",
+      "#A1B8D7",
+      "#789DCD",
+      "#4F82C2",
+      "#1F65B6",
+      "#0047A9"
+    ],
+    "paired_diverging_stops": [
+      "#9FEEF0",
+      "#BEF0F1",
+      "#DAF2F1",
+      "#F4F3F2",
+      "#94A3C2",
+      "#3D5790",
+      "#00005B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: LapisLazuli)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 6.89,
+    "min_de2000_deutan_first6": 4.38,
+    "min_de2000_protan_first6": 3.89,
+    "min_de2000_tritan_first6": 5.22,
+    "optimal6_min_de2000": 6.89,
+    "optimal6_min_de2000_deutan": 4.38,
+    "optimal6_min_de2000_protan": 3.89,
+    "grayscale_L_spread": 0.899,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

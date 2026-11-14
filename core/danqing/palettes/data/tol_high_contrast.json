@@ -15,7 +15,25 @@
   "neutral": "#BBBBBB",
   "partners": {
     "sequential": "oslo",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CCC8",
+      "#D5AAA9",
+      "#C4888B",
+      "#B1676E",
+      "#9D4653",
+      "#882039"
+    ],
+    "paired_diverging_stops": [
+      "#004488",
+      "#587DAD",
+      "#A4B7D0",
+      "#F4F3F2",
+      "#D0BF9E",
+      "#AC8C48",
+      "#885900"
+    ]
   },
   "source": {
     "title": "Colour Schemes (SRON/EPS/TN/09-002)",

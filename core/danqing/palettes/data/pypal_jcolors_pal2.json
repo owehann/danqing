@@ -1,0 +1,62 @@
+{
+  "id": "pypal_jcolors_pal2",
+  "name": {
+    "en": "pal2 (jcolors)",
+    "zh": "pal2（jcolors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3E71A8",
+    "#CEFF1A",
+    "#870E75",
+    "#FE6900",
+    "#0BB19F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CBD4",
+      "#D4A7C1",
+      "#C283AD",
+      "#AF5F9A",
+      "#9B3987",
+      "#850073"
+    ],
+    "paired_diverging_stops": [
+      "#3E71A8",
+      "#7A9CC2",
+      "#B6C7DA",
+      "#F4F3F2",
+      "#E7F9C0",
+      "#DAFD86",
+      "#CEFF1A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (jcolors: pal2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 33.46,
+    "min_de2000_deutan_first6": 11.37,
+    "min_de2000_protan_first6": 19.09,
+    "min_de2000_tritan_first6": 18.88,
+    "optimal6_min_de2000": 33.46,
+    "optimal6_min_de2000_deutan": 11.37,
+    "optimal6_min_de2000_protan": 19.09,
+    "grayscale_L_spread": 0.501,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nord_mountain_forms",
+  "name": {
+    "en": "mountain_forms (nord)",
+    "zh": "mountain_forms（nord）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#184860",
+    "#486078",
+    "#D8D8D8",
+    "#484860",
+    "#181830"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D3D1",
+      "#B2B7BC",
+      "#929CA6",
+      "#728291",
+      "#54687C",
+      "#374F68"
+    ],
+    "paired_diverging_stops": [
+      "#D8D8D8",
+      "#E1E1E1",
+      "#EAEAE9",
+      "#F4F3F2",
+      "#A2A3AD",
+      "#58596C",
+      "#181830"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nord: mountain_forms)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.32,
+    "min_de2000_deutan_first6": 4.69,
+    "min_de2000_protan_first6": 1.84,
+    "min_de2000_tritan_first6": 9.05,
+    "optimal6_min_de2000": 10.32,
+    "optimal6_min_de2000_deutan": 4.69,
+    "optimal6_min_de2000_protan": 1.84,
+    "grayscale_L_spread": 0.66,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

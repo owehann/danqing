@@ -1,0 +1,62 @@
+{
+  "id": "pypal_futurevisions_pso",
+  "name": {
+    "en": "pso (futurevisions)",
+    "zh": "pso（futurevisions）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#272727",
+    "#383955",
+    "#61619B",
+    "#BDC6DC",
+    "#FBFAFA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D1D6",
+      "#B6B4C5",
+      "#9897B4",
+      "#7B7BA3",
+      "#606091",
+      "#46457F"
+    ],
+    "paired_diverging_stops": [
+      "#272727",
+      "#646464",
+      "#A9A9A8",
+      "#F4F3F2",
+      "#F6F6F5",
+      "#F9F8F7",
+      "#FBFAFA"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (futurevisions: pso)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.15,
+    "min_de2000_deutan_first6": 14.15,
+    "min_de2000_protan_first6": 14.35,
+    "min_de2000_tritan_first6": 9.48,
+    "optimal6_min_de2000": 15.15,
+    "optimal6_min_de2000_deutan": 14.15,
+    "optimal6_min_de2000_protan": 14.35,
+    "grayscale_L_spread": 0.713,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

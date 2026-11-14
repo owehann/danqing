@@ -1,0 +1,62 @@
+{
+  "id": "pypal_momacolors_vonheyl",
+  "name": {
+    "en": "vonHeyl (MoMAColors)",
+    "zh": "vonHeyl（MoMAColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F96149",
+    "#FFA479",
+    "#E7D800",
+    "#94AEC2",
+    "#0D0C0B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCABE",
+      "#E1A696",
+      "#D3826F",
+      "#C45C48",
+      "#B2311D",
+      "#9E0000"
+    ],
+    "paired_diverging_stops": [
+      "#E7D800",
+      "#EBE27E",
+      "#EFEBBB",
+      "#F4F3F2",
+      "#9D9D9B",
+      "#4F4E4D",
+      "#0D0C0B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MoMAColors: vonHeyl)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.85,
+    "min_de2000_deutan_first6": 10.19,
+    "min_de2000_protan_first6": 15.75,
+    "min_de2000_tritan_first6": 15.37,
+    "optimal6_min_de2000": 15.85,
+    "optimal6_min_de2000_deutan": 10.19,
+    "optimal6_min_de2000_protan": 15.75,
+    "grayscale_L_spread": 0.712,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "pypal_palettetown_roselia",
+  "name": {
+    "en": "roselia (palettetown)",
+    "zh": "roselia（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#000000",
+    "#285890",
+    "#F05880",
+    "#78C860",
+    "#B0E870",
+    "#A03048",
+    "#5090D0",
+    "#609048",
+    "#406030",
+    "#8098A0",
+    "#60B0F8",
+    "#C8D8D0",
+    "#A8C0C0",
+    "#F8A0B8",
+    "#F0D048"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CBC7",
+      "#D8A9A8",
+      "#C8868A",
+      "#B6646C",
+      "#A24051",
+      "#8D1336"
+    ],
+    "paired_diverging_stops": [
+      "#285890",
+      "#6A8AB2",
+      "#ADBED2",
+      "#F4F3F2",
+      "#F2E8C1",
+      "#F1DD8C",
+      "#F0D048"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: roselia)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 15,
+    "max_colors": 15,
+    "min_de2000_first6": 9.84,
+    "min_de2000_deutan_first6": 9.46,
+    "min_de2000_protan_first6": 8.31,
+    "min_de2000_tritan_first6": 10.67,
+    "optimal6_min_de2000": 9.84,
+    "optimal6_min_de2000_deutan": 9.46,
+    "optimal6_min_de2000_protan": 8.31,
+    "grayscale_L_spread": 0.868,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

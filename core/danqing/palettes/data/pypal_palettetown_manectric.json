@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_manectric",
+  "name": {
+    "en": "manectric (palettetown)",
+    "zh": "manectric（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D8E068",
+    "#7080C0",
+    "#F8F848",
+    "#887840",
+    "#384048",
+    "#B0C068",
+    "#88A8E8",
+    "#181818",
+    "#505880",
+    "#F8F8F8",
+    "#E85068",
+    "#A82010",
+    "#C0C0E0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC0",
+      "#DEA899",
+      "#CF8474",
+      "#BE604F",
+      "#AC3928",
+      "#980000"
+    ],
+    "paired_diverging_stops": [
+      "#7080C0",
+      "#9AA6D2",
+      "#C6CCE2",
+      "#F4F3F2",
+      "#F4F6C5",
+      "#F6F892",
+      "#F8F848"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: manectric)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 7.97,
+    "min_de2000_deutan_first6": 7.53,
+    "min_de2000_protan_first6": 7.56,
+    "min_de2000_tritan_first6": 5.24,
+    "optimal6_min_de2000": 7.97,
+    "optimal6_min_de2000_deutan": 7.53,
+    "optimal6_min_de2000_protan": 7.56,
+    "grayscale_L_spread": 0.77,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

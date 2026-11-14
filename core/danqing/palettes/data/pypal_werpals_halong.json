@@ -1,0 +1,67 @@
+{
+  "id": "pypal_werpals_halong",
+  "name": {
+    "en": "halong (werpals)",
+    "zh": "halong（werpals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FEE871",
+    "#FFD960",
+    "#FFA74D",
+    "#FE6927",
+    "#CB5201",
+    "#7B2D00",
+    "#430301",
+    "#B37400",
+    "#987C00",
+    "#3F4903"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCBC",
+      "#DBAA92",
+      "#CC8868",
+      "#BB653C",
+      "#A84100",
+      "#940D00"
+    ],
+    "paired_diverging_stops": [
+      "#FEE871",
+      "#FAEDA2",
+      "#F7F0CC",
+      "#F4F3F2",
+      "#BA9F9A",
+      "#7F5149",
+      "#430301"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (werpals: halong)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 5.05,
+    "min_de2000_deutan_first6": 2.37,
+    "min_de2000_protan_first6": 2.95,
+    "min_de2000_tritan_first6": 5.52,
+    "optimal6_min_de2000": 5.05,
+    "optimal6_min_de2000_deutan": 2.37,
+    "optimal6_min_de2000_protan": 2.95,
+    "grayscale_L_spread": 0.682,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

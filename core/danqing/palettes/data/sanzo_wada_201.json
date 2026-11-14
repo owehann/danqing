@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_201",
+  "name": {
+    "en": "Sanzo Wada #201 (Grenadine Pink · Olive · Cobalt Green)",
+    "zh": "和田三造 #201（Grenadine Pink · Olive · Cobalt Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F48067",
+    "#837E31",
+    "#96D1AA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D9D3C0",
+      "#BDB799",
+      "#A19C73",
+      "#87824E",
+      "#6E6825",
+      "#564F00"
+    ],
+    "paired_diverging_stops": [
+      "#837E31",
+      "#A7A474",
+      "#CCCBB2",
+      "#F4F3F2",
+      "#D5E8DA",
+      "#B6DDC2",
+      "#96D1AA"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#201)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 29.54,
+    "min_de2000_deutan_first6": 14.06,
+    "min_de2000_protan_first6": 11.58,
+    "min_de2000_tritan_first6": 24.19,
+    "optimal6_min_de2000": 29.54,
+    "optimal6_min_de2000_deutan": 14.06,
+    "optimal6_min_de2000_protan": 11.58,
+    "grayscale_L_spread": 0.228,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

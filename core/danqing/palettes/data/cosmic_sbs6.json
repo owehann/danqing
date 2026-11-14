@@ -26,7 +26,25 @@
   "neutral": "#CBCACA",
   "partners": {
     "sequential": "YlOrRd",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BE",
+      "#E7A395",
+      "#DB7C6D",
+      "#CD5346",
+      "#BC1A17",
+      "#A80000"
+    ],
+    "paired_diverging_stops": [
+      "#010101",
+      "#3F3F3E",
+      "#949493",
+      "#F4F3F2",
+      "#CABEBC",
+      "#A28A89",
+      "#7A5A59"
+    ]
   },
   "source": {
     "title": "COSMIC Mutational Signatures / SigProfilerPlotting standard SBS-96 palette",

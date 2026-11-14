@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_122",
+  "name": {
+    "en": "Sanzo Wada #122 (Carmine · Cream Yellow · Benzol Green)",
+    "zh": "和田三造 #122（Carmine · Cream Yellow · Benzol Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#CC1236",
+    "#FDBF68",
+    "#00978D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9C1",
+      "#E5A39D",
+      "#D87D79",
+      "#C95457",
+      "#B82034",
+      "#A4000D"
+    ],
+    "paired_diverging_stops": [
+      "#FDBF68",
+      "#FBD19A",
+      "#F8E3C7",
+      "#F4F3F2",
+      "#B4D5CF",
+      "#71B6AE",
+      "#00978D"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#122)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 43.93,
+    "min_de2000_deutan_first6": 28.46,
+    "min_de2000_protan_first6": 27.06,
+    "min_de2000_tritan_first6": 30.99,
+    "optimal6_min_de2000": 43.93,
+    "optimal6_min_de2000_deutan": 28.46,
+    "optimal6_min_de2000_protan": 27.06,
+    "grayscale_L_spread": 0.305,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

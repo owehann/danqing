@@ -20,7 +20,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED1C1",
+      "#C6B39C",
+      "#AF9678",
+      "#987A55",
+      "#815E31",
+      "#6B4302"
+    ],
+    "paired_diverging_stops": [
+      "#7B5E28",
+      "#A28D6B",
+      "#CBBFAD",
+      "#F4F3F2",
+      "#A4B6B4",
+      "#597B7A",
+      "#054544"
+    ]
   },
   "source": {
     "title": "Mihrab (Prayer Niche), dated A.H. 755/ A.D. 1354–55,  From Iran, Isfahan",

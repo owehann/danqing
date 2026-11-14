@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_eevee",
+  "name": {
+    "en": "eevee (palettetown)",
+    "zh": "eevee（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C09050",
+    "#605028",
+    "#A07830",
+    "#E0B070",
+    "#C0B070",
+    "#E8E0C0",
+    "#D8D0A0",
+    "#807048",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED1BF",
+      "#C6B397",
+      "#AF9771",
+      "#987A4A",
+      "#825F1F",
+      "#6B4400"
+    ],
+    "paired_diverging_stops": [
+      "#605028",
+      "#8F8368",
+      "#C0BAAB",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: eevee)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 9.23,
+    "min_de2000_deutan_first6": 3.5,
+    "min_de2000_protan_first6": 1.57,
+    "min_de2000_tritan_first6": 9.23,
+    "optimal6_min_de2000": 9.23,
+    "optimal6_min_de2000_deutan": 3.5,
+    "optimal6_min_de2000_protan": 1.57,
+    "grayscale_L_spread": 0.541,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

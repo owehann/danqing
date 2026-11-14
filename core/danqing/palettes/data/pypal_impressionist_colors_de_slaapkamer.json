@@ -1,0 +1,70 @@
+{
+  "id": "pypal_impressionist_colors_de_slaapkamer",
+  "name": {
+    "en": "de_slaapkamer (impressionist.colors)",
+    "zh": "de_slaapkamer（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2D3C2D",
+    "#4B5A4B",
+    "#5A6978",
+    "#879696",
+    "#96A596",
+    "#A5A55A",
+    "#A5963C",
+    "#96780F",
+    "#875A0F",
+    "#785A2D",
+    "#87693C",
+    "#96784B",
+    "#782D0F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD0BF",
+      "#C8B398",
+      "#B29572",
+      "#9B794B",
+      "#855D21",
+      "#6F4100"
+    ],
+    "paired_diverging_stops": [
+      "#5A6978",
+      "#8A959F",
+      "#BEC3C8",
+      "#F4F3F2",
+      "#D4CAAD",
+      "#B5A069",
+      "#96780F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: de_slaapkamer)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 8.3,
+    "min_de2000_deutan_first6": 8.6,
+    "min_de2000_protan_first6": 8.41,
+    "min_de2000_tritan_first6": 4.8,
+    "optimal6_min_de2000": 8.3,
+    "optimal6_min_de2000_deutan": 8.6,
+    "optimal6_min_de2000_protan": 8.41,
+    "grayscale_L_spread": 0.368,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

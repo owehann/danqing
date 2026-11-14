@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_balistapus_undulatus",
+  "name": {
+    "en": "Balistapus_undulatus (fishualize)",
+    "zh": "Balistapus_undulatus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E27B0C",
+    "#FED105",
+    "#6CA167",
+    "#145A76",
+    "#1E1719"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CEBA",
+      "#D6AD8D",
+      "#C58C60",
+      "#B36C2F",
+      "#A04A00",
+      "#8C2400"
+    ],
+    "paired_diverging_stops": [
+      "#FED105",
+      "#FBDE7F",
+      "#F7E9BC",
+      "#F4F3F2",
+      "#AABEC8",
+      "#638B9E",
+      "#145A76"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Balistapus_undulatus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 27.75,
+    "min_de2000_deutan_first6": 15.35,
+    "min_de2000_protan_first6": 11.86,
+    "min_de2000_tritan_first6": 20.52,
+    "optimal6_min_de2000": 27.75,
+    "optimal6_min_de2000_deutan": 15.35,
+    "optimal6_min_de2000_protan": 11.86,
+    "grayscale_L_spread": 0.66,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

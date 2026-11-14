@@ -1,0 +1,73 @@
+{
+  "id": "pypal_impressionist_colors_la_sieste",
+  "name": {
+    "en": "la_sieste (impressionist.colors)",
+    "zh": "la_sieste（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F0C33C",
+    "#F0F03C",
+    "#C3E13C",
+    "#87C33C",
+    "#4BA53C",
+    "#2D5A3C",
+    "#2D1E1E",
+    "#3C2D2D",
+    "#785A5A",
+    "#D29696",
+    "#A58778",
+    "#87693C",
+    "#C39669",
+    "#F0A569",
+    "#F03C2D",
+    "#C32D1E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCABF",
+      "#E0A698",
+      "#D38271",
+      "#C35C4B",
+      "#B13222",
+      "#9D0000"
+    ],
+    "paired_diverging_stops": [
+      "#F0F03C",
+      "#F1F28D",
+      "#F2F3C3",
+      "#F4F3F2",
+      "#ACA5A4",
+      "#6A5D5D",
+      "#2D1E1E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: la_sieste)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 16,
+    "max_colors": 16,
+    "min_de2000_first6": 7.99,
+    "min_de2000_deutan_first6": 1.68,
+    "min_de2000_protan_first6": 3.43,
+    "min_de2000_tritan_first6": 11.77,
+    "optimal6_min_de2000": 7.99,
+    "optimal6_min_de2000_deutan": 1.68,
+    "optimal6_min_de2000_protan": 3.43,
+    "grayscale_L_spread": 0.672,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

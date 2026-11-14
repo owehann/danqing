@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_162",
+  "name": {
+    "en": "Sanzo Wada #162 (Old Rose · Rainette Green · Lilac)",
+    "zh": "和田三造 #162（Old Rose · Rainette Green · Lilac）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D46D7A",
+    "#8FA071",
+    "#B984AF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CCC7",
+      "#D5AAA8",
+      "#C3898A",
+      "#B0686D",
+      "#9C4651",
+      "#872137"
+    ],
+    "paired_diverging_stops": [
+      "#8FA071",
+      "#AFBB9B",
+      "#D1D7C6",
+      "#F4F3F2",
+      "#E1CDDB",
+      "#CDA8C5",
+      "#B984AF"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#162)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 16.13,
+    "min_de2000_deutan_first6": 3.51,
+    "min_de2000_protan_first6": 16.08,
+    "min_de2000_tritan_first6": 12.95,
+    "optimal6_min_de2000": 16.13,
+    "optimal6_min_de2000_deutan": 3.51,
+    "optimal6_min_de2000_protan": 16.08,
+    "grayscale_L_spread": 0.023,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

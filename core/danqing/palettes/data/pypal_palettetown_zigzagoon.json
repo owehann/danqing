@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_zigzagoon",
+  "name": {
+    "en": "zigzagoon (palettetown)",
+    "zh": "zigzagoon（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A87858",
+    "#685848",
+    "#C0A888",
+    "#E0D0A8",
+    "#C89878",
+    "#484028",
+    "#100000",
+    "#403830",
+    "#E8B898",
+    "#F8E8C0",
+    "#785848",
+    "#C83820",
+    "#A02000",
+    "#A09078"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBE",
+      "#E0A797",
+      "#D28370",
+      "#C25E49",
+      "#B0351E",
+      "#9C0000"
+    ],
+    "paired_diverging_stops": [
+      "#100000",
+      "#55403C",
+      "#A19592",
+      "#F4F3F2",
+      "#F5F0E2",
+      "#F7ECD1",
+      "#F8E8C0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: zigzagoon)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 8.84,
+    "min_de2000_deutan_first6": 3.32,
+    "min_de2000_protan_first6": 3.96,
+    "min_de2000_tritan_first6": 7.69,
+    "optimal6_min_de2000": 8.84,
+    "optimal6_min_de2000_deutan": 3.32,
+    "optimal6_min_de2000_protan": 3.96,
+    "grayscale_L_spread": 0.825,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -19,7 +19,25 @@
   "neutral": "#B6B3AC",
   "partners": {
     "sequential": "lajolla",
-    "diverging": "roma"
+    "diverging": "roma",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC3",
+      "#D6ABA0",
+      "#C48A7E",
+      "#B2695D",
+      "#9E483C",
+      "#89231B"
+    ],
+    "paired_diverging_stops": [
+      "#805D00",
+      "#A58E5B",
+      "#CCC0A6",
+      "#F4F3F2",
+      "#AAB8BE",
+      "#65808D",
+      "#224B5E"
+    ]
   },
   "source": {
     "title": "MetBrewer: Hokusai1 (Met Object 56157)",

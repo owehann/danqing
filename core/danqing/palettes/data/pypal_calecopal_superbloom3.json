@@ -1,0 +1,63 @@
+{
+  "id": "pypal_calecopal_superbloom3",
+  "name": {
+    "en": "superbloom3 (calecopal)",
+    "zh": "superbloom3（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E69512",
+    "#D3105C",
+    "#3B4F8E",
+    "#3A5D3D",
+    "#4C4976",
+    "#6C91BD"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC8C7",
+      "#E5A1A7",
+      "#D87A89",
+      "#C9516C",
+      "#B81750",
+      "#A40035"
+    ],
+    "paired_diverging_stops": [
+      "#E69512",
+      "#EDB674",
+      "#F1D5B5",
+      "#F4F3F2",
+      "#B2BBD2",
+      "#7484B0",
+      "#3B4F8E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: superbloom3)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 7.8,
+    "min_de2000_deutan_first6": 5.13,
+    "min_de2000_protan_first6": 4.85,
+    "min_de2000_tritan_first6": 8.7,
+    "optimal6_min_de2000": 7.8,
+    "optimal6_min_de2000_deutan": 5.13,
+    "optimal6_min_de2000_protan": 4.85,
+    "grayscale_L_spread": 0.306,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

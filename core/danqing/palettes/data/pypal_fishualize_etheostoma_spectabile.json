@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_etheostoma_spectabile",
+  "name": {
+    "en": "Etheostoma_spectabile (fishualize)",
+    "zh": "Etheostoma_spectabile（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#CC3D24",
+    "#F3C558",
+    "#6DAE90",
+    "#30B4CC",
+    "#004F7A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBE",
+      "#DFA797",
+      "#D18370",
+      "#C15E49",
+      "#AF351E",
+      "#9B0000"
+    ],
+    "paired_diverging_stops": [
+      "#F3C558",
+      "#F4D592",
+      "#F4E5C3",
+      "#F4F3F2",
+      "#A6BACA",
+      "#5C84A2",
+      "#004F7A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Etheostoma_spectabile)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 21.07,
+    "min_de2000_deutan_first6": 22.51,
+    "min_de2000_protan_first6": 19.98,
+    "min_de2000_tritan_first6": 6.76,
+    "optimal6_min_de2000": 21.07,
+    "optimal6_min_de2000_deutan": 22.51,
+    "optimal6_min_de2000_protan": 19.98,
+    "grayscale_L_spread": 0.434,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

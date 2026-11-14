@@ -1,0 +1,62 @@
+{
+  "id": "pypal_yarrr_nemo",
+  "name": {
+    "en": "nemo (yarrr)",
+    "zh": "nemo（yarrr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FBCF35",
+    "#ED4C1C",
+    "#9C7E70",
+    "#5AC2F1",
+    "#11776C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EECABC",
+      "#E3A691",
+      "#D68167",
+      "#C75A3B",
+      "#B62C00",
+      "#A20000"
+    ],
+    "paired_diverging_stops": [
+      "#FBCF35",
+      "#F9DC86",
+      "#F6E8BF",
+      "#F4F3F2",
+      "#C5E4F3",
+      "#94D3F2",
+      "#5AC2F1"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (yarrr: nemo)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 21.5,
+    "min_de2000_deutan_first6": 18.63,
+    "min_de2000_protan_first6": 9.2,
+    "min_de2000_tritan_first6": 21.11,
+    "optimal6_min_de2000": 21.5,
+    "optimal6_min_de2000_deutan": 18.63,
+    "optimal6_min_de2000_protan": 9.2,
+    "grayscale_L_spread": 0.355,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

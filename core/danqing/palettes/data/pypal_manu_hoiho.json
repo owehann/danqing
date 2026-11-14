@@ -1,0 +1,63 @@
+{
+  "id": "pypal_manu_hoiho",
+  "name": {
+    "en": "Hoiho (Manu)",
+    "zh": "Hoiho（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#CABEE9",
+    "#7C7189",
+    "#FAE093",
+    "#D04E59",
+    "#BC8E7D",
+    "#2F3D70"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC4",
+      "#DCA7A2",
+      "#CD8482",
+      "#BC6062",
+      "#A93A43",
+      "#940025"
+    ],
+    "paired_diverging_stops": [
+      "#FAE093",
+      "#F8E7B5",
+      "#F6EDD4",
+      "#F4F3F2",
+      "#ACB3C6",
+      "#6A779B",
+      "#2F3D70"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Hoiho)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 19.35,
+    "min_de2000_deutan_first6": 9.24,
+    "min_de2000_protan_first6": 16.1,
+    "min_de2000_tritan_first6": 16.3,
+    "optimal6_min_de2000": 19.35,
+    "optimal6_min_de2000_deutan": 9.24,
+    "optimal6_min_de2000_protan": 16.1,
+    "grayscale_L_spread": 0.536,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

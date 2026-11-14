@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_309",
+  "name": {
+    "en": "Sanzo Wada #309 (Golden Yellow · Apricot Orange · Violet Blue)",
+    "zh": "和田三造 #309（Golden Yellow · Apricot Orange · Violet Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F3A257",
+    "#F68C50",
+    "#40456A",
+    "#064F6E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDBD",
+      "#D6AC94",
+      "#C58B6B",
+      "#B36B41",
+      "#A0490A",
+      "#8B2300"
+    ],
+    "paired_diverging_stops": [
+      "#F3A257",
+      "#F5BE8F",
+      "#F6D9C1",
+      "#F4F3F2",
+      "#A7BAC5",
+      "#5D8399",
+      "#064F6E"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#309)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 8.34,
+    "min_de2000_deutan_first6": 1.43,
+    "min_de2000_protan_first6": 1.89,
+    "min_de2000_tritan_first6": 5.42,
+    "optimal6_min_de2000": 8.34,
+    "optimal6_min_de2000_deutan": 1.43,
+    "optimal6_min_de2000_protan": 1.89,
+    "grayscale_L_spread": 0.375,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

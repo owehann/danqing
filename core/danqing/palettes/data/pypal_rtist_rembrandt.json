@@ -1,0 +1,62 @@
+{
+  "id": "pypal_rtist_rembrandt",
+  "name": {
+    "en": "rembrandt (rtist)",
+    "zh": "rembrandt（rtist）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#030504",
+    "#F4DD9B",
+    "#811D08",
+    "#1E1507",
+    "#252823"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CBC0",
+      "#D4A99B",
+      "#C28676",
+      "#AE6452",
+      "#99412F",
+      "#831801"
+    ],
+    "paired_diverging_stops": [
+      "#030504",
+      "#444745",
+      "#979997",
+      "#F4F3F2",
+      "#F4ECD6",
+      "#F4E5B9",
+      "#F4DD9B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rtist: rembrandt)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.67,
+    "min_de2000_deutan_first6": 6.99,
+    "min_de2000_protan_first6": 6.77,
+    "min_de2000_tritan_first6": 8.94,
+    "optimal6_min_de2000": 8.67,
+    "optimal6_min_de2000_deutan": 6.99,
+    "optimal6_min_de2000_protan": 6.77,
+    "grayscale_L_spread": 0.791,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

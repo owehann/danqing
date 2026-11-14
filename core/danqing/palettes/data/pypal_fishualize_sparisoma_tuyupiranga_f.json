@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_sparisoma_tuyupiranga_f",
+  "name": {
+    "en": "Sparisoma_tuyupiranga_f (fishualize)",
+    "zh": "Sparisoma_tuyupiranga_f（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C55451",
+    "#E97C5F",
+    "#A56166",
+    "#FF9A8E",
+    "#F24535"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BE",
+      "#E5A495",
+      "#D97E6D",
+      "#CA5645",
+      "#B92316",
+      "#A50000"
+    ],
+    "paired_diverging_stops": [
+      "#A56166",
+      "#C19092",
+      "#DBC1C1",
+      "#F4F3F2",
+      "#FBBFB4",
+      "#FA8877",
+      "#F24535"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Sparisoma_tuyupiranga_f)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.11,
+    "min_de2000_deutan_first6": 7.25,
+    "min_de2000_protan_first6": 8.18,
+    "min_de2000_tritan_first6": 7.3,
+    "optimal6_min_de2000": 9.11,
+    "optimal6_min_de2000_deutan": 7.25,
+    "optimal6_min_de2000_protan": 8.18,
+    "grayscale_L_spread": 0.217,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

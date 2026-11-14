@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_sbchannel",
+  "name": {
+    "en": "sbchannel (calecopal)",
+    "zh": "sbchannel（calecopal）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#A1CAF6",
+    "#6592D6",
+    "#4C6FA1",
+    "#375377",
+    "#1E2F46"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D3D6",
+      "#AEB7C5",
+      "#8C9CB4",
+      "#6A81A3",
+      "#4A6791",
+      "#2A4D7F"
+    ],
+    "paired_diverging_stops": [
+      "#A1CAF6",
+      "#BDD8F5",
+      "#D8E6F4",
+      "#F4F3F2",
+      "#A6ADB5",
+      "#5E6B7C",
+      "#1E2F46"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: sbchannel)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.61,
+    "min_de2000_deutan_first6": 10.43,
+    "min_de2000_protan_first6": 11.34,
+    "min_de2000_tritan_first6": 10.76,
+    "optimal6_min_de2000": 10.61,
+    "optimal6_min_de2000_deutan": 10.43,
+    "optimal6_min_de2000_protan": 11.34,
+    "grayscale_L_spread": 0.523,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

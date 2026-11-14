@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_chinchou",
+  "name": {
+    "en": "chinchou (palettetown)",
+    "zh": "chinchou（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4058A8",
+    "#6078D0",
+    "#F8F8F8",
+    "#8898F8",
+    "#A0C8F8",
+    "#F8F0A8",
+    "#B08838",
+    "#D0B058",
+    "#F8D878",
+    "#003870",
+    "#C8E0F8",
+    "#886018",
+    "#A00000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC0",
+      "#DFA799",
+      "#D18374",
+      "#C15E4E",
+      "#AF3528",
+      "#9B0000"
+    ],
+    "paired_diverging_stops": [
+      "#F8D878",
+      "#F7E2A5",
+      "#F5EBCC",
+      "#F4F3F2",
+      "#A1B2C7",
+      "#54749C",
+      "#003870"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: chinchou)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 11.63,
+    "min_de2000_deutan_first6": 11.99,
+    "min_de2000_protan_first6": 11.08,
+    "min_de2000_tritan_first6": 10.24,
+    "optimal6_min_de2000": 11.63,
+    "optimal6_min_de2000_deutan": 11.99,
+    "optimal6_min_de2000_protan": 11.08,
+    "grayscale_L_spread": 0.635,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

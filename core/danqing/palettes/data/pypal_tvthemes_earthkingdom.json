@@ -1,0 +1,66 @@
+{
+  "id": "pypal_tvthemes_earthkingdom",
+  "name": {
+    "en": "EarthKingdom (tvthemes)",
+    "zh": "EarthKingdom（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#015E05",
+    "#B1A866",
+    "#7A5C12",
+    "#646742",
+    "#25351C",
+    "#4C7022",
+    "#C7C45E",
+    "#D2CFAB",
+    "#FEFED8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D5C1",
+      "#B1BB9C",
+      "#91A277",
+      "#718953",
+      "#53712E",
+      "#355900"
+    ],
+    "paired_diverging_stops": [
+      "#25351C",
+      "#636F5C",
+      "#A9AFA4",
+      "#F4F3F2",
+      "#F7F7EA",
+      "#FBFBE1",
+      "#FEFED8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: EarthKingdom)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 9.97,
+    "min_de2000_deutan_first6": 2.79,
+    "min_de2000_protan_first6": 2.99,
+    "min_de2000_tritan_first6": 11.13,
+    "optimal6_min_de2000": 9.97,
+    "optimal6_min_de2000_deutan": 2.79,
+    "optimal6_min_de2000_protan": 2.99,
+    "grayscale_L_spread": 0.68,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

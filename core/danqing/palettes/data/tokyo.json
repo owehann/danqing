@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "tokyo",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D4C4",
+      "#B6B9A1",
+      "#989F7F",
+      "#7B855F",
+      "#5F6C3E",
+      "#44541D"
+    ],
+    "paired_diverging_stops": [
+      "#1C0E34",
+      "#5B5370",
+      "#A4A0AF",
+      "#F4F3F2",
+      "#BFC3B8",
+      "#8C9481",
+      "#5D684D"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (tokyo)",

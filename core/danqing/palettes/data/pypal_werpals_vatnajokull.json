@@ -1,0 +1,67 @@
+{
+  "id": "pypal_werpals_vatnajokull",
+  "name": {
+    "en": "vatnajokull (werpals)",
+    "zh": "vatnajokull（werpals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FEFEFE",
+    "#D7E8F8",
+    "#9AC5E8",
+    "#00F7FF",
+    "#00C6FF",
+    "#0090FF",
+    "#0142FE",
+    "#002969",
+    "#566199",
+    "#B7BAF3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C8D3ED",
+      "#9BB6F0",
+      "#6F98F1",
+      "#4377EF",
+      "#1650EC",
+      "#0001E7"
+    ],
+    "paired_diverging_stops": [
+      "#FEFEFE",
+      "#FBFAFA",
+      "#F7F7F6",
+      "#F4F3F2",
+      "#A3C1FD",
+      "#558AFF",
+      "#0142FE"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (werpals: vatnajokull)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 9.79,
+    "min_de2000_deutan_first6": 6.39,
+    "min_de2000_protan_first6": 1.29,
+    "min_de2000_tritan_first6": 7.63,
+    "optimal6_min_de2000": 9.79,
+    "optimal6_min_de2000_deutan": 6.39,
+    "optimal6_min_de2000_protan": 1.29,
+    "grayscale_L_spread": 0.695,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

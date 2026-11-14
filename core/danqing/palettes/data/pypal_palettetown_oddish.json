@@ -1,0 +1,67 @@
+{
+  "id": "pypal_palettetown_oddish",
+  "name": {
+    "en": "oddish (palettetown)",
+    "zh": "oddish（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#70A830",
+    "#98D048",
+    "#506028",
+    "#486880",
+    "#7090A0",
+    "#304858",
+    "#B8F870",
+    "#90B0C0",
+    "#F8B838",
+    "#F84800"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFCABA",
+      "#E6A48E",
+      "#DA7E62",
+      "#CC5632",
+      "#BB2100",
+      "#A80000"
+    ],
+    "paired_diverging_stops": [
+      "#304858",
+      "#6D7D89",
+      "#AEB7BC",
+      "#F4F3F2",
+      "#F6E1BD",
+      "#F8CD84",
+      "#F8B838"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: oddish)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 11.23,
+    "min_de2000_deutan_first6": 11.07,
+    "min_de2000_protan_first6": 10.99,
+    "min_de2000_tritan_first6": 8.07,
+    "optimal6_min_de2000": 11.23,
+    "optimal6_min_de2000_deutan": 11.07,
+    "optimal6_min_de2000_protan": 10.99,
+    "grayscale_L_spread": 0.519,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

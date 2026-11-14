@@ -21,7 +21,25 @@
   "neutral": "#F7F7F7",
   "partners": {
     "sequential": "GnBu",
-    "diverging": "PRGn"
+    "diverging": "PRGn",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED6C4",
+      "#A7BEA1",
+      "#81A67F",
+      "#5A8F5E",
+      "#2F773D",
+      "#00601B"
+    ],
+    "paired_diverging_stops": [
+      "#762A83",
+      "#A16EA9",
+      "#CAB0CE",
+      "#F4F3F2",
+      "#BCC3B9",
+      "#889583",
+      "#566A51"
+    ]
   },
   "source": {
     "title": "ColorBrewer 2.0 (PRGn, 9-class)",

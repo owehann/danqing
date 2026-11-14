@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_golbat",
+  "name": {
+    "en": "golbat (palettetown)",
+    "zh": "golbat（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#000000",
+    "#7870C8",
+    "#303088",
+    "#A84890",
+    "#A8A0E8",
+    "#680850",
+    "#C868B0",
+    "#606060",
+    "#F8F8F8",
+    "#C8C0F8",
+    "#D0D0D0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CCD2",
+      "#D1A9BD",
+      "#BE87A8",
+      "#AA6593",
+      "#95437F",
+      "#801A6A"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: golbat)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 15.66,
+    "min_de2000_deutan_first6": 11.8,
+    "min_de2000_protan_first6": 9.56,
+    "min_de2000_tritan_first6": 15.39,
+    "optimal6_min_de2000": 15.66,
+    "optimal6_min_de2000_deutan": 11.8,
+    "optimal6_min_de2000_protan": 9.56,
+    "grayscale_L_spread": 0.979,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

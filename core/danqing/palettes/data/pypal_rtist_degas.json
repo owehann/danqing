@@ -1,0 +1,62 @@
+{
+  "id": "pypal_rtist_degas",
+  "name": {
+    "en": "degas (rtist)",
+    "zh": "degas（rtist）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7A654E",
+    "#E9CBB7",
+    "#AC713B",
+    "#78818D",
+    "#352E23"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0D0C0",
+      "#CBB19A",
+      "#B69374",
+      "#A17550",
+      "#8B5929",
+      "#753C00"
+    ],
+    "paired_diverging_stops": [
+      "#E9CBB7",
+      "#EDD8CB",
+      "#F0E6DE",
+      "#F4F3F2",
+      "#AFACA7",
+      "#6F6A61",
+      "#352E23"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rtist: degas)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 14.45,
+    "min_de2000_deutan_first6": 14.18,
+    "min_de2000_protan_first6": 11.73,
+    "min_de2000_tritan_first6": 14.02,
+    "optimal6_min_de2000": 14.45,
+    "optimal6_min_de2000_deutan": 14.18,
+    "optimal6_min_de2000_protan": 11.73,
+    "grayscale_L_spread": 0.557,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

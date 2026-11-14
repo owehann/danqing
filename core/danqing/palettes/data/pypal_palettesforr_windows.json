@@ -1,0 +1,88 @@
+{
+  "id": "pypal_palettesforr_windows",
+  "name": {
+    "en": "Windows (palettesForR)",
+    "zh": "Windows（palettesForR）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#996600",
+    "#CC9900",
+    "#FFCC00",
+    "#FFFF00",
+    "#FFFF99",
+    "#FFDB9D",
+    "#FFCC66",
+    "#FF9933",
+    "#FF794B",
+    "#FF3300",
+    "#990000",
+    "#333366",
+    "#003399",
+    "#0066CC",
+    "#0083D7",
+    "#0099FF",
+    "#3E9ADE",
+    "#99CCFF",
+    "#B4E2FF",
+    "#DEFFFF",
+    "#FFCCFF",
+    "#CCCCFF",
+    "#9999FF",
+    "#6666CC",
+    "#9999CC",
+    "#666699",
+    "#006600",
+    "#009900",
+    "#66CC33",
+    "#99FF66",
+    "#CCF4CC"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F1C8BA",
+      "#EAA28E",
+      "#DF7A62",
+      "#D24E33",
+      "#C20000",
+      "#AF0000"
+    ],
+    "paired_diverging_stops": [
+      "#FFFF00",
+      "#FAFC86",
+      "#F7F9C1",
+      "#F4F3F2",
+      "#A0B4D8",
+      "#5176BA",
+      "#003399"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettesForR: Windows)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 31,
+    "max_colors": 31,
+    "min_de2000_first6": 10.94,
+    "min_de2000_deutan_first6": 6.86,
+    "min_de2000_protan_first6": 8.45,
+    "min_de2000_tritan_first6": 3.19,
+    "optimal6_min_de2000": 10.94,
+    "optimal6_min_de2000_deutan": 6.86,
+    "optimal6_min_de2000_protan": 8.45,
+    "grayscale_L_spread": 0.63,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

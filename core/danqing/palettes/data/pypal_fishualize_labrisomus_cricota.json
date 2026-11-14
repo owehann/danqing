@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_labrisomus_cricota",
+  "name": {
+    "en": "Labrisomus_cricota (fishualize)",
+    "zh": "Labrisomus_cricota（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#764743",
+    "#2F3033",
+    "#BC846C",
+    "#F2785C",
+    "#8C423B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC5",
+      "#D0ADA4",
+      "#BC8E84",
+      "#A86F66",
+      "#935048",
+      "#7D312B"
+    ],
+    "paired_diverging_stops": [
+      "#2F3033",
+      "#6A6B6D",
+      "#ADADAD",
+      "#F4F3F2",
+      "#F8CCC0",
+      "#F7A38F",
+      "#F2785C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Labrisomus_cricota)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 6.32,
+    "min_de2000_deutan_first6": 5.7,
+    "min_de2000_protan_first6": 3.99,
+    "min_de2000_tritan_first6": 6.4,
+    "optimal6_min_de2000": 6.32,
+    "optimal6_min_de2000_deutan": 5.7,
+    "optimal6_min_de2000_protan": 3.99,
+    "grayscale_L_spread": 0.399,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

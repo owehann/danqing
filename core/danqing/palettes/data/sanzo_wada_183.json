@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_183",
+  "name": {
+    "en": "Sanzo Wada #183 (Deep Violet / Plumbeous · Veronia Purple · Red Violet)",
+    "zh": "和田三造 #183（Deep Violet / Plumbeous · Veronia Purple · Red Violet）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#70727C",
+    "#8C4C62",
+    "#59256A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CECB",
+      "#CCAEB0",
+      "#B68E96",
+      "#A1707C",
+      "#8B5264",
+      "#75344C"
+    ],
+    "paired_diverging_stops": [
+      "#8C4C62",
+      "#B0828F",
+      "#D3B9BF",
+      "#F4F3F2",
+      "#BEACC4",
+      "#8B6897",
+      "#59256A"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#183)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 19.37,
+    "min_de2000_deutan_first6": 9.24,
+    "min_de2000_protan_first6": 9.85,
+    "min_de2000_tritan_first6": 15.31,
+    "optimal6_min_de2000": 19.37,
+    "optimal6_min_de2000_deutan": 9.24,
+    "optimal6_min_de2000_protan": 9.85,
+    "grayscale_L_spread": 0.183,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

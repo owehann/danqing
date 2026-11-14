@@ -1,0 +1,67 @@
+{
+  "id": "pypal_palettetown_plusle",
+  "name": {
+    "en": "plusle (palettetown)",
+    "zh": "plusle（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8E8C0",
+    "#D86048",
+    "#E8D080",
+    "#000000",
+    "#885830",
+    "#787050",
+    "#E89870",
+    "#F8F0D8",
+    "#B8A880",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCC0",
+      "#DAA99A",
+      "#CA8775",
+      "#B96551",
+      "#A6412C",
+      "#921100"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: plusle)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 10.24,
+    "min_de2000_deutan_first6": 7.27,
+    "min_de2000_protan_first6": 4.8,
+    "min_de2000_tritan_first6": 7.96,
+    "optimal6_min_de2000": 10.24,
+    "optimal6_min_de2000_deutan": 7.27,
+    "optimal6_min_de2000_protan": 4.8,
+    "grayscale_L_spread": 0.979,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

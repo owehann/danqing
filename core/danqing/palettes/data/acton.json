@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "acton",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CECF",
+      "#CAADB7",
+      "#B58EA0",
+      "#9F6F89",
+      "#895073",
+      "#72325D"
+    ],
+    "paired_diverging_stops": [
+      "#260D40",
+      "#635479",
+      "#A8A1B4",
+      "#F4F3F2",
+      "#C2C0C4",
+      "#928F98",
+      "#66606E"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (acton)",

@@ -1,0 +1,67 @@
+{
+  "id": "pypal_ggsci_cyan_material",
+  "name": {
+    "en": "cyan_material (ggsci)",
+    "zh": "cyan_material（ggsci）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#E0F7FA",
+    "#B2EBF2",
+    "#80DEEA",
+    "#4DD0E1",
+    "#26C6DA",
+    "#00BCD4",
+    "#00ACC1",
+    "#0097A7",
+    "#00838F",
+    "#006064"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD5D1",
+      "#A3BCBB",
+      "#79A4A6",
+      "#4E8B91",
+      "#14737C",
+      "#005B68"
+    ],
+    "paired_diverging_stops": [
+      "#E0F7FA",
+      "#E7F6F7",
+      "#EDF5F5",
+      "#F4F3F2",
+      "#AAC0C0",
+      "#618F91",
+      "#006064"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggsci: cyan_material)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 2.96,
+    "min_de2000_deutan_first6": 2.9,
+    "min_de2000_protan_first6": 2.77,
+    "min_de2000_tritan_first6": 2.23,
+    "optimal6_min_de2000": 7.17,
+    "optimal6_min_de2000_deutan": 7.16,
+    "optimal6_min_de2000_protan": 6.92,
+    "grayscale_L_spread": 0.516,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

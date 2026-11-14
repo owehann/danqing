@@ -19,7 +19,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D1D8",
+      "#B3B4C9",
+      "#9398B9",
+      "#757CA9",
+      "#586199",
+      "#3E4588"
+    ],
+    "paired_diverging_stops": [
+      "#805D00",
+      "#A68E56",
+      "#CCC0A4",
+      "#F4F3F2",
+      "#B5B8C7",
+      "#7A7F9D",
+      "#454A74"
+    ]
   },
   "source": {
     "title": "The Palace of Westminster, 1906–1907, André Derain, French",

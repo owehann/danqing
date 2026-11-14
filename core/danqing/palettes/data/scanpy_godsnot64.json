@@ -76,7 +76,25 @@
   "neutral": "#938A81",
   "partners": {
     "sequential": "viridis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9C8D8",
+      "#DBA2C9",
+      "#CB7BB9",
+      "#B952A8",
+      "#A61A97",
+      "#920086"
+    ],
+    "paired_diverging_stops": [
+      "#6F6800",
+      "#979707",
+      "#C4C590",
+      "#F4F3F2",
+      "#929DB1",
+      "#3A4D73",
+      "#000035"
+    ]
   },
   "source": {
     "title": "Scanpy High-Cardinality Atlas Palette (godsnot_102 subset)",

@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_slaking",
+  "name": {
+    "en": "slaking (palettetown)",
+    "zh": "slaking（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A88868",
+    "#D0C8B0",
+    "#886850",
+    "#584030",
+    "#C8C8E8",
+    "#C0A890",
+    "#100000",
+    "#586078",
+    "#E8E8F8",
+    "#883040",
+    "#F0E8D0",
+    "#D88090",
+    "#F8F8F8",
+    "#C05070"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CBC9",
+      "#D7A8AC",
+      "#C68690",
+      "#B46475",
+      "#A0405B",
+      "#8B1442"
+    ],
+    "paired_diverging_stops": [
+      "#100000",
+      "#55403C",
+      "#A19592",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: slaking)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 10.14,
+    "min_de2000_deutan_first6": 7.41,
+    "min_de2000_protan_first6": 8.11,
+    "min_de2000_tritan_first6": 10.16,
+    "optimal6_min_de2000": 10.14,
+    "optimal6_min_de2000_deutan": 7.41,
+    "optimal6_min_de2000_protan": 8.11,
+    "grayscale_L_spread": 0.87,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

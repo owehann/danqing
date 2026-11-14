@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_oncorhynchus_kisutch",
+  "name": {
+    "en": "Oncorhynchus_kisutch (fishualize)",
+    "zh": "Oncorhynchus_kisutch（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#CC8394",
+    "#AC563B",
+    "#CDA97C",
+    "#7C8EC5",
+    "#2B3C51"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEC2",
+      "#D2AD9D",
+      "#C08D7A",
+      "#AD6D58",
+      "#984E35",
+      "#832D0E"
+    ],
+    "paired_diverging_stops": [
+      "#AC563B",
+      "#C78A77",
+      "#DFBEB3",
+      "#F4F3F2",
+      "#CAD1E4",
+      "#A2AFD5",
+      "#7C8EC5"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Oncorhynchus_kisutch)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 23.12,
+    "min_de2000_deutan_first6": 14.55,
+    "min_de2000_protan_first6": 15.77,
+    "min_de2000_tritan_first6": 9.88,
+    "optimal6_min_de2000": 23.12,
+    "optimal6_min_de2000_deutan": 14.55,
+    "optimal6_min_de2000_protan": 15.77,
+    "grayscale_L_spread": 0.405,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

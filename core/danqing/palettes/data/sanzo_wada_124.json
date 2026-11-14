@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_124",
+  "name": {
+    "en": "Sanzo Wada #124 (Pale Burnt Lake · Yellow Ocher · Olive Yellow)",
+    "zh": "和田三造 #124（Pale Burnt Lake · Yellow Ocher · Olive Yellow）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#802626",
+    "#E2B540",
+    "#A6A159"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CCC4",
+      "#D3AAA2",
+      "#C08981",
+      "#AD6861",
+      "#984742",
+      "#822324"
+    ],
+    "paired_diverging_stops": [
+      "#802626",
+      "#AB6B65",
+      "#D1AEA9",
+      "#F4F3F2",
+      "#EEDFBD",
+      "#E8CB85",
+      "#E2B540"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#124)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 14.68,
+    "min_de2000_deutan_first6": 11.77,
+    "min_de2000_protan_first6": 10.2,
+    "min_de2000_tritan_first6": 15.68,
+    "optimal6_min_de2000": 14.68,
+    "optimal6_min_de2000_deutan": 11.77,
+    "optimal6_min_de2000_protan": 10.2,
+    "grayscale_L_spread": 0.384,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

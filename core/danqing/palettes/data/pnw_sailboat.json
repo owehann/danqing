@@ -18,7 +18,25 @@
   "neutral": "#B5B8BA",
   "partners": {
     "sequential": "navia",
-    "diverging": "broc"
+    "diverging": "broc",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D2D7",
+      "#B3B5C7",
+      "#9399B6",
+      "#747DA5",
+      "#576294",
+      "#3C4783"
+    ],
+    "paired_diverging_stops": [
+      "#525E99",
+      "#848FB7",
+      "#BAC0D5",
+      "#F4F3F2",
+      "#C9C0AB",
+      "#9F8F66",
+      "#78601D"
+    ]
   },
   "source": {
     "title": "PNWColors Pacific Northwest Nature Palette (Sailboat)",

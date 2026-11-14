@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_chlorurus_microrhinos",
+  "name": {
+    "en": "Chlorurus_microrhinos (fishualize)",
+    "zh": "Chlorurus_microrhinos（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#623DBF",
+    "#1664FF",
+    "#0EE6F9",
+    "#14B8CE",
+    "#14AA62"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C9D3E9",
+      "#9DB7E8",
+      "#7299E5",
+      "#477BE1",
+      "#1959DB",
+      "#002BD3"
+    ],
+    "paired_diverging_stops": [
+      "#1664FF",
+      "#659AFF",
+      "#ACC8FC",
+      "#F4F3F2",
+      "#B7DCC1",
+      "#77C391",
+      "#14AA62"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Chlorurus_microrhinos)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 11.42,
+    "min_de2000_deutan_first6": 9.94,
+    "min_de2000_protan_first6": 10.84,
+    "min_de2000_tritan_first6": 8.83,
+    "optimal6_min_de2000": 11.42,
+    "optimal6_min_de2000_deutan": 9.94,
+    "optimal6_min_de2000_protan": 10.84,
+    "grayscale_L_spread": 0.365,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

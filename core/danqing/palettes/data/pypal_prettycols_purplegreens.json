@@ -1,0 +1,66 @@
+{
+  "id": "pypal_prettycols_purplegreens",
+  "name": {
+    "en": "PurpleGreens (PrettyCols)",
+    "zh": "PurpleGreens（PrettyCols）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#420F75",
+    "#7640A9",
+    "#AD72D6",
+    "#E7A8FB",
+    "#F5F5F5",
+    "#99CE64",
+    "#659A32",
+    "#326812",
+    "#033800"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DBCEDC",
+      "#C2ADCF",
+      "#A98DC2",
+      "#916DB4",
+      "#7A4CA6",
+      "#632796"
+    ],
+    "paired_diverging_stops": [
+      "#420F75",
+      "#775FA1",
+      "#B3A7CA",
+      "#F4F3F2",
+      "#D5E8C5",
+      "#B7DB97",
+      "#99CE64"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (PrettyCols: PurpleGreens)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 14.78,
+    "min_de2000_deutan_first6": 15.11,
+    "min_de2000_protan_first6": 14.88,
+    "min_de2000_tritan_first6": 15.62,
+    "optimal6_min_de2000": 16.02,
+    "optimal6_min_de2000_deutan": 15.98,
+    "optimal6_min_de2000_protan": 15.59,
+    "grayscale_L_spread": 0.674,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

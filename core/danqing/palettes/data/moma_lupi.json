@@ -20,7 +20,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC9",
+      "#D7A9AC",
+      "#C5878F",
+      "#B36574",
+      "#9F4259",
+      "#8A1840"
+    ],
+    "paired_diverging_stops": [
+      "#007180",
+      "#639BA5",
+      "#ACC7CB",
+      "#F4F3F2",
+      "#D5BD9F",
+      "#B5874B",
+      "#935100"
+    ]
   },
   "source": {
     "title": "Dear Data: Week 43 (Trying New Things / A Week of New Things), 2015, Giorgia Lupi, Stefanie Posavec, Ink, pencil, colored pencil, and marker on paper",

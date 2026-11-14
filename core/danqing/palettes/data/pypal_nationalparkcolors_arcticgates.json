@@ -1,0 +1,63 @@
+{
+  "id": "pypal_nationalparkcolors_arcticgates",
+  "name": {
+    "en": "ArcticGates (nationalparkcolors)",
+    "zh": "ArcticGates（nationalparkcolors）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F4E7C5",
+    "#678096",
+    "#ACC2CF",
+    "#979461",
+    "#CD5733",
+    "#A12A19"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCC1",
+      "#DBA99B",
+      "#CB8776",
+      "#BA6453",
+      "#A7402E",
+      "#920D00"
+    ],
+    "paired_diverging_stops": [
+      "#ACC2CF",
+      "#C4D2DB",
+      "#DCE3E6",
+      "#F4F3F2",
+      "#DEB2A8",
+      "#C27262",
+      "#A12A19"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nationalparkcolors: ArcticGates)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.69,
+    "min_de2000_deutan_first6": 8.83,
+    "min_de2000_protan_first6": 13.75,
+    "min_de2000_tritan_first6": 13.9,
+    "optimal6_min_de2000": 14.69,
+    "optimal6_min_de2000_deutan": 8.83,
+    "optimal6_min_de2000_protan": 13.75,
+    "grayscale_L_spread": 0.458,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

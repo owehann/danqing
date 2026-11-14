@@ -1,0 +1,64 @@
+{
+  "id": "pypal_dutchmasters_anatomy",
+  "name": {
+    "en": "anatomy (dutchmasters)",
+    "zh": "anatomy（dutchmasters）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B2AAA2",
+    "#0D0B0C",
+    "#B47562",
+    "#332826",
+    "#B18147",
+    "#803B31",
+    "#CBC2C3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CEC5",
+      "#CFAEA4",
+      "#BB8F84",
+      "#A67065",
+      "#915247",
+      "#7B332A"
+    ],
+    "paired_diverging_stops": [
+      "#0D0B0C",
+      "#4F4D4E",
+      "#9D9C9C",
+      "#F4F3F2",
+      "#E6E3E2",
+      "#D8D2D2",
+      "#CBC2C3"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (dutchmasters: anatomy)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 10.59,
+    "min_de2000_deutan_first6": 6.92,
+    "min_de2000_protan_first6": 8.89,
+    "min_de2000_tritan_first6": 3.44,
+    "optimal6_min_de2000": 10.59,
+    "optimal6_min_de2000_deutan": 6.92,
+    "optimal6_min_de2000_protan": 8.89,
+    "grayscale_L_spread": 0.669,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

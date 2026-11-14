@@ -20,7 +20,25 @@
   "neutral": "#B9B5BA",
   "partners": {
     "sequential": "GnBu",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD6CC",
+      "#A4BDB1",
+      "#7BA597",
+      "#518D7D",
+      "#1B7665",
+      "#005E4D"
+    ],
+    "paired_diverging_stops": [
+      "#77611A",
+      "#9F9065",
+      "#C9C1AA",
+      "#F4F3F2",
+      "#A7BCB7",
+      "#5D867F",
+      "#00544B"
+    ]
   },
   "source": {
     "title": "Goryeo Celadon Vase with Inlaid Lotus, Plum & Waterfowl Bowl",

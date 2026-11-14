@@ -1,0 +1,62 @@
+{
+  "id": "pypal_soilpalettes_vitrixerand",
+  "name": {
+    "en": "vitrixerand (soilpalettes)",
+    "zh": "vitrixerand（soilpalettes）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#281B27",
+    "#723F27",
+    "#9B6044",
+    "#B5804C",
+    "#FACD9A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CFC3",
+      "#CBB0A1",
+      "#B6927F",
+      "#A0745E",
+      "#8B573E",
+      "#753B1D"
+    ],
+    "paired_diverging_stops": [
+      "#281B27",
+      "#655B64",
+      "#AAA4A8",
+      "#F4F3F2",
+      "#F6E7D5",
+      "#F8DAB8",
+      "#FACD9A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (soilpalettes: vitrixerand)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.45,
+    "min_de2000_deutan_first6": 11.24,
+    "min_de2000_protan_first6": 11.79,
+    "min_de2000_tritan_first6": 11.05,
+    "optimal6_min_de2000": 12.45,
+    "optimal6_min_de2000_deutan": 11.24,
+    "optimal6_min_de2000_protan": 11.79,
+    "grayscale_L_spread": 0.632,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

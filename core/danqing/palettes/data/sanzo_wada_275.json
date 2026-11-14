@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_275",
+  "name": {
+    "en": "Sanzo Wada #275 (Etruscan Red · Ecru · Madder Brown)",
+    "zh": "和田三造 #275（Etruscan Red · Ecru · Madder Brown）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C55347",
+    "#C2AE93",
+    "#762C19",
+    "#7A4456"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCC2",
+      "#D9AA9E",
+      "#C9887B",
+      "#B76659",
+      "#A44237",
+      "#8F1612"
+    ],
+    "paired_diverging_stops": [
+      "#C2AE93",
+      "#D3C5B2",
+      "#E3DCD2",
+      "#F4F3F2",
+      "#CCAEA6",
+      "#A36D5E",
+      "#762C19"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#275)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 18.44,
+    "min_de2000_deutan_first6": 17.35,
+    "min_de2000_protan_first6": 16.12,
+    "min_de2000_tritan_first6": 9.76,
+    "optimal6_min_de2000": 18.44,
+    "optimal6_min_de2000_deutan": 17.35,
+    "optimal6_min_de2000_protan": 16.12,
+    "grayscale_L_spread": 0.364,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

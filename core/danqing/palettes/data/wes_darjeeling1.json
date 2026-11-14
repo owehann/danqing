@@ -17,7 +17,25 @@
   "neutral": "#B9B4AB",
   "partners": {
     "sequential": "lajolla",
-    "diverging": "RdYlBu"
+    "diverging": "RdYlBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F3C7BB",
+      "#EDA08F",
+      "#E47663",
+      "#D74736",
+      "#C70000",
+      "#B50000"
+    ],
+    "paired_diverging_stops": [
+      "#935300",
+      "#B48838",
+      "#D4BE98",
+      "#F4F3F2",
+      "#ABC7CE",
+      "#619BAB",
+      "#007088"
+    ]
   },
   "source": {
     "title": "wesanderson Cinema Color Palette (Darjeeling1)",

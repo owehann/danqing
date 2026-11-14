@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_parupeneus_insularis",
+  "name": {
+    "en": "Parupeneus_insularis (fishualize)",
+    "zh": "Parupeneus_insularis（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6EDCF9",
+    "#FCE15E",
+    "#E9CCD4",
+    "#FD0409",
+    "#471839"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F3C8BB",
+      "#EDA090",
+      "#E37665",
+      "#D64838",
+      "#C70000",
+      "#B40000"
+    ],
+    "paired_diverging_stops": [
+      "#FCE15E",
+      "#F9E898",
+      "#F6EEC7",
+      "#F4F3F2",
+      "#B9A5B0",
+      "#7F5C72",
+      "#471839"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Parupeneus_insularis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 35.7,
+    "min_de2000_deutan_first6": 18.42,
+    "min_de2000_protan_first6": 11.88,
+    "min_de2000_tritan_first6": 7.08,
+    "optimal6_min_de2000": 35.7,
+    "optimal6_min_de2000_deutan": 18.42,
+    "optimal6_min_de2000_protan": 11.88,
+    "grayscale_L_spread": 0.613,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

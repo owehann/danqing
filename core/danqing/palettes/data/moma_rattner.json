@@ -20,7 +20,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D4BF",
+      "#B5BA97",
+      "#97A170",
+      "#798848",
+      "#5D6F1A",
+      "#425600"
+    ],
+    "paired_diverging_stops": [
+      "#6D6700",
+      "#979548",
+      "#C4C49E",
+      "#F4F3F2",
+      "#A7B5C1",
+      "#5F7A91",
+      "#184363"
+    ]
   },
   "source": {
     "title": "Mother and Child, 1938, Abraham Rattner, Oil on canvas",

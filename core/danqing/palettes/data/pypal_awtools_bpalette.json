@@ -1,0 +1,73 @@
+{
+  "id": "pypal_awtools_bpalette",
+  "name": {
+    "en": "bpalette (awtools)",
+    "zh": "bpalette（awtools）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C62828",
+    "#F44336",
+    "#9C27B0",
+    "#673AB7",
+    "#3F51B5",
+    "#2196F3",
+    "#29B6F6",
+    "#006064",
+    "#009688",
+    "#4CAF50",
+    "#8BC34A",
+    "#FFEB3B",
+    "#FF9800",
+    "#795548",
+    "#9E9E9E",
+    "#607D8B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CADB",
+      "#D0A6CF",
+      "#BD82C1",
+      "#A95DB3",
+      "#9433A4",
+      "#7F0094"
+    ],
+    "paired_diverging_stops": [
+      "#673AB7",
+      "#917BCE",
+      "#C1B7E2",
+      "#F4F3F2",
+      "#F7F2C2",
+      "#FBEF8C",
+      "#FFEB3B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (awtools: bpalette)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 16,
+    "max_colors": 16,
+    "min_de2000_first6": 10.28,
+    "min_de2000_deutan_first6": 0.5,
+    "min_de2000_protan_first6": 1.11,
+    "min_de2000_tritan_first6": 8.61,
+    "optimal6_min_de2000": 10.28,
+    "optimal6_min_de2000_deutan": 0.5,
+    "optimal6_min_de2000_protan": 1.11,
+    "grayscale_L_spread": 0.484,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

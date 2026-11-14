@@ -48,6 +48,8 @@ export interface PaletteItem {
   partners: {
     sequential: string;
     diverging: string;
+    paired_sequential_stops?: string[];
+    paired_diverging_stops?: string[];
   };
   source: PaletteSource;
   artifact: PaletteArtifact | null;

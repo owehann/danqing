@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_machop",
+  "name": {
+    "en": "machop (palettetown)",
+    "zh": "machop（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#709878",
+    "#98C0A0",
+    "#205030",
+    "#B8E0C0",
+    "#A0A828",
+    "#606810",
+    "#E8F070",
+    "#F83838",
+    "#980000",
+    "#F8F8F8",
+    "#C0C848",
+    "#D0D0D0",
+    "#C00000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EECABE",
+      "#E4A496",
+      "#D87F6E",
+      "#C95747",
+      "#B82519",
+      "#A40000"
+    ],
+    "paired_diverging_stops": [
+      "#205030",
+      "#65836C",
+      "#AABAAC",
+      "#F4F3F2",
+      "#EFF3CC",
+      "#EBF2A2",
+      "#E8F070"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: machop)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 7.99,
+    "min_de2000_deutan_first6": 8.06,
+    "min_de2000_protan_first6": 7.9,
+    "min_de2000_tritan_first6": 8.01,
+    "optimal6_min_de2000": 7.99,
+    "optimal6_min_de2000_deutan": 8.06,
+    "optimal6_min_de2000_protan": 7.9,
+    "grayscale_L_spread": 0.591,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

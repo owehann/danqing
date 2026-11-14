@@ -1,0 +1,69 @@
+{
+  "id": "pypal_dresdencolor_paired",
+  "name": {
+    "en": "paired (DresdenColor)",
+    "zh": "paired（DresdenColor）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#9E4058",
+    "#C2697F",
+    "#D0641E",
+    "#E68E54",
+    "#F9AB0E",
+    "#FBC559",
+    "#589E40",
+    "#7FC269",
+    "#2C3778",
+    "#4151B0",
+    "#513965",
+    "#785596"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D2DE",
+      "#AEB5D4",
+      "#8C98C9",
+      "#6C7BBD",
+      "#4D5EB0",
+      "#333FA2"
+    ],
+    "paired_diverging_stops": [
+      "#F9AB0E",
+      "#F9C579",
+      "#F7DDB8",
+      "#F4F3F2",
+      "#B3BDDF",
+      "#7788C9",
+      "#4151B0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (DresdenColor: paired)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 7.86,
+    "min_de2000_deutan_first6": 5.79,
+    "min_de2000_protan_first6": 6.65,
+    "min_de2000_tritan_first6": 5.85,
+    "optimal6_min_de2000": 7.86,
+    "optimal6_min_de2000_deutan": 5.79,
+    "optimal6_min_de2000_protan": 6.65,
+    "grayscale_L_spread": 0.486,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

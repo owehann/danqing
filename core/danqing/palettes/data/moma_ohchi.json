@@ -17,7 +17,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9C6",
+      "#E4A2A6",
+      "#D77C86",
+      "#C75468",
+      "#B6204B",
+      "#A20030"
+    ],
+    "paired_diverging_stops": [
+      "#582851",
+      "#8B6884",
+      "#BFABB9",
+      "#F4F3F2",
+      "#C7C1AF",
+      "#9B906F",
+      "#726230"
+    ]
   },
   "source": {
     "title": "Radio, 1954, Hiroshi Ohchi, Silkscreen",

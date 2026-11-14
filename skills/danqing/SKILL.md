@@ -4,9 +4,9 @@ description: >-
   Losslessly recolor finished scientific vector figures (.pdf or .svg from R/ggplot2,
   Python/matplotlib/scanpy, GraphPad Prism, or Illustrator) and match whole manuscript
   figure sets to comfortable, reviewer-safe palettes without re-running plotting scripts
-  or altering raw experimental images (Western blots, H&E, microscopy). Includes 277
-  verified palettes, Manuscript Match (Gemini + perceptual comfort ranker), MCP server
-  (`danqing_mcp`), and interactive Web Studio.
+  or altering raw experimental images (Western blots, H&E, microscopy). Includes 3,406
+  verified palettes (with homologous paired sequential/diverging ramps), Manuscript Match
+  (Gemini + perceptual comfort ranker), MCP server (`danqing_mcp`), and interactive Web Studio.
 ---
 
 # Danqing (丹青) — Scientific Figure & Manuscript Recoloring Skill
@@ -24,7 +24,7 @@ When the `danqing_mcp` MCP server is enabled (`danqing-mcp` or `python -m danqin
 - `danqing_inspect_figure`: Inspect discrete groups, panels, continuous scales, protected raw images, and deuteranopia diagnostics on any `.pdf` or `.svg`.
 - `danqing_match_manuscript_palettes`: Get the top 3 comfortable palette matches for a figure + journal/topic brief (`preset`: `"cns_clean"`, `"clinical"`, `"omics"`, `"museum"`).
 - `danqing_recolor_figure`: Write a byte-verified recolored `.pdf`/`.svg` alongside `.palette.R`, `.palette.py`, and `.changes.csv`.
-- `danqing_list_palettes`: Search the 277 verified palettes by collection, group count, or color-blind safety.
+- `danqing_list_palettes`: Search the 3,406 verified palettes by collection, group count, or color-blind safety.
 
 ## 2. Interactive Web Studio
 

@@ -1,0 +1,65 @@
+{
+  "id": "pypal_vaporwave_jwz",
+  "name": {
+    "en": "jwz (vapoRwave)",
+    "zh": "jwz（vapoRwave）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7B556C",
+    "#86486F",
+    "#F1956E",
+    "#EB9B60",
+    "#864A42",
+    "#FAD36A",
+    "#F5FFBF",
+    "#EFDB9C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CECF",
+      "#CAADB7",
+      "#B48E9F",
+      "#9F6F88",
+      "#885172",
+      "#72335C"
+    ],
+    "paired_diverging_stops": [
+      "#86486F",
+      "#AC7F99",
+      "#D0B8C4",
+      "#F4F3F2",
+      "#F6E9C9",
+      "#F8DF9D",
+      "#FAD36A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vapoRwave: jwz)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 6.14,
+    "min_de2000_deutan_first6": 2.38,
+    "min_de2000_protan_first6": 3.84,
+    "min_de2000_tritan_first6": 1.57,
+    "optimal6_min_de2000": 6.14,
+    "optimal6_min_de2000_deutan": 2.38,
+    "optimal6_min_de2000_protan": 3.84,
+    "grayscale_L_spread": 0.498,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

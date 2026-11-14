@@ -18,7 +18,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC0",
+      "#E0A69A",
+      "#D28275",
+      "#C25C50",
+      "#B1322B",
+      "#9D0000"
+    ],
+    "paired_diverging_stops": [
+      "#895900",
+      "#AC8C3A",
+      "#D0C099",
+      "#F4F3F2",
+      "#A9C8CA",
+      "#5D9DA3",
+      "#00737E"
+    ]
   },
   "source": {
     "title": "Monument Valley, 2014, ustwo Games, Video game software",

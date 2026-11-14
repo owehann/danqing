@@ -1,0 +1,64 @@
+{
+  "id": "pypal_tvthemes_stannis",
+  "name": {
+    "en": "Stannis (tvthemes)",
+    "zh": "Stannis（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF0000",
+    "#FF8D1A",
+    "#FFD700",
+    "#B20000",
+    "#CC6600",
+    "#FFFF66",
+    "#000000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F3C7BB",
+      "#EDA08F",
+      "#E47663",
+      "#D74736",
+      "#C70000",
+      "#B50000"
+    ],
+    "paired_diverging_stops": [
+      "#FFD700",
+      "#FBE27F",
+      "#F7EBBC",
+      "#F4F3F2",
+      "#8D8D8C",
+      "#333333",
+      "#000000"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Stannis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 12.39,
+    "min_de2000_deutan_first6": 1.91,
+    "min_de2000_protan_first6": 8.18,
+    "min_de2000_tritan_first6": 10.33,
+    "optimal6_min_de2000": 12.39,
+    "optimal6_min_de2000_deutan": 1.91,
+    "optimal6_min_de2000_protan": 8.18,
+    "grayscale_L_spread": 0.972,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

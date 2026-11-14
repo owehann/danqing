@@ -1,0 +1,63 @@
+{
+  "id": "pypal_manu_korimako",
+  "name": {
+    "en": "Korimako (Manu)",
+    "zh": "Korimako（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#757B16",
+    "#4F651D",
+    "#798C8B",
+    "#2F638F",
+    "#091A26",
+    "#490B0A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D7D4BE",
+      "#BAB996",
+      "#9D9E6E",
+      "#818546",
+      "#676B15",
+      "#4E5300"
+    ],
+    "paired_diverging_stops": [
+      "#757B16",
+      "#9DA269",
+      "#C7CAAD",
+      "#F4F3F2",
+      "#B1C2D1",
+      "#7092B0",
+      "#2F638F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Korimako)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 11.44,
+    "min_de2000_deutan_first6": 10.68,
+    "min_de2000_protan_first6": 9.51,
+    "min_de2000_tritan_first6": 15.3,
+    "optimal6_min_de2000": 11.44,
+    "optimal6_min_de2000_deutan": 10.68,
+    "optimal6_min_de2000_protan": 9.51,
+    "grayscale_L_spread": 0.415,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

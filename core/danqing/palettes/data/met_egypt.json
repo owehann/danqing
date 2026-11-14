@@ -16,7 +16,25 @@
   "neutral": "#B8B6AF",
   "partners": {
     "sequential": "YlGnBu",
-    "diverging": "roma"
+    "diverging": "roma",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBBD",
+      "#DFA894",
+      "#D1846C",
+      "#C06043",
+      "#AF3710",
+      "#9B0000"
+    ],
+    "paired_diverging_stops": [
+      "#006D93",
+      "#6299B3",
+      "#ABC6D3",
+      "#F4F3F2",
+      "#D5BCA1",
+      "#B4874F",
+      "#925100"
+    ]
   },
   "source": {
     "title": "MetBrewer: Egypt (Met Object 557794)",

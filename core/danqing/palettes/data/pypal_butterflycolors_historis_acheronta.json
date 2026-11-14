@@ -1,0 +1,62 @@
+{
+  "id": "pypal_butterflycolors_historis_acheronta",
+  "name": {
+    "en": "historis_acheronta (ButterflyColors)",
+    "zh": "historis_acheronta（ButterflyColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#9F8E7A",
+    "#A8A9A4",
+    "#BF5B21",
+    "#8C2F1B",
+    "#37231C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDBE",
+      "#D6AC95",
+      "#C58B6D",
+      "#B36B45",
+      "#9F4A15",
+      "#8B2400"
+    ],
+    "paired_diverging_stops": [
+      "#BF5B21",
+      "#D58F6D",
+      "#E6C1AF",
+      "#F4F3F2",
+      "#B1A7A3",
+      "#71615B",
+      "#37231C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ButterflyColors: historis_acheronta)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.19,
+    "min_de2000_deutan_first6": 10.83,
+    "min_de2000_protan_first6": 11.06,
+    "min_de2000_tritan_first6": 14.11,
+    "optimal6_min_de2000": 12.19,
+    "optimal6_min_de2000_deutan": 10.83,
+    "optimal6_min_de2000_protan": 11.06,
+    "grayscale_L_spread": 0.453,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

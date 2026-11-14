@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_alosa_fallax",
+  "name": {
+    "en": "Alosa_fallax (fishualize)",
+    "zh": "Alosa_fallax（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7992A6",
+    "#C0D1CE",
+    "#BCB584",
+    "#70684D",
+    "#383733"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D9D2C6",
+      "#BDB6A6",
+      "#A19A88",
+      "#877F6A",
+      "#6D664D",
+      "#554D31"
+    ],
+    "paired_diverging_stops": [
+      "#C0D1CE",
+      "#D1DCDA",
+      "#E2E8E6",
+      "#F4F3F2",
+      "#B0B0AD",
+      "#71706D",
+      "#383733"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Alosa_fallax)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 18.5,
+    "min_de2000_deutan_first6": 18.78,
+    "min_de2000_protan_first6": 18.04,
+    "min_de2000_tritan_first6": 18.26,
+    "optimal6_min_de2000": 18.5,
+    "optimal6_min_de2000_deutan": 18.78,
+    "optimal6_min_de2000_protan": 18.04,
+    "grayscale_L_spread": 0.511,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

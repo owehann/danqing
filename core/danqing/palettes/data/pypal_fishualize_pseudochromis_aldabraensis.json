@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_pseudochromis_aldabraensis",
+  "name": {
+    "en": "Pseudochromis_aldabraensis (fishualize)",
+    "zh": "Pseudochromis_aldabraensis（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#161613",
+    "#4E74B4",
+    "#10B4D7",
+    "#E19B40",
+    "#B24531"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCC1",
+      "#D8AA9C",
+      "#C88878",
+      "#B66755",
+      "#A34431",
+      "#8E1A04"
+    ],
+    "paired_diverging_stops": [
+      "#4E74B4",
+      "#839ECA",
+      "#BAC8DF",
+      "#F4F3F2",
+      "#EFD6BB",
+      "#E9B982",
+      "#E19B40"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Pseudochromis_aldabraensis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 25.62,
+    "min_de2000_deutan_first6": 16.81,
+    "min_de2000_protan_first6": 18.42,
+    "min_de2000_tritan_first6": 19.52,
+    "optimal6_min_de2000": 25.62,
+    "optimal6_min_de2000_deutan": 16.81,
+    "optimal6_min_de2000_protan": 18.42,
+    "grayscale_L_spread": 0.543,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

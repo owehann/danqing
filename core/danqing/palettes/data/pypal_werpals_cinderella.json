@@ -1,0 +1,62 @@
+{
+  "id": "pypal_werpals_cinderella",
+  "name": {
+    "en": "cinderella (werpals)",
+    "zh": "cinderella（werpals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#96ABB1",
+    "#313746",
+    "#B0909D",
+    "#687A97",
+    "#292014"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D2D2",
+      "#B4B6BC",
+      "#949BA7",
+      "#768093",
+      "#58677E",
+      "#3C4E6A"
+    ],
+    "paired_diverging_stops": [
+      "#96ABB1",
+      "#B5C3C6",
+      "#D4DBDC",
+      "#F4F3F2",
+      "#AAA6A0",
+      "#665F55",
+      "#292014"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (werpals: cinderella)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 17.79,
+    "min_de2000_deutan_first6": 5.78,
+    "min_de2000_protan_first6": 6.13,
+    "min_de2000_tritan_first6": 15.71,
+    "optimal6_min_de2000": 17.79,
+    "optimal6_min_de2000_deutan": 5.78,
+    "optimal6_min_de2000_protan": 6.13,
+    "grayscale_L_spread": 0.477,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

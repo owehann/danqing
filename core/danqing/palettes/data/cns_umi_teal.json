@@ -21,7 +21,25 @@
   "neutral": "#C9D6DF",
   "partners": {
     "sequential": "cns_umi_teal",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD4D5",
+      "#A9B9C3",
+      "#839FB1",
+      "#5E859E",
+      "#376C8C",
+      "#005379"
+    ],
+    "paired_diverging_stops": [
+      "#606465",
+      "#8F9191",
+      "#C0C1C0",
+      "#F4F3F2",
+      "#A4B0BB",
+      "#5B7087",
+      "#163554"
+    ]
   },
   "source": {
     "title": "CNS Spatial Transcriptomics White-Background Ramp (cns_umi_teal)",

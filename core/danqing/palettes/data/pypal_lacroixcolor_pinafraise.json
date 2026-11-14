@@ -1,0 +1,63 @@
+{
+  "id": "pypal_lacroixcolor_pinafraise",
+  "name": {
+    "en": "PinaFraise (LaCroixColoR)",
+    "zh": "PinaFraise（LaCroixColoR）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F44B4B",
+    "#F19743",
+    "#F1F1A8",
+    "#92D84F",
+    "#7473A6",
+    "#132157"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9C0",
+      "#E4A499",
+      "#D77E74",
+      "#C8564F",
+      "#B72529",
+      "#A30000"
+    ],
+    "paired_diverging_stops": [
+      "#92D84F",
+      "#B3E28D",
+      "#D4EBC1",
+      "#F4F3F2",
+      "#A0A9BE",
+      "#54638A",
+      "#132157"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (LaCroixColoR: PinaFraise)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 16.84,
+    "min_de2000_deutan_first6": 4.07,
+    "min_de2000_protan_first6": 11.85,
+    "min_de2000_tritan_first6": 15.38,
+    "optimal6_min_de2000": 16.84,
+    "optimal6_min_de2000_deutan": 4.07,
+    "optimal6_min_de2000_protan": 11.85,
+    "grayscale_L_spread": 0.668,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

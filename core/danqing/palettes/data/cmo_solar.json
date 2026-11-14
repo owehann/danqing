@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "cmo_solar",
-    "diverging": "cmo_balance"
+    "diverging": "cmo_balance",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CDC0",
+      "#D4AD99",
+      "#C28C73",
+      "#B06C4E",
+      "#9C4C27",
+      "#872900"
+    ],
+    "paired_diverging_stops": [
+      "#331418",
+      "#705758",
+      "#B0A2A1",
+      "#F4F3F2",
+      "#BDC797",
+      "#8A9B31",
+      "#5C6E00"
+    ]
   },
   "source": {
     "title": "True Colors of Oceanography: cmocean (solar)",

@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_yanma",
+  "name": {
+    "en": "yanma (palettetown)",
+    "zh": "yanma（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F87840",
+    "#E0F8F8",
+    "#D04000",
+    "#A0B0D0",
+    "#80E820",
+    "#708088",
+    "#F8D890",
+    "#903000",
+    "#50B020",
+    "#484850",
+    "#306800"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBC",
+      "#E0A792",
+      "#D28369",
+      "#C25F3E",
+      "#B03500",
+      "#9D0000"
+    ],
+    "paired_diverging_stops": [
+      "#80E820",
+      "#AAEE80",
+      "#D0F1BC",
+      "#F4F3F2",
+      "#B7B6B9",
+      "#7D7D82",
+      "#484850"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: yanma)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 15.45,
+    "min_de2000_deutan_first6": 10.28,
+    "min_de2000_protan_first6": 17.95,
+    "min_de2000_tritan_first6": 13.7,
+    "optimal6_min_de2000": 15.45,
+    "optimal6_min_de2000_deutan": 10.28,
+    "optimal6_min_de2000_protan": 17.95,
+    "grayscale_L_spread": 0.557,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

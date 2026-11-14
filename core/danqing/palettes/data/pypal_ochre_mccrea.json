@@ -1,0 +1,67 @@
+{
+  "id": "pypal_ochre_mccrea",
+  "name": {
+    "en": "mccrea (ochRe)",
+    "zh": "mccrea（ochRe）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A8C0A8",
+    "#C0C0A8",
+    "#A8A890",
+    "#909078",
+    "#A8A8A8",
+    "#C0C0C0",
+    "#D8C0A8",
+    "#C09048",
+    "#C07848",
+    "#D89060"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CFC0",
+      "#CEAF9A",
+      "#BA9175",
+      "#A67250",
+      "#91542A",
+      "#7C3600"
+    ],
+    "paired_diverging_stops": [
+      "#C0C0C0",
+      "#D1D1D0",
+      "#E2E2E1",
+      "#F4F3F2",
+      "#E3D2BB",
+      "#D2B183",
+      "#C09048"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ochRe: mccrea)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 6.58,
+    "min_de2000_deutan_first6": 2.97,
+    "min_de2000_protan_first6": 1.16,
+    "min_de2000_tritan_first6": 3.63,
+    "optimal6_min_de2000": 6.58,
+    "optimal6_min_de2000_deutan": 2.97,
+    "optimal6_min_de2000_protan": 1.16,
+    "grayscale_L_spread": 0.182,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

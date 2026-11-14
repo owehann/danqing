@@ -1,0 +1,65 @@
+{
+  "id": "pypal_momacolors_levine1",
+  "name": {
+    "en": "Levine1 (MoMAColors)",
+    "zh": "Levine1（MoMAColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E0D9B2",
+    "#818053",
+    "#6B3848",
+    "#8B3E50",
+    "#D5BB6C",
+    "#3F3A4B",
+    "#474C66",
+    "#A5806F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CDC9",
+      "#D0ACAC",
+      "#BC8C90",
+      "#A86D75",
+      "#934D5B",
+      "#7D2E42"
+    ],
+    "paired_diverging_stops": [
+      "#D5BB6C",
+      "#DFCE9B",
+      "#E9E1C7",
+      "#F4F3F2",
+      "#B6B8C1",
+      "#7C8093",
+      "#474C66"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MoMAColors: Levine1)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 7.38,
+    "min_de2000_deutan_first6": 7.74,
+    "min_de2000_protan_first6": 4.53,
+    "min_de2000_tritan_first6": 7.63,
+    "optimal6_min_de2000": 7.38,
+    "optimal6_min_de2000_deutan": 7.74,
+    "optimal6_min_de2000_protan": 4.53,
+    "grayscale_L_spread": 0.521,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

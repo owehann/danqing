@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_hypsoblennius_invemar",
+  "name": {
+    "en": "Hypsoblennius_invemar (fishualize)",
+    "zh": "Hypsoblennius_invemar（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#30618C",
+    "#21355D",
+    "#229BAE",
+    "#E3E2C3",
+    "#D65638"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBF",
+      "#DCA998",
+      "#CD8671",
+      "#BC634B",
+      "#AA3D22",
+      "#950000"
+    ],
+    "paired_diverging_stops": [
+      "#21355D",
+      "#61708D",
+      "#A7B0BF",
+      "#F4F3F2",
+      "#F0C1B4",
+      "#E58E78",
+      "#D65638"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Hypsoblennius_invemar)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.65,
+    "min_de2000_deutan_first6": 13.0,
+    "min_de2000_protan_first6": 14.35,
+    "min_de2000_tritan_first6": 14.86,
+    "optimal6_min_de2000": 15.65,
+    "optimal6_min_de2000_deutan": 13.0,
+    "optimal6_min_de2000_protan": 14.35,
+    "grayscale_L_spread": 0.572,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

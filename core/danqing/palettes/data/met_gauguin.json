@@ -18,7 +18,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC4",
+      "#D6AAA2",
+      "#C58982",
+      "#B36862",
+      "#9F4643",
+      "#8A1F25"
+    ],
+    "paired_diverging_stops": [
+      "#8E5400",
+      "#B18853",
+      "#D3BDA2",
+      "#F4F3F2",
+      "#A8B6AA",
+      "#607D67",
+      "#1A472A"
+    ]
   },
   "source": {
     "title": "A Farm in Brittany, 1874, Paul Gauguin, French",

@@ -26,7 +26,7 @@ from .svg_engine import export_recolored_svg, parse_svg_scene
 
 SERVER_INFO = {
     "name": "danqing_mcp",
-    "version": "0.3.0",
+    "version": "0.4.0",
 }
 
 TOOLS: list[dict[str, Any]] = [
@@ -88,9 +88,9 @@ TOOLS: list[dict[str, Any]] = [
     {
         "name": "danqing_recolor_figure",
         "description": (
-            "Losslessly recolor a vector .pdf or .svg figure using one of Danqing's 277 verified palettes "
-            "while guaranteeing bit-identical geometry, text, and raw experimental images (Western blots, H&E). "
-            "Optionally writes reusable R (ggplot2) and Python (matplotlib) palette snippets."
+            "Losslessly recolor a vector .pdf or .svg figure using one of Danqing's 3,406 verified palettes "
+            "(with homologous paired sequential/diverging ramps) while guaranteeing bit-identical geometry, text, "
+            "and raw experimental images (Western blots, H&E). Optionally writes reusable R (ggplot2) and Python (matplotlib) palette snippets."
         ),
         "inputSchema": {
             "type": "object",
@@ -105,8 +105,8 @@ TOOLS: list[dict[str, Any]] = [
                 },
                 "palette_id": {
                     "type": "string",
-                    "description": "Palette ID (e.g. 'cns_lineage12', 'npg_inspired', 'okabe_ito', 'east_ru_celadon').",
-                    "default": "cns_lineage12",
+                    "description": "Palette ID (e.g. 'cns_harmony_lineage', 'npg', 'okabe_ito', 'east_ru_celadon').",
+                    "default": "cns_harmony_lineage",
                 },
                 "page_index": {
                     "type": "integer",
@@ -135,7 +135,7 @@ TOOLS: list[dict[str, Any]] = [
     },
     {
         "name": "danqing_list_palettes",
-        "description": "Search and filter Danqing's 277 verified palettes by collection, minimum colors, or color-blind safety.",
+        "description": "Search and filter Danqing's 3,406 verified palettes (including homologous paired gradient stops) by collection, minimum colors, or color-blind safety.",
         "inputSchema": {
             "type": "object",
             "properties": {
@@ -239,6 +239,12 @@ def execute_tool(name: str, args: dict[str, Any]) -> dict[str, Any]:
                     "name_zh": pal.name_zh,
                     "collection": pal.collection,
                     "colors": list(pal.colors[:10]),
+                    "partners": {
+                        "sequential": pal.partner_sequential,
+                        "diverging": pal.partner_diverging,
+                        "paired_sequential_stops": list(pal.paired_sequential_stops),
+                        "paired_diverging_stops": list(pal.paired_diverging_stops),
+                    },
                     "colorblind_safe": bool(pal.qc.get("colorblind_safe")),
                     "reason": rec["reason"],
                 }
@@ -248,7 +254,7 @@ def execute_tool(name: str, args: dict[str, Any]) -> dict[str, Any]:
     if name == "danqing_recolor_figure":
         in_p = Path(str(args["input_path"])).expanduser().resolve()
         out_p = Path(str(args["output_path"])).expanduser().resolve()
-        pal_id = str(args.get("palette_id", "cns_lineage12"))
+        pal_id = str(args.get("palette_id", "cns_harmony_lineage"))
         rule = "global_strict" if args.get("cross_panel_rule") == "unique" else "panel_scoped"
         vib = str(args.get("vibrancy", "standard"))
         kind, scene = _parse_any_scene(in_p, int(args.get("page_index", 0)))
@@ -333,6 +339,12 @@ def execute_tool(name: str, args: dict[str, Any]) -> dict[str, Any]:
                     "collection": p.collection,
                     "kind": p.kind,
                     "colors": list(p.colors[:8]),
+                    "partners": {
+                        "sequential": p.partner_sequential,
+                        "diverging": p.partner_diverging,
+                        "paired_sequential_stops": list(p.paired_sequential_stops),
+                        "paired_diverging_stops": list(p.paired_diverging_stops),
+                    },
                     "colorblind_safe": bool(p.qc.get("colorblind_safe")),
                 }
             )

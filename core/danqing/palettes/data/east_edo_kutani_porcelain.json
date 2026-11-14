@@ -20,7 +20,25 @@
   "neutral": "#A6A49F",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD6C0",
+      "#AABE9B",
+      "#85A675",
+      "#608E51",
+      "#3A7629",
+      "#045F00"
+    ],
+    "paired_diverging_stops": [
+      "#2F7600",
+      "#71A05C",
+      "#B2C9A6",
+      "#F4F3F2",
+      "#ADB1BF",
+      "#6B738E",
+      "#30395E"
+    ]
   },
   "source": {
     "title": "Kakiemon/Kutani Enamel Figure & Polychrome Porcelain Punch Bowl",

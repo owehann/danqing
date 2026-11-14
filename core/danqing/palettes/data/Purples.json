@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "Purples",
-    "diverging": "RdYlBu"
+    "diverging": "RdYlBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8CFD9",
+      "#BCB1CB",
+      "#A092BC",
+      "#8575AD",
+      "#6C579D",
+      "#55388D"
+    ],
+    "paired_diverging_stops": [
+      "#646364",
+      "#919091",
+      "#C1C1C0",
+      "#F4F3F2",
+      "#B1A7CE",
+      "#745DA7",
+      "#3F007D"
+    ]
   },
   "source": {
     "title": "ColorBrewer 2.0 (Purples, 9-class)",

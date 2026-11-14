@@ -20,7 +20,25 @@
   "neutral": "#A6A49F",
   "partners": {
     "sequential": "lajolla",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEBD",
+      "#D2AE93",
+      "#BF8F6A",
+      "#AC7041",
+      "#985006",
+      "#832F00"
+    ],
+    "paired_diverging_stops": [
+      "#905400",
+      "#B2893C",
+      "#D3BE9A",
+      "#F4F3F2",
+      "#ABBCC0",
+      "#648790",
+      "#1B5563"
+    ]
   },
   "source": {
     "title": "Tomb Guardian with Animal Head (Sancai Three-Color Ware)",

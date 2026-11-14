@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_shroomish",
+  "name": {
+    "en": "shroomish (palettetown)",
+    "zh": "shroomish（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E8C088",
+    "#D0A058",
+    "#F8E0A8",
+    "#000000",
+    "#604830",
+    "#88C080",
+    "#906830",
+    "#588048",
+    "#405030",
+    "#78A868",
+    "#A8C080"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D5C4",
+      "#B1BBA1",
+      "#8FA280",
+      "#6F895F",
+      "#507140",
+      "#31591F"
+    ],
+    "paired_diverging_stops": [
+      "#F8E0A8",
+      "#F7E7C1",
+      "#F5EDDA",
+      "#F4F3F2",
+      "#8D8D8C",
+      "#333333",
+      "#000000"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: shroomish)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 8.43,
+    "min_de2000_deutan_first6": 6.36,
+    "min_de2000_protan_first6": 3.05,
+    "min_de2000_tritan_first6": 8.61,
+    "optimal6_min_de2000": 8.43,
+    "optimal6_min_de2000_deutan": 6.36,
+    "optimal6_min_de2000_protan": 3.05,
+    "grayscale_L_spread": 0.913,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

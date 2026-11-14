@@ -17,7 +17,25 @@
   "neutral": "#8D8D8D",
   "partners": {
     "sequential": "viridis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC8CC",
+      "#E3A1B1",
+      "#D67A97",
+      "#C6507D",
+      "#B41765",
+      "#A0004D"
+    ],
+    "paired_diverging_stops": [
+      "#6141D2",
+      "#8B82E1",
+      "#BDBBEC",
+      "#F4F3F2",
+      "#D7BD97",
+      "#B88635",
+      "#974F00"
+    ]
   },
   "source": {
     "title": "IBM Design Language Color-Blind-Safe Palette",

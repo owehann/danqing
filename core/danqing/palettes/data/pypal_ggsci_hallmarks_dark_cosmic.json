@@ -1,0 +1,67 @@
+{
+  "id": "pypal_ggsci_hallmarks_dark_cosmic",
+  "name": {
+    "en": "hallmarks_dark_cosmic (ggsci)",
+    "zh": "hallmarks_dark_cosmic（ggsci）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#171717",
+    "#7D0226",
+    "#300049",
+    "#165459",
+    "#3F2327",
+    "#0B1948",
+    "#E71012",
+    "#555555",
+    "#193006",
+    "#A8450C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F1C8BC",
+      "#E9A293",
+      "#DE7A69",
+      "#D14F3F",
+      "#C00405",
+      "#AD0000"
+    ],
+    "paired_diverging_stops": [
+      "#0B1948",
+      "#4E5D7F",
+      "#9DA5B8",
+      "#F4F3F2",
+      "#FAB7AC",
+      "#F57768",
+      "#E71012"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggsci: hallmarks_dark_cosmic)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 11.83,
+    "min_de2000_deutan_first6": 0.55,
+    "min_de2000_protan_first6": 3.04,
+    "min_de2000_tritan_first6": 9.66,
+    "optimal6_min_de2000": 11.83,
+    "optimal6_min_de2000_deutan": 0.55,
+    "optimal6_min_de2000_protan": 3.04,
+    "grayscale_L_spread": 0.382,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

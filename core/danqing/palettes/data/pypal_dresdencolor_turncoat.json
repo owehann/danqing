@@ -1,0 +1,63 @@
+{
+  "id": "pypal_dresdencolor_turncoat",
+  "name": {
+    "en": "turncoat (DresdenColor)",
+    "zh": "turncoat（DresdenColor）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#651F10",
+    "#A86249",
+    "#B19D6F",
+    "#888D60",
+    "#6A412A",
+    "#2F1E0F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CEC3",
+      "#CEAFA0",
+      "#BA907E",
+      "#A5715D",
+      "#90543D",
+      "#7A361C"
+    ],
+    "paired_diverging_stops": [
+      "#B19D6F",
+      "#C7B99A",
+      "#DDD6C6",
+      "#F4F3F2",
+      "#ADA59E",
+      "#6B5E52",
+      "#2F1E0F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (DresdenColor: turncoat)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 10.64,
+    "min_de2000_deutan_first6": 6.55,
+    "min_de2000_protan_first6": 6.38,
+    "min_de2000_tritan_first6": 9.71,
+    "optimal6_min_de2000": 10.64,
+    "optimal6_min_de2000_deutan": 6.55,
+    "optimal6_min_de2000_protan": 6.38,
+    "grayscale_L_spread": 0.45,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

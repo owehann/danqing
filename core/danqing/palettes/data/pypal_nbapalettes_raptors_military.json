@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nbapalettes_raptors_military",
+  "name": {
+    "en": "raptors_military (nbapalettes)",
+    "zh": "raptors_military（nbapalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#010101",
+    "#8D9093",
+    "#789D4A",
+    "#3D441E",
+    "#816040"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDD1C4",
+      "#C4B3A2",
+      "#AC9681",
+      "#947A61",
+      "#7D5F42",
+      "#664523"
+    ],
+    "paired_diverging_stops": [
+      "#010101",
+      "#3F3F3E",
+      "#949493",
+      "#F4F3F2",
+      "#C9D7BA",
+      "#A0BA83",
+      "#789D4A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nbapalettes: raptors_military)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 22.13,
+    "min_de2000_deutan_first6": 14.36,
+    "min_de2000_protan_first6": 11.67,
+    "min_de2000_tritan_first6": 11.29,
+    "optimal6_min_de2000": 22.13,
+    "optimal6_min_de2000_deutan": 14.36,
+    "optimal6_min_de2000_protan": 11.67,
+    "grayscale_L_spread": 0.585,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

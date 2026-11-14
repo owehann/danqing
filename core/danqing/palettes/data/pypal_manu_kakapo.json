@@ -1,0 +1,63 @@
+{
+  "id": "pypal_manu_kakapo",
+  "name": {
+    "en": "Kakapo (Manu)",
+    "zh": "Kakapo（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7D9D33",
+    "#CED38C",
+    "#DCC949",
+    "#BCA888",
+    "#CD8862",
+    "#775B24"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D5BE",
+      "#B3BB95",
+      "#94A26D",
+      "#758943",
+      "#58710C",
+      "#3C5800"
+    ],
+    "paired_diverging_stops": [
+      "#DCC949",
+      "#E4D88B",
+      "#EBE6C0",
+      "#F4F3F2",
+      "#C9BEAC",
+      "#9F8C69",
+      "#775B24"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Kakapo)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 11.0,
+    "min_de2000_deutan_first6": 6.3,
+    "min_de2000_protan_first6": 8.81,
+    "min_de2000_tritan_first6": 8.96,
+    "optimal6_min_de2000": 11.0,
+    "optimal6_min_de2000_deutan": 6.3,
+    "optimal6_min_de2000_protan": 8.81,
+    "grayscale_L_spread": 0.358,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

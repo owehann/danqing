@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_161",
+  "name": {
+    "en": "Sanzo Wada #161 (Brown · Pinkish Cinnamon · Helvetia Blue)",
+    "zh": "和田三造 #161（Brown · Pinkish Cinnamon · Helvetia Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7C4226",
+    "#EEB480",
+    "#005B8D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD4D8",
+      "#A6B9C8",
+      "#7F9FB8",
+      "#5885A7",
+      "#2E6B97",
+      "#005286"
+    ],
+    "paired_diverging_stops": [
+      "#EEB480",
+      "#F1C9A7",
+      "#F3DECC",
+      "#F4F3F2",
+      "#A9BFD1",
+      "#608DAF",
+      "#005B8D"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#161)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 38.75,
+    "min_de2000_deutan_first6": 38.72,
+    "min_de2000_protan_first6": 37.81,
+    "min_de2000_tritan_first6": 39.98,
+    "optimal6_min_de2000": 38.75,
+    "optimal6_min_de2000_deutan": 38.72,
+    "optimal6_min_de2000_protan": 37.81,
+    "grayscale_L_spread": 0.367,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

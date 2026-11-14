@@ -1,0 +1,62 @@
+{
+  "id": "pypal_ggprism_waves2",
+  "name": {
+    "en": "waves2 (ggprism)",
+    "zh": "waves2（ggprism）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2E58A4",
+    "#B69D71",
+    "#E3DED4",
+    "#70AFC7",
+    "#4F5357"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD3DC",
+      "#AAB7CF",
+      "#869BC2",
+      "#6280B4",
+      "#4064A6",
+      "#1D4897"
+    ],
+    "paired_diverging_stops": [
+      "#2E58A4",
+      "#6D8BC0",
+      "#AFBFDA",
+      "#F4F3F2",
+      "#DFD6C6",
+      "#CAB99B",
+      "#B69D71"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggprism: waves2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 18.29,
+    "min_de2000_deutan_first6": 19.86,
+    "min_de2000_protan_first6": 20.4,
+    "min_de2000_tritan_first6": 16.68,
+    "optimal6_min_de2000": 18.29,
+    "optimal6_min_de2000_deutan": 19.86,
+    "optimal6_min_de2000_protan": 20.4,
+    "grayscale_L_spread": 0.462,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -19,7 +19,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC1",
+      "#E1A59C",
+      "#D38079",
+      "#C45A56",
+      "#B22E33",
+      "#9E0008"
+    ],
+    "paired_diverging_stops": [
+      "#BB1300",
+      "#D6704F",
+      "#E9B2A0",
+      "#F4F3F2",
+      "#AAA9C2",
+      "#666392",
+      "#2C1F62"
+    ]
   },
   "source": {
     "title": "Spectrum Textile, 1974, Verner Panton, Printed cotton",

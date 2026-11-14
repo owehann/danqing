@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_bayleef",
+  "name": {
+    "en": "bayleef (palettetown)",
+    "zh": "bayleef（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F0E868",
+    "#D8B828",
+    "#105010",
+    "#A08018",
+    "#68C030",
+    "#307808",
+    "#685000",
+    "#48A010",
+    "#F8F8A8",
+    "#F8F8F8",
+    "#606060",
+    "#C0C0C0",
+    "#A83000",
+    "#D08850"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCBF",
+      "#DBA997",
+      "#CB8770",
+      "#BA6449",
+      "#A8401E",
+      "#930B00"
+    ],
+    "paired_diverging_stops": [
+      "#F0E868",
+      "#F1ED9D",
+      "#F2F0C9",
+      "#F4F3F2",
+      "#C0C0BF",
+      "#8E8E8E",
+      "#606060"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: bayleef)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 12.4,
+    "min_de2000_deutan_first6": 6.86,
+    "min_de2000_protan_first6": 1.45,
+    "min_de2000_tritan_first6": 12.73,
+    "optimal6_min_de2000": 12.4,
+    "optimal6_min_de2000_deutan": 6.86,
+    "optimal6_min_de2000_protan": 1.45,
+    "grayscale_L_spread": 0.601,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

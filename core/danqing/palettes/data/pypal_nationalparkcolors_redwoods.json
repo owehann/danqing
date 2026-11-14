@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nationalparkcolors_redwoods",
+  "name": {
+    "en": "Redwoods (nationalparkcolors)",
+    "zh": "Redwoods（nationalparkcolors）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#769370",
+    "#BDB2A7",
+    "#F1C646",
+    "#6E687E",
+    "#F17236"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCBC",
+      "#DCAA92",
+      "#CC8768",
+      "#BC653C",
+      "#A93F00",
+      "#950700"
+    ],
+    "paired_diverging_stops": [
+      "#F1C646",
+      "#F2D68B",
+      "#F3E5C0",
+      "#F4F3F2",
+      "#C5C3CA",
+      "#9894A3",
+      "#6E687E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nationalparkcolors: Redwoods)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 22.99,
+    "min_de2000_deutan_first6": 12.45,
+    "min_de2000_protan_first6": 12.36,
+    "min_de2000_tritan_first6": 15.06,
+    "optimal6_min_de2000": 22.99,
+    "optimal6_min_de2000_deutan": 12.45,
+    "optimal6_min_de2000_protan": 12.36,
+    "grayscale_L_spread": 0.312,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

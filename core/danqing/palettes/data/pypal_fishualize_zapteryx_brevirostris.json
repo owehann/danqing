@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_zapteryx_brevirostris",
+  "name": {
+    "en": "Zapteryx_brevirostris (fishualize)",
+    "zh": "Zapteryx_brevirostris（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F2DFBB",
+    "#BF9969",
+    "#734C29",
+    "#402718",
+    "#CCB48F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED0C3",
+      "#C6B2A1",
+      "#AF957F",
+      "#98795E",
+      "#815D3E",
+      "#6B421D"
+    ],
+    "paired_diverging_stops": [
+      "#F2DFBB",
+      "#F3E6CD",
+      "#F3EDE0",
+      "#F4F3F2",
+      "#B4A9A2",
+      "#786559",
+      "#402718"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Zapteryx_brevirostris)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.49,
+    "min_de2000_deutan_first6": 7.53,
+    "min_de2000_protan_first6": 8.42,
+    "min_de2000_tritan_first6": 8.56,
+    "optimal6_min_de2000": 8.49,
+    "optimal6_min_de2000_deutan": 7.53,
+    "optimal6_min_de2000_protan": 8.42,
+    "grayscale_L_spread": 0.61,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -19,7 +19,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CEC0",
+      "#D3AD99",
+      "#C18D73",
+      "#AD6E4E",
+      "#994E26",
+      "#852C00"
+    ],
+    "paired_diverging_stops": [
+      "#905300",
+      "#B28849",
+      "#D3BD9E",
+      "#F4F3F2",
+      "#A2B2A9",
+      "#567565",
+      "#053C29"
+    ]
   },
   "source": {
     "title": "The Rehearsal of the Ballet Onstage, 1874, Edgar Degas, French",

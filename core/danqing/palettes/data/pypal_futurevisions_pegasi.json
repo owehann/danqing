@@ -1,0 +1,65 @@
+{
+  "id": "pypal_futurevisions_pegasi",
+  "name": {
+    "en": "pegasi (futurevisions)",
+    "zh": "pegasi（futurevisions）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#552F31",
+    "#DC363B",
+    "#EE5D36",
+    "#EFCF40",
+    "#698E7C",
+    "#315886",
+    "#2B2D2D",
+    "#CBB193"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9C0",
+      "#E3A49A",
+      "#D67F75",
+      "#C75751",
+      "#B6282C",
+      "#A20000"
+    ],
+    "paired_diverging_stops": [
+      "#EFCF40",
+      "#F0DC89",
+      "#F2E8C0",
+      "#F4F3F2",
+      "#B0BECE",
+      "#6F8AAA",
+      "#315886"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (futurevisions: pegasi)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 12.02,
+    "min_de2000_deutan_first6": 8.03,
+    "min_de2000_protan_first6": 11.82,
+    "min_de2000_tritan_first6": 6.49,
+    "optimal6_min_de2000": 12.02,
+    "optimal6_min_de2000_deutan": 8.03,
+    "optimal6_min_de2000_protan": 11.82,
+    "grayscale_L_spread": 0.563,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

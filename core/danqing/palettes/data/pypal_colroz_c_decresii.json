@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_c_decresii",
+  "name": {
+    "en": "c_decresii (colRoz)",
+    "zh": "c_decresii（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DCA761",
+    "#C6C16D",
+    "#8B9C94",
+    "#628CA5",
+    "#5A6C7A",
+    "#514F5C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D2CF",
+      "#B4B7B7",
+      "#959CA0",
+      "#778189",
+      "#596873",
+      "#3D505E"
+    ],
+    "paired_diverging_stops": [
+      "#DCA761",
+      "#E5C194",
+      "#EDDAC3",
+      "#F4F3F2",
+      "#C2D0D8",
+      "#92AEBE",
+      "#628CA5"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: c_decresii)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 12.94,
+    "min_de2000_deutan_first6": 2.74,
+    "min_de2000_protan_first6": 5.13,
+    "min_de2000_tritan_first6": 12.57,
+    "optimal6_min_de2000": 12.94,
+    "optimal6_min_de2000_deutan": 2.74,
+    "optimal6_min_de2000_protan": 5.13,
+    "grayscale_L_spread": 0.362,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

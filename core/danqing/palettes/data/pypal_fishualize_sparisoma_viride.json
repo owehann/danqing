@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_sparisoma_viride",
+  "name": {
+    "en": "Sparisoma_viride (fishualize)",
+    "zh": "Sparisoma_viride（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FE7562",
+    "#FEFE00",
+    "#52CE9C",
+    "#3AD8FE",
+    "#7E8BD6"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC0",
+      "#DDA89A",
+      "#CE8475",
+      "#BE6151",
+      "#AB3A2B",
+      "#970000"
+    ],
+    "paired_diverging_stops": [
+      "#FEFE00",
+      "#FAFC86",
+      "#F6F8C1",
+      "#F4F3F2",
+      "#CBD0EA",
+      "#A3AEE1",
+      "#7E8BD6"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Sparisoma_viride)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 29.35,
+    "min_de2000_deutan_first6": 13.9,
+    "min_de2000_protan_first6": 15.37,
+    "min_de2000_tritan_first6": 7.13,
+    "optimal6_min_de2000": 29.35,
+    "optimal6_min_de2000_deutan": 13.9,
+    "optimal6_min_de2000_protan": 15.37,
+    "grayscale_L_spread": 0.308,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

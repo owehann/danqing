@@ -21,7 +21,25 @@
   "neutral": "#BAB0AB",
   "partners": {
     "sequential": "Blues",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC3",
+      "#DEA79F",
+      "#CF837C",
+      "#BE5F5B",
+      "#AC373A",
+      "#980017"
+    ],
+    "paired_diverging_stops": [
+      "#3C6693",
+      "#7794B3",
+      "#B4C3D2",
+      "#F4F3F2",
+      "#CCC19C",
+      "#A58F44",
+      "#805E00"
+    ]
   },
   "source": {
     "title": "D3 Scale Chromatic / Observable (Tableau 10)",

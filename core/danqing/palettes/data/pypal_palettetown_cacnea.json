@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_cacnea",
+  "name": {
+    "en": "cacnea (palettetown)",
+    "zh": "cacnea（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C8E870",
+    "#A8C860",
+    "#305028",
+    "#407028",
+    "#88A850",
+    "#688840",
+    "#489838",
+    "#78C868",
+    "#E0F898",
+    "#F8D048",
+    "#B89840",
+    "#F8E890",
+    "#F8E8F8",
+    "#808080"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD7C0",
+      "#A8BF99",
+      "#83A773",
+      "#5D8F4D",
+      "#367724",
+      "#006000"
+    ],
+    "paired_diverging_stops": [
+      "#F8D048",
+      "#F7DD8D",
+      "#F5E9C2",
+      "#F4F3F2",
+      "#CCCBCA",
+      "#A5A5A4",
+      "#808080"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: cacnea)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 7.84,
+    "min_de2000_deutan_first6": 7.9,
+    "min_de2000_protan_first6": 7.74,
+    "min_de2000_tritan_first6": 7.75,
+    "optimal6_min_de2000": 7.84,
+    "optimal6_min_de2000_deutan": 7.9,
+    "optimal6_min_de2000_protan": 7.74,
+    "grayscale_L_spread": 0.553,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

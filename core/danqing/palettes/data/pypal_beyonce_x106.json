@@ -1,0 +1,62 @@
+{
+  "id": "pypal_beyonce_x106",
+  "name": {
+    "en": "X106 (beyonce)",
+    "zh": "X106（beyonce）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#111A27",
+    "#291828",
+    "#1D4258",
+    "#6F9394",
+    "#CB0227"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9C0",
+      "#E6A39A",
+      "#D97D74",
+      "#CB5450",
+      "#BA1E2A",
+      "#A60000"
+    ],
+    "paired_diverging_stops": [
+      "#111A27",
+      "#535A64",
+      "#A0A3A8",
+      "#F4F3F2",
+      "#F0B3AD",
+      "#E2706B",
+      "#CB0227"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (beyonce: X106)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.83,
+    "min_de2000_deutan_first6": 3.56,
+    "min_de2000_protan_first6": 0.62,
+    "min_de2000_tritan_first6": 14.89,
+    "optimal6_min_de2000": 13.83,
+    "optimal6_min_de2000_deutan": 3.56,
+    "optimal6_min_de2000_protan": 0.62,
+    "grayscale_L_spread": 0.421,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -18,7 +18,25 @@
   "neutral": "#BBBBBB",
   "partners": {
     "sequential": "viridis",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCABD",
+      "#E1A695",
+      "#D4826C",
+      "#C45C44",
+      "#B33013",
+      "#9F0000"
+    ],
+    "paired_diverging_stops": [
+      "#AA3800",
+      "#C87A52",
+      "#E0B7A2",
+      "#F4F3F2",
+      "#A9C5DC",
+      "#5E97C5",
+      "#0068AB"
+    ]
   },
   "source": {
     "title": "Colour Schemes (SRON/EPS/TN/09-002)",

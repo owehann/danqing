@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_callanthias_australis",
+  "name": {
+    "en": "Callanthias_australis (fishualize)",
+    "zh": "Callanthias_australis（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DD75D3",
+    "#E16305",
+    "#F2CB05",
+    "#719F47",
+    "#7E8CF3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBB",
+      "#DCAA8F",
+      "#CD8863",
+      "#BC6534",
+      "#AA3F00",
+      "#960500"
+    ],
+    "paired_diverging_stops": [
+      "#F2CB05",
+      "#F3DA7D",
+      "#F3E7BB",
+      "#F4F3F2",
+      "#CAD2F5",
+      "#A3B0F5",
+      "#7E8CF3"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Callanthias_australis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 23.19,
+    "min_de2000_deutan_first6": 8.31,
+    "min_de2000_protan_first6": 4.84,
+    "min_de2000_tritan_first6": 14.01,
+    "optimal6_min_de2000": 23.19,
+    "optimal6_min_de2000_deutan": 8.31,
+    "optimal6_min_de2000_protan": 4.84,
+    "grayscale_L_spread": 0.204,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

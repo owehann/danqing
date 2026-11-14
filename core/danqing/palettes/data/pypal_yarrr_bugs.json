@@ -1,0 +1,62 @@
+{
+  "id": "pypal_yarrr_bugs",
+  "name": {
+    "en": "bugs (yarrr)",
+    "zh": "bugs（yarrr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#667840",
+    "#BAD6A8",
+    "#85C7C1",
+    "#A59A6B",
+    "#67553F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D4C3",
+      "#B6B9A0",
+      "#989F7E",
+      "#7A865C",
+      "#5E6D3C",
+      "#445518"
+    ],
+    "paired_diverging_stops": [
+      "#BAD6A8",
+      "#CDE0C1",
+      "#E0EAD9",
+      "#F4F3F2",
+      "#C3BCB3",
+      "#948777",
+      "#67553F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (yarrr: bugs)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 16.56,
+    "min_de2000_deutan_first6": 10.41,
+    "min_de2000_protan_first6": 13.33,
+    "min_de2000_tritan_first6": 13.55,
+    "optimal6_min_de2000": 16.56,
+    "optimal6_min_de2000_deutan": 10.41,
+    "optimal6_min_de2000_protan": 13.33,
+    "grayscale_L_spread": 0.382,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

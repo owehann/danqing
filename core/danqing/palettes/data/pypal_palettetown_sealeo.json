@@ -1,0 +1,72 @@
+{
+  "id": "pypal_palettetown_sealeo",
+  "name": {
+    "en": "sealeo (palettetown)",
+    "zh": "sealeo（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6890D0",
+    "#E8C8A8",
+    "#F8E0B8",
+    "#F8F8F8",
+    "#385070",
+    "#88A8F8",
+    "#000000",
+    "#9898B0",
+    "#587890",
+    "#D8D8F8",
+    "#B8B8D0",
+    "#D0B090",
+    "#B89878",
+    "#4068A0",
+    "#B8C8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D3D8",
+      "#ACB7C8",
+      "#899CB8",
+      "#6781A7",
+      "#456796",
+      "#234D85"
+    ],
+    "paired_diverging_stops": [
+      "#F8F8F8",
+      "#F7F6F6",
+      "#F5F5F4",
+      "#F4F3F2",
+      "#8D8D8C",
+      "#333333",
+      "#000000"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: sealeo)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 15,
+    "max_colors": 15,
+    "min_de2000_first6": 6.93,
+    "min_de2000_deutan_first6": 4.92,
+    "min_de2000_protan_first6": 5.47,
+    "min_de2000_tritan_first6": 5.92,
+    "optimal6_min_de2000": 6.93,
+    "optimal6_min_de2000_deutan": 4.92,
+    "optimal6_min_de2000_protan": 5.47,
+    "grayscale_L_spread": 0.979,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

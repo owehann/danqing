@@ -1,0 +1,63 @@
+{
+  "id": "pypal_calecopal_bigsur2",
+  "name": {
+    "en": "bigsur2 (calecopal)",
+    "zh": "bigsur2（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#20618D",
+    "#91AAC4",
+    "#6B6C58",
+    "#464724",
+    "#83932D",
+    "#CAB89F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD4D6",
+      "#A8B9C5",
+      "#839FB4",
+      "#5E85A2",
+      "#376B91",
+      "#00527F"
+    ],
+    "paired_diverging_stops": [
+      "#20618D",
+      "#6990AF",
+      "#ADC1D1",
+      "#F4F3F2",
+      "#CCD3B3",
+      "#A7B375",
+      "#83932D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: bigsur2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.53,
+    "min_de2000_deutan_first6": 14.4,
+    "min_de2000_protan_first6": 14.72,
+    "min_de2000_tritan_first6": 13.48,
+    "optimal6_min_de2000": 14.53,
+    "optimal6_min_de2000_deutan": 14.4,
+    "optimal6_min_de2000_protan": 14.72,
+    "grayscale_L_spread": 0.403,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

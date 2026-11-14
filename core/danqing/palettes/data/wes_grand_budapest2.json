@@ -16,7 +16,25 @@
   "neutral": "#B9B4AB",
   "partners": {
     "sequential": "lajolla",
-    "diverging": "RdYlBu"
+    "diverging": "RdYlBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D2D8",
+      "#AEB6C9",
+      "#8C9BB9",
+      "#6A80A9",
+      "#4A6598",
+      "#2C4A87"
+    ],
+    "paired_diverging_stops": [
+      "#84564C",
+      "#A98880",
+      "#CFBCB7",
+      "#F4F3F2",
+      "#B5C1D7",
+      "#7A91BB",
+      "#43629E"
+    ]
   },
   "source": {
     "title": "wesanderson Cinema Color Palette (GrandBudapest2)",

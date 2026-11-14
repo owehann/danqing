@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_noctowl",
+  "name": {
+    "en": "noctowl (palettetown)",
+    "zh": "noctowl（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C8A040",
+    "#987038",
+    "#482818",
+    "#785848",
+    "#E0C860",
+    "#604030",
+    "#F8F8A8",
+    "#707070",
+    "#F8F8F8",
+    "#987868",
+    "#F8E870",
+    "#C03018",
+    "#C0C0C0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBF",
+      "#E0A797",
+      "#D18370",
+      "#C15E49",
+      "#B0351F",
+      "#9C0000"
+    ],
+    "paired_diverging_stops": [
+      "#482818",
+      "#7F665A",
+      "#B8AAA3",
+      "#F4F3F2",
+      "#F5F0CB",
+      "#F6EDA2",
+      "#F8E870"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: noctowl)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 7.71,
+    "min_de2000_deutan_first6": 7.7,
+    "min_de2000_protan_first6": 7.65,
+    "min_de2000_tritan_first6": 7.66,
+    "optimal6_min_de2000": 7.71,
+    "optimal6_min_de2000_deutan": 7.7,
+    "optimal6_min_de2000_protan": 7.65,
+    "grayscale_L_spread": 0.665,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

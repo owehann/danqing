@@ -23,7 +23,25 @@
   "neutral": "#A5AA99",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "roma"
+    "diverging": "roma",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EAC9CF",
+      "#DCA4B7",
+      "#CD7FA0",
+      "#BC5889",
+      "#A92C73",
+      "#94005D"
+    ],
+    "paired_diverging_stops": [
+      "#8A5800",
+      "#AD8B43",
+      "#D0BF9C",
+      "#F4F3F2",
+      "#C7BAD7",
+      "#9D83BB",
+      "#754D9E"
+    ]
   },
   "source": {
     "title": "CARTOColors Qualitative Scheme (Vivid)",

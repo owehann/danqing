@@ -18,7 +18,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCBF",
+      "#DBA998",
+      "#CB8772",
+      "#BA644D",
+      "#A74024",
+      "#930B00"
+    ],
+    "paired_diverging_stops": [
+      "#0E6E86",
+      "#6899AA",
+      "#ADC6CD",
+      "#F4F3F2",
+      "#D4BCA4",
+      "#B38757",
+      "#915200"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (Saguaro)",

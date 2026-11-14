@@ -1,0 +1,62 @@
+{
+  "id": "pypal_manu_korora",
+  "name": {
+    "en": "Korora (Manu)",
+    "zh": "Korora（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#85BEDC",
+    "#3A383F",
+    "#A6B0BB",
+    "#CCBBCD",
+    "#647588"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D2D0",
+      "#B4B6B9",
+      "#959BA2",
+      "#77818C",
+      "#5A6777",
+      "#3E4F61"
+    ],
+    "paired_diverging_stops": [
+      "#3A383F",
+      "#737176",
+      "#B1B0B2",
+      "#F4F3F2",
+      "#E6E0E5",
+      "#D9CED9",
+      "#CCBBCD"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Korora)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 11.83,
+    "min_de2000_deutan_first6": 5.17,
+    "min_de2000_protan_first6": 4.22,
+    "min_de2000_tritan_first6": 15.25,
+    "optimal6_min_de2000": 11.83,
+    "optimal6_min_de2000_deutan": 5.17,
+    "optimal6_min_de2000_protan": 4.22,
+    "grayscale_L_spread": 0.466,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

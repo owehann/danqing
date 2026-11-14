@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_shellder",
+  "name": {
+    "en": "shellder (palettetown)",
+    "zh": "shellder（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B088B8",
+    "#583860",
+    "#805888",
+    "#D8B8E8",
+    "#D0D0E8",
+    "#782010",
+    "#C84820",
+    "#F87840",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBE",
+      "#DCA996",
+      "#CD866E",
+      "#BD6347",
+      "#AA3D19",
+      "#960000"
+    ],
+    "paired_diverging_stops": [
+      "#583860",
+      "#89728F",
+      "#BDB1BF",
+      "#F4F3F2",
+      "#FACCB9",
+      "#FBA480",
+      "#F87840"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: shellder)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 12.11,
+    "min_de2000_deutan_first6": 5.13,
+    "min_de2000_protan_first6": 7.06,
+    "min_de2000_tritan_first6": 12.33,
+    "optimal6_min_de2000": 12.11,
+    "optimal6_min_de2000_deutan": 5.13,
+    "optimal6_min_de2000_protan": 7.06,
+    "grayscale_L_spread": 0.595,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

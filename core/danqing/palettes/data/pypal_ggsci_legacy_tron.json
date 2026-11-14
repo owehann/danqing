@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ggsci_legacy_tron",
+  "name": {
+    "en": "legacy_tron (ggsci)",
+    "zh": "legacy_tron（ggsci）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF410D",
+    "#6EE2FF",
+    "#F7C530",
+    "#95CC5E",
+    "#D0DFE6",
+    "#F79D1E",
+    "#748AA6"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BA",
+      "#E8A38E",
+      "#DD7C62",
+      "#CF5233",
+      "#BF1300",
+      "#AC0000"
+    ],
+    "paired_diverging_stops": [
+      "#6EE2FF",
+      "#A2E9FB",
+      "#CDEEF7",
+      "#F4F3F2",
+      "#F5E5BD",
+      "#F6D683",
+      "#F7C530"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggsci: legacy_tron)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 14.23,
+    "min_de2000_deutan_first6": 5.94,
+    "min_de2000_protan_first6": 6.09,
+    "min_de2000_tritan_first6": 10.44,
+    "optimal6_min_de2000": 14.23,
+    "optimal6_min_de2000_deutan": 5.94,
+    "optimal6_min_de2000_protan": 6.09,
+    "grayscale_L_spread": 0.268,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

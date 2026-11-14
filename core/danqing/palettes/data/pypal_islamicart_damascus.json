@@ -1,0 +1,66 @@
+{
+  "id": "pypal_islamicart_damascus",
+  "name": {
+    "en": "damascus (IslamicArt)",
+    "zh": "damascus（IslamicArt）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BF816B",
+    "#653F2C",
+    "#BABAAF",
+    "#959BA1",
+    "#937D61",
+    "#C29961",
+    "#9AA490",
+    "#415555",
+    "#E3CA97"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CFC4",
+      "#CBB0A3",
+      "#B69182",
+      "#A07462",
+      "#8A5744",
+      "#743A25"
+    ],
+    "paired_diverging_stops": [
+      "#415555",
+      "#798686",
+      "#B4BBBA",
+      "#F4F3F2",
+      "#EEE6D4",
+      "#E9D8B6",
+      "#E3CA97"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (IslamicArt: damascus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 12.63,
+    "min_de2000_deutan_first6": 6.88,
+    "min_de2000_protan_first6": 4.0,
+    "min_de2000_tritan_first6": 6.63,
+    "optimal6_min_de2000": 12.63,
+    "optimal6_min_de2000_deutan": 6.88,
+    "optimal6_min_de2000_protan": 4.0,
+    "grayscale_L_spread": 0.44,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

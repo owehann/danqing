@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_paralabrax_clathratus",
+  "name": {
+    "en": "Paralabrax_clathratus (fishualize)",
+    "zh": "Paralabrax_clathratus（fishualize）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#43431D",
+    "#7D804B",
+    "#A9A56D",
+    "#D3C793",
+    "#E6EEE0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8D3C3",
+      "#BAB7A0",
+      "#9E9D7D",
+      "#82835C",
+      "#68693B",
+      "#4F5118"
+    ],
+    "paired_diverging_stops": [
+      "#43431D",
+      "#797A5F",
+      "#B4B5A6",
+      "#F4F3F2",
+      "#EFF2EC",
+      "#EBF0E6",
+      "#E6EEE0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Paralabrax_clathratus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.19,
+    "min_de2000_deutan_first6": 9.91,
+    "min_de2000_protan_first6": 9.78,
+    "min_de2000_tritan_first6": 10.47,
+    "optimal6_min_de2000": 10.19,
+    "optimal6_min_de2000_deutan": 9.91,
+    "optimal6_min_de2000_protan": 9.78,
+    "grayscale_L_spread": 0.566,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

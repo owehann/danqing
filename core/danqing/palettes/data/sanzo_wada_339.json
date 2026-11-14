@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_339",
+  "name": {
+    "en": "Sanzo Wada #339 (Ochraceous Salmon · English Red · Light Glaucous Blue)",
+    "zh": "和田三造 #339（Ochraceous Salmon · English Red · Light Glaucous Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D8A37B",
+    "#D96629",
+    "#A5C8D1",
+    "#40456A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CDBD",
+      "#D9AB93",
+      "#C9896A",
+      "#B86740",
+      "#A54403",
+      "#911800"
+    ],
+    "paired_diverging_stops": [
+      "#D96629",
+      "#E69773",
+      "#F0C6B2",
+      "#F4F3F2",
+      "#B3B6C3",
+      "#777B96",
+      "#40456A"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#339)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 17.46,
+    "min_de2000_deutan_first6": 13.42,
+    "min_de2000_protan_first6": 18.16,
+    "min_de2000_tritan_first6": 16.66,
+    "optimal6_min_de2000": 17.46,
+    "optimal6_min_de2000_deutan": 13.42,
+    "optimal6_min_de2000_protan": 18.16,
+    "grayscale_L_spread": 0.407,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

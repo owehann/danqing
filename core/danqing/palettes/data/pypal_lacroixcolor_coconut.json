@@ -1,0 +1,63 @@
+{
+  "id": "pypal_lacroixcolor_coconut",
+  "name": {
+    "en": "Coconut (LaCroixColoR)",
+    "zh": "Coconut（LaCroixColoR）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#881C00",
+    "#AF6125",
+    "#F4E3C7",
+    "#1BB6AF",
+    "#0076BB",
+    "#172869"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD4DB",
+      "#A1BACF",
+      "#78A0C1",
+      "#4D85B3",
+      "#166BA5",
+      "#005095"
+    ],
+    "paired_diverging_stops": [
+      "#AF6125",
+      "#C8926D",
+      "#DFC2AF",
+      "#F4F3F2",
+      "#AECAE2",
+      "#68A0CF",
+      "#0076BB"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (LaCroixColoR: Coconut)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 19.98,
+    "min_de2000_deutan_first6": 17.09,
+    "min_de2000_protan_first6": 18.42,
+    "min_de2000_tritan_first6": 16.92,
+    "optimal6_min_de2000": 19.98,
+    "optimal6_min_de2000_deutan": 17.09,
+    "optimal6_min_de2000_protan": 18.42,
+    "grayscale_L_spread": 0.615,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

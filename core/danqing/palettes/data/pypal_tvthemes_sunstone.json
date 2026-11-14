@@ -1,0 +1,66 @@
+{
+  "id": "pypal_tvthemes_sunstone",
+  "name": {
+    "en": "Sunstone (tvthemes)",
+    "zh": "Sunstone（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F6A1CA",
+    "#1A1F2B",
+    "#EB7746",
+    "#FBDB82",
+    "#9F272E",
+    "#D36B8D",
+    "#EC9E58",
+    "#24719B",
+    "#6A1639"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC3",
+      "#DAA8A1",
+      "#CB867F",
+      "#B9635E",
+      "#A63E3E",
+      "#920A1E"
+    ],
+    "paired_diverging_stops": [
+      "#1A1F2B",
+      "#5A5E67",
+      "#A4A6AA",
+      "#F4F3F2",
+      "#F6ECCF",
+      "#F9E4AA",
+      "#FBDB82"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Sunstone)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 14.91,
+    "min_de2000_deutan_first6": 15.67,
+    "min_de2000_protan_first6": 16.42,
+    "min_de2000_tritan_first6": 6.67,
+    "optimal6_min_de2000": 14.91,
+    "optimal6_min_de2000_deutan": 15.67,
+    "optimal6_min_de2000_protan": 16.42,
+    "grayscale_L_spread": 0.66,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

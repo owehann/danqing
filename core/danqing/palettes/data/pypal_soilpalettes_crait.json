@@ -1,0 +1,62 @@
+{
+  "id": "pypal_soilpalettes_crait",
+  "name": {
+    "en": "crait (soilpalettes)",
+    "zh": "crait（soilpalettes）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#F4F4F4",
+    "#E9BBB8",
+    "#DF837D",
+    "#D44A41",
+    "#C91105"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BE",
+      "#E5A495",
+      "#D87E6D",
+      "#CA5645",
+      "#B92415",
+      "#A50000"
+    ],
+    "paired_diverging_stops": [
+      "#F4F4F4",
+      "#F4F4F3",
+      "#F4F4F3",
+      "#F4F3F2",
+      "#EFB4A9",
+      "#E07261",
+      "#C91105"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (soilpalettes: crait)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.74,
+    "min_de2000_deutan_first6": 8.62,
+    "min_de2000_protan_first6": 11.86,
+    "min_de2000_tritan_first6": 10.89,
+    "optimal6_min_de2000": 10.74,
+    "optimal6_min_de2000_deutan": 8.62,
+    "optimal6_min_de2000_protan": 11.86,
+    "grayscale_L_spread": 0.438,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_rhydon",
+  "name": {
+    "en": "rhydon (palettetown)",
+    "zh": "rhydon（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#888890",
+    "#C0C0B8",
+    "#505058",
+    "#F8E8C0",
+    "#B0A070",
+    "#E0E0D8",
+    "#786838",
+    "#E0D0A8",
+    "#F8F8F8",
+    "#A03010",
+    "#E05038"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBF",
+      "#DFA797",
+      "#D18370",
+      "#C15E4A",
+      "#AF351F",
+      "#9C0000"
+    ],
+    "paired_diverging_stops": [
+      "#F8F8F8",
+      "#F7F6F6",
+      "#F5F5F4",
+      "#F4F3F2",
+      "#DDB3A7",
+      "#C17460",
+      "#A03010"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: rhydon)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 7.68,
+    "min_de2000_deutan_first6": 7.68,
+    "min_de2000_protan_first6": 7.69,
+    "min_de2000_tritan_first6": 7.69,
+    "optimal6_min_de2000": 7.68,
+    "optimal6_min_de2000_deutan": 7.68,
+    "optimal6_min_de2000_protan": 7.69,
+    "grayscale_L_spread": 0.545,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

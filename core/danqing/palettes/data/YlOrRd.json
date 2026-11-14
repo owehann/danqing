@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "YlOrRd",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BD",
+      "#E8A294",
+      "#DD7B6C",
+      "#CF5143",
+      "#BE1111",
+      "#AB0000"
+    ],
+    "paired_diverging_stops": [
+      "#676638",
+      "#939374",
+      "#C2C2B1",
+      "#F4F3F2",
+      "#D3A8A9",
+      "#AD5E64",
+      "#800026"
+    ]
   },
   "source": {
     "title": "ColorBrewer 2.0 (YlOrRd, 9-class)",

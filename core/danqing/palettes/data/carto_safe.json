@@ -23,7 +23,25 @@
   "neutral": "#888888",
   "partners": {
     "sequential": "GnBu",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CBD4",
+      "#D2A8C0",
+      "#BF85AD",
+      "#AB6399",
+      "#963F86",
+      "#810F72"
+    ],
+    "paired_diverging_stops": [
+      "#746300",
+      "#9C925D",
+      "#C7C2A7",
+      "#F4F3F2",
+      "#ABADD2",
+      "#696AAE",
+      "#332288"
+    ]
   },
   "source": {
     "title": "CARTOColors Qualitative Scheme (Safe)",

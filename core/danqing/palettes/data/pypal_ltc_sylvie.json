@@ -1,0 +1,62 @@
+{
+  "id": "pypal_ltc_sylvie",
+  "name": {
+    "en": "sylvie (ltc)",
+    "zh": "sylvie（ltc）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E8B961",
+    "#E88170",
+    "#C6BDE8",
+    "#5DB7C4",
+    "#FD95BC"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC3",
+      "#D5AB9F",
+      "#C38A7D",
+      "#B16A5C",
+      "#9D493B",
+      "#882518"
+    ],
+    "paired_diverging_stops": [
+      "#E8B961",
+      "#ECCD95",
+      "#F0E0C4",
+      "#F4F3F2",
+      "#E4E1EF",
+      "#D5CFEC",
+      "#C6BDE8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ltc: sylvie)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 19.08,
+    "min_de2000_deutan_first6": 8.11,
+    "min_de2000_protan_first6": 2.17,
+    "min_de2000_tritan_first6": 8.16,
+    "optimal6_min_de2000": 19.08,
+    "optimal6_min_de2000_deutan": 8.11,
+    "optimal6_min_de2000_protan": 2.17,
+    "grayscale_L_spread": 0.107,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

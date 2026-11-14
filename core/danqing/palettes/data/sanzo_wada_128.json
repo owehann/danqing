@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_128",
+  "name": {
+    "en": "Sanzo Wada #128 (Corinthian Pink · Venice Green · Light Mauve)",
+    "zh": "和田三造 #128（Corinthian Pink · Venice Green · Light Mauve）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8B6BA",
+    "#62C6BF",
+    "#9A72AA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DCCFD3",
+      "#C2B0BF",
+      "#A991AC",
+      "#917498",
+      "#795784",
+      "#623A71"
+    ],
+    "paired_diverging_stops": [
+      "#F8B6BA",
+      "#F8CBCC",
+      "#F7DFDF",
+      "#F4F3F2",
+      "#D5C7DA",
+      "#B89CC2",
+      "#9A72AA"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#128)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 27.85,
+    "min_de2000_deutan_first6": 17.06,
+    "min_de2000_protan_first6": 3.93,
+    "min_de2000_tritan_first6": 22.71,
+    "optimal6_min_de2000": 27.85,
+    "optimal6_min_de2000_deutan": 17.06,
+    "optimal6_min_de2000_protan": 3.93,
+    "grayscale_L_spread": 0.226,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

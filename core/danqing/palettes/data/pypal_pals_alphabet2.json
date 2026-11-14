@@ -1,0 +1,83 @@
+{
+  "id": "pypal_pals_alphabet2",
+  "name": {
+    "en": "alphabet2 (pals)",
+    "zh": "alphabet2（pals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#AA0DFE",
+    "#3283FE",
+    "#85660D",
+    "#782AB6",
+    "#565656",
+    "#1C8356",
+    "#16FF32",
+    "#F7E1A0",
+    "#E2E2E2",
+    "#1CBE4F",
+    "#C4451C",
+    "#DEA0FD",
+    "#FE00FA",
+    "#325A9B",
+    "#FEAF16",
+    "#F8A19F",
+    "#90AD1C",
+    "#F6222E",
+    "#1CFFCE",
+    "#2ED9FF",
+    "#B10DA1",
+    "#C075A6",
+    "#FC1CBF",
+    "#B00068",
+    "#FBE426",
+    "#FA0087"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CAE7",
+      "#CBA4E5",
+      "#B67EE1",
+      "#A253DB",
+      "#8E09D3",
+      "#7B00CA"
+    ],
+    "paired_diverging_stops": [
+      "#AA0DFE",
+      "#C27AFF",
+      "#DBB9FB",
+      "#F4F3F2",
+      "#F6EFBF",
+      "#F8EA86",
+      "#FBE426"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (pals: alphabet2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 26,
+    "max_colors": 26,
+    "min_de2000_first6": 11.84,
+    "min_de2000_deutan_first6": 5.03,
+    "min_de2000_protan_first6": 11.7,
+    "min_de2000_tritan_first6": 12.43,
+    "optimal6_min_de2000": 11.84,
+    "optimal6_min_de2000_deutan": 5.03,
+    "optimal6_min_de2000_protan": 11.7,
+    "grayscale_L_spread": 0.46,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

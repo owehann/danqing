@@ -1,0 +1,71 @@
+{
+  "id": "pypal_khroma_land",
+  "name": {
+    "en": "land (khroma)",
+    "zh": "land（khroma）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#5566AA",
+    "#117733",
+    "#44AA66",
+    "#55AA22",
+    "#668822",
+    "#99BB55",
+    "#558877",
+    "#88BBAA",
+    "#AADDCC",
+    "#44AA88",
+    "#DDCC66",
+    "#FFDD44",
+    "#FFEE88",
+    "#BB0011"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EECABF",
+      "#E3A498",
+      "#D77F72",
+      "#C8584C",
+      "#B62823",
+      "#A30000"
+    ],
+    "paired_diverging_stops": [
+      "#5566AA",
+      "#8694C3",
+      "#BCC3DB",
+      "#F4F3F2",
+      "#F7EDC2",
+      "#FBE68D",
+      "#FFDD44"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (khroma: land)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 10.41,
+    "min_de2000_deutan_first6": 8.48,
+    "min_de2000_protan_first6": 7.41,
+    "min_de2000_tritan_first6": 4.0,
+    "optimal6_min_de2000": 10.41,
+    "optimal6_min_de2000_deutan": 8.48,
+    "optimal6_min_de2000_protan": 7.41,
+    "grayscale_L_spread": 0.444,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_lake",
+  "name": {
+    "en": "lake (calecopal)",
+    "zh": "lake（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#CECEB9",
+    "#7AC9B7",
+    "#6CA184",
+    "#3793EC",
+    "#2A3927"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD4DE",
+      "#A1B9D4",
+      "#779EC9",
+      "#4C83BD",
+      "#1768B0",
+      "#004BA3"
+    ],
+    "paired_diverging_stops": [
+      "#3793EC",
+      "#7DB5F0",
+      "#B9D4F3",
+      "#F4F3F2",
+      "#ABB0A8",
+      "#677264",
+      "#2A3927"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: lake)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.39,
+    "min_de2000_deutan_first6": 11.34,
+    "min_de2000_protan_first6": 4.99,
+    "min_de2000_tritan_first6": 9.28,
+    "optimal6_min_de2000": 12.39,
+    "optimal6_min_de2000_deutan": 11.34,
+    "optimal6_min_de2000_protan": 4.99,
+    "grayscale_L_spread": 0.52,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

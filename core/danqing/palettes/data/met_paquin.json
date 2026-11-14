@@ -23,7 +23,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCABF",
+      "#E2A598",
+      "#D58072",
+      "#C6594C",
+      "#B42C24",
+      "#A10000"
+    ],
+    "paired_diverging_stops": [
+      "#776027",
+      "#9F8F6B",
+      "#C8C0AD",
+      "#F4F3F2",
+      "#ACBAA9",
+      "#688464",
+      "#275024"
+    ]
   },
   "source": {
     "title": "Evening Dress, 1937, House of Paquin by Ana de Pombo, French House, Spanish Designer",

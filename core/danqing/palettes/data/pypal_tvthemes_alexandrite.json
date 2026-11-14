@@ -1,0 +1,65 @@
+{
+  "id": "pypal_tvthemes_alexandrite",
+  "name": {
+    "en": "Alexandrite (tvthemes)",
+    "zh": "Alexandrite（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#240E31",
+    "#CB6BCE",
+    "#468892",
+    "#74F3D3",
+    "#751C6D",
+    "#FDC067",
+    "#AC9ECE",
+    "#6EC5AB"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CBD3",
+      "#CDA8BF",
+      "#B886AB",
+      "#A36397",
+      "#8D4183",
+      "#77176F"
+    ],
+    "paired_diverging_stops": [
+      "#240E31",
+      "#62536D",
+      "#A89FAD",
+      "#F4F3F2",
+      "#F8E3C7",
+      "#FBD29A",
+      "#FDC067"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Alexandrite)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 17.95,
+    "min_de2000_deutan_first6": 12.55,
+    "min_de2000_protan_first6": 13.21,
+    "min_de2000_tritan_first6": 18.04,
+    "optimal6_min_de2000": 17.95,
+    "optimal6_min_de2000_deutan": 12.55,
+    "optimal6_min_de2000_protan": 13.21,
+    "grayscale_L_spread": 0.666,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

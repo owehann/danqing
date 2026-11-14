@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_clefairy",
+  "name": {
+    "en": "clefairy (palettetown)",
+    "zh": "clefairy（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8C0A0",
+    "#E08078",
+    "#F89880",
+    "#985850",
+    "#702808",
+    "#A86030",
+    "#B03828",
+    "#C0C0C0",
+    "#E85848",
+    "#F8F8F8",
+    "#985020",
+    "#C88050",
+    "#909090"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCC1",
+      "#DBA99B",
+      "#CB8677",
+      "#BA6453",
+      "#A73F2F",
+      "#930B00"
+    ],
+    "paired_diverging_stops": [
+      "#702808",
+      "#9E6A57",
+      "#CAADA2",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: clefairy)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 8.35,
+    "min_de2000_deutan_first6": 6.48,
+    "min_de2000_protan_first6": 8.34,
+    "min_de2000_tritan_first6": 4.64,
+    "optimal6_min_de2000": 8.35,
+    "optimal6_min_de2000_deutan": 6.48,
+    "optimal6_min_de2000_protan": 8.34,
+    "grayscale_L_spread": 0.6,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

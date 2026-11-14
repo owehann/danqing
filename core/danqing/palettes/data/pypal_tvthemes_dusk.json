@@ -1,0 +1,65 @@
+{
+  "id": "pypal_tvthemes_dusk",
+  "name": {
+    "en": "Dusk (tvthemes)",
+    "zh": "Dusk（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EFCBCB",
+    "#B47880",
+    "#824B51",
+    "#635761",
+    "#AD616C",
+    "#D1A391",
+    "#7D3450",
+    "#2B2D42"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CEC9",
+      "#CFADAB",
+      "#BB8D8E",
+      "#A66E72",
+      "#915058",
+      "#7B313E"
+    ],
+    "paired_diverging_stops": [
+      "#EFCBCB",
+      "#F1D8D8",
+      "#F3E6E5",
+      "#F4F3F2",
+      "#ABACB4",
+      "#676979",
+      "#2B2D42"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Dusk)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 7.31,
+    "min_de2000_deutan_first6": 6.13,
+    "min_de2000_protan_first6": 6.84,
+    "min_de2000_tritan_first6": 7.43,
+    "optimal6_min_de2000": 7.31,
+    "optimal6_min_de2000_deutan": 6.13,
+    "optimal6_min_de2000_protan": 6.84,
+    "grayscale_L_spread": 0.568,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

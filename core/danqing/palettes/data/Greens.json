@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "Greens",
-    "diverging": "RdYlBu"
+    "diverging": "RdYlBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD7C3",
+      "#A5BFA0",
+      "#7DA77E",
+      "#55905D",
+      "#25783B",
+      "#006117"
+    ],
+    "paired_diverging_stops": [
+      "#60655F",
+      "#8F928D",
+      "#C0C1BE",
+      "#F4F3F2",
+      "#A3B6A5",
+      "#577B5D",
+      "#00441B"
+    ]
   },
   "source": {
     "title": "ColorBrewer 2.0 (Greens, 9-class)",

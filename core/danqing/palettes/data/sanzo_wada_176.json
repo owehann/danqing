@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_176",
+  "name": {
+    "en": "Sanzo Wada #176 (Hermosa Pink · Seashell Pink · Calamine BLue)",
+    "zh": "和田三造 #176（Hermosa Pink · Seashell Pink · Calamine BLue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F9C1CE",
+    "#FDD4BD",
+    "#78CDD0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD5CF",
+      "#A6BCB8",
+      "#7FA3A1",
+      "#578A8A",
+      "#297274",
+      "#005B5F"
+    ],
+    "paired_diverging_stops": [
+      "#FDD4BD",
+      "#FADFCF",
+      "#F7E9E0",
+      "#F4F3F2",
+      "#CDE7E7",
+      "#A5DADB",
+      "#78CDD0"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#176)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 15.65,
+    "min_de2000_deutan_first6": 10.37,
+    "min_de2000_protan_first6": 2.87,
+    "min_de2000_tritan_first6": 4.85,
+    "optimal6_min_de2000": 15.65,
+    "optimal6_min_de2000_deutan": 10.37,
+    "optimal6_min_de2000_protan": 2.87,
+    "grayscale_L_spread": 0.103,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

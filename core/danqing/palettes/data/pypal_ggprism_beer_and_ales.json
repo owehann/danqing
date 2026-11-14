@@ -1,0 +1,66 @@
+{
+  "id": "pypal_ggprism_beer_and_ales",
+  "name": {
+    "en": "beer_and_ales (ggprism)",
+    "zh": "beer_and_ales（ggprism）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#94641F",
+    "#C5944E",
+    "#D79A40",
+    "#C0B57B",
+    "#804040",
+    "#BB5E00",
+    "#CD751D",
+    "#910000",
+    "#A25100"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEBE",
+      "#D2AE95",
+      "#BF8F6D",
+      "#AC7045",
+      "#975015",
+      "#823000"
+    ],
+    "paired_diverging_stops": [
+      "#D79A40",
+      "#E2B882",
+      "#EBD6BA",
+      "#F4F3F2",
+      "#CFB5B3",
+      "#A87977",
+      "#804040"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggprism: beer_and_ales)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 4.44,
+    "min_de2000_deutan_first6": 4.4,
+    "min_de2000_protan_first6": 2.5,
+    "min_de2000_tritan_first6": 3.85,
+    "optimal6_min_de2000": 4.44,
+    "optimal6_min_de2000_deutan": 4.4,
+    "optimal6_min_de2000_protan": 2.5,
+    "grayscale_L_spread": 0.356,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

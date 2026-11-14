@@ -1,0 +1,64 @@
+{
+  "id": "pypal_tvthemes_crazylaceagate",
+  "name": {
+    "en": "CrazyLaceAgate (tvthemes)",
+    "zh": "CrazyLaceAgate（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FBA475",
+    "#4C84A3",
+    "#F46124",
+    "#4DACD9",
+    "#C2421C",
+    "#761445",
+    "#FAD457"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBE",
+      "#DDA996",
+      "#CD866F",
+      "#BD6248",
+      "#AA3C1B",
+      "#960000"
+    ],
+    "paired_diverging_stops": [
+      "#4DACD9",
+      "#8BC4E2",
+      "#C0DCEB",
+      "#F4F3F2",
+      "#F6EAC5",
+      "#F8DF94",
+      "#FAD457"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: CrazyLaceAgate)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 13.19,
+    "min_de2000_deutan_first6": 12.27,
+    "min_de2000_protan_first6": 12.85,
+    "min_de2000_tritan_first6": 11.03,
+    "optimal6_min_de2000": 13.19,
+    "optimal6_min_de2000_deutan": 12.27,
+    "optimal6_min_de2000_protan": 12.85,
+    "grayscale_L_spread": 0.499,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

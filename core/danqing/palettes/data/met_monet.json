@@ -21,7 +21,25 @@
   "neutral": "#C0C4C8",
   "partners": {
     "sequential": "YlGnBu",
-    "diverging": "bam"
+    "diverging": "bam",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D4C9",
+      "#B2B9AC",
+      "#929F8F",
+      "#728674",
+      "#546D5A",
+      "#365641"
+    ],
+    "paired_diverging_stops": [
+      "#725D61",
+      "#9C8C8F",
+      "#C7BEBF",
+      "#F4F3F2",
+      "#B4BACA",
+      "#7884A2",
+      "#41507B"
+    ]
   },
   "source": {
     "title": "MetBrewer: Monet (Met Object 437127)",

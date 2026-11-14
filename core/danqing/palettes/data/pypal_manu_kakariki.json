@@ -1,0 +1,62 @@
+{
+  "id": "pypal_manu_kakariki",
+  "name": {
+    "en": "Kakariki (Manu)",
+    "zh": "Kakariki（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#44781E",
+    "#A1B654",
+    "#2C3B75",
+    "#B8321A",
+    "#565052"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBBF",
+      "#DEA898",
+      "#CF8472",
+      "#BE614C",
+      "#AC3923",
+      "#980000"
+    ],
+    "paired_diverging_stops": [
+      "#A1B654",
+      "#BCCB8C",
+      "#D7DFBF",
+      "#F4F3F2",
+      "#ABB3C9",
+      "#68769F",
+      "#2C3B75"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Kakariki)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 21.09,
+    "min_de2000_deutan_first6": 3.88,
+    "min_de2000_protan_first6": 11.87,
+    "min_de2000_tritan_first6": 18.04,
+    "optimal6_min_de2000": 21.09,
+    "optimal6_min_de2000_deutan": 3.88,
+    "optimal6_min_de2000_protan": 11.87,
+    "grayscale_L_spread": 0.367,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

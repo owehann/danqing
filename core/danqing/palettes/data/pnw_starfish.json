@@ -19,7 +19,25 @@
   "neutral": "#B5B8BA",
   "partners": {
     "sequential": "navia",
-    "diverging": "broc"
+    "diverging": "broc",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D1D7",
+      "#B4B5C6",
+      "#9598B5",
+      "#777DA4",
+      "#5A6292",
+      "#3F4780"
+    ],
+    "paired_diverging_stops": [
+      "#24492E",
+      "#657E6A",
+      "#AAB7AB",
+      "#F4F3F2",
+      "#D4BAB8",
+      "#B38280",
+      "#904D4C"
+    ]
   },
   "source": {
     "title": "PNWColors Pacific Northwest Nature Palette (Starfish)",

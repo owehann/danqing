@@ -1,0 +1,67 @@
+{
+  "id": "pypal_matplotlib_seaborn_builtin_inferno",
+  "name": {
+    "en": "inferno (matplotlib/seaborn builtin)",
+    "zh": "inferno（matplotlib/seaborn builtin）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#140B34",
+    "#390963",
+    "#5F136E",
+    "#85216B",
+    "#A92E5E",
+    "#CB4149",
+    "#E65D2F",
+    "#F78410",
+    "#FCAE12",
+    "#F5DB4C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CBCA",
+      "#DAA7AE",
+      "#C98493",
+      "#B86079",
+      "#A43A5F",
+      "#8F0047"
+    ],
+    "paired_diverging_stops": [
+      "#390963",
+      "#715A94",
+      "#B0A4C3",
+      "#F4F3F2",
+      "#F8DEB8",
+      "#FBC77A",
+      "#FCAE12"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (matplotlib/seaborn builtin: inferno)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 7.71,
+    "min_de2000_deutan_first6": 6.67,
+    "min_de2000_protan_first6": 4.7,
+    "min_de2000_tritan_first6": 8.69,
+    "optimal6_min_de2000": 7.71,
+    "optimal6_min_de2000_deutan": 6.67,
+    "optimal6_min_de2000_protan": 4.7,
+    "grayscale_L_spread": 0.695,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -32,7 +32,25 @@
   "neutral": "#848482",
   "partners": {
     "sequential": "viridis",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9C0",
+      "#E4A49A",
+      "#D87E74",
+      "#C95650",
+      "#B7242A",
+      "#A40000"
+    ],
+    "paired_diverging_stops": [
+      "#53377A",
+      "#8573A2",
+      "#BAB2CA",
+      "#F4F3F2",
+      "#CEC196",
+      "#A98E2F",
+      "#865C00"
+    ]
   },
   "source": {
     "title": "Twenty-Two Colors of Maximum Contrast",

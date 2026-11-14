@@ -1,0 +1,63 @@
+{
+  "id": "pypal_tvthemes_amethyst",
+  "name": {
+    "en": "Amethyst (tvthemes)",
+    "zh": "Amethyst（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C0AED9",
+    "#3C3B6C",
+    "#AE56DE",
+    "#94A4AC",
+    "#8C37E5",
+    "#000000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DBCCE4",
+      "#C2AAE0",
+      "#AA87D9",
+      "#9362D2",
+      "#7D37C8",
+      "#6900BE"
+    ],
+    "paired_diverging_stops": [
+      "#8C37E5",
+      "#AC80EE",
+      "#CFBBF2",
+      "#F4F3F2",
+      "#8D8D8C",
+      "#333333",
+      "#000000"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Amethyst)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 10.04,
+    "min_de2000_deutan_first6": 8.8,
+    "min_de2000_protan_first6": 6.64,
+    "min_de2000_tritan_first6": 13.13,
+    "optimal6_min_de2000": 10.04,
+    "optimal6_min_de2000_deutan": 8.8,
+    "optimal6_min_de2000_protan": 6.64,
+    "grayscale_L_spread": 0.78,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

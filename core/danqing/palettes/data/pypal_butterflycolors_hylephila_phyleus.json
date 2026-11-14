@@ -1,0 +1,62 @@
+{
+  "id": "pypal_butterflycolors_hylephila_phyleus",
+  "name": {
+    "en": "hylephila_phyleus (ButterflyColors)",
+    "zh": "hylephila_phyleus（ButterflyColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BB9F89",
+    "#D98E32",
+    "#BF7330",
+    "#A6592D",
+    "#733D29"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC0",
+      "#D0AE9A",
+      "#BD8F75",
+      "#A97051",
+      "#95522B",
+      "#7F3200"
+    ],
+    "paired_diverging_stops": [
+      "#D98E32",
+      "#E4B17B",
+      "#EDD2B7",
+      "#F4F3F2",
+      "#C9B3AB",
+      "#9F7768",
+      "#733D29"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ButterflyColors: hylephila_phyleus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.82,
+    "min_de2000_deutan_first6": 8.48,
+    "min_de2000_protan_first6": 9.65,
+    "min_de2000_tritan_first6": 8.37,
+    "optimal6_min_de2000": 9.82,
+    "optimal6_min_de2000_deutan": 8.48,
+    "optimal6_min_de2000_protan": 9.65,
+    "grayscale_L_spread": 0.299,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lisa_edgardegas",
+  "name": {
+    "en": "EdgarDegas (lisa)",
+    "zh": "EdgarDegas（lisa）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BDB592",
+    "#ACBBC5",
+    "#9E8D3D",
+    "#8C4F36",
+    "#2C2D2C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CFC4",
+      "#CCB0A1",
+      "#B7917F",
+      "#A2735F",
+      "#8D563F",
+      "#77391F"
+    ],
+    "paired_diverging_stops": [
+      "#9E8D3D",
+      "#BAAF7C",
+      "#D6D1B7",
+      "#F4F3F2",
+      "#ABABAA",
+      "#686968",
+      "#2C2D2C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (lisa: EdgarDegas)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.95,
+    "min_de2000_deutan_first6": 15.43,
+    "min_de2000_protan_first6": 16.88,
+    "min_de2000_tritan_first6": 13.88,
+    "optimal6_min_de2000": 15.95,
+    "optimal6_min_de2000_deutan": 15.43,
+    "optimal6_min_de2000_protan": 16.88,
+    "grayscale_L_spread": 0.488,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

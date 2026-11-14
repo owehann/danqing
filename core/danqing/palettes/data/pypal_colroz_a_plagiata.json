@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_a_plagiata",
+  "name": {
+    "en": "a_plagiata (colRoz)",
+    "zh": "a_plagiata（colRoz）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#1F1A10",
+    "#493823",
+    "#9E6E27",
+    "#C47E2A",
+    "#FDB958",
+    "#FCE3A8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD0BF",
+      "#C9B297",
+      "#B29570",
+      "#9C784A",
+      "#865C1E",
+      "#704100"
+    ],
+    "paired_diverging_stops": [
+      "#1F1A10",
+      "#5E5A52",
+      "#A6A39E",
+      "#F4F3F2",
+      "#F8E1C3",
+      "#FBCD92",
+      "#FDB958"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: a_plagiata)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 9.47,
+    "min_de2000_deutan_first6": 9.02,
+    "min_de2000_protan_first6": 7.91,
+    "min_de2000_tritan_first6": 9.34,
+    "optimal6_min_de2000": 9.47,
+    "optimal6_min_de2000_deutan": 9.02,
+    "optimal6_min_de2000_protan": 7.91,
+    "grayscale_L_spread": 0.702,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

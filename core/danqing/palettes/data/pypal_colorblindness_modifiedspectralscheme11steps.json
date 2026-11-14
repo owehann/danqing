@@ -1,0 +1,68 @@
+{
+  "id": "pypal_colorblindness_modifiedspectralscheme11steps",
+  "name": {
+    "en": "ModifiedSpectralScheme11Steps (colorBlindness)",
+    "zh": "ModifiedSpectralScheme11Steps（colorBlindness）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#A50021",
+    "#D82632",
+    "#F76D5E",
+    "#FFAD72",
+    "#FFE099",
+    "#FFFFBF",
+    "#E0FFFF",
+    "#AAF7FF",
+    "#72D8FF",
+    "#3FA0FF",
+    "#264CFF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CAD2EB",
+      "#9FB5ED",
+      "#7697ED",
+      "#4E76EA",
+      "#2A50E6",
+      "#160EE0"
+    ],
+    "paired_diverging_stops": [
+      "#FFAD72",
+      "#FDC59F",
+      "#FADDC9",
+      "#F4F3F2",
+      "#AAC3FD",
+      "#638EFF",
+      "#264CFF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colorBlindness: ModifiedSpectralScheme11Steps)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 10.53,
+    "min_de2000_deutan_first6": 6.73,
+    "min_de2000_protan_first6": 6.94,
+    "min_de2000_tritan_first6": 12.0,
+    "optimal6_min_de2000": 20.21,
+    "optimal6_min_de2000_deutan": 9.75,
+    "optimal6_min_de2000_protan": 15.76,
+    "grayscale_L_spread": 0.529,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

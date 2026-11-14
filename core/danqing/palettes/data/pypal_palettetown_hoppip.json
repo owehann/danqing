@@ -1,0 +1,67 @@
+{
+  "id": "pypal_palettetown_hoppip",
+  "name": {
+    "en": "hoppip (palettetown)",
+    "zh": "hoppip（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F86050",
+    "#80E038",
+    "#40A020",
+    "#206010",
+    "#D04010",
+    "#60C838",
+    "#A01000",
+    "#F89870",
+    "#F8F850",
+    "#F0C000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBD",
+      "#E0A793",
+      "#D2836A",
+      "#C25E41",
+      "#B03509",
+      "#9C0000"
+    ],
+    "paired_diverging_stops": [
+      "#206010",
+      "#67905E",
+      "#ACC1A6",
+      "#F4F3F2",
+      "#F4F6C6",
+      "#F6F895",
+      "#F8F850"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: hoppip)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 6.71,
+    "min_de2000_deutan_first6": 4.83,
+    "min_de2000_protan_first6": 2.95,
+    "min_de2000_tritan_first6": 6.39,
+    "optimal6_min_de2000": 6.71,
+    "optimal6_min_de2000_deutan": 4.83,
+    "optimal6_min_de2000_protan": 2.95,
+    "grayscale_L_spread": 0.519,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

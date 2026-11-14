@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_conifer",
+  "name": {
+    "en": "conifer (calecopal)",
+    "zh": "conifer（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#CC7540",
+    "#765043",
+    "#A69260",
+    "#979A6B",
+    "#39692F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D5C4",
+      "#AFBCA1",
+      "#8CA37F",
+      "#6B8A5F",
+      "#4A723E",
+      "#285B1D"
+    ],
+    "paired_diverging_stops": [
+      "#CC7540",
+      "#DCA07D",
+      "#E9C9B7",
+      "#F4F3F2",
+      "#C9BAB4",
+      "#9F837A",
+      "#765043"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: conifer)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.4,
+    "min_de2000_deutan_first6": 2.57,
+    "min_de2000_protan_first6": 2.37,
+    "min_de2000_tritan_first6": 11.81,
+    "optimal6_min_de2000": 8.4,
+    "optimal6_min_de2000_deutan": 2.57,
+    "optimal6_min_de2000_protan": 2.37,
+    "grayscale_L_spread": 0.202,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

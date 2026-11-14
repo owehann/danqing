@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_shiftry",
+  "name": {
+    "en": "shiftry (palettetown)",
+    "zh": "shiftry（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E0D8F8",
+    "#985860",
+    "#000000",
+    "#704048",
+    "#F8F8F8",
+    "#D87850",
+    "#503030",
+    "#60A860",
+    "#B8B0C0",
+    "#808070",
+    "#487828",
+    "#80D060",
+    "#F8D060"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D5C1",
+      "#AFBC9C",
+      "#8DA377",
+      "#6B8B53",
+      "#4B732E",
+      "#2A5B00"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#F5E8C6",
+      "#F7DD97",
+      "#F8D060"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: shiftry)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 10.72,
+    "min_de2000_deutan_first6": 11.15,
+    "min_de2000_protan_first6": 9.48,
+    "min_de2000_tritan_first6": 6.56,
+    "optimal6_min_de2000": 10.72,
+    "optimal6_min_de2000_deutan": 11.15,
+    "optimal6_min_de2000_protan": 9.48,
+    "grayscale_L_spread": 0.979,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -21,7 +21,25 @@
   "neutral": "#B8B9BE",
   "partners": {
     "sequential": "batlow",
-    "diverging": "roma"
+    "diverging": "roma",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC1",
+      "#DEA79D",
+      "#D08379",
+      "#BF5F56",
+      "#AD3733",
+      "#990009"
+    ],
+    "paired_diverging_stops": [
+      "#915300",
+      "#B38843",
+      "#D4BD9C",
+      "#F4F3F2",
+      "#A1A9BB",
+      "#556485",
+      "#122451"
+    ]
   },
   "source": {
     "title": "MetBrewer: Cross (Met Object 459734)",

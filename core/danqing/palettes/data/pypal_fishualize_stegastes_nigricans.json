@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_stegastes_nigricans",
+  "name": {
+    "en": "Stegastes_nigricans (fishualize)",
+    "zh": "Stegastes_nigricans（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E1A519",
+    "#1E81C6",
+    "#CAA6E8",
+    "#696B61",
+    "#2D2E2E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD4DB",
+      "#A2BACE",
+      "#789FC1",
+      "#4E85B3",
+      "#1A6BA4",
+      "#005095"
+    ],
+    "paired_diverging_stops": [
+      "#E1A519",
+      "#E8C078",
+      "#EEDAB7",
+      "#F4F3F2",
+      "#B2CEE5",
+      "#70A8D7",
+      "#1E81C6"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Stegastes_nigricans)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 21.26,
+    "min_de2000_deutan_first6": 21.12,
+    "min_de2000_protan_first6": 14.99,
+    "min_de2000_tritan_first6": 18.26,
+    "optimal6_min_de2000": 21.26,
+    "optimal6_min_de2000_deutan": 21.12,
+    "optimal6_min_de2000_protan": 14.99,
+    "grayscale_L_spread": 0.48,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

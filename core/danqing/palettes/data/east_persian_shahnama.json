@@ -20,7 +20,25 @@
   "neutral": "#BFB9B5",
   "partners": {
     "sequential": "lapaz",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D2DB",
+      "#AEB6CF",
+      "#8B99C1",
+      "#6A7EB4",
+      "#4B62A5",
+      "#2E4596"
+    ],
+    "paired_diverging_stops": [
+      "#445DAC",
+      "#7A8FC5",
+      "#B5C1DD",
+      "#F4F3F2",
+      "#CCBFAD",
+      "#A48D6C",
+      "#7E5C29"
+    ]
   },
   "source": {
     "title": "Bahram Gur Slays a Dragon, Folio from an Ilkhanid Shahnama",

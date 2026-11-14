@@ -17,7 +17,25 @@
   "neutral": "#B8B3B5",
   "partners": {
     "sequential": "lajolla",
-    "diverging": "PuOr"
+    "diverging": "PuOr",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC0",
+      "#E0A69A",
+      "#D28275",
+      "#C35C51",
+      "#B1312C",
+      "#9D0000"
+    ],
+    "paired_diverging_stops": [
+      "#663171",
+      "#946F9B",
+      "#C4B0C6",
+      "#F4F3F2",
+      "#E0B7A1",
+      "#C87B50",
+      "#AA3900"
+    ]
   },
   "source": {
     "title": "MetBrewer: Java (Met Object 85689)",

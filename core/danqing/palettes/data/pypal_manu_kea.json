@@ -1,0 +1,64 @@
+{
+  "id": "pypal_manu_kea",
+  "name": {
+    "en": "Kea (Manu)",
+    "zh": "Kea（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6C803A",
+    "#7B5C34",
+    "#AB7C47",
+    "#CCAE42",
+    "#D73202",
+    "#272318",
+    "#D3CDBF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EECABC",
+      "#E3A592",
+      "#D78069",
+      "#C8593E",
+      "#B72A00",
+      "#A30000"
+    ],
+    "paired_diverging_stops": [
+      "#CCAE42",
+      "#D9C684",
+      "#E6DDBC",
+      "#F4F3F2",
+      "#A9A7A2",
+      "#646158",
+      "#272318"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Kea)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 14.67,
+    "min_de2000_deutan_first6": 6.61,
+    "min_de2000_protan_first6": 2.91,
+    "min_de2000_tritan_first6": 14.17,
+    "optimal6_min_de2000": 14.67,
+    "optimal6_min_de2000_deutan": 6.61,
+    "optimal6_min_de2000_protan": 2.91,
+    "grayscale_L_spread": 0.592,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

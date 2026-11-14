@@ -17,7 +17,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC1",
+      "#DFA79C",
+      "#D08378",
+      "#C05E55",
+      "#AE3632",
+      "#990006"
+    ],
+    "paired_diverging_stops": [
+      "#7E5E00",
+      "#A48E5A",
+      "#CCC0A5",
+      "#F4F3F2",
+      "#C2AAA2",
+      "#906559",
+      "#5D2314"
+    ]
   },
   "source": {
     "title": "Pink Panther, 1988, Jeff Koons, Porcelain on formica base",

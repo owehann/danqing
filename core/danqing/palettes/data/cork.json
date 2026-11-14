@@ -21,7 +21,25 @@
   "neutral": "#E6EDEC",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "cork"
+    "diverging": "cork",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D6C3",
+      "#ABBD9F",
+      "#87A57C",
+      "#638D5A",
+      "#3F7539",
+      "#135D12"
+    ],
+    "paired_diverging_stops": [
+      "#5F6564",
+      "#8E9291",
+      "#BFC1C0",
+      "#F4F3F2",
+      "#A0AA9B",
+      "#54674C",
+      "#0F2903"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (cork)",

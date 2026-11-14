@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "lapaz",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D3D6",
+      "#AAB8C5",
+      "#869EB4",
+      "#6283A3",
+      "#3F6A91",
+      "#16507F"
+    ],
+    "paired_diverging_stops": [
+      "#1A0C64",
+      "#545B95",
+      "#A0A5C4",
+      "#F4F3F2",
+      "#C4C0BF",
+      "#968F8F",
+      "#6A6061"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (lapaz)",

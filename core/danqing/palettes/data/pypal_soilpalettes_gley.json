@@ -1,0 +1,62 @@
+{
+  "id": "pypal_soilpalettes_gley",
+  "name": {
+    "en": "gley (soilpalettes)",
+    "zh": "gley（soilpalettes）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#BFBFBF",
+    "#A1B7BF",
+    "#80AEBE",
+    "#58A6BE",
+    "#009DBD"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CAD6D5",
+      "#9EBDC3",
+      "#72A4B1",
+      "#428B9E",
+      "#00738C",
+      "#005A7A"
+    ],
+    "paired_diverging_stops": [
+      "#BFBFBF",
+      "#D0D0D0",
+      "#E2E2E1",
+      "#F4F3F2",
+      "#B5D7E1",
+      "#73BACF",
+      "#009DBD"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (soilpalettes: gley)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 5.32,
+    "min_de2000_deutan_first6": 5.61,
+    "min_de2000_protan_first6": 4.19,
+    "min_de2000_tritan_first6": 1.93,
+    "optimal6_min_de2000": 5.32,
+    "optimal6_min_de2000_deutan": 5.61,
+    "optimal6_min_de2000_protan": 4.19,
+    "grayscale_L_spread": 0.161,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

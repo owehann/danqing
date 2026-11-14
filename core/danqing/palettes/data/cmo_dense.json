@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "cmo_dense",
-    "diverging": "cmo_balance"
+    "diverging": "cmo_balance",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DACEDC",
+      "#BFAECF",
+      "#A58FC2",
+      "#8C70B4",
+      "#7450A6",
+      "#5D2D96"
+    ],
+    "paired_diverging_stops": [
+      "#5C6565",
+      "#8C9292",
+      "#BEC2C1",
+      "#F4F3F2",
+      "#B2A0A7",
+      "#735361",
+      "#360E24"
+    ]
   },
   "source": {
     "title": "True Colors of Oceanography: cmocean (dense)",

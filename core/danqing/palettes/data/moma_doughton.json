@@ -22,7 +22,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CCD3",
+      "#D0A9BE",
+      "#BD87AA",
+      "#A96596",
+      "#944382",
+      "#7E1A6E"
+    ],
+    "paired_diverging_stops": [
+      "#007467",
+      "#669D93",
+      "#ADC8C1",
+      "#F4F3F2",
+      "#B8A3B3",
+      "#7E5877",
+      "#45113F"
+    ]
   },
   "source": {
     "title": "Ferrum 5000, 1995, Steve Doughton, Film",

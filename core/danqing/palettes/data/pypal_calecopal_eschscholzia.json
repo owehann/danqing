@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_eschscholzia",
+  "name": {
+    "en": "eschscholzia (calecopal)",
+    "zh": "eschscholzia（calecopal）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#F2B705",
+    "#F29F05",
+    "#F28705",
+    "#D95204",
+    "#A62F03"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCBF",
+      "#DBA997",
+      "#CB8771",
+      "#BA654A",
+      "#A74021",
+      "#930D00"
+    ],
+    "paired_diverging_stops": [
+      "#F2B705",
+      "#F3CC79",
+      "#F4E0B8",
+      "#F4F3F2",
+      "#E0B4A6",
+      "#C6755D",
+      "#A62F03"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: eschscholzia)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.69,
+    "min_de2000_deutan_first6": 3.54,
+    "min_de2000_protan_first6": 5.41,
+    "min_de2000_tritan_first6": 5.71,
+    "optimal6_min_de2000": 8.69,
+    "optimal6_min_de2000_deutan": 3.54,
+    "optimal6_min_de2000_protan": 5.41,
+    "grayscale_L_spread": 0.327,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

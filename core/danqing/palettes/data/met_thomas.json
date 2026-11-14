@@ -20,7 +20,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCBF",
+      "#D9AA99",
+      "#C88973",
+      "#B7674E",
+      "#A34426",
+      "#8F1900"
+    ],
+    "paired_diverging_stops": [
+      "#13315F",
+      "#586E8F",
+      "#A3AFC0",
+      "#F4F3F2",
+      "#B6C7AB",
+      "#7B9C67",
+      "#42721E"
+    ]
   },
   "source": {
     "title": "Formes et couleurs: vingt planches en couleurs contenant soixante-sept motifs decoratifs, 1921, Auguste H. Thomas, French",

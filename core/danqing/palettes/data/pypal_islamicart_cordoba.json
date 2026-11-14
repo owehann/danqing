@@ -1,0 +1,65 @@
+{
+  "id": "pypal_islamicart_cordoba",
+  "name": {
+    "en": "cordoba (IslamicArt)",
+    "zh": "cordoba（IslamicArt）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#594B3F",
+    "#525A5E",
+    "#886A50",
+    "#E9AA52",
+    "#F7D380",
+    "#CA6C3D",
+    "#D6B478",
+    "#B6966C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CEBF",
+      "#D4AD98",
+      "#C28D71",
+      "#AF6D4B",
+      "#9C4C22",
+      "#872900"
+    ],
+    "paired_diverging_stops": [
+      "#525A5E",
+      "#848A8C",
+      "#BBBDBE",
+      "#F4F3F2",
+      "#F5E9CE",
+      "#F6DEA9",
+      "#F7D380"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (IslamicArt: cordoba)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 11.56,
+    "min_de2000_deutan_first6": 8.04,
+    "min_de2000_protan_first6": 9.68,
+    "min_de2000_tritan_first6": 11.04,
+    "optimal6_min_de2000": 11.56,
+    "optimal6_min_de2000_deutan": 8.04,
+    "optimal6_min_de2000_protan": 9.68,
+    "grayscale_L_spread": 0.457,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

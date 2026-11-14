@@ -1,0 +1,63 @@
+{
+  "id": "pypal_calecopal_grasswet",
+  "name": {
+    "en": "grasswet (calecopal)",
+    "zh": "grasswet（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4C4E32",
+    "#908E6C",
+    "#5D8FBC",
+    "#97C2E2",
+    "#17252A",
+    "#B4A480"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D3D6",
+      "#ABB8C4",
+      "#879EB2",
+      "#6483A0",
+      "#416A8E",
+      "#1B507C"
+    ],
+    "paired_diverging_stops": [
+      "#97C2E2",
+      "#B6D3E8",
+      "#D5E3ED",
+      "#F4F3F2",
+      "#A3A8A9",
+      "#586366",
+      "#17252A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: grasswet)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 9.93,
+    "min_de2000_deutan_first6": 8.41,
+    "min_de2000_protan_first6": 7.66,
+    "min_de2000_tritan_first6": 10.75,
+    "optimal6_min_de2000": 9.93,
+    "optimal6_min_de2000_deutan": 8.41,
+    "optimal6_min_de2000_protan": 7.66,
+    "grayscale_L_spread": 0.54,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

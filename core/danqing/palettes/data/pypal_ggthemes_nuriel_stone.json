@@ -1,0 +1,66 @@
+{
+  "id": "pypal_ggthemes_nuriel_stone",
+  "name": {
+    "en": "Nuriel_Stone (ggthemes)",
+    "zh": "Nuriel_Stone（ggthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8175AA",
+    "#6FB899",
+    "#31A1B3",
+    "#CCB22B",
+    "#A39FC9",
+    "#94D0C0",
+    "#959C9E",
+    "#027B8E",
+    "#9F8F12"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD5D2",
+      "#A3BCBE",
+      "#7BA3A9",
+      "#518A95",
+      "#1D7281",
+      "#005A6D"
+    ],
+    "paired_diverging_stops": [
+      "#8175AA",
+      "#A59EC2",
+      "#CCC8DA",
+      "#F4F3F2",
+      "#E6DEB9",
+      "#D9C87D",
+      "#CCB22B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemes: Nuriel_Stone)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 8.94,
+    "min_de2000_deutan_first6": 6.62,
+    "min_de2000_protan_first6": 5.03,
+    "min_de2000_tritan_first6": 6.73,
+    "optimal6_min_de2000": 8.94,
+    "optimal6_min_de2000_deutan": 6.62,
+    "optimal6_min_de2000_protan": 5.03,
+    "grayscale_L_spread": 0.276,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

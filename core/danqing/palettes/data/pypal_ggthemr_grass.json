@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ggthemr_grass",
+  "name": {
+    "en": "grass (ggthemr)",
+    "zh": "grass（ggthemr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4A3D4F",
+    "#CEF3C6",
+    "#DED42F",
+    "#B45454",
+    "#3E6735",
+    "#BE1D2D",
+    "#57826F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCAC1",
+      "#E2A59C",
+      "#D48078",
+      "#C45A55",
+      "#B32D32",
+      "#9F0007"
+    ],
+    "paired_diverging_stops": [
+      "#4A3D4F",
+      "#7F7582",
+      "#B8B2B8",
+      "#F4F3F2",
+      "#ECEABE",
+      "#E5E084",
+      "#DED42F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemr: grass)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 9.97,
+    "min_de2000_deutan_first6": 8.55,
+    "min_de2000_protan_first6": 8.02,
+    "min_de2000_tritan_first6": 10.42,
+    "optimal6_min_de2000": 9.97,
+    "optimal6_min_de2000_deutan": 8.55,
+    "optimal6_min_de2000_protan": 8.02,
+    "grayscale_L_spread": 0.545,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

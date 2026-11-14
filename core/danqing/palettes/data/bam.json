@@ -21,7 +21,25 @@
   "neutral": "#F6F1F0",
   "partners": {
     "sequential": "hawaii",
-    "diverging": "bam"
+    "diverging": "bam",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CCD2",
+      "#D2A9BD",
+      "#BF87A8",
+      "#AB6493",
+      "#96427E",
+      "#81186A"
+    ],
+    "paired_diverging_stops": [
+      "#65024B",
+      "#985A7F",
+      "#C7A5B7",
+      "#F4F3F2",
+      "#BEC3B6",
+      "#8B957D",
+      "#5C6948"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (bam)",

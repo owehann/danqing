@@ -1,0 +1,64 @@
+{
+  "id": "pypal_vaporwave_hyperbubble",
+  "name": {
+    "en": "hyperBubble (vapoRwave)",
+    "zh": "hyperBubble（vapoRwave）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#852942",
+    "#FA41CA",
+    "#F599A6",
+    "#ECE976",
+    "#44B05B",
+    "#96BDE4",
+    "#792096"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECC7D5",
+      "#E19FC2",
+      "#D377B0",
+      "#C34B9D",
+      "#B1008A",
+      "#9C0077"
+    ],
+    "paired_diverging_stops": [
+      "#ECE976",
+      "#EEEDA4",
+      "#F1F1CD",
+      "#F4F3F2",
+      "#CBAFD5",
+      "#A26CB7",
+      "#792096"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vapoRwave: hyperBubble)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 21.91,
+    "min_de2000_deutan_first6": 7.51,
+    "min_de2000_protan_first6": 17.26,
+    "min_de2000_tritan_first6": 13.3,
+    "optimal6_min_de2000": 21.91,
+    "optimal6_min_de2000_deutan": 7.51,
+    "optimal6_min_de2000_protan": 17.26,
+    "grayscale_L_spread": 0.486,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

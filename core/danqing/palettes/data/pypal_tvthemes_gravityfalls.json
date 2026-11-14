@@ -1,0 +1,71 @@
+{
+  "id": "pypal_tvthemes_gravityfalls",
+  "name": {
+    "en": "gravityFalls (tvthemes)",
+    "zh": "gravityFalls（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#417BA1",
+    "#FF1493",
+    "#FFFF2E",
+    "#345634",
+    "#8B0000",
+    "#FF6700",
+    "#93C0D5",
+    "#8B4513",
+    "#9248A7",
+    "#1C8859",
+    "#474747",
+    "#8FBC8F",
+    "#D2B48C",
+    "#000000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F1C6CC",
+      "#E99DB2",
+      "#DE7398",
+      "#D0437F",
+      "#BF0067",
+      "#AB004F"
+    ],
+    "paired_diverging_stops": [
+      "#FFFF2E",
+      "#FAFC8C",
+      "#F7F9C3",
+      "#F4F3F2",
+      "#D4BADA",
+      "#B382C1",
+      "#9248A7"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: gravityFalls)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 34.56,
+    "min_de2000_deutan_first6": 11.75,
+    "min_de2000_protan_first6": 6.02,
+    "min_de2000_tritan_first6": 5.03,
+    "optimal6_min_de2000": 34.56,
+    "optimal6_min_de2000_deutan": 11.75,
+    "optimal6_min_de2000_protan": 6.02,
+    "grayscale_L_spread": 0.969,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

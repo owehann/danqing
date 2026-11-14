@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_lampris_guttatus",
+  "name": {
+    "en": "Lampris_guttatus (fishualize)",
+    "zh": "Lampris_guttatus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#13317D",
+    "#7EA7D3",
+    "#85D3C3",
+    "#D99279",
+    "#F75107"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EECABA",
+      "#E4A58E",
+      "#D88062",
+      "#C95932",
+      "#B82900",
+      "#A40000"
+    ],
+    "paired_diverging_stops": [
+      "#13317D",
+      "#5771A6",
+      "#A3B1CD",
+      "#F4F3F2",
+      "#FCC3B0",
+      "#FD8F6C",
+      "#F75107"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Lampris_guttatus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 16.9,
+    "min_de2000_deutan_first6": 13.88,
+    "min_de2000_protan_first6": 16.76,
+    "min_de2000_tritan_first6": 10.47,
+    "optimal6_min_de2000": 16.9,
+    "optimal6_min_de2000_deutan": 13.88,
+    "optimal6_min_de2000_protan": 16.76,
+    "grayscale_L_spread": 0.468,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -18,7 +18,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBBF",
+      "#DCA898",
+      "#CD8672",
+      "#BC624D",
+      "#AA3C25",
+      "#960000"
+    ],
+    "paired_diverging_stops": [
+      "#B12D00",
+      "#CD7656",
+      "#E4B5A3",
+      "#F4F3F2",
+      "#B2BACC",
+      "#7384A5",
+      "#3A507F"
+    ]
   },
   "source": {
     "title": "Ear Ornament, Winged Runner, A.D. 400–700, Moche, Peruvian",

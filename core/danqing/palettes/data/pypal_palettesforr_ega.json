@@ -1,0 +1,73 @@
+{
+  "id": "pypal_palettesforr_ega",
+  "name": {
+    "en": "Ega (palettesForR)",
+    "zh": "Ega（palettesForR）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#000000",
+    "#A800A8",
+    "#FC5454",
+    "#FC54A8",
+    "#FC54FC",
+    "#FCA8FC",
+    "#FCFC00",
+    "#FCFCA8",
+    "#FCFCFC",
+    "#A8FCFC",
+    "#00FCFC",
+    "#54A8FC",
+    "#0000FC",
+    "#0054A8",
+    "#000054",
+    "#545454"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C6D3F1",
+      "#97B5F7",
+      "#6996FB",
+      "#3C73FC",
+      "#0D47FC",
+      "#0B00FA"
+    ],
+    "paired_diverging_stops": [
+      "#FCFC00",
+      "#F8FA86",
+      "#F6F8C0",
+      "#F4F3F2",
+      "#9ABBFE",
+      "#437CFF",
+      "#0000FC"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettesForR: Ega)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 16,
+    "max_colors": 16,
+    "min_de2000_first6": 14.0,
+    "min_de2000_deutan_first6": 11.7,
+    "min_de2000_protan_first6": 13.53,
+    "min_de2000_tritan_first6": 6.9,
+    "optimal6_min_de2000": 14.0,
+    "optimal6_min_de2000_deutan": 11.7,
+    "optimal6_min_de2000_protan": 13.53,
+    "grayscale_L_spread": 0.991,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

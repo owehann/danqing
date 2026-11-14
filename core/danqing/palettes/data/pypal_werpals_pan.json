@@ -1,0 +1,63 @@
+{
+  "id": "pypal_werpals_pan",
+  "name": {
+    "en": "pan (werpals)",
+    "zh": "pan（werpals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#27552D",
+    "#E46538",
+    "#96BB77",
+    "#E5E36E",
+    "#E6A19F",
+    "#159EB7"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCBD",
+      "#DCA995",
+      "#CD876C",
+      "#BC6444",
+      "#A93E12",
+      "#950400"
+    ],
+    "paired_diverging_stops": [
+      "#E5E36E",
+      "#E9E9A0",
+      "#EEEFCA",
+      "#F4F3F2",
+      "#B7D7DF",
+      "#76BBCB",
+      "#159EB7"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (werpals: pan)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 17.36,
+    "min_de2000_deutan_first6": 7.86,
+    "min_de2000_protan_first6": 13.32,
+    "min_de2000_tritan_first6": 15.83,
+    "optimal6_min_de2000": 17.36,
+    "optimal6_min_de2000_deutan": 7.86,
+    "optimal6_min_de2000_protan": 13.32,
+    "grayscale_L_spread": 0.489,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

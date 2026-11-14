@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_290",
+  "name": {
+    "en": "Sanzo Wada #290 (Vistoris Lake · Pale Lemon Yellow · Lincoln Green)",
+    "zh": "和田三造 #290（Vistoris Lake · Pale Lemon Yellow · Lincoln Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6D4145",
+    "#FFEFAE",
+    "#555832",
+    "#96D1AA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D7D3C5",
+      "#BAB7A4",
+      "#9D9C84",
+      "#818264",
+      "#676946",
+      "#4E5028"
+    ],
+    "paired_diverging_stops": [
+      "#6D4145",
+      "#9A797A",
+      "#C6B4B4",
+      "#F4F3F2",
+      "#F7F2DC",
+      "#FBF1C6",
+      "#FFEFAE"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#290)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 22.0,
+    "min_de2000_deutan_first6": 8.27,
+    "min_de2000_protan_first6": 11.39,
+    "min_de2000_tritan_first6": 19.38,
+    "optimal6_min_de2000": 22.0,
+    "optimal6_min_de2000_deutan": 8.27,
+    "optimal6_min_de2000_protan": 11.39,
+    "grayscale_L_spread": 0.521,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

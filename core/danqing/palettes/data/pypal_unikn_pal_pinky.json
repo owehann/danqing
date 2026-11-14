@@ -1,0 +1,62 @@
+{
+  "id": "pypal_unikn_pal_pinky",
+  "name": {
+    "en": "pal_pinky (unikn)",
+    "zh": "pal_pinky（unikn）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#F3BFCB",
+    "#ECA0B2",
+    "#E68098",
+    "#E0607E",
+    "#CA4A68"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC7",
+      "#DBA7A9",
+      "#CB848B",
+      "#BA606E",
+      "#A73A53",
+      "#920038"
+    ],
+    "paired_diverging_stops": [
+      "#F3BFCB",
+      "#F4D0D8",
+      "#F4E2E5",
+      "#F4F3F2",
+      "#ECBDC2",
+      "#DE8594",
+      "#CA4A68"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (unikn: pal_pinky)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 7.49,
+    "min_de2000_deutan_first6": 5.77,
+    "min_de2000_protan_first6": 7.04,
+    "min_de2000_tritan_first6": 7.49,
+    "optimal6_min_de2000": 7.49,
+    "optimal6_min_de2000_deutan": 5.77,
+    "optimal6_min_de2000_protan": 7.04,
+    "grayscale_L_spread": 0.264,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

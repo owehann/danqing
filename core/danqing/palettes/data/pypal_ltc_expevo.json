@@ -1,0 +1,63 @@
+{
+  "id": "pypal_ltc_expevo",
+  "name": {
+    "en": "expevo (ltc)",
+    "zh": "expevo（ltc）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FC4E07",
+    "#E7B800",
+    "#00AFBB",
+    "#8B4769",
+    "#1D457F",
+    "#808080"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFCABA",
+      "#E5A58E",
+      "#D97F61",
+      "#CB5731",
+      "#BA2300",
+      "#A70000"
+    ],
+    "paired_diverging_stops": [
+      "#E7B800",
+      "#ECCD78",
+      "#F0E1B8",
+      "#F4F3F2",
+      "#A8B7CC",
+      "#617DA6",
+      "#1D457F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ltc: expevo)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 24.98,
+    "min_de2000_deutan_first6": 11.73,
+    "min_de2000_protan_first6": 11.18,
+    "min_de2000_tritan_first6": 20.86,
+    "optimal6_min_de2000": 24.98,
+    "optimal6_min_de2000_deutan": 11.73,
+    "optimal6_min_de2000_protan": 11.18,
+    "grayscale_L_spread": 0.407,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

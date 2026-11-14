@@ -1,0 +1,62 @@
+{
+  "id": "pypal_colroz_v_viatica",
+  "name": {
+    "en": "v_viatica (colRoz)",
+    "zh": "v_viatica（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#313632",
+    "#7D8184",
+    "#432B21",
+    "#6B503B",
+    "#B89E83"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DCD1C6",
+      "#C2B3A6",
+      "#AA9787",
+      "#917B69",
+      "#79604C",
+      "#624630"
+    ],
+    "paired_diverging_stops": [
+      "#313632",
+      "#6C706C",
+      "#ADAFAD",
+      "#F4F3F2",
+      "#E0D6CC",
+      "#CCBAA7",
+      "#B89E83"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: v_viatica)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.13,
+    "min_de2000_deutan_first6": 8.13,
+    "min_de2000_protan_first6": 6.14,
+    "min_de2000_tritan_first6": 12.23,
+    "optimal6_min_de2000": 13.13,
+    "optimal6_min_de2000_deutan": 8.13,
+    "optimal6_min_de2000_protan": 6.14,
+    "grayscale_L_spread": 0.4,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

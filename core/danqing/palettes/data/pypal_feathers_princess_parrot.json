@@ -1,0 +1,65 @@
+{
+  "id": "pypal_feathers_princess_parrot",
+  "name": {
+    "en": "princess_parrot (feathers)",
+    "zh": "princess_parrot（feathers）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7090C9",
+    "#8CB3DE",
+    "#AFBE9F",
+    "#616020",
+    "#6EB245",
+    "#214917",
+    "#CF2236",
+    "#D683AD"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9C1",
+      "#E4A49C",
+      "#D77E78",
+      "#C85654",
+      "#B62531",
+      "#A30004"
+    ],
+    "paired_diverging_stops": [
+      "#7090C9",
+      "#9BB1D8",
+      "#C6D2E5",
+      "#F4F3F2",
+      "#C7DEBB",
+      "#9BC983",
+      "#6EB245"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (feathers: princess_parrot)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 10.48,
+    "min_de2000_deutan_first6": 10.4,
+    "min_de2000_protan_first6": 9.52,
+    "min_de2000_tritan_first6": 9.78,
+    "optimal6_min_de2000": 10.48,
+    "optimal6_min_de2000_deutan": 10.4,
+    "optimal6_min_de2000_protan": 9.52,
+    "grayscale_L_spread": 0.418,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

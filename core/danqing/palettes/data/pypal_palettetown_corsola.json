@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_corsola",
+  "name": {
+    "en": "corsola (palettetown)",
+    "zh": "corsola（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8A8C0",
+    "#E06888",
+    "#D8D8D8",
+    "#881010",
+    "#B83858",
+    "#F8D0D8",
+    "#A8A8A8",
+    "#F8F8F8",
+    "#585860"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC7",
+      "#DBA7A8",
+      "#CC838A",
+      "#BA606D",
+      "#A73952",
+      "#930037"
+    ],
+    "paired_diverging_stops": [
+      "#881010",
+      "#B2645A",
+      "#D6ABA4",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: corsola)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 11.28,
+    "min_de2000_deutan_first6": 2.86,
+    "min_de2000_protan_first6": 1.34,
+    "min_de2000_tritan_first6": 10.84,
+    "optimal6_min_de2000": 11.28,
+    "optimal6_min_de2000_deutan": 2.86,
+    "optimal6_min_de2000_protan": 1.34,
+    "grayscale_L_spread": 0.577,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

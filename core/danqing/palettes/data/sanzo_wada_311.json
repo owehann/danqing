@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_311",
+  "name": {
+    "en": "Sanzo Wada #311 (Pompeian Red · Cream Yellow · Dark Greenish Glaucous)",
+    "zh": "和田三造 #311（Pompeian Red · Cream Yellow · Dark Greenish Glaucous）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#AB2439",
+    "#FDBF68",
+    "#B7C2A9",
+    "#C7D14F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC4",
+      "#DDA7A2",
+      "#CE8381",
+      "#BD5F61",
+      "#AB3842",
+      "#960024"
+    ],
+    "paired_diverging_stops": [
+      "#AB2439",
+      "#CA7073",
+      "#E2B2B1",
+      "#F4F3F2",
+      "#E4E9C1",
+      "#D5DD8E",
+      "#C7D14F"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#311)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 19.36,
+    "min_de2000_deutan_first6": 2.25,
+    "min_de2000_protan_first6": 4.8,
+    "min_de2000_tritan_first6": 10.39,
+    "optimal6_min_de2000": 19.36,
+    "optimal6_min_de2000_deutan": 2.25,
+    "optimal6_min_de2000_protan": 4.8,
+    "grayscale_L_spread": 0.356,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

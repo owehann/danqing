@@ -21,7 +21,25 @@
   "neutral": "#949494",
   "partners": {
     "sequential": "seaborn_crest",
-    "diverging": "seaborn_vlag"
+    "diverging": "seaborn_vlag",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD4DA",
+      "#A2BACD",
+      "#79A0BE",
+      "#4F86B0",
+      "#1B6BA0",
+      "#005191"
+    ],
+    "paired_diverging_stops": [
+      "#0069A7",
+      "#6097C2",
+      "#AAC5DB",
+      "#F4F3F2",
+      "#C6C497",
+      "#9B9531",
+      "#736500"
+    ]
   },
   "source": {
     "title": "Seaborn Statistical Data Visualization (Seaborn Colorblind 10)",

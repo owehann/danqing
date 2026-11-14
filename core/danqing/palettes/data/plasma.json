@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "plasma",
-    "diverging": "PuOr"
+    "diverging": "PuOr",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CAD5",
+      "#D7A5C3",
+      "#C680B1",
+      "#B45A9E",
+      "#A0308B",
+      "#8B0078"
+    ],
+    "paired_diverging_stops": [
+      "#0D0887",
+      "#4863AF",
+      "#9AABD3",
+      "#F4F3F2",
+      "#C1C692",
+      "#93981D",
+      "#696A00"
+    ]
   },
   "source": {
     "title": "Matplotlib Perceptually Uniform Colormaps (plasma)",

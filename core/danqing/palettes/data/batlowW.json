@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D4C7",
+      "#AFBBA8",
+      "#8EA18A",
+      "#6D886D",
+      "#4C7050",
+      "#2C5935"
+    ],
+    "paired_diverging_stops": [
+      "#011959",
+      "#485F8D",
+      "#9AA7BF",
+      "#F4F3F2",
+      "#C1C1C0",
+      "#919090",
+      "#646363"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (batlowW)",

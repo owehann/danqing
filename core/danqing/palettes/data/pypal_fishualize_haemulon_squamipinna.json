@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_haemulon_squamipinna",
+  "name": {
+    "en": "Haemulon_squamipinna (fishualize)",
+    "zh": "Haemulon_squamipinna（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E5BD00",
+    "#BFA004",
+    "#7E9FB2",
+    "#97A8AD",
+    "#E1D100"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DCD2B9",
+      "#C4B68C",
+      "#AC9A5E",
+      "#947E29",
+      "#7E6300",
+      "#684800"
+    ],
+    "paired_diverging_stops": [
+      "#7E9FB2",
+      "#A5BBC7",
+      "#CCD7DC",
+      "#F4F3F2",
+      "#EDE9BA",
+      "#E7DE7C",
+      "#E1D100"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Haemulon_squamipinna)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 7.09,
+    "min_de2000_deutan_first6": 2.92,
+    "min_de2000_protan_first6": 4.16,
+    "min_de2000_tritan_first6": 7.12,
+    "optimal6_min_de2000": 7.09,
+    "optimal6_min_de2000_deutan": 2.92,
+    "optimal6_min_de2000_protan": 4.16,
+    "grayscale_L_spread": 0.163,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

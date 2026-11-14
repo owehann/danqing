@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_261",
+  "name": {
+    "en": "Sanzo Wada #261 (Red · Pale Lemon Yellow · Calamine BLue)",
+    "zh": "和田三造 #261（Red · Pale Lemon Yellow · Calamine BLue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A72144",
+    "#FFEFAE",
+    "#78CDD0",
+    "#A1A39A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACAC6",
+      "#DCA6A7",
+      "#CD8388",
+      "#BC5F6A",
+      "#A9374E",
+      "#950032"
+    ],
+    "paired_diverging_stops": [
+      "#A72144",
+      "#C76E7A",
+      "#E1B1B4",
+      "#F4F3F2",
+      "#F7F2DC",
+      "#FBF1C6",
+      "#FFEFAE"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#261)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 21.14,
+    "min_de2000_deutan_first6": 15.83,
+    "min_de2000_protan_first6": 13.85,
+    "min_de2000_tritan_first6": 20.97,
+    "optimal6_min_de2000": 21.14,
+    "optimal6_min_de2000_deutan": 15.83,
+    "optimal6_min_de2000_protan": 13.85,
+    "grayscale_L_spread": 0.468,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

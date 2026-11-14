@@ -1,0 +1,63 @@
+{
+  "id": "pypal_natparkspalettes_lakenakuru",
+  "name": {
+    "en": "LakeNakuru (NatParksPalettes)",
+    "zh": "LakeNakuru（NatParksPalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D76E9A",
+    "#A1ACC8",
+    "#AD3C36",
+    "#332627",
+    "#EACACF",
+    "#AA6B77"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCC3",
+      "#D9A99F",
+      "#C9877C",
+      "#B7655B",
+      "#A4423A",
+      "#8F1517"
+    ],
+    "paired_diverging_stops": [
+      "#332627",
+      "#6E6364",
+      "#AFA9A8",
+      "#F4F3F2",
+      "#F1E5E6",
+      "#EED8DB",
+      "#EACACF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NatParksPalettes: LakeNakuru)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 11.36,
+    "min_de2000_deutan_first6": 9.79,
+    "min_de2000_protan_first6": 11.12,
+    "min_de2000_tritan_first6": 9.47,
+    "optimal6_min_de2000": 11.36,
+    "optimal6_min_de2000_deutan": 9.79,
+    "optimal6_min_de2000_protan": 11.12,
+    "grayscale_L_spread": 0.583,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

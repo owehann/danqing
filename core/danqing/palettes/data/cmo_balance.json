@@ -21,7 +21,25 @@
   "neutral": "#F1ECEB",
   "partners": {
     "sequential": "cmo_deep",
-    "diverging": "cmo_balance"
+    "diverging": "cmo_balance",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED2E0",
+      "#A8B6D8",
+      "#8399CF",
+      "#5F7DC5",
+      "#3D5FB9",
+      "#1D3FAD"
+    ],
+    "paired_diverging_stops": [
+      "#181C43",
+      "#575E7B",
+      "#A2A6B5",
+      "#F4F3F2",
+      "#C2C0BF",
+      "#93908F",
+      "#666261"
+    ]
   },
   "source": {
     "title": "True Colors of Oceanography: cmocean (balance)",

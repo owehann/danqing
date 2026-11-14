@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_chormis_multilineata",
+  "name": {
+    "en": "Chormis_multilineata (fishualize)",
+    "zh": "Chormis_multilineata（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DEB06C",
+    "#9C6F00",
+    "#F2B705",
+    "#D29300",
+    "#8C4E03"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CFBF",
+      "#CDB098",
+      "#B89271",
+      "#A3744B",
+      "#8E5720",
+      "#793900"
+    ],
+    "paired_diverging_stops": [
+      "#F2B705",
+      "#F3CC79",
+      "#F4E0B8",
+      "#F4F3F2",
+      "#D2BBA7",
+      "#B0845E",
+      "#8C4E03"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Chormis_multilineata)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.35,
+    "min_de2000_deutan_first6": 9.29,
+    "min_de2000_protan_first6": 10.15,
+    "min_de2000_tritan_first6": 3.44,
+    "optimal6_min_de2000": 10.35,
+    "optimal6_min_de2000_deutan": 9.29,
+    "optimal6_min_de2000_protan": 10.15,
+    "grayscale_L_spread": 0.324,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

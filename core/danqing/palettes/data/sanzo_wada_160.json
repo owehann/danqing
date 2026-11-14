@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_160",
+  "name": {
+    "en": "Sanzo Wada #160 (Sulphine Yellow · Pale Raw Umber · Dark Medici Blue)",
+    "zh": "和田三造 #160（Sulphine Yellow · Pale Raw Umber · Dark Medici Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C19F2C",
+    "#71502F",
+    "#547076"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDD2BB",
+      "#C5B58F",
+      "#AD9963",
+      "#967D34",
+      "#7F6200",
+      "#694700"
+    ],
+    "paired_diverging_stops": [
+      "#C19F2C",
+      "#D2BB79",
+      "#E3D8B7",
+      "#F4F3F2",
+      "#BCC6C7",
+      "#879A9E",
+      "#547076"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#160)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 28.22,
+    "min_de2000_deutan_first6": 25.07,
+    "min_de2000_protan_first6": 23.38,
+    "min_de2000_tritan_first6": 29.61,
+    "optimal6_min_de2000": 28.22,
+    "optimal6_min_de2000_deutan": 25.07,
+    "optimal6_min_de2000_protan": 23.38,
+    "grayscale_L_spread": 0.255,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

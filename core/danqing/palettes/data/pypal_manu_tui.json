@@ -1,0 +1,63 @@
+{
+  "id": "pypal_manu_tui",
+  "name": {
+    "en": "Tui (Manu)",
+    "zh": "Tui（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7ACCD7",
+    "#115896",
+    "#7C6C65",
+    "#4C4C53",
+    "#BA2F00",
+    "#21282F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBBE",
+      "#DFA895",
+      "#D0846D",
+      "#C06045",
+      "#AE3816",
+      "#9A0000"
+    ],
+    "paired_diverging_stops": [
+      "#115896",
+      "#628BB6",
+      "#AABED5",
+      "#F4F3F2",
+      "#E8B6A8",
+      "#D47860",
+      "#BA2F00"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Tui)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 12.82,
+    "min_de2000_deutan_first6": 12.39,
+    "min_de2000_protan_first6": 12.0,
+    "min_de2000_tritan_first6": 13.37,
+    "optimal6_min_de2000": 12.82,
+    "optimal6_min_de2000_deutan": 12.39,
+    "optimal6_min_de2000_protan": 12.0,
+    "grayscale_L_spread": 0.524,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

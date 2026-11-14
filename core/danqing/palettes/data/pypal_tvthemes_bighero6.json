@@ -1,0 +1,65 @@
+{
+  "id": "pypal_tvthemes_bighero6",
+  "name": {
+    "en": "bigHero6 (tvthemes)",
+    "zh": "bigHero6（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FFFF33",
+    "#FFA500",
+    "#4F366F",
+    "#FF0000",
+    "#00FA9A",
+    "#3177D5",
+    "#C71585",
+    "#000000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECC8CF",
+      "#E0A2B8",
+      "#D27BA1",
+      "#C2528B",
+      "#AF1D75",
+      "#9B005F"
+    ],
+    "paired_diverging_stops": [
+      "#FFFF33",
+      "#FAFC8D",
+      "#F7F9C4",
+      "#F4F3F2",
+      "#B4CBEB",
+      "#74A2E2",
+      "#3177D5"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: bigHero6)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 28.61,
+    "min_de2000_deutan_first6": 12.95,
+    "min_de2000_protan_first6": 13.07,
+    "min_de2000_tritan_first6": 21.69,
+    "optimal6_min_de2000": 28.61,
+    "optimal6_min_de2000_deutan": 12.95,
+    "optimal6_min_de2000_protan": 13.07,
+    "grayscale_L_spread": 0.969,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

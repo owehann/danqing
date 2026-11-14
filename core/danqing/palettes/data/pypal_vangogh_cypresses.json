@@ -1,0 +1,62 @@
+{
+  "id": "pypal_vangogh_cypresses",
+  "name": {
+    "en": "Cypresses (vangogh)",
+    "zh": "Cypresses（vangogh）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A7CFF2",
+    "#428C5C",
+    "#D9A648",
+    "#BF8136",
+    "#0D0D0D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD6C6",
+      "#A9BDA6",
+      "#84A586",
+      "#5F8C68",
+      "#38754B",
+      "#005E2E"
+    ],
+    "paired_diverging_stops": [
+      "#D9A648",
+      "#E3C087",
+      "#ECDABD",
+      "#F4F3F2",
+      "#9D9D9C",
+      "#4F4F4F",
+      "#0D0D0D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vangogh: Cypresses)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 11.82,
+    "min_de2000_deutan_first6": 9.64,
+    "min_de2000_protan_first6": 9.36,
+    "min_de2000_tritan_first6": 10.28,
+    "optimal6_min_de2000": 11.82,
+    "optimal6_min_de2000_deutan": 9.64,
+    "optimal6_min_de2000_protan": 9.36,
+    "grayscale_L_spread": 0.679,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

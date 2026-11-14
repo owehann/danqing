@@ -1,0 +1,65 @@
+{
+  "id": "pypal_feathers_cassowary",
+  "name": {
+    "en": "cassowary (feathers)",
+    "zh": "cassowary（feathers）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BDA14D",
+    "#3EBCB6",
+    "#0169C4",
+    "#153460",
+    "#D5114E",
+    "#A56EB6",
+    "#4B1C57",
+    "#09090C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC8C4",
+      "#E6A2A2",
+      "#D97B82",
+      "#CB5162",
+      "#B91744",
+      "#A60026"
+    ],
+    "paired_diverging_stops": [
+      "#BDA14D",
+      "#CFBC87",
+      "#E1D8BD",
+      "#F4F3F2",
+      "#ACC6E6",
+      "#6498D6",
+      "#0169C4"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (feathers: cassowary)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 20.17,
+    "min_de2000_deutan_first6": 13.91,
+    "min_de2000_protan_first6": 7.56,
+    "min_de2000_tritan_first6": 14.36,
+    "optimal6_min_de2000": 20.17,
+    "optimal6_min_de2000_deutan": 13.91,
+    "optimal6_min_de2000_protan": 7.56,
+    "grayscale_L_spread": 0.585,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

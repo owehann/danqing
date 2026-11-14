@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ggprism_the_blues",
+  "name": {
+    "en": "the_blues (ggprism)",
+    "zh": "the_blues（ggprism）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#000080",
+    "#0000C0",
+    "#0000FF",
+    "#5757F9",
+    "#55A0FB",
+    "#90BFF9",
+    "#C8DEF9"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C6D3F1",
+      "#97B5F8",
+      "#6996FC",
+      "#3B73FE",
+      "#0C46FD",
+      "#0C00FC"
+    ],
+    "paired_diverging_stops": [
+      "#0000FF",
+      "#447CFF",
+      "#9ABBFF",
+      "#F4F3F2",
+      "#E5ECF4",
+      "#D7E5F7",
+      "#C8DEF9"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggprism: the_blues)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 8.05,
+    "min_de2000_deutan_first6": 9.28,
+    "min_de2000_protan_first6": 9.36,
+    "min_de2000_tritan_first6": 7.76,
+    "optimal6_min_de2000": 8.05,
+    "optimal6_min_de2000_deutan": 9.28,
+    "optimal6_min_de2000_protan": 9.36,
+    "grayscale_L_spread": 0.622,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

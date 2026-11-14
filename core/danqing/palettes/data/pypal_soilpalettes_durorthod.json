@@ -1,0 +1,62 @@
+{
+  "id": "pypal_soilpalettes_durorthod",
+  "name": {
+    "en": "durorthod (soilpalettes)",
+    "zh": "durorthod（soilpalettes）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#2C0C00",
+    "#803C15",
+    "#C6782C",
+    "#FFA91D",
+    "#FFF3AD"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CFBD",
+      "#D0AF93",
+      "#BD906A",
+      "#A97240",
+      "#955305",
+      "#803400"
+    ],
+    "paired_diverging_stops": [
+      "#2C0C00",
+      "#6B5145",
+      "#AE9F97",
+      "#F4F3F2",
+      "#F9DCB9",
+      "#FDC37B",
+      "#FFA91D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (soilpalettes: durorthod)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 16.83,
+    "min_de2000_deutan_first6": 15.39,
+    "min_de2000_protan_first6": 16.48,
+    "min_de2000_tritan_first6": 12.49,
+    "optimal6_min_de2000": 16.83,
+    "optimal6_min_de2000_deutan": 15.39,
+    "optimal6_min_de2000_protan": 16.48,
+    "grayscale_L_spread": 0.752,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

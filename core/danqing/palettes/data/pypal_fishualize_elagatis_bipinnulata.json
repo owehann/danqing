@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_elagatis_bipinnulata",
+  "name": {
+    "en": "Elagatis_bipinnulata (fishualize)",
+    "zh": "Elagatis_bipinnulata（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1A91EB",
+    "#144C69",
+    "#07868C",
+    "#49A85F",
+    "#81E74A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CAD4DF",
+      "#9EBAD5",
+      "#729FCA",
+      "#4484BF",
+      "#0069B3",
+      "#004CA5"
+    ],
+    "paired_diverging_stops": [
+      "#1A91EB",
+      "#74B3F0",
+      "#B5D4F2",
+      "#F4F3F2",
+      "#D0F1C1",
+      "#ABED8D",
+      "#81E74A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Elagatis_bipinnulata)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 19.23,
+    "min_de2000_deutan_first6": 16.97,
+    "min_de2000_protan_first6": 19.25,
+    "min_de2000_tritan_first6": 9.35,
+    "optimal6_min_de2000": 19.23,
+    "optimal6_min_de2000_deutan": 16.97,
+    "optimal6_min_de2000_protan": 19.25,
+    "grayscale_L_spread": 0.44,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

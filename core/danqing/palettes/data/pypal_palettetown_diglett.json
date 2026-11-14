@@ -1,0 +1,61 @@
+{
+  "id": "pypal_palettetown_diglett",
+  "name": {
+    "en": "diglett (palettetown)",
+    "zh": "diglett（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B0A870",
+    "#807848",
+    "#585020",
+    "#E0E0B0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D9D2C3",
+      "#BDB6A0",
+      "#A29B7E",
+      "#88805D",
+      "#6E673C",
+      "#564E1A"
+    ],
+    "paired_diverging_stops": [
+      "#585020",
+      "#898364",
+      "#BDBAA9",
+      "#F4F3F2",
+      "#EDEDDC",
+      "#E6E7C6",
+      "#E0E0B0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: diglett)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 14.47,
+    "min_de2000_deutan_first6": 14.05,
+    "min_de2000_protan_first6": 14.59,
+    "min_de2000_tritan_first6": 14.66,
+    "optimal6_min_de2000": 14.47,
+    "optimal6_min_de2000_deutan": 14.05,
+    "optimal6_min_de2000_protan": 14.59,
+    "grayscale_L_spread": 0.467,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "PuBuGn",
-    "diverging": "RdYlBu"
+    "diverging": "RdYlBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD5D1",
+      "#A3BCBA",
+      "#7AA4A4",
+      "#4F8B8F",
+      "#18737A",
+      "#005B65"
+    ],
+    "paired_diverging_stops": [
+      "#686164",
+      "#948F91",
+      "#C3C0C0",
+      "#F4F3F2",
+      "#A4B6AE",
+      "#587C6F",
+      "#014636"
+    ]
   },
   "source": {
     "title": "ColorBrewer 2.0 (PuBuGn, 9-class)",

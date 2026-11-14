@@ -1,0 +1,63 @@
+{
+  "id": "pypal_natparkspalettes_capitolreef",
+  "name": {
+    "en": "CapitolReef (NatParksPalettes)",
+    "zh": "CapitolReef（NatParksPalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#291919",
+    "#532A34",
+    "#7C5467",
+    "#878195",
+    "#AEB2B7",
+    "#D4D9DD"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDCFCD",
+      "#C5B0B3",
+      "#AD9399",
+      "#957681",
+      "#7E5A69",
+      "#673F52"
+    ],
+    "paired_diverging_stops": [
+      "#291919",
+      "#675959",
+      "#ABA3A2",
+      "#F4F3F2",
+      "#E9EAEB",
+      "#DFE2E4",
+      "#D4D9DD"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NatParksPalettes: CapitolReef)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 9.8,
+    "min_de2000_deutan_first6": 8.6,
+    "min_de2000_protan_first6": 7.9,
+    "min_de2000_tritan_first6": 9.77,
+    "optimal6_min_de2000": 9.8,
+    "optimal6_min_de2000_deutan": 8.6,
+    "optimal6_min_de2000_protan": 7.9,
+    "grayscale_L_spread": 0.648,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

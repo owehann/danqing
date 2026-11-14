@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "magma",
-    "diverging": "PuOr"
+    "diverging": "PuOr",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CBD2",
+      "#D4A7BD",
+      "#C284A8",
+      "#AF6193",
+      "#9B3C7F",
+      "#86066A"
+    ],
+    "paired_diverging_stops": [
+      "#150E38",
+      "#545473",
+      "#A0A0B1",
+      "#F4F3F2",
+      "#C2C3AE",
+      "#93946E",
+      "#67672D"
+    ]
   },
   "source": {
     "title": "Matplotlib magma (clipped bottom 10% for white backgrounds)",

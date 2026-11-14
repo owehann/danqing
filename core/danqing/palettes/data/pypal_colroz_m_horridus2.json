@@ -1,0 +1,62 @@
+{
+  "id": "pypal_colroz_m_horridus2",
+  "name": {
+    "en": "m_horridus2 (colRoz)",
+    "zh": "m_horridus2（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DCA25D",
+    "#E8C999",
+    "#6C3921",
+    "#26130E",
+    "#C29153"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFCEC3",
+      "#C8AFA0",
+      "#B2907F",
+      "#9B725E",
+      "#84553E",
+      "#6E381E"
+    ],
+    "paired_diverging_stops": [
+      "#E8C999",
+      "#ECD7B7",
+      "#F0E5D5",
+      "#F4F3F2",
+      "#AAA09D",
+      "#655550",
+      "#26130E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: m_horridus2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 5.99,
+    "min_de2000_deutan_first6": 5.97,
+    "min_de2000_protan_first6": 5.75,
+    "min_de2000_tritan_first6": 6.01,
+    "optimal6_min_de2000": 5.99,
+    "optimal6_min_de2000_deutan": 5.97,
+    "optimal6_min_de2000_protan": 5.75,
+    "grayscale_L_spread": 0.639,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

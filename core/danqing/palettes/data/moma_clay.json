@@ -18,7 +18,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEC0",
+      "#D1AE9B",
+      "#BE8E76",
+      "#AA6F52",
+      "#96512C",
+      "#813100"
+    ],
+    "paired_diverging_stops": [
+      "#566769",
+      "#889395",
+      "#BCC2C2",
+      "#F4F3F2",
+      "#BAB7AC",
+      "#847F6B",
+      "#514A2E"
+    ]
   },
   "source": {
     "title": "Sarah Cross, 1980, Maude Schuyler Clay, Chromogenic print",

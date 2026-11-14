@@ -1,0 +1,93 @@
+{
+  "id": "pypal_polychrome_palette36",
+  "name": {
+    "en": "palette36 (Polychrome)",
+    "zh": "palette36（Polychrome）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#5A5156",
+    "#E4E1E3",
+    "#F6222E",
+    "#FE00FA",
+    "#16FF32",
+    "#3283FE",
+    "#FEAF16",
+    "#B00068",
+    "#1CFFCE",
+    "#90AD1C",
+    "#2ED9FF",
+    "#DEA0FD",
+    "#AA0DFE",
+    "#F8A19F",
+    "#325A9B",
+    "#C4451C",
+    "#1C8356",
+    "#85660D",
+    "#B10DA1",
+    "#FBE426",
+    "#1CBE4F",
+    "#FA0087",
+    "#FC1CBF",
+    "#F7E1A0",
+    "#C075A6",
+    "#782AB6",
+    "#AAF400",
+    "#BDCDFF",
+    "#822E1C",
+    "#B5EFB5",
+    "#7ED7D1",
+    "#1C7F93",
+    "#D85FF7",
+    "#683B79",
+    "#66B0FF",
+    "#3B00FB"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD1EF",
+      "#A4B2F4",
+      "#7E91F7",
+      "#5C6DF7",
+      "#423FF5",
+      "#3700F2"
+    ],
+    "paired_diverging_stops": [
+      "#FBE426",
+      "#F8EA86",
+      "#F6EFBF",
+      "#F4F3F2",
+      "#A8B9FD",
+      "#657AFF",
+      "#3B00FB"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Polychrome: palette36)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 36,
+    "max_colors": 36,
+    "min_de2000_first6": 33.14,
+    "min_de2000_deutan_first6": 9.77,
+    "min_de2000_protan_first6": 5.93,
+    "min_de2000_tritan_first6": 22.25,
+    "optimal6_min_de2000": 33.14,
+    "optimal6_min_de2000_deutan": 9.77,
+    "optimal6_min_de2000_protan": 5.93,
+    "grayscale_L_spread": 0.492,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

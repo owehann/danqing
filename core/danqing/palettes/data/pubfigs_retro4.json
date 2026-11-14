@@ -15,7 +15,25 @@
   "neutral": "#B5B2AC",
   "partners": {
     "sequential": "lipari",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EECABD",
+      "#E4A494",
+      "#D87F6C",
+      "#C95743",
+      "#B82512",
+      "#A50000"
+    ],
+    "paired_diverging_stops": [
+      "#601A4A",
+      "#93607F",
+      "#C4A8B7",
+      "#F4F3F2",
+      "#EBB1A5",
+      "#D96C5A",
+      "#BE0000"
+    ]
   },
   "source": {
     "title": "ggpubfigs Colorblind-Friendly Palette (retro_four)",

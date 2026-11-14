@@ -1,0 +1,63 @@
+{
+  "id": "pypal_ggthemes_excel_vapor_trail",
+  "name": {
+    "en": "excel_Vapor_Trail (ggthemes)",
+    "zh": "excel_Vapor_Trail（ggthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DF2E28",
+    "#FE801A",
+    "#E9BF35",
+    "#81BB42",
+    "#32C7A9",
+    "#4A9BDC"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BE",
+      "#E5A496",
+      "#D97E6F",
+      "#CA5547",
+      "#B9211B",
+      "#A60000"
+    ],
+    "paired_diverging_stops": [
+      "#FE801A",
+      "#FFA975",
+      "#FCCFB5",
+      "#F4F3F2",
+      "#BDD6EC",
+      "#86B9E5",
+      "#4A9BDC"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemes: excel_Vapor_Trail)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 22.13,
+    "min_de2000_deutan_first6": 5.76,
+    "min_de2000_protan_first6": 5.13,
+    "min_de2000_tritan_first6": 10.56,
+    "optimal6_min_de2000": 22.13,
+    "optimal6_min_de2000_deutan": 5.76,
+    "optimal6_min_de2000_protan": 5.13,
+    "grayscale_L_spread": 0.231,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

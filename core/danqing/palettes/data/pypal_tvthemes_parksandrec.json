@@ -1,0 +1,67 @@
+{
+  "id": "pypal_tvthemes_parksandrec",
+  "name": {
+    "en": "parksAndRec (tvthemes)",
+    "zh": "parksAndRec（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BDBDBD",
+    "#A51209",
+    "#FFDB58",
+    "#EC7014",
+    "#7A491E",
+    "#C24841",
+    "#005502",
+    "#F7FCB9",
+    "#69983A",
+    "#B5651D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC0",
+      "#DFA799",
+      "#D08374",
+      "#C05F4F",
+      "#AE3628",
+      "#9A0000"
+    ],
+    "paired_diverging_stops": [
+      "#FFDB58",
+      "#FBE495",
+      "#F8ECC6",
+      "#F4F3F2",
+      "#A6BDA2",
+      "#5B8857",
+      "#005502"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: parksAndRec)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 12.83,
+    "min_de2000_deutan_first6": 4.59,
+    "min_de2000_protan_first6": 5.4,
+    "min_de2000_tritan_first6": 12.24,
+    "optimal6_min_de2000": 12.83,
+    "optimal6_min_de2000_deutan": 4.59,
+    "optimal6_min_de2000_protan": 5.4,
+    "grayscale_L_spread": 0.582,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "pypal_miscpalettes_earthtones",
+  "name": {
+    "en": "earthTones (miscpalettes)",
+    "zh": "earthTones（miscpalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF8000",
+    "#B8860B",
+    "#C04000",
+    "#6B8E23",
+    "#CD853F",
+    "#C0C000",
+    "#228B22",
+    "#D2691E",
+    "#808000",
+    "#20B2AA",
+    "#F4A460",
+    "#00C000",
+    "#8FBC8B",
+    "#B22222",
+    "#8B4513",
+    "#C00000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EECABE",
+      "#E4A496",
+      "#D87F6E",
+      "#C95747",
+      "#B82519",
+      "#A40000"
+    ],
+    "paired_diverging_stops": [
+      "#FF8000",
+      "#FFAA72",
+      "#FCCFB3",
+      "#F4F3F2",
+      "#BADED9",
+      "#7DC8C1",
+      "#20B2AA"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (miscpalettes: earthTones)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 16,
+    "max_colors": 16,
+    "min_de2000_first6": 10.13,
+    "min_de2000_deutan_first6": 3.69,
+    "min_de2000_protan_first6": 1.49,
+    "min_de2000_tritan_first6": 4.51,
+    "optimal6_min_de2000": 10.13,
+    "optimal6_min_de2000_deutan": 3.69,
+    "optimal6_min_de2000_protan": 1.49,
+    "grayscale_L_spread": 0.313,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

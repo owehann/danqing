@@ -1,0 +1,62 @@
+{
+  "id": "pypal_yarrr_brave",
+  "name": {
+    "en": "brave (yarrr)",
+    "zh": "brave（yarrr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A8643B",
+    "#B65B23",
+    "#94220E",
+    "#272D17",
+    "#202126"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCC1",
+      "#D9AA9B",
+      "#C98877",
+      "#B86553",
+      "#A5422F",
+      "#901400"
+    ],
+    "paired_diverging_stops": [
+      "#B65B23",
+      "#CE8E6D",
+      "#E3C1AF",
+      "#F4F3F2",
+      "#A6A6A8",
+      "#5F5F63",
+      "#202126"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (yarrr: brave)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 4.87,
+    "min_de2000_deutan_first6": 4.26,
+    "min_de2000_protan_first6": 4.72,
+    "min_de2000_tritan_first6": 3.98,
+    "optimal6_min_de2000": 4.87,
+    "optimal6_min_de2000_deutan": 4.26,
+    "optimal6_min_de2000_protan": 4.72,
+    "grayscale_L_spread": 0.323,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

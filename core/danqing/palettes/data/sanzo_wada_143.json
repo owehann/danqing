@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_143",
+  "name": {
+    "en": "Sanzo Wada #143 (Blue · Lilac · Warm Gray)",
+    "zh": "和田三造 #143（Blue · Lilac · Warm Gray）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#006EB8",
+    "#B984AF",
+    "#A1A39A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD4DC",
+      "#A2B9D0",
+      "#799FC3",
+      "#4F84B6",
+      "#1D69A8",
+      "#004E99"
+    ],
+    "paired_diverging_stops": [
+      "#006EB8",
+      "#669BCE",
+      "#ADC7E1",
+      "#F4F3F2",
+      "#D8D8D4",
+      "#BCBDB6",
+      "#A1A39A"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#143)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 29.09,
+    "min_de2000_deutan_first6": 14.75,
+    "min_de2000_protan_first6": 14.6,
+    "min_de2000_tritan_first6": 20.41,
+    "optimal6_min_de2000": 29.09,
+    "optimal6_min_de2000_deutan": 14.75,
+    "optimal6_min_de2000_protan": 14.6,
+    "grayscale_L_spread": 0.185,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

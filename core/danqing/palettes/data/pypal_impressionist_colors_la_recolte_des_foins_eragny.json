@@ -1,0 +1,69 @@
+{
+  "id": "pypal_impressionist_colors_la_recolte_des_foins_eragny",
+  "name": {
+    "en": "la_recolte_des_foins_eragny (impressionist.colors)",
+    "zh": "la_recolte_des_foins_eragny（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4B3C4B",
+    "#2D3C5A",
+    "#3C6987",
+    "#87A5A5",
+    "#D2D2C3",
+    "#A5A587",
+    "#5A695A",
+    "#1E4B3C",
+    "#78963C",
+    "#B4B45A",
+    "#D2A54B",
+    "#B4783C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D5BF",
+      "#B4BB98",
+      "#94A172",
+      "#76884B",
+      "#587020",
+      "#3D5800"
+    ],
+    "paired_diverging_stops": [
+      "#2D3C5A",
+      "#69758B",
+      "#ACB2BD",
+      "#F4F3F2",
+      "#E9DABD",
+      "#DEBF88",
+      "#D2A54B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: la_recolte_des_foins_eragny)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 13.41,
+    "min_de2000_deutan_first6": 9.65,
+    "min_de2000_protan_first6": 7.03,
+    "min_de2000_tritan_first6": 12.47,
+    "optimal6_min_de2000": 13.41,
+    "optimal6_min_de2000_deutan": 9.65,
+    "optimal6_min_de2000_protan": 7.03,
+    "grayscale_L_spread": 0.502,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

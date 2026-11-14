@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_sudowoodo",
+  "name": {
+    "en": "sudowoodo (palettetown)",
+    "zh": "sudowoodo（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B89850",
+    "#907030",
+    "#E0C068",
+    "#604810",
+    "#28A830",
+    "#28D830",
+    "#186820",
+    "#88F888",
+    "#D89000",
+    "#F8F8F8",
+    "#F8C800"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD8BE",
+      "#A1C195",
+      "#77AA6D",
+      "#4B9344",
+      "#057C0C",
+      "#006500"
+    ],
+    "paired_diverging_stops": [
+      "#F8F8F8",
+      "#F7F6F6",
+      "#F5F5F4",
+      "#F4F3F2",
+      "#F5E6BA",
+      "#F7D87C",
+      "#F8C800"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: sudowoodo)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 11.32,
+    "min_de2000_deutan_first6": 5.37,
+    "min_de2000_protan_first6": 5.56,
+    "min_de2000_tritan_first6": 10.98,
+    "optimal6_min_de2000": 11.32,
+    "optimal6_min_de2000_deutan": 5.37,
+    "optimal6_min_de2000_protan": 5.56,
+    "grayscale_L_spread": 0.562,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

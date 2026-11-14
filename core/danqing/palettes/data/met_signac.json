@@ -26,7 +26,25 @@
   "neutral": "#B8B8BE",
   "partners": {
     "sequential": "viridis",
-    "diverging": "roma"
+    "diverging": "roma",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC0",
+      "#E0A69A",
+      "#D28275",
+      "#C25C50",
+      "#B0322B",
+      "#9D0000"
+    ],
+    "paired_diverging_stops": [
+      "#885A00",
+      "#AB8D32",
+      "#CFC097",
+      "#F4F3F2",
+      "#C2B0C7",
+      "#92719C",
+      "#633372"
+    ]
   },
   "source": {
     "title": "MetBrewer: Signac (Met Object 437672)",

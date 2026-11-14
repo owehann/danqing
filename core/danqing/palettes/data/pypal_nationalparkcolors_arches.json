@@ -1,0 +1,63 @@
+{
+  "id": "pypal_nationalparkcolors_arches",
+  "name": {
+    "en": "Arches (nationalparkcolors)",
+    "zh": "Arches（nationalparkcolors）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A8CDEC",
+    "#F6955E",
+    "#682C37",
+    "#9B6981",
+    "#7887A4",
+    "#A89F8E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DECFCD",
+      "#C7AFB3",
+      "#B0919A",
+      "#997382",
+      "#82576A",
+      "#6B3B53"
+    ],
+    "paired_diverging_stops": [
+      "#A8CDEC",
+      "#C1DAEE",
+      "#DBE7F0",
+      "#F4F3F2",
+      "#F7D5C2",
+      "#F8B692",
+      "#F6955E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nationalparkcolors: Arches)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 20.77,
+    "min_de2000_deutan_first6": 10.99,
+    "min_de2000_protan_first6": 9.77,
+    "min_de2000_tritan_first6": 19.29,
+    "optimal6_min_de2000": 20.77,
+    "optimal6_min_de2000_deutan": 10.99,
+    "optimal6_min_de2000_protan": 9.77,
+    "grayscale_L_spread": 0.452,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

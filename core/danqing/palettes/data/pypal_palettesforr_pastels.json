@@ -1,0 +1,75 @@
+{
+  "id": "pypal_palettesforr_pastels",
+  "name": {
+    "en": "Pastels (palettesForR)",
+    "zh": "Pastels（palettesForR）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E29191",
+    "#99DD92",
+    "#93D8B9",
+    "#94C4D3",
+    "#949ACE",
+    "#B394CC",
+    "#CC96B1",
+    "#CCA499",
+    "#DFE592",
+    "#FFA560",
+    "#6BFF63",
+    "#65FFCC",
+    "#65C4FF",
+    "#656BFF",
+    "#AD65FF",
+    "#FF65F4",
+    "#FF6584",
+    "#FF6565"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D1E5",
+      "#ACB2E2",
+      "#8A94DD",
+      "#6B74D6",
+      "#4F52CD",
+      "#3925C4"
+    ],
+    "paired_diverging_stops": [
+      "#6BFF63",
+      "#A3FD9A",
+      "#CEF9C8",
+      "#F4F3F2",
+      "#BFC9FB",
+      "#8F9DFF",
+      "#656BFF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettesForR: Pastels)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 18,
+    "max_colors": 18,
+    "min_de2000_first6": 9.96,
+    "min_de2000_deutan_first6": 2.51,
+    "min_de2000_protan_first6": 0.38,
+    "min_de2000_tritan_first6": 3.11,
+    "optimal6_min_de2000": 9.96,
+    "optimal6_min_de2000_deutan": 2.51,
+    "optimal6_min_de2000_protan": 0.38,
+    "grayscale_L_spread": 0.298,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

@@ -19,7 +19,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CDC9",
+      "#D0ACAC",
+      "#BD8C90",
+      "#A96C74",
+      "#944D5A",
+      "#7E2C41"
+    ],
+    "paired_diverging_stops": [
+      "#384351",
+      "#717983",
+      "#B0B4B9",
+      "#F4F3F2",
+      "#C0C3B4",
+      "#8F947A",
+      "#606843"
+    ]
   },
   "source": {
     "title": "After Kirchner from Meltdown, 1989, Sherrie Levine, One from a portfolio of four woodcuts",

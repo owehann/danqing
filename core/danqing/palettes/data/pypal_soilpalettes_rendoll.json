@@ -1,0 +1,62 @@
+{
+  "id": "pypal_soilpalettes_rendoll",
+  "name": {
+    "en": "rendoll (soilpalettes)",
+    "zh": "rendoll（soilpalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#363636",
+    "#78351D",
+    "#B27529",
+    "#FFD300",
+    "#DCDCDA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1D0BE",
+      "#CCB195",
+      "#B7936D",
+      "#A27644",
+      "#8D5912",
+      "#773B00"
+    ],
+    "paired_diverging_stops": [
+      "#363636",
+      "#70706F",
+      "#AFAFAE",
+      "#F4F3F2",
+      "#F8EABC",
+      "#FBDF7F",
+      "#FFD300"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (soilpalettes: rendoll)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 23.38,
+    "min_de2000_deutan_first6": 19.95,
+    "min_de2000_protan_first6": 15.88,
+    "min_de2000_tritan_first6": 19.18,
+    "optimal6_min_de2000": 23.38,
+    "optimal6_min_de2000_deutan": 19.95,
+    "optimal6_min_de2000_protan": 15.88,
+    "grayscale_L_spread": 0.561,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

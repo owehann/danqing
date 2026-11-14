@@ -1,0 +1,61 @@
+{
+  "id": "pypal_rockthemes_peacesells",
+  "name": {
+    "en": "peacesells (rockthemes)",
+    "zh": "peacesells（rockthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#9A5155",
+    "#483943",
+    "#ECC463",
+    "#A497B2"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CEC7",
+      "#CFADA9",
+      "#BA8E8B",
+      "#A66F6E",
+      "#915052",
+      "#7B3238"
+    ],
+    "paired_diverging_stops": [
+      "#483943",
+      "#7D7279",
+      "#B7B0B3",
+      "#F4F3F2",
+      "#F1E4C6",
+      "#EFD497",
+      "#ECC463"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rockthemes: peacesells)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 21.34,
+    "min_de2000_deutan_first6": 21.58,
+    "min_de2000_protan_first6": 14.99,
+    "min_de2000_tritan_first6": 21.34,
+    "optimal6_min_de2000": 21.34,
+    "optimal6_min_de2000_deutan": 21.58,
+    "optimal6_min_de2000_protan": 14.99,
+    "grayscale_L_spread": 0.472,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

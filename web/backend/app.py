@@ -32,6 +32,7 @@ import time
 import uuid
 import zipfile
 from dataclasses import asdict, dataclass, field
+from functools import lru_cache
 from pathlib import Path
 from typing import Any, Literal
 
@@ -39,6 +40,7 @@ import numpy as np
 import pypdfium2 as pdfium
 from fastapi import FastAPI, File, Form, Header, HTTPException, Query, Request, Response, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from PIL import Image
@@ -922,6 +924,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 
 @app.middleware("http")
@@ -959,9 +962,8 @@ async def _visitor_isolation_middleware(request: Request, call_next):
 # ==============================================================================
 
 
-@app.get("/api/v2/palettes")
-def list_v2_palettes(response: Response) -> dict[str, Any]:
-    response.headers["Cache-Control"] = "no-cache"
+@lru_cache(maxsize=1)
+def _cached_v2_palettes_bytes() -> bytes:
     pals = [p.to_api_dict() for p in list_palettes(include_conventions=True)]
     presets = [
         {
@@ -975,11 +977,23 @@ def list_v2_palettes(response: Response) -> dict[str, Any]:
         }
         for it in PRESET_MANIFEST
     ]
-    return {
-        "palettes": pals,
-        "default_palette_id": DEFAULT_PALETTE_ID,
-        "presets": presets,
-    }
+    return json.dumps(
+        {
+            "palettes": pals,
+            "default_palette_id": DEFAULT_PALETTE_ID,
+            "presets": presets,
+        },
+        ensure_ascii=False,
+    ).encode("utf-8")
+
+
+@app.get("/api/v2/palettes")
+def list_v2_palettes() -> Response:
+    return Response(
+        content=_cached_v2_palettes_bytes(),
+        media_type="application/json",
+        headers={"Cache-Control": "no-cache"},
+    )
 
 
 @app.get("/api/v2/presets/{preset_id}/thumbnail")

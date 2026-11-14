@@ -1,0 +1,71 @@
+{
+  "id": "pypal_vapeplot_vaporwave",
+  "name": {
+    "en": "vaporwave (vapeplot)",
+    "zh": "vaporwave（vapeplot）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#94D0FF",
+    "#8795E8",
+    "#966BFF",
+    "#AD8CFF",
+    "#C774E8",
+    "#C774A9",
+    "#FF6AD5",
+    "#FF6A8B",
+    "#FF8B8B",
+    "#FFA58B",
+    "#FFDE8B",
+    "#CDDE8B",
+    "#8BDE8B",
+    "#20DE8B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8CEE3",
+      "#BBAEDD",
+      "#9F8DD5",
+      "#866CCC",
+      "#6E47C2",
+      "#5912B7"
+    ],
+    "paired_diverging_stops": [
+      "#966BFF",
+      "#B29CFE",
+      "#D2C9FA",
+      "#F4F3F2",
+      "#F8EDD2",
+      "#FBE6B0",
+      "#FFDE8B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vapeplot: vaporwave)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 9.22,
+    "min_de2000_deutan_first6": 0.72,
+    "min_de2000_protan_first6": 3.38,
+    "min_de2000_tritan_first6": 8.25,
+    "optimal6_min_de2000": 9.22,
+    "optimal6_min_de2000_deutan": 0.72,
+    "optimal6_min_de2000_protan": 3.38,
+    "grayscale_L_spread": 0.266,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

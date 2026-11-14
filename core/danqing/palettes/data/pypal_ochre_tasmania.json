@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ochre_tasmania",
+  "name": {
+    "en": "tasmania (ochRe)",
+    "zh": "tasmania（ochRe）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A84830",
+    "#D89060",
+    "#604830",
+    "#6090D8",
+    "#C0C0D8",
+    "#606030",
+    "#486030"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC1",
+      "#D5AC9D",
+      "#C48B79",
+      "#B16A56",
+      "#9D4933",
+      "#882509"
+    ],
+    "paired_diverging_stops": [
+      "#D89060",
+      "#E3B191",
+      "#ECD2C1",
+      "#F4F3F2",
+      "#C2D2EB",
+      "#91B1E2",
+      "#6090D8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ochRe: tasmania)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 15.81,
+    "min_de2000_deutan_first6": 6.61,
+    "min_de2000_protan_first6": 1.93,
+    "min_de2000_tritan_first6": 12.86,
+    "optimal6_min_de2000": 15.81,
+    "optimal6_min_de2000_deutan": 6.61,
+    "optimal6_min_de2000_protan": 1.93,
+    "grayscale_L_spread": 0.394,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

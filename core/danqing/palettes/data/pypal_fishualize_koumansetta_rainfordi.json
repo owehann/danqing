@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_koumansetta_rainfordi",
+  "name": {
+    "en": "Koumansetta_rainfordi (fishualize)",
+    "zh": "Koumansetta_rainfordi（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DB3D06",
+    "#FCD723",
+    "#8EB035",
+    "#7DB3E2",
+    "#3D3E52"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCABC",
+      "#E2A692",
+      "#D58168",
+      "#C65B3C",
+      "#B52E00",
+      "#A10000"
+    ],
+    "paired_diverging_stops": [
+      "#FCD723",
+      "#F9E283",
+      "#F6EBBE",
+      "#F4F3F2",
+      "#CCDEED",
+      "#A5C9E8",
+      "#7DB3E2"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Koumansetta_rainfordi)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 22.43,
+    "min_de2000_deutan_first6": 10.73,
+    "min_de2000_protan_first6": 12.91,
+    "min_de2000_tritan_first6": 17.09,
+    "optimal6_min_de2000": 22.43,
+    "optimal6_min_de2000_deutan": 10.73,
+    "optimal6_min_de2000_protan": 12.91,
+    "grayscale_L_spread": 0.513,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

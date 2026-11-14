@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_serranus_scriba",
+  "name": {
+    "en": "Serranus_scriba (fishualize)",
+    "zh": "Serranus_scriba（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F97E09",
+    "#C8242B",
+    "#2A2B3A",
+    "#3054AF",
+    "#84C7F4"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCAC0",
+      "#E2A59A",
+      "#D58075",
+      "#C65950",
+      "#B42B2B",
+      "#A10000"
+    ],
+    "paired_diverging_stops": [
+      "#F97E09",
+      "#FCA872",
+      "#FACFB3",
+      "#F4F3F2",
+      "#AEBEDE",
+      "#6D8AC8",
+      "#3054AF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Serranus_scriba)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 23.74,
+    "min_de2000_deutan_first6": 20.17,
+    "min_de2000_protan_first6": 23.98,
+    "min_de2000_tritan_first6": 16.84,
+    "optimal6_min_de2000": 23.74,
+    "optimal6_min_de2000_deutan": 20.17,
+    "optimal6_min_de2000_protan": 23.98,
+    "grayscale_L_spread": 0.507,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

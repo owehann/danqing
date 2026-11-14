@@ -1,0 +1,69 @@
+{
+  "id": "pypal_palettetown_koffing",
+  "name": {
+    "en": "koffing (palettetown)",
+    "zh": "koffing（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E8D068",
+    "#905088",
+    "#B878B0",
+    "#582850",
+    "#C0B028",
+    "#D03820",
+    "#D0C868",
+    "#D898D0",
+    "#F0E890",
+    "#F8F8F8",
+    "#F86048",
+    "#D8D8D8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCABE",
+      "#E1A696",
+      "#D4826E",
+      "#C45C47",
+      "#B2311A",
+      "#9F0000"
+    ],
+    "paired_diverging_stops": [
+      "#582850",
+      "#8B6883",
+      "#BFABB9",
+      "#F4F3F2",
+      "#E2DDB8",
+      "#D1C77B",
+      "#C0B028"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: koffing)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 9.61,
+    "min_de2000_deutan_first6": 9.3,
+    "min_de2000_protan_first6": 9.75,
+    "min_de2000_tritan_first6": 9.2,
+    "optimal6_min_de2000": 9.61,
+    "optimal6_min_de2000_deutan": 9.3,
+    "optimal6_min_de2000_protan": 9.75,
+    "grayscale_L_spread": 0.621,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

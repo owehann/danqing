@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_dermatolepis_inermis",
+  "name": {
+    "en": "Dermatolepis_inermis (fishualize)",
+    "zh": "Dermatolepis_inermis（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#853709",
+    "#542110",
+    "#F2B705",
+    "#F29F05",
+    "#BF5B04"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDBC",
+      "#D6AC92",
+      "#C58C69",
+      "#B36B3E",
+      "#9F4A00",
+      "#8B2400"
+    ],
+    "paired_diverging_stops": [
+      "#542110",
+      "#896356",
+      "#BEA8A1",
+      "#F4F3F2",
+      "#F4E0B8",
+      "#F3CC79",
+      "#F2B705"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Dermatolepis_inermis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.84,
+    "min_de2000_deutan_first6": 3.67,
+    "min_de2000_protan_first6": 5.41,
+    "min_de2000_tritan_first6": 6.11,
+    "optimal6_min_de2000": 8.84,
+    "optimal6_min_de2000_deutan": 3.67,
+    "optimal6_min_de2000_protan": 5.41,
+    "grayscale_L_spread": 0.492,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

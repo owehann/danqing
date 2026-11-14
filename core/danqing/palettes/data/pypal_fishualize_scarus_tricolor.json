@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_scarus_tricolor",
+  "name": {
+    "en": "Scarus_tricolor (fishualize)",
+    "zh": "Scarus_tricolor（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E22618",
+    "#EAAF38",
+    "#01AD74",
+    "#08B5D3",
+    "#002E3B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BD",
+      "#E7A393",
+      "#DB7C6B",
+      "#CD5341",
+      "#BC1A0B",
+      "#A90000"
+    ],
+    "paired_diverging_stops": [
+      "#EAAF38",
+      "#EEC782",
+      "#F1DDBC",
+      "#F4F3F2",
+      "#9FACB1",
+      "#506A74",
+      "#002E3B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Scarus_tricolor)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 29.73,
+    "min_de2000_deutan_first6": 17.42,
+    "min_de2000_protan_first6": 14.44,
+    "min_de2000_tritan_first6": 7.39,
+    "optimal6_min_de2000": 29.73,
+    "optimal6_min_de2000_deutan": 17.42,
+    "optimal6_min_de2000_protan": 14.44,
+    "grayscale_L_spread": 0.51,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "pypal_palettetown_ninetales",
+  "name": {
+    "en": "ninetales (palettetown)",
+    "zh": "ninetales（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8D068",
+    "#D09848",
+    "#F8E8A0",
+    "#986010",
+    "#B01000",
+    "#F86828",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCABF",
+      "#E1A697",
+      "#D38270",
+      "#C35C4A",
+      "#B23120",
+      "#9E0000"
+    ],
+    "paired_diverging_stops": [
+      "#B01000",
+      "#CE6C5C",
+      "#E5B0A6",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: ninetales)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 9.11,
+    "min_de2000_deutan_first6": 4.28,
+    "min_de2000_protan_first6": 8.03,
+    "min_de2000_tritan_first6": 8.96,
+    "optimal6_min_de2000": 9.11,
+    "optimal6_min_de2000_deutan": 4.28,
+    "optimal6_min_de2000_protan": 8.03,
+    "grayscale_L_spread": 0.499,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

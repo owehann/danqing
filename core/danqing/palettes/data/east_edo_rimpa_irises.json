@@ -20,7 +20,25 @@
   "neutral": "#B8B6B1",
   "partners": {
     "sequential": "navia",
-    "diverging": "PuOr"
+    "diverging": "PuOr",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC2",
+      "#DCA89F",
+      "#CD857C",
+      "#BC615A",
+      "#A93B39",
+      "#950015"
+    ],
+    "paired_diverging_stops": [
+      "#8C5600",
+      "#AF8A47",
+      "#D1BE9D",
+      "#F4F3F2",
+      "#ABBCC9",
+      "#6588A0",
+      "#1C5578"
+    ]
   },
   "source": {
     "title": "Irises (Watanabe Shikō) & Paulownias and Chrysanthemums (Sakai Hōitsu)",

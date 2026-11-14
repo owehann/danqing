@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_gloom",
+  "name": {
+    "en": "gloom (palettetown)",
+    "zh": "gloom（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7090A0",
+    "#486878",
+    "#A07030",
+    "#E84800",
+    "#103058",
+    "#805010",
+    "#F87000",
+    "#D0A060",
+    "#603000",
+    "#983000",
+    "#90B0C0",
+    "#F8C050",
+    "#F0F0F0",
+    "#D0D0D0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCABB",
+      "#E3A68F",
+      "#D68164",
+      "#C75A37",
+      "#B62C00",
+      "#A20000"
+    ],
+    "paired_diverging_stops": [
+      "#103058",
+      "#576D8A",
+      "#A2AEBD",
+      "#F4F3F2",
+      "#F6E3C2",
+      "#F7D28E",
+      "#F8C050"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: gloom)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 11.92,
+    "min_de2000_deutan_first6": 8.4,
+    "min_de2000_protan_first6": 4.7,
+    "min_de2000_tritan_first6": 11.73,
+    "optimal6_min_de2000": 11.92,
+    "optimal6_min_de2000_deutan": 8.4,
+    "optimal6_min_de2000_protan": 4.7,
+    "grayscale_L_spread": 0.646,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

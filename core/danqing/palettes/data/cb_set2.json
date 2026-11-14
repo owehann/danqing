@@ -19,7 +19,25 @@
   "neutral": "#B3B3B3",
   "partners": {
     "sequential": "PuBuGn",
-    "diverging": "PRGn"
+    "diverging": "PRGn",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CDBF",
+      "#D7AB97",
+      "#C68A71",
+      "#B4694A",
+      "#A14720",
+      "#8C2000"
+    ],
+    "paired_diverging_stops": [
+      "#51628A",
+      "#8491AC",
+      "#BAC1CF",
+      "#F4F3F2",
+      "#CDC196",
+      "#A78F2F",
+      "#825E00"
+    ]
   },
   "source": {
     "title": "D3 Scale Chromatic / Observable (ColorBrewer Set2)",

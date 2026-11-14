@@ -18,7 +18,25 @@
   "neutral": "#B8B8B8",
   "partners": {
     "sequential": "YlOrRd",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CBDD",
+      "#CCA8D1",
+      "#B785C5",
+      "#A261B7",
+      "#8D39A9",
+      "#78009A"
+    ],
+    "paired_diverging_stops": [
+      "#954F00",
+      "#B78648",
+      "#D6BC9E",
+      "#F4F3F2",
+      "#D3B4DF",
+      "#B174C9",
+      "#8F29B0"
+    ]
   },
   "source": {
     "title": "LocusZoom Regional Association Plot LD R² Color Scheme",

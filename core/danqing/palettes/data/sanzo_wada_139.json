@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_139",
+  "name": {
+    "en": "Sanzo Wada #139 (Salvia Blue · Deep Indigo · Neutral Gray)",
+    "zh": "和田三造 #139（Salvia Blue · Deep Indigo · Neutral Gray）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#97ACC8",
+    "#051230",
+    "#B6BFC1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D2D1",
+      "#B3B6BC",
+      "#949BA6",
+      "#758191",
+      "#57677C",
+      "#3B4E68"
+    ],
+    "paired_diverging_stops": [
+      "#051230",
+      "#49556D",
+      "#9AA1AD",
+      "#F4F3F2",
+      "#DFE2E1",
+      "#CAD0D1",
+      "#B6BFC1"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#139)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 11.83,
+    "min_de2000_deutan_first6": 11.97,
+    "min_de2000_protan_first6": 11.36,
+    "min_de2000_tritan_first6": 9.69,
+    "optimal6_min_de2000": 11.83,
+    "optimal6_min_de2000_deutan": 11.97,
+    "optimal6_min_de2000_protan": 11.36,
+    "grayscale_L_spread": 0.606,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

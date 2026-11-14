@@ -1,0 +1,66 @@
+{
+  "id": "pypal_ochre_healthy_reef",
+  "name": {
+    "en": "healthy_reef (ochRe)",
+    "zh": "healthy_reef（ochRe）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F63B32",
+    "#E37870",
+    "#F3FF41",
+    "#005487",
+    "#52BCD4",
+    "#679C40",
+    "#F3FBFB",
+    "#1C0608",
+    "#002B52"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BD",
+      "#E7A394",
+      "#DC7C6C",
+      "#CD5244",
+      "#BD1713",
+      "#AA0000"
+    ],
+    "paired_diverging_stops": [
+      "#F3FF41",
+      "#F2FC90",
+      "#F3F8C5",
+      "#F4F3F2",
+      "#9EACBB",
+      "#4F6986",
+      "#002B52"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ochRe: healthy_reef)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 12.2,
+    "min_de2000_deutan_first6": 5.56,
+    "min_de2000_protan_first6": 13.93,
+    "min_de2000_tritan_first6": 12.15,
+    "optimal6_min_de2000": 12.2,
+    "optimal6_min_de2000_deutan": 5.56,
+    "optimal6_min_de2000_protan": 13.93,
+    "grayscale_L_spread": 0.819,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

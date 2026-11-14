@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_poliwag",
+  "name": {
+    "en": "poliwag (palettetown)",
+    "zh": "poliwag（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#606890",
+    "#F8F8F8",
+    "#405060",
+    "#8088B0",
+    "#D8D8D8",
+    "#606060",
+    "#B8B8B8",
+    "#B0B8E0",
+    "#E85848",
+    "#F8B8A8",
+    "#F88878"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC0",
+      "#DFA799",
+      "#D18374",
+      "#C15E4E",
+      "#AF3528",
+      "#9B0000"
+    ],
+    "paired_diverging_stops": [
+      "#606890",
+      "#8E95B0",
+      "#C0C3D1",
+      "#F4F3F2",
+      "#F6C3B9",
+      "#F29081",
+      "#E85848"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: poliwag)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 6.91,
+    "min_de2000_deutan_first6": 6.91,
+    "min_de2000_protan_first6": 6.91,
+    "min_de2000_tritan_first6": 6.91,
+    "optimal6_min_de2000": 6.91,
+    "optimal6_min_de2000_deutan": 6.91,
+    "optimal6_min_de2000_protan": 6.91,
+    "grayscale_L_spread": 0.555,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

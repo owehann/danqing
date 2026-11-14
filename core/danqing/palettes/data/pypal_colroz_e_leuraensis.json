@@ -1,0 +1,62 @@
+{
+  "id": "pypal_colroz_e_leuraensis",
+  "name": {
+    "en": "e_leuraensis (colRoz)",
+    "zh": "e_leuraensis（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E2B745",
+    "#E3BB88",
+    "#988E42",
+    "#4E3D1D",
+    "#1B1702"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D9D3BF",
+      "#BEB799",
+      "#A39C73",
+      "#89814D",
+      "#716724",
+      "#594E00"
+    ],
+    "paired_diverging_stops": [
+      "#E2B745",
+      "#E8CC88",
+      "#EEE0BE",
+      "#F4F3F2",
+      "#A4A298",
+      "#5B5847",
+      "#1B1702"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: e_leuraensis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 11.03,
+    "min_de2000_deutan_first6": 9.29,
+    "min_de2000_protan_first6": 11.05,
+    "min_de2000_tritan_first6": 3.47,
+    "optimal6_min_de2000": 11.03,
+    "optimal6_min_de2000_deutan": 9.29,
+    "optimal6_min_de2000_protan": 11.05,
+    "grayscale_L_spread": 0.612,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

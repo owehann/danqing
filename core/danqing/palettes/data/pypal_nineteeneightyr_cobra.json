@@ -1,0 +1,63 @@
+{
+  "id": "pypal_nineteeneightyr_cobra",
+  "name": {
+    "en": "cobra (NineteenEightyR)",
+    "zh": "cobra（NineteenEightyR）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EF342C",
+    "#E85569",
+    "#111013",
+    "#CB302C",
+    "#5C2C2D",
+    "#3E509A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDCAC0",
+      "#E1A699",
+      "#D48174",
+      "#C45B4F",
+      "#B32F28",
+      "#9F0000"
+    ],
+    "paired_diverging_stops": [
+      "#EF342C",
+      "#F98172",
+      "#FBBCB2",
+      "#F4F3F2",
+      "#B2BCD6",
+      "#7585B9",
+      "#3E509A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NineteenEightyR: cobra)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 7.96,
+    "min_de2000_deutan_first6": 8.3,
+    "min_de2000_protan_first6": 5.95,
+    "min_de2000_tritan_first6": 6.88,
+    "optimal6_min_de2000": 7.96,
+    "optimal6_min_de2000_deutan": 8.3,
+    "optimal6_min_de2000_protan": 5.95,
+    "grayscale_L_spread": 0.474,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

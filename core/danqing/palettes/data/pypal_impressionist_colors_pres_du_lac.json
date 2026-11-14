@@ -1,0 +1,68 @@
+{
+  "id": "pypal_impressionist_colors_pres_du_lac",
+  "name": {
+    "en": "pres_du_lac (impressionist.colors)",
+    "zh": "pres_du_lac（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E1D287",
+    "#B4B496",
+    "#87875A",
+    "#5A693C",
+    "#2D3C2D",
+    "#3C1E1E",
+    "#5A2D1E",
+    "#693C2D",
+    "#3C4B69",
+    "#2D3C5A",
+    "#C3C3D2"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D3C5",
+      "#B7B8A3",
+      "#989E82",
+      "#7B8562",
+      "#5F6C43",
+      "#455425"
+    ],
+    "paired_diverging_stops": [
+      "#E1D287",
+      "#E7DDAC",
+      "#EDE9CF",
+      "#F4F3F2",
+      "#ACB2BD",
+      "#69758B",
+      "#2D3C5A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: pres_du_lac)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 13.55,
+    "min_de2000_deutan_first6": 4.84,
+    "min_de2000_protan_first6": 8.17,
+    "min_de2000_tritan_first6": 12.81,
+    "optimal6_min_de2000": 13.55,
+    "optimal6_min_de2000_deutan": 4.84,
+    "optimal6_min_de2000_protan": 8.17,
+    "grayscale_L_spread": 0.583,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

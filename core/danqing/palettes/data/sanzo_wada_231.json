@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_231",
+  "name": {
+    "en": "Sanzo Wada #231 (Cameo Pink · Hay's Russet · Olympic Blue)",
+    "zh": "和田三造 #231（Cameo Pink · Hay's Russet · Olympic Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E0B3B6",
+    "#793327",
+    "#5A82B3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D3D6",
+      "#ADB7C5",
+      "#8A9CB3",
+      "#6882A2",
+      "#476890",
+      "#264E7E"
+    ],
+    "paired_diverging_stops": [
+      "#793327",
+      "#A47166",
+      "#CDB1AA",
+      "#F4F3F2",
+      "#BFCDDE",
+      "#8CA7C9",
+      "#5A82B3"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#231)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 34.25,
+    "min_de2000_deutan_first6": 33.63,
+    "min_de2000_protan_first6": 25.57,
+    "min_de2000_tritan_first6": 45.49,
+    "optimal6_min_de2000": 34.25,
+    "optimal6_min_de2000_deutan": 33.63,
+    "optimal6_min_de2000_protan": 25.57,
+    "grayscale_L_spread": 0.393,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

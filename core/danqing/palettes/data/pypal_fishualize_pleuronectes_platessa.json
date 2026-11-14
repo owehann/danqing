@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_pleuronectes_platessa",
+  "name": {
+    "en": "Pleuronectes_platessa (fishualize)",
+    "zh": "Pleuronectes_platessa（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D5531F",
+    "#B23B09",
+    "#794422",
+    "#A56029",
+    "#D29C63"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCBE",
+      "#DBAA96",
+      "#CB876F",
+      "#BA6547",
+      "#A7401A",
+      "#930D00"
+    ],
+    "paired_diverging_stops": [
+      "#794422",
+      "#A37C65",
+      "#CBB6AA",
+      "#F4F3F2",
+      "#EAD6C3",
+      "#DEB994",
+      "#D29C63"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Pleuronectes_platessa)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.97,
+    "min_de2000_deutan_first6": 4.81,
+    "min_de2000_protan_first6": 2.49,
+    "min_de2000_tritan_first6": 9.31,
+    "optimal6_min_de2000": 9.97,
+    "optimal6_min_de2000_deutan": 4.81,
+    "optimal6_min_de2000_protan": 2.49,
+    "grayscale_L_spread": 0.288,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

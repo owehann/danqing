@@ -1,0 +1,67 @@
+{
+  "id": "pypal_feathers_oriole",
+  "name": {
+    "en": "oriole (feathers)",
+    "zh": "oriole（feathers）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8A3223",
+    "#BB5645",
+    "#D97878",
+    "#E2ABA0",
+    "#D0CFE9",
+    "#A29EB8",
+    "#6C6B75",
+    "#B8A53F",
+    "#93862A",
+    "#4D4019"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC2",
+      "#D6AB9E",
+      "#C58A7B",
+      "#B2695A",
+      "#9E4838",
+      "#8A2214"
+    ],
+    "paired_diverging_stops": [
+      "#D0CFE9",
+      "#DCDBEC",
+      "#E8E7EF",
+      "#F4F3F2",
+      "#B9B4A5",
+      "#81785D",
+      "#4D4019"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (feathers: oriole)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 13.01,
+    "min_de2000_deutan_first6": 9.86,
+    "min_de2000_protan_first6": 12.75,
+    "min_de2000_tritan_first6": 11.88,
+    "optimal6_min_de2000": 13.01,
+    "optimal6_min_de2000_deutan": 9.86,
+    "optimal6_min_de2000_protan": 12.75,
+    "grayscale_L_spread": 0.487,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

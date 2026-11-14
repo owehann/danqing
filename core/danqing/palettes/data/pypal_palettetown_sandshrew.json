@@ -1,0 +1,67 @@
+{
+  "id": "pypal_palettetown_sandshrew",
+  "name": {
+    "en": "sandshrew (palettetown)",
+    "zh": "sandshrew（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E0E000",
+    "#E8E8D8",
+    "#D0B800",
+    "#A88800",
+    "#805010",
+    "#C8C8B8",
+    "#505050",
+    "#B0B0A0",
+    "#F8F8F8",
+    "#888888"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD0C0",
+      "#C9B29A",
+      "#B39474",
+      "#9D784F",
+      "#875B29",
+      "#714000"
+    ],
+    "paired_diverging_stops": [
+      "#E0E000",
+      "#E6E87F",
+      "#ECEEBC",
+      "#F4F3F2",
+      "#BAB9B9",
+      "#838382",
+      "#505050"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: sandshrew)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 7.43,
+    "min_de2000_deutan_first6": 7.42,
+    "min_de2000_protan_first6": 7.45,
+    "min_de2000_tritan_first6": 7.44,
+    "optimal6_min_de2000": 7.43,
+    "optimal6_min_de2000_deutan": 7.42,
+    "optimal6_min_de2000_protan": 7.45,
+    "grayscale_L_spread": 0.548,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "pypal_dichromat_lightbluetodarkblue_10",
+  "name": {
+    "en": "LightBluetoDarkBlue_10 (dichromat)",
+    "zh": "LightBluetoDarkBlue_10（dichromat）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#E6FFFF",
+    "#CCFBFF",
+    "#B2F2FF",
+    "#99E6FF",
+    "#80D4FF",
+    "#66BFFF",
+    "#4CA6FF",
+    "#3388FF",
+    "#1A66FF",
+    "#0040FF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C7D3ED",
+      "#9AB6F1",
+      "#6E97F2",
+      "#4276F0",
+      "#154FEE",
+      "#0000E9"
+    ],
+    "paired_diverging_stops": [
+      "#E6FFFF",
+      "#EBFBFB",
+      "#EFF7F6",
+      "#F4F3F2",
+      "#A3C1FD",
+      "#548AFF",
+      "#0040FF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (dichromat: LightBluetoDarkBlue_10)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 4.6,
+    "min_de2000_deutan_first6": 4.25,
+    "min_de2000_protan_first6": 2.89,
+    "min_de2000_tritan_first6": 3.9,
+    "optimal6_min_de2000": 9.73,
+    "optimal6_min_de2000_deutan": 7.53,
+    "optimal6_min_de2000_protan": 7.18,
+    "grayscale_L_spread": 0.481,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

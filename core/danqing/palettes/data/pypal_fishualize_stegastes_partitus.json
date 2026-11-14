@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_stegastes_partitus",
+  "name": {
+    "en": "Stegastes_partitus (fishualize)",
+    "zh": "Stegastes_partitus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#413C28",
+    "#E09718",
+    "#FCDA01",
+    "#B0E1E8",
+    "#013AE7"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C9D3EB",
+      "#9DB6EC",
+      "#7298EB",
+      "#4878E8",
+      "#1D54E3",
+      "#001CDD"
+    ],
+    "paired_diverging_stops": [
+      "#FCDA01",
+      "#F9E480",
+      "#F6ECBD",
+      "#F4F3F2",
+      "#A1BDF5",
+      "#5284F1",
+      "#013AE7"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Stegastes_partitus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 20.34,
+    "min_de2000_deutan_first6": 13.25,
+    "min_de2000_protan_first6": 15.97,
+    "min_de2000_tritan_first6": 16.69,
+    "optimal6_min_de2000": 20.34,
+    "optimal6_min_de2000_deutan": 13.25,
+    "optimal6_min_de2000_protan": 15.97,
+    "grayscale_L_spread": 0.535,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

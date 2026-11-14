@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "batlowK",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D9D3C0",
+      "#BDB79A",
+      "#A19C74",
+      "#87824F",
+      "#6E6827",
+      "#554F00"
+    ],
+    "paired_diverging_stops": [
+      "#0A0D15",
+      "#4D4F56",
+      "#9C9DA0",
+      "#F4F3F2",
+      "#CBBBC9",
+      "#A286A2",
+      "#7B537B"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (batlowK)",

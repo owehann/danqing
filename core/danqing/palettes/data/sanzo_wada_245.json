@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_245",
+  "name": {
+    "en": "Sanzo Wada #245 (Carmine Red · Oil Green · Dark Tyrian Blue)",
+    "zh": "和田三造 #245（Carmine Red · Oil Green · Dark Tyrian Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A62C37",
+    "#819238",
+    "#12354E",
+    "#34454C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC4",
+      "#DBA8A2",
+      "#CB8581",
+      "#BA6260",
+      "#A73D41",
+      "#920623"
+    ],
+    "paired_diverging_stops": [
+      "#819238",
+      "#A5B279",
+      "#CCD3B5",
+      "#F4F3F2",
+      "#A4AFB9",
+      "#597082",
+      "#12354E"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#245)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 9.95,
+    "min_de2000_deutan_first6": 10.06,
+    "min_de2000_protan_first6": 9.29,
+    "min_de2000_tritan_first6": 6.72,
+    "optimal6_min_de2000": 9.95,
+    "optimal6_min_de2000_deutan": 10.06,
+    "optimal6_min_de2000_protan": 9.29,
+    "grayscale_L_spread": 0.311,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

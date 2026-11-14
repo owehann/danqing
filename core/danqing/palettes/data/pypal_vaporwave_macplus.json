@@ -1,0 +1,63 @@
+{
+  "id": "pypal_vaporwave_macplus",
+  "name": {
+    "en": "macPlus (vapoRwave)",
+    "zh": "macPlus（vapoRwave）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#65323E",
+    "#FE7F9D",
+    "#FFC0CB",
+    "#75D8D5",
+    "#09979B",
+    "#063B41"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD6D0",
+      "#A1BDB9",
+      "#76A5A3",
+      "#488D8D",
+      "#007577",
+      "#005D62"
+    ],
+    "paired_diverging_stops": [
+      "#FFC0CB",
+      "#FCD1D8",
+      "#F9E2E5",
+      "#F4F3F2",
+      "#A3B2B3",
+      "#567478",
+      "#063B41"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vapoRwave: macPlus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.85,
+    "min_de2000_deutan_first6": 10.37,
+    "min_de2000_protan_first6": 2.49,
+    "min_de2000_tritan_first6": 16.33,
+    "optimal6_min_de2000": 14.85,
+    "optimal6_min_de2000_deutan": 10.37,
+    "optimal6_min_de2000_protan": 2.49,
+    "grayscale_L_spread": 0.544,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

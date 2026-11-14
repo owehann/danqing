@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_328",
+  "name": {
+    "en": "Sanzo Wada #328 (Brick Red · Apricot Orange · Vandyke Brown)",
+    "zh": "和田三造 #328（Brick Red · Apricot Orange · Vandyke Brown）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A84222",
+    "#F68C50",
+    "#4B3317",
+    "#00908A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CDC0",
+      "#D7AB9A",
+      "#C68A75",
+      "#B46951",
+      "#A0472B",
+      "#8C2000"
+    ],
+    "paired_diverging_stops": [
+      "#F68C50",
+      "#F9B08A",
+      "#F8D2BE",
+      "#F4F3F2",
+      "#B3D2CE",
+      "#6FB1AB",
+      "#00908A"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#328)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 22.54,
+    "min_de2000_deutan_first6": 18.9,
+    "min_de2000_protan_first6": 11.81,
+    "min_de2000_tritan_first6": 21.39,
+    "optimal6_min_de2000": 22.54,
+    "optimal6_min_de2000_deutan": 18.9,
+    "optimal6_min_de2000_protan": 11.81,
+    "grayscale_L_spread": 0.401,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "pypal_matplotlib_seaborn_builtin_accent",
+  "name": {
+    "en": "Accent (matplotlib/seaborn builtin)",
+    "zh": "Accent（matplotlib/seaborn builtin）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7FC97F",
+    "#BEAED4",
+    "#FDC086",
+    "#FFFF99",
+    "#386CB0",
+    "#F0027F",
+    "#BF5B17",
+    "#666666"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F1C7CA",
+      "#E99EAE",
+      "#DD7593",
+      "#CF4678",
+      "#BE005F",
+      "#AA0047"
+    ],
+    "paired_diverging_stops": [
+      "#FFFF99",
+      "#FBFCBA",
+      "#F7F8D7",
+      "#F4F3F2",
+      "#B4C6DE",
+      "#7699C8",
+      "#386CB0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (matplotlib/seaborn builtin: Accent)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 22.15,
+    "min_de2000_deutan_first6": 8.7,
+    "min_de2000_protan_first6": 1.94,
+    "min_de2000_tritan_first6": 18.1,
+    "optimal6_min_de2000": 22.15,
+    "optimal6_min_de2000_deutan": 8.7,
+    "optimal6_min_de2000_protan": 1.94,
+    "grayscale_L_spread": 0.468,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

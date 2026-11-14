@@ -1,0 +1,73 @@
+{
+  "id": "pypal_colorblindness_green2magenta16steps",
+  "name": {
+    "en": "Green2Magenta16Steps (colorBlindness)",
+    "zh": "Green2Magenta16Steps（colorBlindness）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#005000",
+    "#008600",
+    "#00BB00",
+    "#00F100",
+    "#50FF50",
+    "#86FF86",
+    "#BBFFBB",
+    "#FFFFFF",
+    "#FFF1FF",
+    "#FFBBFF",
+    "#FF86FF",
+    "#FF50FF",
+    "#F100F1",
+    "#BB00BB",
+    "#860086",
+    "#500050"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8C8DB",
+      "#D9A2CE",
+      "#C97AC0",
+      "#B750B2",
+      "#A413A2",
+      "#900092"
+    ],
+    "paired_diverging_stops": [
+      "#00F100",
+      "#85F47C",
+      "#C1F5BA",
+      "#F4F3F2",
+      "#F9BBF5",
+      "#F87DF4",
+      "#F100F1"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colorBlindness: Green2Magenta16Steps)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 16,
+    "max_colors": 16,
+    "min_de2000_first6": 4.39,
+    "min_de2000_deutan_first6": 4.56,
+    "min_de2000_protan_first6": 3.59,
+    "min_de2000_tritan_first6": 3.16,
+    "optimal6_min_de2000": 18.17,
+    "optimal6_min_de2000_deutan": 12.94,
+    "optimal6_min_de2000_protan": 15.38,
+    "grayscale_L_spread": 0.697,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

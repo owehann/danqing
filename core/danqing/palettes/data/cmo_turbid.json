@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "cmo_turbid",
-    "diverging": "cmo_balance"
+    "diverging": "cmo_balance",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED0C4",
+      "#C7B2A1",
+      "#B0957F",
+      "#99785F",
+      "#825C3F",
+      "#6C421E"
+    ],
+    "paired_diverging_stops": [
+      "#606A21",
+      "#8E9668",
+      "#C0C4AC",
+      "#F4F3F2",
+      "#A7A5A3",
+      "#605E5A",
+      "#221F1B"
+    ]
   },
   "source": {
     "title": "True Colors of Oceanography: cmocean (turbid)",

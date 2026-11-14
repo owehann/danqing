@@ -20,7 +20,25 @@
   "neutral": "#AAA49A",
   "partners": {
     "sequential": "Blues",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D2D5",
+      "#B3B5C3",
+      "#949AB0",
+      "#757E9E",
+      "#58648C",
+      "#3C4A79"
+    ],
+    "paired_diverging_stops": [
+      "#1E4C65",
+      "#648192",
+      "#AAB9C1",
+      "#F4F3F2",
+      "#C9C0B2",
+      "#9F8E74",
+      "#775F3A"
+    ]
   },
   "source": {
     "title": "South Wind, Clear Sky (Red Fuji) & One Hundred Poems (Katsushika Hokusai)",

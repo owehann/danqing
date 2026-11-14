@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_255",
+  "name": {
+    "en": "Sanzo Wada #255 (Raw Sienna · Pyrite Yellow · Calamine BLue)",
+    "zh": "和田三造 #255（Raw Sienna · Pyrite Yellow · Calamine BLue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BB7125",
+    "#CAB356",
+    "#78CDD0",
+    "#111314"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CFBD",
+      "#CFB094",
+      "#BC916B",
+      "#A87242",
+      "#93540B",
+      "#7E3500"
+    ],
+    "paired_diverging_stops": [
+      "#CAB356",
+      "#D8C98E",
+      "#E6DEC1",
+      "#F4F3F2",
+      "#9FA0A0",
+      "#535455",
+      "#111314"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#255)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 23.61,
+    "min_de2000_deutan_first6": 14.08,
+    "min_de2000_protan_first6": 18.33,
+    "min_de2000_tritan_first6": 19.31,
+    "optimal6_min_de2000": 23.61,
+    "optimal6_min_de2000_deutan": 14.08,
+    "optimal6_min_de2000_protan": 18.33,
+    "grayscale_L_spread": 0.611,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

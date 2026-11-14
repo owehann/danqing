@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_127",
+  "name": {
+    "en": "Sanzo Wada #127 (Cinnamon Buff · Pistachio Green · Dark Soft Violet)",
+    "zh": "和田三造 #127（Cinnamon Buff · Pistachio Green · Dark Soft Violet）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FDC57E",
+    "#648F7B",
+    "#66629C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D1D6",
+      "#B8B3C5",
+      "#9A96B3",
+      "#7E7AA2",
+      "#635F90",
+      "#49447E"
+    ],
+    "paired_diverging_stops": [
+      "#FDC57E",
+      "#FBD5A7",
+      "#F8E4CD",
+      "#F4F3F2",
+      "#C2C1D6",
+      "#9291B9",
+      "#66629C"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#127)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 33.19,
+    "min_de2000_deutan_first6": 26.34,
+    "min_de2000_protan_first6": 23.92,
+    "min_de2000_tritan_first6": 17.17,
+    "optimal6_min_de2000": 33.19,
+    "optimal6_min_de2000_deutan": 26.34,
+    "optimal6_min_de2000_protan": 23.92,
+    "grayscale_L_spread": 0.334,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

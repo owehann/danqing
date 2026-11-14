@@ -1,0 +1,63 @@
+{
+  "id": "pypal_nationalparkcolors_greatbasin",
+  "name": {
+    "en": "GreatBasin (nationalparkcolors)",
+    "zh": "GreatBasin（nationalparkcolors）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6BBAE5",
+    "#E3EEF4",
+    "#454B68",
+    "#F9F5EA",
+    "#81974C",
+    "#553F31"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D4C1",
+      "#B6BA9B",
+      "#97A077",
+      "#798752",
+      "#5D6E2D",
+      "#425600"
+    ],
+    "paired_diverging_stops": [
+      "#454B68",
+      "#7B8094",
+      "#B5B8C2",
+      "#F4F3F2",
+      "#F6F4EF",
+      "#F7F4ED",
+      "#F9F5EA"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nationalparkcolors: GreatBasin)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 9.55,
+    "min_de2000_deutan_first6": 9.94,
+    "min_de2000_protan_first6": 8.88,
+    "min_de2000_tritan_first6": 11.82,
+    "optimal6_min_de2000": 9.55,
+    "optimal6_min_de2000_deutan": 9.94,
+    "optimal6_min_de2000_protan": 8.88,
+    "grayscale_L_spread": 0.582,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "pypal_ggsci_schwifty_rickandmorty",
+  "name": {
+    "en": "schwifty_rickandmorty (ggsci)",
+    "zh": "schwifty_rickandmorty（ggsci）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FAFD7C",
+    "#82491E",
+    "#24325F",
+    "#B7E4F9",
+    "#FB6467",
+    "#526E2D",
+    "#E762D7",
+    "#E89242",
+    "#FAE48B",
+    "#A6EEE6",
+    "#917C5D",
+    "#69C8EC"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CAD7",
+      "#D6A5C6",
+      "#C580B5",
+      "#B35AA3",
+      "#9F2E92",
+      "#8A007F"
+    ],
+    "paired_diverging_stops": [
+      "#FAFD7C",
+      "#F7FBAA",
+      "#F5F7D0",
+      "#F4F3F2",
+      "#A8AFC0",
+      "#626E8F",
+      "#24325F"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggsci: schwifty_rickandmorty)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 31.57,
+    "min_de2000_deutan_first6": 3.91,
+    "min_de2000_protan_first6": 8.5,
+    "min_de2000_tritan_first6": 18.93,
+    "optimal6_min_de2000": 31.57,
+    "optimal6_min_de2000_deutan": 3.91,
+    "optimal6_min_de2000_protan": 8.5,
+    "grayscale_L_spread": 0.636,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_holacanthus_ciliaris",
+  "name": {
+    "en": "Holacanthus_ciliaris (fishualize)",
+    "zh": "Holacanthus_ciliaris（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D6930E",
+    "#D6D206",
+    "#7EA310",
+    "#5AAAF9",
+    "#2436B0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED1E2",
+      "#A7B4DC",
+      "#8296D4",
+      "#5F78CB",
+      "#3E58C1",
+      "#2333B5"
+    ],
+    "paired_diverging_stops": [
+      "#D6D206",
+      "#DFDE7C",
+      "#E9E9BA",
+      "#F4F3F2",
+      "#A7B6E1",
+      "#5F7ACA",
+      "#2436B0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Holacanthus_ciliaris)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 18.21,
+    "min_de2000_deutan_first6": 5.75,
+    "min_de2000_protan_first6": 0.41,
+    "min_de2000_tritan_first6": 19.39,
+    "optimal6_min_de2000": 18.21,
+    "optimal6_min_de2000_deutan": 5.75,
+    "optimal6_min_de2000_protan": 0.41,
+    "grayscale_L_spread": 0.43,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

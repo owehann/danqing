@@ -1,0 +1,64 @@
+{
+  "id": "pypal_trekcolors_dominion",
+  "name": {
+    "en": "dominion (trekcolors)",
+    "zh": "dominion（trekcolors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#313131",
+    "#255268",
+    "#620062",
+    "#63A542",
+    "#A5C6D6",
+    "#B5D6A5",
+    "#B900B9"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8C8DB",
+      "#D9A2CE",
+      "#C97BC0",
+      "#B751B1",
+      "#A415A2",
+      "#8F0092"
+    ],
+    "paired_diverging_stops": [
+      "#63A542",
+      "#94C080",
+      "#C3DAB9",
+      "#F4F3F2",
+      "#E6B3E1",
+      "#D270CE",
+      "#B900B9"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (trekcolors: dominion)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 17.02,
+    "min_de2000_deutan_first6": 6.78,
+    "min_de2000_protan_first6": 14.44,
+    "min_de2000_tritan_first6": 6.89,
+    "optimal6_min_de2000": 17.02,
+    "optimal6_min_de2000_deutan": 6.78,
+    "optimal6_min_de2000_protan": 14.44,
+    "grayscale_L_spread": 0.526,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

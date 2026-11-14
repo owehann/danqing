@@ -1,0 +1,63 @@
+{
+  "id": "pypal_pnwcolors_mushroom",
+  "name": {
+    "en": "Mushroom (PNWColors)",
+    "zh": "Mushroom（PNWColors）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#4F412B",
+    "#865A3C",
+    "#BA783E",
+    "#E69C4C",
+    "#FBCC74",
+    "#FFFBDA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED0C4",
+      "#C7B2A2",
+      "#B09480",
+      "#9A7860",
+      "#835C41",
+      "#6D4121"
+    ],
+    "paired_diverging_stops": [
+      "#4F412B",
+      "#827868",
+      "#BAB4AB",
+      "#F4F3F2",
+      "#F7F6EA",
+      "#FBF8E2",
+      "#FFFBDA"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (PNWColors: Mushroom)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 12.4,
+    "min_de2000_deutan_first6": 9.41,
+    "min_de2000_protan_first6": 10.69,
+    "min_de2000_tritan_first6": 11.81,
+    "optimal6_min_de2000": 12.4,
+    "optimal6_min_de2000_deutan": 9.41,
+    "optimal6_min_de2000_protan": 10.69,
+    "grayscale_L_spread": 0.599,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

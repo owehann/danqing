@@ -1,0 +1,62 @@
+{
+  "id": "pypal_butterflycolors_synargis_calyce",
+  "name": {
+    "en": "synargis_calyce (ButterflyColors)",
+    "zh": "synargis_calyce（ButterflyColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D3D9D9",
+    "#BF7F5A",
+    "#A65233",
+    "#8C5946",
+    "#5F3121"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CEC1",
+      "#D2AD9D",
+      "#BF8D79",
+      "#AC6E56",
+      "#984E33",
+      "#832E07"
+    ],
+    "paired_diverging_stops": [
+      "#D3D9D9",
+      "#DEE2E1",
+      "#E9EAEA",
+      "#F4F3F2",
+      "#C2AEA7",
+      "#906E61",
+      "#5F3121"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ButterflyColors: synargis_calyce)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 7.48,
+    "min_de2000_deutan_first6": 7.0,
+    "min_de2000_protan_first6": 5.91,
+    "min_de2000_tritan_first6": 7.18,
+    "optimal6_min_de2000": 7.48,
+    "optimal6_min_de2000_deutan": 7.0,
+    "optimal6_min_de2000_protan": 5.91,
+    "grayscale_L_spread": 0.512,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

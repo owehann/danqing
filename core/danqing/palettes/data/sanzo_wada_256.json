@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_256",
+  "name": {
+    "en": "Sanzo Wada #256 (Vinaceous Cinnamon · Orange · Dull Viridian Green)",
+    "zh": "和田三造 #256（Vinaceous Cinnamon · Orange · Dull Viridian Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EEA78C",
+    "#F37420",
+    "#009465",
+    "#111314"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD7C7",
+      "#A2BFA8",
+      "#77A88A",
+      "#4B906C",
+      "#027950",
+      "#006235"
+    ],
+    "paired_diverging_stops": [
+      "#F37420",
+      "#F8A274",
+      "#F8CBB4",
+      "#F4F3F2",
+      "#9FA0A0",
+      "#535455",
+      "#111314"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#256)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 16.28,
+    "min_de2000_deutan_first6": 14.57,
+    "min_de2000_protan_first6": 12.31,
+    "min_de2000_tritan_first6": 14.16,
+    "optimal6_min_de2000": 16.28,
+    "optimal6_min_de2000_deutan": 14.57,
+    "optimal6_min_de2000_protan": 12.31,
+    "grayscale_L_spread": 0.605,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

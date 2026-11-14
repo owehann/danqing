@@ -1,0 +1,69 @@
+{
+  "id": "pypal_palettetown_qwilfish",
+  "name": {
+    "en": "qwilfish (palettetown)",
+    "zh": "qwilfish（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4858A0",
+    "#5880C0",
+    "#384860",
+    "#70A8E8",
+    "#C0B050",
+    "#E0D870",
+    "#E8F8A0",
+    "#685030",
+    "#F8F8F8",
+    "#D05060",
+    "#F8A090",
+    "#900000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC5",
+      "#DBA7A4",
+      "#CC8484",
+      "#BB6166",
+      "#A83B48",
+      "#93002C"
+    ],
+    "paired_diverging_stops": [
+      "#4858A0",
+      "#7D8BBD",
+      "#B6BED8",
+      "#F4F3F2",
+      "#EDEBCA",
+      "#E6E2A0",
+      "#E0D870"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: qwilfish)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 10.03,
+    "min_de2000_deutan_first6": 9.42,
+    "min_de2000_protan_first6": 9.93,
+    "min_de2000_tritan_first6": 10.08,
+    "optimal6_min_de2000": 10.03,
+    "optimal6_min_de2000_deutan": 9.42,
+    "optimal6_min_de2000_protan": 9.93,
+    "grayscale_L_spread": 0.581,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

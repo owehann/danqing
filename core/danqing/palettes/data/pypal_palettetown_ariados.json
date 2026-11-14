@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_ariados",
+  "name": {
+    "en": "ariados (palettetown)",
+    "zh": "ariados（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6830A8",
+    "#F8E858",
+    "#9058E8",
+    "#D8B048",
+    "#C85000",
+    "#907030",
+    "#F87828",
+    "#686868",
+    "#882000",
+    "#F8A838",
+    "#B890F8",
+    "#F8F8F8",
+    "#B8B8B8",
+    "#480000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DACEE2",
+      "#BFACDA",
+      "#A58BD2",
+      "#8C6AC8",
+      "#7545BD",
+      "#600DB1"
+    ],
+    "paired_diverging_stops": [
+      "#F8E858",
+      "#F6ED96",
+      "#F5F1C6",
+      "#F4F3F2",
+      "#D0C2F2",
+      "#AF90EF",
+      "#9058E8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: ariados)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 14.86,
+    "min_de2000_deutan_first6": 6.72,
+    "min_de2000_protan_first6": 5.34,
+    "min_de2000_tritan_first6": 14.41,
+    "optimal6_min_de2000": 14.86,
+    "optimal6_min_de2000_deutan": 6.72,
+    "optimal6_min_de2000_protan": 5.34,
+    "grayscale_L_spread": 0.727,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

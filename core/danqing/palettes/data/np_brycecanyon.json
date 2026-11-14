@@ -19,7 +19,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CDBF",
+      "#D8AB98",
+      "#C88971",
+      "#B6684B",
+      "#A34522",
+      "#8E1C00"
+    ],
+    "paired_diverging_stops": [
+      "#882314",
+      "#B16B5D",
+      "#D5AEA5",
+      "#F4F3F2",
+      "#C2BFC8",
+      "#928E9F",
+      "#655F77"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (BryceCanyon)",

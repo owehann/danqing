@@ -19,7 +19,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CFC3",
+      "#CEAFA0",
+      "#B9907E",
+      "#A4725C",
+      "#8F543C",
+      "#79371A"
+    ],
+    "paired_diverging_stops": [
+      "#895614",
+      "#AD8963",
+      "#D1BDA9",
+      "#F4F3F2",
+      "#ACB7C2",
+      "#697E93",
+      "#2A4866"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (GrandCanyon)",

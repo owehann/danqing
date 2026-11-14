@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_thalassoma_hardwicke",
+  "name": {
+    "en": "Thalassoma_hardwicke (fishualize)",
+    "zh": "Thalassoma_hardwicke（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#081114",
+    "#00ADDE",
+    "#8FD5E1",
+    "#A1CD3A",
+    "#F8B3BB"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C9D6D8",
+      "#9CBDC9",
+      "#6DA4B9",
+      "#398BA9",
+      "#007299",
+      "#005888"
+    ],
+    "paired_diverging_stops": [
+      "#00ADDE",
+      "#78C5E6",
+      "#B8DDED",
+      "#F4F3F2",
+      "#D7E8BC",
+      "#BCDB84",
+      "#A1CD3A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Thalassoma_hardwicke)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.58,
+    "min_de2000_deutan_first6": 16.26,
+    "min_de2000_protan_first6": 10.5,
+    "min_de2000_tritan_first6": 9.53,
+    "optimal6_min_de2000": 15.58,
+    "optimal6_min_de2000_deutan": 16.26,
+    "optimal6_min_de2000_protan": 10.5,
+    "grayscale_L_spread": 0.663,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

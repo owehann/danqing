@@ -22,7 +22,25 @@
   "neutral": "#A8A8A8",
   "partners": {
     "sequential": "YlGnBu",
-    "diverging": "RdYlBu"
+    "diverging": "RdYlBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BE",
+      "#E6A395",
+      "#DB7D6E",
+      "#CC5346",
+      "#BB1C18",
+      "#A80000"
+    ],
+    "paired_diverging_stops": [
+      "#7C6100",
+      "#A2922A",
+      "#CAC295",
+      "#F4F3F2",
+      "#A6B7D5",
+      "#5D7CB6",
+      "#164194"
+    ]
   },
   "source": {
     "title": "Factual journal color table curated in ggsci (pal_frontiers)",

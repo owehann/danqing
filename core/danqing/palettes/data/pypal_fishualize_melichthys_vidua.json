@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_melichthys_vidua",
+  "name": {
+    "en": "Melichthys_vidua (fishualize)",
+    "zh": "Melichthys_vidua（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#142E2B",
+    "#899275",
+    "#E9E868",
+    "#F2C26C",
+    "#F396B4"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CDCB",
+      "#D1ABB0",
+      "#BD8B95",
+      "#A96A7C",
+      "#944A63",
+      "#7F294B"
+    ],
+    "paired_diverging_stops": [
+      "#142E2B",
+      "#586A67",
+      "#A3ACAA",
+      "#F4F3F2",
+      "#F0F0C9",
+      "#ECED9D",
+      "#E9E868"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Melichthys_vidua)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 16.1,
+    "min_de2000_deutan_first6": 5.76,
+    "min_de2000_protan_first6": 8.42,
+    "min_de2000_tritan_first6": 9.9,
+    "optimal6_min_de2000": 16.1,
+    "optimal6_min_de2000_deutan": 5.76,
+    "optimal6_min_de2000_protan": 8.42,
+    "grayscale_L_spread": 0.628,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

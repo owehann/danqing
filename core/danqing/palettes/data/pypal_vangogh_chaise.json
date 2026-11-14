@@ -1,0 +1,62 @@
+{
+  "id": "pypal_vangogh_chaise",
+  "name": {
+    "en": "Chaise (vangogh)",
+    "zh": "Chaise（vangogh）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3F858C",
+    "#707322",
+    "#F2D43D",
+    "#D9814E",
+    "#731A12"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8D3C0",
+      "#BAB899",
+      "#9E9E73",
+      "#83844E",
+      "#696A25",
+      "#505200"
+    ],
+    "paired_diverging_stops": [
+      "#3F858C",
+      "#7EA9AD",
+      "#B8CECF",
+      "#F4F3F2",
+      "#F3EAC0",
+      "#F2DF89",
+      "#F2D43D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vangogh: Chaise)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 31.13,
+    "min_de2000_deutan_first6": 16.47,
+    "min_de2000_protan_first6": 12.06,
+    "min_de2000_tritan_first6": 20.19,
+    "optimal6_min_de2000": 31.13,
+    "optimal6_min_de2000_deutan": 16.47,
+    "optimal6_min_de2000_protan": 12.06,
+    "grayscale_L_spread": 0.502,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

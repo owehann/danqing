@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_prognathodes_brasiliensis",
+  "name": {
+    "en": "Prognathodes_brasiliensis (fishualize)",
+    "zh": "Prognathodes_brasiliensis（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EAF205",
+    "#D9CB04",
+    "#D9A404",
+    "#C8BC66",
+    "#DDEC7E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD1B8",
+      "#CAB38A",
+      "#B4965A",
+      "#9E7921",
+      "#895D00",
+      "#744000"
+    ],
+    "paired_diverging_stops": [
+      "#EAF205",
+      "#ECF483",
+      "#F0F4BF",
+      "#F4F3F2",
+      "#E5E1C5",
+      "#D6CF97",
+      "#C8BC66"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Prognathodes_brasiliensis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.35,
+    "min_de2000_deutan_first6": 6.64,
+    "min_de2000_protan_first6": 7.99,
+    "min_de2000_tritan_first6": 4.65,
+    "optimal6_min_de2000": 9.35,
+    "optimal6_min_de2000_deutan": 6.64,
+    "optimal6_min_de2000_protan": 7.99,
+    "grayscale_L_spread": 0.176,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

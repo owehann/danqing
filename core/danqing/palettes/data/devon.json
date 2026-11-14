@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "devon",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD3DB",
+      "#A9B7CE",
+      "#859CC1",
+      "#6181B2",
+      "#3E65A4",
+      "#184A94"
+    ],
+    "paired_diverging_stops": [
+      "#2C1A4C",
+      "#675D82",
+      "#ABA5B9",
+      "#F4F3F2",
+      "#C1C1C0",
+      "#919090",
+      "#636363"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (devon)",

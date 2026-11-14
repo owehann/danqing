@@ -1,0 +1,70 @@
+{
+  "id": "pypal_impressionist_colors_le_dejeuner_des_canotiers",
+  "name": {
+    "en": "le_dejeuner_des_canotiers (impressionist.colors)",
+    "zh": "le_dejeuner_des_canotiers（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D2B469",
+    "#E1B45A",
+    "#F0E187",
+    "#F0E1D2",
+    "#E1B496",
+    "#96695A",
+    "#784B3C",
+    "#3C2D1E",
+    "#3C3C2D",
+    "#69695A",
+    "#968778",
+    "#697896",
+    "#2D2D2D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED0C6",
+      "#C7B1A6",
+      "#B09488",
+      "#99776A",
+      "#825B4D",
+      "#6C4031"
+    ],
+    "paired_diverging_stops": [
+      "#F0E187",
+      "#F1E8AD",
+      "#F2EED0",
+      "#F4F3F2",
+      "#ACABAA",
+      "#696968",
+      "#2D2D2D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: le_dejeuner_des_canotiers)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 4.44,
+    "min_de2000_deutan_first6": 3.24,
+    "min_de2000_protan_first6": 2.98,
+    "min_de2000_tritan_first6": 3.31,
+    "optimal6_min_de2000": 4.44,
+    "optimal6_min_de2000_deutan": 3.24,
+    "optimal6_min_de2000_protan": 2.98,
+    "grayscale_L_spread": 0.621,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

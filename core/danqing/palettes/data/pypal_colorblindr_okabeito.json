@@ -1,0 +1,65 @@
+{
+  "id": "pypal_colorblindr_okabeito",
+  "name": {
+    "en": "OkabeIto (colorblindr)",
+    "zh": "OkabeIto（colorblindr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E69F00",
+    "#56B4E9",
+    "#009E73",
+    "#F0E442",
+    "#0072B2",
+    "#D55E00",
+    "#CC79A7",
+    "#999999"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD4DA",
+      "#A2BACD",
+      "#79A0BF",
+      "#4F85B0",
+      "#1C6BA1",
+      "#005191"
+    ],
+    "paired_diverging_stops": [
+      "#F0E442",
+      "#F1EA8D",
+      "#F2EFC2",
+      "#F4F3F2",
+      "#ADC8DE",
+      "#679DC9",
+      "#0072B2"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colorblindr: OkabeIto)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 21.72,
+    "min_de2000_deutan_first6": 11.61,
+    "min_de2000_protan_first6": 15.17,
+    "min_de2000_tritan_first6": 12.09,
+    "optimal6_min_de2000": 21.72,
+    "optimal6_min_de2000_deutan": 11.61,
+    "optimal6_min_de2000_protan": 15.17,
+    "grayscale_L_spread": 0.37,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

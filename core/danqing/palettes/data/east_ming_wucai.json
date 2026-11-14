@@ -20,7 +20,25 @@
   "neutral": "#ACAAA5",
   "partners": {
     "sequential": "YlOrRd",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD7C4",
+      "#A5BFA1",
+      "#7DA780",
+      "#54905F",
+      "#24783F",
+      "#00611D"
+    ],
+    "paired_diverging_stops": [
+      "#5B6A39",
+      "#8B9674",
+      "#BEC4B2",
+      "#F4F3F2",
+      "#BAACA6",
+      "#82695F",
+      "#4C2C20"
+    ]
   },
   "source": {
     "title": "Wucai Jar with Dragons Pursuing Flaming Jewels & Baluster Jar",

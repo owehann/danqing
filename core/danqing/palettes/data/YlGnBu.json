@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "YlGnBu",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED3DC",
+      "#A7B8CF",
+      "#819DC2",
+      "#5B82B5",
+      "#3566A6",
+      "#024B97"
+    ],
+    "paired_diverging_stops": [
+      "#616925",
+      "#8F966A",
+      "#C0C4AD",
+      "#F4F3F2",
+      "#9DA8BF",
+      "#4D618C",
+      "#081D58"
+    ]
   },
   "source": {
     "title": "ColorBrewer 2.0 (YlGnBu, 9-class)",

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_anchoviella_lepidentostole",
+  "name": {
+    "en": "Anchoviella_lepidentostole (fishualize)",
+    "zh": "Anchoviella_lepidentostole（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8A7036",
+    "#937366",
+    "#CE9B89",
+    "#A7988D",
+    "#E7E9E4"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DCD1C1",
+      "#C2B59C",
+      "#A99878",
+      "#917D54",
+      "#7A6230",
+      "#634800"
+    ],
+    "paired_diverging_stops": [
+      "#8A7036",
+      "#AC9A75",
+      "#D0C6B2",
+      "#F4F3F2",
+      "#F0F0ED",
+      "#EBECE9",
+      "#E7E9E4"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Anchoviella_lepidentostole)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.1,
+    "min_de2000_deutan_first6": 7.84,
+    "min_de2000_protan_first6": 5.2,
+    "min_de2000_tritan_first6": 3.75,
+    "optimal6_min_de2000": 12.1,
+    "optimal6_min_de2000_deutan": 7.84,
+    "optimal6_min_de2000_protan": 5.2,
+    "grayscale_L_spread": 0.373,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

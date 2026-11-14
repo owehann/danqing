@@ -17,7 +17,25 @@
   "neutral": "#B5B8BA",
   "partners": {
     "sequential": "navia",
-    "diverging": "broc"
+    "diverging": "broc",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D0D8",
+      "#B8B3C8",
+      "#9A95B8",
+      "#7E79A8",
+      "#645D97",
+      "#4B4186"
+    ],
+    "paired_diverging_stops": [
+      "#1D457F",
+      "#617DA6",
+      "#A8B7CC",
+      "#F4F3F2",
+      "#D4BD9F",
+      "#B2884C",
+      "#905300"
+    ]
   },
   "source": {
     "title": "PNWColors Pacific Northwest Nature Palette (Sunset2)",

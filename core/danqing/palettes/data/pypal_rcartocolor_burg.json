@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_burg",
+  "name": {
+    "en": "Burg (rcartocolor)",
+    "zh": "Burg（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#FFC6C4",
+    "#F4A3A8",
+    "#E38191",
+    "#CC607D",
+    "#AD466C",
+    "#8B3058",
+    "#672044"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CCCB",
+      "#D5A9AF",
+      "#C38795",
+      "#B0657B",
+      "#9C4362",
+      "#871B4A"
+    ],
+    "paired_diverging_stops": [
+      "#FFC6C4",
+      "#FCD5D3",
+      "#F9E4E2",
+      "#F4F3F2",
+      "#C7AAB4",
+      "#98647A",
+      "#672044"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: Burg)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 8.63,
+    "min_de2000_deutan_first6": 6.36,
+    "min_de2000_protan_first6": 7.89,
+    "min_de2000_tritan_first6": 8.14,
+    "optimal6_min_de2000": 8.63,
+    "optimal6_min_de2000_deutan": 6.36,
+    "optimal6_min_de2000_protan": 7.89,
+    "grayscale_L_spread": 0.511,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

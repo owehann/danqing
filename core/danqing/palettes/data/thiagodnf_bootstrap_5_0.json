@@ -1,0 +1,64 @@
+{
+  "id": "thiagodnf_bootstrap_5_0",
+  "name": {
+    "en": "Bootstrap 5.0",
+    "zh": "Bootstrap 5.0（UI/可视化）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#316CF4",
+    "#6E757C",
+    "#3F8357",
+    "#CB444A",
+    "#F5C344",
+    "#5DC7EC",
+    "#222529"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD3E5",
+      "#A2B6E2",
+      "#7999DD",
+      "#527CD6",
+      "#2B5CCE",
+      "#0035C4"
+    ],
+    "paired_diverging_stops": [
+      "#316CF4",
+      "#719DF8",
+      "#B1C9F7",
+      "#F4F3F2",
+      "#F5E4C0",
+      "#F5D48A",
+      "#F5C344"
+    ]
+  },
+  "source": {
+    "title": "color-palettes (Bootstrap 5.0)",
+    "author": "Thiago Ferreira",
+    "year": 2021,
+    "url": "https://github.com/thiagodnf/color-palettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 18.84,
+    "min_de2000_deutan_first6": 9.41,
+    "min_de2000_protan_first6": 10.2,
+    "min_de2000_tritan_first6": 14.06,
+    "optimal6_min_de2000": 18.84,
+    "optimal6_min_de2000_deutan": 9.41,
+    "optimal6_min_de2000_protan": 10.2,
+    "grayscale_L_spread": 0.577,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

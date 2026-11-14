@@ -1,0 +1,64 @@
+{
+  "id": "pypal_feathers_yellow_robin",
+  "name": {
+    "en": "yellow_robin (feathers)",
+    "zh": "yellow_robin（feathers）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E19E00",
+    "#FBEB5B",
+    "#85773A",
+    "#979EB9",
+    "#727B98",
+    "#454B56",
+    "#201B1E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DAD2C1",
+      "#BFB69C",
+      "#A59A78",
+      "#8B8055",
+      "#736630",
+      "#5B4C00"
+    ],
+    "paired_diverging_stops": [
+      "#FBEB5B",
+      "#F8EF98",
+      "#F6F2C7",
+      "#F4F3F2",
+      "#A6A4A4",
+      "#5F5B5D",
+      "#201B1E"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (feathers: yellow_robin)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 12.2,
+    "min_de2000_deutan_first6": 12.35,
+    "min_de2000_protan_first6": 11.96,
+    "min_de2000_tritan_first6": 12.19,
+    "optimal6_min_de2000": 12.2,
+    "optimal6_min_de2000_deutan": 12.35,
+    "optimal6_min_de2000_protan": 11.96,
+    "grayscale_L_spread": 0.698,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

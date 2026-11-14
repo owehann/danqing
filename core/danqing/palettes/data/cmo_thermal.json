@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "cmo_thermal",
-    "diverging": "cmo_balance"
+    "diverging": "cmo_balance",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D7CFDC",
+      "#BAB0D1",
+      "#9D92C4",
+      "#8273B7",
+      "#6955A9",
+      "#52349A"
+    ],
+    "paired_diverging_stops": [
+      "#042333",
+      "#4E626E",
+      "#9DA8AE",
+      "#F4F3F2",
+      "#BFC699",
+      "#8E9939",
+      "#626C00"
+    ]
   },
   "source": {
     "title": "True Colors of Oceanography: cmocean (thermal)",

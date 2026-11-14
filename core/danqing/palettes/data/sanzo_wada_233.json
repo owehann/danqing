@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_233",
+  "name": {
+    "en": "Sanzo Wada #233 (Carmine Red · Buffy Citrine · Violet Blue)",
+    "zh": "和田三造 #233（Carmine Red · Buffy Citrine · Violet Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A62C37",
+    "#96874D",
+    "#40456A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC4",
+      "#DBA8A2",
+      "#CB8581",
+      "#BA6260",
+      "#A73D41",
+      "#920623"
+    ],
+    "paired_diverging_stops": [
+      "#96874D",
+      "#B4AA84",
+      "#D4CEBA",
+      "#F4F3F2",
+      "#B3B6C3",
+      "#777B96",
+      "#40456A"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#233)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 31.91,
+    "min_de2000_deutan_first6": 15.25,
+    "min_de2000_protan_first6": 24.75,
+    "min_de2000_tritan_first6": 26.26,
+    "optimal6_min_de2000": 31.91,
+    "optimal6_min_de2000_deutan": 15.25,
+    "optimal6_min_de2000_protan": 24.75,
+    "grayscale_L_spread": 0.221,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

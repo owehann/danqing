@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "seaborn_mako",
-    "diverging": "seaborn_vlag"
+    "diverging": "seaborn_vlag",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D2D9",
+      "#ADB6CB",
+      "#8A9BBC",
+      "#6980AC",
+      "#48659C",
+      "#294A8C"
+    ],
+    "paired_diverging_stops": [
+      "#140910",
+      "#564C51",
+      "#A19B9E",
+      "#F4F3F2",
+      "#BCC3BD",
+      "#87958A",
+      "#54695B"
+    ]
   },
   "source": {
     "title": "Seaborn Perceptually Uniform Colormaps (mako)",

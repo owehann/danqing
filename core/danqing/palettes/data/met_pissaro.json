@@ -19,7 +19,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D5C7",
+      "#ADBBA8",
+      "#8AA28A",
+      "#688A6D",
+      "#457251",
+      "#205A36"
+    ],
+    "paired_diverging_stops": [
+      "#336C7F",
+      "#7397A4",
+      "#B3C4CA",
+      "#F4F3F2",
+      "#A1ABB9",
+      "#546882",
+      "#0E2A4D"
+    ]
   },
   "source": {
     "title": "Washerwoman, Study, 1880, Camille Pissarro, French",

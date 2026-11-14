@@ -1,0 +1,63 @@
+{
+  "id": "pypal_feathers_spotted_pardalote",
+  "name": {
+    "en": "spotted_pardalote (feathers)",
+    "zh": "spotted_pardalote（feathers）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FECA00",
+    "#D36328",
+    "#CB0300",
+    "#B4B9B3",
+    "#424847",
+    "#000100"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BD",
+      "#E6A494",
+      "#DA7D6C",
+      "#CB5544",
+      "#BA1F13",
+      "#A70000"
+    ],
+    "paired_diverging_stops": [
+      "#FECA00",
+      "#FBD97D",
+      "#F8E7BB",
+      "#F4F3F2",
+      "#91948F",
+      "#3A3F38",
+      "#000100"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (feathers: spotted_pardalote)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 16.06,
+    "min_de2000_deutan_first6": 10.38,
+    "min_de2000_protan_first6": 15.31,
+    "min_de2000_tritan_first6": 13.89,
+    "optimal6_min_de2000": 16.06,
+    "optimal6_min_de2000_deutan": 10.38,
+    "optimal6_min_de2000_protan": 15.31,
+    "grayscale_L_spread": 0.802,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

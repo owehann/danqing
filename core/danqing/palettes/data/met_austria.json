@@ -19,7 +19,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCABF",
+      "#E0A699",
+      "#D28273",
+      "#C25D4D",
+      "#B03326",
+      "#9C0000"
+    ],
+    "paired_diverging_stops": [
+      "#16317D",
+      "#5971A6",
+      "#A3B1CD",
+      "#F4F3F2",
+      "#CFC095",
+      "#AC8D2C",
+      "#895A00"
+    ]
   },
   "source": {
     "title": "Adoration of the Magi from Seven Scenes from the Life of Christ, 1390, Artists Unknown, Austrian",

@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "cmo_ice",
-    "diverging": "cmo_balance"
+    "diverging": "cmo_balance",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D2DB",
+      "#ADB6CE",
+      "#8A9AC0",
+      "#697EB2",
+      "#4863A3",
+      "#2A4794"
+    ],
+    "paired_diverging_stops": [
+      "#0A0C1D",
+      "#4C4F5D",
+      "#9C9DA4",
+      "#F4F3F2",
+      "#BDC2C1",
+      "#889393",
+      "#576767"
+    ]
   },
   "source": {
     "title": "True Colors of Oceanography: cmocean (ice)",

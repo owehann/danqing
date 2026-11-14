@@ -1,0 +1,63 @@
+{
+  "id": "pypal_lacroixcolor_lime",
+  "name": {
+    "en": "Lime (LaCroixColoR)",
+    "zh": "Lime（LaCroixColoR）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#2CB11B",
+    "#95C65C",
+    "#BDDE9B",
+    "#1BB6AF",
+    "#0076C0",
+    "#172869"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD9BC",
+      "#A1C291",
+      "#76AB66",
+      "#489438",
+      "#007D00",
+      "#006500"
+    ],
+    "paired_diverging_stops": [
+      "#2CB11B",
+      "#7DC972",
+      "#BADFB3",
+      "#F4F3F2",
+      "#AECAE3",
+      "#68A0D3",
+      "#0076C0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (LaCroixColoR: Lime)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 9.79,
+    "min_de2000_deutan_first6": 9.64,
+    "min_de2000_protan_first6": 8.41,
+    "min_de2000_tritan_first6": 6.73,
+    "optimal6_min_de2000": 9.79,
+    "optimal6_min_de2000_deutan": 9.64,
+    "optimal6_min_de2000_protan": 8.41,
+    "grayscale_L_spread": 0.552,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

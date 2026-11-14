@@ -1,0 +1,65 @@
+{
+  "id": "pypal_feathers_rose_crowned_fruit_dove",
+  "name": {
+    "en": "rose_crowned_fruit_dove (feathers)",
+    "zh": "rose_crowned_fruit_dove（feathers）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BD338F",
+    "#EB8252",
+    "#F5DC83",
+    "#CDD4DC",
+    "#8098A2",
+    "#8FA33F",
+    "#5F7929",
+    "#014820"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9C9D1",
+      "#DAA5BB",
+      "#CA80A6",
+      "#B85A91",
+      "#A5307C",
+      "#900067"
+    ],
+    "paired_diverging_stops": [
+      "#BD338F",
+      "#D57AB0",
+      "#E7B7D0",
+      "#F4F3F2",
+      "#F4ECCF",
+      "#F5E4AB",
+      "#F5DC83"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (feathers: rose_crowned_fruit_dove)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 18.54,
+    "min_de2000_deutan_first6": 3.83,
+    "min_de2000_protan_first6": 6.45,
+    "min_de2000_tritan_first6": 12.11,
+    "optimal6_min_de2000": 18.54,
+    "optimal6_min_de2000_deutan": 3.83,
+    "optimal6_min_de2000_protan": 6.45,
+    "grayscale_L_spread": 0.545,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

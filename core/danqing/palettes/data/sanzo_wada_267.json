@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_267",
+  "name": {
+    "en": "Sanzo Wada #267 (Cream Yellow · Yellow Orange · Benzol Green)",
+    "zh": "和田三造 #267（Cream Yellow · Yellow Orange · Benzol Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FDBF68",
+    "#F99D1B",
+    "#00978D",
+    "#006EB8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD4DC",
+      "#A2B9D0",
+      "#799FC3",
+      "#4F84B6",
+      "#1D69A8",
+      "#004E99"
+    ],
+    "paired_diverging_stops": [
+      "#F99D1B",
+      "#FABB79",
+      "#F8D8B7",
+      "#F4F3F2",
+      "#ADC7E1",
+      "#669BCE",
+      "#006EB8"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#267)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 9.6,
+    "min_de2000_deutan_first6": 7.63,
+    "min_de2000_protan_first6": 9.5,
+    "min_de2000_tritan_first6": 9.37,
+    "optimal6_min_de2000": 9.6,
+    "optimal6_min_de2000_deutan": 7.63,
+    "optimal6_min_de2000_protan": 9.5,
+    "grayscale_L_spread": 0.318,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

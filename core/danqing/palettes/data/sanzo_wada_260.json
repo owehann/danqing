@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_260",
+  "name": {
+    "en": "Sanzo Wada #260 (Old Rose · Vinaceous Cinnamon · Glaucous Green)",
+    "zh": "和田三造 #260（Old Rose · Vinaceous Cinnamon · Glaucous Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D46D7A",
+    "#EEA78C",
+    "#B4CDC2",
+    "#00B49B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CCC7",
+      "#D5AAA8",
+      "#C3898A",
+      "#B0686D",
+      "#9C4651",
+      "#872137"
+    ],
+    "paired_diverging_stops": [
+      "#EEA78C",
+      "#F2C1AE",
+      "#F4DAD0",
+      "#F4F3F2",
+      "#B9DFD4",
+      "#79CAB7",
+      "#00B49B"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#260)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 19.22,
+    "min_de2000_deutan_first6": 12.82,
+    "min_de2000_protan_first6": 7.93,
+    "min_de2000_tritan_first6": 13.96,
+    "optimal6_min_de2000": 19.22,
+    "optimal6_min_de2000_deutan": 12.82,
+    "optimal6_min_de2000_protan": 7.93,
+    "grayscale_L_spread": 0.169,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

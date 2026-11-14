@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "cmo_haline",
-    "diverging": "cmo_balance"
+    "diverging": "cmo_balance",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD0E0",
+      "#A6B2D7",
+      "#8094CC",
+      "#5D75C1",
+      "#3B56B4",
+      "#1F32A7"
+    ],
+    "paired_diverging_stops": [
+      "#2A186C",
+      "#63619A",
+      "#A8A8C7",
+      "#F4F3F2",
+      "#C6C2A7",
+      "#9B925E",
+      "#726400"
+    ]
   },
   "source": {
     "title": "True Colors of Oceanography: cmocean (haline)",

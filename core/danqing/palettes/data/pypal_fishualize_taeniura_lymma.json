@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_taeniura_lymma",
+  "name": {
+    "en": "Taeniura_lymma (fishualize)",
+    "zh": "Taeniura_lymma（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F5A507",
+    "#AF9241",
+    "#41917B",
+    "#0464F9",
+    "#27B6FD"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#C9D3E8",
+      "#9DB7E6",
+      "#719AE3",
+      "#457CDE",
+      "#115AD8",
+      "#002FD0"
+    ],
+    "paired_diverging_stops": [
+      "#F5A507",
+      "#F6C177",
+      "#F6DBB7",
+      "#F4F3F2",
+      "#AAC8FA",
+      "#629AFC",
+      "#0464F9"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Taeniura_lymma)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.6,
+    "min_de2000_deutan_first6": 13.25,
+    "min_de2000_protan_first6": 10.4,
+    "min_de2000_tritan_first6": 12.52,
+    "optimal6_min_de2000": 15.6,
+    "optimal6_min_de2000_deutan": 13.25,
+    "optimal6_min_de2000_protan": 10.4,
+    "grayscale_L_spread": 0.226,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

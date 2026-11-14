@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "oslo",
-    "diverging": "berlin"
+    "diverging": "berlin",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD4D4",
+      "#A9B9C0",
+      "#849FAD",
+      "#5F8699",
+      "#396D86",
+      "#045473"
+    ],
+    "paired_diverging_stops": [
+      "#190C09",
+      "#5A4F4B",
+      "#A49D9A",
+      "#F4F3F2",
+      "#D5B9B8",
+      "#B58180",
+      "#924B4D"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (berlin)",

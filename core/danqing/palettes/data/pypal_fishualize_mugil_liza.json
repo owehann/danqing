@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_mugil_liza",
+  "name": {
+    "en": "Mugil_liza (fishualize)",
+    "zh": "Mugil_liza（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4E4139",
+    "#888862",
+    "#B5AFB1",
+    "#D6D5DB",
+    "#E4EDF4"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8D2C5",
+      "#BBB7A4",
+      "#9F9C84",
+      "#838165",
+      "#696847",
+      "#504F29"
+    ],
+    "paired_diverging_stops": [
+      "#4E4139",
+      "#827872",
+      "#B9B4B0",
+      "#F4F3F2",
+      "#EFF1F3",
+      "#E9EFF3",
+      "#E4EDF4"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Mugil_liza)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 6.78,
+    "min_de2000_deutan_first6": 5.04,
+    "min_de2000_protan_first6": 5.19,
+    "min_de2000_tritan_first6": 7.82,
+    "optimal6_min_de2000": 6.78,
+    "optimal6_min_de2000_deutan": 5.04,
+    "optimal6_min_de2000_protan": 5.19,
+    "grayscale_L_spread": 0.555,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

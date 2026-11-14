@@ -19,7 +19,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CFBD",
+      "#CEB093",
+      "#BB916A",
+      "#A67340",
+      "#925504",
+      "#7C3700"
+    ],
+    "paired_diverging_stops": [
+      "#421600",
+      "#7C5A4B",
+      "#B7A49B",
+      "#F4F3F2",
+      "#B8C2CB",
+      "#7F93A6",
+      "#496781"
+    ]
   },
   "source": {
     "title": "Oedipus and the Sphinx, 1864, Gustave Moreau, French",

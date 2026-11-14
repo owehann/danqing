@@ -1,0 +1,67 @@
+{
+  "id": "pypal_palettetown_shedinja",
+  "name": {
+    "en": "shedinja (palettetown)",
+    "zh": "shedinja（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B0A038",
+    "#D0C040",
+    "#887028",
+    "#504828",
+    "#F0E060",
+    "#B8B8B8",
+    "#F8F8F8",
+    "#D8D8D8",
+    "#705828",
+    "#A08030"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DBD2C0",
+      "#C2B599",
+      "#A99973",
+      "#907E4E",
+      "#796325",
+      "#624900"
+    ],
+    "paired_diverging_stops": [
+      "#504828",
+      "#837D67",
+      "#BAB7AA",
+      "#F4F3F2",
+      "#F2EEC7",
+      "#F1E799",
+      "#F0E060"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: shedinja)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 7.65,
+    "min_de2000_deutan_first6": 7.57,
+    "min_de2000_protan_first6": 7.75,
+    "min_de2000_tritan_first6": 7.56,
+    "optimal6_min_de2000": 7.65,
+    "optimal6_min_de2000_deutan": 7.57,
+    "optimal6_min_de2000_protan": 7.75,
+    "grayscale_L_spread": 0.578,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

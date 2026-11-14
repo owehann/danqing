@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_324",
+  "name": {
+    "en": "Sanzo Wada #324 (Pompeian Red · Olympic Blue · Aconite Violet)",
+    "zh": "和田三造 #324（Pompeian Red · Olympic Blue · Aconite Violet）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#AB2439",
+    "#5A82B3",
+    "#A36AA5",
+    "#B6BFC1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC4",
+      "#DDA7A2",
+      "#CE8381",
+      "#BD5F61",
+      "#AB3842",
+      "#960024"
+    ],
+    "paired_diverging_stops": [
+      "#AB2439",
+      "#CA7073",
+      "#E2B2B1",
+      "#F4F3F2",
+      "#BFCDDE",
+      "#8CA7C9",
+      "#5A82B3"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#324)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 25.28,
+    "min_de2000_deutan_first6": 5.47,
+    "min_de2000_protan_first6": 4.22,
+    "min_de2000_tritan_first6": 22.9,
+    "optimal6_min_de2000": 25.28,
+    "optimal6_min_de2000_deutan": 5.47,
+    "optimal6_min_de2000_protan": 4.22,
+    "grayscale_L_spread": 0.31,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

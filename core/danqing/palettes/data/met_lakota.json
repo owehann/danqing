@@ -18,7 +18,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CED6C4",
+      "#A7BEA2",
+      "#81A680",
+      "#5A8E60",
+      "#307740",
+      "#00601F"
+    ],
+    "paired_diverging_stops": [
+      "#885A00",
+      "#AC8C42",
+      "#CFBF9C",
+      "#F4F3F2",
+      "#A5AABF",
+      "#5D648D",
+      "#20235B"
+    ]
   },
   "source": {
     "title": "Dress, 1870, Lakota/Teton Sioux, Native American",

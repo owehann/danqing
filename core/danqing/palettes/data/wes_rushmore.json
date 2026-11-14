@@ -17,7 +17,25 @@
   "neutral": "#B9B4AB",
   "partners": {
     "sequential": "lajolla",
-    "diverging": "RdYlBu"
+    "diverging": "RdYlBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BB",
+      "#E8A390",
+      "#DD7B66",
+      "#CF5139",
+      "#BF1100",
+      "#AC0000"
+    ],
+    "paired_diverging_stops": [
+      "#7E5D00",
+      "#A58E5C",
+      "#CCC0A6",
+      "#F4F3F2",
+      "#AFAAB7",
+      "#6F657F",
+      "#35274A"
+    ]
   },
   "source": {
     "title": "wesanderson Cinema Color Palette (Rushmore1)",

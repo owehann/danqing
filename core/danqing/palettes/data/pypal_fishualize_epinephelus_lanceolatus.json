@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_epinephelus_lanceolatus",
+  "name": {
+    "en": "Epinephelus_lanceolatus (fishualize)",
+    "zh": "Epinephelus_lanceolatus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2A3F6E",
+    "#3E92E0",
+    "#C0CED1",
+    "#FCD34B",
+    "#F79409"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD4DC",
+      "#A3B9D0",
+      "#7A9EC4",
+      "#5184B6",
+      "#2169A8",
+      "#004D9A"
+    ],
+    "paired_diverging_stops": [
+      "#3E92E0",
+      "#7FB3E8",
+      "#BAD4EE",
+      "#F4F3F2",
+      "#F8D5B5",
+      "#F9B675",
+      "#F79409"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Epinephelus_lanceolatus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 20.14,
+    "min_de2000_deutan_first6": 9.85,
+    "min_de2000_protan_first6": 13.67,
+    "min_de2000_tritan_first6": 16.51,
+    "optimal6_min_de2000": 20.14,
+    "optimal6_min_de2000_deutan": 9.85,
+    "optimal6_min_de2000_protan": 13.67,
+    "grayscale_L_spread": 0.504,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

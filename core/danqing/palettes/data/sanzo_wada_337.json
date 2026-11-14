@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_337",
+  "name": {
+    "en": "Sanzo Wada #337 (Vistoris Lake · Laelia Pink · Violet Carmine)",
+    "zh": "和田三造 #337（Vistoris Lake · Laelia Pink · Violet Carmine）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6D4145",
+    "#CA92A8",
+    "#713B4C",
+    "#111314"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0CECB",
+      "#CAAFB0",
+      "#B49095",
+      "#9D727B",
+      "#875562",
+      "#71384A"
+    ],
+    "paired_diverging_stops": [
+      "#CA92A8",
+      "#D9B2C0",
+      "#E7D2D9",
+      "#F4F3F2",
+      "#9FA0A0",
+      "#535455",
+      "#111314"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#337)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 5.16,
+    "min_de2000_deutan_first6": 3.93,
+    "min_de2000_protan_first6": 6.3,
+    "min_de2000_tritan_first6": 2.17,
+    "optimal6_min_de2000": 5.16,
+    "optimal6_min_de2000_deutan": 3.93,
+    "optimal6_min_de2000_protan": 6.3,
+    "grayscale_L_spread": 0.535,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

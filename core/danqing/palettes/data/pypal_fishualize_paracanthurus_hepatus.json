@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_paracanthurus_hepatus",
+  "name": {
+    "en": "Paracanthurus_hepatus (fishualize)",
+    "zh": "Paracanthurus_hepatus（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#782E00",
+    "#DED324",
+    "#6099FD",
+    "#2E3BF8",
+    "#061135"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD2EC",
+      "#A1B4EE",
+      "#7995EE",
+      "#5474ED",
+      "#344CE9",
+      "#2400E4"
+    ],
+    "paired_diverging_stops": [
+      "#DED324",
+      "#E5DF81",
+      "#ECEABC",
+      "#F4F3F2",
+      "#A9BFFB",
+      "#6386FC",
+      "#2E3BF8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Paracanthurus_hepatus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 29.37,
+    "min_de2000_deutan_first6": 22.19,
+    "min_de2000_protan_first6": 19.09,
+    "min_de2000_tritan_first6": 21.68,
+    "optimal6_min_de2000": 29.37,
+    "optimal6_min_de2000_deutan": 22.19,
+    "optimal6_min_de2000_protan": 19.09,
+    "grayscale_L_spread": 0.654,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

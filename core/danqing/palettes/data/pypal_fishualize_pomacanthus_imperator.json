@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_pomacanthus_imperator",
+  "name": {
+    "en": "Pomacanthus_imperator (fishualize)",
+    "zh": "Pomacanthus_imperator（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#04093A",
+    "#0527B4",
+    "#555DFE",
+    "#FAF830",
+    "#B8980F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD1E8",
+      "#A9B3E6",
+      "#8694E3",
+      "#6574DD",
+      "#4950D7",
+      "#341BCF"
+    ],
+    "paired_diverging_stops": [
+      "#0527B4",
+      "#4D75CE",
+      "#9EB4E3",
+      "#F4F3F2",
+      "#F5F6C2",
+      "#F7F88B",
+      "#FAF830"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Pomacanthus_imperator)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 18.85,
+    "min_de2000_deutan_first6": 18.8,
+    "min_de2000_protan_first6": 19.34,
+    "min_de2000_tritan_first6": 18.23,
+    "optimal6_min_de2000": 18.85,
+    "optimal6_min_de2000_deutan": 18.8,
+    "optimal6_min_de2000_protan": 19.34,
+    "grayscale_L_spread": 0.769,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

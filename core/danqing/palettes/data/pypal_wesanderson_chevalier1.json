@@ -1,0 +1,61 @@
+{
+  "id": "pypal_wesanderson_chevalier1",
+  "name": {
+    "en": "Chevalier1 (wesanderson)",
+    "zh": "Chevalier1（wesanderson）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#446455",
+    "#FDD262",
+    "#D3DDDC",
+    "#C7B19C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D4CA",
+      "#B2B9AE",
+      "#919F93",
+      "#718678",
+      "#526D5E",
+      "#345546"
+    ],
+    "paired_diverging_stops": [
+      "#446455",
+      "#7C9186",
+      "#B6C1BA",
+      "#F4F3F2",
+      "#F7E9C7",
+      "#FADE99",
+      "#FDD262"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (wesanderson: Chevalier1)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 17.77,
+    "min_de2000_deutan_first6": 15.05,
+    "min_de2000_protan_first6": 14.59,
+    "min_de2000_tritan_first6": 9.76,
+    "optimal6_min_de2000": 17.77,
+    "optimal6_min_de2000_deutan": 15.05,
+    "optimal6_min_de2000_protan": 14.59,
+    "grayscale_L_spread": 0.416,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

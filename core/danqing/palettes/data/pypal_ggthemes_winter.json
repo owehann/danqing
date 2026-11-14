@@ -1,0 +1,67 @@
+{
+  "id": "pypal_ggthemes_winter",
+  "name": {
+    "en": "Winter (ggthemes)",
+    "zh": "Winter（ggthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#90728F",
+    "#B9A0B4",
+    "#9D983D",
+    "#CECB76",
+    "#E15759",
+    "#FF9888",
+    "#6B6B6B",
+    "#BAB2AE",
+    "#AA8780",
+    "#DAB6AF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC3",
+      "#DEA79F",
+      "#CF837C",
+      "#BE5F5B",
+      "#AC373A",
+      "#980017"
+    ],
+    "paired_diverging_stops": [
+      "#90728F",
+      "#B19BAF",
+      "#D2C7D0",
+      "#F4F3F2",
+      "#E7E6CA",
+      "#DAD9A2",
+      "#CECB76"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggthemes: Winter)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 14.39,
+    "min_de2000_deutan_first6": 5.12,
+    "min_de2000_protan_first6": 13.89,
+    "min_de2000_tritan_first6": 9.63,
+    "optimal6_min_de2000": 14.39,
+    "optimal6_min_de2000_deutan": 5.12,
+    "optimal6_min_de2000_protan": 13.89,
+    "grayscale_L_spread": 0.298,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ggprism_quiet2",
+  "name": {
+    "en": "quiet2 (ggprism)",
+    "zh": "quiet2（ggprism）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#006666",
+    "#CCCC99",
+    "#999966",
+    "#99CCCC",
+    "#6C6935",
+    "#F0E68C",
+    "#336666"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8D3C3",
+      "#BCB79F",
+      "#A09C7D",
+      "#85825B",
+      "#6B683A",
+      "#534F16"
+    ],
+    "paired_diverging_stops": [
+      "#006666",
+      "#639392",
+      "#ABC3C1",
+      "#F4F3F2",
+      "#F2EFD2",
+      "#F1EBB1",
+      "#F0E68C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggprism: quiet2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 9.9,
+    "min_de2000_deutan_first6": 9.83,
+    "min_de2000_protan_first6": 9.61,
+    "min_de2000_tritan_first6": 9.28,
+    "optimal6_min_de2000": 9.9,
+    "optimal6_min_de2000_deutan": 9.83,
+    "optimal6_min_de2000_protan": 9.61,
+    "grayscale_L_spread": 0.451,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

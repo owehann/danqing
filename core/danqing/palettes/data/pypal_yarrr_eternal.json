@@ -1,0 +1,64 @@
+{
+  "id": "pypal_yarrr_eternal",
+  "name": {
+    "en": "eternal (yarrr)",
+    "zh": "eternal（yarrr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#170C2E",
+    "#751029",
+    "#52194C",
+    "#473B75",
+    "#4D709C",
+    "#6F766B",
+    "#92ADC4"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D2D3D5",
+      "#AEB7C3",
+      "#8C9CB1",
+      "#6B829F",
+      "#4B688D",
+      "#2B4E7A"
+    ],
+    "paired_diverging_stops": [
+      "#170C2E",
+      "#57516B",
+      "#A19EAC",
+      "#F4F3F2",
+      "#D3DCE3",
+      "#B2C4D3",
+      "#92ADC4"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (yarrr: eternal)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 13.83,
+    "min_de2000_deutan_first6": 9.11,
+    "min_de2000_protan_first6": 7.61,
+    "min_de2000_tritan_first6": 13.92,
+    "optimal6_min_de2000": 13.83,
+    "optimal6_min_de2000_deutan": 9.11,
+    "optimal6_min_de2000_protan": 7.61,
+    "grayscale_L_spread": 0.542,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

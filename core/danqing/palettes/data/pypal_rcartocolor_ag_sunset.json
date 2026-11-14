@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_ag_sunset",
+  "name": {
+    "en": "ag_Sunset (rcartocolor)",
+    "zh": "ag_Sunset（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#4B2991",
+    "#872CA2",
+    "#C0369D",
+    "#EA4F88",
+    "#FA7876",
+    "#F6A97A",
+    "#EDD9A3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8C9D3",
+      "#D9A4BF",
+      "#C97FAC",
+      "#B75998",
+      "#A32E84",
+      "#8E0070"
+    ],
+    "paired_diverging_stops": [
+      "#4B2991",
+      "#7D6EB4",
+      "#B6B0D4",
+      "#F4F3F2",
+      "#F6DBCA",
+      "#F7C2A3",
+      "#F6A97A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: ag_Sunset)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 11.29,
+    "min_de2000_deutan_first6": 6.97,
+    "min_de2000_protan_first6": 5.58,
+    "min_de2000_tritan_first6": 6.1,
+    "optimal6_min_de2000": 14.7,
+    "optimal6_min_de2000_deutan": 6.97,
+    "optimal6_min_de2000_protan": 9.81,
+    "grayscale_L_spread": 0.499,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

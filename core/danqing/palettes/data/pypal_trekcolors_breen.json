@@ -1,0 +1,65 @@
+{
+  "id": "pypal_trekcolors_breen",
+  "name": {
+    "en": "breen (trekcolors)",
+    "zh": "breen（trekcolors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#56483D",
+    "#332822",
+    "#DFCDB9",
+    "#996601",
+    "#8BC95A",
+    "#6C696F",
+    "#F1E899",
+    "#EE711E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0D0BD",
+      "#CAB294",
+      "#B4956C",
+      "#9E7842",
+      "#885C0B",
+      "#733F00"
+    ],
+    "paired_diverging_stops": [
+      "#332822",
+      "#6E6560",
+      "#AEA9A6",
+      "#F4F3F2",
+      "#F3F0D6",
+      "#F2ECB8",
+      "#F1E899"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (trekcolors: breen)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 10.8,
+    "min_de2000_deutan_first6": 10.89,
+    "min_de2000_protan_first6": 10.61,
+    "min_de2000_tritan_first6": 10.63,
+    "optimal6_min_de2000": 10.8,
+    "optimal6_min_de2000_deutan": 10.89,
+    "optimal6_min_de2000_protan": 10.61,
+    "grayscale_L_spread": 0.633,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

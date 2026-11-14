@@ -1,0 +1,64 @@
+{
+  "id": "pypal_ggsci_uniform_startrek",
+  "name": {
+    "en": "uniform_startrek (ggsci)",
+    "zh": "uniform_startrek（ggsci）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#CC0C00",
+    "#5C88DA",
+    "#84BD00",
+    "#FFCD00",
+    "#7C878E",
+    "#00B5E2",
+    "#00AF66"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BD",
+      "#E5A494",
+      "#D97E6C",
+      "#CB5543",
+      "#BA2111",
+      "#A60000"
+    ],
+    "paired_diverging_stops": [
+      "#5C88DA",
+      "#8DACE4",
+      "#C0D0EC",
+      "#F4F3F2",
+      "#F8E8BB",
+      "#FCDB7E",
+      "#FFCD00"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggsci: uniform_startrek)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 15.92,
+    "min_de2000_deutan_first6": 9.74,
+    "min_de2000_protan_first6": 7.59,
+    "min_de2000_tritan_first6": 12.31,
+    "optimal6_min_de2000": 15.92,
+    "optimal6_min_de2000_deutan": 9.74,
+    "optimal6_min_de2000_protan": 7.59,
+    "grayscale_L_spread": 0.333,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

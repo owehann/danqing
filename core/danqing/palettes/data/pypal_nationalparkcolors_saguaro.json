@@ -1,0 +1,63 @@
+{
+  "id": "pypal_nationalparkcolors_saguaro",
+  "name": {
+    "en": "Saguaro (nationalparkcolors)",
+    "zh": "Saguaro（nationalparkcolors）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#847CA3",
+    "#E45A5A",
+    "#F4A65E",
+    "#80792B",
+    "#F2D56F",
+    "#1A1237"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC2",
+      "#DEA79E",
+      "#CF837C",
+      "#BE5F5A",
+      "#AC3739",
+      "#980015"
+    ],
+    "paired_diverging_stops": [
+      "#F2D56F",
+      "#F3E09F",
+      "#F3EACA",
+      "#F4F3F2",
+      "#A3A1B0",
+      "#595672",
+      "#1A1237"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nationalparkcolors: Saguaro)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 18.62,
+    "min_de2000_deutan_first6": 6.97,
+    "min_de2000_protan_first6": 10.08,
+    "min_de2000_tritan_first6": 12.8,
+    "optimal6_min_de2000": 18.62,
+    "optimal6_min_de2000_deutan": 6.97,
+    "optimal6_min_de2000_protan": 10.08,
+    "grayscale_L_spread": 0.66,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -18,7 +18,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC0",
+      "#DEA799",
+      "#D08474",
+      "#BF604E",
+      "#AD3828",
+      "#990000"
+    ],
+    "paired_diverging_stops": [
+      "#895900",
+      "#AC8C3D",
+      "#D0BF9A",
+      "#F4F3F2",
+      "#ABBFB4",
+      "#648D79",
+      "#165D43"
+    ]
   },
   "source": {
     "title": "Flower Garden and Bungalow, Bermuda, 1899, Winslow Homer, American",

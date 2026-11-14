@@ -1,0 +1,61 @@
+{
+  "id": "pypal_momacolors_fritsch",
+  "name": {
+    "en": "Fritsch (MoMAColors)",
+    "zh": "Fritsch（MoMAColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#0F8D7B",
+    "#8942BD",
+    "#1E1A1A",
+    "#EADD17"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDCDDD",
+      "#C5ABD2",
+      "#AE8AC6",
+      "#9768BA",
+      "#8044AC",
+      "#6B159D"
+    ],
+    "paired_diverging_stops": [
+      "#8942BD",
+      "#AC80D1",
+      "#CFBAE3",
+      "#F4F3F2",
+      "#F0EDBD",
+      "#EDE681",
+      "#EADD17"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MoMAColors: Fritsch)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 36.77,
+    "min_de2000_deutan_first6": 23.0,
+    "min_de2000_protan_first6": 34.23,
+    "min_de2000_tritan_first6": 29.93,
+    "optimal6_min_de2000": 36.77,
+    "optimal6_min_de2000_deutan": 23.0,
+    "optimal6_min_de2000_protan": 34.23,
+    "grayscale_L_spread": 0.658,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

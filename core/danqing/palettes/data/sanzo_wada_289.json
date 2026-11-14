@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_289",
+  "name": {
+    "en": "Sanzo Wada #289 (Lemon Yellow · Light Green Yellow · Violet Blue)",
+    "zh": "和田三造 #289（Lemon Yellow · Light Green Yellow · Violet Blue）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8ED43",
+    "#C7D14F",
+    "#40456A",
+    "#1E0E3F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D1D2",
+      "#B4B3BD",
+      "#9596A9",
+      "#777A94",
+      "#5B5F80",
+      "#40456C"
+    ],
+    "paired_diverging_stops": [
+      "#F8ED43",
+      "#F6F08F",
+      "#F5F2C3",
+      "#F4F3F2",
+      "#A4A1B4",
+      "#5C5579",
+      "#1E0E3F"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#289)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 9.64,
+    "min_de2000_deutan_first6": 8.36,
+    "min_de2000_protan_first6": 7.77,
+    "min_de2000_tritan_first6": 10.05,
+    "optimal6_min_de2000": 9.64,
+    "optimal6_min_de2000_deutan": 8.36,
+    "optimal6_min_de2000_protan": 7.77,
+    "grayscale_L_spread": 0.706,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

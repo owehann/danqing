@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_246",
+  "name": {
+    "en": "Sanzo Wada #246 (Corinthian Pink · Brick Red · Sulpher Yellow)",
+    "zh": "和田三造 #246（Corinthian Pink · Brick Red · Sulpher Yellow）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8B6BA",
+    "#A84222",
+    "#F5ECC2",
+    "#FDC57E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CDC0",
+      "#D7AB9A",
+      "#C68A75",
+      "#B46951",
+      "#A0472B",
+      "#8C2000"
+    ],
+    "paired_diverging_stops": [
+      "#A84222",
+      "#C67E68",
+      "#DFB8AC",
+      "#F4F3F2",
+      "#F4F1E2",
+      "#F5EFD2",
+      "#F5ECC2"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#246)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 15.38,
+    "min_de2000_deutan_first6": 10.15,
+    "min_de2000_protan_first6": 11.38,
+    "min_de2000_tritan_first6": 4.08,
+    "optimal6_min_de2000": 15.38,
+    "optimal6_min_de2000_deutan": 10.15,
+    "optimal6_min_de2000_protan": 11.38,
+    "grayscale_L_spread": 0.427,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

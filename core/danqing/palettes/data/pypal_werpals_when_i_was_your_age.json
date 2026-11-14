@@ -1,0 +1,63 @@
+{
+  "id": "pypal_werpals_when_i_was_your_age",
+  "name": {
+    "en": "when_i_was_your_age (werpals)",
+    "zh": "when_i_was_your_age（werpals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3B4274",
+    "#D2130A",
+    "#C8A88A",
+    "#857D7B",
+    "#592E2A",
+    "#E39587"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BD",
+      "#E6A394",
+      "#DA7D6C",
+      "#CC5443",
+      "#BB1E12",
+      "#A70000"
+    ],
+    "paired_diverging_stops": [
+      "#3B4274",
+      "#737A9E",
+      "#B1B5C8",
+      "#F4F3F2",
+      "#F2B5AA",
+      "#E67463",
+      "#D2130A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (werpals: when_i_was_your_age)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.73,
+    "min_de2000_deutan_first6": 0.93,
+    "min_de2000_protan_first6": 3.87,
+    "min_de2000_tritan_first6": 9.95,
+    "optimal6_min_de2000": 14.73,
+    "optimal6_min_de2000_deutan": 0.93,
+    "optimal6_min_de2000_protan": 3.87,
+    "grayscale_L_spread": 0.396,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

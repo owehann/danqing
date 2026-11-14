@@ -17,7 +17,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CDBF",
+      "#D8AB98",
+      "#C78A72",
+      "#B5684C",
+      "#A24624",
+      "#8D1E00"
+    ],
+    "paired_diverging_stops": [
+      "#241D1D",
+      "#625C5C",
+      "#A8A5A4",
+      "#F4F3F2",
+      "#D3BE99",
+      "#B2893B",
+      "#905400"
+    ]
   },
   "source": {
     "title": "Stack, 2008, Shay Alkalay, Painted plywood and steel",

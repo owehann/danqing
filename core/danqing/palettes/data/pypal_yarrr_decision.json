@@ -1,0 +1,63 @@
+{
+  "id": "pypal_yarrr_decision",
+  "name": {
+    "en": "decision (yarrr)",
+    "zh": "decision（yarrr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D57A6D",
+    "#E8B762",
+    "#9CCDDF",
+    "#525052",
+    "#E6CEAF",
+    "#BA9570"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E4CDC4",
+      "#D2ACA2",
+      "#C08C81",
+      "#AC6C61",
+      "#984D42",
+      "#832C23"
+    ],
+    "paired_diverging_stops": [
+      "#E8B762",
+      "#EDCC96",
+      "#F0E0C4",
+      "#F4F3F2",
+      "#BBB9B9",
+      "#848384",
+      "#525052"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (yarrr: decision)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 13.1,
+    "min_de2000_deutan_first6": 1.52,
+    "min_de2000_protan_first6": 6.47,
+    "min_de2000_tritan_first6": 10.17,
+    "optimal6_min_de2000": 13.1,
+    "optimal6_min_de2000_deutan": 1.52,
+    "optimal6_min_de2000_protan": 6.47,
+    "grayscale_L_spread": 0.43,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

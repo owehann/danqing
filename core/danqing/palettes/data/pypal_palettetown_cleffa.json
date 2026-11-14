@@ -1,0 +1,68 @@
+{
+  "id": "pypal_palettetown_cleffa",
+  "name": {
+    "en": "cleffa (palettetown)",
+    "zh": "cleffa（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F8C898",
+    "#F8A080",
+    "#D87040",
+    "#784800",
+    "#C04800",
+    "#A06800",
+    "#980000",
+    "#D0A028",
+    "#603020",
+    "#C80000",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BD",
+      "#E5A495",
+      "#D97E6D",
+      "#CB5544",
+      "#BA2015",
+      "#A60000"
+    ],
+    "paired_diverging_stops": [
+      "#980000",
+      "#BE6558",
+      "#DDACA3",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: cleffa)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 12.25,
+    "min_de2000_deutan_first6": 0.35,
+    "min_de2000_protan_first6": 5.44,
+    "min_de2000_tritan_first6": 9.93,
+    "optimal6_min_de2000": 12.25,
+    "optimal6_min_de2000_deutan": 0.35,
+    "optimal6_min_de2000_protan": 5.44,
+    "grayscale_L_spread": 0.611,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

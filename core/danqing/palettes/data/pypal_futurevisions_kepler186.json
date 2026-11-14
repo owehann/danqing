@@ -1,0 +1,66 @@
+{
+  "id": "pypal_futurevisions_kepler186",
+  "name": {
+    "en": "kepler186 (futurevisions)",
+    "zh": "kepler186（futurevisions）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#803233",
+    "#ED3F39",
+    "#E46844",
+    "#DC876C",
+    "#FEFEFE",
+    "#ADD0B5",
+    "#8FA3AB",
+    "#484357",
+    "#303638"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BE",
+      "#E5A497",
+      "#D97E70",
+      "#CA5549",
+      "#B9221F",
+      "#A50000"
+    ],
+    "paired_diverging_stops": [
+      "#FEFEFE",
+      "#FBFAFA",
+      "#F7F7F6",
+      "#F4F3F2",
+      "#ADAFAF",
+      "#6B7071",
+      "#303638"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (futurevisions: kepler186)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 8.27,
+    "min_de2000_deutan_first6": 3.22,
+    "min_de2000_protan_first6": 8.14,
+    "min_de2000_tritan_first6": 6.7,
+    "optimal6_min_de2000": 19.36,
+    "optimal6_min_de2000_deutan": 14.38,
+    "optimal6_min_de2000_protan": 10.56,
+    "grayscale_L_spread": 0.669,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

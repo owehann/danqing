@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lisa_georgiaokeeffe",
+  "name": {
+    "en": "GeorgiaOKeeffe (lisa)",
+    "zh": "GeorgiaOKeeffe（lisa）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#0E122D",
+    "#182044",
+    "#51628E",
+    "#91A1BA",
+    "#AFD0C9"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D4D2D5",
+      "#B3B6C2",
+      "#939AAF",
+      "#747F9D",
+      "#56658A",
+      "#3A4B77"
+    ],
+    "paired_diverging_stops": [
+      "#0E122D",
+      "#50556A",
+      "#9EA1AC",
+      "#F4F3F2",
+      "#DDE7E4",
+      "#C6DCD6",
+      "#AFD0C9"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (lisa: GeorgiaOKeeffe)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 5.26,
+    "min_de2000_deutan_first6": 5.03,
+    "min_de2000_protan_first6": 5.31,
+    "min_de2000_tritan_first6": 6.24,
+    "optimal6_min_de2000": 5.26,
+    "optimal6_min_de2000_deutan": 5.03,
+    "optimal6_min_de2000_protan": 5.31,
+    "grayscale_L_spread": 0.636,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

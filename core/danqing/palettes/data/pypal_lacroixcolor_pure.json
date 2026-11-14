@@ -1,0 +1,63 @@
+{
+  "id": "pypal_lacroixcolor_pure",
+  "name": {
+    "en": "Pure (LaCroixColoR)",
+    "zh": "Pure（LaCroixColoR）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#AFDFEF",
+    "#54BCD1",
+    "#1BB6AF",
+    "#0099D5",
+    "#007BC3",
+    "#172869"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD4DC",
+      "#A1BAD0",
+      "#76A0C3",
+      "#4B85B5",
+      "#106BA7",
+      "#004F98"
+    ],
+    "paired_diverging_stops": [
+      "#AFDFEF",
+      "#C7E6F0",
+      "#DDEDF1",
+      "#F4F3F2",
+      "#A2ACC5",
+      "#586998",
+      "#172869"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (LaCroixColoR: Pure)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 11.18,
+    "min_de2000_deutan_first6": 7.67,
+    "min_de2000_protan_first6": 9.31,
+    "min_de2000_tritan_first6": 3.24,
+    "optimal6_min_de2000": 11.18,
+    "optimal6_min_de2000_deutan": 7.67,
+    "optimal6_min_de2000_protan": 9.31,
+    "grayscale_L_spread": 0.568,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

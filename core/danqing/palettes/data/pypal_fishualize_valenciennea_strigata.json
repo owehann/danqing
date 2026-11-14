@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_valenciennea_strigata",
+  "name": {
+    "en": "Valenciennea_strigata (fishualize)",
+    "zh": "Valenciennea_strigata（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#494947",
+    "#B2CFD0",
+    "#01C1E5",
+    "#F9E44B",
+    "#A07A0E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED1BC",
+      "#C6B492",
+      "#AE9869",
+      "#987C3E",
+      "#816000",
+      "#6B4500"
+    ],
+    "paired_diverging_stops": [
+      "#01C1E5",
+      "#7DD3EA",
+      "#BCE4EE",
+      "#F4F3F2",
+      "#F5EFC4",
+      "#F7EA91",
+      "#F9E44B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Valenciennea_strigata)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 16.7,
+    "min_de2000_deutan_first6": 17.39,
+    "min_de2000_protan_first6": 14.5,
+    "min_de2000_tritan_first6": 13.78,
+    "optimal6_min_de2000": 16.7,
+    "optimal6_min_de2000_deutan": 17.39,
+    "optimal6_min_de2000_protan": 14.5,
+    "grayscale_L_spread": 0.505,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

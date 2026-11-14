@@ -17,7 +17,25 @@
   "neutral": "#B5B8BA",
   "partners": {
     "sequential": "navia",
-    "diverging": "broc"
+    "diverging": "broc",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CDC4",
+      "#D3ACA1",
+      "#C18C80",
+      "#AD6C5F",
+      "#994C40",
+      "#842A21"
+    ],
+    "paired_diverging_stops": [
+      "#4A3A3B",
+      "#7F7373",
+      "#B8B1B0",
+      "#F4F3F2",
+      "#C1C1BC",
+      "#919189",
+      "#64645A"
+    ]
   },
   "source": {
     "title": "PNWColors Pacific Northwest Nature Palette (Moth)",

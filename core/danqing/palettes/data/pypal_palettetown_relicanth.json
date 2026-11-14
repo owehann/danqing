@@ -1,0 +1,70 @@
+{
+  "id": "pypal_palettetown_relicanth",
+  "name": {
+    "en": "relicanth (palettetown)",
+    "zh": "relicanth（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D0B890",
+    "#A08880",
+    "#786058",
+    "#B09068",
+    "#000000",
+    "#F0D8B0",
+    "#504038",
+    "#685040",
+    "#887068",
+    "#F8F0D8",
+    "#B8A0A0",
+    "#887048",
+    "#F05840"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCABE",
+      "#E1A696",
+      "#D3826F",
+      "#C45C48",
+      "#B2311C",
+      "#9E0000"
+    ],
+    "paired_diverging_stops": [
+      "#000000",
+      "#333333",
+      "#8D8D8C",
+      "#F4F3F2",
+      "#F5F2E9",
+      "#F7F1E1",
+      "#F8F0D8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: relicanth)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 13,
+    "max_colors": 13,
+    "min_de2000_first6": 7.83,
+    "min_de2000_deutan_first6": 7.74,
+    "min_de2000_protan_first6": 7.96,
+    "min_de2000_tritan_first6": 5.56,
+    "optimal6_min_de2000": 7.83,
+    "optimal6_min_de2000_deutan": 7.74,
+    "optimal6_min_de2000_protan": 7.96,
+    "grayscale_L_spread": 0.955,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

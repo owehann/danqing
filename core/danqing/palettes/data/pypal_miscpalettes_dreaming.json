@@ -1,0 +1,65 @@
+{
+  "id": "pypal_miscpalettes_dreaming",
+  "name": {
+    "en": "dreaming (miscpalettes)",
+    "zh": "dreaming（miscpalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DCEAEA",
+    "#7CC3C9",
+    "#E1650B",
+    "#996244",
+    "#A83600",
+    "#519B9A",
+    "#3D726A",
+    "#03424B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCBE",
+      "#DAAA97",
+      "#CA886F",
+      "#B86648",
+      "#A6421D",
+      "#911400"
+    ],
+    "paired_diverging_stops": [
+      "#E1650B",
+      "#EC986C",
+      "#F3C6B0",
+      "#F4F3F2",
+      "#A4B5B7",
+      "#58797F",
+      "#03424B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (miscpalettes: dreaming)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 12.48,
+    "min_de2000_deutan_first6": 9.54,
+    "min_de2000_protan_first6": 11.42,
+    "min_de2000_tritan_first6": 12.14,
+    "optimal6_min_de2000": 12.48,
+    "optimal6_min_de2000_deutan": 9.54,
+    "optimal6_min_de2000_protan": 11.42,
+    "grayscale_L_spread": 0.579,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

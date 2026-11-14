@@ -1,0 +1,67 @@
+{
+  "id": "pypal_yarrr_basel",
+  "name": {
+    "en": "basel (yarrr)",
+    "zh": "basel（yarrr）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#0C5BB0",
+    "#EE0011",
+    "#15983D",
+    "#EC579A",
+    "#FA6B09",
+    "#149BED",
+    "#A1C720",
+    "#FEC10B",
+    "#16A08C",
+    "#9A703E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F2C8BC",
+      "#EBA192",
+      "#E17868",
+      "#D34B3E",
+      "#C30000",
+      "#B00000"
+    ],
+    "paired_diverging_stops": [
+      "#0C5BB0",
+      "#628EC9",
+      "#AAC1DF",
+      "#F4F3F2",
+      "#F8E4BA",
+      "#FBD37C",
+      "#FEC10B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (yarrr: basel)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 17.73,
+    "min_de2000_deutan_first6": 8.95,
+    "min_de2000_protan_first6": 4.55,
+    "min_de2000_tritan_first6": 5.46,
+    "optimal6_min_de2000": 17.73,
+    "optimal6_min_de2000_deutan": 8.95,
+    "optimal6_min_de2000_protan": 4.55,
+    "grayscale_L_spread": 0.365,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

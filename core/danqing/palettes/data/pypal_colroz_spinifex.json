@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_spinifex",
+  "name": {
+    "en": "spinifex (colRoz)",
+    "zh": "spinifex（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#10100E",
+    "#697573",
+    "#384A22",
+    "#8D8B4E",
+    "#D6AA85",
+    "#E4E6D1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8D3C2",
+      "#BCB79D",
+      "#A09C7A",
+      "#858257",
+      "#6B6833",
+      "#535007"
+    ],
+    "paired_diverging_stops": [
+      "#10100E",
+      "#525250",
+      "#9F9F9D",
+      "#F4F3F2",
+      "#EFEFE7",
+      "#E9EADC",
+      "#E4E6D1"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: spinifex)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 21.15,
+    "min_de2000_deutan_first6": 14.03,
+    "min_de2000_protan_first6": 13.13,
+    "min_de2000_tritan_first6": 16.97,
+    "optimal6_min_de2000": 21.15,
+    "optimal6_min_de2000_deutan": 14.03,
+    "optimal6_min_de2000_protan": 13.13,
+    "grayscale_L_spread": 0.746,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

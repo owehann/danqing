@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_calochortus",
+  "name": {
+    "en": "calochortus (calecopal)",
+    "zh": "calochortus（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#CAC8CF",
+    "#C9B3B5",
+    "#8F706E",
+    "#AF6E78",
+    "#5C3327"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CEC9",
+      "#CBAEAC",
+      "#B68F90",
+      "#A17175",
+      "#8B545B",
+      "#753742"
+    ],
+    "paired_diverging_stops": [
+      "#CAC8CF",
+      "#D8D6DB",
+      "#E6E5E6",
+      "#F4F3F2",
+      "#C0AFA9",
+      "#8E6F65",
+      "#5C3327"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: calochortus)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.35,
+    "min_de2000_deutan_first6": 4.35,
+    "min_de2000_protan_first6": 3.65,
+    "min_de2000_tritan_first6": 9.12,
+    "optimal6_min_de2000": 9.35,
+    "optimal6_min_de2000_deutan": 4.35,
+    "optimal6_min_de2000_protan": 3.65,
+    "grayscale_L_spread": 0.467,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

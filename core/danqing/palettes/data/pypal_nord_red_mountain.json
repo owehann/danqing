@@ -1,0 +1,65 @@
+{
+  "id": "pypal_nord_red_mountain",
+  "name": {
+    "en": "red_mountain (nord)",
+    "zh": "red_mountain（nord）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7D3232",
+    "#7D4B4B",
+    "#7D6464",
+    "#AF967D",
+    "#FAC87D",
+    "#E1AF64",
+    "#C8964B",
+    "#32324B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC6",
+      "#D0ADA6",
+      "#BD8D87",
+      "#A96E69",
+      "#944F4C",
+      "#7E2F30"
+    ],
+    "paired_diverging_stops": [
+      "#FAC87D",
+      "#F9D7A6",
+      "#F7E5CD",
+      "#F4F3F2",
+      "#AEAEB7",
+      "#6C6D7F",
+      "#32324B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nord: red_mountain)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 6.27,
+    "min_de2000_deutan_first6": 6.13,
+    "min_de2000_protan_first6": 6.49,
+    "min_de2000_tritan_first6": 5.91,
+    "optimal6_min_de2000": 6.27,
+    "optimal6_min_de2000_deutan": 6.13,
+    "optimal6_min_de2000_protan": 6.49,
+    "grayscale_L_spread": 0.532,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

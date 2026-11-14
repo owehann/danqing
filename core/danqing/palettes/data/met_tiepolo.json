@@ -20,7 +20,25 @@
   "neutral": "#B8B4AC",
   "partners": {
     "sequential": "batlow",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CEBF",
+      "#D3AD98",
+      "#C18D72",
+      "#AE6D4C",
+      "#9A4E23",
+      "#852C00"
+    ],
+    "paired_diverging_stops": [
+      "#855A00",
+      "#AA8C56",
+      "#CEBFA3",
+      "#F4F3F2",
+      "#A8B7C6",
+      "#607E9A",
+      "#17486F"
+    ]
   },
   "source": {
     "title": "MetBrewer: Tiepolo (Met Object 437798)",

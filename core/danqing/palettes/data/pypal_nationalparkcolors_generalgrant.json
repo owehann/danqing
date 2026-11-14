@@ -1,0 +1,65 @@
+{
+  "id": "pypal_nationalparkcolors_generalgrant",
+  "name": {
+    "en": "GeneralGrant (nationalparkcolors)",
+    "zh": "GeneralGrant（nationalparkcolors）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FBE697",
+    "#F3AE6D",
+    "#516888",
+    "#C9DACA",
+    "#14232A",
+    "#557780",
+    "#1F304A",
+    "#802729"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CCC4",
+      "#D3AAA3",
+      "#C08982",
+      "#AD6863",
+      "#984744",
+      "#822427"
+    ],
+    "paired_diverging_stops": [
+      "#FBE697",
+      "#F9EBB7",
+      "#F6EFD5",
+      "#F4F3F2",
+      "#A6ADB7",
+      "#5F6C7F",
+      "#1F304A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nationalparkcolors: GeneralGrant)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 13.05,
+    "min_de2000_deutan_first6": 7.91,
+    "min_de2000_protan_first6": 8.93,
+    "min_de2000_tritan_first6": 4.83,
+    "optimal6_min_de2000": 13.05,
+    "optimal6_min_de2000_deutan": 7.91,
+    "optimal6_min_de2000_protan": 8.93,
+    "grayscale_L_spread": 0.679,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -20,7 +20,25 @@
   "neutral": "#A6A3A8",
   "partners": {
     "sequential": "batlow",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC1",
+      "#DBA79C",
+      "#CB8379",
+      "#BA5F56",
+      "#A73933",
+      "#92000B"
+    ],
+    "paired_diverging_stops": [
+      "#386087",
+      "#748FAB",
+      "#B3C0CE",
+      "#F4F3F2",
+      "#CEBFA1",
+      "#A98C50",
+      "#855B00"
+    ]
   },
   "source": {
     "title": "Plate with Relief Dragon among Clouds (Longquan ware) & Song Kesi Tapestry",

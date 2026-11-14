@@ -1,0 +1,61 @@
+{
+  "id": "pypal_ggprism_fir",
+  "name": {
+    "en": "fir (ggprism)",
+    "zh": "fir（ggprism）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#336666",
+    "#20B2AA",
+    "#99CCCC",
+    "#000000"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D4CE",
+      "#ADBAB5",
+      "#8AA09C",
+      "#678784",
+      "#456F6D",
+      "#1F5757"
+    ],
+    "paired_diverging_stops": [
+      "#99CCCC",
+      "#B8D9D9",
+      "#D6E6E5",
+      "#F4F3F2",
+      "#8D8D8C",
+      "#333333",
+      "#000000"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggprism: fir)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 13.92,
+    "min_de2000_deutan_first6": 10.9,
+    "min_de2000_protan_first6": 8.51,
+    "min_de2000_tritan_first6": 11.09,
+    "optimal6_min_de2000": 13.92,
+    "optimal6_min_de2000_deutan": 10.9,
+    "optimal6_min_de2000_protan": 8.51,
+    "grayscale_L_spread": 0.81,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

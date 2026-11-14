@@ -21,7 +21,25 @@
   "neutral": "#EBEEEC",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "broc"
+    "diverging": "broc",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D8D3C3",
+      "#BBB7A1",
+      "#9F9C7F",
+      "#83825E",
+      "#69693E",
+      "#50501C"
+    ],
+    "paired_diverging_stops": [
+      "#2C1A4C",
+      "#675D82",
+      "#ABA5B9",
+      "#F4F3F2",
+      "#C0C1BF",
+      "#8F918F",
+      "#616462"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (broc)",

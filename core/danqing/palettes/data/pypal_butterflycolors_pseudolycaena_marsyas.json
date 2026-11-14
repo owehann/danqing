@@ -1,0 +1,62 @@
+{
+  "id": "pypal_butterflycolors_pseudolycaena_marsyas",
+  "name": {
+    "en": "pseudolycaena_marsyas (ButterflyColors)",
+    "zh": "pseudolycaena_marsyas（ButterflyColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#89B7CF",
+    "#5C92B4",
+    "#619FA2",
+    "#8C6751",
+    "#593527"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDD0C6",
+      "#C5B2A5",
+      "#AD9585",
+      "#967967",
+      "#7E5E4A",
+      "#68432D"
+    ],
+    "paired_diverging_stops": [
+      "#89B7CF",
+      "#ADCBDB",
+      "#D0DFE6",
+      "#F4F3F2",
+      "#BFAFA9",
+      "#8B7065",
+      "#593527"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ButterflyColors: pseudolycaena_marsyas)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 11.9,
+    "min_de2000_deutan_first6": 9.19,
+    "min_de2000_protan_first6": 10.67,
+    "min_de2000_tritan_first6": 3.62,
+    "optimal6_min_de2000": 11.9,
+    "optimal6_min_de2000_deutan": 9.19,
+    "optimal6_min_de2000_protan": 10.67,
+    "grayscale_L_spread": 0.386,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "pypal_vangogh_sunflowerslondon",
+  "name": {
+    "en": "SunflowersLondon (vangogh)",
+    "zh": "SunflowersLondon（vangogh）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D49F2D",
+    "#9D743B",
+    "#CDA35B",
+    "#88925D",
+    "#5E3E34"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DED1C1",
+      "#C6B39B",
+      "#AF9676",
+      "#987A52",
+      "#825E2C",
+      "#6B4300"
+    ],
+    "paired_diverging_stops": [
+      "#D49F2D",
+      "#DFBC7B",
+      "#EAD8B8",
+      "#F4F3F2",
+      "#C0B3AE",
+      "#8E766E",
+      "#5E3E34"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (vangogh: SunflowersLondon)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 5.9,
+    "min_de2000_deutan_first6": 5.54,
+    "min_de2000_protan_first6": 6.71,
+    "min_de2000_tritan_first6": 3.31,
+    "optimal6_min_de2000": 5.9,
+    "optimal6_min_de2000_deutan": 5.54,
+    "optimal6_min_de2000_protan": 6.71,
+    "grayscale_L_spread": 0.341,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

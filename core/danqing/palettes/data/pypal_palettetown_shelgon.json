@@ -1,0 +1,69 @@
+{
+  "id": "pypal_palettetown_shelgon",
+  "name": {
+    "en": "shelgon (palettetown)",
+    "zh": "shelgon（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E8E8C8",
+    "#C8C8C8",
+    "#505070",
+    "#9088B0",
+    "#B0B0B8",
+    "#181818",
+    "#484038",
+    "#787860",
+    "#F0F000",
+    "#605848",
+    "#C0C000",
+    "#B85820"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDBE",
+      "#D5AC96",
+      "#C48C6F",
+      "#B16C47",
+      "#9D4B1A",
+      "#892700"
+    ],
+    "paired_diverging_stops": [
+      "#181818",
+      "#585858",
+      "#A3A2A1",
+      "#F4F3F2",
+      "#F2F4BF",
+      "#F0F283",
+      "#F0F000"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: shelgon)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 7.47,
+    "min_de2000_deutan_first6": 7.26,
+    "min_de2000_protan_first6": 7.22,
+    "min_de2000_tritan_first6": 6.27,
+    "optimal6_min_de2000": 7.47,
+    "optimal6_min_de2000_deutan": 7.26,
+    "optimal6_min_de2000_protan": 7.22,
+    "grayscale_L_spread": 0.716,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

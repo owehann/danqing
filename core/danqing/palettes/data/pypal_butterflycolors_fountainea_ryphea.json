@@ -1,0 +1,62 @@
+{
+  "id": "pypal_butterflycolors_fountainea_ryphea",
+  "name": {
+    "en": "fountainea_ryphea (ButterflyColors)",
+    "zh": "fountainea_ryphea（ButterflyColors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8C2B3D",
+    "#2F182A",
+    "#BF4124",
+    "#51151F",
+    "#43211F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBF",
+      "#DCA998",
+      "#CD8672",
+      "#BC634C",
+      "#A93D23",
+      "#950100"
+    ],
+    "paired_diverging_stops": [
+      "#2F182A",
+      "#6C5966",
+      "#ADA3A9",
+      "#F4F3F2",
+      "#E8BAAE",
+      "#D6806B",
+      "#BF4124"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ButterflyColors: fountainea_ryphea)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 7.04,
+    "min_de2000_deutan_first6": 1.38,
+    "min_de2000_protan_first6": 2.6,
+    "min_de2000_tritan_first6": 6.46,
+    "optimal6_min_de2000": 7.04,
+    "optimal6_min_de2000_deutan": 1.38,
+    "optimal6_min_de2000_protan": 2.6,
+    "grayscale_L_spread": 0.301,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

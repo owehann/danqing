@@ -1,0 +1,65 @@
+{
+  "id": "pypal_awtools_ppalette",
+  "name": {
+    "en": "ppalette (awtools)",
+    "zh": "ppalette（awtools）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F7DC05",
+    "#3D98D3",
+    "#EC0B88",
+    "#5E35B1",
+    "#F9791E",
+    "#3DD378",
+    "#C6C6C6",
+    "#444444"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C7CC",
+      "#E79EB2",
+      "#DB7598",
+      "#CD487F",
+      "#BB0067",
+      "#A70050"
+    ],
+    "paired_diverging_stops": [
+      "#F7DC05",
+      "#F6E580",
+      "#F4EDBD",
+      "#F4F3F2",
+      "#BDB5E0",
+      "#8A78CA",
+      "#5E35B1"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (awtools: ppalette)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 29.68,
+    "min_de2000_deutan_first6": 12.53,
+    "min_de2000_protan_first6": 10.24,
+    "min_de2000_tritan_first6": 8.28,
+    "optimal6_min_de2000": 29.68,
+    "optimal6_min_de2000_deutan": 12.53,
+    "optimal6_min_de2000_protan": 10.24,
+    "grayscale_L_spread": 0.503,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

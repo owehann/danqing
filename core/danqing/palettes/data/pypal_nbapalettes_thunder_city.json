@@ -1,0 +1,63 @@
+{
+  "id": "pypal_nbapalettes_thunder_city",
+  "name": {
+    "en": "thunder_city (nbapalettes)",
+    "zh": "thunder_city（nbapalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#25282A",
+    "#545859",
+    "#9EA2A2",
+    "#FFB81C",
+    "#F9423A",
+    "#0072CE"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C9BE",
+      "#E7A395",
+      "#DB7C6E",
+      "#CD5346",
+      "#BC1A18",
+      "#A80000"
+    ],
+    "paired_diverging_stops": [
+      "#FFB81C",
+      "#FCCD7D",
+      "#F9E1BA",
+      "#F4F3F2",
+      "#ADC9E9",
+      "#679FDD",
+      "#0072CE"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nbapalettes: thunder_city)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 15.77,
+    "min_de2000_deutan_first6": 15.73,
+    "min_de2000_protan_first6": 15.79,
+    "min_de2000_tritan_first6": 15.74,
+    "optimal6_min_de2000": 15.77,
+    "optimal6_min_de2000_deutan": 15.73,
+    "optimal6_min_de2000_protan": 15.79,
+    "grayscale_L_spread": 0.553,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

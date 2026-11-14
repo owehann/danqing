@@ -1,0 +1,61 @@
+{
+  "id": "pypal_wesanderson_grandbudapest1",
+  "name": {
+    "en": "GrandBudapest1 (wesanderson)",
+    "zh": "GrandBudapest1（wesanderson）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F1BB7B",
+    "#FD6467",
+    "#5B1A18",
+    "#D67236"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC2",
+      "#E0A59E",
+      "#D3817A",
+      "#C35B58",
+      "#B13036",
+      "#9D0011"
+    ],
+    "paired_diverging_stops": [
+      "#F1BB7B",
+      "#F3CEA4",
+      "#F4E1CB",
+      "#F4F3F2",
+      "#C2A7A3",
+      "#905F5A",
+      "#5B1A18"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (wesanderson: GrandBudapest1)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 18.77,
+    "min_de2000_deutan_first6": 7.04,
+    "min_de2000_protan_first6": 11.75,
+    "min_de2000_tritan_first6": 4.45,
+    "optimal6_min_de2000": 18.77,
+    "optimal6_min_de2000_deutan": 7.04,
+    "optimal6_min_de2000_protan": 11.75,
+    "grayscale_L_spread": 0.504,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

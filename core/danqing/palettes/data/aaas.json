@@ -22,7 +22,25 @@
   "neutral": "#808180",
   "partners": {
     "sequential": "Blues",
-    "diverging": "RdBu"
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F2C8BB",
+      "#EBA191",
+      "#E17866",
+      "#D34C3A",
+      "#C30000",
+      "#B00000"
+    ],
+    "paired_diverging_stops": [
+      "#3B4992",
+      "#7380B4",
+      "#B1B9D4",
+      "#F4F3F2",
+      "#F1ADA2",
+      "#E36352",
+      "#CA0000"
+    ]
   },
   "source": {
     "title": "Factual journal color table curated in ggsci (pal_aaas)",

@@ -1,0 +1,66 @@
+{
+  "id": "pypal_palettetown_espeon",
+  "name": {
+    "en": "espeon (palettetown)",
+    "zh": "espeon（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B070E0",
+    "#D0A8E0",
+    "#7850B0",
+    "#503868",
+    "#303030",
+    "#803840",
+    "#001890",
+    "#F8F8F8",
+    "#D03840"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC2",
+      "#E1A59D",
+      "#D38179",
+      "#C35B57",
+      "#B12F35",
+      "#9D000D"
+    ],
+    "paired_diverging_stops": [
+      "#001890",
+      "#4669B5",
+      "#9AAED6",
+      "#F4F3F2",
+      "#EFB9B5",
+      "#E37E7A",
+      "#D03840"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: espeon)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 14.81,
+    "min_de2000_deutan_first6": 14.26,
+    "min_de2000_protan_first6": 7.95,
+    "min_de2000_tritan_first6": 11.57,
+    "optimal6_min_de2000": 14.81,
+    "optimal6_min_de2000_deutan": 14.26,
+    "optimal6_min_de2000_protan": 7.95,
+    "grayscale_L_spread": 0.67,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

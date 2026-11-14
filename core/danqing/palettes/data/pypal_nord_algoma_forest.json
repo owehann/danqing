@@ -1,0 +1,64 @@
+{
+  "id": "pypal_nord_algoma_forest",
+  "name": {
+    "en": "algoma_forest (nord)",
+    "zh": "algoma_forest（nord）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4B4B4B",
+    "#967D4B",
+    "#AFAF7D",
+    "#C89632",
+    "#647D64",
+    "#96AFAF",
+    "#7D96AF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD1BC",
+      "#C9B391",
+      "#B39666",
+      "#9D7939",
+      "#875D00",
+      "#714100"
+    ],
+    "paired_diverging_stops": [
+      "#C89632",
+      "#D7B57B",
+      "#E6D4B7",
+      "#F4F3F2",
+      "#CBD3DB",
+      "#A3B4C5",
+      "#7D96AF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nord: algoma_forest)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 13.8,
+    "min_de2000_deutan_first6": 11.41,
+    "min_de2000_protan_first6": 9.28,
+    "min_de2000_tritan_first6": 12.61,
+    "optimal6_min_de2000": 13.8,
+    "optimal6_min_de2000_deutan": 11.41,
+    "optimal6_min_de2000_protan": 9.28,
+    "grayscale_L_spread": 0.329,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

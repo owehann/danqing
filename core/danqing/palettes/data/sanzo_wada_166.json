@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_166",
+  "name": {
+    "en": "Sanzo Wada #166 (Grenadine Pink · Naples Yellow · Deep Slate Green)",
+    "zh": "和田三造 #166（Grenadine Pink · Naples Yellow · Deep Slate Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F48067",
+    "#FBE6A0",
+    "#112F2C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCC1",
+      "#D8AA9B",
+      "#C88877",
+      "#B66753",
+      "#A3442F",
+      "#8E1A00"
+    ],
+    "paired_diverging_stops": [
+      "#FBE6A0",
+      "#F9EBBD",
+      "#F6EFD8",
+      "#F4F3F2",
+      "#A2ACAA",
+      "#576B68",
+      "#112F2C"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#166)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 34.95,
+    "min_de2000_deutan_first6": 15.55,
+    "min_de2000_protan_first6": 22.16,
+    "min_de2000_tritan_first6": 26.1,
+    "optimal6_min_de2000": 34.95,
+    "optimal6_min_de2000_deutan": 15.55,
+    "optimal6_min_de2000_protan": 22.16,
+    "grayscale_L_spread": 0.645,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

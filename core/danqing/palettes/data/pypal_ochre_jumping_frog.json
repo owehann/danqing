@@ -1,0 +1,62 @@
+{
+  "id": "pypal_ochre_jumping_frog",
+  "name": {
+    "en": "jumping_frog (ochRe)",
+    "zh": "jumping_frog（ochRe）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#607848",
+    "#184848",
+    "#C0C030",
+    "#A8A890",
+    "#90A878"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D5D4C4",
+      "#B4B9A3",
+      "#959F82",
+      "#778662",
+      "#5A6E43",
+      "#3E5624"
+    ],
+    "paired_diverging_stops": [
+      "#184848",
+      "#607D7D",
+      "#A8B7B5",
+      "#F4F3F2",
+      "#E2E3BB",
+      "#D0D280",
+      "#C0C030"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ochRe: jumping_frog)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.46,
+    "min_de2000_deutan_first6": 5.42,
+    "min_de2000_protan_first6": 6.56,
+    "min_de2000_tritan_first6": 9.44,
+    "optimal6_min_de2000": 10.46,
+    "optimal6_min_de2000_deutan": 5.42,
+    "optimal6_min_de2000_protan": 6.56,
+    "grayscale_L_spread": 0.414,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

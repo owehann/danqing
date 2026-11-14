@@ -45,7 +45,25 @@
   "neutral": "#B5B8BE",
   "partners": {
     "sequential": "cividis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CCD9",
+      "#CCA9CB",
+      "#B886BC",
+      "#A364AD",
+      "#8D3F9D",
+      "#780A8C"
+    ],
+    "paired_diverging_stops": [
+      "#390085",
+      "#6D5FAD",
+      "#ADA8D1",
+      "#F4F3F2",
+      "#D4BE99",
+      "#B3893A",
+      "#925300"
+    ]
   },
   "source": {
     "title": "Colour Displays for Categorical Images",

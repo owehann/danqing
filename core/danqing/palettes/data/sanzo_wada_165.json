@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_165",
+  "name": {
+    "en": "Sanzo Wada #165 (Cameo Pink · Spinel Red · Vistoris Lake)",
+    "zh": "和田三造 #165（Cameo Pink · Spinel Red · Vistoris Lake）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E0B3B6",
+    "#F27291",
+    "#6D4145"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC8",
+      "#DAA7AB",
+      "#CA848E",
+      "#B86172",
+      "#A53B57",
+      "#90023D"
+    ],
+    "paired_diverging_stops": [
+      "#E0B3B6",
+      "#E7C8CA",
+      "#EEDEDE",
+      "#F4F3F2",
+      "#C6B4B4",
+      "#9A797A",
+      "#6D4145"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#165)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 17.16,
+    "min_de2000_deutan_first6": 8.98,
+    "min_de2000_protan_first6": 14.52,
+    "min_de2000_tritan_first6": 17.4,
+    "optimal6_min_de2000": 17.16,
+    "optimal6_min_de2000_deutan": 8.98,
+    "optimal6_min_de2000_protan": 14.52,
+    "grayscale_L_spread": 0.379,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

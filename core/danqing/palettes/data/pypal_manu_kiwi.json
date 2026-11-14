@@ -1,0 +1,63 @@
+{
+  "id": "pypal_manu_kiwi",
+  "name": {
+    "en": "Kiwi (Manu)",
+    "zh": "Kiwi（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3E2926",
+    "#634C54",
+    "#8B7162",
+    "#A9A196",
+    "#CFAE9F",
+    "#D3BAC0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DBD1C8",
+      "#C2B3A9",
+      "#A8978B",
+      "#907B6E",
+      "#776052",
+      "#604738"
+    ],
+    "paired_diverging_stops": [
+      "#3E2926",
+      "#776663",
+      "#B3AAA8",
+      "#F4F3F2",
+      "#E9E0E1",
+      "#DECDD0",
+      "#D3BAC0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Kiwi)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 9.85,
+    "min_de2000_deutan_first6": 7.29,
+    "min_de2000_protan_first6": 5.43,
+    "min_de2000_tritan_first6": 5.7,
+    "optimal6_min_de2000": 9.85,
+    "optimal6_min_de2000_deutan": 7.29,
+    "optimal6_min_de2000_protan": 5.43,
+    "grayscale_L_spread": 0.506,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

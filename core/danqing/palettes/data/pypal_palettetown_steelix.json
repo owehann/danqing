@@ -1,0 +1,64 @@
+{
+  "id": "pypal_palettetown_steelix",
+  "name": {
+    "en": "steelix (palettetown)",
+    "zh": "steelix（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8098A8",
+    "#485878",
+    "#B8C8C0",
+    "#D8E0D8",
+    "#383850",
+    "#F8F8F8",
+    "#D05040"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC1",
+      "#DCA89B",
+      "#CD8576",
+      "#BC6252",
+      "#A93C2E",
+      "#950000"
+    ],
+    "paired_diverging_stops": [
+      "#383850",
+      "#717183",
+      "#B0B0B9",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: steelix)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 6.92,
+    "min_de2000_deutan_first6": 6.24,
+    "min_de2000_protan_first6": 5.91,
+    "min_de2000_tritan_first6": 7.0,
+    "optimal6_min_de2000": 6.92,
+    "optimal6_min_de2000_deutan": 6.24,
+    "optimal6_min_de2000_protan": 5.91,
+    "grayscale_L_spread": 0.628,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

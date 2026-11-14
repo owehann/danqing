@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "viridis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD4D3",
+      "#A8BAC0",
+      "#82A0AC",
+      "#5D8798",
+      "#356E85",
+      "#005572"
+    ],
+    "paired_diverging_stops": [
+      "#440154",
+      "#7C5588",
+      "#B7A2BC",
+      "#F4F3F2",
+      "#C9C394",
+      "#A09326",
+      "#7A6200"
+    ]
   },
   "source": {
     "title": "Matplotlib Perceptually Uniform Colormaps (viridis)",

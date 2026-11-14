@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lacroixcolor_keylime",
+  "name": {
+    "en": "KeyLime (LaCroixColoR)",
+    "zh": "KeyLime（LaCroixColoR）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D84D16",
+    "#FFF800",
+    "#8FDA04",
+    "#009F3F",
+    "#132157"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBBC",
+      "#DFA892",
+      "#D08469",
+      "#C0603E",
+      "#AF3800",
+      "#9B0000"
+    ],
+    "paired_diverging_stops": [
+      "#FFF800",
+      "#FAF885",
+      "#F7F6C0",
+      "#F4F3F2",
+      "#A0A9BE",
+      "#54638A",
+      "#132157"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (LaCroixColoR: KeyLime)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 18.06,
+    "min_de2000_deutan_first6": 7.79,
+    "min_de2000_protan_first6": 8.53,
+    "min_de2000_tritan_first6": 18.45,
+    "optimal6_min_de2000": 18.06,
+    "optimal6_min_de2000_deutan": 7.79,
+    "optimal6_min_de2000_protan": 8.53,
+    "grayscale_L_spread": 0.68,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "sanzo_wada_338",
+  "name": {
+    "en": "Sanzo Wada #338 (Carmine Red · Orange Yellow · Dusky Green)",
+    "zh": "和田三造 #338（Carmine Red · Orange Yellow · Dusky Green）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A62C37",
+    "#FCB315",
+    "#004F46",
+    "#C0A9B3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CBC4",
+      "#DBA8A2",
+      "#CB8581",
+      "#BA6260",
+      "#A73D41",
+      "#920623"
+    ],
+    "paired_diverging_stops": [
+      "#FCB315",
+      "#FBCA7B",
+      "#F8DFB9",
+      "#F4F3F2",
+      "#A6BAB5",
+      "#5B837B",
+      "#004F46"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#338)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 35.57,
+    "min_de2000_deutan_first6": 23.63,
+    "min_de2000_protan_first6": 7.31,
+    "min_de2000_tritan_first6": 15.04,
+    "optimal6_min_de2000": 35.57,
+    "optimal6_min_de2000_deutan": 23.63,
+    "optimal6_min_de2000_protan": 7.31,
+    "grayscale_L_spread": 0.431,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

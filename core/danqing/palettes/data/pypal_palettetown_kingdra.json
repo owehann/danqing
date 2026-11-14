@@ -1,0 +1,69 @@
+{
+  "id": "pypal_palettetown_kingdra",
+  "name": {
+    "en": "kingdra (palettetown)",
+    "zh": "kingdra（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4898B8",
+    "#98B8F0",
+    "#484880",
+    "#B8D8F0",
+    "#F8F8F8",
+    "#A86800",
+    "#E0A838",
+    "#F8F898",
+    "#F0E048",
+    "#D0D0D0",
+    "#B83830",
+    "#F06850"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBC1",
+      "#DCA89C",
+      "#CD8578",
+      "#BC6155",
+      "#AA3B32",
+      "#950006"
+    ],
+    "paired_diverging_stops": [
+      "#484880",
+      "#7C7EA6",
+      "#B6B7CC",
+      "#F4F3F2",
+      "#F2EEC3",
+      "#F1E78E",
+      "#F0E048"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: kingdra)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 10.81,
+    "min_de2000_deutan_first6": 10.69,
+    "min_de2000_protan_first6": 10.58,
+    "min_de2000_tritan_first6": 7.81,
+    "optimal6_min_de2000": 10.81,
+    "optimal6_min_de2000_deutan": 10.69,
+    "optimal6_min_de2000_protan": 10.58,
+    "grayscale_L_spread": 0.55,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

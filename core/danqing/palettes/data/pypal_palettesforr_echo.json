@@ -1,0 +1,84 @@
+{
+  "id": "pypal_palettesforr_echo",
+  "name": {
+    "en": "Echo (palettesForR)",
+    "zh": "Echo（palettesForR）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#19AEFF",
+    "#0084C8",
+    "#005C94",
+    "#FF4141",
+    "#DC0000",
+    "#B50000",
+    "#FFFF3E",
+    "#FF9900",
+    "#FF6600",
+    "#FFC022",
+    "#B88100",
+    "#804D00",
+    "#CCFF42",
+    "#9ADE00",
+    "#009100",
+    "#F1CAFF",
+    "#D76CFF",
+    "#BA00FF",
+    "#BDCDD4",
+    "#9EABB0",
+    "#364E59",
+    "#0E232E",
+    "#FFFFFF",
+    "#CCCCCC",
+    "#999999",
+    "#666666",
+    "#2D2D2D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3C9E6",
+      "#D0A2E3",
+      "#BD7BDE",
+      "#A94ED7",
+      "#9600CE",
+      "#8300C5"
+    ],
+    "paired_diverging_stops": [
+      "#FFFF3E",
+      "#FAFC90",
+      "#F7F8C5",
+      "#F4F3F2",
+      "#E2B9FB",
+      "#CF7AFF",
+      "#BA00FF"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettesForR: Echo)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 27,
+    "max_colors": 27,
+    "min_de2000_first6": 8.01,
+    "min_de2000_deutan_first6": 9.27,
+    "min_de2000_protan_first6": 5.76,
+    "min_de2000_tritan_first6": 9.14,
+    "optimal6_min_de2000": 8.01,
+    "optimal6_min_de2000_deutan": 9.27,
+    "optimal6_min_de2000_protan": 5.76,
+    "grayscale_L_spread": 0.756,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

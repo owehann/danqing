@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "davos",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D3D9",
+      "#ABB7CA",
+      "#879CBB",
+      "#6481AB",
+      "#42679B",
+      "#1F4C8A"
+    ],
+    "paired_diverging_stops": [
+      "#00054A",
+      "#3F5482",
+      "#95A1BA",
+      "#F4F3F2",
+      "#C2C2B5",
+      "#92937C",
+      "#656645"
+    ]
   },
   "source": {
     "title": "Scientific colour maps v8.0 (davos)",

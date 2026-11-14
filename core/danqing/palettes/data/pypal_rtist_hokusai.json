@@ -1,0 +1,62 @@
+{
+  "id": "pypal_rtist_hokusai",
+  "name": {
+    "en": "hokusai (rtist)",
+    "zh": "hokusai（rtist）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7F9DA7",
+    "#C1B8AA",
+    "#DDD4C6",
+    "#0C2348",
+    "#454A4D"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D3CF",
+      "#B2B8B6",
+      "#919D9F",
+      "#718388",
+      "#536A71",
+      "#35525C"
+    ],
+    "paired_diverging_stops": [
+      "#DDD4C6",
+      "#E5DED4",
+      "#ECE9E3",
+      "#F4F3F2",
+      "#9FA9B7",
+      "#51637F",
+      "#0C2348"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rtist: hokusai)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 6.99,
+    "min_de2000_deutan_first6": 6.96,
+    "min_de2000_protan_first6": 7.03,
+    "min_de2000_tritan_first6": 6.99,
+    "optimal6_min_de2000": 6.99,
+    "optimal6_min_de2000_deutan": 6.96,
+    "optimal6_min_de2000_protan": 7.03,
+    "grayscale_L_spread": 0.612,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

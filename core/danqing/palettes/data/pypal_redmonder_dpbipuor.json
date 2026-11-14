@@ -1,0 +1,68 @@
+{
+  "id": "pypal_redmonder_dpbipuor",
+  "name": {
+    "en": "dPBIPuOr (Redmonder)",
+    "zh": "dPBIPuOr（Redmonder）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#53354D",
+    "#7D4F73",
+    "#B887AD",
+    "#CAA5C2",
+    "#DBC3D6",
+    "#F5F5F5",
+    "#FFD5C2",
+    "#FEC0A3",
+    "#FEAB85",
+    "#BF714D",
+    "#7F4B33"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DECFCF",
+      "#C6AFB8",
+      "#AE91A1",
+      "#97738B",
+      "#805675",
+      "#693A5F"
+    ],
+    "paired_diverging_stops": [
+      "#53354D",
+      "#867080",
+      "#BCAFB8",
+      "#F4F3F2",
+      "#F4F4F3",
+      "#F5F4F4",
+      "#F5F5F5"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Redmonder: dPBIPuOr)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 8.38,
+    "min_de2000_deutan_first6": 6.9,
+    "min_de2000_protan_first6": 7.78,
+    "min_de2000_tritan_first6": 8.18,
+    "optimal6_min_de2000": 18.09,
+    "optimal6_min_de2000_deutan": 17.96,
+    "optimal6_min_de2000_protan": 15.98,
+    "grayscale_L_spread": 0.597,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

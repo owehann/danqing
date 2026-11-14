@@ -1,0 +1,64 @@
+{
+  "id": "pypal_rcartocolor_fall",
+  "name": {
+    "en": "Fall (rcartocolor)",
+    "zh": "Fall（rcartocolor）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#3D5941",
+    "#778868",
+    "#B5B991",
+    "#F6EDBD",
+    "#EDBB8A",
+    "#DE8A5A",
+    "#CA562C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E8CCBE",
+      "#DAAA96",
+      "#CA886F",
+      "#B86648",
+      "#A5431C",
+      "#911500"
+    ],
+    "paired_diverging_stops": [
+      "#3D5941",
+      "#768A78",
+      "#B3BDB3",
+      "#F4F3F2",
+      "#F4F1E1",
+      "#F5EFCF",
+      "#F6EDBD"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rcartocolor: Fall)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 13.77,
+    "min_de2000_deutan_first6": 7.85,
+    "min_de2000_protan_first6": 4.67,
+    "min_de2000_tritan_first6": 12.62,
+    "optimal6_min_de2000": 13.88,
+    "optimal6_min_de2000_deutan": 9.2,
+    "optimal6_min_de2000_protan": 9.84,
+    "grayscale_L_spread": 0.507,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

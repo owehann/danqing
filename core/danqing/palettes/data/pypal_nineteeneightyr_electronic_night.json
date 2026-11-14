@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nineteeneightyr_electronic_night",
+  "name": {
+    "en": "electronic_night (NineteenEightyR)",
+    "zh": "electronic_night（NineteenEightyR）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#CB54D6",
+    "#3E45C4",
+    "#21191A",
+    "#362F78",
+    "#57B4AE"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D1E3",
+      "#ACB4DD",
+      "#8996D6",
+      "#6977CE",
+      "#4B57C4",
+      "#3332B9"
+    ],
+    "paired_diverging_stops": [
+      "#3E45C4",
+      "#7283D8",
+      "#B0BBE7",
+      "#F4F3F2",
+      "#A7A3A2",
+      "#605959",
+      "#21191A"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NineteenEightyR: electronic_night)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.55,
+    "min_de2000_deutan_first6": 11.72,
+    "min_de2000_protan_first6": 11.85,
+    "min_de2000_tritan_first6": 13.11,
+    "optimal6_min_de2000": 12.55,
+    "optimal6_min_de2000_deutan": 11.72,
+    "optimal6_min_de2000_protan": 11.85,
+    "grayscale_L_spread": 0.488,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "pypal_futurevisions_trappest",
+  "name": {
+    "en": "trappest (futurevisions)",
+    "zh": "trappest（futurevisions）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#0E100F",
+    "#181223",
+    "#2D2546",
+    "#723349",
+    "#D32930",
+    "#111E33",
+    "#273973",
+    "#4882B6"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EEC9C0",
+      "#E4A499",
+      "#D77E74",
+      "#C8574F",
+      "#B72629",
+      "#A30000"
+    ],
+    "paired_diverging_stops": [
+      "#D32930",
+      "#E67971",
+      "#F1B7B0",
+      "#F4F3F2",
+      "#A9B2C8",
+      "#64749E",
+      "#273973"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (futurevisions: trappest)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 8.74,
+    "min_de2000_deutan_first6": 4.49,
+    "min_de2000_protan_first6": 4.05,
+    "min_de2000_tritan_first6": 4.06,
+    "optimal6_min_de2000": 8.74,
+    "optimal6_min_de2000_deutan": 4.49,
+    "optimal6_min_de2000_protan": 4.05,
+    "grayscale_L_spread": 0.42,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

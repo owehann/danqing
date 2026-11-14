@@ -1,0 +1,63 @@
+{
+  "id": "pypal_palettetown_geodude",
+  "name": {
+    "en": "geodude (palettetown)",
+    "zh": "geodude（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#707830",
+    "#A8B060",
+    "#404810",
+    "#C8D080",
+    "#F8F8F8",
+    "#C8C8C8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D7D3C1",
+      "#B9B99B",
+      "#9C9E77",
+      "#808452",
+      "#656B2D",
+      "#4C5300"
+    ],
+    "paired_diverging_stops": [
+      "#404810",
+      "#777E5A",
+      "#B3B7A4",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: geodude)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 8.47,
+    "min_de2000_deutan_first6": 8.46,
+    "min_de2000_protan_first6": 8.5,
+    "min_de2000_tritan_first6": 6.14,
+    "optimal6_min_de2000": 8.47,
+    "optimal6_min_de2000_deutan": 8.46,
+    "optimal6_min_de2000_protan": 8.5,
+    "grayscale_L_spread": 0.597,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

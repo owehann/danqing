@@ -1,0 +1,63 @@
+{
+  "id": "pypal_colroz_n_levis",
+  "name": {
+    "en": "n_levis (colRoz)",
+    "zh": "n_levis（colRoz）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#080808",
+    "#5E596F",
+    "#9A7354",
+    "#DCA57E",
+    "#F6FCD0",
+    "#C5E4F6"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDD0C4",
+      "#C5B2A2",
+      "#AE9581",
+      "#977961",
+      "#805E42",
+      "#694323"
+    ],
+    "paired_diverging_stops": [
+      "#080808",
+      "#4B4B4A",
+      "#9B9B9A",
+      "#F4F3F2",
+      "#F4F6E7",
+      "#F5F9DC",
+      "#F6FCD0"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (colRoz: n_levis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 17.77,
+    "min_de2000_deutan_first6": 16.31,
+    "min_de2000_protan_first6": 17.67,
+    "min_de2000_tritan_first6": 17.85,
+    "optimal6_min_de2000": 17.77,
+    "optimal6_min_de2000_deutan": 16.31,
+    "optimal6_min_de2000_protan": 17.67,
+    "grayscale_L_spread": 0.841,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

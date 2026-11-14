@@ -24,7 +24,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC1",
+      "#D5AC9B",
+      "#C48B76",
+      "#B16B52",
+      "#9D4A2D",
+      "#882600"
+    ],
+    "paired_diverging_stops": [
+      "#1E395F",
+      "#60738F",
+      "#A7B1C0",
+      "#F4F3F2",
+      "#CBC1A0",
+      "#A48F4D",
+      "#7E5F00"
+    ]
   },
   "source": {
     "title": "Pandora, 1914, Odilon Redon, French",

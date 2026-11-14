@@ -1,0 +1,64 @@
+{
+  "id": "pypal_futurevisions_earth",
+  "name": {
+    "en": "earth (futurevisions)",
+    "zh": "earth（futurevisions）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3B4B42",
+    "#75AC42",
+    "#B0D9CB",
+    "#FFFFFE",
+    "#FCF063",
+    "#935932",
+    "#642E2A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CFC2",
+      "#CBB09E",
+      "#B6927A",
+      "#A17558",
+      "#8B5835",
+      "#753B0D"
+    ],
+    "paired_diverging_stops": [
+      "#3B4B42",
+      "#747F78",
+      "#B2B8B3",
+      "#F4F3F2",
+      "#F6F3C9",
+      "#F9F29C",
+      "#FCF063"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (futurevisions: earth)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 18.47,
+    "min_de2000_deutan_first6": 10.68,
+    "min_de2000_protan_first6": 10.14,
+    "min_de2000_tritan_first6": 12.84,
+    "optimal6_min_de2000": 18.47,
+    "optimal6_min_de2000_deutan": 10.68,
+    "optimal6_min_de2000_protan": 10.14,
+    "grayscale_L_spread": 0.626,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

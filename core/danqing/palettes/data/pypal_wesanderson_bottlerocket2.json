@@ -1,0 +1,62 @@
+{
+  "id": "pypal_wesanderson_bottlerocket2",
+  "name": {
+    "en": "BottleRocket2 (wesanderson)",
+    "zh": "BottleRocket2（wesanderson）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FAD510",
+    "#CB2314",
+    "#273046",
+    "#354823",
+    "#1E1E1E"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EECABE",
+      "#E3A596",
+      "#D7806E",
+      "#C75846",
+      "#B62919",
+      "#A30000"
+    ],
+    "paired_diverging_stops": [
+      "#FAD510",
+      "#F8E080",
+      "#F6EBBC",
+      "#F4F3F2",
+      "#A9ADB5",
+      "#646B7C",
+      "#273046"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (wesanderson: BottleRocket2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.88,
+    "min_de2000_deutan_first6": 12.92,
+    "min_de2000_protan_first6": 8.06,
+    "min_de2000_tritan_first6": 7.86,
+    "optimal6_min_de2000": 12.88,
+    "optimal6_min_de2000_deutan": 12.92,
+    "optimal6_min_de2000_protan": 8.06,
+    "grayscale_L_spread": 0.643,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

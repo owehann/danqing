@@ -1,0 +1,62 @@
+{
+  "id": "pypal_tvthemes_targaryen",
+  "name": {
+    "en": "Targaryen (tvthemes)",
+    "zh": "Targaryen（tvthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#AC1F25",
+    "#272727",
+    "#FF9933",
+    "#828788",
+    "#96804B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC1",
+      "#DEA79D",
+      "#D08379",
+      "#BF5F56",
+      "#AD3634",
+      "#99000B"
+    ],
+    "paired_diverging_stops": [
+      "#272727",
+      "#646464",
+      "#A9A9A8",
+      "#F4F3F2",
+      "#FBD7BA",
+      "#FEB97F",
+      "#FF9933"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (tvthemes: Targaryen)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 20.16,
+    "min_de2000_deutan_first6": 13.59,
+    "min_de2000_protan_first6": 15.87,
+    "min_de2000_tritan_first6": 18.59,
+    "optimal6_min_de2000": 20.16,
+    "optimal6_min_de2000_deutan": 13.59,
+    "optimal6_min_de2000_protan": 15.87,
+    "grayscale_L_spread": 0.501,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

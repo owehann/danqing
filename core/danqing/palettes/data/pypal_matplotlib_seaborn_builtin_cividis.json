@@ -1,0 +1,67 @@
+{
+  "id": "pypal_matplotlib_seaborn_builtin_cividis",
+  "name": {
+    "en": "cividis (matplotlib/seaborn builtin)",
+    "zh": "cividis（matplotlib/seaborn builtin）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#013271",
+    "#2F426D",
+    "#48526C",
+    "#5E636F",
+    "#727374",
+    "#878478",
+    "#9D9576",
+    "#B6A96F",
+    "#CEBC63",
+    "#E7D150"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CACED5",
+      "#A1AEC3",
+      "#788EB0",
+      "#516F9C",
+      "#2A5188",
+      "#003174"
+    ],
+    "paired_diverging_stops": [
+      "#013271",
+      "#52709D",
+      "#A0B0C8",
+      "#F4F3F2",
+      "#EFE9C2",
+      "#EBDD90",
+      "#E7D150"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (matplotlib/seaborn builtin: cividis)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 6.39,
+    "min_de2000_deutan_first6": 5.96,
+    "min_de2000_protan_first6": 5.93,
+    "min_de2000_tritan_first6": 3.68,
+    "optimal6_min_de2000": 6.39,
+    "optimal6_min_de2000_deutan": 5.96,
+    "optimal6_min_de2000_protan": 5.93,
+    "grayscale_L_spread": 0.525,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

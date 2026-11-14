@@ -1,0 +1,72 @@
+{
+  "id": "pypal_impressionist_colors_les_nympheas_2",
+  "name": {
+    "en": "les_nympheas_2 (impressionist.colors)",
+    "zh": "les_nympheas_2（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#18422E",
+    "#436660",
+    "#879669",
+    "#AEC3A2",
+    "#D2D2D2",
+    "#B4B4C3",
+    "#9696B4",
+    "#3C5A69",
+    "#2B3C44",
+    "#0F1E2D",
+    "#874B5A",
+    "#A55A78",
+    "#C387B4",
+    "#965A96",
+    "#783C69"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFCED3",
+      "#C8ADBE",
+      "#B18EAA",
+      "#9B6F96",
+      "#845082",
+      "#6E316E"
+    ],
+    "paired_diverging_stops": [
+      "#D2D2D2",
+      "#DDDDDD",
+      "#E8E8E7",
+      "#F4F3F2",
+      "#9FA5AB",
+      "#525E69",
+      "#0F1E2D"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: les_nympheas_2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 15,
+    "max_colors": 15,
+    "min_de2000_first6": 10.35,
+    "min_de2000_deutan_first6": 9.9,
+    "min_de2000_protan_first6": 9.85,
+    "min_de2000_tritan_first6": 7.69,
+    "optimal6_min_de2000": 10.35,
+    "optimal6_min_de2000_deutan": 9.9,
+    "optimal6_min_de2000_protan": 9.85,
+    "grayscale_L_spread": 0.634,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

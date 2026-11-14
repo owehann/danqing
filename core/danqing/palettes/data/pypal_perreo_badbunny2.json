@@ -1,0 +1,66 @@
+{
+  "id": "pypal_perreo_badbunny2",
+  "name": {
+    "en": "badbunny2 (peRReo)",
+    "zh": "badbunny2（peRReo）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#181234",
+    "#B93021",
+    "#F8B45E",
+    "#E85433",
+    "#698AB5",
+    "#E4BB3C",
+    "#552328",
+    "#22446A",
+    "#EB8259"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC0",
+      "#DEA799",
+      "#D08474",
+      "#BF604F",
+      "#AD3828",
+      "#990000"
+    ],
+    "paired_diverging_stops": [
+      "#181234",
+      "#575570",
+      "#A2A1AF",
+      "#F4F3F2",
+      "#EFE1BD",
+      "#E9CF85",
+      "#E4BB3C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (peRReo: badbunny2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 10.8,
+    "min_de2000_deutan_first6": 3.17,
+    "min_de2000_protan_first6": 4.95,
+    "min_de2000_tritan_first6": 3.55,
+    "optimal6_min_de2000": 10.8,
+    "optimal6_min_de2000_deutan": 3.17,
+    "optimal6_min_de2000_protan": 4.95,
+    "grayscale_L_spread": 0.606,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

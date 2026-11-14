@@ -108,6 +108,7 @@
     "moreSwatches": "+{{count}}",
     "sourceInfo": "Palette source",
     "emptyMatch": "No palettes match current filters.",
+    "showMore": "Show more ({{count}} remaining)",
     "resetOriginal": "Original colors",
     "manuscript": {
       "toggle": "Manuscript Match",
@@ -132,6 +133,8 @@
       "museum": "Collection",
       "accession": "Object ID",
       "license": "License",
+      "pairedSequential": "Sequential ramp",
+      "pairedDiverging": "Diverging ramp",
       "openLink": "View source"
     }
   },

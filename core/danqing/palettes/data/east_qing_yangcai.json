@@ -20,7 +20,25 @@
   "neutral": "#ABA9A4",
   "partners": {
     "sequential": "lipari",
-    "diverging": "roma"
+    "diverging": "roma",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD4DA",
+      "#A6B9CD",
+      "#7F9EBF",
+      "#5883B1",
+      "#2F69A2",
+      "#004E92"
+    ],
+    "paired_diverging_stops": [
+      "#766200",
+      "#9E915D",
+      "#C8C1A6",
+      "#F4F3F2",
+      "#AAC0D7",
+      "#628DBB",
+      "#0E5B9D"
+    ]
   },
   "source": {
     "title": "Vase with Golden Pheasants & Painted Enamel Screen",

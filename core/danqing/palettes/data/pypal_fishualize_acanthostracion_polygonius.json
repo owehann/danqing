@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_acanthostracion_polygonius",
+  "name": {
+    "en": "Acanthostracion_polygonius (fishualize)",
+    "zh": "Acanthostracion_polygonius（fishualize）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#0F1926",
+    "#025940",
+    "#02734A",
+    "#038C33",
+    "#03A62C"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD8C1",
+      "#A3C09C",
+      "#7AA977",
+      "#4F9253",
+      "#167A2D",
+      "#006300"
+    ],
+    "paired_diverging_stops": [
+      "#0F1926",
+      "#525963",
+      "#9FA3A8",
+      "#F4F3F2",
+      "#B5DBB4",
+      "#73C175",
+      "#03A62C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Acanthostracion_polygonius)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.11,
+    "min_de2000_deutan_first6": 8.99,
+    "min_de2000_protan_first6": 9.32,
+    "min_de2000_tritan_first6": 8.12,
+    "optimal6_min_de2000": 9.11,
+    "optimal6_min_de2000_deutan": 8.99,
+    "optimal6_min_de2000_protan": 9.32,
+    "grayscale_L_spread": 0.42,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

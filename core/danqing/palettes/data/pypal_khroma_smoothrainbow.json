@@ -1,0 +1,91 @@
+{
+  "id": "pypal_khroma_smoothrainbow",
+  "name": {
+    "en": "smoothrainbow (khroma)",
+    "zh": "smoothrainbow（khroma）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#E8ECFB",
+    "#DDD8EF",
+    "#D1C1E1",
+    "#C3A8D1",
+    "#B58FC2",
+    "#A778B4",
+    "#9B62A7",
+    "#8C4E99",
+    "#6F4C9B",
+    "#6059A9",
+    "#5568B8",
+    "#4E79C5",
+    "#4D8AC6",
+    "#4E96BC",
+    "#549EB3",
+    "#59A5A9",
+    "#60AB9E",
+    "#69B190",
+    "#77B77D",
+    "#8CBC68",
+    "#A6BE54",
+    "#BEBC48",
+    "#D1B541",
+    "#DDAA3C",
+    "#E49C39",
+    "#E78C35",
+    "#E67932",
+    "#E4632D",
+    "#DF4828",
+    "#DA2222",
+    "#B8221E",
+    "#95211B",
+    "#721E17",
+    "#521A13"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EFC9BE",
+      "#E6A396",
+      "#DA7D6F",
+      "#CB5447",
+      "#BA1E1B",
+      "#A70000"
+    ],
+    "paired_diverging_stops": [
+      "#5568B8",
+      "#8696CD",
+      "#BBC4E1",
+      "#F4F3F2",
+      "#EDDBBB",
+      "#E5C382",
+      "#DDAA3C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (khroma: smoothrainbow)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 34,
+    "max_colors": 34,
+    "min_de2000_first6": 6.8,
+    "min_de2000_deutan_first6": 4.2,
+    "min_de2000_protan_first6": 4.69,
+    "min_de2000_tritan_first6": 6.01,
+    "optimal6_min_de2000": 29.66,
+    "optimal6_min_de2000_deutan": 6.57,
+    "optimal6_min_de2000_protan": 13.97,
+    "grayscale_L_spread": 0.639,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

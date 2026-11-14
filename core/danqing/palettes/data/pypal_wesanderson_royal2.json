@@ -1,0 +1,62 @@
+{
+  "id": "pypal_wesanderson_royal2",
+  "name": {
+    "en": "Royal2 (wesanderson)",
+    "zh": "Royal2（wesanderson）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#9A8822",
+    "#F5CDB4",
+    "#F8AFA8",
+    "#FDDDA0",
+    "#74A089"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DBD2BD",
+      "#C0B693",
+      "#A79B6A",
+      "#8E8040",
+      "#766601",
+      "#5F4C00"
+    ],
+    "paired_diverging_stops": [
+      "#9A8822",
+      "#B7AB70",
+      "#D5CFB1",
+      "#F4F3F2",
+      "#C9D7CE",
+      "#9EBBAB",
+      "#74A089"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (wesanderson: Royal2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.23,
+    "min_de2000_deutan_first6": 4.31,
+    "min_de2000_protan_first6": 7.08,
+    "min_de2000_tritan_first6": 4.42,
+    "optimal6_min_de2000": 12.23,
+    "optimal6_min_de2000_deutan": 4.31,
+    "optimal6_min_de2000_protan": 7.08,
+    "grayscale_L_spread": 0.285,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

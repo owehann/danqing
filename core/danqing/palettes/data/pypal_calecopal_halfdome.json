@@ -1,0 +1,62 @@
+{
+  "id": "pypal_calecopal_halfdome",
+  "name": {
+    "en": "halfdome (calecopal)",
+    "zh": "halfdome（calecopal）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A2A098",
+    "#5E6B7B",
+    "#233D3F",
+    "#85ADCC",
+    "#426714"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D3D5C1",
+      "#B1BB9B",
+      "#90A277",
+      "#708A52",
+      "#52712D",
+      "#345900"
+    ],
+    "paired_diverging_stops": [
+      "#85ADCC",
+      "#AAC4D9",
+      "#CFDCE6",
+      "#F4F3F2",
+      "#B5C3A8",
+      "#7A9462",
+      "#426714"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (calecopal: halfdome)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 19.25,
+    "min_de2000_deutan_first6": 17.56,
+    "min_de2000_protan_first6": 17.84,
+    "min_de2000_tritan_first6": 8.83,
+    "optimal6_min_de2000": 19.25,
+    "optimal6_min_de2000_deutan": 17.56,
+    "optimal6_min_de2000_protan": 17.84,
+    "grayscale_L_spread": 0.39,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

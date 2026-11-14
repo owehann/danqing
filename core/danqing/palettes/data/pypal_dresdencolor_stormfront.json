@@ -1,0 +1,63 @@
+{
+  "id": "pypal_dresdencolor_stormfront",
+  "name": {
+    "en": "stormfront (DresdenColor)",
+    "zh": "stormfront（DresdenColor）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F3CB66",
+    "#CB9060",
+    "#D5B09A",
+    "#A59587",
+    "#544142",
+    "#030504"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0D0C1",
+      "#CBB19C",
+      "#B59377",
+      "#9F7654",
+      "#8A592F",
+      "#743D00"
+    ],
+    "paired_diverging_stops": [
+      "#F3CB66",
+      "#F4D99A",
+      "#F4E7C7",
+      "#F4F3F2",
+      "#979997",
+      "#444745",
+      "#030504"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (DresdenColor: stormfront)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 11.56,
+    "min_de2000_deutan_first6": 10.7,
+    "min_de2000_protan_first6": 9.46,
+    "min_de2000_tritan_first6": 6.78,
+    "optimal6_min_de2000": 11.56,
+    "optimal6_min_de2000_deutan": 10.7,
+    "optimal6_min_de2000_protan": 9.46,
+    "grayscale_L_spread": 0.747,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

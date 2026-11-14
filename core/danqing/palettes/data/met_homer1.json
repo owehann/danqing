@@ -20,7 +20,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E9CCBF",
+      "#DBA997",
+      "#CB8770",
+      "#BA654A",
+      "#A7401F",
+      "#930D00"
+    ],
+    "paired_diverging_stops": [
+      "#551F00",
+      "#8A624F",
+      "#BFA89D",
+      "#F4F3F2",
+      "#B6C4C4",
+      "#7A9798",
+      "#3F6C6E"
+    ]
   },
   "source": {
     "title": "The Veteran in a New Field, 1865, Winslow Homer, American",

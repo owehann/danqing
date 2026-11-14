@@ -1,0 +1,63 @@
+{
+  "id": "pypal_manu_putangitangi",
+  "name": {
+    "en": "Putangitangi (Manu)",
+    "zh": "Putangitangi（Manu）"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#AA988A",
+    "#B66A40",
+    "#2F414B",
+    "#2B4B3C",
+    "#7A3520",
+    "#7B8BA5"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC1",
+      "#D0AF9B",
+      "#BC8F76",
+      "#A87152",
+      "#93522D",
+      "#7E3400"
+    ],
+    "paired_diverging_stops": [
+      "#B66A40",
+      "#CD977B",
+      "#E2C5B6",
+      "#F4F3F2",
+      "#ADB4B7",
+      "#6B787F",
+      "#2F414B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (Manu: Putangitangi)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 15.6,
+    "min_de2000_deutan_first6": 11.99,
+    "min_de2000_protan_first6": 9.11,
+    "min_de2000_tritan_first6": 4.23,
+    "optimal6_min_de2000": 15.6,
+    "optimal6_min_de2000_deutan": 11.99,
+    "optimal6_min_de2000_protan": 9.11,
+    "grayscale_L_spread": 0.328,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

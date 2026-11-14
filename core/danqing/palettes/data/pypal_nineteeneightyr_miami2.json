@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nineteeneightyr_miami2",
+  "name": {
+    "en": "miami2 (NineteenEightyR)",
+    "zh": "miami2（NineteenEightyR）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#3FB8AF",
+    "#7FC7AF",
+    "#DAD8A7",
+    "#FF9E9D",
+    "#FF3D7F"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#F0C8C7",
+      "#E7A0A9",
+      "#DB788B",
+      "#CC4D6E",
+      "#BB0453",
+      "#A70038"
+    ],
+    "paired_diverging_stops": [
+      "#3FB8AF",
+      "#87CCC5",
+      "#BFE0DB",
+      "#F4F3F2",
+      "#EBEAD9",
+      "#E2E1C0",
+      "#DAD8A7"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NineteenEightyR: miami2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.07,
+    "min_de2000_deutan_first6": 6.01,
+    "min_de2000_protan_first6": 4.73,
+    "min_de2000_tritan_first6": 6.23,
+    "optimal6_min_de2000": 9.07,
+    "optimal6_min_de2000_deutan": 6.01,
+    "optimal6_min_de2000_protan": 4.73,
+    "grayscale_L_spread": 0.202,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

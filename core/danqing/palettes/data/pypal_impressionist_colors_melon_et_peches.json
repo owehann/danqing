@@ -1,0 +1,67 @@
+{
+  "id": "pypal_impressionist_colors_melon_et_peches",
+  "name": {
+    "en": "melon_et_peches (impressionist.colors)",
+    "zh": "melon_et_peches（impressionist.colors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D2C3A5",
+    "#E1D2A5",
+    "#D2D2D2",
+    "#3C3C2D",
+    "#5A5A4B",
+    "#78875A",
+    "#96A578",
+    "#B4B469",
+    "#E1D269",
+    "#FFF087"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D6D3C5",
+      "#B7B8A3",
+      "#999E83",
+      "#7C8463",
+      "#606B44",
+      "#455326"
+    ],
+    "paired_diverging_stops": [
+      "#3C3C2D",
+      "#747469",
+      "#B2B2AB",
+      "#F4F3F2",
+      "#F7F3D1",
+      "#FBF2AF",
+      "#FFF087"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (impressionist.colors: melon_et_peches)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 5.54,
+    "min_de2000_deutan_first6": 5.05,
+    "min_de2000_protan_first6": 5.24,
+    "min_de2000_tritan_first6": 3.63,
+    "optimal6_min_de2000": 5.54,
+    "optimal6_min_de2000_deutan": 5.05,
+    "optimal6_min_de2000_protan": 5.24,
+    "grayscale_L_spread": 0.594,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

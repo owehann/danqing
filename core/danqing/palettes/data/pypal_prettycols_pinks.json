@@ -1,0 +1,62 @@
+{
+  "id": "pypal_prettycols_pinks",
+  "name": {
+    "en": "Pinks (PrettyCols)",
+    "zh": "Pinks（PrettyCols）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#860A4D",
+    "#9E0C5B",
+    "#B50E68",
+    "#CD1076",
+    "#E51284"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EDC8CC",
+      "#E3A1B2",
+      "#D57A98",
+      "#C6517F",
+      "#B41867",
+      "#9F004F"
+    ],
+    "paired_diverging_stops": [
+      "#860A4D",
+      "#B06280",
+      "#D5AAB7",
+      "#F4F3F2",
+      "#F8B7CC",
+      "#F376A7",
+      "#E51284"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (PrettyCols: Pinks)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 4.74,
+    "min_de2000_deutan_first6": 5.04,
+    "min_de2000_protan_first6": 3.51,
+    "min_de2000_tritan_first6": 5.05,
+    "optimal6_min_de2000": 4.74,
+    "optimal6_min_de2000_deutan": 5.04,
+    "optimal6_min_de2000_protan": 3.51,
+    "grayscale_L_spread": 0.195,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

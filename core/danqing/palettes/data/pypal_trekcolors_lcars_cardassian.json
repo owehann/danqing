@@ -1,0 +1,78 @@
+{
+  "id": "pypal_trekcolors_lcars_cardassian",
+  "name": {
+    "en": "lcars_cardassian (trekcolors)",
+    "zh": "lcars_cardassian（trekcolors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B46356",
+    "#944D40",
+    "#7A4B42",
+    "#CA480D",
+    "#9B5928",
+    "#C86C18",
+    "#D78017",
+    "#F9AB3C",
+    "#FFE705",
+    "#FFF7A3",
+    "#E2ED50",
+    "#2F7270",
+    "#66FFFF",
+    "#3C999C",
+    "#8BEAFF",
+    "#13A4EB",
+    "#2E7BC5",
+    "#A1B3E2",
+    "#BFCAFE",
+    "#8B799C",
+    "#524559"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACCBD",
+      "#DDA993",
+      "#CE866A",
+      "#BE6240",
+      "#AB3C07",
+      "#970000"
+    ],
+    "paired_diverging_stops": [
+      "#FFE705",
+      "#FBEC82",
+      "#F7F1BE",
+      "#F4F3F2",
+      "#B4CBE5",
+      "#74A4D6",
+      "#2E7BC5"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (trekcolors: lcars_cardassian)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 21,
+    "max_colors": 21,
+    "min_de2000_first6": 6.4,
+    "min_de2000_deutan_first6": 5.14,
+    "min_de2000_protan_first6": 4.15,
+    "min_de2000_tritan_first6": 3.35,
+    "optimal6_min_de2000": 6.4,
+    "optimal6_min_de2000_deutan": 5.14,
+    "optimal6_min_de2000_protan": 4.15,
+    "grayscale_L_spread": 0.552,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

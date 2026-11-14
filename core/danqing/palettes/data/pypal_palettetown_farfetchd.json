@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_farfetchd",
+  "name": {
+    "en": "farfetchd (palettetown)",
+    "zh": "farfetchd（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B09050",
+    "#806020",
+    "#604000",
+    "#E0E0A0",
+    "#F8E068",
+    "#E0A858",
+    "#E0C078",
+    "#C0C080",
+    "#009820",
+    "#C8F888",
+    "#40D840",
+    "#B86828",
+    "#F8F8F8",
+    "#D0D0D0"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CBD8BE",
+      "#A1C196",
+      "#77AA6E",
+      "#4A9345",
+      "#017C12",
+      "#006500"
+    ],
+    "paired_diverging_stops": [
+      "#604000",
+      "#8F7856",
+      "#C1B4A2",
+      "#F4F3F2",
+      "#F5F5F4",
+      "#F7F6F6",
+      "#F8F8F8"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: farfetchd)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 10.7,
+    "min_de2000_deutan_first6": 9.51,
+    "min_de2000_protan_first6": 8.92,
+    "min_de2000_tritan_first6": 9.1,
+    "optimal6_min_de2000": 10.7,
+    "optimal6_min_de2000_deutan": 9.51,
+    "optimal6_min_de2000_protan": 8.92,
+    "grayscale_L_spread": 0.581,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

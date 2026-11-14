@@ -21,7 +21,25 @@
   "neutral": "#BDBDBD",
   "partners": {
     "sequential": "cmo_tempo",
-    "diverging": "cmo_balance"
+    "diverging": "cmo_balance",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD5CF",
+      "#A6BCB6",
+      "#7EA39F",
+      "#568B88",
+      "#277372",
+      "#005B5C"
+    ],
+    "paired_diverging_stops": [
+      "#696160",
+      "#958F8E",
+      "#C3C0BE",
+      "#F4F3F2",
+      "#A1A6B6",
+      "#555E7C",
+      "#151D44"
+    ]
   },
   "source": {
     "title": "True Colors of Oceanography: cmocean (tempo)",

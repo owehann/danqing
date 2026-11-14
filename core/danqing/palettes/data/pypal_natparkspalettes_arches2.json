@@ -1,0 +1,62 @@
+{
+  "id": "pypal_natparkspalettes_arches2",
+  "name": {
+    "en": "Arches2 (NatParksPalettes)",
+    "zh": "Arches2（NatParksPalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3A1F46",
+    "#7F4B89",
+    "#B46DB3",
+    "#E3A5D6",
+    "#F3DAE4"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DDCED4",
+      "#C6AEC1",
+      "#AE8FAD",
+      "#97709A",
+      "#805287",
+      "#693473"
+    ],
+    "paired_diverging_stops": [
+      "#3A1F46",
+      "#73607C",
+      "#B2A7B6",
+      "#F4F3F2",
+      "#F4EBED",
+      "#F3E2E9",
+      "#F3DAE4"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (NatParksPalettes: Arches2)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.88,
+    "min_de2000_deutan_first6": 13.32,
+    "min_de2000_protan_first6": 14.6,
+    "min_de2000_tritan_first6": 13.56,
+    "optimal6_min_de2000": 15.88,
+    "optimal6_min_de2000_deutan": 13.32,
+    "optimal6_min_de2000_protan": 14.6,
+    "grayscale_L_spread": 0.618,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

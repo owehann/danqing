@@ -1,0 +1,65 @@
+{
+  "id": "pypal_trekcolors_lcars_2375",
+  "name": {
+    "en": "lcars_2375 (trekcolors)",
+    "zh": "lcars_2375（trekcolors）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#6688CC",
+    "#4455BB",
+    "#9977AA",
+    "#774466",
+    "#DD6644",
+    "#AA5533",
+    "#BB6622",
+    "#EE9955"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D2DF",
+      "#ADB4D6",
+      "#8B97CC",
+      "#6A7AC0",
+      "#4C5DB4",
+      "#313DA7"
+    ],
+    "paired_diverging_stops": [
+      "#4455BB",
+      "#798BD1",
+      "#B4BFE3",
+      "#F4F3F2",
+      "#F4D6C0",
+      "#F2B88D",
+      "#EE9955"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (trekcolors: lcars_2375)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 12.18,
+    "min_de2000_deutan_first6": 7.9,
+    "min_de2000_protan_first6": 6.67,
+    "min_de2000_tritan_first6": 12.1,
+    "optimal6_min_de2000": 12.18,
+    "optimal6_min_de2000_deutan": 7.9,
+    "optimal6_min_de2000_protan": 6.67,
+    "grayscale_L_spread": 0.297,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

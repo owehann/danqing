@@ -20,7 +20,25 @@
   "neutral": "#BDBAB5",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCAC1",
+      "#DFA69C",
+      "#D18278",
+      "#C15D54",
+      "#AF3331",
+      "#9B0003"
+    ],
+    "paired_diverging_stops": [
+      "#855C00",
+      "#A98E42",
+      "#CEC09C",
+      "#F4F3F2",
+      "#AFA4B7",
+      "#6F5A7E",
+      "#341648"
+    ]
   },
   "source": {
     "title": "Dragon Robe, 1998, Vivienne Tam, American, born China",

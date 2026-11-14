@@ -1,0 +1,62 @@
+{
+  "id": "pypal_fishualize_prionace_glauca",
+  "name": {
+    "en": "Prionace_glauca (fishualize)",
+    "zh": "Prionace_glauca（fishualize）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#003C74",
+    "#024F70",
+    "#06A2BC",
+    "#00D0F3",
+    "#A0F5F7"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CAD6D4",
+      "#9EBDC1",
+      "#72A4AE",
+      "#418C9B",
+      "#007488",
+      "#005B75"
+    ],
+    "paired_diverging_stops": [
+      "#003C74",
+      "#55779F",
+      "#A2B4C9",
+      "#F4F3F2",
+      "#DAF4F4",
+      "#BFF5F5",
+      "#A0F5F7"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (fishualize: Prionace_glauca)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 9.32,
+    "min_de2000_deutan_first6": 6.17,
+    "min_de2000_protan_first6": 6.84,
+    "min_de2000_tritan_first6": 5.56,
+    "optimal6_min_de2000": 9.32,
+    "optimal6_min_de2000_deutan": 6.17,
+    "optimal6_min_de2000_protan": 6.84,
+    "grayscale_L_spread": 0.56,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

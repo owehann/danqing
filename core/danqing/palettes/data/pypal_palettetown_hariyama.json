@@ -1,0 +1,72 @@
+{
+  "id": "pypal_palettetown_hariyama",
+  "name": {
+    "en": "hariyama (palettetown)",
+    "zh": "hariyama（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E8B850",
+    "#181818",
+    "#D08058",
+    "#303060",
+    "#A86040",
+    "#E0D0A0",
+    "#F0D070",
+    "#F0E0C0",
+    "#E8A068",
+    "#886850",
+    "#804830",
+    "#606090",
+    "#C89840",
+    "#C0A870",
+    "#F8F8F8"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E2CEC2",
+      "#CFAF9E",
+      "#BB907B",
+      "#A67159",
+      "#915337",
+      "#7C3510"
+    ],
+    "paired_diverging_stops": [
+      "#E8B850",
+      "#ECCC8D",
+      "#F0E0C1",
+      "#F4F3F2",
+      "#ACAEC0",
+      "#6A6D90",
+      "#303060"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: hariyama)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 15,
+    "max_colors": 15,
+    "min_de2000_first6": 12.41,
+    "min_de2000_deutan_first6": 11.54,
+    "min_de2000_protan_first6": 12.72,
+    "min_de2000_tritan_first6": 11.67,
+    "optimal6_min_de2000": 12.41,
+    "optimal6_min_de2000_deutan": 11.54,
+    "optimal6_min_de2000_protan": 12.72,
+    "grayscale_L_spread": 0.77,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

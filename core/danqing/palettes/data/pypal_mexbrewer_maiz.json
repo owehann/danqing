@@ -1,0 +1,67 @@
+{
+  "id": "pypal_mexbrewer_maiz",
+  "name": {
+    "en": "Maiz (MexBrewer)",
+    "zh": "Maiz（MexBrewer）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#1A2021",
+    "#2F3536",
+    "#555C4E",
+    "#A5A79E",
+    "#D2D7D1",
+    "#9BC3C9",
+    "#7CB0C1",
+    "#3D72A2",
+    "#144979",
+    "#003464"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD3D6",
+      "#AAB8C6",
+      "#869EB5",
+      "#6283A3",
+      "#3E6A92",
+      "#155080"
+    ],
+    "paired_diverging_stops": [
+      "#D2D7D1",
+      "#DDE0DC",
+      "#E8EAE7",
+      "#F4F3F2",
+      "#A0B0C2",
+      "#527193",
+      "#003464"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (MexBrewer: Maiz)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 6.65,
+    "min_de2000_deutan_first6": 6.64,
+    "min_de2000_protan_first6": 6.65,
+    "min_de2000_tritan_first6": 6.65,
+    "optimal6_min_de2000": 19.12,
+    "optimal6_min_de2000_deutan": 19.07,
+    "optimal6_min_de2000_protan": 16.19,
+    "grayscale_L_spread": 0.636,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

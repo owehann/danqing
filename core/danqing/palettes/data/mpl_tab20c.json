@@ -28,7 +28,25 @@
   "neutral": "#969696",
   "partners": {
     "sequential": "viridis",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBB",
+      "#E0A790",
+      "#D28465",
+      "#C25F37",
+      "#B13500",
+      "#9D0000"
+    ],
+    "paired_diverging_stops": [
+      "#0D68A2",
+      "#6696BE",
+      "#ACC4D8",
+      "#F4F3F2",
+      "#DFB8A0",
+      "#C57D4E",
+      "#A63E00"
+    ]
   },
   "source": {
     "title": "Matplotlib / Vega Structured Palette (tab20c chromatic)",

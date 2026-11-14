@@ -16,7 +16,25 @@
   "neutral": "#A8A8A8",
   "partners": {
     "sequential": "batlowW",
-    "diverging": "PuOr"
+    "diverging": "PuOr",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E1CDD3",
+      "#CCABBF",
+      "#B78AAC",
+      "#A26A98",
+      "#8D4984",
+      "#772670"
+    ],
+    "paired_diverging_stops": [
+      "#0F2080",
+      "#5069A9",
+      "#9EADCF",
+      "#F4F3F2",
+      "#E1B6A2",
+      "#CA7953",
+      "#AC3500"
+    ]
   },
   "source": {
     "title": "ggpubfigs Colorblind-Friendly Palette (zesty_four)",

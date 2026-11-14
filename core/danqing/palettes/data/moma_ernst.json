@@ -20,7 +20,25 @@
   "neutral": "#B8B6B2",
   "partners": {
     "sequential": "lipari",
-    "diverging": "vik"
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D3D6",
+      "#ACB8C4",
+      "#899DB3",
+      "#6782A1",
+      "#45688F",
+      "#224F7D"
+    ],
+    "paired_diverging_stops": [
+      "#696717",
+      "#959464",
+      "#C3C3AA",
+      "#F4F3F2",
+      "#A3A6B4",
+      "#595F78",
+      "#191F40"
+    ]
   },
   "source": {
     "title": "Two Children Are Threatened by a Nightingale (Deux Enfants sont menacés par un rossignol), 1924, Max Ernst, Oil with painted wood elements and cut-and-pasted printed paper on wood with wood frame",

@@ -1,0 +1,60 @@
+{
+  "id": "sanzo_wada_235",
+  "name": {
+    "en": "Sanzo Wada #235 (Ivory Buff · Yellow Orange · Grayish Lavender - B)",
+    "zh": "和田三造 #235（Ivory Buff · Yellow Orange · Grayish Lavender - B）"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EBD3A2",
+    "#F99D1B",
+    "#C0A9B3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CFB8",
+      "#D3AF89",
+      "#C18F5A",
+      "#AE7020",
+      "#9B5000",
+      "#862D00"
+    ],
+    "paired_diverging_stops": [
+      "#F99D1B",
+      "#FABB79",
+      "#F8D8B7",
+      "#F4F3F2",
+      "#E2DADD",
+      "#D1C1C8",
+      "#C0A9B3"
+    ]
+  },
+  "source": {
+    "title": "A Dictionary of Color Combinations (#235)",
+    "author": "Sanzo Wada / Matt DesLauriers JSON",
+    "year": 1933,
+    "url": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 19.8,
+    "min_de2000_deutan_first6": 15.66,
+    "min_de2000_protan_first6": 18.12,
+    "min_de2000_tritan_first6": 11.08,
+    "optimal6_min_de2000": 19.8,
+    "optimal6_min_de2000_deutan": 15.66,
+    "optimal6_min_de2000_protan": 18.12,
+    "grayscale_L_spread": 0.117,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

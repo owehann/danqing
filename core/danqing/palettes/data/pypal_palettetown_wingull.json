@@ -1,0 +1,71 @@
+{
+  "id": "pypal_palettetown_wingull",
+  "name": {
+    "en": "wingull (palettetown)",
+    "zh": "wingull（palettetown）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C0B8E0",
+    "#F0E8F8",
+    "#383838",
+    "#888888",
+    "#000000",
+    "#5070E0",
+    "#885810",
+    "#606060",
+    "#305088",
+    "#F8A830",
+    "#D88000",
+    "#D8D0F8",
+    "#70A0F8",
+    "#F8C868"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CFD2E1",
+      "#AAB5D9",
+      "#8698D0",
+      "#637BC6",
+      "#435DBB",
+      "#263CAE"
+    ],
+    "paired_diverging_stops": [
+      "#5070E0",
+      "#839EE9",
+      "#BAC9EF",
+      "#F4F3F2",
+      "#F7DBBA",
+      "#F8C27F",
+      "#F8A830"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (palettetown: wingull)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 13.6,
+    "min_de2000_deutan_first6": 13.5,
+    "min_de2000_protan_first6": 13.15,
+    "min_de2000_tritan_first6": 11.6,
+    "optimal6_min_de2000": 13.6,
+    "optimal6_min_de2000_deutan": 13.5,
+    "optimal6_min_de2000_protan": 13.15,
+    "grayscale_L_spread": 0.942,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -18,7 +18,25 @@
   "neutral": "#B6B4AE",
   "partners": {
     "sequential": "bamako",
-    "diverging": "BrBG"
+    "diverging": "BrBG",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CCD4D9",
+      "#A4BACB",
+      "#7C9FBC",
+      "#5385AD",
+      "#256B9D",
+      "#00518D"
+    ],
+    "paired_diverging_stops": [
+      "#0067A2",
+      "#6495BE",
+      "#ABC4D9",
+      "#F4F3F2",
+      "#C7C1AD",
+      "#9D906C",
+      "#746129"
+    ]
   },
   "source": {
     "title": "NatParksPalettes (Yellowstone)",

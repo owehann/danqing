@@ -1,0 +1,66 @@
+{
+  "id": "pypal_ggpomological_pomological_palette",
+  "name": {
+    "en": "pomological_palette (ggpomological)",
+    "zh": "pomological_palette（ggpomological）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C03728",
+    "#919C4C",
+    "#FD8F24",
+    "#F5C04A",
+    "#E68C7C",
+    "#828585",
+    "#C3C377",
+    "#4F5157",
+    "#6F5438"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EBCBC0",
+      "#DEA799",
+      "#D08474",
+      "#BF5F4F",
+      "#AD3828",
+      "#990000"
+    ],
+    "paired_diverging_stops": [
+      "#FD8F24",
+      "#FDB379",
+      "#FAD4B7",
+      "#F4F3F2",
+      "#B9BABB",
+      "#828487",
+      "#4F5157"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (ggpomological: pomological_palette)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 17.51,
+    "min_de2000_deutan_first6": 6.53,
+    "min_de2000_protan_first6": 6.88,
+    "min_de2000_tritan_first6": 3.04,
+    "optimal6_min_de2000": 17.51,
+    "optimal6_min_de2000_deutan": 6.53,
+    "optimal6_min_de2000_protan": 6.88,
+    "grayscale_L_spread": 0.4,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

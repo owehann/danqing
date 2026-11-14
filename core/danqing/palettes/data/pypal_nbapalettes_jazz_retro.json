@@ -1,0 +1,62 @@
+{
+  "id": "pypal_nbapalettes_jazz_retro",
+  "name": {
+    "en": "jazz_retro (nbapalettes)",
+    "zh": "jazz_retro（nbapalettes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#753BBD",
+    "#00A9E0",
+    "#006271",
+    "#954E4C",
+    "#010101"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DACEE0",
+      "#C0ADD7",
+      "#A68CCD",
+      "#8E6BC2",
+      "#7748B5",
+      "#611AA8"
+    ],
+    "paired_diverging_stops": [
+      "#753BBD",
+      "#9C7CD2",
+      "#C7B8E4",
+      "#F4F3F2",
+      "#D6BAB7",
+      "#B78380",
+      "#954E4C"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nbapalettes: jazz_retro)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 26.41,
+    "min_de2000_deutan_first6": 13.43,
+    "min_de2000_protan_first6": 16.25,
+    "min_de2000_tritan_first6": 22.54,
+    "optimal6_min_de2000": 26.41,
+    "optimal6_min_de2000_deutan": 13.43,
+    "optimal6_min_de2000_protan": 16.25,
+    "grayscale_L_spread": 0.622,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

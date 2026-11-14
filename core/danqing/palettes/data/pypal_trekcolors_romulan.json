@@ -1,0 +1,66 @@
+{
+  "id": "pypal_trekcolors_romulan",
+  "name": {
+    "en": "romulan (trekcolors)",
+    "zh": "romulan（trekcolors）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#1DF964",
+    "#15BA4B",
+    "#0E7C32",
+    "#073E18",
+    "#000000",
+    "#10263F",
+    "#214D7E",
+    "#3173BD",
+    "#429AFC"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#CDD7C3",
+      "#A6BF9F",
+      "#7EA77C",
+      "#56905A",
+      "#277837",
+      "#00610F"
+    ],
+    "paired_diverging_stops": [
+      "#1DF964",
+      "#8BF99A",
+      "#C4F7C7",
+      "#F4F3F2",
+      "#BCD7F8",
+      "#82BAFB",
+      "#429AFC"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (trekcolors: romulan)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 15.03,
+    "min_de2000_deutan_first6": 14.91,
+    "min_de2000_protan_first6": 14.99,
+    "min_de2000_tritan_first6": 8.26,
+    "optimal6_min_de2000": 20.23,
+    "optimal6_min_de2000_deutan": 18.02,
+    "optimal6_min_de2000_protan": 20.9,
+    "grayscale_L_spread": 0.858,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -20,7 +20,25 @@
   "neutral": "#A5A59D",
   "partners": {
     "sequential": "viridis",
-    "diverging": "roma"
+    "diverging": "roma",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D2E1",
+      "#ACB4DA",
+      "#8997D1",
+      "#6879C7",
+      "#495BBC",
+      "#2F39B0"
+    ],
+    "paired_diverging_stops": [
+      "#796200",
+      "#A09149",
+      "#C9C29E",
+      "#F4F3F2",
+      "#AFBBE2",
+      "#6F82CE",
+      "#3846B7"
+    ]
   },
   "source": {
     "title": "Mandala Base in Cloisonné Enamel & Gilt Bronze",

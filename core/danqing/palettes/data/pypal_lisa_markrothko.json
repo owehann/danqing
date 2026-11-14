@@ -1,0 +1,62 @@
+{
+  "id": "pypal_lisa_markrothko",
+  "name": {
+    "en": "MarkRothko (lisa)",
+    "zh": "MarkRothko（lisa）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#E49A16",
+    "#E19713",
+    "#D67629",
+    "#DA6E2E",
+    "#D85434"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#EACBBE",
+      "#DDA897",
+      "#CE8570",
+      "#BE6249",
+      "#AB3B1E",
+      "#970000"
+    ],
+    "paired_diverging_stops": [
+      "#E49A16",
+      "#EBB976",
+      "#F0D7B5",
+      "#F4F3F2",
+      "#F1C1B3",
+      "#E78D76",
+      "#D85434"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (lisa: MarkRothko)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 0.87,
+    "min_de2000_deutan_first6": 0.82,
+    "min_de2000_protan_first6": 0.91,
+    "min_de2000_tritan_first6": 0.84,
+    "optimal6_min_de2000": 0.87,
+    "optimal6_min_de2000_deutan": 0.82,
+    "optimal6_min_de2000_protan": 0.91,
+    "grayscale_L_spread": 0.126,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

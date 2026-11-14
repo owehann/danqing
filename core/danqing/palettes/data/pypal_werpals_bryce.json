@@ -1,0 +1,67 @@
+{
+  "id": "pypal_werpals_bryce",
+  "name": {
+    "en": "bryce (werpals)",
+    "zh": "bryce（werpals）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#9AD1EB",
+    "#0097D6",
+    "#A79998",
+    "#032129",
+    "#B98F00",
+    "#883F39",
+    "#FF692C",
+    "#FFC78E",
+    "#F5CEAF",
+    "#F6F5F1"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#ECCBBB",
+      "#E1A78F",
+      "#D38364",
+      "#C35E36",
+      "#B23300",
+      "#9E0000"
+    ],
+    "paired_diverging_stops": [
+      "#0097D6",
+      "#72B7E1",
+      "#B5D5EA",
+      "#F4F3F2",
+      "#E0D2B1",
+      "#CDB16D",
+      "#B98F00"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (werpals: bryce)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 19.23,
+    "min_de2000_deutan_first6": 20.65,
+    "min_de2000_protan_first6": 17.87,
+    "min_de2000_tritan_first6": 14.68,
+    "optimal6_min_de2000": 19.23,
+    "optimal6_min_de2000_deutan": 20.65,
+    "optimal6_min_de2000_protan": 17.87,
+    "grayscale_L_spread": 0.74,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

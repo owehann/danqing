@@ -1,0 +1,65 @@
+{
+  "id": "pypal_nord_moose_pond",
+  "name": {
+    "en": "moose_pond (nord)",
+    "zh": "moose_pond（nord）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4B3232",
+    "#7D4B32",
+    "#966432",
+    "#AF7D32",
+    "#E19632",
+    "#E1AF4B",
+    "#C8C896",
+    "#4B4B4B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DFD0C1",
+      "#C9B29C",
+      "#B39477",
+      "#9D7754",
+      "#875B2F",
+      "#713F00"
+    ],
+    "paired_diverging_stops": [
+      "#4B3232",
+      "#806D6C",
+      "#B9AEAD",
+      "#F4F3F2",
+      "#EEDDBF",
+      "#E8C689",
+      "#E1AF4B"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (nord: moose_pond)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 8.77,
+    "min_de2000_deutan_first6": 4.31,
+    "min_de2000_protan_first6": 6.0,
+    "min_de2000_tritan_first6": 6.8,
+    "optimal6_min_de2000": 8.77,
+    "optimal6_min_de2000_deutan": 4.31,
+    "optimal6_min_de2000_protan": 6.0,
+    "grayscale_L_spread": 0.474,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

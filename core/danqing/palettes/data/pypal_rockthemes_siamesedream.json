@@ -1,0 +1,61 @@
+{
+  "id": "pypal_rockthemes_siamesedream",
+  "name": {
+    "en": "siamesedream (rockthemes)",
+    "zh": "siamesedream（rockthemes）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F0E9E0",
+    "#2F1F16",
+    "#A34D2C",
+    "#CD8E40"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CEC1",
+      "#D3AD9C",
+      "#C08D78",
+      "#AD6D54",
+      "#994E30",
+      "#842C01"
+    ],
+    "paired_diverging_stops": [
+      "#F0E9E0",
+      "#F1ECE6",
+      "#F3F0EC",
+      "#F4F3F2",
+      "#ADA6A1",
+      "#6B5E57",
+      "#2F1F16"
+    ]
+  },
+  "source": {
+    "title": "pypalettes (rockthemes: siamesedream)",
+    "author": "Joseph Barbier (pypalettes) / upstream R palette package",
+    "year": 2024,
+    "url": "https://github.com/JosephBARBIERDARNAL/pypalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 24.89,
+    "min_de2000_deutan_first6": 19.09,
+    "min_de2000_protan_first6": 22.3,
+    "min_de2000_tritan_first6": 20.43,
+    "optimal6_min_de2000": 24.89,
+    "optimal6_min_de2000_deutan": 19.09,
+    "optimal6_min_de2000_protan": 22.3,
+    "grayscale_L_spread": 0.68,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}
