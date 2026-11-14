@@ -1,0 +1,46 @@
+{
+  "id": "np_brycecanyon",
+  "name": {
+    "en": "NatParks · Bryce Hoodoos",
+    "zh": "国家公园·布莱斯石林"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#882314",
+    "#C0532B",
+    "#CF932C",
+    "#674D53",
+    "#8C86A0",
+    "#724438",
+    "#D5AB85"
+  ],
+  "neutral": "#B6B4AE",
+  "partners": {
+    "sequential": "bamako",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "NatParksPalettes (BryceCanyon)",
+    "author": "Kevin Blake",
+    "year": 2022,
+    "url": "https://github.com/kevinsblake/NatParksPalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 10.64,
+    "min_de2000_deutan_first6": 8.94,
+    "min_de2000_protan_first6": 9.11,
+    "min_de2000_tritan_first6": 8.3,
+    "optimal6_min_de2000": 13.58,
+    "optimal6_min_de2000_deutan": 12.37,
+    "optimal6_min_de2000_protan": 14.8,
+    "grayscale_L_spread": 0.352,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "cnv_state3",
+  "name": {
+    "en": "Copy Number (Gain / Loss / Neutral)",
+    "zh": "拷贝数变异三态标准色（扩增/缺失/中性）"
+  },
+  "collection": "convention",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C85A53",
+    "#3B6B9B",
+    "#D1D5DB"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "Somatic Copy-Number Alteration (CNA) Convention",
+    "author": "Standard Genomics & Bioinformatics Convention",
+    "year": 2020,
+    "url": "https://igv.org/",
+    "license": "Public domain convention"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 37.4,
+    "min_de2000_deutan_first6": 31.81,
+    "min_de2000_protan_first6": 32.37,
+    "min_de2000_tritan_first6": 34.34,
+    "optimal6_min_de2000": 37.4,
+    "optimal6_min_de2000_deutan": 31.81,
+    "optimal6_min_de2000_protan": 32.37,
+    "grayscale_L_spread": 0.356,
+    "colorblind_safe": true,
+    "print_friendly": true
+  },
+  "convention_keys": [
+    "Gain",
+    "Loss",
+    "Neutral"
+  ]
+}

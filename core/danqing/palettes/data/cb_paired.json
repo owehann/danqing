@@ -1,0 +1,51 @@
+{
+  "id": "cb_paired",
+  "name": {
+    "en": "ColorBrewer Paired 12",
+    "zh": "ColorBrewer 成对十二色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A6CEE3",
+    "#1F78B4",
+    "#B2DF8A",
+    "#33A02C",
+    "#FB9A99",
+    "#E31A1C",
+    "#FDBF6F",
+    "#FF7F00",
+    "#CAB2D6",
+    "#6A3D9A",
+    "#FFFF99",
+    "#B15928"
+  ],
+  "neutral": "#9498A0",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "D3 Scale Chromatic / Observable (ColorBrewer Paired 12)",
+    "author": "Mike Bostock, Maureen Stone & Cynthia Brewer",
+    "year": 2023,
+    "url": "https://github.com/d3/d3-scale-chromatic",
+    "license": "ISC / Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 21.34,
+    "min_de2000_deutan_first6": 4.73,
+    "min_de2000_protan_first6": 18.87,
+    "min_de2000_tritan_first6": 8.24,
+    "optimal6_min_de2000": 21.34,
+    "optimal6_min_de2000_deutan": 4.73,
+    "optimal6_min_de2000_protan": 18.87,
+    "grayscale_L_spread": 0.518,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

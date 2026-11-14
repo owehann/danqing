@@ -1,0 +1,63 @@
+{
+  "id": "polychrome_dark24",
+  "name": {
+    "en": "Polychrome Dark 24",
+    "zh": "Polychrome 白底深调二十四色"
+  },
+  "collection": "many",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2E91E5",
+    "#E15F99",
+    "#1CA71C",
+    "#FB0D0D",
+    "#DA16FF",
+    "#222A2A",
+    "#B68100",
+    "#750D86",
+    "#EB663B",
+    "#511CFB",
+    "#00A08B",
+    "#FB00D1",
+    "#FC0080",
+    "#B2828D",
+    "#6C7C32",
+    "#778AAE",
+    "#862A16",
+    "#A777F1",
+    "#620042",
+    "#1616A7",
+    "#DA60CA",
+    "#6C4516",
+    "#0D2A63",
+    "#AF0038"
+  ],
+  "neutral": "#9E9E9E",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Polychrome Dark24 Multi-Cluster Palette",
+    "author": "Kevin R. Coombes et al. (J. Stat. Softw. 90(1):1-23)",
+    "year": 2019,
+    "url": "https://cran.r-project.org/package=Polychrome",
+    "license": "Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 24,
+    "max_colors": 24,
+    "min_de2000_first6": 19.99,
+    "min_de2000_deutan_first6": 2.91,
+    "min_de2000_protan_first6": 10.23,
+    "min_de2000_tritan_first6": 11.3,
+    "optimal6_min_de2000": 19.99,
+    "optimal6_min_de2000_deutan": 2.91,
+    "optimal6_min_de2000_protan": 10.23,
+    "grayscale_L_spread": 0.399,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

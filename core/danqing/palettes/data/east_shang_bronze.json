@@ -1,0 +1,56 @@
+{
+  "id": "east_shang_bronze",
+  "name": {
+    "en": "Shang Ritual Bronze Patina",
+    "zh": "商代青铜爵斝古绿"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#96895F",
+    "#47512C",
+    "#A9BE97",
+    "#673B1F",
+    "#00525C",
+    "#5FA4B8",
+    "#347D71",
+    "#C2887A"
+  ],
+  "neutral": "#A2A4AA",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "Ritual Wine Vessels (Jia & Jue)",
+    "author": "The Cleveland Museum of Art",
+    "year": "Shang dynasty (c. 1250–1046 BCE)",
+    "url": "https://clevelandart.org/art/2005.54",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "2005.54 & 1960.42",
+    "title": "Ritual Wine Vessels (Jia & Jue)",
+    "date": "Shang dynasty (c. 1250–1046 BCE)",
+    "url": "https://clevelandart.org/art/2005.54",
+    "image_url": "https://openaccess-cdn.clevelandart.org/2005.54/2005.54_web.jpg",
+    "thumbnail_url": "/artifacts/east_shang_bronze.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 18.61,
+    "min_de2000_deutan_first6": 3.63,
+    "min_de2000_protan_first6": 4.4,
+    "min_de2000_tritan_first6": 16.83,
+    "optimal6_min_de2000": 18.61,
+    "optimal6_min_de2000_deutan": 3.63,
+    "optimal6_min_de2000_protan": 4.4,
+    "grayscale_L_spread": 0.375,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

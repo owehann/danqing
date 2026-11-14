@@ -1,0 +1,48 @@
+{
+  "id": "lancet",
+  "name": {
+    "en": "Lancet-inspired",
+    "zh": "Lancet-inspired（柳叶刀参考）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#00468B",
+    "#ED0000",
+    "#42B540",
+    "#0099B4",
+    "#925E9F",
+    "#FDAF91",
+    "#AD002A",
+    "#ADB6B6",
+    "#1B1919"
+  ],
+  "neutral": "#ADB6B6",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Factual journal color table curated in ggsci (pal_lancet)",
+    "author": "Nan Xiao (ggsci reference table)",
+    "year": 2018,
+    "url": "https://nanx.me/ggsci/reference/pal_lancet.html",
+    "license": "Factual hex values (acknowledged in NOTICE; no ggsci code used)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 26.7,
+    "min_de2000_deutan_first6": 7.11,
+    "min_de2000_protan_first6": 12.38,
+    "min_de2000_tritan_first6": 7.59,
+    "optimal6_min_de2000": 26.7,
+    "optimal6_min_de2000_deutan": 7.11,
+    "optimal6_min_de2000_protan": 12.38,
+    "grayscale_L_spread": 0.606,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

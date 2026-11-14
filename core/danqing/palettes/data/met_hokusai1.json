@@ -1,0 +1,54 @@
+{
+  "id": "met_hokusai1",
+  "name": {
+    "en": "Hokusai I",
+    "zh": "葛饰北斋 I · 百人一首"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#6D2F20",
+    "#B75347",
+    "#DF7E66",
+    "#E09351",
+    "#EDC775",
+    "#94B594",
+    "#224B5E"
+  ],
+  "neutral": "#B6B3AC",
+  "partners": {
+    "sequential": "lajolla",
+    "diverging": "roma"
+  },
+  "source": {
+    "title": "MetBrewer: Hokusai1 (Met Object 56157)",
+    "author": "Blake Robert Mills / Katsushika Hokusai",
+    "year": 1835,
+    "url": "https://www.metmuseum.org/art/collection/search/56157",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "JP2960 (Met #56157)",
+    "title": "Poem by Gon-Chūnagon Sadaie (One Hundred Poems Explained by the Nurse)",
+    "date": "c. 1835–1836",
+    "url": "https://www.metmuseum.org/art/collection/search/56157",
+    "image_url": "https://www.metmuseum.org/art/collection/search/56157",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 14.17,
+    "min_de2000_deutan_first6": 6.18,
+    "min_de2000_protan_first6": 9.44,
+    "min_de2000_tritan_first6": 4.61,
+    "optimal6_min_de2000": 16.92,
+    "optimal6_min_de2000_deutan": 9.59,
+    "optimal6_min_de2000_protan": 12.36,
+    "grayscale_L_spread": 0.458,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

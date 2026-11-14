@@ -1,0 +1,44 @@
+{
+  "id": "pnw_shuksan2",
+  "name": {
+    "en": "PNW · Mount Shuksan Alpine",
+    "zh": "北美海岸·舒克桑雪峰"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#5D74A5",
+    "#B0CBE7",
+    "#FEF7C7",
+    "#EBA07E",
+    "#A8554E"
+  ],
+  "neutral": "#B5B8BA",
+  "partners": {
+    "sequential": "navia",
+    "diverging": "broc"
+  },
+  "source": {
+    "title": "PNWColors Pacific Northwest Nature Palette (Shuksan2)",
+    "author": "Jake Lawlor",
+    "year": 2020,
+    "url": "https://github.com/jakelawlor/PNWColors",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 25.15,
+    "min_de2000_deutan_first6": 14.99,
+    "min_de2000_protan_first6": 18.26,
+    "min_de2000_tritan_first6": 23.39,
+    "optimal6_min_de2000": 25.15,
+    "optimal6_min_de2000_deutan": 14.99,
+    "optimal6_min_de2000_protan": 18.26,
+    "grayscale_L_spread": 0.421,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

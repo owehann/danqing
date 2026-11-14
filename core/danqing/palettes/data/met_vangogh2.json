@@ -1,0 +1,55 @@
+{
+  "id": "met_vangogh2",
+  "name": {
+    "en": "Van Gogh II",
+    "zh": "梵高 II · 戴草帽的自画像"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#BD3106",
+    "#D9700E",
+    "#E9A00E",
+    "#EEBE04",
+    "#5B7314",
+    "#C3D6CE",
+    "#89A6BB",
+    "#454B87"
+  ],
+  "neutral": "#B8BEC0",
+  "partners": {
+    "sequential": "YlOrRd",
+    "diverging": "roma"
+  },
+  "source": {
+    "title": "MetBrewer: VanGogh2 (Met Object 436532)",
+    "author": "Blake Robert Mills / Vincent van Gogh",
+    "year": 1887,
+    "url": "https://www.metmuseum.org/art/collection/search/436532",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "67.187.70a (Met #436532)",
+    "title": "Self-Portrait with a Straw Hat",
+    "date": "1887",
+    "url": "https://www.metmuseum.org/art/collection/search/436532",
+    "image_url": "https://www.metmuseum.org/art/collection/search/436532",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 10.42,
+    "min_de2000_deutan_first6": 4.21,
+    "min_de2000_protan_first6": 7.03,
+    "min_de2000_tritan_first6": 7.51,
+    "optimal6_min_de2000": 19.67,
+    "optimal6_min_de2000_deutan": 4.21,
+    "optimal6_min_de2000_protan": 7.57,
+    "grayscale_L_spread": 0.422,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

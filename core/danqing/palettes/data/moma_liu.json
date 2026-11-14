@@ -1,0 +1,45 @@
+{
+  "id": "moma_liu",
+  "name": {
+    "en": "MoMA · Hung Liu Mineral Memory",
+    "zh": "现代艺术馆·刘虹矿物记忆"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#9FD7BD",
+    "#9B5C1C",
+    "#97C124",
+    "#3B5F13",
+    "#DDB25D",
+    "#5C4A32"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Tulou Collective Housing, Nanhai, Guandong, China, 2005-08, Xiao Du Liu, Yan Meng, Hui Wang, Digital rendering",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/416251",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 17.47,
+    "min_de2000_deutan_first6": 4.9,
+    "min_de2000_protan_first6": 4.02,
+    "min_de2000_tritan_first6": 12.21,
+    "optimal6_min_de2000": 17.47,
+    "optimal6_min_de2000_deutan": 4.9,
+    "optimal6_min_de2000_protan": 4.02,
+    "grayscale_L_spread": 0.412,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "Greens",
+  "name": {
+    "en": "ColorBrewer Greens",
+    "zh": "ColorBrewer 翠绿单色序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#F7FCF5",
+    "#E5F5E0",
+    "#C7E9C0",
+    "#A1D99B",
+    "#74C476",
+    "#41AB5D",
+    "#238B45",
+    "#006D2C",
+    "#00441B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "Greens",
+    "diverging": "RdYlBu"
+  },
+  "source": {
+    "title": "ColorBrewer 2.0 (Greens, 9-class)",
+    "author": "Cynthia A. Brewer, Penn State",
+    "year": 2013,
+    "url": "https://colorbrewer2.org/#type=sequential&scheme=Greens&n=9",
+    "license": "Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 7.56,
+    "min_de2000_deutan_first6": 4.74,
+    "min_de2000_protan_first6": 5.39,
+    "min_de2000_tritan_first6": 5.18,
+    "optimal6_min_de2000": 10.7,
+    "optimal6_min_de2000_deutan": 10.33,
+    "optimal6_min_de2000_protan": 10.5,
+    "grayscale_L_spread": 0.647,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

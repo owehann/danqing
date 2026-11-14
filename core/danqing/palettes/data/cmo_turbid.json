@@ -1,0 +1,48 @@
+{
+  "id": "cmo_turbid",
+  "name": {
+    "en": "cmocean Turbid",
+    "zh": "cmocean 沉积米金序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#E9F6AB",
+    "#D8D17E",
+    "#CAAE58",
+    "#B98C42",
+    "#A1703B",
+    "#845A39",
+    "#634634",
+    "#423329",
+    "#221F1B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cmo_turbid",
+    "diverging": "cmo_balance"
+  },
+  "source": {
+    "title": "True Colors of Oceanography: cmocean (turbid)",
+    "author": "Kristen M. Thyng et al. (Oceanography 29(3):9-13)",
+    "year": 2016,
+    "url": "https://github.com/matplotlib/cmocean",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 9.48,
+    "min_de2000_deutan_first6": 7.52,
+    "min_de2000_protan_first6": 8.23,
+    "min_de2000_tritan_first6": 9.09,
+    "optimal6_min_de2000": 10.76,
+    "optimal6_min_de2000_deutan": 8.17,
+    "optimal6_min_de2000_protan": 9.58,
+    "grayscale_L_spread": 0.705,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

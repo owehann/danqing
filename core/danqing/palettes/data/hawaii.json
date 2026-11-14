@@ -1,0 +1,48 @@
+{
+  "id": "hawaii",
+  "name": {
+    "en": "Hawaii",
+    "zh": "Hawaii（紫赭青翠序列）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#8C0273",
+    "#922E55",
+    "#974E3E",
+    "#9B6F28",
+    "#9C961C",
+    "#8ABC48",
+    "#6CD48C",
+    "#66E8D3",
+    "#B3F2FD"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "hawaii",
+    "diverging": "bam"
+  },
+  "source": {
+    "title": "Scientific colour maps v8.0 (hawaii)",
+    "author": "Fabio Crameri",
+    "year": 2023,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT (cmcrameri / Zenodo)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 11.8,
+    "min_de2000_deutan_first6": 7.55,
+    "min_de2000_protan_first6": 9.69,
+    "min_de2000_tritan_first6": 5.08,
+    "optimal6_min_de2000": 18.28,
+    "optimal6_min_de2000_deutan": 9.68,
+    "optimal6_min_de2000_protan": 13.02,
+    "grayscale_L_spread": 0.488,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

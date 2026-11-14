@@ -1,0 +1,56 @@
+{
+  "id": "east_edo_kutani_porcelain",
+  "name": {
+    "en": "Edo Kutani & Imari Enamel",
+    "zh": "江户古九谷柿右卫门"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#83CD60",
+    "#30395E",
+    "#90363A",
+    "#7596C3",
+    "#867D53",
+    "#CD83A1",
+    "#2E781D",
+    "#954B6C"
+  ],
+  "neutral": "#A6A49F",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Kakiemon/Kutani Enamel Figure & Polychrome Porcelain Punch Bowl",
+    "author": "The Cleveland Museum of Art",
+    "year": "Edo period (c. 1735–1770)",
+    "url": "https://clevelandart.org/art/1947.62",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1947.62 & 1938.331",
+    "title": "Kakiemon/Kutani Enamel Figure & Polychrome Porcelain Punch Bowl",
+    "date": "Edo period (c. 1735–1770)",
+    "url": "https://clevelandart.org/art/1947.62",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1947.62/1947.62_web.jpg",
+    "thumbnail_url": "/artifacts/east_edo_kutani_porcelain.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 27.51,
+    "min_de2000_deutan_first6": 13.53,
+    "min_de2000_protan_first6": 9.16,
+    "min_de2000_tritan_first6": 14.14,
+    "optimal6_min_de2000": 27.51,
+    "optimal6_min_de2000_deutan": 13.53,
+    "optimal6_min_de2000_protan": 9.16,
+    "grayscale_L_spread": 0.421,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

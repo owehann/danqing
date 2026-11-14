@@ -1,0 +1,48 @@
+{
+  "id": "plasma",
+  "name": {
+    "en": "Plasma",
+    "zh": "Plasma（靛紫金黄序列）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#0D0887",
+    "#4C02A1",
+    "#7E03A8",
+    "#AA2395",
+    "#CC4778",
+    "#E56B5D",
+    "#F89441",
+    "#FDC328",
+    "#F0F921"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "plasma",
+    "diverging": "PuOr"
+  },
+  "source": {
+    "title": "Matplotlib Perceptually Uniform Colormaps (plasma)",
+    "author": "Stéfan van der Walt & Nathaniel Smith",
+    "year": 2015,
+    "url": "https://bids.github.io/colormap/",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 7.49,
+    "min_de2000_deutan_first6": 7.07,
+    "min_de2000_protan_first6": 3.95,
+    "min_de2000_tritan_first6": 9.1,
+    "optimal6_min_de2000": 19.09,
+    "optimal6_min_de2000_deutan": 7.2,
+    "optimal6_min_de2000_protan": 9.82,
+    "grayscale_L_spread": 0.651,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

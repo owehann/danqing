@@ -1,0 +1,50 @@
+{
+  "id": "moma_avedon",
+  "name": {
+    "en": "MoMA · Avedon Pop Lithograph",
+    "zh": "现代艺术馆·阿维顿波普版画"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#FF7200",
+    "#FF8827",
+    "#FF9C4C",
+    "#FFB274",
+    "#F1CAA8",
+    "#E3E1DC",
+    "#C2CEAA",
+    "#A1BA77",
+    "#8BAC54",
+    "#7EA13E",
+    "#648C16"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "George Harrison, 1967, Richard Avedon, Lithograph",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/8742",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 4.98,
+    "min_de2000_deutan_first6": 2.94,
+    "min_de2000_protan_first6": 5.06,
+    "min_de2000_tritan_first6": 5.21,
+    "optimal6_min_de2000": 10.1,
+    "optimal6_min_de2000_deutan": 8.53,
+    "optimal6_min_de2000_protan": 2.53,
+    "grayscale_L_spread": 0.321,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

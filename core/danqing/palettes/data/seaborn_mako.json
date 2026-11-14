@@ -1,0 +1,48 @@
+{
+  "id": "seaborn_mako",
+  "name": {
+    "en": "Seaborn Mako (Paper-safe)",
+    "zh": "Seaborn 深海青蓝去黑序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#140910",
+    "#312140",
+    "#403A76",
+    "#3A5B9B",
+    "#357EA4",
+    "#35A1AB",
+    "#4BC2AD",
+    "#96DDB5",
+    "#DCF4E3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "seaborn_mako",
+    "diverging": "seaborn_vlag"
+  },
+  "source": {
+    "title": "Seaborn Perceptually Uniform Colormaps (mako)",
+    "author": "Michael L. Waskom (JOSS 6(60):3021)",
+    "year": 2021,
+    "url": "https://github.com/mwaskom/seaborn",
+    "license": "BSD-3-Clause"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 12.33,
+    "min_de2000_deutan_first6": 8.61,
+    "min_de2000_protan_first6": 10.37,
+    "min_de2000_tritan_first6": 8.72,
+    "optimal6_min_de2000": 14.58,
+    "optimal6_min_de2000_deutan": 11.97,
+    "optimal6_min_de2000_protan": 13.0,
+    "grayscale_L_spread": 0.786,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

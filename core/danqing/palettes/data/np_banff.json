@@ -1,0 +1,46 @@
+{
+  "id": "np_banff",
+  "name": {
+    "en": "NatParks · Banff Moraine Turquoise",
+    "zh": "国家公园·班夫冰川湖"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#006475",
+    "#00A1B7",
+    "#55CFD8",
+    "#586028",
+    "#898928",
+    "#616571",
+    "#9DA7BF"
+  ],
+  "neutral": "#B6B4AE",
+  "partners": {
+    "sequential": "bamako",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "NatParksPalettes (Banff)",
+    "author": "Kevin Blake",
+    "year": 2022,
+    "url": "https://github.com/kevinsblake/NatParksPalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 13.64,
+    "min_de2000_deutan_first6": 8.94,
+    "min_de2000_protan_first6": 4.71,
+    "min_de2000_tritan_first6": 8.12,
+    "optimal6_min_de2000": 17.73,
+    "optimal6_min_de2000_deutan": 5.68,
+    "optimal6_min_de2000_protan": 4.71,
+    "grayscale_L_spread": 0.327,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

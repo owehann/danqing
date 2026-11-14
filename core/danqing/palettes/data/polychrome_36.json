@@ -1,0 +1,73 @@
+{
+  "id": "polychrome_36",
+  "name": {
+    "en": "Polychrome 34",
+    "zh": "Polychrome 高区分度三十四色"
+  },
+  "collection": "many",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#5A5156",
+    "#F6222E",
+    "#FE00FA",
+    "#16FF32",
+    "#3283FE",
+    "#FEAF16",
+    "#B00068",
+    "#1CFFCE",
+    "#90AD1C",
+    "#2ED9FF",
+    "#DEA0FD",
+    "#AA0DFE",
+    "#F8A19F",
+    "#325A9B",
+    "#C4451C",
+    "#1C8356",
+    "#85660D",
+    "#B10DA1",
+    "#FBE426",
+    "#1CBE4F",
+    "#FA0087",
+    "#FC1CBF",
+    "#C075A6",
+    "#782AB6",
+    "#AAF400",
+    "#BDCDFF",
+    "#822E1C",
+    "#B5EFB5",
+    "#7ED7D1",
+    "#1C7F93",
+    "#D85FF7",
+    "#683B79",
+    "#66B0FF",
+    "#3B00FB"
+  ],
+  "neutral": "#A8A8A8",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Polychrome: Creating and Assessing Qualitative Palettes with Many Colors (palette36)",
+    "author": "Kevin R. Coombes et al. (J. Stat. Softw. 90(1):1-23)",
+    "year": 2019,
+    "url": "https://doi.org/10.18637/jss.v090.c01",
+    "license": "Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 34,
+    "max_colors": 34,
+    "min_de2000_first6": 33.14,
+    "min_de2000_deutan_first6": 4.4,
+    "min_de2000_protan_first6": 5.93,
+    "min_de2000_tritan_first6": 19.53,
+    "optimal6_min_de2000": 36.9,
+    "optimal6_min_de2000_deutan": 11.62,
+    "optimal6_min_de2000_protan": 6.44,
+    "grayscale_L_spread": 0.489,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

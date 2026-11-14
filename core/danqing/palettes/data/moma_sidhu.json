@@ -1,0 +1,46 @@
+{
+  "id": "moma_sidhu",
+  "name": {
+    "en": "MoMA · Sidhu Contemporary",
+    "zh": "现代艺术馆·西杜当代色域"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#AF4646",
+    "#762B35",
+    "#005187",
+    "#251C4A",
+    "#78ADB7",
+    "#4C9A77",
+    "#1B7975"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "May 24 from the series Doomscrolling, 2020-2021, Zorawar Sidhu, Rob Swainston, Woodcut",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/431041?artist_id=134546&page=1&sov_referrer=artist",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 14.12,
+    "min_de2000_deutan_first6": 13.48,
+    "min_de2000_protan_first6": 12.77,
+    "min_de2000_tritan_first6": 9.15,
+    "optimal6_min_de2000": 16.37,
+    "optimal6_min_de2000_deutan": 13.48,
+    "optimal6_min_de2000_protan": 15.85,
+    "grayscale_L_spread": 0.449,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "met_homer2",
+  "name": {
+    "en": "Met · Homer Flower Garden",
+    "zh": "大都会·霍默繁花庭院"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#BF3626",
+    "#E9851D",
+    "#F9C53B",
+    "#AEAC4C",
+    "#788F33",
+    "#165D43"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Flower Garden and Bungalow, Bermuda, 1899, Winslow Homer, American",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/11121",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 12.67,
+    "min_de2000_deutan_first6": 5.45,
+    "min_de2000_protan_first6": 4.97,
+    "min_de2000_tritan_first6": 15.4,
+    "optimal6_min_de2000": 12.67,
+    "optimal6_min_de2000_deutan": 5.45,
+    "optimal6_min_de2000_protan": 4.97,
+    "grayscale_L_spread": 0.419,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

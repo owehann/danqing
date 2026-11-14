@@ -1,0 +1,44 @@
+{
+  "id": "wes_cavalcanti",
+  "name": {
+    "en": "Cinema · Castello Cavalcanti",
+    "zh": "电影美学·卡瓦尔坎蒂暖调"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#D8B70A",
+    "#02401B",
+    "#A2A475",
+    "#81A88D",
+    "#972D15"
+  ],
+  "neutral": "#B9B4AB",
+  "partners": {
+    "sequential": "lajolla",
+    "diverging": "RdYlBu"
+  },
+  "source": {
+    "title": "wesanderson Cinema Color Palette (Cavalcanti1)",
+    "author": "Karthik Ram & Hadley Wickham",
+    "year": 2023,
+    "url": "https://github.com/karthik/wesanderson",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 12.64,
+    "min_de2000_deutan_first6": 9.17,
+    "min_de2000_protan_first6": 5.28,
+    "min_de2000_tritan_first6": 17.83,
+    "optimal6_min_de2000": 12.64,
+    "optimal6_min_de2000_deutan": 9.17,
+    "optimal6_min_de2000_protan": 5.28,
+    "grayscale_L_spread": 0.459,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

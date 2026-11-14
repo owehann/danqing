@@ -1,0 +1,45 @@
+{
+  "id": "np_yosemite",
+  "name": {
+    "en": "NatParks · Yosemite El Capitan",
+    "zh": "国家公园·优胜美地花岗岩"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#293633",
+    "#3D5051",
+    "#6B7F7F",
+    "#87A1C7",
+    "#516B95",
+    "#304F7D"
+  ],
+  "neutral": "#B6B4AE",
+  "partners": {
+    "sequential": "bamako",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "NatParksPalettes (Yosemite)",
+    "author": "Kevin Blake",
+    "year": 2022,
+    "url": "https://github.com/kevinsblake/NatParksPalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 8.78,
+    "min_de2000_deutan_first6": 8.72,
+    "min_de2000_protan_first6": 9.03,
+    "min_de2000_tritan_first6": 8.16,
+    "optimal6_min_de2000": 8.78,
+    "optimal6_min_de2000_deutan": 8.72,
+    "optimal6_min_de2000_protan": 9.03,
+    "grayscale_L_spread": 0.383,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "cns_sdi_amber",
+  "name": {
+    "en": "CNS Spatial Amber–Garnet",
+    "zh": "CNS 空间密度暖金石榴红序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#F4EFE6",
+    "#F0E2C4",
+    "#EDD6A4",
+    "#E8BA78",
+    "#E29D52",
+    "#D57B48",
+    "#C6593F",
+    "#9E3B2F",
+    "#781E20"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_sdi_amber",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "CNS Spatial Transcriptomics White-Background Ramp (cns_sdi_amber)",
+    "author": "Danqing / CNS Publication Cartography",
+    "year": 2025,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 6.19,
+    "min_de2000_deutan_first6": 6.09,
+    "min_de2000_protan_first6": 6.38,
+    "min_de2000_tritan_first6": 5.46,
+    "optimal6_min_de2000": 10.3,
+    "optimal6_min_de2000_deutan": 7.97,
+    "optimal6_min_de2000_protan": 9.83,
+    "grayscale_L_spread": 0.569,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "nuuk",
+  "name": {
+    "en": "Nuuk",
+    "zh": "Nuuk（极地灰蓝米黄序列）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#05598C",
+    "#2D6483",
+    "#537785",
+    "#7D8F91",
+    "#A1A698",
+    "#B5B591",
+    "#C3C285",
+    "#DCDB8A",
+    "#FEFEB2"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "nuuk",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Scientific colour maps v8.0 (nuuk)",
+    "author": "Fabio Crameri",
+    "year": 2023,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT (cmcrameri / Zenodo)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 5.99,
+    "min_de2000_deutan_first6": 6.05,
+    "min_de2000_protan_first6": 5.84,
+    "min_de2000_tritan_first6": 2.83,
+    "optimal6_min_de2000": 8.66,
+    "optimal6_min_de2000_deutan": 8.82,
+    "optimal6_min_de2000_protan": 8.55,
+    "grayscale_L_spread": 0.532,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

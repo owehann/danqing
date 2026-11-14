@@ -1,0 +1,42 @@
+{
+  "id": "pubfigs_retro4",
+  "name": {
+    "en": "PubFigs Retro-Four",
+    "zh": "PubFigs 复古科研三色"
+  },
+  "collection": "accessible",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#601A4A",
+    "#EE442F",
+    "#63ACBE"
+  ],
+  "neutral": "#B5B2AC",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "ggpubfigs Colorblind-Friendly Palette (retro_four)",
+    "author": "Jacob L. Steenwyk & Antonis Rokas",
+    "year": 2021,
+    "url": "https://github.com/JLSteenwyk/ggpubfigs",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 39.79,
+    "min_de2000_deutan_first6": 38.32,
+    "min_de2000_protan_first6": 39.2,
+    "min_de2000_tritan_first6": 31.07,
+    "optimal6_min_de2000": 39.79,
+    "optimal6_min_de2000_deutan": 38.32,
+    "optimal6_min_de2000_protan": 39.2,
+    "grayscale_L_spread": 0.354,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "tol_rainbow_discrete",
+  "name": {
+    "en": "Paul Tol Discrete Rainbow",
+    "zh": "保罗·托尔离散光谱多簇色"
+  },
+  "collection": "many",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#882E72",
+    "#B178A6",
+    "#D6C1DE",
+    "#1965B0",
+    "#5289C7",
+    "#7BAFDE",
+    "#4EB265",
+    "#90C987",
+    "#CAE0AB",
+    "#F7EE55",
+    "#F6C141",
+    "#F1932D",
+    "#E8601C",
+    "#DC050C",
+    "#72190E",
+    "#42150A",
+    "#A5170E",
+    "#F4A736",
+    "#F7F056",
+    "#4EB265"
+  ],
+  "neutral": "#777777",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Paul Tol Discrete Rainbow Scheme (SRON/EPS/TN/09-002)",
+    "author": "Paul Tol",
+    "year": 2022,
+    "url": "https://sronpersonalpages.nl/~pault/",
+    "license": "BSD-3-Clause"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 20,
+    "max_colors": 20,
+    "min_de2000_first6": 11.93,
+    "min_de2000_deutan_first6": 11.8,
+    "min_de2000_protan_first6": 7.06,
+    "min_de2000_tritan_first6": 11.14,
+    "optimal6_min_de2000": 30.09,
+    "optimal6_min_de2000_deutan": 11.8,
+    "optimal6_min_de2000_protan": 13.83,
+    "grayscale_L_spread": 0.668,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

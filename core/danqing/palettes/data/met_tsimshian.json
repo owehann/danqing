@@ -1,0 +1,46 @@
+{
+  "id": "met_tsimshian",
+  "name": {
+    "en": "Met · Tsimshian Chilkat",
+    "zh": "大都会·齐姆希安图腾"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#582310",
+    "#AA361D",
+    "#82C45F",
+    "#318F49",
+    "#0CB4BB",
+    "#2673A3",
+    "#473D7D"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Headdress frontlet, 1820–40, Tsimshian, Native American (Canadian)",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/717587",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 17.36,
+    "min_de2000_deutan_first6": 10.24,
+    "min_de2000_protan_first6": 12.53,
+    "min_de2000_tritan_first6": 8.78,
+    "optimal6_min_de2000": 18.37,
+    "optimal6_min_de2000_deutan": 12.5,
+    "optimal6_min_de2000_protan": 16.05,
+    "grayscale_L_spread": 0.423,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

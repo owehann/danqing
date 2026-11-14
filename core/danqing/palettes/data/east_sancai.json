@@ -1,0 +1,56 @@
+{
+  "id": "east_sancai",
+  "name": {
+    "en": "Tang Sancai Glaze",
+    "zh": "唐三彩瑞兽釉"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E7A600",
+    "#1B5563",
+    "#486114",
+    "#5F8B78",
+    "#AE5B00",
+    "#8D9F48",
+    "#483A17",
+    "#7A6C4B"
+  ],
+  "neutral": "#A6A49F",
+  "partners": {
+    "sequential": "lajolla",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "Tomb Guardian with Animal Head (Sancai Three-Color Ware)",
+    "author": "The Cleveland Museum of Art",
+    "year": "Tang dynasty (early 700s)",
+    "url": "https://clevelandart.org/art/1955.295",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "2000.118.1 & 1955.295",
+    "title": "Tomb Guardian with Animal Head (Sancai Three-Color Ware)",
+    "date": "Tang dynasty (early 700s)",
+    "url": "https://clevelandart.org/art/1955.295",
+    "image_url": "https://openaccess-cdn.clevelandart.org/2000.118.1/2000.118.1_web.jpg",
+    "thumbnail_url": "/artifacts/east_sancai.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 20.02,
+    "min_de2000_deutan_first6": 12.17,
+    "min_de2000_protan_first6": 4.52,
+    "min_de2000_tritan_first6": 12.41,
+    "optimal6_min_de2000": 20.02,
+    "optimal6_min_de2000_deutan": 12.17,
+    "optimal6_min_de2000_protan": 4.52,
+    "grayscale_L_spread": 0.412,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

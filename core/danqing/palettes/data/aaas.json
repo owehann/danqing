@@ -1,0 +1,49 @@
+{
+  "id": "aaas",
+  "name": {
+    "en": "AAAS-inspired",
+    "zh": "AAAS-inspired（科学系参考）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3B4992",
+    "#EE0000",
+    "#008B45",
+    "#631879",
+    "#008280",
+    "#BB0021",
+    "#5F559B",
+    "#A20056",
+    "#808180",
+    "#1B1919"
+  ],
+  "neutral": "#808180",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "Factual journal color table curated in ggsci (pal_aaas)",
+    "author": "Nan Xiao (ggsci reference table)",
+    "year": 2018,
+    "url": "https://nanx.me/ggsci/reference/pal_aaas.html",
+    "license": "Factual hex values (acknowledged in NOTICE; no ggsci code used)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 13.03,
+    "min_de2000_deutan_first6": 4.8,
+    "min_de2000_protan_first6": 8.53,
+    "min_de2000_tritan_first6": 3.59,
+    "optimal6_min_de2000": 13.03,
+    "optimal6_min_de2000_deutan": 4.8,
+    "optimal6_min_de2000_protan": 8.53,
+    "grayscale_L_spread": 0.386,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

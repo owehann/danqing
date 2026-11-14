@@ -1,0 +1,49 @@
+{
+  "id": "dna_bases4",
+  "name": {
+    "en": "DNA / RNA Nucleotide (A/C/G/T)",
+    "zh": "核酸四碱基标准色（A绿/C蓝/G金/T红）"
+  },
+  "collection": "convention",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2E9F57",
+    "#2B6CB0",
+    "#D99B26",
+    "#C84B3C"
+  ],
+  "neutral": "#9CA3AF",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "Sanger Chromatogram & IGV Nucleotide Base Convention",
+    "author": "Standard Genomics & Bioinformatics Convention",
+    "year": 2020,
+    "url": "https://igv.org/",
+    "license": "Public domain convention"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 33.55,
+    "min_de2000_deutan_first6": 6.82,
+    "min_de2000_protan_first6": 10.29,
+    "min_de2000_tritan_first6": 14.72,
+    "optimal6_min_de2000": 33.55,
+    "optimal6_min_de2000_deutan": 6.82,
+    "optimal6_min_de2000_protan": 10.29,
+    "grayscale_L_spread": 0.207,
+    "colorblind_safe": false,
+    "print_friendly": false
+  },
+  "convention_keys": [
+    "A",
+    "C",
+    "G",
+    "T"
+  ]
+}

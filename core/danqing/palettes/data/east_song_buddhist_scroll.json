@@ -1,0 +1,56 @@
+{
+  "id": "east_song_buddhist_scroll",
+  "name": {
+    "en": "Song Misty Mountain Ink-Wash",
+    "zh": "北宋巨然溪山兰若"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BB8221",
+    "#553A0E",
+    "#D3B279",
+    "#454D00",
+    "#959F68",
+    "#C9846E",
+    "#B14A35",
+    "#15543C"
+  ],
+  "neutral": "#ACA397",
+  "partners": {
+    "sequential": "davos",
+    "diverging": "broc"
+  },
+  "source": {
+    "title": "Buddhist Retreat by Stream and Mountains (Juran) & Mountain Market",
+    "author": "The Cleveland Museum of Art",
+    "year": "Northern Song–Ming dynasty (960–early 1500s)",
+    "url": "https://clevelandart.org/art/1959.348",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1959.348 & 2015.517",
+    "title": "Buddhist Retreat by Stream and Mountains (Juran) & Mountain Market",
+    "date": "Northern Song–Ming dynasty (960–early 1500s)",
+    "url": "https://clevelandart.org/art/1959.348",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1959.348/1959.348_web.jpg",
+    "thumbnail_url": "/artifacts/east_song_buddhist_scroll.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 15.36,
+    "min_de2000_deutan_first6": 0.64,
+    "min_de2000_protan_first6": 5.45,
+    "min_de2000_tritan_first6": 4.06,
+    "optimal6_min_de2000": 15.36,
+    "optimal6_min_de2000_deutan": 0.64,
+    "optimal6_min_de2000_protan": 5.45,
+    "grayscale_L_spread": 0.409,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "pnw_starfish",
+  "name": {
+    "en": "PNW · Tidepool Starfish",
+    "zh": "北美海岸·潮池紫星"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#24492E",
+    "#015B58",
+    "#2C6184",
+    "#59629B",
+    "#89689D",
+    "#BA7999",
+    "#E69B99"
+  ],
+  "neutral": "#B5B8BA",
+  "partners": {
+    "sequential": "navia",
+    "diverging": "broc"
+  },
+  "source": {
+    "title": "PNWColors Pacific Northwest Nature Palette (Starfish)",
+    "author": "Jake Lawlor",
+    "year": 2020,
+    "url": "https://github.com/jakelawlor/PNWColors",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 12.01,
+    "min_de2000_deutan_first6": 4.81,
+    "min_de2000_protan_first6": 4.57,
+    "min_de2000_tritan_first6": 5.23,
+    "optimal6_min_de2000": 12.99,
+    "optimal6_min_de2000_deutan": 8.19,
+    "optimal6_min_de2000_protan": 4.57,
+    "grayscale_L_spread": 0.393,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

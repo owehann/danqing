@@ -1,0 +1,48 @@
+{
+  "id": "seaborn_rocket",
+  "name": {
+    "en": "Seaborn Rocket (Paper-safe)",
+    "zh": "Seaborn 焰红紫黑去黑序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#0D0A21",
+    "#3A1A41",
+    "#6B1F56",
+    "#9E1A5B",
+    "#CF1E4D",
+    "#ED503E",
+    "#F58860",
+    "#F6BB97",
+    "#FAE9DA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "seaborn_rocket",
+    "diverging": "seaborn_vlag"
+  },
+  "source": {
+    "title": "Seaborn Perceptually Uniform Colormaps (rocket)",
+    "author": "Michael L. Waskom (JOSS 6(60):3021)",
+    "year": 2021,
+    "url": "https://github.com/mwaskom/seaborn",
+    "license": "BSD-3-Clause"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 10.89,
+    "min_de2000_deutan_first6": 8.17,
+    "min_de2000_protan_first6": 5.58,
+    "min_de2000_tritan_first6": 7.73,
+    "optimal6_min_de2000": 13.58,
+    "optimal6_min_de2000_deutan": 9.67,
+    "optimal6_min_de2000_protan": 12.47,
+    "grayscale_L_spread": 0.779,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

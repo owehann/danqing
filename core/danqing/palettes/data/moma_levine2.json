@@ -1,0 +1,46 @@
+{
+  "id": "moma_levine2",
+  "name": {
+    "en": "MoMA · Sherrie Levine Modern",
+    "zh": "现代艺术馆·勒维恩现代主义"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#E3C1CB",
+    "#AD5A6B",
+    "#C993A2",
+    "#365C83",
+    "#384351",
+    "#4D8F8B",
+    "#CDD6AD"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "After Kirchner from Meltdown, 1989, Sherrie Levine, One from a portfolio of four woodcuts",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/65714",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 11.88,
+    "min_de2000_deutan_first6": 10.47,
+    "min_de2000_protan_first6": 6.74,
+    "min_de2000_tritan_first6": 12.51,
+    "optimal6_min_de2000": 12.32,
+    "optimal6_min_de2000_deutan": 10.47,
+    "optimal6_min_de2000_protan": 6.74,
+    "grayscale_L_spread": 0.48,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

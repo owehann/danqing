@@ -1,0 +1,47 @@
+{
+  "id": "moma_abbott",
+  "name": {
+    "en": "MoMA · Abbott Urban Chroma",
+    "zh": "现代艺术馆·阿博特都会色彩"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#950404",
+    "#E04B28",
+    "#C38961",
+    "#9F5630",
+    "#388F30",
+    "#0F542F",
+    "#007D82",
+    "#004042"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Tress, 1994, Matthew Abbott, Synthetic polymer paint and modeling paste on linen",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/79703?artist_id=7388&page=1&sov_referrer=artist",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 13.65,
+    "min_de2000_deutan_first6": 4.39,
+    "min_de2000_protan_first6": 5.29,
+    "min_de2000_tritan_first6": 13.07,
+    "optimal6_min_de2000": 13.65,
+    "optimal6_min_de2000_deutan": 4.39,
+    "optimal6_min_de2000_protan": 5.29,
+    "grayscale_L_spread": 0.341,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

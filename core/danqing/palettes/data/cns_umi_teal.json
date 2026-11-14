@@ -1,0 +1,48 @@
+{
+  "id": "cns_umi_teal",
+  "name": {
+    "en": "CNS Spatial Mist–Prussian",
+    "zh": "CNS 空间转录本雾青普鲁士蓝序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#F2F6F7",
+    "#DAEBE8",
+    "#C2E2DC",
+    "#95C9C4",
+    "#68B0AB",
+    "#4B8FA0",
+    "#2E6F95",
+    "#225275",
+    "#163554"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_umi_teal",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "CNS Spatial Transcriptomics White-Background Ramp (cns_umi_teal)",
+    "author": "Danqing / CNS Publication Cartography",
+    "year": 2025,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 5.76,
+    "min_de2000_deutan_first6": 2.94,
+    "min_de2000_protan_first6": 2.47,
+    "min_de2000_tritan_first6": 6.24,
+    "optimal6_min_de2000": 9.92,
+    "optimal6_min_de2000_deutan": 8.68,
+    "optimal6_min_de2000_protan": 9.45,
+    "grayscale_L_spread": 0.648,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

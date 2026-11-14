@@ -1,0 +1,44 @@
+{
+  "id": "moma_koons",
+  "name": {
+    "en": "MoMA · Koons Neo-Pop",
+    "zh": "现代艺术馆·昆斯新波普"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D8537D",
+    "#6DC5B2",
+    "#EECA76",
+    "#5D2314",
+    "#B5282A"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Pink Panther, 1988, Jeff Koons, Porcelain on formica base",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/81095?artist_id=6622&page=1&sov_referrer=artist",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 18.0,
+    "min_de2000_deutan_first6": 15.28,
+    "min_de2000_protan_first6": 10.24,
+    "min_de2000_tritan_first6": 14.6,
+    "optimal6_min_de2000": 18.0,
+    "optimal6_min_de2000_deutan": 15.28,
+    "optimal6_min_de2000_protan": 10.24,
+    "grayscale_L_spread": 0.513,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "cmo_tempo",
+  "name": {
+    "en": "cmocean Tempo",
+    "zh": "cmocean 潮汐青墨序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#FFF6F4",
+    "#D2D9C7",
+    "#A1C1A1",
+    "#69AB89",
+    "#2A937F",
+    "#117777",
+    "#1B5968",
+    "#1B3C56",
+    "#151D44"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cmo_tempo",
+    "diverging": "cmo_balance"
+  },
+  "source": {
+    "title": "True Colors of Oceanography: cmocean (tempo)",
+    "author": "Kristen M. Thyng et al. (Oceanography 29(3):9-13)",
+    "year": 2016,
+    "url": "https://github.com/matplotlib/cmocean",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 10.32,
+    "min_de2000_deutan_first6": 8.16,
+    "min_de2000_protan_first6": 7.0,
+    "min_de2000_tritan_first6": 8.78,
+    "optimal6_min_de2000": 13.19,
+    "optimal6_min_de2000_deutan": 8.17,
+    "optimal6_min_de2000_protan": 9.12,
+    "grayscale_L_spread": 0.731,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

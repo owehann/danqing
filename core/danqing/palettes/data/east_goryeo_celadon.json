@@ -1,0 +1,56 @@
+{
+  "id": "east_goryeo_celadon",
+  "name": {
+    "en": "Goryeo Inlaid Jade Celadon",
+    "zh": "高丽象嵌青瓷莲竹"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A6C0A1",
+    "#4C451D",
+    "#7E8463",
+    "#C1A966",
+    "#00544B",
+    "#906342",
+    "#5CA6AE",
+    "#00816F"
+  ],
+  "neutral": "#B9B5BA",
+  "partners": {
+    "sequential": "GnBu",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "Goryeo Celadon Vase with Inlaid Lotus, Plum & Waterfowl Bowl",
+    "author": "The Cleveland Museum of Art",
+    "year": "Goryeo dynasty (1300s)",
+    "url": "https://clevelandart.org/art/1918.471",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1918.471 & 1918.458",
+    "title": "Goryeo Celadon Vase with Inlaid Lotus, Plum & Waterfowl Bowl",
+    "date": "Goryeo dynasty (1300s)",
+    "url": "https://clevelandart.org/art/1918.471",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1918.471/1918.471_web.jpg",
+    "thumbnail_url": "/artifacts/east_goryeo_celadon.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 18.54,
+    "min_de2000_deutan_first6": 8.39,
+    "min_de2000_protan_first6": 10.52,
+    "min_de2000_tritan_first6": 19.57,
+    "optimal6_min_de2000": 18.54,
+    "optimal6_min_de2000_deutan": 8.39,
+    "optimal6_min_de2000_protan": 10.52,
+    "grayscale_L_spread": 0.392,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

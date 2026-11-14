@@ -1,0 +1,46 @@
+{
+  "id": "met_degas",
+  "name": {
+    "en": "Met · Degas Ballet Rehearsal",
+    "zh": "大都会·德加芭蕾排练"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#591D06",
+    "#96410E",
+    "#E5A335",
+    "#556219",
+    "#418979",
+    "#2B614E",
+    "#053C29"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "The Rehearsal of the Ballet Onstage, 1874, Edgar Degas, French",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/436155",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 14.65,
+    "min_de2000_deutan_first6": 4.01,
+    "min_de2000_protan_first6": 4.91,
+    "min_de2000_tritan_first6": 14.52,
+    "optimal6_min_de2000": 15.6,
+    "optimal6_min_de2000_deutan": 4.01,
+    "optimal6_min_de2000_protan": 4.91,
+    "grayscale_L_spread": 0.444,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

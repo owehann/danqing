@@ -1,0 +1,56 @@
+{
+  "id": "east_turquoise_jade_bronze",
+  "name": {
+    "en": "Warring States Turquoise & Jade",
+    "zh": "战汉错金绿松铜镜"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#009583",
+    "#4A401C",
+    "#ACBF97",
+    "#897F58",
+    "#005064",
+    "#BE8B6D",
+    "#C6AE7A",
+    "#00544C"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "YlGnBu",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "Mirror with Jade Disk Inset & Gilt-Turquoise Belt Hook",
+    "author": "The Cleveland Museum of Art",
+    "year": "Warring States–Western Han (475 BCE–9 CE)",
+    "url": "https://clevelandart.org/art/2002.5",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "2002.5 & 1950.248",
+    "title": "Mirror with Jade Disk Inset & Gilt-Turquoise Belt Hook",
+    "date": "Warring States–Western Han (475 BCE–9 CE)",
+    "url": "https://clevelandart.org/art/2002.5",
+    "image_url": "https://openaccess-cdn.clevelandart.org/2002.5/2002.5_web.jpg",
+    "thumbnail_url": "/artifacts/east_turquoise_jade_bronze.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 17.96,
+    "min_de2000_deutan_first6": 9.06,
+    "min_de2000_protan_first6": 6.82,
+    "min_de2000_tritan_first6": 15.19,
+    "optimal6_min_de2000": 17.96,
+    "optimal6_min_de2000_deutan": 9.06,
+    "optimal6_min_de2000_protan": 6.82,
+    "grayscale_L_spread": 0.406,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

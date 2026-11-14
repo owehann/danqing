@@ -1,0 +1,46 @@
+{
+  "id": "met_nattier",
+  "name": {
+    "en": "Met · Nattier Rococo Velvet",
+    "zh": "大都会·纳蒂埃洛可可"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#52271C",
+    "#944839",
+    "#C08E39",
+    "#7F793C",
+    "#565C33",
+    "#184948",
+    "#022A2A"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Madame Bergeret de Frouville as Diana, 1756, Jean Marc Nattier, French",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://github.com/BlakeRMills/MetBrewer",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 13.19,
+    "min_de2000_deutan_first6": 4.75,
+    "min_de2000_protan_first6": 3.77,
+    "min_de2000_tritan_first6": 14.86,
+    "optimal6_min_de2000": 13.19,
+    "optimal6_min_de2000_deutan": 4.75,
+    "optimal6_min_de2000_protan": 3.77,
+    "grayscale_L_spread": 0.421,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

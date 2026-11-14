@@ -1,0 +1,49 @@
+{
+  "id": "petroff10",
+  "name": {
+    "en": "Petroff 10 (Matplotlib 3.10)",
+    "zh": "Petroff 10 色科学美学序列"
+  },
+  "collection": "accessible",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3F90DA",
+    "#FFA90E",
+    "#BD1F01",
+    "#832DB6",
+    "#A96B59",
+    "#E76300",
+    "#B9AC70",
+    "#92DADD",
+    "#717581",
+    "#94A4A2"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cividis",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Accessible Color Sequences for Data Visualization (Matplotlib petroff10)",
+    "author": "Matthew A. Petroff (IEEE TVCG / arXiv:2107.02270)",
+    "year": 2024,
+    "url": "https://github.com/matplotlib/matplotlib/blob/main/lib/matplotlib/mpl-data/stylelib/petroff10.mplstyle",
+    "license": "MIT / CC0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 17.35,
+    "min_de2000_deutan_first6": 12.97,
+    "min_de2000_protan_first6": 15.41,
+    "min_de2000_tritan_first6": 13.32,
+    "optimal6_min_de2000": 17.35,
+    "optimal6_min_de2000_deutan": 12.97,
+    "optimal6_min_de2000_protan": 15.41,
+    "grayscale_L_spread": 0.351,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

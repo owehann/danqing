@@ -1,0 +1,50 @@
+{
+  "id": "carto_prism",
+  "name": {
+    "en": "CARTO Prism 11",
+    "zh": "CARTO 棱镜光谱十一色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#5F4690",
+    "#1D6996",
+    "#38A6A5",
+    "#0F8554",
+    "#73AF48",
+    "#EDAD08",
+    "#E17C05",
+    "#CC503E",
+    "#94346E",
+    "#6F4070",
+    "#994E95"
+  ],
+  "neutral": "#666666",
+  "partners": {
+    "sequential": "navia",
+    "diverging": "RdYlBu"
+  },
+  "source": {
+    "title": "CARTOColors Qualitative Scheme (Prism)",
+    "author": "CARTO (Mamata Akella & Jakob Nowosad)",
+    "year": 2019,
+    "url": "https://github.com/CartoDB/CartoColor",
+    "license": "CC-BY 4.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 19.72,
+    "min_de2000_deutan_first6": 4.19,
+    "min_de2000_protan_first6": 6.4,
+    "min_de2000_tritan_first6": 8.69,
+    "optimal6_min_de2000": 19.72,
+    "optimal6_min_de2000_deutan": 4.19,
+    "optimal6_min_de2000_protan": 6.4,
+    "grayscale_L_spread": 0.341,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

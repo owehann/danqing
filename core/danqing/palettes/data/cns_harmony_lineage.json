@@ -1,0 +1,51 @@
+{
+  "id": "cns_harmony_lineage",
+  "name": {
+    "en": "CNS Iso-Chroma Harmony 12",
+    "zh": "CNS 等彩度低疲劳十二谱系色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4E79A7",
+    "#C85A53",
+    "#4F9D8D",
+    "#E09F5A",
+    "#8F72B5",
+    "#86A873",
+    "#5FA8C6",
+    "#D9796C",
+    "#C8A64B",
+    "#B67A8A",
+    "#A87559",
+    "#7C96D2"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_sdi_amber",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "CNS Iso-Chroma Multi-Omics Lineage Harmony Palette",
+    "author": "Danqing / CNS Aesthetic Specification",
+    "year": 2025,
+    "url": "https://jfly.uni-koeln.de/color/",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 15.34,
+    "min_de2000_deutan_first6": 5.11,
+    "min_de2000_protan_first6": 2.89,
+    "min_de2000_tritan_first6": 10.57,
+    "optimal6_min_de2000": 15.34,
+    "optimal6_min_de2000_deutan": 5.11,
+    "optimal6_min_de2000_protan": 2.89,
+    "grayscale_L_spread": 0.187,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "magma",
+  "name": {
+    "en": "Magma (Paper-safe)",
+    "zh": "Magma（白底去黑序列）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#150E38",
+    "#420F75",
+    "#6E1E81",
+    "#9C2E7F",
+    "#CA3E72",
+    "#F05F5E",
+    "#FD9467",
+    "#FEC88C",
+    "#FCFDBF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "magma",
+    "diverging": "PuOr"
+  },
+  "source": {
+    "title": "Matplotlib magma (clipped bottom 10% for white backgrounds)",
+    "author": "Stéfan van der Walt & Nathaniel Smith",
+    "year": 2015,
+    "url": "https://bids.github.io/colormap/",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 8.93,
+    "min_de2000_deutan_first6": 7.93,
+    "min_de2000_protan_first6": 5.77,
+    "min_de2000_tritan_first6": 9.41,
+    "optimal6_min_de2000": 16.41,
+    "optimal6_min_de2000_deutan": 7.87,
+    "optimal6_min_de2000_protan": 10.24,
+    "grayscale_L_spread": 0.775,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

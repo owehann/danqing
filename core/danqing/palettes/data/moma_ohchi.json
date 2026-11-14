@@ -1,0 +1,44 @@
+{
+  "id": "moma_ohchi",
+  "name": {
+    "en": "MoMA · Hiroshi Ohchi Graphic",
+    "zh": "现代艺术馆·大智浩现代平面"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#582851",
+    "#40606D",
+    "#69A257",
+    "#E3D19C",
+    "#C4024D"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Radio, 1954, Hiroshi Ohchi, Silkscreen",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/8819?artist_id=4381&page=1&sov_referrer=artist",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 24.02,
+    "min_de2000_deutan_first6": 9.86,
+    "min_de2000_protan_first6": 9.27,
+    "min_de2000_tritan_first6": 22.61,
+    "optimal6_min_de2000": 24.02,
+    "optimal6_min_de2000_deutan": 9.86,
+    "optimal6_min_de2000_protan": 9.27,
+    "grayscale_L_spread": 0.504,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

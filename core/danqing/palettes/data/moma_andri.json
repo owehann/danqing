@@ -1,0 +1,43 @@
+{
+  "id": "moma_andri",
+  "name": {
+    "en": "MoMA · Andri Vienna Secession",
+    "zh": "现代艺术馆·维也纳分离派海报"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F56455",
+    "#15134B",
+    "#87C785",
+    "#572F30"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Poster for the Twenty-sixth Secession Exhibition, 1906, Ferdinand Andri, Lithograph",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/423767?sov_referrer=theme&theme_id=5611",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 25.49,
+    "min_de2000_deutan_first6": 9.74,
+    "min_de2000_protan_first6": 18.93,
+    "min_de2000_tritan_first6": 34.15,
+    "optimal6_min_de2000": 25.49,
+    "optimal6_min_de2000_deutan": 9.74,
+    "optimal6_min_de2000_protan": 18.93,
+    "grayscale_L_spread": 0.536,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

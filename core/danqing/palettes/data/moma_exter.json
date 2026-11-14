@@ -1,0 +1,49 @@
+{
+  "id": "moma_exter",
+  "name": {
+    "en": "MoMA · Alexandra Exter Constructivism",
+    "zh": "现代艺术馆·埃克斯特构成主义"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#FFEC9D",
+    "#FAC881",
+    "#F4A464",
+    "#E87444",
+    "#D9402A",
+    "#BF2729",
+    "#912534",
+    "#64243E",
+    "#3D1B28",
+    "#161212"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Don Juan, Hell (Don Juan, l’enfer) from Alexandra Exter: Stage Sets (Alexandra Exter: Décors de théâtre), 1929, Alexandra Exter, Mediun",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/85213",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 8.76,
+    "min_de2000_deutan_first6": 5.68,
+    "min_de2000_protan_first6": 7.12,
+    "min_de2000_tritan_first6": 6.67,
+    "optimal6_min_de2000": 13.24,
+    "optimal6_min_de2000_deutan": 11.76,
+    "optimal6_min_de2000_protan": 12.45,
+    "grayscale_L_spread": 0.754,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

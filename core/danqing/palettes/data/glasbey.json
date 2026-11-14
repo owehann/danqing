@@ -1,0 +1,72 @@
+{
+  "id": "glasbey",
+  "name": {
+    "en": "Glasbey",
+    "zh": "Glasbey（最优色差序列）"
+  },
+  "collection": "many",
+  "kind": "qualitative",
+  "order": "discrete",
+  "dynamic_generator": "glasbey",
+  "colors": [
+    "#390085",
+    "#8FCE3A",
+    "#FF9495",
+    "#353500",
+    "#00BAF4",
+    "#A00900",
+    "#A370EF",
+    "#AB7A00",
+    "#007D6E",
+    "#0062AA",
+    "#7C5065",
+    "#00D4BB",
+    "#4F7B00",
+    "#003B3E",
+    "#FF832F",
+    "#C7B688",
+    "#CAAAD2",
+    "#DF57A0",
+    "#7B5739",
+    "#630024",
+    "#7C9B75",
+    "#478CFF",
+    "#D55544",
+    "#0085A2",
+    "#42446B",
+    "#0B5828",
+    "#983CAC",
+    "#EDAA00",
+    "#979700",
+    "#70749E",
+    "#532300",
+    "#B2856D"
+  ],
+  "neutral": "#B5B8BE",
+  "partners": {
+    "sequential": "cividis",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Colour Displays for Categorical Images",
+    "author": "Chris Glasbey, Guorgana van der Heijden, V. F. K. Toh, Alision Gray",
+    "year": 2007,
+    "url": "https://doi.org/10.1002/col.20327",
+    "license": "MIT / Published algorithm (white-background constrained)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 32,
+    "max_colors": 64,
+    "min_de2000_first6": 37.33,
+    "min_de2000_deutan_first6": 13.4,
+    "min_de2000_protan_first6": 3.05,
+    "min_de2000_tritan_first6": 14.06,
+    "optimal6_min_de2000": 37.33,
+    "optimal6_min_de2000_deutan": 13.4,
+    "optimal6_min_de2000_protan": 3.05,
+    "grayscale_L_spread": 0.463,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

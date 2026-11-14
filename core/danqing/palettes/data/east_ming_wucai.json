@@ -1,0 +1,56 @@
+{
+  "id": "east_ming_wucai",
+  "name": {
+    "en": "Jiajing Wucai Five-Color Ware",
+    "zh": "明嘉靖五彩云龙罐"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#873636",
+    "#46B267",
+    "#887056",
+    "#007B3A",
+    "#BF6D6A",
+    "#AEC08B",
+    "#4C2C20",
+    "#005127"
+  ],
+  "neutral": "#ACAAA5",
+  "partners": {
+    "sequential": "YlOrRd",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "Wucai Jar with Dragons Pursuing Flaming Jewels & Baluster Jar",
+    "author": "The Cleveland Museum of Art",
+    "year": "Ming dynasty, Jiajing–Chongzhen (1522–1650)",
+    "url": "https://clevelandart.org/art/1989.291",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1989.291 & 2020.179",
+    "title": "Wucai Jar with Dragons Pursuing Flaming Jewels & Baluster Jar",
+    "date": "Ming dynasty, Jiajing–Chongzhen (1522–1650)",
+    "url": "https://clevelandart.org/art/1989.291",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1989.291/1989.291_web.jpg",
+    "thumbnail_url": "/artifacts/east_ming_wucai.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 15.72,
+    "min_de2000_deutan_first6": 6.05,
+    "min_de2000_protan_first6": 5.82,
+    "min_de2000_tritan_first6": 14.16,
+    "optimal6_min_de2000": 15.72,
+    "optimal6_min_de2000_deutan": 6.05,
+    "optimal6_min_de2000_protan": 5.82,
+    "grayscale_L_spread": 0.45,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "moma_palermo",
+  "name": {
+    "en": "MoMA · Blinky Palermo Minimal",
+    "zh": "现代艺术馆·帕勒莫极简色块"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1B80AD",
+    "#EA5B57",
+    "#9C5555",
+    "#0C3C5F"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "4 White Forms, 1975, Blinky Palermo, Synthetic polymer paint on aluminum, four panels",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/119047",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 16.7,
+    "min_de2000_deutan_first6": 17.41,
+    "min_de2000_protan_first6": 11.75,
+    "min_de2000_tritan_first6": 16.5,
+    "optimal6_min_de2000": 16.7,
+    "optimal6_min_de2000_deutan": 17.41,
+    "optimal6_min_de2000_protan": 11.75,
+    "grayscale_L_spread": 0.312,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

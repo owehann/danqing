@@ -1,0 +1,48 @@
+{
+  "id": "imola",
+  "name": {
+    "en": "Imola",
+    "zh": "Imola（钴蓝柠黄序列）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#1A33B3",
+    "#2549A8",
+    "#305E9D",
+    "#3F718E",
+    "#54867F",
+    "#70A377",
+    "#91C36F",
+    "#BDE667",
+    "#FFFF66"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "imola",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Scientific colour maps v8.0 (imola)",
+    "author": "Fabio Crameri",
+    "year": 2023,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT (cmcrameri / Zenodo)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 7.15,
+    "min_de2000_deutan_first6": 5.17,
+    "min_de2000_protan_first6": 4.57,
+    "min_de2000_tritan_first6": 4.83,
+    "optimal6_min_de2000": 12.24,
+    "optimal6_min_de2000_deutan": 12.71,
+    "optimal6_min_de2000_protan": 12.11,
+    "grayscale_L_spread": 0.568,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "PuBuGn",
+  "name": {
+    "en": "ColorBrewer PuBuGn",
+    "zh": "ColorBrewer 紫蓝绿序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#FFF7FB",
+    "#ECE2F0",
+    "#D0D1E6",
+    "#A6BDDB",
+    "#67A9CF",
+    "#3690C0",
+    "#02818A",
+    "#016C59",
+    "#014636"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "PuBuGn",
+    "diverging": "RdYlBu"
+  },
+  "source": {
+    "title": "ColorBrewer 2.0 (PuBuGn, 9-class)",
+    "author": "Cynthia A. Brewer, Penn State",
+    "year": 2013,
+    "url": "https://colorbrewer2.org/#type=sequential&scheme=PuBuGn&n=9",
+    "license": "Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 6.18,
+    "min_de2000_deutan_first6": 5.82,
+    "min_de2000_protan_first6": 5.07,
+    "min_de2000_tritan_first6": 4.18,
+    "optimal6_min_de2000": 12.24,
+    "optimal6_min_de2000_deutan": 11.32,
+    "optimal6_min_de2000_protan": 12.46,
+    "grayscale_L_spread": 0.632,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

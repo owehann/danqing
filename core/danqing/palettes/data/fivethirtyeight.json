@@ -1,0 +1,44 @@
+{
+  "id": "fivethirtyeight",
+  "name": {
+    "en": "FiveThirtyEight Editorial",
+    "zh": "FiveThirtyEight 数据新闻五色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#008FD5",
+    "#FC4F30",
+    "#E5AE38",
+    "#6D904F",
+    "#810F7C"
+  ],
+  "neutral": "#8B8B8B",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "FiveThirtyEight Style Cycle (Matplotlib stylelib)",
+    "author": "FiveThirtyEight / Matplotlib Contributors",
+    "year": 2015,
+    "url": "https://github.com/matplotlib/matplotlib/blob/main/lib/matplotlib/mpl-data/stylelib/fivethirtyeight.mplstyle",
+    "license": "BSD-compatible"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 29.92,
+    "min_de2000_deutan_first6": 9.79,
+    "min_de2000_protan_first6": 7.8,
+    "min_de2000_tritan_first6": 14.86,
+    "optimal6_min_de2000": 29.92,
+    "optimal6_min_de2000_deutan": 9.79,
+    "optimal6_min_de2000_protan": 7.8,
+    "grayscale_L_spread": 0.356,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

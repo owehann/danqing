@@ -1,0 +1,56 @@
+{
+  "id": "east_persian_shahnama",
+  "name": {
+    "en": "Persian Shahnama Lapis & Gold",
+    "zh": "波斯王书青金细密画"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4963B2",
+    "#D6B17D",
+    "#75361B",
+    "#AE7973",
+    "#7597BD",
+    "#926936",
+    "#CC7E4E",
+    "#B64E3D"
+  ],
+  "neutral": "#BFB9B5",
+  "partners": {
+    "sequential": "lapaz",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Bahram Gur Slays a Dragon, Folio from an Ilkhanid Shahnama",
+    "author": "The Cleveland Museum of Art",
+    "year": "Ilkhanid period, Shiraz (1330–1335)",
+    "url": "https://clevelandart.org/art/1943.658.b",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1943.658.b & 1943.658.a",
+    "title": "Bahram Gur Slays a Dragon, Folio from an Ilkhanid Shahnama",
+    "date": "Ilkhanid period, Shiraz (1330–1335)",
+    "url": "https://clevelandart.org/art/1943.658.b",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1943.658.b/1943.658.b_web.jpg",
+    "thumbnail_url": "/artifacts/east_persian_shahnama.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 18.42,
+    "min_de2000_deutan_first6": 13.18,
+    "min_de2000_protan_first6": 15.73,
+    "min_de2000_tritan_first6": 8.95,
+    "optimal6_min_de2000": 18.42,
+    "optimal6_min_de2000_deutan": 13.18,
+    "optimal6_min_de2000_protan": 15.73,
+    "grayscale_L_spread": 0.369,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

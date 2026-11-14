@@ -1,0 +1,45 @@
+{
+  "id": "met_juarez",
+  "name": {
+    "en": "Met · Juárez Mexican Modernism",
+    "zh": "大都会·华雷斯墨西哥色彩"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A82203",
+    "#208CC0",
+    "#F1AF3A",
+    "#CF5E4E",
+    "#637B31",
+    "#003967"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "The Entombment of Christ, 1702, Juan Rodríguez Juárez, Mexican",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/631985",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 17.56,
+    "min_de2000_deutan_first6": 8.04,
+    "min_de2000_protan_first6": 8.04,
+    "min_de2000_tritan_first6": 16.07,
+    "optimal6_min_de2000": 17.56,
+    "optimal6_min_de2000_deutan": 8.04,
+    "optimal6_min_de2000_protan": 8.04,
+    "grayscale_L_spread": 0.458,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

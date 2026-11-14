@@ -1,0 +1,48 @@
+{
+  "id": "cmo_curl",
+  "name": {
+    "en": "cmocean Curl",
+    "zh": "cmocean 涡度青紫发散"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#151D44",
+    "#1B5968",
+    "#2C947F",
+    "#A3C2A2",
+    "#FEF6F5",
+    "#E2A891",
+    "#C45A61",
+    "#862060",
+    "#340D35"
+  ],
+  "neutral": "#FEF6F5",
+  "partners": {
+    "sequential": "cmo_deep",
+    "diverging": "cmo_curl"
+  },
+  "source": {
+    "title": "True Colors of Oceanography: cmocean (curl)",
+    "author": "Kristen M. Thyng et al. (Oceanography 29(3):9-13)",
+    "year": 2016,
+    "url": "https://github.com/matplotlib/cmocean",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 20.33,
+    "min_de2000_deutan_first6": 6.17,
+    "min_de2000_protan_first6": 3.95,
+    "min_de2000_tritan_first6": 19.01,
+    "optimal6_min_de2000": 22.4,
+    "optimal6_min_de2000_deutan": 14.89,
+    "optimal6_min_de2000_protan": 11.23,
+    "grayscale_L_spread": 0.734,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "pnw_sailboat",
+  "name": {
+    "en": "PNW · Salish Sea Sailboat",
+    "zh": "北美海岸·萨利希帆影"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#6E7CB9",
+    "#7BBCD5",
+    "#D0E2AF",
+    "#F5DB99",
+    "#E89C81",
+    "#D2848D"
+  ],
+  "neutral": "#B5B8BA",
+  "partners": {
+    "sequential": "navia",
+    "diverging": "broc"
+  },
+  "source": {
+    "title": "PNWColors Pacific Northwest Nature Palette (Sailboat)",
+    "author": "Jake Lawlor",
+    "year": 2020,
+    "url": "https://github.com/jakelawlor/PNWColors",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 13.41,
+    "min_de2000_deutan_first6": 6.17,
+    "min_de2000_protan_first6": 4.62,
+    "min_de2000_tritan_first6": 6.39,
+    "optimal6_min_de2000": 13.41,
+    "optimal6_min_de2000_deutan": 6.17,
+    "optimal6_min_de2000_protan": 4.62,
+    "grayscale_L_spread": 0.298,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

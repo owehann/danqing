@@ -1,0 +1,56 @@
+{
+  "id": "east_ming_blue_white",
+  "name": {
+    "en": "Chenghua Doucai & Cobalt",
+    "zh": "明成化斗彩青花"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4E6F9A",
+    "#982119",
+    "#74B3BD",
+    "#E46B59",
+    "#23375C",
+    "#08525A",
+    "#915757",
+    "#7595B6"
+  ],
+  "neutral": "#A6ADAD",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "Wine Cup with Children at Play (Chenghua Doucai & Underglaze Cobalt)",
+    "author": "The Cleveland Museum of Art",
+    "year": "Ming dynasty, Chenghua period (1465–1487)",
+    "url": "https://clevelandart.org/art/1957.61",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1957.61 & 1957.359",
+    "title": "Wine Cup with Children at Play (Chenghua Doucai & Underglaze Cobalt)",
+    "date": "Ming dynasty, Chenghua period (1465–1487)",
+    "url": "https://clevelandart.org/art/1957.61",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1957.61/1957.61_web.jpg",
+    "thumbnail_url": "/artifacts/east_ming_blue_white.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 19.3,
+    "min_de2000_deutan_first6": 9.03,
+    "min_de2000_protan_first6": 11.45,
+    "min_de2000_tritan_first6": 8.54,
+    "optimal6_min_de2000": 19.3,
+    "optimal6_min_de2000_deutan": 9.03,
+    "optimal6_min_de2000_protan": 11.45,
+    "grayscale_L_spread": 0.388,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

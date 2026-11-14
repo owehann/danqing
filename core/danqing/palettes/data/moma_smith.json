@@ -1,0 +1,44 @@
+{
+  "id": "moma_smith",
+  "name": {
+    "en": "MoMA · Kimber Smith Abstract",
+    "zh": "现代艺术馆·史密斯抽象色韵"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EF7923",
+    "#75BCA9",
+    "#7B89BB",
+    "#E9DE97",
+    "#2A2E38"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "White Rope, 1973, Richard Smith, Synthetic polymer paint on canvas with metal rods, rope, and string",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/80052?classifications=9&date_begin=1970&date_end=1980&direction=fwd&page=4&q=&utf8=%E2%9C%93&with_images=1",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 26.21,
+    "min_de2000_deutan_first6": 17.5,
+    "min_de2000_protan_first6": 18.33,
+    "min_de2000_tritan_first6": 15.46,
+    "optimal6_min_de2000": 26.21,
+    "optimal6_min_de2000_deutan": 17.5,
+    "optimal6_min_de2000_protan": 18.33,
+    "grayscale_L_spread": 0.592,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

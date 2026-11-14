@@ -1,0 +1,46 @@
+{
+  "id": "met_moreau",
+  "name": {
+    "en": "Met · Moreau Oedipus & Sphinx",
+    "zh": "大都会·莫罗象征主义"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#421600",
+    "#792504",
+    "#BC7524",
+    "#8DADCA",
+    "#527BAA",
+    "#104839",
+    "#082844"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Oedipus and the Sphinx, 1864, Gustave Moreau, French",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/437153",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 12.55,
+    "min_de2000_deutan_first6": 12.77,
+    "min_de2000_protan_first6": 10.54,
+    "min_de2000_tritan_first6": 12.24,
+    "optimal6_min_de2000": 17.22,
+    "optimal6_min_de2000_deutan": 15.14,
+    "optimal6_min_de2000_protan": 13.48,
+    "grayscale_L_spread": 0.468,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "met_monet",
+  "name": {
+    "en": "Monet",
+    "zh": "莫奈 · 睡莲池上的桥"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#4E6D58",
+    "#749E89",
+    "#ABCCBE",
+    "#E3CACF",
+    "#C399A2",
+    "#9F6E71",
+    "#41507B",
+    "#7D87B2",
+    "#C2CAE3"
+  ],
+  "neutral": "#C0C4C8",
+  "partners": {
+    "sequential": "YlGnBu",
+    "diverging": "bam"
+  },
+  "source": {
+    "title": "MetBrewer: Monet (Met Object 437127)",
+    "author": "Blake Robert Mills / Claude Monet",
+    "year": 1899,
+    "url": "https://www.metmuseum.org/art/collection/search/437127",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "29.100.113 (Met #437127)",
+    "title": "Bridge over a Pond of Water Lilies",
+    "date": "1899",
+    "url": "https://www.metmuseum.org/art/collection/search/437127",
+    "image_url": "https://www.metmuseum.org/art/collection/search/437127",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 13.14,
+    "min_de2000_deutan_first6": 3.67,
+    "min_de2000_protan_first6": 5.93,
+    "min_de2000_tritan_first6": 13.33,
+    "optimal6_min_de2000": 20.0,
+    "optimal6_min_de2000_deutan": 7.76,
+    "optimal6_min_de2000_protan": 12.71,
+    "grayscale_L_spread": 0.423,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

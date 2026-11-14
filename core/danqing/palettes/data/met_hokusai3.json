@@ -1,0 +1,53 @@
+{
+  "id": "met_hokusai3",
+  "name": {
+    "en": "Hokusai III",
+    "zh": "葛饰北斋 III · 美浓养老瀑"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#D8D97A",
+    "#95C36E",
+    "#74C8C3",
+    "#5A97C1",
+    "#295384",
+    "#0A2E57"
+  ],
+  "neutral": "#B6BFC2",
+  "partners": {
+    "sequential": "YlGnBu",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "MetBrewer: Hokusai3 (Met Object 56146)",
+    "author": "Blake Robert Mills / Katsushika Hokusai",
+    "year": 1832,
+    "url": "https://www.metmuseum.org/art/collection/search/56146",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "JP2949 (Met #56146)",
+    "title": "Yōrō Waterfall in Mino Province (A Tour of Waterfalls in Various Provinces)",
+    "date": "c. 1832",
+    "url": "https://www.metmuseum.org/art/collection/search/56146",
+    "image_url": "https://www.metmuseum.org/art/collection/search/56146",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 12.28,
+    "min_de2000_deutan_first6": 9.03,
+    "min_de2000_protan_first6": 6.88,
+    "min_de2000_tritan_first6": 11.92,
+    "optimal6_min_de2000": 12.28,
+    "optimal6_min_de2000_deutan": 9.03,
+    "optimal6_min_de2000_protan": 6.88,
+    "grayscale_L_spread": 0.563,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

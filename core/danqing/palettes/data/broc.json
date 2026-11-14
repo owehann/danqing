@@ -1,0 +1,48 @@
+{
+  "id": "broc",
+  "name": {
+    "en": "Broc",
+    "zh": "Broc（青蓝金褐发散）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#2C1A4C",
+    "#294B7D",
+    "#5B82A9",
+    "#A5BBD0",
+    "#EBEEEC",
+    "#D4D4AA",
+    "#9B9B62",
+    "#5D5D2D",
+    "#262600"
+  ],
+  "neutral": "#EBEEEC",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "broc"
+  },
+  "source": {
+    "title": "Scientific colour maps v8.0 (broc)",
+    "author": "Fabio Crameri",
+    "year": 2023,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT (cmcrameri / Zenodo)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 15.46,
+    "min_de2000_deutan_first6": 11.84,
+    "min_de2000_protan_first6": 13.87,
+    "min_de2000_tritan_first6": 9.64,
+    "optimal6_min_de2000": 18.74,
+    "optimal6_min_de2000_deutan": 11.84,
+    "optimal6_min_de2000_protan": 13.87,
+    "grayscale_L_spread": 0.686,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

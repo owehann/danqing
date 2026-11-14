@@ -1,0 +1,47 @@
+{
+  "id": "moma_ernst",
+  "name": {
+    "en": "MoMA · Max Ernst Surrealism",
+    "zh": "现代艺术馆·恩斯特超现实色彩"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#E8E79A",
+    "#C2D89A",
+    "#8CBF9A",
+    "#5FA2A4",
+    "#477B95",
+    "#315B88",
+    "#24396B",
+    "#191F40"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Two Children Are Threatened by a Nightingale (Deux Enfants sont menacés par un rossignol), 1924, Max Ernst, Oil with painted wood elements and cut-and-pasted printed paper on wood with wood frame",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/79293",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 8.23,
+    "min_de2000_deutan_first6": 6.26,
+    "min_de2000_protan_first6": 5.09,
+    "min_de2000_tritan_first6": 10.0,
+    "optimal6_min_de2000": 13.45,
+    "optimal6_min_de2000_deutan": 11.22,
+    "optimal6_min_de2000_protan": 11.96,
+    "grayscale_L_spread": 0.658,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

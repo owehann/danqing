@@ -1,0 +1,50 @@
+{
+  "id": "met_manet",
+  "name": {
+    "en": "Met · Manet Boating",
+    "zh": "大都会·马奈泛舟"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#3B2319",
+    "#80521C",
+    "#D29C44",
+    "#EBC174",
+    "#EDE2CC",
+    "#7EC5F4",
+    "#4585B7",
+    "#225E92",
+    "#183571",
+    "#43429B",
+    "#5E65BE"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Boating, 1874, Edouard Manet, French",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/436947?searchField=All&amp;sortBy=Relevance&amp;ft=manet&amp;offset=0&amp;rpp=20&amp;pos=8",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 9.94,
+    "min_de2000_deutan_first6": 8.98,
+    "min_de2000_protan_first6": 10.23,
+    "min_de2000_tritan_first6": 9.64,
+    "optimal6_min_de2000": 19.32,
+    "optimal6_min_de2000_deutan": 19.44,
+    "optimal6_min_de2000_protan": 18.54,
+    "grayscale_L_spread": 0.632,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

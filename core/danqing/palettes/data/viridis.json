@@ -1,0 +1,48 @@
+{
+  "id": "viridis",
+  "name": {
+    "en": "Viridis",
+    "zh": "Viridis（蓝绿黄序列）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#440154",
+    "#472D7B",
+    "#3B528B",
+    "#2C728E",
+    "#21918C",
+    "#27AD81",
+    "#5CC863",
+    "#AADC32",
+    "#FDE725"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Matplotlib Perceptually Uniform Colormaps (viridis)",
+    "author": "Stéfan van der Walt & Nathaniel Smith",
+    "year": 2015,
+    "url": "https://bids.github.io/colormap/",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 10.7,
+    "min_de2000_deutan_first6": 7.06,
+    "min_de2000_protan_first6": 8.98,
+    "min_de2000_tritan_first6": 7.78,
+    "optimal6_min_de2000": 16.33,
+    "optimal6_min_de2000_deutan": 8.97,
+    "optimal6_min_de2000_protan": 11.0,
+    "grayscale_L_spread": 0.633,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "east_blue_green_landscape",
+  "name": {
+    "en": "Blue-and-Green Landscape",
+    "zh": "赵孟頫青绿山水"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4C6D57",
+    "#C79F73",
+    "#784B01",
+    "#8D754A",
+    "#5CA7A8",
+    "#B3B678",
+    "#772C24",
+    "#945F4D"
+  ],
+  "neutral": "#ABA497",
+  "partners": {
+    "sequential": "YlGnBu",
+    "diverging": "roma"
+  },
+  "source": {
+    "title": "River Village: Fisherman's Joy (Zhao Mengfu) & Landscape after Zhao Mengfu (Wang Yuanqi)",
+    "author": "The Cleveland Museum of Art",
+    "year": "Yuan–Qing dynasty (c. 1302–1690)",
+    "url": "https://clevelandart.org/art/1978.66",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1978.66 & 1962.157.6",
+    "title": "River Village: Fisherman's Joy (Zhao Mengfu) & Landscape after Zhao Mengfu (Wang Yuanqi)",
+    "date": "Yuan–Qing dynasty (c. 1302–1690)",
+    "url": "https://clevelandart.org/art/1978.66",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1978.66/1978.66_web.jpg",
+    "thumbnail_url": "/artifacts/east_blue_green_landscape.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 16.01,
+    "min_de2000_deutan_first6": 2.56,
+    "min_de2000_protan_first6": 5.32,
+    "min_de2000_tritan_first6": 15.18,
+    "optimal6_min_de2000": 16.01,
+    "optimal6_min_de2000_deutan": 2.56,
+    "optimal6_min_de2000_protan": 5.32,
+    "grayscale_L_spread": 0.358,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

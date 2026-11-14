@@ -1,0 +1,51 @@
+{
+  "id": "met_benedictus",
+  "name": {
+    "en": "Met · Bénédictus Art Deco",
+    "zh": "大都会·装饰艺术图谱"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#9A133D",
+    "#B93961",
+    "#D8527C",
+    "#F28AAA",
+    "#F9B4C9",
+    "#F9E0E8",
+    "#EAF3FF",
+    "#C5DAF6",
+    "#A1C2ED",
+    "#6996E3",
+    "#4060C8",
+    "#1A318B"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Relais, 1930 : quinze planches donnant quarante-deux motifs décoratifs : enluminure d'art de J. Saudé : préliminaires de Y. Rambosson, 1930, Edouard Bénedictus, French",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/812492",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 9.78,
+    "min_de2000_deutan_first6": 6.78,
+    "min_de2000_protan_first6": 8.99,
+    "min_de2000_tritan_first6": 9.51,
+    "optimal6_min_de2000": 19.35,
+    "optimal6_min_de2000_deutan": 13.14,
+    "optimal6_min_de2000_protan": 9.55,
+    "grayscale_L_spread": 0.601,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

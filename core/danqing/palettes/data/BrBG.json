@@ -1,0 +1,48 @@
+{
+  "id": "BrBG",
+  "name": {
+    "en": "ColorBrewer BrBG",
+    "zh": "ColorBrewer 棕青发散"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#8C510A",
+    "#BF812D",
+    "#DFC27D",
+    "#F6E8C3",
+    "#F5F5F5",
+    "#C7EAE5",
+    "#80CDC1",
+    "#35978F",
+    "#01665E"
+  ],
+  "neutral": "#F5F5F5",
+  "partners": {
+    "sequential": "YlGnBu",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "ColorBrewer 2.0 (BrBG, 9-class)",
+    "author": "Cynthia A. Brewer, Penn State",
+    "year": 2013,
+    "url": "https://colorbrewer2.org/#type=diverging&scheme=BrBG&n=9",
+    "license": "Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 11.76,
+    "min_de2000_deutan_first6": 4.99,
+    "min_de2000_protan_first6": 3.24,
+    "min_de2000_tritan_first6": 11.09,
+    "optimal6_min_de2000": 18.32,
+    "optimal6_min_de2000_deutan": 15.68,
+    "optimal6_min_de2000_protan": 18.1,
+    "grayscale_L_spread": 0.511,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

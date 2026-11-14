@@ -1,0 +1,56 @@
+{
+  "id": "east_hokusai_red_fuji",
+  "name": {
+    "en": "Hokusai Red Fuji Woodblock",
+    "zh": "北斋凯风快晴赤富士"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D99371",
+    "#1E4C65",
+    "#7FABCB",
+    "#72493D",
+    "#6675A5",
+    "#937D58",
+    "#CDB38B",
+    "#5A4500"
+  ],
+  "neutral": "#AAA49A",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "South Wind, Clear Sky (Red Fuji) & One Hundred Poems (Katsushika Hokusai)",
+    "author": "The Cleveland Museum of Art",
+    "year": "Edo period (early 1830s–1836)",
+    "url": "https://clevelandart.org/art/1930.189",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1930.189 & 1985.327",
+    "title": "South Wind, Clear Sky (Red Fuji) & One Hundred Poems (Katsushika Hokusai)",
+    "date": "Edo period (early 1830s–1836)",
+    "url": "https://clevelandart.org/art/1930.189",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1930.189/1930.189_web.jpg",
+    "thumbnail_url": "/artifacts/east_hokusai_red_fuji.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 18.45,
+    "min_de2000_deutan_first6": 13.15,
+    "min_de2000_protan_first6": 10.4,
+    "min_de2000_tritan_first6": 16.45,
+    "optimal6_min_de2000": 18.45,
+    "optimal6_min_de2000_deutan": 13.15,
+    "optimal6_min_de2000_protan": 10.4,
+    "grayscale_L_spread": 0.383,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "met_tiepolo",
+  "name": {
+    "en": "Tiepolo",
+    "zh": "提埃坡罗 · 巴尔巴罗家族颂"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#802417",
+    "#C06636",
+    "#CE9344",
+    "#E8B960",
+    "#646E3B",
+    "#2B5851",
+    "#508EA2",
+    "#17486F"
+  ],
+  "neutral": "#B8B4AC",
+  "partners": {
+    "sequential": "batlow",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "MetBrewer: Tiepolo (Met Object 437798)",
+    "author": "Blake Robert Mills / Giovanni Battista Tiepolo",
+    "year": 1750,
+    "url": "https://www.metmuseum.org/art/collection/search/437798",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "23.128 (Met #437798)",
+    "title": "The Glorification of the Barbaro Family",
+    "date": "ca. 1750",
+    "url": "https://www.metmuseum.org/art/collection/search/437798",
+    "image_url": "https://www.metmuseum.org/art/collection/search/437798",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 10.81,
+    "min_de2000_deutan_first6": 8.99,
+    "min_de2000_protan_first6": 4.64,
+    "min_de2000_tritan_first6": 9.81,
+    "optimal6_min_de2000": 22.84,
+    "optimal6_min_de2000_deutan": 11.0,
+    "optimal6_min_de2000_protan": 4.64,
+    "grayscale_L_spread": 0.421,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

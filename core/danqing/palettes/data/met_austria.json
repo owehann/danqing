@@ -1,0 +1,46 @@
+{
+  "id": "met_austria",
+  "name": {
+    "en": "Met · Austria Altarpiece",
+    "zh": "大都会·奥地利祭坛画"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A40000",
+    "#16317D",
+    "#007E2F",
+    "#FFCD12",
+    "#B86092",
+    "#721B3E",
+    "#00B7A7"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Adoration of the Magi from Seven Scenes from the Life of Christ, 1390, Artists Unknown, Austrian",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/469959",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 23.19,
+    "min_de2000_deutan_first6": 7.87,
+    "min_de2000_protan_first6": 15.69,
+    "min_de2000_tritan_first6": 17.57,
+    "optimal6_min_de2000": 23.19,
+    "optimal6_min_de2000_deutan": 7.87,
+    "optimal6_min_de2000_protan": 15.69,
+    "grayscale_L_spread": 0.522,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

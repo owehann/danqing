@@ -1,0 +1,56 @@
+{
+  "id": "east_lacquer",
+  "name": {
+    "en": "Carved Cinnabar Lacquer",
+    "zh": "清剔彩朱黑漆器"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#B12224",
+    "#4F6B8C",
+    "#AFA626",
+    "#CA5928",
+    "#F46F65",
+    "#C58631",
+    "#69251C",
+    "#864100"
+  ],
+  "neutral": "#B9B7B1",
+  "partners": {
+    "sequential": "YlOrRd",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Carved Polychrome Lacquer Scroll Box (Ticai)",
+    "author": "The Cleveland Museum of Art",
+    "year": "Qing dynasty, Qianlong period (1736–1795)",
+    "url": "https://clevelandart.org/art/1969.32",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1969.32 & 1991.3",
+    "title": "Carved Polychrome Lacquer Scroll Box (Ticai)",
+    "date": "Qing dynasty, Qianlong period (1736–1795)",
+    "url": "https://clevelandart.org/art/1969.32",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1969.32/1969.32_web.jpg",
+    "thumbnail_url": "/artifacts/east_lacquer.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 15.39,
+    "min_de2000_deutan_first6": 4.16,
+    "min_de2000_protan_first6": 8.3,
+    "min_de2000_tritan_first6": 8.47,
+    "optimal6_min_de2000": 15.39,
+    "optimal6_min_de2000_deutan": 4.16,
+    "optimal6_min_de2000_protan": 8.3,
+    "grayscale_L_spread": 0.346,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

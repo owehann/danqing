@@ -1,0 +1,63 @@
+{
+  "id": "green_armytage_26",
+  "name": {
+    "en": "Green-Armytage Alphabet 25",
+    "zh": "Green-Armytage 色彩字母表二十五色"
+  },
+  "collection": "many",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#F0A3FF",
+    "#0075DC",
+    "#993F00",
+    "#4C005C",
+    "#191919",
+    "#005C31",
+    "#2BCE48",
+    "#FFCC99",
+    "#94FFB5",
+    "#8F7C00",
+    "#9DCC00",
+    "#C20088",
+    "#003380",
+    "#19A405",
+    "#FFA8BB",
+    "#426600",
+    "#FF0010",
+    "#5EF1F2",
+    "#00998F",
+    "#E0FF66",
+    "#100AFF",
+    "#990000",
+    "#FFE100",
+    "#FF5000"
+  ],
+  "neutral": "#808080",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "A Colour Alphabet and the Limits of Colour Coding",
+    "author": "Paul Green-Armytage (Colour: Design & Creativity 5:1-23)",
+    "year": 2010,
+    "url": "https://doi.org/10.18637/jss.v090.c01",
+    "license": "Apache-2.0 (Polychrome implementation)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 24,
+    "max_colors": 24,
+    "min_de2000_first6": 25.85,
+    "min_de2000_deutan_first6": 15.5,
+    "min_de2000_protan_first6": 7.71,
+    "min_de2000_tritan_first6": 21.31,
+    "optimal6_min_de2000": 25.85,
+    "optimal6_min_de2000_deutan": 15.5,
+    "optimal6_min_de2000_protan": 7.71,
+    "grayscale_L_spread": 0.736,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

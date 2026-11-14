@@ -1,0 +1,48 @@
+{
+  "id": "vik",
+  "name": {
+    "en": "Vik",
+    "zh": "Vik（深海蓝赭发散）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#001261",
+    "#034481",
+    "#307DA6",
+    "#94BED2",
+    "#ECE5E0",
+    "#DCAC90",
+    "#C37243",
+    "#942F06",
+    "#590008"
+  ],
+  "neutral": "#ECE5E0",
+  "partners": {
+    "sequential": "oslo",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Scientific colour maps v8.0 (vik)",
+    "author": "Fabio Crameri",
+    "year": 2023,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT (cmcrameri / Zenodo)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 16.54,
+    "min_de2000_deutan_first6": 12.74,
+    "min_de2000_protan_first6": 12.33,
+    "min_de2000_tritan_first6": 14.5,
+    "optimal6_min_de2000": 20.86,
+    "optimal6_min_de2000_deutan": 19.9,
+    "optimal6_min_de2000_protan": 16.44,
+    "grayscale_L_spread": 0.679,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

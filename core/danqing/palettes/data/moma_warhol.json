@@ -1,0 +1,54 @@
+{
+  "id": "moma_warhol",
+  "name": {
+    "en": "MoMA · Andy Warhol Marilyn",
+    "zh": "现代艺术馆·沃霍尔波普丝印"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF0066",
+    "#328C97",
+    "#D1AAC2",
+    "#A5506D",
+    "#B3E0BF",
+    "#2A9D3D",
+    "#EDF181",
+    "#DB7003",
+    "#FBA600",
+    "#F8C1A6",
+    "#A30000",
+    "#FF3200",
+    "#011A51",
+    "#97D1D9",
+    "#916C37"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Collection of Marilyns, 1967, Andy Warhol, Portfolio of ten screenprints, [Link]()",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://github.com/BlakeRMills/MoMAColors",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 15,
+    "max_colors": 15,
+    "min_de2000_first6": 16.4,
+    "min_de2000_deutan_first6": 5.53,
+    "min_de2000_protan_first6": 4.83,
+    "min_de2000_tritan_first6": 5.69,
+    "optimal6_min_de2000": 16.4,
+    "optimal6_min_de2000_deutan": 5.53,
+    "optimal6_min_de2000_protan": 4.83,
+    "grayscale_L_spread": 0.689,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "moma_alkalay2",
+  "name": {
+    "en": "MoMA · Alkalay Botanical",
+    "zh": "现代艺术馆·阿尔卡莱叠木翠调"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#EBCF2E",
+    "#B4BF3A",
+    "#88AB38",
+    "#5E9432",
+    "#3B7D31",
+    "#225F2F",
+    "#244422",
+    "#252916"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Stack, 2008, Shay Alkalay, Painted plywood and steel",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/126820?classifications=3&date_begin=Pre-1850&date_end=2023&direction=fwd&page=5&q=&utf8=%E2%9C%93&with_images=1",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 9.26,
+    "min_de2000_deutan_first6": 7.67,
+    "min_de2000_protan_first6": 5.86,
+    "min_de2000_tritan_first6": 9.7,
+    "optimal6_min_de2000": 10.11,
+    "optimal6_min_de2000_deutan": 7.67,
+    "optimal6_min_de2000_protan": 5.86,
+    "grayscale_L_spread": 0.582,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

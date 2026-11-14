@@ -1,0 +1,45 @@
+{
+  "id": "np_redwood",
+  "name": {
+    "en": "NatParks · Redwood Canopy",
+    "zh": "国家公园·红杉林冠"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#5E3B49",
+    "#9B5F6B",
+    "#BA817D",
+    "#325731",
+    "#6A9741",
+    "#5F4E2F"
+  ],
+  "neutral": "#B6B4AE",
+  "partners": {
+    "sequential": "bamako",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "NatParksPalettes (Redwood)",
+    "author": "Kevin Blake",
+    "year": 2022,
+    "url": "https://github.com/kevinsblake/NatParksPalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 13.39,
+    "min_de2000_deutan_first6": 3.16,
+    "min_de2000_protan_first6": 1.04,
+    "min_de2000_tritan_first6": 6.7,
+    "optimal6_min_de2000": 13.39,
+    "optimal6_min_de2000_deutan": 3.16,
+    "optimal6_min_de2000_protan": 1.04,
+    "grayscale_L_spread": 0.261,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

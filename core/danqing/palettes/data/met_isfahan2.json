@@ -1,0 +1,44 @@
+{
+  "id": "met_isfahan2",
+  "name": {
+    "en": "Met · Isfahan Mihrab Mosaic",
+    "zh": "大都会·伊斯法罕拱龛花砖 II"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D7ACA1",
+    "#DDC000",
+    "#79AD41",
+    "#34B6C6",
+    "#4063A3"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Garden Gathering, 1640–50, From Iran, Isfahan",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/455082",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 22.68,
+    "min_de2000_deutan_first6": 13.79,
+    "min_de2000_protan_first6": 9.19,
+    "min_de2000_tritan_first6": 6.45,
+    "optimal6_min_de2000": 22.68,
+    "optimal6_min_de2000_deutan": 13.79,
+    "optimal6_min_de2000_protan": 9.19,
+    "grayscale_L_spread": 0.304,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

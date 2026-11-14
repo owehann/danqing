@@ -1,0 +1,47 @@
+{
+  "id": "okabe_ito",
+  "name": {
+    "en": "Okabe–Ito",
+    "zh": "冈部–伊藤"
+  },
+  "collection": "accessible",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E69F00",
+    "#56B4E9",
+    "#009E73",
+    "#F0E442",
+    "#0072B2",
+    "#D55E00",
+    "#CC79A7",
+    "#000000"
+  ],
+  "neutral": "#999999",
+  "partners": {
+    "sequential": "cividis",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Color Universal Design (CUD) / Points of View: Color blindness",
+    "author": "Masataka Okabe & Kei Ito; Bang Wong",
+    "year": 2008,
+    "url": "https://jfly.uni-koeln.de/color/",
+    "license": "Published scientific palette (attribution)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 21.72,
+    "min_de2000_deutan_first6": 11.61,
+    "min_de2000_protan_first6": 15.17,
+    "min_de2000_tritan_first6": 12.09,
+    "optimal6_min_de2000": 21.72,
+    "optimal6_min_de2000_deutan": 11.61,
+    "optimal6_min_de2000_protan": 15.17,
+    "grayscale_L_spread": 0.902,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

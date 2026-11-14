@@ -1,0 +1,47 @@
+{
+  "id": "petroff8",
+  "name": {
+    "en": "Petroff 8 (IEEE VIS)",
+    "zh": "Petroff 8 色无障碍美学序列"
+  },
+  "collection": "accessible",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1845FB",
+    "#FF5E02",
+    "#C91F16",
+    "#C849A9",
+    "#ADAD7D",
+    "#86C8DD",
+    "#578DFF",
+    "#656364"
+  ],
+  "neutral": "#9C9CA1",
+  "partners": {
+    "sequential": "cividis",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Accessible Color Sequences for Data Visualization (8-color cycle)",
+    "author": "Matthew A. Petroff (IEEE TVCG / arXiv:2107.02270)",
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2107.02270",
+    "license": "MIT / CC0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 19.98,
+    "min_de2000_deutan_first6": 14.82,
+    "min_de2000_protan_first6": 9.0,
+    "min_de2000_tritan_first6": 11.74,
+    "optimal6_min_de2000": 19.98,
+    "optimal6_min_de2000_deutan": 14.82,
+    "optimal6_min_de2000_protan": 9.0,
+    "grayscale_L_spread": 0.294,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "RdYlBu",
+  "name": {
+    "en": "ColorBrewer RdYlBu",
+    "zh": "ColorBrewer 红黄蓝发散"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#D73027",
+    "#F46D43",
+    "#FDAE61",
+    "#FEE090",
+    "#FFFFBF",
+    "#E0F3F8",
+    "#ABD9E9",
+    "#74ADD1",
+    "#4575B4"
+  ],
+  "neutral": "#FFFFBF",
+  "partners": {
+    "sequential": "GnBu",
+    "diverging": "RdYlBu"
+  },
+  "source": {
+    "title": "ColorBrewer 2.0 (RdYlBu, 9-class)",
+    "author": "Cynthia A. Brewer, Penn State",
+    "year": 2013,
+    "url": "https://colorbrewer2.org/#type=diverging&scheme=RdYlBu&n=9",
+    "license": "Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 10.5,
+    "min_de2000_deutan_first6": 7.74,
+    "min_de2000_protan_first6": 7.93,
+    "min_de2000_tritan_first6": 11.46,
+    "optimal6_min_de2000": 14.82,
+    "optimal6_min_de2000_deutan": 10.07,
+    "optimal6_min_de2000_protan": 15.55,
+    "grayscale_L_spread": 0.427,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

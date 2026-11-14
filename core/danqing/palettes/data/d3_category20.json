@@ -1,0 +1,59 @@
+{
+  "id": "d3_category20",
+  "name": {
+    "en": "Category 20",
+    "zh": "Category 20（双阶二十色）"
+  },
+  "collection": "many",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1F77B4",
+    "#AEC7E8",
+    "#FF7F0E",
+    "#FFBB78",
+    "#2CA02C",
+    "#98DF8A",
+    "#D62728",
+    "#FF9896",
+    "#9467BD",
+    "#C5B0D5",
+    "#8C564B",
+    "#C49C94",
+    "#E377C2",
+    "#F7B6D2",
+    "#7F7F7F",
+    "#C7C7C7",
+    "#BCBD22",
+    "#DBDB8D",
+    "#17BECF",
+    "#9EDAE5"
+  ],
+  "neutral": "#C7C7C7",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "D3 Category20 / Matplotlib tab20",
+    "author": "Mike Bostock / Tableau / Matplotlib",
+    "year": 2013,
+    "url": "https://matplotlib.org/stable/users/explain/colors/colormaps.html",
+    "license": "ISC / BSD-3-Clause"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 20,
+    "max_colors": 20,
+    "min_de2000_first6": 15.45,
+    "min_de2000_deutan_first6": 4.88,
+    "min_de2000_protan_first6": 1.25,
+    "min_de2000_tritan_first6": 9.24,
+    "optimal6_min_de2000": 15.45,
+    "optimal6_min_de2000_deutan": 4.88,
+    "optimal6_min_de2000_protan": 1.25,
+    "grayscale_L_spread": 0.363,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

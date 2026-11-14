@@ -1,0 +1,47 @@
+{
+  "id": "met_cassatt1",
+  "name": {
+    "en": "Met · Cassatt Cup of Tea",
+    "zh": "大都会·卡萨特品茶"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#B1615C",
+    "#D88782",
+    "#E3ABA7",
+    "#EDD7D9",
+    "#C9C9DD",
+    "#9D9DC7",
+    "#8282AA",
+    "#5A5A83"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "The Cup of Tea, 1880-1881, Mary Cassatt, American",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/10388",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 9.69,
+    "min_de2000_deutan_first6": 8.31,
+    "min_de2000_protan_first6": 9.55,
+    "min_de2000_tritan_first6": 9.85,
+    "optimal6_min_de2000": 11.43,
+    "optimal6_min_de2000_deutan": 10.83,
+    "optimal6_min_de2000_protan": 9.55,
+    "grayscale_L_spread": 0.413,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

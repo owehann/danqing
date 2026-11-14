@@ -1,0 +1,51 @@
+{
+  "id": "met_egypt",
+  "name": {
+    "en": "Egypt",
+    "zh": "Egypt · 哈伦海布墓壁画"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DD5129",
+    "#0F7BA2",
+    "#43B284",
+    "#FAB255"
+  ],
+  "neutral": "#B8B6AF",
+  "partners": {
+    "sequential": "YlGnBu",
+    "diverging": "roma"
+  },
+  "source": {
+    "title": "MetBrewer: Egypt (Met Object 557794)",
+    "author": "Blake Robert Mills / Egyptian Expedition",
+    "year": 1911,
+    "url": "https://www.metmuseum.org/art/collection/search/557794",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "30.4.215 (Met #557794)",
+    "title": "The King with Isis, Tomb of Haremhab",
+    "date": "ca. 1323–1295 B.C. (facsimile 1910–1911)",
+    "url": "https://www.metmuseum.org/art/collection/search/557794",
+    "image_url": "https://www.metmuseum.org/art/collection/search/557794",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 28.77,
+    "min_de2000_deutan_first6": 17.51,
+    "min_de2000_protan_first6": 13.96,
+    "min_de2000_tritan_first6": 15.03,
+    "optimal6_min_de2000": 28.77,
+    "optimal6_min_de2000_deutan": 17.51,
+    "optimal6_min_de2000_protan": 13.96,
+    "grayscale_L_spread": 0.268,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

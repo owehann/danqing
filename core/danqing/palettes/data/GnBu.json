@@ -1,0 +1,48 @@
+{
+  "id": "GnBu",
+  "name": {
+    "en": "ColorBrewer GnBu",
+    "zh": "ColorBrewer 绿蓝序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#F7FCF0",
+    "#E0F3DB",
+    "#CCEBC5",
+    "#A8DDB5",
+    "#7BCCC4",
+    "#4EB3D3",
+    "#2B8CBE",
+    "#0868AC",
+    "#084081"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "GnBu",
+    "diverging": "RdYlBu"
+  },
+  "source": {
+    "title": "ColorBrewer 2.0 (GnBu, 9-class)",
+    "author": "Cynthia A. Brewer, Penn State",
+    "year": 2013,
+    "url": "https://colorbrewer2.org/#type=sequential&scheme=GnBu&n=9",
+    "license": "Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 5.73,
+    "min_de2000_deutan_first6": 4.01,
+    "min_de2000_protan_first6": 3.66,
+    "min_de2000_tritan_first6": 4.79,
+    "optimal6_min_de2000": 13.44,
+    "optimal6_min_de2000_deutan": 11.82,
+    "optimal6_min_de2000_protan": 11.77,
+    "grayscale_L_spread": 0.605,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

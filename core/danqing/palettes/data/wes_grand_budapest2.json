@@ -1,0 +1,43 @@
+{
+  "id": "wes_grand_budapest2",
+  "name": {
+    "en": "Cinema · Grand Budapest Pastel",
+    "zh": "电影美学·布达佩斯大饭店"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E6A0C4",
+    "#C6CDF7",
+    "#D8A499",
+    "#7294D4"
+  ],
+  "neutral": "#B9B4AB",
+  "partners": {
+    "sequential": "lajolla",
+    "diverging": "RdYlBu"
+  },
+  "source": {
+    "title": "wesanderson Cinema Color Palette (GrandBudapest2)",
+    "author": "Karthik Ram & Hadley Wickham",
+    "year": 2023,
+    "url": "https://github.com/karthik/wesanderson",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 16.24,
+    "min_de2000_deutan_first6": 11.74,
+    "min_de2000_protan_first6": 10.27,
+    "min_de2000_tritan_first6": 3.66,
+    "optimal6_min_de2000": 16.24,
+    "optimal6_min_de2000_deutan": 11.74,
+    "optimal6_min_de2000_protan": 10.27,
+    "grayscale_L_spread": 0.189,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

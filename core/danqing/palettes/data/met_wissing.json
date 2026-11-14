@@ -1,0 +1,44 @@
+{
+  "id": "met_wissing",
+  "name": {
+    "en": "Met · Wissing Baroque Court",
+    "zh": "大都会·维辛巴洛克宫廷"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#4B1D0D",
+    "#7C291E",
+    "#BA7233",
+    "#3A4421",
+    "#2D5380"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Portrait of a Woman, 1687, Willem Wissing, Dutch",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/437945",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 10.88,
+    "min_de2000_deutan_first6": 5.93,
+    "min_de2000_protan_first6": 2.61,
+    "min_de2000_tritan_first6": 10.87,
+    "optimal6_min_de2000": 10.88,
+    "optimal6_min_de2000_deutan": 5.93,
+    "optimal6_min_de2000_protan": 2.61,
+    "grayscale_L_spread": 0.322,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

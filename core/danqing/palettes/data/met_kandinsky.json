@@ -1,0 +1,51 @@
+{
+  "id": "met_kandinsky",
+  "name": {
+    "en": "Kandinsky",
+    "zh": "康定斯基 · 小世界 IV"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3B7C70",
+    "#CE9642",
+    "#898E9F",
+    "#3B3A3E"
+  ],
+  "neutral": "#B4B7C0",
+  "partners": {
+    "sequential": "oslo",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "MetBrewer: Kandinsky (Met Object 369093)",
+    "author": "Blake Robert Mills / Vasily Kandinsky",
+    "year": 1922,
+    "url": "https://www.metmuseum.org/art/collection/search/369093",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "Met #369093",
+    "title": "Kleine Welten IV (Small Worlds IV)",
+    "date": "1922",
+    "url": "https://www.metmuseum.org/art/collection/search/369093",
+    "image_url": "https://www.metmuseum.org/art/collection/search/369093",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 25.21,
+    "min_de2000_deutan_first6": 13.81,
+    "min_de2000_protan_first6": 15.11,
+    "min_de2000_tritan_first6": 20.21,
+    "optimal6_min_de2000": 25.21,
+    "optimal6_min_de2000_deutan": 13.81,
+    "optimal6_min_de2000_protan": 15.11,
+    "grayscale_L_spread": 0.361,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

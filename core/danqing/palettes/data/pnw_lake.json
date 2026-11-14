@@ -1,0 +1,47 @@
+{
+  "id": "pnw_lake",
+  "name": {
+    "en": "PNW · Olympic Forest Lake",
+    "zh": "北美海岸·冷杉翠湖"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#362904",
+    "#54450F",
+    "#45681E",
+    "#4A9152",
+    "#64A8A8",
+    "#85B6CE",
+    "#CDE5F9",
+    "#EEF3FF"
+  ],
+  "neutral": "#B5B8BA",
+  "partners": {
+    "sequential": "navia",
+    "diverging": "broc"
+  },
+  "source": {
+    "title": "PNWColors Pacific Northwest Nature Palette (Lake)",
+    "author": "Jake Lawlor",
+    "year": 2020,
+    "url": "https://github.com/jakelawlor/PNWColors",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 10.02,
+    "min_de2000_deutan_first6": 7.41,
+    "min_de2000_protan_first6": 9.77,
+    "min_de2000_tritan_first6": 6.37,
+    "optimal6_min_de2000": 12.73,
+    "optimal6_min_de2000_deutan": 8.44,
+    "optimal6_min_de2000_protan": 9.77,
+    "grayscale_L_spread": 0.676,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

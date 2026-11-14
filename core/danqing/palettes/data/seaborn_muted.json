@@ -1,0 +1,48 @@
+{
+  "id": "seaborn_muted",
+  "name": {
+    "en": "Seaborn Muted 10",
+    "zh": "Seaborn 柔和学术十色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4878D0",
+    "#EE854A",
+    "#6ACC64",
+    "#D65F5F",
+    "#956CB4",
+    "#8C613C",
+    "#DC7EC0",
+    "#D5BB67",
+    "#82C6E2"
+  ],
+  "neutral": "#797979",
+  "partners": {
+    "sequential": "seaborn_crest",
+    "diverging": "seaborn_vlag"
+  },
+  "source": {
+    "title": "Seaborn Statistical Data Visualization (Seaborn Muted 10)",
+    "author": "Michael L. Waskom (JOSS 6(60):3021)",
+    "year": 2021,
+    "url": "https://github.com/mwaskom/seaborn",
+    "license": "BSD-3-Clause"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 19.18,
+    "min_de2000_deutan_first6": 4.94,
+    "min_de2000_protan_first6": 4.75,
+    "min_de2000_tritan_first6": 8.82,
+    "optimal6_min_de2000": 19.18,
+    "optimal6_min_de2000_deutan": 4.94,
+    "optimal6_min_de2000_protan": 4.75,
+    "grayscale_L_spread": 0.267,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

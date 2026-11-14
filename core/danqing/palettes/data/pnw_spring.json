@@ -1,0 +1,45 @@
+{
+  "id": "pnw_spring",
+  "name": {
+    "en": "PNW · Cherry Blossom Spring",
+    "zh": "北美海岸·早春樱林"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#D8AEDD",
+    "#BF9BDD",
+    "#CB74AD",
+    "#E69E9C",
+    "#FFC3A3",
+    "#FBE4C6"
+  ],
+  "neutral": "#B5B8BA",
+  "partners": {
+    "sequential": "navia",
+    "diverging": "broc"
+  },
+  "source": {
+    "title": "PNWColors Pacific Northwest Nature Palette (Spring)",
+    "author": "Jake Lawlor",
+    "year": 2020,
+    "url": "https://github.com/jakelawlor/PNWColors",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 7.61,
+    "min_de2000_deutan_first6": 6.2,
+    "min_de2000_protan_first6": 6.61,
+    "min_de2000_tritan_first6": 6.95,
+    "optimal6_min_de2000": 7.61,
+    "optimal6_min_de2000_deutan": 6.2,
+    "optimal6_min_de2000_protan": 6.61,
+    "grayscale_L_spread": 0.257,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "met_tam",
+  "name": {
+    "en": "Met · Reuben Tam Kauai Coast",
+    "zh": "大都会·谭氏夏威夷海岸"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#FFD353",
+    "#FFB242",
+    "#EF8737",
+    "#DE4F33",
+    "#BB292C",
+    "#9F2D55",
+    "#62205F",
+    "#341648"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Dragon Robe, 1998, Vivienne Tam, American, born China",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/113019",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 11.63,
+    "min_de2000_deutan_first6": 4.78,
+    "min_de2000_protan_first6": 6.75,
+    "min_de2000_tritan_first6": 9.2,
+    "optimal6_min_de2000": 12.74,
+    "optimal6_min_de2000_deutan": 10.39,
+    "optimal6_min_de2000_protan": 11.88,
+    "grayscale_L_spread": 0.611,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

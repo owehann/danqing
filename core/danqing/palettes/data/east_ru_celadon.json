@@ -1,0 +1,56 @@
+{
+  "id": "east_ru_celadon",
+  "name": {
+    "en": "Ru & Jun Song Glaze",
+    "zh": "宋汝钧天青霞紫"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#5C8D7F",
+    "#64465D",
+    "#543C18",
+    "#ADBE9B",
+    "#46644C",
+    "#7C662C",
+    "#005160",
+    "#C28688"
+  ],
+  "neutral": "#A6A49F",
+  "partners": {
+    "sequential": "oslo",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Brush Washer (Ru ware) & Jar with Cover (Jun ware)",
+    "author": "The Cleveland Museum of Art",
+    "year": "Northern Song–Jin dynasty (late 1000s–1100s)",
+    "url": "https://clevelandart.org/art/1957.40",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1957.40 & 1957.36",
+    "title": "Brush Washer (Ru ware) & Jar with Cover (Jun ware)",
+    "date": "Northern Song–Jin dynasty (late 1000s–1100s)",
+    "url": "https://clevelandart.org/art/1957.40",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1957.40/1957.40_web.jpg",
+    "thumbnail_url": "/artifacts/east_ru_celadon.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 15.32,
+    "min_de2000_deutan_first6": 12.94,
+    "min_de2000_protan_first6": 11.62,
+    "min_de2000_tritan_first6": 7.25,
+    "optimal6_min_de2000": 15.32,
+    "optimal6_min_de2000_deutan": 12.94,
+    "optimal6_min_de2000_protan": 11.62,
+    "grayscale_L_spread": 0.404,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

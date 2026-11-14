@@ -1,0 +1,50 @@
+{
+  "id": "moma_klein",
+  "name": {
+    "en": "MoMA · Yves Klein Ultramarine",
+    "zh": "现代艺术馆·克莱因群青"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF4D6F",
+    "#579EA4",
+    "#DF7713",
+    "#F9C000",
+    "#86AD34",
+    "#5D7298",
+    "#81B28D",
+    "#7E1A2F",
+    "#2D2651",
+    "#C8350D",
+    "#BD777A"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "New York Fly TWA, 1956, David Klein, Photolithograph",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/6291?artist_id=3134&page=1&sov_referrer=artist",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 23.04,
+    "min_de2000_deutan_first6": 3.93,
+    "min_de2000_protan_first6": 9.17,
+    "min_de2000_tritan_first6": 7.7,
+    "optimal6_min_de2000": 23.04,
+    "optimal6_min_de2000_deutan": 3.93,
+    "optimal6_min_de2000_protan": 9.17,
+    "grayscale_L_spread": 0.536,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

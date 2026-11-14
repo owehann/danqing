@@ -1,0 +1,46 @@
+{
+  "id": "pnw_anemone",
+  "name": {
+    "en": "PNW · Sea Anemone Teal",
+    "zh": "北美海岸·礁石海葵"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#009474",
+    "#11C2B5",
+    "#72E1E1",
+    "#F1F4EE",
+    "#EFDDCF",
+    "#DCBE9B",
+    "#B0986C"
+  ],
+  "neutral": "#B5B8BA",
+  "partners": {
+    "sequential": "navia",
+    "diverging": "broc"
+  },
+  "source": {
+    "title": "PNWColors Pacific Northwest Nature Palette (Anemone)",
+    "author": "Jake Lawlor",
+    "year": 2020,
+    "url": "https://github.com/jakelawlor/PNWColors",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 10.27,
+    "min_de2000_deutan_first6": 6.87,
+    "min_de2000_protan_first6": 6.39,
+    "min_de2000_tritan_first6": 7.85,
+    "optimal6_min_de2000": 10.37,
+    "optimal6_min_de2000_deutan": 6.87,
+    "optimal6_min_de2000_protan": 6.39,
+    "grayscale_L_spread": 0.37,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

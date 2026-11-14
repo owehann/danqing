@@ -1,0 +1,48 @@
+{
+  "id": "PRGn",
+  "name": {
+    "en": "ColorBrewer PRGn",
+    "zh": "ColorBrewer 紫绿发散"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#762A83",
+    "#9970AB",
+    "#C2A5CF",
+    "#E7D4E8",
+    "#F7F7F7",
+    "#D9F0D3",
+    "#A6DBA0",
+    "#5AAE61",
+    "#1B7837"
+  ],
+  "neutral": "#F7F7F7",
+  "partners": {
+    "sequential": "GnBu",
+    "diverging": "PRGn"
+  },
+  "source": {
+    "title": "ColorBrewer 2.0 (PRGn, 9-class)",
+    "author": "Cynthia A. Brewer, Penn State",
+    "year": 2013,
+    "url": "https://colorbrewer2.org/#type=diverging&scheme=PRGn&n=9",
+    "license": "Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 13.11,
+    "min_de2000_deutan_first6": 8.52,
+    "min_de2000_protan_first6": 9.97,
+    "min_de2000_tritan_first6": 10.1,
+    "optimal6_min_de2000": 19.46,
+    "optimal6_min_de2000_deutan": 15.56,
+    "optimal6_min_de2000_protan": 18.9,
+    "grayscale_L_spread": 0.541,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

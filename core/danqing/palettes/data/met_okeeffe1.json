@@ -1,0 +1,50 @@
+{
+  "id": "met_okeeffe1",
+  "name": {
+    "en": "Met · O'Keeffe Black Iris",
+    "zh": "大都会·奥姬芙鸢尾与荒漠 I"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#6B200C",
+    "#973D21",
+    "#DA6C42",
+    "#EE956A",
+    "#FBC2A9",
+    "#F6F2EE",
+    "#BAD6F9",
+    "#7DB0EA",
+    "#447FDD",
+    "#225BB2",
+    "#133E7E"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "From the Faraway, Nearby, 1937, Georgia O'Keeffe, American",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/489064",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 10.85,
+    "min_de2000_deutan_first6": 9.25,
+    "min_de2000_protan_first6": 9.96,
+    "min_de2000_tritan_first6": 10.47,
+    "optimal6_min_de2000": 13.82,
+    "optimal6_min_de2000_deutan": 13.06,
+    "optimal6_min_de2000_protan": 14.14,
+    "grayscale_L_spread": 0.604,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

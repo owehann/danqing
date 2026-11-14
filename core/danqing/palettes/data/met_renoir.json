@@ -1,0 +1,59 @@
+{
+  "id": "met_renoir",
+  "name": {
+    "en": "Renoir",
+    "zh": "雷诺阿 · 花园中的妮妮"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#17154F",
+    "#2F357C",
+    "#6C5D9E",
+    "#9D9CD5",
+    "#B0799A",
+    "#F6B3B0",
+    "#E48171",
+    "#BF3729",
+    "#E69B00",
+    "#F5BB50",
+    "#ADA43B",
+    "#355828"
+  ],
+  "neutral": "#B8B6BF",
+  "partners": {
+    "sequential": "plasma",
+    "diverging": "PuOr"
+  },
+  "source": {
+    "title": "MetBrewer: Renoir (Met Object 438010)",
+    "author": "Blake Robert Mills / Auguste Renoir",
+    "year": 1876,
+    "url": "https://www.metmuseum.org/art/collection/search/438010",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "1976.201.15 (Met #438010)",
+    "title": "Nini in the Garden (Nini Lopez)",
+    "date": "1876",
+    "url": "https://www.metmuseum.org/art/collection/search/438010",
+    "image_url": "https://www.metmuseum.org/art/collection/search/438010",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 12,
+    "max_colors": 12,
+    "min_de2000_first6": 10.54,
+    "min_de2000_deutan_first6": 10.65,
+    "min_de2000_protan_first6": 11.13,
+    "min_de2000_tritan_first6": 10.94,
+    "optimal6_min_de2000": 27.19,
+    "optimal6_min_de2000_deutan": 16.28,
+    "optimal6_min_de2000_protan": 1.51,
+    "grayscale_L_spread": 0.585,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

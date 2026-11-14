@@ -1,0 +1,48 @@
+{
+  "id": "tol_muted",
+  "name": {
+    "en": "Tol Muted",
+    "zh": "Tol 柔和九色"
+  },
+  "collection": "accessible",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#CC6677",
+    "#332288",
+    "#DDCC77",
+    "#117733",
+    "#88CCEE",
+    "#882255",
+    "#44AA99",
+    "#999933",
+    "#AA4499"
+  ],
+  "neutral": "#DDDDDD",
+  "partners": {
+    "sequential": "batlow",
+    "diverging": "PuOr"
+  },
+  "source": {
+    "title": "Colour Schemes (SRON/EPS/TN/09-002)",
+    "author": "Paul Tol",
+    "year": 2021,
+    "url": "https://personal.sron.nl/~pault/",
+    "license": "BSD-3-Clause / Attribution"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 23.7,
+    "min_de2000_deutan_first6": 17.61,
+    "min_de2000_protan_first6": 11.8,
+    "min_de2000_tritan_first6": 22.09,
+    "optimal6_min_de2000": 23.7,
+    "optimal6_min_de2000_deutan": 17.61,
+    "optimal6_min_de2000_protan": 11.8,
+    "grayscale_L_spread": 0.494,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

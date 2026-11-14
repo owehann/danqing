@@ -1,0 +1,56 @@
+{
+  "id": "east_momoyama_makie",
+  "name": {
+    "en": "Momoyama Gold Maki-e Lacquer",
+    "zh": "桃山莳绘秋草螺钿"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#AA7C00",
+    "#4D5070",
+    "#472917",
+    "#876653",
+    "#E5AE00",
+    "#6A4C00",
+    "#AE9E75",
+    "#3C5000"
+  ],
+  "neutral": "#BABBB6",
+  "partners": {
+    "sequential": "lajolla",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "Maki-e Reading Stand with Chrysanthemums & Muromachi Suzuribako",
+    "author": "The Cleveland Museum of Art",
+    "year": "Muromachi–Momoyama period (1400s–early 1600s)",
+    "url": "https://clevelandart.org/art/1976.15",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1976.15 & 1969.124.b",
+    "title": "Maki-e Reading Stand with Chrysanthemums & Muromachi Suzuribako",
+    "date": "Muromachi–Momoyama period (1400s–early 1600s)",
+    "url": "https://clevelandart.org/art/1976.15",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1976.15/1976.15_web.jpg",
+    "thumbnail_url": "/artifacts/east_momoyama_makie.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 16.36,
+    "min_de2000_deutan_first6": 14.85,
+    "min_de2000_protan_first6": 15.37,
+    "min_de2000_tritan_first6": 10.58,
+    "optimal6_min_de2000": 16.36,
+    "optimal6_min_de2000_deutan": 14.85,
+    "optimal6_min_de2000_protan": 15.37,
+    "grayscale_L_spread": 0.465,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

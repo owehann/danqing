@@ -1,0 +1,55 @@
+{
+  "id": "mpl_tab20c",
+  "name": {
+    "en": "Matplotlib Tab20c",
+    "zh": "Matplotlib 阶梯分组二十色 C"
+  },
+  "collection": "many",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#3182BD",
+    "#6BAED6",
+    "#9ECAE1",
+    "#C6DBEF",
+    "#E6550D",
+    "#FD8D3C",
+    "#FDAE6B",
+    "#FDD0A2",
+    "#31A354",
+    "#74C476",
+    "#A1D99B",
+    "#C7E9C0",
+    "#756BB1",
+    "#9E9AC8",
+    "#BCBDDC",
+    "#DADAEB"
+  ],
+  "neutral": "#969696",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Matplotlib / Vega Structured Palette (tab20c chromatic)",
+    "author": "Matplotlib & Vega Contributors",
+    "year": 2016,
+    "url": "https://matplotlib.org/stable/users/explain/colors/colormaps.html",
+    "license": "BSD-compatible"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 16,
+    "max_colors": 16,
+    "min_de2000_first6": 7.92,
+    "min_de2000_deutan_first6": 6.1,
+    "min_de2000_protan_first6": 4.81,
+    "min_de2000_tritan_first6": 8.75,
+    "optimal6_min_de2000": 24.71,
+    "optimal6_min_de2000_deutan": 7.52,
+    "optimal6_min_de2000_protan": 5.42,
+    "grayscale_L_spread": 0.332,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

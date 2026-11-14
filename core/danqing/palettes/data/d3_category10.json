@@ -1,0 +1,49 @@
+{
+  "id": "d3_category10",
+  "name": {
+    "en": "D3 Category10",
+    "zh": "D3 / Vega 经典十色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1F77B4",
+    "#FF7F0E",
+    "#2CA02C",
+    "#D62728",
+    "#9467BD",
+    "#8C564B",
+    "#E377C2",
+    "#7F7F7F",
+    "#BCBD22",
+    "#17BECF"
+  ],
+  "neutral": "#9498A0",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "D3 Scale Chromatic / Observable (D3 Category10)",
+    "author": "Mike Bostock, Maureen Stone & Cynthia Brewer",
+    "year": 2023,
+    "url": "https://github.com/d3/d3-scale-chromatic",
+    "license": "ISC / Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 16.2,
+    "min_de2000_deutan_first6": 4.61,
+    "min_de2000_protan_first6": 1.25,
+    "min_de2000_tritan_first6": 12.03,
+    "optimal6_min_de2000": 16.2,
+    "optimal6_min_de2000_deutan": 4.61,
+    "optimal6_min_de2000_protan": 1.25,
+    "grayscale_L_spread": 0.262,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

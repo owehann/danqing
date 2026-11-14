@@ -1,0 +1,54 @@
+{
+  "id": "met_archambault",
+  "name": {
+    "en": "Archambault",
+    "zh": "Archambault · 珠绣礼服"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#88A0DC",
+    "#381A61",
+    "#7C4B73",
+    "#ED968C",
+    "#AB3329",
+    "#E78429",
+    "#F9D14A"
+  ],
+  "neutral": "#B9B6BE",
+  "partners": {
+    "sequential": "plasma",
+    "diverging": "PuOr"
+  },
+  "source": {
+    "title": "MetBrewer: Archambault (Met Object 644324)",
+    "author": "Blake Robert Mills / Jodi Archambault",
+    "year": 2005,
+    "url": "https://www.metmuseum.org/art/collection/search/644324",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "Met #644324",
+    "title": "Woman's Dress and Accessories (Hunkpapa Lakota)",
+    "date": "2005",
+    "url": "https://www.metmuseum.org/art/collection/search/644324",
+    "image_url": "https://www.metmuseum.org/art/collection/search/644324",
+    "image_license": "CC0 1.0 Universal (MetBrewer palette data)"
+  },
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 19.55,
+    "min_de2000_deutan_first6": 14.4,
+    "min_de2000_protan_first6": 15.58,
+    "min_de2000_tritan_first6": 7.06,
+    "optimal6_min_de2000": 19.55,
+    "optimal6_min_de2000_deutan": 14.4,
+    "optimal6_min_de2000_protan": 15.58,
+    "grayscale_L_spread": 0.568,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

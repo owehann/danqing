@@ -1,0 +1,45 @@
+{
+  "id": "tol_medium_contrast",
+  "name": {
+    "en": "Paul Tol Medium-Contrast",
+    "zh": "保罗·托尔中对比打印六色"
+  },
+  "collection": "accessible",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#004488",
+    "#994455",
+    "#997700",
+    "#6699CC",
+    "#EE99AA",
+    "#EECC66"
+  ],
+  "neutral": "#BBBBBB",
+  "partners": {
+    "sequential": "tol_iridescent",
+    "diverging": "tol_sunset"
+  },
+  "source": {
+    "title": "Paul Tol Colour Schemes (medium-contrast, grayscale print safe)",
+    "author": "Paul Tol (SRON/EPS/TN/09-002)",
+    "year": 2022,
+    "url": "https://sronpersonalpages.nl/~pault/",
+    "license": "BSD-3-Clause"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 25.1,
+    "min_de2000_deutan_first6": 20.33,
+    "min_de2000_protan_first6": 16.83,
+    "min_de2000_tritan_first6": 11.96,
+    "optimal6_min_de2000": 25.1,
+    "optimal6_min_de2000_deutan": 20.33,
+    "optimal6_min_de2000_protan": 16.83,
+    "grayscale_L_spread": 0.462,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

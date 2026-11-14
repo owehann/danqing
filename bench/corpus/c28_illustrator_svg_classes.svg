@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+<style type="text/css">
+  .st0{fill:#FFFFFF;}
+  .st1{fill:#D94848;}
+  .st2{fill:#3B7EA1;}
+  .st3{fill:#5C9E6E;}
+  .st4{fill:#9A6FB0;}
+</style>
+<rect class="st0" width="500" height="300"/>
+<path class="st1" d="M70,240 L70,110 L110,110 L110,240 Z"/>
+<path class="st2" d="M130,240 L130,75 L170,75 L170,240 Z"/>
+<path class="st3" d="M190,240 L190,145 L230,145 L230,240 Z"/>
+<path class="st4" d="M250,240 L250,60 L290,60 L290,240 Z"/>
+<rect class="st1" x="355" y="80" width="13" height="13"/><text x="376" y="91" font-size="11">Stage_I</text>
+<rect class="st2" x="355" y="104" width="13" height="13"/><text x="376" y="115" font-size="11">Stage_II</text>
+<rect class="st3" x="355" y="128" width="13" height="13"/><text x="376" y="139" font-size="11">Stage_III</text>
+<rect class="st4" x="355" y="152" width="13" height="13"/><text x="376" y="163" font-size="11">Stage_IV</text>
+</svg>

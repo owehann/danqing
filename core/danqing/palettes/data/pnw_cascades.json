@@ -1,0 +1,45 @@
+{
+  "id": "pnw_cascades",
+  "name": {
+    "en": "PNW · North Cascades Moss",
+    "zh": "北美海岸·喀斯喀特苔森"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#2D4030",
+    "#516823",
+    "#DEC000",
+    "#E2E260",
+    "#677E8E",
+    "#88A2B9"
+  ],
+  "neutral": "#B5B8BA",
+  "partners": {
+    "sequential": "navia",
+    "diverging": "broc"
+  },
+  "source": {
+    "title": "PNWColors Pacific Northwest Nature Palette (Cascades)",
+    "author": "Jake Lawlor",
+    "year": 2020,
+    "url": "https://github.com/jakelawlor/PNWColors",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 11.1,
+    "min_de2000_deutan_first6": 7.17,
+    "min_de2000_protan_first6": 7.75,
+    "min_de2000_tritan_first6": 12.53,
+    "optimal6_min_de2000": 11.1,
+    "optimal6_min_de2000_deutan": 7.17,
+    "optimal6_min_de2000_protan": 7.75,
+    "grayscale_L_spread": 0.538,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

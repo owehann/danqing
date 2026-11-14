@@ -1,0 +1,47 @@
+{
+  "id": "bmj",
+  "name": {
+    "en": "BMJ-inspired",
+    "zh": "BMJ-inspired（英国医学期刊参考）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2A6EBB",
+    "#F0AB00",
+    "#C50084",
+    "#7D5CC6",
+    "#E37222",
+    "#69BE28",
+    "#00B2A9",
+    "#000000"
+  ],
+  "neutral": "#ADA397",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "Factual journal color table curated in ggsci (pal_bmj)",
+    "author": "BMJ Living Style Guide / Nan Xiao reference table",
+    "year": 2023,
+    "url": "https://nanx.me/ggsci/reference/pal_bmj.html",
+    "license": "Factual hex values (acknowledged in NOTICE; no ggsci code used)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 18.33,
+    "min_de2000_deutan_first6": 2.87,
+    "min_de2000_protan_first6": 0.28,
+    "min_de2000_tritan_first6": 12.93,
+    "optimal6_min_de2000": 18.33,
+    "optimal6_min_de2000_deutan": 2.87,
+    "optimal6_min_de2000_protan": 0.28,
+    "grayscale_L_spread": 0.786,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

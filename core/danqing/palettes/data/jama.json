@@ -1,0 +1,46 @@
+{
+  "id": "jama",
+  "name": {
+    "en": "JAMA-inspired",
+    "zh": "JAMA-inspired（美国医学会参考）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#374E55",
+    "#DF8F44",
+    "#00A1D5",
+    "#B24745",
+    "#79AF97",
+    "#6A6599",
+    "#80796B"
+  ],
+  "neutral": "#80796B",
+  "partners": {
+    "sequential": "oslo",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "Factual journal color table curated in ggsci (pal_jama)",
+    "author": "Nan Xiao (ggsci reference table)",
+    "year": 2018,
+    "url": "https://nanx.me/ggsci/reference/pal_jama.html",
+    "license": "Factual hex values (acknowledged in NOTICE; no ggsci code used)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 21.71,
+    "min_de2000_deutan_first6": 15.09,
+    "min_de2000_protan_first6": 17.26,
+    "min_de2000_tritan_first6": 7.64,
+    "optimal6_min_de2000": 21.71,
+    "optimal6_min_de2000_deutan": 15.09,
+    "optimal6_min_de2000_protan": 17.26,
+    "grayscale_L_spread": 0.311,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

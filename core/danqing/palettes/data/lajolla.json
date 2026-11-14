@@ -1,0 +1,48 @@
+{
+  "id": "lajolla",
+  "name": {
+    "en": "Lajolla",
+    "zh": "Lajolla（暖赭金黄序列）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#191900",
+    "#372411",
+    "#67342A",
+    "#A64644",
+    "#D9604E",
+    "#E58751",
+    "#ECAC54",
+    "#F7D971",
+    "#FFFECB"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "lajolla",
+    "diverging": "roma"
+  },
+  "source": {
+    "title": "Scientific colour maps v8.0 (lajolla)",
+    "author": "Fabio Crameri",
+    "year": 2023,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT (cmcrameri / Zenodo)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 14.26,
+    "min_de2000_deutan_first6": 6.17,
+    "min_de2000_protan_first6": 4.82,
+    "min_de2000_tritan_first6": 9.06,
+    "optimal6_min_de2000": 14.51,
+    "optimal6_min_de2000_deutan": 6.17,
+    "optimal6_min_de2000_protan": 4.82,
+    "grayscale_L_spread": 0.779,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

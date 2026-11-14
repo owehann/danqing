@@ -1,0 +1,50 @@
+{
+  "id": "carto_bold",
+  "name": {
+    "en": "CARTO Bold 11",
+    "zh": "CARTO 醒目空间十一色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#7F3C8D",
+    "#11A579",
+    "#3969AC",
+    "#F2B701",
+    "#E73F74",
+    "#80BA5A",
+    "#E68310",
+    "#008695",
+    "#CF1C90",
+    "#F97B72",
+    "#4B4B8F"
+  ],
+  "neutral": "#A5AA99",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "CARTOColors Qualitative Scheme (Bold)",
+    "author": "CARTO (Mamata Akella & Jakob Nowosad)",
+    "year": 2019,
+    "url": "https://github.com/CartoDB/CartoColor",
+    "license": "CC-BY 4.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 16.73,
+    "min_de2000_deutan_first6": 4.5,
+    "min_de2000_protan_first6": 7.68,
+    "min_de2000_tritan_first6": 11.26,
+    "optimal6_min_de2000": 16.73,
+    "optimal6_min_de2000_deutan": 4.5,
+    "optimal6_min_de2000_protan": 7.68,
+    "grayscale_L_spread": 0.364,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

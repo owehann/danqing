@@ -1,0 +1,48 @@
+{
+  "id": "batlow",
+  "name": {
+    "en": "Batlow",
+    "zh": "Batlow（科学彩虹序列）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#011959",
+    "#114360",
+    "#226061",
+    "#4D734D",
+    "#828231",
+    "#BE9035",
+    "#F19D6B",
+    "#FDB4B4",
+    "#FACCFA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "batlow",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Scientific colour maps v8.0 (batlow)",
+    "author": "Fabio Crameri",
+    "year": 2023,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT (cmcrameri / Zenodo)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 15.2,
+    "min_de2000_deutan_first6": 10.53,
+    "min_de2000_protan_first6": 7.59,
+    "min_de2000_tritan_first6": 8.63,
+    "optimal6_min_de2000": 17.27,
+    "optimal6_min_de2000_deutan": 14.59,
+    "optimal6_min_de2000_protan": 12.42,
+    "grayscale_L_spread": 0.649,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

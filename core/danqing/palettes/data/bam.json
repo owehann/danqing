@@ -1,0 +1,48 @@
+{
+  "id": "bam",
+  "name": {
+    "en": "Bam",
+    "zh": "Bam（绛紫苔绿发散）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#65024B",
+    "#A5438C",
+    "#D17FBC",
+    "#ECC6E2",
+    "#F6F1F0",
+    "#D8E8C2",
+    "#8DB565",
+    "#4C812F",
+    "#0D4C00"
+  ],
+  "neutral": "#F6F1F0",
+  "partners": {
+    "sequential": "hawaii",
+    "diverging": "bam"
+  },
+  "source": {
+    "title": "Scientific colour maps v8.0 (bam)",
+    "author": "Fabio Crameri",
+    "year": 2023,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT (cmcrameri / Zenodo)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 17.54,
+    "min_de2000_deutan_first6": 10.41,
+    "min_de2000_protan_first6": 12.78,
+    "min_de2000_tritan_first6": 10.41,
+    "optimal6_min_de2000": 18.37,
+    "optimal6_min_de2000_deutan": 17.72,
+    "optimal6_min_de2000_protan": 17.98,
+    "grayscale_L_spread": 0.621,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

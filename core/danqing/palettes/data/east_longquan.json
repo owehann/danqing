@@ -1,0 +1,56 @@
+{
+  "id": "east_longquan",
+  "name": {
+    "en": "Longquan Celadon & Kesi",
+    "zh": "龙泉青瓷与宋缂丝"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A6A463",
+    "#386087",
+    "#8F0311",
+    "#AF758C",
+    "#A86A38",
+    "#794058",
+    "#3F441A",
+    "#AD8100"
+  ],
+  "neutral": "#A6A3A8",
+  "partners": {
+    "sequential": "batlow",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "Plate with Relief Dragon among Clouds (Longquan ware) & Song Kesi Tapestry",
+    "author": "The Cleveland Museum of Art",
+    "year": "Song–Yuan dynasty (1100s–1300s)",
+    "url": "https://clevelandart.org/art/1961.92",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1961.92 & 1988.100",
+    "title": "Plate with Relief Dragon among Clouds (Longquan ware) & Song Kesi Tapestry",
+    "date": "Song–Yuan dynasty (1100s–1300s)",
+    "url": "https://clevelandart.org/art/1961.92",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1961.92/1961.92_web.jpg",
+    "thumbnail_url": "/artifacts/east_longquan.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 19.95,
+    "min_de2000_deutan_first6": 12.53,
+    "min_de2000_protan_first6": 11.98,
+    "min_de2000_tritan_first6": 8.25,
+    "optimal6_min_de2000": 19.95,
+    "optimal6_min_de2000_deutan": 12.53,
+    "optimal6_min_de2000_protan": 11.98,
+    "grayscale_L_spread": 0.334,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

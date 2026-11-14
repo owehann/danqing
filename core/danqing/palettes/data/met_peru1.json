@@ -1,0 +1,45 @@
+{
+  "id": "met_peru1",
+  "name": {
+    "en": "Met · Nasca Feathered Tunic",
+    "zh": "大都会·秘鲁纳斯卡羽衣 I"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#B5361C",
+    "#E35E28",
+    "#1C9D7C",
+    "#31C7BA",
+    "#369CC9",
+    "#3A507F"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Ear Ornament, Winged Runner, A.D. 400–700, Moche, Peruvian",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/309428",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.5,
+    "min_de2000_deutan_first6": 14.47,
+    "min_de2000_protan_first6": 13.91,
+    "min_de2000_tritan_first6": 6.13,
+    "optimal6_min_de2000": 14.5,
+    "optimal6_min_de2000_deutan": 14.47,
+    "optimal6_min_de2000_protan": 13.91,
+    "grayscale_L_spread": 0.316,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

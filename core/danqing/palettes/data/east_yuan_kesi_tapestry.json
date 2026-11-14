@@ -1,0 +1,56 @@
+{
+  "id": "east_yuan_kesi_tapestry",
+  "name": {
+    "en": "Imperial Kesi Dragon Tapestry",
+    "zh": "宋元缂丝云龙花鸟"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C84500",
+    "#05636E",
+    "#849966",
+    "#4D4100",
+    "#CD8B00",
+    "#69A29F",
+    "#567659",
+    "#6F3F32"
+  ],
+  "neutral": "#A3A699",
+  "partners": {
+    "sequential": "batlow",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Canopy with Dragon among Flowers & Dragons Chasing Flaming Pearls (Kesi)",
+    "author": "The Cleveland Museum of Art",
+    "year": "Song–Ming dynasty (1100s–1400s)",
+    "url": "https://clevelandart.org/art/1995.1",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1995.1 & 1988.33",
+    "title": "Canopy with Dragon among Flowers & Dragons Chasing Flaming Pearls (Kesi)",
+    "date": "Song–Ming dynasty (1100s–1400s)",
+    "url": "https://clevelandart.org/art/1995.1",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1995.1/1995.1_web.jpg",
+    "thumbnail_url": "/artifacts/east_yuan_kesi_tapestry.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 18.82,
+    "min_de2000_deutan_first6": 12.14,
+    "min_de2000_protan_first6": 11.45,
+    "min_de2000_tritan_first6": 14.67,
+    "optimal6_min_de2000": 18.82,
+    "optimal6_min_de2000_deutan": 12.14,
+    "optimal6_min_de2000_protan": 11.45,
+    "grayscale_L_spread": 0.31,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

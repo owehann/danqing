@@ -1,0 +1,322 @@
+{
+  "version": "1.0",
+  "total_figures": 34,
+  "figures": [
+    {
+      "id": "c01_penguins_multimodal",
+      "filename": "c01_penguins_multimodal.pdf",
+      "tool": "pikepdf_public",
+      "chart_type": "multipanel_heatmap_bar_scatter",
+      "has_legend": true,
+      "expected_labeled": 11,
+      "expect_editable": true,
+      "heavy": false,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c02_mouse_brain_visium",
+      "filename": "c02_mouse_brain_visium.pdf",
+      "tool": "pikepdf_public",
+      "chart_type": "multipanel_spatial_visium",
+      "has_legend": true,
+      "expected_labeled": 11,
+      "expect_editable": true,
+      "heavy": true,
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "c03_composite_wb_he_if_diverging",
+      "filename": "c03_composite_wb_he_if_diverging.pdf",
+      "tool": "pikepdf_composite",
+      "chart_type": "multipanel_wb_he_if_heatmap",
+      "has_legend": true,
+      "expected_labeled": 7,
+      "expect_editable": true,
+      "heavy": false,
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "c04_svg_pathway_gradients",
+      "filename": "c04_svg_pathway_gradients.svg",
+      "tool": "svg_native",
+      "chart_type": "pathway_gradients_raster",
+      "has_legend": true,
+      "expected_labeled": 4,
+      "expect_editable": true,
+      "heavy": false,
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "c05_mpl_grouped_bar",
+      "filename": "c05_mpl_grouped_bar.pdf",
+      "tool": "matplotlib_pdf",
+      "chart_type": "bar",
+      "has_legend": true,
+      "expected_labeled": 4,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c06_mpl_grouped_bar",
+      "filename": "c06_mpl_grouped_bar.svg",
+      "tool": "matplotlib_svg",
+      "chart_type": "bar",
+      "has_legend": true,
+      "expected_labeled": 4,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c07_mpl_boxplot_arms",
+      "filename": "c07_mpl_boxplot_arms.pdf",
+      "tool": "matplotlib_pdf",
+      "chart_type": "boxplot",
+      "has_legend": true,
+      "expected_labeled": 5,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c08_mpl_violin_distribution",
+      "filename": "c08_mpl_violin_distribution.svg",
+      "tool": "matplotlib_svg",
+      "chart_type": "violin",
+      "has_legend": true,
+      "expected_labeled": 4,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c09_mpl_umap_22clusters",
+      "filename": "c09_mpl_umap_22clusters.pdf",
+      "tool": "matplotlib_pdf",
+      "chart_type": "umap_scatter_20plus",
+      "has_legend": true,
+      "expected_labeled": 22,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c10_mpl_umap_24clusters",
+      "filename": "c10_mpl_umap_24clusters.svg",
+      "tool": "matplotlib_svg",
+      "chart_type": "umap_scatter_20plus",
+      "has_legend": true,
+      "expected_labeled": 24,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c11_mpl_heatmap_colorbar",
+      "filename": "c11_mpl_heatmap_colorbar.pdf",
+      "tool": "matplotlib_pdf",
+      "chart_type": "heatmap",
+      "has_legend": false,
+      "expected_labeled": 0,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c12_mpl_volcano_deg",
+      "filename": "c12_mpl_volcano_deg.pdf",
+      "tool": "matplotlib_pdf",
+      "chart_type": "volcano",
+      "has_legend": true,
+      "expected_labeled": 3,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c13_mpl_volcano_deg",
+      "filename": "c13_mpl_volcano_deg.svg",
+      "tool": "matplotlib_svg",
+      "chart_type": "volcano",
+      "has_legend": true,
+      "expected_labeled": 3,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c14_mpl_manhattan_gwas",
+      "filename": "c14_mpl_manhattan_gwas.pdf",
+      "tool": "matplotlib_pdf",
+      "chart_type": "manhattan",
+      "has_legend": true,
+      "expected_labeled": 4,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c15_mpl_rainfall_sbs6",
+      "filename": "c15_mpl_rainfall_sbs6.pdf",
+      "tool": "matplotlib_pdf",
+      "chart_type": "rainfall",
+      "has_legend": true,
+      "expected_labeled": 6,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c16_mpl_waterfall_response",
+      "filename": "c16_mpl_waterfall_response.pdf",
+      "tool": "matplotlib_pdf",
+      "chart_type": "waterfall",
+      "has_legend": true,
+      "expected_labeled": 4,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c17_mpl_kaplan_meier",
+      "filename": "c17_mpl_kaplan_meier.pdf",
+      "tool": "matplotlib_pdf",
+      "chart_type": "kaplan_meier",
+      "has_legend": true,
+      "expected_labeled": 4,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c18_mpl_kaplan_meier",
+      "filename": "c18_mpl_kaplan_meier.svg",
+      "tool": "matplotlib_svg",
+      "chart_type": "kaplan_meier",
+      "has_legend": true,
+      "expected_labeled": 4,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c19_mpl_network_interactome",
+      "filename": "c19_mpl_network_interactome.svg",
+      "tool": "matplotlib_svg",
+      "chart_type": "network",
+      "has_legend": true,
+      "expected_labeled": 5,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c20_mpl_multipanel_same_name",
+      "filename": "c20_mpl_multipanel_same_name.pdf",
+      "tool": "matplotlib_pdf",
+      "chart_type": "multipanel_bar",
+      "has_legend": true,
+      "expected_labeled": 3,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c24_seaborn_clustermap_div",
+      "filename": "c24_seaborn_clustermap_div.pdf",
+      "tool": "seaborn_pdf",
+      "chart_type": "heatmap_diverging",
+      "has_legend": false,
+      "expected_labeled": 0,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c21_svglite_css_dodged_bar",
+      "filename": "c21_svglite_css_dodged_bar.svg",
+      "tool": "ggplot2_svglite",
+      "chart_type": "bar",
+      "has_legend": true,
+      "expected_labeled": 3,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c22_svglite_faceted_lines",
+      "filename": "c22_svglite_faceted_lines.svg",
+      "tool": "ggplot2_svglite",
+      "chart_type": "line_kinetics",
+      "has_legend": true,
+      "expected_labeled": 3,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c23_seaborn_joint_scatter",
+      "filename": "c23_seaborn_joint_scatter.svg",
+      "tool": "seaborn_svg",
+      "chart_type": "scatter_kde",
+      "has_legend": true,
+      "expected_labeled": 2,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c25_prism_cmyk_dose_response",
+      "filename": "c25_prism_cmyk_dose_response.pdf",
+      "tool": "graphpad_prism_pdf",
+      "chart_type": "dose_response",
+      "has_legend": true,
+      "expected_labeled": 3,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c26_prism_icc_grouped_bar",
+      "filename": "c26_prism_icc_grouped_bar.pdf",
+      "tool": "graphpad_prism_pdf",
+      "chart_type": "bar",
+      "has_legend": true,
+      "expected_labeled": 3,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c27_illustrator_form_separation",
+      "filename": "c27_illustrator_form_separation.pdf",
+      "tool": "illustrator_pdf",
+      "chart_type": "bar",
+      "has_legend": true,
+      "expected_labeled": 3,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c28_illustrator_svg_classes",
+      "filename": "c28_illustrator_svg_classes.svg",
+      "tool": "illustrator_svg",
+      "chart_type": "bar",
+      "has_legend": true,
+      "expected_labeled": 4,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c29_inkscape_layered_violin",
+      "filename": "c29_inkscape_layered_violin.svg",
+      "tool": "inkscape_svg",
+      "chart_type": "violin",
+      "has_legend": true,
+      "expected_labeled": 3,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c30_biorender_signaling_pathway",
+      "filename": "c30_biorender_signaling_pathway.svg",
+      "tool": "biorender_svg",
+      "chart_type": "pathway_diagram",
+      "has_legend": true,
+      "expected_labeled": 4,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c31_excel_indexed_chart",
+      "filename": "c31_excel_indexed_chart.pdf",
+      "tool": "excel_pdf",
+      "chart_type": "bar",
+      "has_legend": true,
+      "expected_labeled": 4,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c32_multipage_manuscript_3p",
+      "filename": "c32_multipage_manuscript_3p.pdf",
+      "tool": "multipage_pdf",
+      "chart_type": "multipage_bar",
+      "page_index": 1,
+      "has_legend": true,
+      "expected_labeled": 2,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c33_scanned_page_only",
+      "filename": "c33_scanned_page_only.pdf",
+      "tool": "scanned_pdf",
+      "chart_type": "scanned_raster_only",
+      "expect_editable": false,
+      "has_legend": false,
+      "expected_labeled": 0,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "c34_waterfall_24genes_hier",
+      "filename": "c34_waterfall_24genes_hier.svg",
+      "tool": "custom_svg",
+      "chart_type": "waterfall_24classes",
+      "has_legend": true,
+      "expected_labeled": 24,
+      "license": "CC0-1.0"
+    }
+  ]
+}

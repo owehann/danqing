@@ -1,0 +1,48 @@
+{
+  "id": "navia",
+  "name": {
+    "en": "Navia (Crameri v8)",
+    "zh": "Navia（峡湾蓝绿序列）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#031327",
+    "#073966",
+    "#1B608F",
+    "#2F798B",
+    "#418A80",
+    "#59A072",
+    "#87C269",
+    "#D1E39F",
+    "#FCF4D9"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "navia",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Scientific colour maps v8.0 (navia)",
+    "author": "Fabio Crameri",
+    "year": 2023,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT (cmcrameri / Zenodo)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 13.37,
+    "min_de2000_deutan_first6": 10.1,
+    "min_de2000_protan_first6": 11.02,
+    "min_de2000_tritan_first6": 5.13,
+    "optimal6_min_de2000": 13.62,
+    "optimal6_min_de2000_deutan": 14.4,
+    "optimal6_min_de2000_protan": 13.14,
+    "grayscale_L_spread": 0.781,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

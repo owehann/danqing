@@ -1,0 +1,56 @@
+{
+  "id": "east_song_jian_yaozhou",
+  "name": {
+    "en": "Jian Temmoku & Yaozhou Celadon",
+    "zh": "宋建窑兔毫耀州青"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#8C8F65",
+    "#47271B",
+    "#74583B",
+    "#636641",
+    "#A4836A",
+    "#225334",
+    "#C8AD7A",
+    "#C38681"
+  ],
+  "neutral": "#A5A698",
+  "partners": {
+    "sequential": "oslo",
+    "diverging": "PuOr"
+  },
+  "source": {
+    "title": "Yaozhou Celadon Lion Ewer & Jian Ware Hare's-Fur Tea Bowl",
+    "author": "The Cleveland Museum of Art",
+    "year": "Northern–Southern Song dynasty (960–1279)",
+    "url": "https://clevelandart.org/art/1948.220",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1948.220 & 1942.132",
+    "title": "Yaozhou Celadon Lion Ewer & Jian Ware Hare's-Fur Tea Bowl",
+    "date": "Northern–Southern Song dynasty (960–1279)",
+    "url": "https://clevelandart.org/art/1948.220",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1948.220/1948.220_web.jpg",
+    "thumbnail_url": "/artifacts/east_song_jian_yaozhou.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 15.51,
+    "min_de2000_deutan_first6": 1.12,
+    "min_de2000_protan_first6": 3.48,
+    "min_de2000_tritan_first6": 15.49,
+    "optimal6_min_de2000": 15.51,
+    "optimal6_min_de2000_deutan": 1.12,
+    "optimal6_min_de2000_protan": 3.48,
+    "grayscale_L_spread": 0.448,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

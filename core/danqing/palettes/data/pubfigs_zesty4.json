@@ -1,0 +1,43 @@
+{
+  "id": "pubfigs_zesty4",
+  "name": {
+    "en": "PubFigs Zesty-Four",
+    "zh": "PubFigs 高对比四色"
+  },
+  "collection": "accessible",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#0F2080",
+    "#F5793A",
+    "#A95AA1",
+    "#85C0F9"
+  ],
+  "neutral": "#A8A8A8",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "PuOr"
+  },
+  "source": {
+    "title": "ggpubfigs Colorblind-Friendly Palette (zesty_four)",
+    "author": "Jacob L. Steenwyk & Antonis Rokas",
+    "year": 2021,
+    "url": "https://github.com/JLSteenwyk/ggpubfigs",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 30.75,
+    "min_de2000_deutan_first6": 20.12,
+    "min_de2000_protan_first6": 20.11,
+    "min_de2000_tritan_first6": 17.18,
+    "optimal6_min_de2000": 30.75,
+    "optimal6_min_de2000_deutan": 20.12,
+    "optimal6_min_de2000_protan": 20.11,
+    "grayscale_L_spread": 0.476,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

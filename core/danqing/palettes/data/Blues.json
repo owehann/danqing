@@ -1,0 +1,48 @@
+{
+  "id": "Blues",
+  "name": {
+    "en": "ColorBrewer Blues",
+    "zh": "ColorBrewer 蔚蓝序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#F7FBFF",
+    "#DEEBF7",
+    "#C6DBEF",
+    "#9ECAE1",
+    "#6BAED6",
+    "#4292C6",
+    "#2171B5",
+    "#08519C",
+    "#08306B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "ColorBrewer 2.0 (Blues, 9-class)",
+    "author": "Cynthia A. Brewer, Penn State",
+    "year": 2013,
+    "url": "https://colorbrewer2.org/#type=sequential&scheme=Blues&n=9",
+    "license": "Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 5.09,
+    "min_de2000_deutan_first6": 5.3,
+    "min_de2000_protan_first6": 4.79,
+    "min_de2000_tritan_first6": 5.6,
+    "optimal6_min_de2000": 11.35,
+    "optimal6_min_de2000_deutan": 9.82,
+    "optimal6_min_de2000_protan": 10.86,
+    "grayscale_L_spread": 0.664,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

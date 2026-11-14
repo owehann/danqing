@@ -1,0 +1,61 @@
+{
+  "id": "met_signac",
+  "name": {
+    "en": "Signac",
+    "zh": "西涅克 · 马赛守护圣母院"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#FBE183",
+    "#F4C40F",
+    "#FE9B00",
+    "#D8443C",
+    "#9B3441",
+    "#DE597C",
+    "#E87B89",
+    "#E6A2A6",
+    "#AA7AA1",
+    "#9F5691",
+    "#633372",
+    "#1F6E9C",
+    "#2B9B81",
+    "#92C051"
+  ],
+  "neutral": "#B8B8BE",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "roma"
+  },
+  "source": {
+    "title": "MetBrewer: Signac (Met Object 437672)",
+    "author": "Blake Robert Mills / Paul Signac",
+    "year": 1906,
+    "url": "https://www.metmuseum.org/art/collection/search/437672",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "55.220.1 (Met #437672)",
+    "title": "Notre-Dame-de-la-Garde (La Bonne-Mère), Marseilles",
+    "date": "1905–1906",
+    "url": "https://www.metmuseum.org/art/collection/search/437672",
+    "image_url": "https://www.metmuseum.org/art/collection/search/437672",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 14,
+    "max_colors": 14,
+    "min_de2000_first6": 10.72,
+    "min_de2000_deutan_first6": 5.04,
+    "min_de2000_protan_first6": 8.48,
+    "min_de2000_tritan_first6": 7.65,
+    "optimal6_min_de2000": 24.42,
+    "optimal6_min_de2000_deutan": 8.33,
+    "optimal6_min_de2000_protan": 5.65,
+    "grayscale_L_spread": 0.501,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,40 @@
+# macOS & OS artifacts
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Python bytecode & caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+.cache/
+
+# Frontend build & dependencies (built fresh in Docker & CI)
+node_modules/
+web/frontend/node_modules/
+web/frontend/dist/
+*.tsbuildinfo
+
+# Virtual environments & secrets
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Generated visual proof sheets & internal scratch specs
+bench/palette_proofs/
+bench/*_report.json
+docs/CARBON_HANDOFF.md
+docs/SPEC_v1.md
+docs/SPEC_v2.md
+docs/danqing_rebuild_spec_v1.md
+docs/palette_library_appendix.md
+tmp/
+scratch/

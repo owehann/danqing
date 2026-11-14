@@ -1,0 +1,57 @@
+{
+  "id": "met_hiroshige",
+  "name": {
+    "en": "Hiroshige",
+    "zh": "歌川广重 · 琵琶湖归帆"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#E76254",
+    "#EF8A47",
+    "#F7AA58",
+    "#FFD06F",
+    "#FFE6B7",
+    "#AADCE0",
+    "#72BCD5",
+    "#528FAD",
+    "#376795",
+    "#1E466E"
+  ],
+  "neutral": "#B8BEC4",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "MetBrewer: Hiroshige (Met Object 36534)",
+    "author": "Blake Robert Mills / Utagawa Hiroshige",
+    "year": 1835,
+    "url": "https://www.metmuseum.org/art/collection/search/36534",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "JP2557 (Met #36534)",
+    "title": "Sailing Boats Returning to Yabase, Lake Biwa",
+    "date": "c. 1835",
+    "url": "https://www.metmuseum.org/art/collection/search/36534",
+    "image_url": "https://www.metmuseum.org/art/collection/search/36534",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 10.05,
+    "min_de2000_deutan_first6": 5.62,
+    "min_de2000_protan_first6": 7.84,
+    "min_de2000_tritan_first6": 7.59,
+    "optimal6_min_de2000": 13.75,
+    "optimal6_min_de2000_deutan": 8.06,
+    "optimal6_min_de2000_protan": 13.07,
+    "grayscale_L_spread": 0.548,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

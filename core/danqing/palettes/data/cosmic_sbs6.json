@@ -1,0 +1,53 @@
+{
+  "id": "cosmic_sbs6",
+  "name": {
+    "en": "COSMIC SBS-6",
+    "zh": "COSMIC 六类单碱基突变标准色"
+  },
+  "collection": "convention",
+  "kind": "qualitative",
+  "order": "discrete",
+  "convention_keys": [
+    "C>A",
+    "C>G",
+    "C>T",
+    "T>A",
+    "T>C",
+    "T>G"
+  ],
+  "colors": [
+    "#03BDEF",
+    "#010101",
+    "#E42926",
+    "#CBCACA",
+    "#A2CF63",
+    "#ECC7C5"
+  ],
+  "neutral": "#CBCACA",
+  "partners": {
+    "sequential": "YlOrRd",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "COSMIC Mutational Signatures / SigProfilerPlotting standard SBS-96 palette",
+    "author": "Wellcome Sanger Institute / Alexandrov Lab",
+    "year": 2020,
+    "url": "https://cancer.sanger.ac.uk/signatures/sbs/",
+    "license": "BSD-2-Clause (SigProfilerPlotting factual convention colors)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 13.35,
+    "min_de2000_deutan_first6": 6.44,
+    "min_de2000_protan_first6": 3.36,
+    "min_de2000_tritan_first6": 15.8,
+    "optimal6_min_de2000": 13.35,
+    "optimal6_min_de2000_deutan": 6.44,
+    "optimal6_min_de2000_protan": 3.36,
+    "grayscale_L_spread": 0.794,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "PuOr",
+  "name": {
+    "en": "ColorBrewer PuOr",
+    "zh": "ColorBrewer 橙紫发散"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#542788",
+    "#8073AC",
+    "#B2ABD2",
+    "#D8DAEB",
+    "#F7F7F7",
+    "#FEE0B6",
+    "#FDB863",
+    "#E08214",
+    "#B35806"
+  ],
+  "neutral": "#F7F7F7",
+  "partners": {
+    "sequential": "plasma",
+    "diverging": "PuOr"
+  },
+  "source": {
+    "title": "ColorBrewer 2.0 (PuOr, 9-class)",
+    "author": "Cynthia A. Brewer, Penn State",
+    "year": 2013,
+    "url": "https://colorbrewer2.org/#type=diverging&scheme=PuOr&n=9",
+    "license": "Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 9.81,
+    "min_de2000_deutan_first6": 9.56,
+    "min_de2000_protan_first6": 9.41,
+    "min_de2000_tritan_first6": 7.13,
+    "optimal6_min_de2000": 18.06,
+    "optimal6_min_de2000_deutan": 17.9,
+    "optimal6_min_de2000_protan": 17.7,
+    "grayscale_L_spread": 0.587,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

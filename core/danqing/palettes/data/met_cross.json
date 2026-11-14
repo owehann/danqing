@@ -1,0 +1,56 @@
+{
+  "id": "met_cross",
+  "name": {
+    "en": "Cross",
+    "zh": "Cross · 内格尔角"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#C969A1",
+    "#CE4441",
+    "#EE8577",
+    "#EB7926",
+    "#FFBB44",
+    "#859B6C",
+    "#62929A",
+    "#004F63",
+    "#122451"
+  ],
+  "neutral": "#B8B9BE",
+  "partners": {
+    "sequential": "batlow",
+    "diverging": "roma"
+  },
+  "source": {
+    "title": "MetBrewer: Cross (Met Object 459734)",
+    "author": "Blake Robert Mills / Henri-Edmond Cross",
+    "year": 1909,
+    "url": "https://www.metmuseum.org/art/collection/search/459734",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "1975.1.166 (Met #459734)",
+    "title": "Cap Nègre",
+    "date": "1909",
+    "url": "https://www.metmuseum.org/art/collection/search/459734",
+    "image_url": "https://www.metmuseum.org/art/collection/search/459734",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 16.81,
+    "min_de2000_deutan_first6": 8.19,
+    "min_de2000_protan_first6": 3.51,
+    "min_de2000_tritan_first6": 5.1,
+    "optimal6_min_de2000": 22.04,
+    "optimal6_min_de2000_deutan": 3.21,
+    "optimal6_min_de2000_protan": 10.17,
+    "grayscale_L_spread": 0.561,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

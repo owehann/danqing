@@ -1,0 +1,46 @@
+{
+  "id": "moma_vangogh",
+  "name": {
+    "en": "MoMA · Van Gogh Starry Night",
+    "zh": "现代艺术馆·梵高星月夜"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#C3A016",
+    "#C3D878",
+    "#58A787",
+    "#8EBACD",
+    "#246893",
+    "#163274",
+    "#0C1F4B"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "The Starry Night, 1889, Vincent van Gogh, Oil on canvas",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/79802?sov_referrer=theme&theme_id=5134",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 19.13,
+    "min_de2000_deutan_first6": 12.29,
+    "min_de2000_protan_first6": 14.32,
+    "min_de2000_tritan_first6": 10.02,
+    "optimal6_min_de2000": 20.26,
+    "optimal6_min_de2000_deutan": 12.29,
+    "optimal6_min_de2000_protan": 14.32,
+    "grayscale_L_spread": 0.591,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

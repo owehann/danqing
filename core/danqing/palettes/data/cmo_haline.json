@@ -1,0 +1,48 @@
+{
+  "id": "cmo_haline",
+  "name": {
+    "en": "cmocean Haline",
+    "zh": "cmocean 盐度蓝翠黄序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#2A186C",
+    "#2034A2",
+    "#0F5B90",
+    "#297789",
+    "#3C9387",
+    "#4FAF7E",
+    "#78CB68",
+    "#C1DD64",
+    "#FDEF9A"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cmo_haline",
+    "diverging": "cmo_balance"
+  },
+  "source": {
+    "title": "True Colors of Oceanography: cmocean (haline)",
+    "author": "Kristen M. Thyng et al. (Oceanography 29(3):9-13)",
+    "year": 2016,
+    "url": "https://github.com/matplotlib/cmocean",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 10.71,
+    "min_de2000_deutan_first6": 7.97,
+    "min_de2000_protan_first6": 8.16,
+    "min_de2000_tritan_first6": 7.94,
+    "optimal6_min_de2000": 13.77,
+    "optimal6_min_de2000_deutan": 11.28,
+    "optimal6_min_de2000_protan": 12.28,
+    "grayscale_L_spread": 0.649,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

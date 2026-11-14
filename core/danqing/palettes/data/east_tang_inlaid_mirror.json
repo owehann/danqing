@@ -1,0 +1,56 @@
+{
+  "id": "east_tang_inlaid_mirror",
+  "name": {
+    "en": "Tang Mother-of-Pearl & Amber",
+    "zh": "盛唐螺钿琥珀宝镜"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A15746",
+    "#64BFA3",
+    "#D0AF3D",
+    "#2B4B2E",
+    "#2E866E",
+    "#674E00",
+    "#859977",
+    "#A3801D"
+  ],
+  "neutral": "#A5A59F",
+  "partners": {
+    "sequential": "lajolla",
+    "diverging": "roma"
+  },
+  "source": {
+    "title": "Mirror with Six Circular Flowers (Shell, Amber & Turquoise Inlay)",
+    "author": "The Cleveland Museum of Art",
+    "year": "Tang dynasty (600s)",
+    "url": "https://clevelandart.org/art/1995.341",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1995.341 & 1961.18",
+    "title": "Mirror with Six Circular Flowers (Shell, Amber & Turquoise Inlay)",
+    "date": "Tang dynasty (600s)",
+    "url": "https://clevelandart.org/art/1995.341",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1995.341/1995.341_web.jpg",
+    "thumbnail_url": "/artifacts/east_tang_inlaid_mirror.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 18.18,
+    "min_de2000_deutan_first6": 12.51,
+    "min_de2000_protan_first6": 9.88,
+    "min_de2000_tritan_first6": 14.07,
+    "optimal6_min_de2000": 18.18,
+    "optimal6_min_de2000_deutan": 12.51,
+    "optimal6_min_de2000_protan": 9.88,
+    "grayscale_L_spread": 0.384,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

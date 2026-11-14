@@ -1,0 +1,46 @@
+{
+  "id": "np_craterlake",
+  "name": {
+    "en": "NatParks · Crater Lake Cobalt",
+    "zh": "国家公园·火山口深蓝湖"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1D4A79",
+    "#794C23",
+    "#6B7444",
+    "#6089B5",
+    "#BF9785",
+    "#275E4D",
+    "#807B7F"
+  ],
+  "neutral": "#B6B4AE",
+  "partners": {
+    "sequential": "bamako",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "NatParksPalettes (CraterLake)",
+    "author": "Kevin Blake",
+    "year": 2022,
+    "url": "https://github.com/kevinsblake/NatParksPalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 18.49,
+    "min_de2000_deutan_first6": 8.79,
+    "min_de2000_protan_first6": 11.46,
+    "min_de2000_tritan_first6": 6.49,
+    "optimal6_min_de2000": 18.49,
+    "optimal6_min_de2000_deutan": 8.79,
+    "optimal6_min_de2000_protan": 11.46,
+    "grayscale_L_spread": 0.306,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

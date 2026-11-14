@@ -1,0 +1,50 @@
+{
+  "id": "moma_picabia",
+  "name": {
+    "en": "MoMA · Francis Picabia Dada",
+    "zh": "现代艺术馆·毕卡比亚达达主义"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#53362E",
+    "#744940",
+    "#9F7064",
+    "#C99582",
+    "#E6BCAC",
+    "#E2D8D6",
+    "#A5A6AE",
+    "#858794",
+    "#666879",
+    "#515260",
+    "#3D3D47"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "The Spring, 1912, Francis Picabia, Oil on canvas",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/80658?artist_id=4607&page=1&sov_referrer=artist",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 8.64,
+    "min_de2000_deutan_first6": 8.41,
+    "min_de2000_protan_first6": 7.15,
+    "min_de2000_tritan_first6": 8.69,
+    "optimal6_min_de2000": 13.14,
+    "optimal6_min_de2000_deutan": 12.89,
+    "optimal6_min_de2000_protan": 13.43,
+    "grayscale_L_spread": 0.526,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

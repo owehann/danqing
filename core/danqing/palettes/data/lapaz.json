@@ -1,0 +1,48 @@
+{
+  "id": "lapaz",
+  "name": {
+    "en": "LaPaz",
+    "zh": "LaPaz（深海青柠序列）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#1A0C64",
+    "#24327E",
+    "#2D5393",
+    "#3D71A0",
+    "#5C8CA3",
+    "#859E9C",
+    "#B3AC96",
+    "#EACEB9",
+    "#FEF2F3"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "lapaz",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Scientific colour maps v8.0 (lapaz)",
+    "author": "Fabio Crameri",
+    "year": 2023,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT (cmcrameri / Zenodo)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 10.56,
+    "min_de2000_deutan_first6": 8.37,
+    "min_de2000_protan_first6": 9.08,
+    "min_de2000_tritan_first6": 9.1,
+    "optimal6_min_de2000": 12.56,
+    "optimal6_min_de2000_deutan": 13.21,
+    "optimal6_min_de2000_protan": 11.24,
+    "grayscale_L_spread": 0.714,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

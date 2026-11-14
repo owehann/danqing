@@ -1,0 +1,65 @@
+{
+  "id": "scanpy_zeileis28",
+  "name": {
+    "en": "Scanpy Zeileis 26",
+    "zh": "Scanpy 单细胞 Zeileis 二十六色"
+  },
+  "collection": "many",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#023FA5",
+    "#7D87B9",
+    "#BEC1D4",
+    "#D6BCC0",
+    "#BB7784",
+    "#8E063B",
+    "#4A6FE3",
+    "#8595E1",
+    "#B5BBE3",
+    "#E6AFB9",
+    "#E07B91",
+    "#D33F6A",
+    "#11C638",
+    "#8DD593",
+    "#C6DEC7",
+    "#EAD3C6",
+    "#F0B98D",
+    "#EF9708",
+    "#0FCFC0",
+    "#9CDED6",
+    "#D5EAE7",
+    "#F3E1EB",
+    "#F6C4E1",
+    "#F79CD4",
+    "#1CE6FF",
+    "#336600"
+  ],
+  "neutral": "#7F7F7F",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Escaping RGBland: HCL Palettes for Statistical Graphics (Scanpy zeileis_28)",
+    "author": "Achim Zeileis, Kurt Hornik & Paul Murrell (CSDA 53:3259-3270)",
+    "year": 2009,
+    "url": "https://github.com/scverse/scanpy",
+    "license": "BSD-3-Clause"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 26,
+    "max_colors": 26,
+    "min_de2000_first6": 12.39,
+    "min_de2000_deutan_first6": 10.82,
+    "min_de2000_protan_first6": 8.01,
+    "min_de2000_tritan_first6": 18.35,
+    "optimal6_min_de2000": 38.02,
+    "optimal6_min_de2000_deutan": 11.72,
+    "optimal6_min_de2000_protan": 5.58,
+    "grayscale_L_spread": 0.52,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

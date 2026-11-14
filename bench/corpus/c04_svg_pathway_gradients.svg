@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" width="760" height="430">
+  <defs>
+    <linearGradient id="PhosphoCascadeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#440154"/>
+      <stop offset="50%" stop-color="#21918C"/>
+      <stop offset="100%" stop-color="#FDE725"/>
+    </linearGradient>
+    <radialGradient id="NuclearErkCondensate" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#B40426"/>
+      <stop offset="100%" stop-color="#F7F7F7"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="760" height="430" fill="#FFFFFF"/>
+  <text x="28" y="32" font-family="Helvetica, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#000000">EGFR-RAS-RAF-MEK-ERK Signaling Dynamics &amp; Phospho-Blot</text>
+
+  <!-- Native SVG LinearGradient Phosphorylation Timecourse Ribbon -->
+  <rect x="32" y="62" width="440" height="30" rx="6" fill="url(#PhosphoCascadeGradient)"/>
+  <text x="32" y="54" font-family="Helvetica, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#000000">Membrane-to-Nucleus Kinase Activation (&lt;linearGradient&gt;)</text>
+
+  <!-- Native SVG RadialGradient Nuclear ERK Hub -->
+  <circle cx="122" cy="218" r="80" fill="url(#NuclearErkCondensate)"/>
+  <circle cx="122" cy="218" r="80" fill="none" stroke="#000000" stroke-width="1"/>
+  <text x="84" y="222" font-family="Helvetica, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#000000">Nuclear p-ERK</text>
+
+  <!-- Kinase Stimulation Conditions + Right Legend -->
+  <rect id="Basal" x="246" y="218" width="40" height="72" fill="#5B7FA6"/>
+  <rect id="EGF_5m" x="304" y="96" width="40" height="194" fill="#C85A53"/>
+  <rect id="EGF_30m" x="362" y="138" width="40" height="152" fill="#E09F5A"/>
+  <rect id="Erlotinib" x="420" y="242" width="40" height="48" fill="#5FA292"/>
+  <line x1="232" y1="290" x2="482" y2="290" stroke="#000000" stroke-width="1.5"/>
+
+  <rect x="540" y="230" width="12" height="12" fill="#5B7FA6"/>
+  <text x="560" y="240" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#000000">Basal</text>
+  <rect x="540" y="254" width="12" height="12" fill="#C85A53"/>
+  <text x="560" y="264" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#000000">EGF_5min</text>
+  <rect x="540" y="278" width="12" height="12" fill="#E09F5A"/>
+  <text x="560" y="288" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#000000">EGF_30min</text>
+  <rect x="540" y="302" width="12" height="12" fill="#5FA292"/>
+  <text x="560" y="312" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#000000">Erlotinib</text>
+
+  <!-- Gate G0 Locked Embedded Image -->
+  <rect x="540" y="62" width="188" height="132" fill="none" stroke="#000000" stroke-width="1"/>
+  <image id="RawBlotCrop" x="552" y="86" width="164" height="82" href="data:image/png;base64,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"/>
+  <text x="552" y="78" font-family="Helvetica, Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#000000">p-ERK1/2 Immunoblot (&lt;image&gt;)</text>
+
+  <text x="28" y="412" font-family="Helvetica, Arial, sans-serif" font-size="9.5" fill="#555555">Source: Adapted from Lemmon &amp; Schlessinger, Cell 2010 (doi:10.1016/j.cell.2010.06.011) &amp; KEGG hsa04012</text>
+</svg>

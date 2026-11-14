@@ -1,0 +1,47 @@
+{
+  "id": "met_vangogh3",
+  "name": {
+    "en": "Met · Van Gogh Oleanders",
+    "zh": "大都会·梵高夹竹桃绿调"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#E7E5CC",
+    "#C2D6A4",
+    "#9CC184",
+    "#669D62",
+    "#3C7C3D",
+    "#1F5B25",
+    "#1E3D14",
+    "#192813"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "First Steps, after Millet, 1890, Vincent van Gogh, Dutch",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/436526",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 7.61,
+    "min_de2000_deutan_first6": 6.75,
+    "min_de2000_protan_first6": 6.44,
+    "min_de2000_tritan_first6": 9.28,
+    "optimal6_min_de2000": 11.37,
+    "optimal6_min_de2000_deutan": 11.16,
+    "optimal6_min_de2000_protan": 10.99,
+    "grayscale_L_spread": 0.66,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

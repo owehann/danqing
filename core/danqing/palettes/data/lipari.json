@@ -1,0 +1,48 @@
+{
+  "id": "lipari",
+  "name": {
+    "en": "Lipari (Crameri v8)",
+    "zh": "Lipari（火山暖紫序列）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#031326",
+    "#183E61",
+    "#525B7A",
+    "#785F72",
+    "#A56267",
+    "#D86E5E",
+    "#E99973",
+    "#E7C398",
+    "#FDF5DA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Scientific colour maps v8.0 (lipari)",
+    "author": "Fabio Crameri",
+    "year": 2023,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT (cmcrameri / Zenodo)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 13.11,
+    "min_de2000_deutan_first6": 9.93,
+    "min_de2000_protan_first6": 6.39,
+    "min_de2000_tritan_first6": 11.58,
+    "optimal6_min_de2000": 14.41,
+    "optimal6_min_de2000_deutan": 7.28,
+    "optimal6_min_de2000_protan": 9.48,
+    "grayscale_L_spread": 0.785,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

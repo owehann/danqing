@@ -1,0 +1,48 @@
+{
+  "id": "seaborn_vlag",
+  "name": {
+    "en": "Seaborn Vlag",
+    "zh": "Seaborn 柔和蓝白红发散"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#2369BD",
+    "#678BBE",
+    "#9BAECB",
+    "#CDD3DF",
+    "#FAF5F5",
+    "#E8CAC8",
+    "#D49A97",
+    "#C06A68",
+    "#A9393C"
+  ],
+  "neutral": "#FAF5F5",
+  "partners": {
+    "sequential": "seaborn_crest",
+    "diverging": "seaborn_vlag"
+  },
+  "source": {
+    "title": "Seaborn Perceptually Uniform Colormaps (vlag)",
+    "author": "Michael L. Waskom (JOSS 6(60):3021)",
+    "year": 2021,
+    "url": "https://github.com/mwaskom/seaborn",
+    "license": "BSD-3-Clause"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 10.3,
+    "min_de2000_deutan_first6": 9.05,
+    "min_de2000_protan_first6": 8.97,
+    "min_de2000_tritan_first6": 10.06,
+    "optimal6_min_de2000": 13.77,
+    "optimal6_min_de2000_deutan": 12.07,
+    "optimal6_min_de2000_protan": 14.76,
+    "grayscale_L_spread": 0.467,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

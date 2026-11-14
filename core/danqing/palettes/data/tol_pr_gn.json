@@ -1,0 +1,48 @@
+{
+  "id": "tol_pr_gn",
+  "name": {
+    "en": "Paul Tol PRGn",
+    "zh": "保罗·托尔无障碍紫绿发散"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#762A83",
+    "#9970AB",
+    "#C2A5CF",
+    "#E7D4E8",
+    "#F7F7F7",
+    "#D9F0D3",
+    "#ACD39E",
+    "#5AAE61",
+    "#1B7837"
+  ],
+  "neutral": "#F7F7F7",
+  "partners": {
+    "sequential": "tol_iridescent",
+    "diverging": "tol_pr_gn"
+  },
+  "source": {
+    "title": "Paul Tol Colour Schemes (tol_pr_gn)",
+    "author": "Paul Tol (SRON/EPS/TN/09-002)",
+    "year": 2022,
+    "url": "https://sronpersonalpages.nl/~pault/",
+    "license": "BSD-3-Clause"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 13.11,
+    "min_de2000_deutan_first6": 8.52,
+    "min_de2000_protan_first6": 9.97,
+    "min_de2000_tritan_first6": 10.1,
+    "optimal6_min_de2000": 19.46,
+    "optimal6_min_de2000_deutan": 15.56,
+    "optimal6_min_de2000_protan": 18.9,
+    "grayscale_L_spread": 0.541,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

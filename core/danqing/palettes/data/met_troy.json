@@ -1,0 +1,47 @@
+{
+  "id": "met_troy",
+  "name": {
+    "en": "Met · Troyes Gothic Stained Glass",
+    "zh": "大都会·特鲁瓦哥特彩窗"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#421401",
+    "#6C1D0E",
+    "#8B3A2B",
+    "#C27668",
+    "#7BA0B4",
+    "#44728C",
+    "#235070",
+    "#0A2D46"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "The Declaration of Love, 1724, Jean François de Troy, French",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/438127",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 8.9,
+    "min_de2000_deutan_first6": 8.98,
+    "min_de2000_protan_first6": 6.69,
+    "min_de2000_tritan_first6": 8.92,
+    "optimal6_min_de2000": 12.29,
+    "optimal6_min_de2000_deutan": 11.67,
+    "optimal6_min_de2000_protan": 12.13,
+    "grayscale_L_spread": 0.422,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

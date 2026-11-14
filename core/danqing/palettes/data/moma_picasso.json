@@ -1,0 +1,45 @@
+{
+  "id": "moma_picasso",
+  "name": {
+    "en": "MoMA · Picasso Girl Before a Mirror",
+    "zh": "现代艺术馆·毕加索镜前少女"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#D5968C",
+    "#C2676D",
+    "#5C363A",
+    "#995041",
+    "#45939C",
+    "#0F6A81"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Les Demoiselles d'Avignon, 1907, Pablo Picaso, Oil on canvas",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/79766?sov_referrer=theme&theme_id=5135",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 13.92,
+    "min_de2000_deutan_first6": 10.69,
+    "min_de2000_protan_first6": 12.86,
+    "min_de2000_tritan_first6": 11.94,
+    "optimal6_min_de2000": 13.92,
+    "optimal6_min_de2000_deutan": 10.69,
+    "optimal6_min_de2000_protan": 12.86,
+    "grayscale_L_spread": 0.351,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

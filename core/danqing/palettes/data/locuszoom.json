@@ -1,0 +1,45 @@
+{
+  "id": "locuszoom",
+  "name": {
+    "en": "LocusZoom GWAS",
+    "zh": "LocusZoom 全基因组关联七色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D43F3A",
+    "#EEA236",
+    "#5CB85C",
+    "#46B8DA",
+    "#357EBD",
+    "#9632B8"
+  ],
+  "neutral": "#B8B8B8",
+  "partners": {
+    "sequential": "YlOrRd",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "LocusZoom Regional Association Plot LD R² Color Scheme",
+    "author": "Pruim et al. (Bioinformatics 26(18):2336-2337)",
+    "year": 2010,
+    "url": "https://nanx.me/ggsci/reference/pal_locuszoom.html",
+    "license": "Factual published palette (attribution)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 20.81,
+    "min_de2000_deutan_first6": 6.02,
+    "min_de2000_protan_first6": 5.37,
+    "min_de2000_tritan_first6": 8.05,
+    "optimal6_min_de2000": 20.81,
+    "optimal6_min_de2000_deutan": 6.02,
+    "optimal6_min_de2000_protan": 5.37,
+    "grayscale_L_spread": 0.246,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "moma_panton",
+  "name": {
+    "en": "MoMA · Verner Panton Spectrum",
+    "zh": "现代艺术馆·潘顿现代光谱"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#E84A00",
+    "#BB1D2C",
+    "#9B0C43",
+    "#661F66",
+    "#2C1F62",
+    "#006289",
+    "#004759"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Spectrum Textile, 1974, Verner Panton, Printed cotton",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/292747?artist_id=4485&page=1&sov_referrer=artist",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 13.2,
+    "min_de2000_deutan_first6": 8.23,
+    "min_de2000_protan_first6": 3.54,
+    "min_de2000_tritan_first6": 8.25,
+    "optimal6_min_de2000": 13.2,
+    "optimal6_min_de2000_deutan": 2.76,
+    "optimal6_min_de2000_protan": 3.54,
+    "grayscale_L_spread": 0.327,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "tol_high_contrast",
+  "name": {
+    "en": "Tol High-contrast",
+    "zh": "Tol 强对比三色"
+  },
+  "collection": "accessible",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#004488",
+    "#DDAA33",
+    "#BB5566"
+  ],
+  "neutral": "#BBBBBB",
+  "partners": {
+    "sequential": "oslo",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Colour Schemes (SRON/EPS/TN/09-002)",
+    "author": "Paul Tol",
+    "year": 2021,
+    "url": "https://personal.sron.nl/~pault/",
+    "license": "BSD-3-Clause / Attribution"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 3,
+    "max_colors": 3,
+    "min_de2000_first6": 38.94,
+    "min_de2000_deutan_first6": 25.33,
+    "min_de2000_protan_first6": 26.02,
+    "min_de2000_tritan_first6": 21.22,
+    "optimal6_min_de2000": 38.94,
+    "optimal6_min_de2000_deutan": 25.33,
+    "optimal6_min_de2000_protan": 26.02,
+    "grayscale_L_spread": 0.373,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

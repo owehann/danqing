@@ -1,0 +1,44 @@
+{
+  "id": "ibm_cbs",
+  "name": {
+    "en": "IBM Color-Blind Safe",
+    "zh": "IBM 设计语言无障碍五色"
+  },
+  "collection": "accessible",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#648FFF",
+    "#785EF0",
+    "#DC267F",
+    "#FE6100",
+    "#FFB000"
+  ],
+  "neutral": "#8D8D8D",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "IBM Design Language Color-Blind-Safe Palette",
+    "author": "IBM Design / Jacob L. Steenwyk (ggpubfigs)",
+    "year": 2021,
+    "url": "https://github.com/JLSteenwyk/ggpubfigs",
+    "license": "MIT / Published accessibility palette"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 16.65,
+    "min_de2000_deutan_first6": 9.38,
+    "min_de2000_protan_first6": 10.77,
+    "min_de2000_tritan_first6": 6.57,
+    "optimal6_min_de2000": 16.65,
+    "optimal6_min_de2000_deutan": 9.38,
+    "optimal6_min_de2000_protan": 10.77,
+    "grayscale_L_spread": 0.225,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

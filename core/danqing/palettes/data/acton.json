@@ -1,0 +1,48 @@
+{
+  "id": "acton",
+  "name": {
+    "en": "Acton",
+    "zh": "Acton（紫檀粉序列）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#260D40",
+    "#413362",
+    "#595481",
+    "#7E638E",
+    "#A86690",
+    "#CF789E",
+    "#DDA1C2",
+    "#E8CAE1",
+    "#F0EAFA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "acton",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Scientific colour maps v8.0 (acton)",
+    "author": "Fabio Crameri",
+    "year": 2023,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT (cmcrameri / Zenodo)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 9.7,
+    "min_de2000_deutan_first6": 8.52,
+    "min_de2000_protan_first6": 4.32,
+    "min_de2000_tritan_first6": 9.61,
+    "optimal6_min_de2000": 10.73,
+    "optimal6_min_de2000_deutan": 10.11,
+    "optimal6_min_de2000_protan": 10.43,
+    "grayscale_L_spread": 0.715,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

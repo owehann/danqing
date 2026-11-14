@@ -1,0 +1,44 @@
+{
+  "id": "met_newkingdom",
+  "name": {
+    "en": "Met · New Kingdom Faience",
+    "zh": "大都会·古埃及新王国釉砂"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#E1846C",
+    "#9EB4E0",
+    "#E6BB9E",
+    "#9C6849",
+    "#735852"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Blue-Painted Ibex Amphora from Malqata, ca. 1390–1353 B.C., New Kingdom",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/544501",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 13.54,
+    "min_de2000_deutan_first6": 10.48,
+    "min_de2000_protan_first6": 12.39,
+    "min_de2000_tritan_first6": 11.61,
+    "optimal6_min_de2000": 13.54,
+    "optimal6_min_de2000_deutan": 10.48,
+    "optimal6_min_de2000_protan": 12.39,
+    "grayscale_L_spread": 0.336,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

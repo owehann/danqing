@@ -1,0 +1,47 @@
+{
+  "id": "uchicago_light",
+  "name": {
+    "en": "UChicago Light-inspired",
+    "zh": "UChicago Light-inspired（芝加哥柔光学术风）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#800000",
+    "#FFB547",
+    "#ADB17D",
+    "#5B8FA8",
+    "#D49464",
+    "#B1746F",
+    "#8A8B79",
+    "#725663"
+  ],
+  "neutral": "#D6D6CE",
+  "partners": {
+    "sequential": "bilbao",
+    "diverging": "broc"
+  },
+  "source": {
+    "title": "Factual university press light palette table (pal_uchicago light)",
+    "author": "University of Chicago Identity / Nan Xiao reference table",
+    "year": 2018,
+    "url": "https://nanx.me/ggsci/reference/pal_uchicago.html",
+    "license": "Factual hex values (acknowledged in NOTICE; no ggsci code used)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 14.58,
+    "min_de2000_deutan_first6": 4.97,
+    "min_de2000_protan_first6": 5.92,
+    "min_de2000_tritan_first6": 7.36,
+    "optimal6_min_de2000": 14.58,
+    "optimal6_min_de2000_deutan": 4.97,
+    "optimal6_min_de2000_protan": 5.92,
+    "grayscale_L_spread": 0.448,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

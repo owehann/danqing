@@ -1,0 +1,47 @@
+{
+  "id": "moma_lupi",
+  "name": {
+    "en": "MoMA · Giorgia Lupi Dear Data",
+    "zh": "现代艺术馆·卢皮数据手绘"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#61BEA4",
+    "#B6E7E0",
+    "#AA3F5D",
+    "#DAA5AC",
+    "#98A54F",
+    "#2E92A2",
+    "#FFB651",
+    "#D85A44"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Dear Data: Week 43 (Trying New Things / A Week of New Things), 2015, Giorgia Lupi, Stefanie Posavec, Ink, pencil, colored pencil, and marker on paper",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/216768?classifications=3&date_begin=Pre-1850&date_end=2023&direction=fwd&page=2&q=&utf8=%E2%9C%93&with_images=1",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 15.2,
+    "min_de2000_deutan_first6": 5.18,
+    "min_de2000_protan_first6": 7.67,
+    "min_de2000_tritan_first6": 11.69,
+    "optimal6_min_de2000": 15.2,
+    "optimal6_min_de2000_deutan": 5.18,
+    "optimal6_min_de2000_protan": 7.67,
+    "grayscale_L_spread": 0.368,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

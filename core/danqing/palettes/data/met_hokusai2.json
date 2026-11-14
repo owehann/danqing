@@ -1,0 +1,53 @@
+{
+  "id": "met_hokusai2",
+  "name": {
+    "en": "Hokusai II",
+    "zh": "葛饰北斋 II · 信州诹访湖"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#ABC9C8",
+    "#72AEB6",
+    "#4692B0",
+    "#2F70A1",
+    "#134B73",
+    "#0A3351"
+  ],
+  "neutral": "#B8C2C4",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "MetBrewer: Hokusai2 (Met Object 56240)",
+    "author": "Blake Robert Mills / Katsushika Hokusai",
+    "year": 1830,
+    "url": "https://www.metmuseum.org/art/collection/search/56240",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "JP2569 (Met #56240)",
+    "title": "Lake Suwa in Shinano Province (Thirty-six Views of Mount Fuji)",
+    "date": "c. 1830–1832",
+    "url": "https://www.metmuseum.org/art/collection/search/56240",
+    "image_url": "https://www.metmuseum.org/art/collection/search/56240",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 8.08,
+    "min_de2000_deutan_first6": 7.73,
+    "min_de2000_protan_first6": 8.46,
+    "min_de2000_tritan_first6": 8.46,
+    "optimal6_min_de2000": 8.08,
+    "optimal6_min_de2000_deutan": 7.73,
+    "optimal6_min_de2000_protan": 8.46,
+    "grayscale_L_spread": 0.503,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "wes_darjeeling1",
+  "name": {
+    "en": "Cinema · Darjeeling Limited",
+    "zh": "电影美学·穿越大吉岭"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#FF0000",
+    "#00A08A",
+    "#F2AD00",
+    "#F98400",
+    "#5BBCD6"
+  ],
+  "neutral": "#B9B4AB",
+  "partners": {
+    "sequential": "lajolla",
+    "diverging": "RdYlBu"
+  },
+  "source": {
+    "title": "wesanderson Cinema Color Palette (Darjeeling1)",
+    "author": "Karthik Ram & Hadley Wickham",
+    "year": 2023,
+    "url": "https://github.com/karthik/wesanderson",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 15.66,
+    "min_de2000_deutan_first6": 5.17,
+    "min_de2000_protan_first6": 9.03,
+    "min_de2000_tritan_first6": 10.19,
+    "optimal6_min_de2000": 15.66,
+    "optimal6_min_de2000_deutan": 5.17,
+    "optimal6_min_de2000_protan": 9.03,
+    "grayscale_L_spread": 0.164,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

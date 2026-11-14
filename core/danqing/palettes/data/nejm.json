@@ -1,0 +1,47 @@
+{
+  "id": "nejm",
+  "name": {
+    "en": "NEJM-inspired",
+    "zh": "NEJM-inspired（新英格兰参考）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#BC3C29",
+    "#0072B5",
+    "#E18727",
+    "#20854E",
+    "#7876B1",
+    "#6F99AD",
+    "#FFDC91",
+    "#EE4C97"
+  ],
+  "neutral": "#9CA3AF",
+  "partners": {
+    "sequential": "YlOrRd",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "Factual journal color table curated in ggsci (pal_nejm)",
+    "author": "Nan Xiao (ggsci reference table)",
+    "year": 2018,
+    "url": "https://nanx.me/ggsci/reference/pal_nejm.html",
+    "license": "Factual hex values (acknowledged in NOTICE; no ggsci code used)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 18.0,
+    "min_de2000_deutan_first6": 8.93,
+    "min_de2000_protan_first6": 4.39,
+    "min_de2000_tritan_first6": 8.5,
+    "optimal6_min_de2000": 18.0,
+    "optimal6_min_de2000_deutan": 8.93,
+    "optimal6_min_de2000_protan": 4.39,
+    "grayscale_L_spread": 0.374,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

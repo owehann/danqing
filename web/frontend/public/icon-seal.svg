@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="dq-seal-paper" x1="12" y1="8" x2="116" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDFCF8"/>
+      <stop offset="100%" stop-color="#F1ECE0"/>
+    </linearGradient>
+    <linearGradient id="dq-seal-dan" x1="24" y1="24" x2="78" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E4553C"/>
+      <stop offset="100%" stop-color="#C23722"/>
+    </linearGradient>
+    <linearGradient id="dq-seal-qing" x1="50" y1="50" x2="104" y2="104" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#257291"/>
+      <stop offset="100%" stop-color="#164663"/>
+    </linearGradient>
+    <linearGradient id="dq-seal-jade" x1="50" y1="50" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4BBAA9"/>
+      <stop offset="100%" stop-color="#278980"/>
+    </linearGradient>
+    <clipPath id="dq-seal-dan-clip">
+      <circle cx="52" cy="52" r="27"/>
+    </clipPath>
+    <clipPath id="dq-seal-qing-clip">
+      <rect x="50" y="50" width="50" height="50" rx="13"/>
+    </clipPath>
+  </defs>
+  <rect x="6" y="6" width="116" height="116" rx="28" fill="url(#dq-seal-paper)" stroke="#D6CFC1" stroke-width="2.5"/>
+  <rect x="50" y="50" width="50" height="50" rx="13" fill="url(#dq-seal-qing)"/>
+  <circle cx="52" cy="52" r="27" fill="url(#dq-seal-dan)"/>
+  <g clip-path="url(#dq-seal-dan-clip)">
+    <rect x="50" y="50" width="50" height="50" rx="13" fill="url(#dq-seal-jade)"/>
+    <rect x="50" y="50" width="50" height="50" rx="13" stroke="#FCFBF7" stroke-width="2.4"/>
+  </g>
+  <g clip-path="url(#dq-seal-qing-clip)">
+    <circle cx="52" cy="52" r="27" stroke="#FCFBF7" stroke-width="2.4"/>
+  </g>
+</svg>

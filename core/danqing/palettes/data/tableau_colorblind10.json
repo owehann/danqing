@@ -1,0 +1,49 @@
+{
+  "id": "tableau_colorblind10",
+  "name": {
+    "en": "Tableau Colorblind 10",
+    "zh": "Tableau 无障碍蓝橙十色"
+  },
+  "collection": "accessible",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#006BA4",
+    "#FF800E",
+    "#595959",
+    "#5F9ED1",
+    "#C85200",
+    "#ABABAB",
+    "#A2C8EC",
+    "#FFBC79",
+    "#898989",
+    "#CFCFCF"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "PuOr"
+  },
+  "source": {
+    "title": "Tableau Colorblind 10 (Matplotlib stylelib)",
+    "author": "Maureen Stone / Tableau Research & Matplotlib",
+    "year": 2016,
+    "url": "https://github.com/matplotlib/matplotlib/blob/main/lib/matplotlib/mpl-data/stylelib/tableau-colorblind10.mplstyle",
+    "license": "BSD-compatible"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 16.21,
+    "min_de2000_deutan_first6": 15.16,
+    "min_de2000_protan_first6": 17.47,
+    "min_de2000_tritan_first6": 12.34,
+    "optimal6_min_de2000": 16.21,
+    "optimal6_min_de2000_deutan": 15.16,
+    "optimal6_min_de2000_protan": 17.47,
+    "grayscale_L_spread": 0.391,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

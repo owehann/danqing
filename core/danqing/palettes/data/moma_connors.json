@@ -1,0 +1,44 @@
+{
+  "id": "moma_connors",
+  "name": {
+    "en": "MoMA · Connors Color Field",
+    "zh": "现代艺术馆·康纳斯色域抽象"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#D92A05",
+    "#F35D36",
+    "#FC9073",
+    "#FFBA1B",
+    "#60CFA1"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Egypt, Hard G, 2015, Matt Connors, Acrylic on canvas with painted wood frame",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/202454?artist_id=36363&page=1&sov_referrer=artist",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 11.54,
+    "min_de2000_deutan_first6": 9.85,
+    "min_de2000_protan_first6": 10.32,
+    "min_de2000_tritan_first6": 9.5,
+    "optimal6_min_de2000": 11.54,
+    "optimal6_min_de2000_deutan": 9.85,
+    "optimal6_min_de2000_protan": 10.32,
+    "grayscale_L_spread": 0.259,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

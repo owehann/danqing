@@ -1,0 +1,48 @@
+{
+  "id": "PiYG",
+  "name": {
+    "en": "ColorBrewer PiYG",
+    "zh": "ColorBrewer 洋红翠绿发散"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#C51B7D",
+    "#DE77AE",
+    "#F1B6DA",
+    "#FDE0EF",
+    "#F7F7F7",
+    "#E6F5D0",
+    "#B8E186",
+    "#7FBC41",
+    "#4D9221"
+  ],
+  "neutral": "#F7F7F7",
+  "partners": {
+    "sequential": "GnBu",
+    "diverging": "PiYG"
+  },
+  "source": {
+    "title": "ColorBrewer 2.0 (PiYG, 9-class)",
+    "author": "Cynthia A. Brewer, Penn State",
+    "year": 2013,
+    "url": "https://colorbrewer2.org/#type=diverging&scheme=PiYG&n=9",
+    "license": "Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 11.7,
+    "min_de2000_deutan_first6": 3.77,
+    "min_de2000_protan_first6": 6.27,
+    "min_de2000_tritan_first6": 5.91,
+    "optimal6_min_de2000": 13.67,
+    "optimal6_min_de2000_deutan": 3.77,
+    "optimal6_min_de2000_protan": 6.27,
+    "grayscale_L_spread": 0.427,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

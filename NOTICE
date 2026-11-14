@@ -1,0 +1,102 @@
+Danqing (丹青) — Third-Party Palette Data, Artwork, Font, and Software Notices
+===============================================================================
+
+Danqing is distributed without any GPL or AGPL runtime or build-time code dependencies.
+We gratefully acknowledge the following researchers, museums, scientific consortia, and
+open-source projects whose published color values, public-domain museum photographs, and
+permissive libraries power Danqing's 277-palette library:
+
+1. Accessible & Peer-Reviewed Scientific Color Sequences
+   - Masataka Okabe & Kei Ito (2008), "Color Universal Design (CUD): How to make figures
+     and presentations that are friendly to Colorblind people" (https://jfly.uni-koeln.de/color/);
+     Bang Wong (2011), Nature Methods 8:441.
+   - Paul Tol (2021–2022), "Colour Schemes", SRON Technical Note SRON/EPS/TN/09-002 v3.2
+     and `tol_colors.py` (https://sronpersonalpages.nl/~pault/), licensed under BSD-3-Clause.
+   - Matthew A. Petroff (2024), "Accessible Color Sequences for Data Visualization",
+     IEEE TVCG / arXiv:2107.02270 and Matplotlib `petroff10` (MIT / CC0).
+   - IBM Design Language Color-Blind-Safe Palette; Jacob L. Steenwyk & Antonis Rokas (2021),
+     `ggpubfigs` (Microbiology Resource Announcements 10:e00871-21, MIT).
+   - Maureen Stone / Tableau Research & Matplotlib `tableau-colorblind10` (BSD-compatible).
+
+2. Journal-Inspired, Genomics & Spatial Data Visualization Palettes
+   - Factual hexadecimal color arrays for `NPG-inspired`, `AAAS-inspired`, `NEJM-inspired`,
+     `Lancet-inspired`, `JAMA-inspired`, `JCO-inspired`, `BMJ-inspired`, `Frontiers-inspired`,
+     `UChicago-inspired`, and `LocusZoom` (Pruim et al., Bioinformatics 2010) were verified
+     against published reference documentation (https://nanx.me/ggsci/). No source code from
+     `ggsci` (GPL-3) is imported, linked, or distributed in Danqing. Journal-associated names
+     carry the `-inspired` suffix as unofficial editorial tributes and are not endorsed by the
+     respective publishers.
+   - CARTO (`CartoColor`, https://github.com/CartoDB/CartoColor), by Mamata Akella &
+     Jakub Nowosad, licensed under Creative Commons Attribution 4.0 (CC-BY 4.0).
+   - Observable & D3 (`d3-scale-chromatic`: `Observable10`, `Tableau10`, `Category10`,
+     `Dark2`, `Set2`, `Paired`), by Mike Bostock, licensed under ISC.
+   - Seaborn statistical visualization palettes (`deep`, `muted`, `colorblind`, `dark`,
+     `flare`, `crest`, `mako`, `rocket`, `vlag`), by Michael L. Waskom (JOSS 2021, BSD-3-Clause).
+   - Scanpy / scverse (`vega_10_scanpy`, `vega_20_scanpy`, `zeileis_28`, `godsnot_102`),
+     by F. Alexander Wolf, Philipp Angerer & Fabian J. Theis (Genome Biology 2018, BSD-3-Clause);
+     Achim Zeileis, Kurt Hornik & Paul Murrell (CSDA 2009).
+
+3. World Museums, Modern Art & Natural Heritage Collections
+   - Blake Robert Mills, `MetBrewer` (https://github.com/BlakeRMills/MetBrewer), dedicated
+     to the public domain under CC0 1.0 Universal, derived from open-access artworks at
+     The Metropolitan Museum of Art (New York) — 56 museum palettes.
+   - Blake Robert Mills, `MoMAColors` (https://github.com/BlakeRMills/MoMAColors), licensed
+     under MIT, inspired by works at The Museum of Modern Art (New York) — 30 palettes.
+   - Jake Lawlor, `PNWColors` (https://github.com/jakelawlor/PNWColors), dedicated to the
+     public domain under CC0 1.0 Universal — 10 Pacific Northwest nature palettes.
+   - Kevin Blake, `NatParksPalettes` (https://github.com/kevinsblake/NatParksPalettes),
+     licensed under MIT — 15 National Parks palettes.
+   - Karthik Ram & Hadley Wickham, `wesanderson` (https://github.com/karthik/wesanderson),
+     licensed under MIT — 5 cinema palettes.
+
+4. Eastern & Asian Museum Artifact Palettes & Thumbnails (CC0 1.0 Universal)
+   - Extracted deterministically by `scripts/extract_artifact_palette.py` from 48 public-domain
+     (CC0 1.0) photographs in The Cleveland Museum of Art Open Access collection
+     (https://clevelandart.org/open-access) across 24 curatorial suites:
+     1957.40, 1957.36, 1961.92, 1988.100, 1957.61, 1957.359, 1964.206.2, 1985.32,
+     2000.118.1, 1955.295, 1978.66, 1962.157.6, 1969.32, 1991.3, 1987.58, 1969.285,
+     2005.54, 1960.42, 2002.5, 1950.248, 1995.341, 1961.18, 1948.220, 1942.132,
+     1959.348, 2015.517, 1995.1, 1988.33, 1942.716, 1942.717, 1989.291, 2020.179,
+     1971.145, 1964.243.1.a, 1954.603.1, 1964.386, 1930.189, 1985.327, 1947.62,
+     1938.331, 1976.15, 1969.124.b, 1918.471, 1918.458, 1970.156, 1991.2,
+     1943.658.b, and 1943.658.a.
+
+5. High-Cardinality Multi-Cluster, Perceptually Uniform Continuous & Convention Palettes
+   - Kenneth L. Kelly (1965), Color Engineering 3(6):26-27; Paul Green-Armytage (2010),
+     Colour: Design & Creativity 5:1-23; Kevin R. Coombes et al. (2019), `Polychrome`
+     (Journal of Statistical Software 90(1):1-23, Apache-2.0).
+   - Chris Glasbey et al. (2007), Color Research & Application 32(4):304-309.
+   - Stéfan van der Walt & Nathaniel Smith (2015), `viridis`, `magma`, `plasma` (CC0 1.0);
+     Jamie R. Nuñez et al. (2018), `cividis`, PLOS ONE 13(7):e0199239 (CC0 1.0).
+   - Fabio Crameri (2023), *Scientific colour maps* v8.0, Zenodo DOI: 10.5281/zenodo.8409685
+     (`cmcrameri`, MIT) — 25 sequential and diverging scientific color maps.
+   - Kristen M. Thyng et al. (2016), "True Colors of Oceanography: Guidelines for Effective
+     and Accurate Colormap Selection", Oceanography 29(3):9-13 (`cmocean`, MIT) — 13 maps.
+   - Cynthia A. Brewer, Mark Harrower, and The Pennsylvania State University, *ColorBrewer 2.0*
+     (https://colorbrewer2.org/), licensed under Apache-2.0 — 18 sequential/diverging/qualitative schemes.
+   - Wellcome Sanger Institute / Alexandrov Lab, `SigProfilerPlotting` COSMIC SBS-6 mutation
+     spectrum colors (https://github.com/AlexandrovLab/SigProfilerPlotting, BSD-2-Clause), plus
+     public-domain genomics conventions (GWAS chromosome alternating, Volcano DEG, Cell Cycle,
+     CNV state, Sanger/IGV nucleotide bases).
+
+6. Open-Source Software & Typography
+   - Python runtime libraries: `pikepdf` (MPL-2.0), `pypdfium2` / PDFium (Apache-2.0 / BSD-3-Clause),
+     `resvg-py` (MPL-2.0), `lxml` (BSD-3-Clause), `numpy` & `scipy` (BSD-3-Clause), `Pillow` (MIT-CMU),
+     `coloraide` (MIT), `fastapi` (MIT), `uvicorn` (BSD-3-Clause).
+   - Web frontend libraries: `react` & `react-dom` (MIT), `zustand` (MIT), `i18next` & `react-i18next` (MIT),
+     `lucide-react` (ISC).
+   - Fonts: Inter (SIL Open Font License 1.1), Noto Sans SC (SIL Open Font License 1.1),
+     JetBrains Mono (SIL Open Font License 1.1).
+
+7. Published Public Benchmark Datasets Used in Sample Presets (`bench/figures/`)
+   - Gorman KB, Williams TD & Fraser WR (2014), "Ecological Sexual Dimorphism and Environmental
+     Variability within a Community of Antarctic Penguins (Genus Pygoscelis)", PLOS ONE 9(3):e90081
+     (https://doi.org/10.1371/journal.pone.0090081); Horst AM, Hill AP & Gorman KB (2022),
+     `palmerpenguins`, The R Journal 14(1):244-254 (CC0 1.0 Public Domain).
+   - 10x Genomics (2020), "Adult Mouse Brain (FFPE / Fresh Frozen) Serial Section 1 (Sagittal-Anterior)
+     Visium Spatial Gene Expression Dataset v1.1.0" (https://www.10xgenomics.com/datasets/mouse-brain-serial-section-1-sagittal-anterior-1-standard-1-1-0),
+     licensed under Creative Commons Attribution 4.0 (CC-BY 4.0); spatial transcriptomics assay methodology
+     per Ståhl PL et al. (2016), Science 353(6294):78-82.
+   - Canonical EGFR–RAS–RAF–MEK–ERK pathway schematic adapted from Lemmon MA & Schlessinger J (2010),
+     "Cell Signaling by Receptor Tyrosine Kinases", Cell 141(7):1117-1134
+     (https://doi.org/10.1016/j.cell.2010.06.011) and KEGG Pathway `hsa04012` (Kanehisa & Goto, NAR 2000).

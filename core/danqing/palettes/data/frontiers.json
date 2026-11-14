@@ -1,0 +1,49 @@
+{
+  "id": "frontiers",
+  "name": {
+    "en": "Frontiers-inspired",
+    "zh": "Frontiers-inspired（前沿系列期刊参考）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#D51317",
+    "#F39200",
+    "#EFD500",
+    "#95C11F",
+    "#007B3D",
+    "#31B7BC",
+    "#0094CD",
+    "#164194",
+    "#7B2D82",
+    "#FAAF40"
+  ],
+  "neutral": "#A8A8A8",
+  "partners": {
+    "sequential": "YlGnBu",
+    "diverging": "RdYlBu"
+  },
+  "source": {
+    "title": "Factual journal color table curated in ggsci (pal_frontiers)",
+    "author": "Nan Xiao reference table",
+    "year": 2023,
+    "url": "https://nanx.me/ggsci/reference/pal_frontiers.html",
+    "license": "Factual hex values (acknowledged in NOTICE; no ggsci code used)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 17.92,
+    "min_de2000_deutan_first6": 2.51,
+    "min_de2000_protan_first6": 7.2,
+    "min_de2000_tritan_first6": 16.6,
+    "optimal6_min_de2000": 17.92,
+    "optimal6_min_de2000_deutan": 2.51,
+    "optimal6_min_de2000_protan": 7.2,
+    "grayscale_L_spread": 0.468,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

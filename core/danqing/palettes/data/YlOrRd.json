@@ -1,0 +1,48 @@
+{
+  "id": "YlOrRd",
+  "name": {
+    "en": "ColorBrewer YlOrRd",
+    "zh": "ColorBrewer 黄橙红序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#FFFFCC",
+    "#FFEDA0",
+    "#FED976",
+    "#FEB24C",
+    "#FD8D3C",
+    "#FC4E2A",
+    "#E31A1C",
+    "#BD0026",
+    "#800026"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "YlOrRd",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "ColorBrewer 2.0 (YlOrRd, 9-class)",
+    "author": "Cynthia A. Brewer, Penn State",
+    "year": 2013,
+    "url": "https://colorbrewer2.org/#type=sequential&scheme=YlOrRd&n=9",
+    "license": "Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 7.05,
+    "min_de2000_deutan_first6": 5.33,
+    "min_de2000_protan_first6": 6.0,
+    "min_de2000_tritan_first6": 7.88,
+    "optimal6_min_de2000": 12.53,
+    "optimal6_min_de2000_deutan": 5.33,
+    "optimal6_min_de2000_protan": 8.25,
+    "grayscale_L_spread": 0.606,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

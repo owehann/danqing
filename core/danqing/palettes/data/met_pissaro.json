@@ -1,0 +1,46 @@
+{
+  "id": "met_pissaro",
+  "name": {
+    "en": "Met · Pissarro Boulevard Montmartre",
+    "zh": "大都会·毕沙罗蒙马特大街"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#134130",
+    "#4C825D",
+    "#8CAE9E",
+    "#8DC7DC",
+    "#508CA7",
+    "#1A5270",
+    "#0E2A4D"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Washerwoman, Study, 1880, Camille Pissarro, French",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/437303",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 16.93,
+    "min_de2000_deutan_first6": 17.88,
+    "min_de2000_protan_first6": 17.22,
+    "min_de2000_tritan_first6": 8.4,
+    "optimal6_min_de2000": 16.93,
+    "optimal6_min_de2000_deutan": 17.88,
+    "optimal6_min_de2000_protan": 17.22,
+    "grayscale_L_spread": 0.512,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "cb_dark2",
+  "name": {
+    "en": "ColorBrewer Dark2",
+    "zh": "ColorBrewer 深调八色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#1B9E77",
+    "#D95F02",
+    "#7570B3",
+    "#E7298A",
+    "#66A61E",
+    "#E6AB02",
+    "#A6761D"
+  ],
+  "neutral": "#666666",
+  "partners": {
+    "sequential": "GnBu",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "D3 Scale Chromatic / Observable (ColorBrewer Dark2)",
+    "author": "Mike Bostock, Maureen Stone & Cynthia Brewer",
+    "year": 2023,
+    "url": "https://github.com/d3/d3-scale-chromatic",
+    "license": "ISC / Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 19.33,
+    "min_de2000_deutan_first6": 3.3,
+    "min_de2000_protan_first6": 6.04,
+    "min_de2000_tritan_first6": 5.81,
+    "optimal6_min_de2000": 19.33,
+    "optimal6_min_de2000_deutan": 3.3,
+    "optimal6_min_de2000_protan": 6.04,
+    "grayscale_L_spread": 0.197,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

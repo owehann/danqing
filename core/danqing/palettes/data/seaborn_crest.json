@@ -1,0 +1,48 @@
+{
+  "id": "seaborn_crest",
+  "name": {
+    "en": "Seaborn Crest",
+    "zh": "Seaborn 碧浪靛蓝序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#A5CD90",
+    "#81BC91",
+    "#61AA90",
+    "#49988F",
+    "#34858D",
+    "#21728B",
+    "#1D5F87",
+    "#26497E",
+    "#2C3172"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "seaborn_crest",
+    "diverging": "seaborn_vlag"
+  },
+  "source": {
+    "title": "Seaborn Perceptually Uniform Colormaps (crest)",
+    "author": "Michael L. Waskom (JOSS 6(60):3021)",
+    "year": 2021,
+    "url": "https://github.com/mwaskom/seaborn",
+    "license": "BSD-3-Clause"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 8.01,
+    "min_de2000_deutan_first6": 7.96,
+    "min_de2000_protan_first6": 6.59,
+    "min_de2000_tritan_first6": 5.83,
+    "optimal6_min_de2000": 9.43,
+    "optimal6_min_de2000_deutan": 6.34,
+    "optimal6_min_de2000_protan": 7.18,
+    "grayscale_L_spread": 0.456,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

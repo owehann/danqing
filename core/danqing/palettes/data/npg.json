@@ -1,0 +1,49 @@
+{
+  "id": "npg",
+  "name": {
+    "en": "NPG-inspired",
+    "zh": "NPG-inspired（自然系参考）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E64B35",
+    "#4DBBD5",
+    "#00A087",
+    "#3C5488",
+    "#F39B7F",
+    "#8491B4",
+    "#91D1C2",
+    "#DC0000",
+    "#7E6148",
+    "#B09C85"
+  ],
+  "neutral": "#B09C85",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "Factual journal color table curated in ggsci (pal_npg)",
+    "author": "Nan Xiao (ggsci reference table)",
+    "year": 2018,
+    "url": "https://nanx.me/ggsci/reference/pal_npg.html",
+    "license": "Factual hex values (acknowledged in NOTICE; no ggsci code used)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 18.12,
+    "min_de2000_deutan_first6": 7.85,
+    "min_de2000_protan_first6": 9.94,
+    "min_de2000_tritan_first6": 10.29,
+    "optimal6_min_de2000": 18.12,
+    "optimal6_min_de2000_deutan": 7.85,
+    "optimal6_min_de2000_protan": 9.94,
+    "grayscale_L_spread": 0.361,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

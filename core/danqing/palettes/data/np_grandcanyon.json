@@ -1,0 +1,46 @@
+{
+  "id": "np_grandcanyon",
+  "name": {
+    "en": "NatParks · Grand Canyon Strata",
+    "zh": "国家公园·科罗拉多大峡谷"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#521E0F",
+    "#9C593E",
+    "#DDA569",
+    "#3F4330",
+    "#8E7E3C",
+    "#2A4866",
+    "#6592B0"
+  ],
+  "neutral": "#B6B4AE",
+  "partners": {
+    "sequential": "bamako",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "NatParksPalettes (GrandCanyon)",
+    "author": "Kevin Blake",
+    "year": 2022,
+    "url": "https://github.com/kevinsblake/NatParksPalettes",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 20.09,
+    "min_de2000_deutan_first6": 7.13,
+    "min_de2000_protan_first6": 8.96,
+    "min_de2000_tritan_first6": 14.84,
+    "optimal6_min_de2000": 20.8,
+    "optimal6_min_de2000_deutan": 8.82,
+    "optimal6_min_de2000_protan": 8.96,
+    "grayscale_L_spread": 0.451,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

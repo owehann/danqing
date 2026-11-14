@@ -1,0 +1,44 @@
+{
+  "id": "met_navajo",
+  "name": {
+    "en": "Met · Navajo Chief Blanket",
+    "zh": "大都会·纳瓦霍织毯"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#660D20",
+    "#E59A52",
+    "#EDCE79",
+    "#094568",
+    "#E1C59A"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Serape, 1865–70, Navajo",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/823657",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 8.9,
+    "min_de2000_deutan_first6": 7.95,
+    "min_de2000_protan_first6": 8.75,
+    "min_de2000_tritan_first6": 3.47,
+    "optimal6_min_de2000": 8.9,
+    "optimal6_min_de2000_deutan": 7.95,
+    "optimal6_min_de2000_protan": 8.75,
+    "grayscale_L_spread": 0.527,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

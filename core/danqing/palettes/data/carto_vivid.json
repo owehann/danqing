@@ -1,0 +1,50 @@
+{
+  "id": "carto_vivid",
+  "name": {
+    "en": "CARTO Vivid 11",
+    "zh": "CARTO 鲜明多组十一色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E58606",
+    "#5D69B1",
+    "#52BCA3",
+    "#99C945",
+    "#CC61B0",
+    "#24796C",
+    "#DAA51B",
+    "#2F8AC4",
+    "#764E9F",
+    "#ED645A",
+    "#CC3A8E"
+  ],
+  "neutral": "#A5AA99",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "roma"
+  },
+  "source": {
+    "title": "CARTOColors Qualitative Scheme (Vivid)",
+    "author": "CARTO (Mamata Akella & Jakob Nowosad)",
+    "year": 2019,
+    "url": "https://github.com/CartoDB/CartoColor",
+    "license": "CC-BY 4.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 22.13,
+    "min_de2000_deutan_first6": 6.69,
+    "min_de2000_protan_first6": 5.4,
+    "min_de2000_tritan_first6": 10.74,
+    "optimal6_min_de2000": 22.13,
+    "optimal6_min_de2000_deutan": 6.69,
+    "optimal6_min_de2000_protan": 5.4,
+    "grayscale_L_spread": 0.272,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

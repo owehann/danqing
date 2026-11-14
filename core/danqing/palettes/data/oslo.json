@@ -1,0 +1,48 @@
+{
+  "id": "oslo",
+  "name": {
+    "en": "Oslo",
+    "zh": "Oslo（冰蓝单色序列）"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#0E1E2E",
+    "#15395B",
+    "#26578C",
+    "#507BBC",
+    "#7B98CA",
+    "#A2B0CA",
+    "#BDC6D4",
+    "#DCE0E6",
+    "#F5F7FA"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "oslo",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Scientific colour maps v8.0 (oslo, clipped 8% off pure black/white)",
+    "author": "Fabio Crameri",
+    "year": 2023,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT (cmcrameri / Zenodo)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 9.98,
+    "min_de2000_deutan_first6": 10.22,
+    "min_de2000_protan_first6": 9.45,
+    "min_de2000_tritan_first6": 9.98,
+    "optimal6_min_de2000": 10.27,
+    "optimal6_min_de2000_deutan": 10.22,
+    "optimal6_min_de2000_protan": 10.82,
+    "grayscale_L_spread": 0.746,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

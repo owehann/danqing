@@ -1,0 +1,56 @@
+{
+  "id": "east_edo_rimpa_irises",
+  "name": {
+    "en": "Edo Rimpa Gold & Irises Screen",
+    "zh": "江户琳派金屏燕子花"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#E6AC36",
+    "#1C5578",
+    "#B23234",
+    "#275322",
+    "#89A165",
+    "#6996B3",
+    "#784D00",
+    "#A67700"
+  ],
+  "neutral": "#B8B6B1",
+  "partners": {
+    "sequential": "navia",
+    "diverging": "PuOr"
+  },
+  "source": {
+    "title": "Irises (Watanabe Shikō) & Paulownias and Chrysanthemums (Sakai Hōitsu)",
+    "author": "The Cleveland Museum of Art",
+    "year": "Edo period (1700s–early 1800s)",
+    "url": "https://clevelandart.org/art/1954.603.1",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1954.603.1 & 1964.386",
+    "title": "Irises (Watanabe Shikō) & Paulownias and Chrysanthemums (Sakai Hōitsu)",
+    "date": "Edo period (1700s–early 1800s)",
+    "url": "https://clevelandart.org/art/1954.603.1",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1954.603.1/1954.603.1_web.jpg",
+    "thumbnail_url": "/artifacts/east_edo_rimpa_irises.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 25.32,
+    "min_de2000_deutan_first6": 13.79,
+    "min_de2000_protan_first6": 5.22,
+    "min_de2000_tritan_first6": 7.55,
+    "optimal6_min_de2000": 25.32,
+    "optimal6_min_de2000_deutan": 13.79,
+    "optimal6_min_de2000_protan": 5.22,
+    "grayscale_L_spread": 0.381,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

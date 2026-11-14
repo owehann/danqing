@@ -1,0 +1,45 @@
+{
+  "id": "met_gauguin",
+  "name": {
+    "en": "Met · Gauguin Ia Orana Maria",
+    "zh": "大都会·高更塔希提色彩"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#B04948",
+    "#811E18",
+    "#9E4013",
+    "#C88A2C",
+    "#4C6216",
+    "#1A472A"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "A Farm in Brittany, 1874, Paul Gauguin, French",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/436448",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 12.72,
+    "min_de2000_deutan_first6": 5.35,
+    "min_de2000_protan_first6": 4.36,
+    "min_de2000_tritan_first6": 5.39,
+    "optimal6_min_de2000": 12.72,
+    "optimal6_min_de2000_deutan": 5.35,
+    "optimal6_min_de2000_protan": 4.36,
+    "grayscale_L_spread": 0.322,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

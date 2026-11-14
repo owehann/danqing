@@ -1,0 +1,45 @@
+{
+  "id": "tol_vibrant",
+  "name": {
+    "en": "Tol Vibrant",
+    "zh": "Tol 高饱和色盲友好"
+  },
+  "collection": "accessible",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EE7733",
+    "#0077BB",
+    "#33BBEE",
+    "#EE3377",
+    "#CC3311",
+    "#009988"
+  ],
+  "neutral": "#BBBBBB",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "Colour Schemes (SRON/EPS/TN/09-002)",
+    "author": "Paul Tol",
+    "year": 2021,
+    "url": "https://personal.sron.nl/~pault/",
+    "license": "BSD-3-Clause / Attribution"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 18.34,
+    "min_de2000_deutan_first6": 14.36,
+    "min_de2000_protan_first6": 15.85,
+    "min_de2000_tritan_first6": 8.58,
+    "optimal6_min_de2000": 18.34,
+    "optimal6_min_de2000_deutan": 14.36,
+    "optimal6_min_de2000_protan": 15.85,
+    "grayscale_L_spread": 0.194,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

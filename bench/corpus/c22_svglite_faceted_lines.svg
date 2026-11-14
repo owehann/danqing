@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' class='svglite' viewBox='0 0 600 280'>
+  <defs>
+    <style type='text/css'><![CDATA[
+      .st-wt { stroke: #E64B35; stroke-width: 2.5; fill: none; }
+      .st-mut { stroke: #4DBBD5; stroke-width: 2.5; fill: none; }
+      .st-ko { stroke: #00A087; stroke-width: 2.5; fill: none; }
+    ]]></style>
+  </defs>
+  <rect width='600' height='280' fill='#FFFFFF'/>
+  <text x='24' y='28' font-size='14' font-weight='bold'>A</text>
+  <polyline class='st-wt' points='45,210 95,180 145,140 195,120'/>
+  <polyline class='st-mut' points='45,215 95,155 145,95 195,65'/>
+  <polyline class='st-ko' points='45,220 95,212 145,204 195,198'/>
+  <text x='250' y='28' font-size='14' font-weight='bold'>B</text>
+  <polyline class='st-wt' points='275,205 325,175 375,150 425,130'/>
+  <polyline class='st-mut' points='275,210 325,140 375,85 425,55'/>
+  <polyline class='st-ko' points='275,218 325,208 375,195 425,188'/>
+  <line class='st-wt' x1='468' y1='95' x2='488' y2='95'/>
+  <text x='496' y='99' font-size='11'>Wildtype</text>
+  <line class='st-mut' x1='468' y1='120' x2='488' y2='120'/>
+  <text x='496' y='124' font-size='11'>GainOfFunc</text>
+  <line class='st-ko' x1='468' y1='145' x2='488' y2='145'/>
+  <text x='496' y='149' font-size='11'>Knockout</text>
+</svg>

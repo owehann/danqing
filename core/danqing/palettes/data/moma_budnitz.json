@@ -1,0 +1,44 @@
+{
+  "id": "moma_budnitz",
+  "name": {
+    "en": "MoMA · Budnitz Vinyl Pop",
+    "zh": "现代艺术馆·当代潮玩色彩"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#86DD45",
+    "#F6E71C",
+    "#FDA900",
+    "#FD5300",
+    "#57348B"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Cycle Dunny, 2005, Paul Budnitz, Tristan Eaton, Cycle, Vinyl",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/109304?artist_id=32733&page=1&sov_referrer=artist",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 20.68,
+    "min_de2000_deutan_first6": 4.85,
+    "min_de2000_protan_first6": 5.34,
+    "min_de2000_tritan_first6": 18.13,
+    "optimal6_min_de2000": 20.68,
+    "optimal6_min_de2000_deutan": 4.85,
+    "optimal6_min_de2000_protan": 5.34,
+    "grayscale_L_spread": 0.497,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

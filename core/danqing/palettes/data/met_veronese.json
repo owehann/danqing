@@ -1,0 +1,54 @@
+{
+  "id": "met_veronese",
+  "name": {
+    "en": "Veronese",
+    "zh": "委罗内塞 · 战神与维纳斯"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#67322E",
+    "#99610A",
+    "#C38F16",
+    "#6E948C",
+    "#2C6B67",
+    "#175449",
+    "#122C43"
+  ],
+  "neutral": "#B4B8B6",
+  "partners": {
+    "sequential": "batlow",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "MetBrewer: Veronese (Met Object 437891)",
+    "author": "Blake Robert Mills / Paolo Veronese",
+    "year": 1575,
+    "url": "https://www.metmuseum.org/art/collection/search/437891",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "10.189 (Met #437891)",
+    "title": "Mars and Venus United by Love",
+    "date": "1570s",
+    "url": "https://www.metmuseum.org/art/collection/search/437891",
+    "image_url": "https://www.metmuseum.org/art/collection/search/437891",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 8.65,
+    "min_de2000_deutan_first6": 8.77,
+    "min_de2000_protan_first6": 7.73,
+    "min_de2000_tritan_first6": 8.07,
+    "optimal6_min_de2000": 17.26,
+    "optimal6_min_de2000_deutan": 13.09,
+    "optimal6_min_de2000_protan": 7.73,
+    "grayscale_L_spread": 0.398,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

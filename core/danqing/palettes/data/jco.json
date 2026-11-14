@@ -1,0 +1,49 @@
+{
+  "id": "jco",
+  "name": {
+    "en": "JCO-inspired",
+    "zh": "JCO-inspired（临床肿瘤学参考）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#0073C2",
+    "#EFC000",
+    "#868686",
+    "#CD534C",
+    "#7AA6DC",
+    "#003C67",
+    "#8F7700",
+    "#3B3B3B",
+    "#A73030",
+    "#4A6990"
+  ],
+  "neutral": "#868686",
+  "partners": {
+    "sequential": "Blues",
+    "diverging": "RdBu"
+  },
+  "source": {
+    "title": "Factual journal color table curated in ggsci (pal_jco)",
+    "author": "Nan Xiao (ggsci reference table)",
+    "year": 2018,
+    "url": "https://nanx.me/ggsci/reference/pal_jco.html",
+    "license": "Factual hex values (acknowledged in NOTICE; no ggsci code used)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 18.64,
+    "min_de2000_deutan_first6": 19.08,
+    "min_de2000_protan_first6": 16.98,
+    "min_de2000_tritan_first6": 14.83,
+    "optimal6_min_de2000": 18.64,
+    "optimal6_min_de2000_deutan": 19.08,
+    "optimal6_min_de2000_protan": 16.98,
+    "grayscale_L_spread": 0.478,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

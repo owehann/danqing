@@ -1,0 +1,56 @@
+{
+  "id": "east_ming_fahua",
+  "name": {
+    "en": "Ming Fahua Turquoise & Aubergine",
+    "zh": "明法华孔雀蓝茄皮紫"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#009C9F",
+    "#976000",
+    "#282D4E",
+    "#B9B78D",
+    "#1A5F6B",
+    "#857C4F",
+    "#5B7694",
+    "#007A74"
+  ],
+  "neutral": "#A9A498",
+  "partners": {
+    "sequential": "GnBu",
+    "diverging": "PRGn"
+  },
+  "source": {
+    "title": "Fahua Prunus Vase (Meiping) with Blossoming Lotus & Chrysanthemum Jar",
+    "author": "The Cleveland Museum of Art",
+    "year": "Ming dynasty (late 1400s–1500s)",
+    "url": "https://clevelandart.org/art/1942.716",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1942.716 & 1942.717",
+    "title": "Fahua Prunus Vase (Meiping) with Blossoming Lotus & Chrysanthemum Jar",
+    "date": "Ming dynasty (late 1400s–1500s)",
+    "url": "https://clevelandart.org/art/1942.716",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1942.716/1942.716_web.jpg",
+    "thumbnail_url": "/artifacts/east_ming_fahua.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 17.09,
+    "min_de2000_deutan_first6": 10.91,
+    "min_de2000_protan_first6": 11.85,
+    "min_de2000_tritan_first6": 16.05,
+    "optimal6_min_de2000": 17.09,
+    "optimal6_min_de2000_deutan": 10.91,
+    "optimal6_min_de2000_protan": 11.85,
+    "grayscale_L_spread": 0.461,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

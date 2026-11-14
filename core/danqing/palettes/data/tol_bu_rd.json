@@ -1,0 +1,48 @@
+{
+  "id": "tol_bu_rd",
+  "name": {
+    "en": "Paul Tol BuRd",
+    "zh": "保罗·托尔无障碍蓝红发散"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#2166AC",
+    "#4393C3",
+    "#92C5DE",
+    "#D1E5F0",
+    "#F7F7F7",
+    "#FDDBC7",
+    "#F4A582",
+    "#D6604D",
+    "#B2182B"
+  ],
+  "neutral": "#F7F7F7",
+  "partners": {
+    "sequential": "tol_iridescent",
+    "diverging": "tol_bu_rd"
+  },
+  "source": {
+    "title": "Paul Tol Colour Schemes (tol_bu_rd)",
+    "author": "Paul Tol (SRON/EPS/TN/09-002)",
+    "year": 2022,
+    "url": "https://sronpersonalpages.nl/~pault/",
+    "license": "BSD-3-Clause"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 9.38,
+    "min_de2000_deutan_first6": 8.57,
+    "min_de2000_protan_first6": 7.12,
+    "min_de2000_tritan_first6": 12.32,
+    "optimal6_min_de2000": 17.46,
+    "optimal6_min_de2000_deutan": 14.49,
+    "optimal6_min_de2000_protan": 16.57,
+    "grayscale_L_spread": 0.485,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

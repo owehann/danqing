@@ -1,0 +1,56 @@
+{
+  "id": "east_cloisonne_enamel",
+  "name": {
+    "en": "Ming Imperial Cloisonné",
+    "zh": "明景泰掐丝珐琅"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#00B1D8",
+    "#822411",
+    "#CFB83A",
+    "#3846B7",
+    "#3C6046",
+    "#EB8270",
+    "#007B84",
+    "#8D632A"
+  ],
+  "neutral": "#A5A59D",
+  "partners": {
+    "sequential": "viridis",
+    "diverging": "roma"
+  },
+  "source": {
+    "title": "Mandala Base in Cloisonné Enamel & Gilt Bronze",
+    "author": "The Cleveland Museum of Art",
+    "year": "Ming dynasty (early 1400s)",
+    "url": "https://clevelandart.org/art/1987.58",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1987.58 & 1969.285",
+    "title": "Mandala Base in Cloisonné Enamel & Gilt Bronze",
+    "date": "Ming dynasty (early 1400s)",
+    "url": "https://clevelandart.org/art/1987.58",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1987.58/1987.58_web.jpg",
+    "thumbnail_url": "/artifacts/east_cloisonne_enamel.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 35.6,
+    "min_de2000_deutan_first6": 11.13,
+    "min_de2000_protan_first6": 13.49,
+    "min_de2000_tritan_first6": 12.06,
+    "optimal6_min_de2000": 35.6,
+    "optimal6_min_de2000_deutan": 11.13,
+    "optimal6_min_de2000_protan": 13.49,
+    "grayscale_L_spread": 0.373,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

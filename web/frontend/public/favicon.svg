@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="dq-fav-dan" x1="8" y1="8" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E6583E"/>
+      <stop offset="100%" stop-color="#C43823"/>
+    </linearGradient>
+    <linearGradient id="dq-fav-qing" x1="22" y1="22" x2="58" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2B8E92"/>
+      <stop offset="100%" stop-color="#19556C"/>
+    </linearGradient>
+    <clipPath id="dq-fav-dan-clip">
+      <circle cx="25" cy="25" r="21"/>
+    </clipPath>
+  </defs>
+  <rect x="22" y="22" width="38" height="38" rx="10" fill="url(#dq-fav-qing)"/>
+  <circle cx="25" cy="25" r="21" fill="url(#dq-fav-dan)"/>
+  <g clip-path="url(#dq-fav-dan-clip)">
+    <rect x="22" y="22" width="38" height="38" rx="10" fill="#FAF6EE"/>
+  </g>
+</svg>

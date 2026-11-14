@@ -1,0 +1,50 @@
+{
+  "id": "met_paquin",
+  "name": {
+    "en": "Met · Paquin Couture Silk",
+    "zh": "大都会·帕坎高定丝绸"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#831818",
+    "#C62320",
+    "#F05B43",
+    "#F78462",
+    "#FEAC81",
+    "#F7DEA3",
+    "#CED1AF",
+    "#98AB76",
+    "#748F46",
+    "#47632A",
+    "#275024"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Evening Dress, 1937, House of Paquin by Ana de Pombo, French House, Spanish Designer",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/138291",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 9.13,
+    "min_de2000_deutan_first6": 6.72,
+    "min_de2000_protan_first6": 9.46,
+    "min_de2000_tritan_first6": 9.02,
+    "optimal6_min_de2000": 13.81,
+    "optimal6_min_de2000_deutan": 6.48,
+    "optimal6_min_de2000_protan": 3.09,
+    "grayscale_L_spread": 0.518,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

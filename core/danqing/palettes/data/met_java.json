@@ -1,0 +1,52 @@
+{
+  "id": "met_java",
+  "name": {
+    "en": "Java",
+    "zh": "Java · 爪哇蜡染"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#663171",
+    "#CF3A36",
+    "#EA7428",
+    "#E2998A",
+    "#0C7156"
+  ],
+  "neutral": "#B8B3B5",
+  "partners": {
+    "sequential": "lajolla",
+    "diverging": "PuOr"
+  },
+  "source": {
+    "title": "MetBrewer: Java (Met Object 85689)",
+    "author": "Blake Robert Mills / Javanese Batik",
+    "year": 1920,
+    "url": "https://www.metmuseum.org/art/collection/search/85689",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "Met #85689",
+    "title": "Skirt (Kain Panjang, Javanese)",
+    "date": "20th century",
+    "url": "https://www.metmuseum.org/art/collection/search/85689",
+    "image_url": "https://www.metmuseum.org/art/collection/search/85689",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 17.14,
+    "min_de2000_deutan_first6": 13.11,
+    "min_de2000_protan_first6": 8.23,
+    "min_de2000_tritan_first6": 11.4,
+    "optimal6_min_de2000": 17.14,
+    "optimal6_min_de2000_deutan": 13.11,
+    "optimal6_min_de2000_protan": 8.23,
+    "grayscale_L_spread": 0.341,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

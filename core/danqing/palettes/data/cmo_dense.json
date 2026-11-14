@@ -1,0 +1,48 @@
+{
+  "id": "cmo_dense",
+  "name": {
+    "en": "cmocean Dense",
+    "zh": "cmocean 密度紫蓝序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#E6F1F1",
+    "#B1D6E3",
+    "#86B9E3",
+    "#7397E4",
+    "#7871D5",
+    "#784EB3",
+    "#6F2E85",
+    "#5A1851",
+    "#360E24"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "cmo_dense",
+    "diverging": "cmo_balance"
+  },
+  "source": {
+    "title": "True Colors of Oceanography: cmocean (dense)",
+    "author": "Kristen M. Thyng et al. (Oceanography 29(3):9-13)",
+    "year": 2016,
+    "url": "https://github.com/matplotlib/cmocean",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 10.52,
+    "min_de2000_deutan_first6": 9.1,
+    "min_de2000_protan_first6": 9.16,
+    "min_de2000_tritan_first6": 8.34,
+    "optimal6_min_de2000": 10.96,
+    "optimal6_min_de2000_deutan": 10.75,
+    "optimal6_min_de2000_protan": 9.16,
+    "grayscale_L_spread": 0.71,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

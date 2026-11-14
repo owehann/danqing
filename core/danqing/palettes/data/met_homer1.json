@@ -1,0 +1,47 @@
+{
+  "id": "met_homer1",
+  "name": {
+    "en": "Met · Homer Gulf Stream",
+    "zh": "大都会·霍默湾流"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#551F00",
+    "#A62F00",
+    "#DF7700",
+    "#F5B642",
+    "#FFF179",
+    "#C3F4F6",
+    "#6AD5E8",
+    "#32B2DA"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "The Veteran in a New Field, 1865, Winslow Homer, American",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/11145",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 17.04,
+    "min_de2000_deutan_first6": 9.7,
+    "min_de2000_protan_first6": 11.99,
+    "min_de2000_tritan_first6": 15.09,
+    "optimal6_min_de2000": 17.75,
+    "optimal6_min_de2000_deutan": 9.7,
+    "optimal6_min_de2000_protan": 11.99,
+    "grayscale_L_spread": 0.629,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

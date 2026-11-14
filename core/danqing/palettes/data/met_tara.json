@@ -1,0 +1,44 @@
+{
+  "id": "met_tara",
+  "name": {
+    "en": "Met · Tibetan Vajratara",
+    "zh": "大都会·藏传金刚度母"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#EAB1C6",
+    "#D35E17",
+    "#E18A1F",
+    "#E9B109",
+    "#829D44"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Maharana Sarup Singh Inspects a Prize Stallion, 1845–46, Tara, Western India, Rajasthan, Mewar",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/61429",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 14.62,
+    "min_de2000_deutan_first6": 6.47,
+    "min_de2000_protan_first6": 4.72,
+    "min_de2000_tritan_first6": 8.68,
+    "optimal6_min_de2000": 14.62,
+    "optimal6_min_de2000_deutan": 6.47,
+    "optimal6_min_de2000_protan": 4.72,
+    "grayscale_L_spread": 0.2,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

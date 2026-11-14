@@ -1,0 +1,53 @@
+{
+  "id": "met_klimt",
+  "name": {
+    "en": "Klimt",
+    "zh": "克林姆特 · 普里马韦西肖像"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#DF9ED4",
+    "#C93F55",
+    "#EACC62",
+    "#469D76",
+    "#3C4B99",
+    "#924099"
+  ],
+  "neutral": "#B9B6BF",
+  "partners": {
+    "sequential": "magma",
+    "diverging": "bam"
+  },
+  "source": {
+    "title": "MetBrewer: Klimt (Met Object 436819)",
+    "author": "Blake Robert Mills / Gustav Klimt",
+    "year": 1913,
+    "url": "https://www.metmuseum.org/art/collection/search/436819",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Metropolitan Museum of Art",
+    "object_id": "64.148 (Met #436819)",
+    "title": "Mäda Primavesi (1903–2000)",
+    "date": "1912–1913",
+    "url": "https://www.metmuseum.org/art/collection/search/436819",
+    "image_url": "https://www.metmuseum.org/art/collection/search/436819",
+    "image_license": "CC0 1.0 Universal (The Met Open Access)"
+  },
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 19.62,
+    "min_de2000_deutan_first6": 9.77,
+    "min_de2000_protan_first6": 2.24,
+    "min_de2000_tritan_first6": 11.35,
+    "optimal6_min_de2000": 19.62,
+    "optimal6_min_de2000_deutan": 9.77,
+    "optimal6_min_de2000_protan": 2.24,
+    "grayscale_L_spread": 0.407,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

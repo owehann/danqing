@@ -1,0 +1,47 @@
+{
+  "id": "uchicago",
+  "name": {
+    "en": "UChicago-inspired",
+    "zh": "UChicago-inspired（芝加哥大学学术风）"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#800000",
+    "#FFA319",
+    "#8A9045",
+    "#155F83",
+    "#C16622",
+    "#8F3931",
+    "#58593F",
+    "#350E20"
+  ],
+  "neutral": "#767676",
+  "partners": {
+    "sequential": "lajolla",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Factual university press palette table (pal_uchicago)",
+    "author": "University of Chicago Identity / Nan Xiao reference table",
+    "year": 2018,
+    "url": "https://nanx.me/ggsci/reference/pal_uchicago.html",
+    "license": "Factual hex values (acknowledged in NOTICE; no ggsci code used)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 10.26,
+    "min_de2000_deutan_first6": 5.57,
+    "min_de2000_protan_first6": 9.64,
+    "min_de2000_tritan_first6": 11.69,
+    "optimal6_min_de2000": 10.26,
+    "optimal6_min_de2000_deutan": 5.57,
+    "optimal6_min_de2000_protan": 9.64,
+    "grayscale_L_spread": 0.554,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

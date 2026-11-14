@@ -1,0 +1,48 @@
+{
+  "id": "BuPu",
+  "name": {
+    "en": "ColorBrewer BuPu",
+    "zh": "ColorBrewer 蓝紫序列"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#F7FCFD",
+    "#E0ECF4",
+    "#BFD3E6",
+    "#9EBCDA",
+    "#8C96C6",
+    "#8C6BB1",
+    "#88419D",
+    "#810F7C",
+    "#4D004B"
+  ],
+  "neutral": "#BDBDBD",
+  "partners": {
+    "sequential": "BuPu",
+    "diverging": "RdYlBu"
+  },
+  "source": {
+    "title": "ColorBrewer 2.0 (BuPu, 9-class)",
+    "author": "Cynthia A. Brewer, Penn State",
+    "year": 2013,
+    "url": "https://colorbrewer2.org/#type=sequential&scheme=BuPu&n=9",
+    "license": "Apache-2.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 5.15,
+    "min_de2000_deutan_first6": 5.32,
+    "min_de2000_protan_first6": 4.83,
+    "min_de2000_tritan_first6": 5.74,
+    "optimal6_min_de2000": 12.38,
+    "optimal6_min_de2000_deutan": 9.47,
+    "optimal6_min_de2000_protan": 10.56,
+    "grayscale_L_spread": 0.694,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

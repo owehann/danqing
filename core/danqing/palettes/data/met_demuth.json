@@ -1,0 +1,49 @@
+{
+  "id": "met_demuth",
+  "name": {
+    "en": "Met · Demuth Figure 5 in Gold",
+    "zh": "大都会·德穆斯金色五号"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#591C19",
+    "#9B332B",
+    "#B64F32",
+    "#D39A2D",
+    "#F7C267",
+    "#B9B9B8",
+    "#8B8B99",
+    "#5D6174",
+    "#41485F",
+    "#262D42"
+  ],
+  "neutral": "#BDBAB5",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "I Saw the Figure 5 in Gold, 1928, Charles Demuth, American",
+    "author": "Blake Robert Mills (MetBrewer)",
+    "year": 2022,
+    "url": "https://www.metmuseum.org/art/collection/search/488315",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 10.26,
+    "min_de2000_deutan_first6": 9.59,
+    "min_de2000_protan_first6": 9.58,
+    "min_de2000_tritan_first6": 8.69,
+    "optimal6_min_de2000": 17.08,
+    "optimal6_min_de2000_deutan": 17.23,
+    "optimal6_min_de2000_protan": 16.79,
+    "grayscale_L_spread": 0.543,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

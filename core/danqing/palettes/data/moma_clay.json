@@ -1,0 +1,45 @@
+{
+  "id": "moma_clay",
+  "name": {
+    "en": "MoMA · Clay Southern Chromogenic",
+    "zh": "现代艺术馆·克莱彩色摄影"
+  },
+  "collection": "museum",
+  "kind": "qualitative",
+  "order": "gradient",
+  "colors": [
+    "#C48329",
+    "#8B3B36",
+    "#A2B4B7",
+    "#514A2E",
+    "#CF9860",
+    "#8E4115"
+  ],
+  "neutral": "#B8B6B2",
+  "partners": {
+    "sequential": "lipari",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "Sarah Cross, 1980, Maude Schuyler Clay, Chromogenic print",
+    "author": "Blake Robert Mills (MoMAColors)",
+    "year": 2023,
+    "url": "https://www.moma.org/collection/works/49695?artist_id=1139&page=1&sov_referrer=artist",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 8.36,
+    "min_de2000_deutan_first6": 6.14,
+    "min_de2000_protan_first6": 3.06,
+    "min_de2000_tritan_first6": 1.9,
+    "optimal6_min_de2000": 8.36,
+    "optimal6_min_de2000_deutan": 6.14,
+    "optimal6_min_de2000_protan": 3.06,
+    "grayscale_L_spread": 0.349,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

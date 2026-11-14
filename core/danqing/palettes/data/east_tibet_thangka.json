@@ -1,0 +1,56 @@
+{
+  "id": "east_tibet_thangka",
+  "name": {
+    "en": "Himalayan Mineral Thangka",
+    "zh": "雪域石青朱砂绿度母"
+  },
+  "collection": "eastern",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#435736",
+    "#FA785D",
+    "#282E4D",
+    "#8C7229",
+    "#9A2314",
+    "#5F6788",
+    "#A1A376",
+    "#C49500"
+  ],
+  "neutral": "#A7A597",
+  "partners": {
+    "sequential": "hawaii",
+    "diverging": "roma"
+  },
+  "source": {
+    "title": "Green Tara & Yongle Thangka with the Seventh Bodhisattva",
+    "author": "The Cleveland Museum of Art",
+    "year": "Central Tibet & Ming Court (c. 1260s–1424)",
+    "url": "https://clevelandart.org/art/1970.156",
+    "license": "CC0 1.0 Universal"
+  },
+  "artifact": {
+    "museum": "The Cleveland Museum of Art",
+    "object_id": "1970.156 & 1991.2",
+    "title": "Green Tara & Yongle Thangka with the Seventh Bodhisattva",
+    "date": "Central Tibet & Ming Court (c. 1260s–1424)",
+    "url": "https://clevelandart.org/art/1970.156",
+    "image_url": "https://openaccess-cdn.clevelandart.org/1970.156/1970.156_web.jpg",
+    "thumbnail_url": "/artifacts/east_tibet_thangka.jpg",
+    "image_license": "CC0 1.0 Universal (CMA Open Access)"
+  },
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 19.32,
+    "min_de2000_deutan_first6": 11.39,
+    "min_de2000_protan_first6": 7.92,
+    "min_de2000_tritan_first6": 10.58,
+    "optimal6_min_de2000": 19.32,
+    "optimal6_min_de2000_deutan": 11.39,
+    "optimal6_min_de2000_protan": 7.92,
+    "grayscale_L_spread": 0.409,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "carto_safe",
+  "name": {
+    "en": "CARTO Safe 11",
+    "zh": "CARTO 无障碍空间十一色"
+  },
+  "collection": "accessible",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#88CCEE",
+    "#CC6677",
+    "#DDCC77",
+    "#117733",
+    "#332288",
+    "#AA4499",
+    "#44AA99",
+    "#999933",
+    "#882255",
+    "#661100",
+    "#6699CC"
+  ],
+  "neutral": "#888888",
+  "partners": {
+    "sequential": "GnBu",
+    "diverging": "BrBG"
+  },
+  "source": {
+    "title": "CARTOColors Qualitative Scheme (Safe)",
+    "author": "CARTO (Mamata Akella & Jakob Nowosad)",
+    "year": 2019,
+    "url": "https://github.com/CartoDB/CartoColor",
+    "license": "CC-BY 4.0"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 11,
+    "max_colors": 11,
+    "min_de2000_first6": 19.81,
+    "min_de2000_deutan_first6": 17.61,
+    "min_de2000_protan_first6": 13.48,
+    "min_de2000_tritan_first6": 11.5,
+    "optimal6_min_de2000": 19.81,
+    "optimal6_min_de2000_deutan": 17.61,
+    "optimal6_min_de2000_protan": 13.48,
+    "grayscale_L_spread": 0.509,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

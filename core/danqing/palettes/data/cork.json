@@ -1,0 +1,48 @@
+{
+  "id": "cork",
+  "name": {
+    "en": "Cork",
+    "zh": "Cork（海蓝翠绿发散）"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#2C194C",
+    "#284B7E",
+    "#567FA6",
+    "#9EB5CC",
+    "#E6EDEC",
+    "#A9C5A8",
+    "#5D935D",
+    "#20631E",
+    "#0F2903"
+  ],
+  "neutral": "#E6EDEC",
+  "partners": {
+    "sequential": "batlowW",
+    "diverging": "cork"
+  },
+  "source": {
+    "title": "Scientific colour maps v8.0 (cork)",
+    "author": "Fabio Crameri",
+    "year": 2023,
+    "url": "https://doi.org/10.5281/zenodo.8409685",
+    "license": "MIT (cmcrameri / Zenodo)"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 9,
+    "max_colors": 9,
+    "min_de2000_first6": 17.34,
+    "min_de2000_deutan_first6": 12.0,
+    "min_de2000_protan_first6": 14.07,
+    "min_de2000_tritan_first6": 5.33,
+    "optimal6_min_de2000": 18.63,
+    "optimal6_min_de2000_deutan": 12.0,
+    "optimal6_min_de2000_protan": 14.07,
+    "grayscale_L_spread": 0.69,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

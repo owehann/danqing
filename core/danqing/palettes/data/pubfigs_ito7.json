@@ -1,0 +1,46 @@
+{
+  "id": "pubfigs_ito7",
+  "name": {
+    "en": "PubFigs Ito-Seven",
+    "zh": "PubFigs 生命科学无障碍七色"
+  },
+  "collection": "accessible",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#0072B2",
+    "#D55E00",
+    "#009E73",
+    "#CC79A7",
+    "#56B4E9",
+    "#E69F00",
+    "#F0E442"
+  ],
+  "neutral": "#999999",
+  "partners": {
+    "sequential": "cividis",
+    "diverging": "vik"
+  },
+  "source": {
+    "title": "ggpubfigs: Colorblind-Friendly Palettes for Life-Science Publications (ito_seven)",
+    "author": "Jacob L. Steenwyk & Antonis Rokas (Microbiol. Resour. Announc. 10:e00871-21)",
+    "year": 2021,
+    "url": "https://github.com/JLSteenwyk/ggpubfigs",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 22.24,
+    "min_de2000_deutan_first6": 12.51,
+    "min_de2000_protan_first6": 12.25,
+    "min_de2000_tritan_first6": 10.87,
+    "optimal6_min_de2000": 22.24,
+    "optimal6_min_de2000_deutan": 12.51,
+    "optimal6_min_de2000_protan": 12.25,
+    "grayscale_L_spread": 0.37,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

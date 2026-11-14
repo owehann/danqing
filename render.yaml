@@ -1,0 +1,12 @@
+# Render.com Zero-Credit-Card Free Tier Blueprint ($0.00 hard-locked)
+services:
+  - type: web
+    name: danqing
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/v2/health
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: DANQING_LOW_MEMORY
+        value: "1"
