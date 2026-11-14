@@ -1614,10 +1614,29 @@ dialog::backdrop {
   font-weight: 500;
 }
 
-/* Rules Collapsible (<details>) */
+/* Rules & Style Sculpting Collapsible (<details>) */
 .dq-rules {
   border-top: 1px solid var(--border);
   background: var(--bg-panel);
+}
+
+.dq-rules::details-content {
+  interpolate-size: allow-keywords;
+  overflow: clip;
+  contain: layout;
+}
+
+.dq-rules:not([open])::details-content {
+  block-size: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dq-rules::details-content {
+    transition: block-size, content-visibility, display;
+    transition-duration: 0.22s;
+    transition-timing-function: ease-in-out;
+    transition-behavior: allow-discrete;
+  }
 }
 
 .dq-rules > summary {
@@ -1634,6 +1653,133 @@ dialog::backdrop {
 
 .dq-rules > summary::-webkit-details-marker {
   display: none;
+}
+
+.dq-styles-summary-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5ch;
+}
+
+.dq-styles-chevron {
+  flex-shrink: 0;
+  color: var(--text-2);
+  rotate: -90deg;
+}
+
+.dq-rules[open] > summary .dq-styles-chevron {
+  rotate: 0deg;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dq-styles-chevron {
+    transition: rotate 0.18s ease;
+  }
+}
+
+.dq-style-pill {
+  font-size: 10.5px;
+  font-weight: 500;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--bg-subtle);
+  color: var(--text-3);
+  border: 1px solid var(--border);
+}
+
+.dq-style-pill--active {
+  background: var(--bg-selected);
+  color: var(--text-1);
+  border-color: var(--accent);
+}
+
+.dq-styles__body {
+  padding: 2px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.dq-styles-lead {
+  margin: 0;
+  font-size: 11.5px;
+  line-height: 1.38;
+  color: var(--text-3);
+}
+
+.dq-style-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.dq-style-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-block-size: 30px;
+  padding: 4px 7px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--bg-panel);
+  color: var(--text-1);
+  font-size: 11.5px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dq-style-chip--off {
+  grid-column: 1 / -1;
+  justify-content: center;
+  min-block-size: 26px;
+  color: var(--text-2);
+}
+
+@media (pointer: coarse) {
+  .dq-style-chip {
+    min-block-size: 38px;
+  }
+}
+
+@media (hover: hover) {
+  .dq-style-chip:hover:not([aria-pressed="true"]) {
+    background: var(--bg-hover);
+    border-color: var(--border-strong, #cbd5e1);
+  }
+}
+
+.dq-style-chip[aria-pressed="true"] {
+  background: var(--bg-selected);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.dq-style-chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.dq-style-swatches {
+  display: inline-grid;
+  grid-template-columns: repeat(2, 7px);
+  grid-template-rows: repeat(2, 7px);
+  gap: 1.5px;
+  flex-shrink: 0;
+}
+
+.dq-style-swatch-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 1.5px;
+  border: 0.5px solid rgb(0 0 0 / 0.14);
+}
+
+.dq-style-chip__name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .dq-rules__body {

@@ -21,7 +21,7 @@ EncodingKind = Literal[
     "structural",
 ]
 
-EmphasisTier = Literal["protagonist", "supporting", "context", "focus", "normal", "background"]
+EmphasisTier = Literal["protagonist", "supporting", "context", "focus", "normal", "background", "control"]
 
 
 @dataclass

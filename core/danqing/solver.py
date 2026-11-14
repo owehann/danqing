@@ -54,7 +54,7 @@ def normalize_role(tier: str) -> Literal["focus", "normal", "background"]:
     t = (tier or "normal").strip().lower()
     if t in ("focus", "protagonist"):
         return "focus"
-    if t in ("background", "context"):
+    if t in ("background", "context", "control"):
         return "background"
     return "normal"
 

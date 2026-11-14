@@ -73,6 +73,7 @@ from danqing.solver import (
     normalize_role,
     solve_scene_colors,
 )
+from danqing.style_engine import STYLE_PROFILES, apply_style_to_solve_result, list_styles
 from danqing.svg_engine import (
     SvgScene,
     export_recolored_svg,
@@ -180,6 +181,7 @@ class HistorySnapshot:
     panel_palettes: dict[str, str]
     rule: Literal["same_name", "unique"]
     vibrancy: VibrancyMode
+    aesthetic_style: str | None
     entities: dict[str, SemanticEntity]
     continuous_scales: dict[str, ContinuousScale]
 
@@ -249,6 +251,7 @@ class SceneSession:
     panel_palettes: dict[str, str] = field(default_factory=dict)
     rule: Literal["same_name", "unique"] = "same_name"
     vibrancy: VibrancyMode = "standard"
+    aesthetic_style: str | None = None
     last_solve: SolveResult | None = None
     undo_stack: list[HistorySnapshot] = field(default_factory=list)
     redo_stack: list[HistorySnapshot] = field(default_factory=list)
@@ -297,6 +300,7 @@ class SceneSession:
             panel_palettes=dict(self.panel_palettes),
             rule=self.rule,
             vibrancy=self.vibrancy,
+            aesthetic_style=self.aesthetic_style,
             entities=copy.deepcopy(self.parsed.entities),
             continuous_scales=copy.deepcopy(self.parsed.continuous_scales),
         )
@@ -308,6 +312,7 @@ class SceneSession:
         self.panel_palettes = dict(snap.panel_palettes)
         self.rule = snap.rule
         self.vibrancy = snap.vibrancy
+        self.aesthetic_style = snap.aesthetic_style
         self.parsed.entities = copy.deepcopy(snap.entities)
         self.parsed.continuous_scales = copy.deepcopy(snap.continuous_scales)
 
@@ -644,9 +649,11 @@ def _recompute_session(sess: SceneSession) -> None:
         active_pins=active_pins,
         vibrancy=sess.vibrancy,
     )
+    if sess.aesthetic_style and sess.aesthetic_style in STYLE_PROFILES:
+        sr = apply_style_to_solve_result(p, sr, sess.aesthetic_style)
     for eid, hx in sr.entity_hex.items():
         p.entities[eid].current_hex = hx
-        if ws.keep_consistent and not sess.is_original_mode and not sess.panel_palettes:
+        if ws.keep_consistent and (not sess.is_original_mode or sess.aesthetic_style) and not sess.panel_palettes:
             norm_k = p.entities[eid].label.strip().lower()
             if norm_k and not ("group ·" in norm_k and norm_k.endswith(("mark", "marks"))):
                 ws.manuscript_registry[norm_k] = hx
@@ -770,6 +777,7 @@ def _serialize_v2_figure(sess: SceneSession) -> dict[str, Any]:
         "panel_palettes": dict(sess.panel_palettes),
         "rule": sess.rule,
         "vibrancy": sess.vibrancy,
+        "aesthetic_style": sess.aesthetic_style,
         "keep_consistent": _get_visitor_workspace(sess.owner_sid).keep_consistent,
         "can_undo": len(sess.undo_stack) > 0,
         "can_redo": len(sess.redo_stack) > 0,
@@ -965,6 +973,7 @@ async def _visitor_isolation_middleware(request: Request, call_next):
 @lru_cache(maxsize=1)
 def _cached_v2_palettes_bytes() -> bytes:
     pals = [p.to_api_dict() for p in list_palettes(include_conventions=True)]
+    styles = [s.to_api_dict() for s in list_styles()]
     presets = [
         {
             "preset_id": it["preset_id"],
@@ -980,6 +989,7 @@ def _cached_v2_palettes_bytes() -> bytes:
     return json.dumps(
         {
             "palettes": pals,
+            "styles": styles,
             "default_palette_id": DEFAULT_PALETTE_ID,
             "presets": presets,
         },
@@ -994,6 +1004,11 @@ def list_v2_palettes() -> Response:
         media_type="application/json",
         headers={"Cache-Control": "no-cache"},
     )
+
+
+@app.get("/api/v2/styles")
+def list_v2_styles() -> dict[str, Any]:
+    return {"styles": [s.to_api_dict() for s in list_styles()]}
 
 
 @app.get("/api/v2/presets/{preset_id}/thumbnail")
@@ -1078,6 +1093,7 @@ def _execute_parse_into_session(
 
         # Keep original figure colors by default on upload (Spec 4.2)
         sess.is_original_mode = True
+        sess.aesthetic_style = None
         sess.panel_palettes.clear()
         _recompute_session(sess)
         sess.status = "ready"
@@ -1408,12 +1424,14 @@ class PatchStateRequest(BaseModel):
         "reset_element",
         "set_rule",
         "set_vibrancy",
+        "set_aesthetic_style",
         "invert_scale",
         "set_keep_consistent",
         "undo",
         "redo",
     ]
     palette_id: str | None = None
+    aesthetic_style: str | None = None
     target_panels: list[str] | None = None
     entity_id: str | None = None
     entity_ids: list[str] | None = None
@@ -1510,6 +1528,7 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                 sess.is_original_mode = False
         elif req.action == "reset_to_original":
             sess.is_original_mode = True
+            sess.aesthetic_style = None
             sess.panel_palettes.clear()
             if sess.initial_entities:
                 prev_ids = list(p.entities.keys())
@@ -1520,6 +1539,14 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                 ent.tier = "normal"
             for cs in p.continuous_scales.values():
                 cs.inverted_polarity = False
+        elif req.action == "set_aesthetic_style":
+            raw_st = (req.aesthetic_style or "").strip().lower()
+            if not raw_st or raw_st in ("none", "off", "__none__"):
+                sess.aesthetic_style = None
+            elif raw_st in STYLE_PROFILES:
+                sess.aesthetic_style = raw_st
+            else:
+                raise HTTPException(status_code=400, detail=f"Unknown aesthetic style: {req.aesthetic_style}")
         elif req.action == "set_roles" and req.role:
             targets = req.entity_ids or ([req.entity_id] if req.entity_id else [])
             for tid in targets:
@@ -1615,6 +1642,7 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
         "panel_palettes": dict(sess.panel_palettes),
         "rule": sess.rule,
         "vibrancy": sess.vibrancy,
+        "aesthetic_style": sess.aesthetic_style,
         "keep_consistent": _get_visitor_workspace(sess.owner_sid).keep_consistent,
         "can_undo": len(sess.undo_stack) > 0,
         "can_redo": len(sess.redo_stack) > 0,
@@ -1644,6 +1672,7 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
 def _render_figure_with_cache(
     sess: SceneSession,
     palette_override: str = "",
+    style_override: str = "",
     preview_panels: tuple[str, ...] = (),
     preview_entity: str = "",
     preview_hex: str = "",
@@ -1659,6 +1688,17 @@ def _render_figure_with_cache(
     base_scale = p.preview_scale
     eff_scale = base_scale if scale is None else max(0.5, min(5.0, round(float(scale) * 4.0) / 4.0))
     pal_norm = _resolve_palette_id(palette_override) if palette_override else ""
+    st_raw = style_override.strip().lower()
+    if not st_raw:
+        eff_style = sess.aesthetic_style
+    elif st_raw in ("__none__", "none", "off"):
+        eff_style = None
+    elif st_raw in STYLE_PROFILES:
+        eff_style = st_raw
+    else:
+        eff_style = sess.aesthetic_style
+    style_hover_changed = eff_style != sess.aesthetic_style
+
     ph_norm = preview_hex.strip().lstrip("#").upper() if preview_hex else ""
     all_panel_ids = [pb.panel_id for pb in p.panels]
     valid_prev_panels = tuple(pid for pid in preview_panels if pid in set(all_panel_ids))
@@ -1668,6 +1708,7 @@ def _render_figure_with_cache(
         sess.is_original_mode
         and not sess.panel_palettes
         and not pal_norm
+        and not eff_style
         and not preview_entity
         and abs(eff_scale - base_scale) < 1e-4
     ):
@@ -1676,20 +1717,22 @@ def _render_figure_with_cache(
         if isinstance(p, SvgScene) and not force_png and p.original_svg:
             return p.original_svg, "image/svg+xml"
 
-    is_hover = bool(pal_norm or preview_entity)
+    is_temp_solve = bool(pal_norm or style_hover_changed)
+    is_hover = bool(is_temp_solve or preview_entity)
     my_hover_seq = 0
     if is_hover:
         sess.hover_seq += 1
         my_hover_seq = sess.hover_seq
 
     cache_key = (
-        sess.revision if not pal_norm else -1,
-        pal_norm,
+        sess.revision if not is_temp_solve else -1,
+        pal_norm or sess.palette_id,
+        eff_style or "",
         valid_prev_panels if pal_norm else (),
-        tuple(sorted(sess.panel_palettes.items())) if pal_norm else (),
-        sess.is_original_mode if pal_norm else False,
-        sess.rule if pal_norm else "",
-        sess.vibrancy if pal_norm else "",
+        tuple(sorted(sess.panel_palettes.items())) if is_temp_solve else (),
+        sess.is_original_mode if is_temp_solve else False,
+        sess.rule if is_temp_solve else "",
+        sess.vibrancy if is_temp_solve else "",
         preview_entity,
         ph_norm,
         eff_scale,
@@ -1703,43 +1746,62 @@ def _render_figure_with_cache(
             media = "image/png" if (sess.kind == "pdf" or force_png) else "image/svg+xml"
             return cached_b, media
 
-    if pal_norm:
-        is_subset_prev = 0 < len(valid_prev_panels) < len(all_panel_ids)
-        if is_subset_prev:
-            tset = set(valid_prev_panels)
-            tmp_ents, _ = _split_entities_by_panel_scope(p.entities, p.color_groups, tset)
-            tmp_panel_pals = (
-                dict(sess.panel_palettes)
-                if sess.panel_palettes
-                else {pid: ("__original__" if sess.is_original_mode else sess.palette_id) for pid in all_panel_ids}
-            )
-            for pid in valid_prev_panels:
-                tmp_panel_pals[pid] = pal_norm
+    if is_temp_solve:
+        if pal_norm:
+            is_subset_prev = 0 < len(valid_prev_panels) < len(all_panel_ids)
+            if is_subset_prev:
+                tset = set(valid_prev_panels)
+                tmp_ents, _ = _split_entities_by_panel_scope(p.entities, p.color_groups, tset)
+                tmp_panel_pals = (
+                    dict(sess.panel_palettes)
+                    if sess.panel_palettes
+                    else {pid: ("__original__" if sess.is_original_mode else sess.palette_id) for pid in all_panel_ids}
+                )
+                for pid in valid_prev_panels:
+                    tmp_panel_pals[pid] = pal_norm
+                sr_tmp = _solve_session_colors(
+                    entities=tmp_ents,
+                    color_groups=p.color_groups,
+                    continuous_scales=p.continuous_scales,
+                    evidence_regions=p.evidence_regions,
+                    all_panel_ids=all_panel_ids,
+                    default_palette_id=pal_norm,
+                    is_original_mode=False,
+                    panel_palettes=tmp_panel_pals,
+                    collision_scope=sess.collision_scope,
+                    active_pins={},
+                    vibrancy=sess.vibrancy,
+                )
+            else:
+                ws = _get_visitor_workspace(sess.owner_sid)
+                active_pins = ws.manuscript_registry if ws.keep_consistent else {}
+                sr_tmp = solve_scene_colors(
+                    p.entities,
+                    p.continuous_scales,
+                    p.evidence_regions,
+                    style_id=pal_norm,
+                    collision_scope=sess.collision_scope,
+                    pinned_registry=active_pins,
+                    vibrancy=sess.vibrancy,
+                )
+        else:
+            ws = _get_visitor_workspace(sess.owner_sid)
+            active_pins = ws.manuscript_registry if (ws.keep_consistent and not sess.panel_palettes) else {}
             sr_tmp = _solve_session_colors(
-                entities=tmp_ents,
+                entities=p.entities,
                 color_groups=p.color_groups,
                 continuous_scales=p.continuous_scales,
                 evidence_regions=p.evidence_regions,
                 all_panel_ids=all_panel_ids,
-                default_palette_id=pal_norm,
-                is_original_mode=False,
-                panel_palettes=tmp_panel_pals,
+                default_palette_id=sess.palette_id,
+                is_original_mode=sess.is_original_mode,
+                panel_palettes=sess.panel_palettes,
                 collision_scope=sess.collision_scope,
-                active_pins={},
+                active_pins=active_pins,
                 vibrancy=sess.vibrancy,
             )
-        else:
-            ws = _get_visitor_workspace(sess.owner_sid)
-            active_pins = ws.manuscript_registry if ws.keep_consistent else {}
-            sr_tmp = solve_scene_colors(
-                p.entities,
-                p.continuous_scales,
-                p.evidence_regions,
-                style_id=pal_norm,
-                collision_scope=sess.collision_scope,
-                pinned_registry=active_pins,
-                vibrancy=sess.vibrancy,
-            )
+        if eff_style:
+            sr_tmp = apply_style_to_solve_result(p, sr_tmp, eff_style)
         group_hex = dict(sr_tmp.group_hex)
         scale_stops = dict(sr_tmp.scale_stops)
     else:
@@ -1784,6 +1846,7 @@ def get_v2_figure_render(
     rev: int = 0,
     scale: float | None = None,
     palette: str = "",
+    style: str = "",
     panels: str = "",
     pe: str = "",
     ph: str = "",
@@ -1798,6 +1861,7 @@ def get_v2_figure_render(
         data, media = _render_figure_with_cache(
             sess,
             palette_override=palette,
+            style_override=style,
             preview_panels=panel_tuple,
             preview_entity=pe,
             preview_hex=ph,
@@ -1899,7 +1963,8 @@ def _compute_verified_export(sess: SceneSession, fmt: str) -> tuple[bytes, str, 
     }
 
     stem = Path(p.filename).stem
-    pal_slug = "original" if sess.is_original_mode else sess.palette_id
+    base_slug = "original" if sess.is_original_mode else sess.palette_id
+    pal_slug = f"{base_slug}_{sess.aesthetic_style}" if sess.aesthetic_style else base_slug
 
     if fmt in ("png_300", "png_600"):
         dpi = 300 if fmt == "png_300" else 600
@@ -2004,7 +2069,8 @@ def export_v2_figure(figure_id: str, req: ExportRequest) -> Response:
         )
 
     stem = Path(p.filename).stem
-    pal_slug = "original" if sess.is_original_mode else sess.palette_id
+    base_slug = "original" if sess.is_original_mode else sess.palette_id
+    pal_slug = f"{base_slug}_{sess.aesthetic_style}" if sess.aesthetic_style else base_slug
     zip_name = f"{stem}_danqing_{pal_slug}.zip"
 
     zbuf = io.BytesIO()
@@ -2013,12 +2079,12 @@ def export_v2_figure(figure_id: str, req: ExportRequest) -> Response:
         if req.include_r:
             zf.writestr(
                 f"{stem}_palette_ggplot2.R",
-                generate_r_ggplot_snippet(sess.palette_id, p.entities, sr.entity_hex, p.continuous_scales, sr.scale_stops),
+                generate_r_ggplot_snippet(pal_slug, p.entities, sr.entity_hex, p.continuous_scales, sr.scale_stops),
             )
         if req.include_python:
             zf.writestr(
                 f"{stem}_palette_matplotlib.py",
-                generate_python_mpl_snippet(sess.palette_id, p.entities, sr.entity_hex, p.continuous_scales, sr.scale_stops),
+                generate_python_mpl_snippet(pal_slug, p.entities, sr.entity_hex, p.continuous_scales, sr.scale_stops),
             )
         if req.include_json:
             cert = build_verification_certificate(

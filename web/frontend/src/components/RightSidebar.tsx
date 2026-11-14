@@ -399,7 +399,9 @@ export function RightSidebar(): React.ReactElement | null {
   const figure = useStudioStore((s) => s.figure);
   const targetPanels = useStudioStore((s) => s.targetPanels);
   const palettes = useStudioStore((s) => s.palettes);
+  const styles = useStudioStore((s) => s.styles);
   const selectedIds = useStudioStore((s) => s.selectedIds);
+  const hoveredStyleId = useStudioStore((s) => s.hoveredStyleId);
   const cvdMode = useStudioStore((s) => s.cvdMode);
   const palettesDrawerOpen = useStudioStore((s) => s.palettesDrawerOpen);
 
@@ -409,8 +411,10 @@ export function RightSidebar(): React.ReactElement | null {
   const resetToOriginal = useStudioStore((s) => s.resetToOriginal);
   const resetTargetPanels = useStudioStore((s) => s.resetTargetPanels);
   const setHoveredPalette = useStudioStore((s) => s.setHoveredPalette);
+  const setHoveredStyle = useStudioStore((s) => s.setHoveredStyle);
   const setRule = useStudioStore((s) => s.setRule);
   const setVibrancy = useStudioStore((s) => s.setVibrancy);
+  const setAestheticStyle = useStudioStore((s) => s.setAestheticStyle);
   const setCvdMode = useStudioStore((s) => s.setCvdMode);
   const setPalettesDrawerOpen = useStudioStore((s) => s.setPalettesDrawerOpen);
 
@@ -468,9 +472,11 @@ export function RightSidebar(): React.ReactElement | null {
 
   const tablistRef = useRef<HTMLDivElement | null>(null);
   const hoverTimerRef = useRef<number | null>(null);
+  const styleHoverTimerRef = useRef<number | null>(null);
   const searchId = useId();
   const cvdSelectId = useId();
   const tabIdPrefix = useId();
+  const styleDescId = useId();
 
   const langKey: "en" | "zh" = i18n.language.startsWith("zh") ? "zh" : "en";
 
@@ -478,6 +484,9 @@ export function RightSidebar(): React.ReactElement | null {
     return () => {
       if (hoverTimerRef.current !== null) {
         window.clearTimeout(hoverTimerRef.current);
+      }
+      if (styleHoverTimerRef.current !== null) {
+        window.clearTimeout(styleHoverTimerRef.current);
       }
     };
   }, []);
@@ -546,6 +555,23 @@ export function RightSidebar(): React.ReactElement | null {
       hoverTimerRef.current = null;
     }
     setHoveredPalette(null);
+  };
+
+  const handleStyleHoverStart = (sid: string): void => {
+    if (styleHoverTimerRef.current !== null) {
+      window.clearTimeout(styleHoverTimerRef.current);
+    }
+    styleHoverTimerRef.current = window.setTimeout(() => {
+      setHoveredStyle(sid);
+    }, hoverDelayMs);
+  };
+
+  const handleStyleHoverEnd = (): void => {
+    if (styleHoverTimerRef.current !== null) {
+      window.clearTimeout(styleHoverTimerRef.current);
+      styleHoverTimerRef.current = null;
+    }
+    setHoveredStyle(null);
   };
 
   const requiredColors = useMemo(() => {
@@ -655,13 +681,28 @@ export function RightSidebar(): React.ReactElement | null {
 
   const canResetScoped = useMemo(() => {
     if (targetPanels.length === 0) {
-      return !figure.is_original_mode;
+      return !figure.is_original_mode || Boolean(figure.aesthetic_style);
     }
     if (Object.keys(panelPals).length === 0) {
-      return !figure.is_original_mode;
+      return !figure.is_original_mode || Boolean(figure.aesthetic_style);
     }
     return targetPanels.some((pid) => panelPals[pid] && panelPals[pid] !== "__original__");
-  }, [figure.is_original_mode, panelPals, targetPanels]);
+  }, [figure.aesthetic_style, figure.is_original_mode, panelPals, targetPanels]);
+
+  const activeStyleObj = useMemo(
+    () => (figure.aesthetic_style ? styles.find((s) => s.id === figure.aesthetic_style) || null : null),
+    [figure.aesthetic_style, styles],
+  );
+
+  const previewedStyleObj = useMemo(() => {
+    if (hoveredStyleId && hoveredStyleId !== "__none__") {
+      return styles.find((s) => s.id === hoveredStyleId) || activeStyleObj;
+    }
+    if (hoveredStyleId === "__none__") {
+      return null;
+    }
+    return activeStyleObj;
+  }, [activeStyleObj, hoveredStyleId, styles]);
 
   return (
     <aside
@@ -1003,10 +1044,80 @@ export function RightSidebar(): React.ReactElement | null {
         </div>
       </div>
 
+      {styles.length > 0 ? (
+        <details className="dq-rules dq-styles-section" open>
+          <summary>
+            <span className="dq-styles-summary-main">
+              <ChevronDown className="dq-styles-chevron" size={14} strokeWidth={1.6} aria-hidden="true" />
+              <span>{t("styles.heading")}</span>
+            </span>
+            {activeStyleObj ? (
+              <span className="dq-style-pill dq-style-pill--active">
+                {activeStyleObj.name[langKey] || activeStyleObj.name.en}
+              </span>
+            ) : (
+              <span className="dq-style-pill">{t("styles.optionalTag")}</span>
+            )}
+          </summary>
+          <div className="dq-styles__body">
+            <p id={styleDescId} className="dq-styles-lead">
+              {previewedStyleObj
+                ? previewedStyleObj.description[langKey] || previewedStyleObj.description.en
+                : t("styles.lead")}
+            </p>
+            <div
+              className="dq-style-grid"
+              role="group"
+              aria-label={t("styles.heading")}
+              aria-describedby={styleDescId}
+            >
+              <button
+                type="button"
+                className="dq-style-chip dq-style-chip--off"
+                aria-pressed={!figure.aesthetic_style}
+                onMouseEnter={() => handleStyleHoverStart("__none__")}
+                onMouseLeave={handleStyleHoverEnd}
+                onClick={() => void setAestheticStyle(null)}
+              >
+                <span className="dq-style-chip__name">{t("styles.off")}</span>
+              </button>
+              {styles.map((st) => {
+                const stName = st.name[langKey] || st.name.en;
+                const isPressed = figure.aesthetic_style === st.id;
+                return (
+                  <button
+                    key={st.id}
+                    type="button"
+                    className="dq-style-chip"
+                    aria-pressed={isPressed}
+                    onMouseEnter={() => handleStyleHoverStart(st.id)}
+                    onMouseLeave={handleStyleHoverEnd}
+                    onClick={() => void setAestheticStyle(isPressed ? null : st.id)}
+                  >
+                    <span className="dq-style-swatches" aria-hidden="true">
+                      {st.preview_swatches.slice(0, 4).map((sw, idx) => (
+                        <span
+                          key={`${st.id}-${idx}`}
+                          className="dq-style-swatch-dot"
+                          style={{ background: sw }}
+                        />
+                      ))}
+                    </span>
+                    <span className="dq-style-chip__name">{stName}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </details>
+      ) : null}
+
       <details className="dq-rules">
         <summary>
-          <span>{t("rules.heading")}</span>
-          <ChevronDown size={14} strokeWidth={1.5} aria-hidden="true" />
+          <span className="dq-styles-summary-main">
+            <ChevronDown className="dq-styles-chevron" size={14} strokeWidth={1.6} aria-hidden="true" />
+            <span>{t("rules.heading")}</span>
+          </span>
         </summary>
         <div className="dq-rules__body">
           <div className="dq-rule-block">

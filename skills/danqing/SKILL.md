@@ -5,7 +5,8 @@ description: >-
   Python/matplotlib/scanpy, GraphPad Prism, or Illustrator) and match whole manuscript
   figure sets to comfortable, reviewer-safe palettes without re-running plotting scripts
   or altering raw experimental images (Western blots, H&E, microscopy). Includes 3,434
-  verified palettes (with homologous paired sequential/diverging ramps), Manuscript Match
+  verified palettes (with homologous paired sequential/diverging ramps), palette-independent
+  OKLCH Style Engine (8 built-in aesthetic styles + reference extraction), Manuscript Match
   (Gemini + perceptual comfort ranker), MCP server (`danqing_mcp`), and interactive Web Studio.
 ---
 
@@ -23,8 +24,9 @@ Use this skill whenever a researcher wants to stop wasting time tweaking hex cod
 When the `danqing_mcp` MCP server is enabled (`danqing-mcp` or `python -m danqing.mcp_server`), prefer calling its deterministic tools directly:
 - `danqing_inspect_figure`: Inspect discrete groups, panels, continuous scales, protected raw images, and deuteranopia diagnostics on any `.pdf` or `.svg`.
 - `danqing_match_manuscript_palettes`: Get the top 3 comfortable palette matches for a figure + journal/topic brief (`preset`: `"cns_clean"`, `"clinical"`, `"omics"`, `"museum"`).
-- `danqing_recolor_figure`: Write a byte-verified recolored `.pdf`/`.svg` alongside `.palette.R`, `.palette.py`, and `.changes.csv`.
+- `danqing_recolor_figure`: Write a byte-verified recolored `.pdf`/`.svg` alongside `.palette.R`, `.palette.py`, and `.changes.csv` (supports optional post-palette `aesthetic_style` sculpting).
 - `danqing_list_palettes`: Search the 3,434 verified palettes by collection, group count, or color-blind safety.
+- `danqing_list_styles`: List the 8 palette-independent OKLCH aesthetic style sculpting profiles (`aegean_blue_white`, `qingbai_porcelain`, `warm_terracotta`, `bauhaus_airy`, `ink_vermilion`, `vermeer_jewel`, `twilight_indigo`, `kyoto_moss`).
 
 ## 2. Interactive Web Studio
 

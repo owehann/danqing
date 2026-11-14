@@ -8,6 +8,7 @@ import type {
   PaletteItem,
   PresetSummary,
   SessionFigureSummary,
+  StyleProfileItem,
   VibrancyMode,
 } from "./types";
 
@@ -23,6 +24,7 @@ interface ErrorModalPayload {
 interface StudioStore {
   pageMode: PageMode;
   palettes: PaletteItem[];
+  styles: StyleProfileItem[];
   presets: PresetSummary[];
   openedFigureIds: string[];
   sessionFigures: SessionFigureSummary[];
@@ -38,6 +40,7 @@ interface StudioStore {
   hoveredEntityId: string | null;
   hoveredPanelLabel: string | null;
   hoveredPaletteId: string | null;
+  hoveredStyleId: string | null;
   hoveredSwatch: { entityId: string; hex: string } | null;
 
   isComparingOriginal: boolean;
@@ -73,6 +76,7 @@ interface StudioStore {
   resetElement: (entityId: string) => Promise<void>;
   setRule: (rule: CrossPanelRule) => Promise<void>;
   setVibrancy: (vibrancy: VibrancyMode) => Promise<void>;
+  setAestheticStyle: (styleId: string | null) => Promise<void>;
   invertScale: (scaleId: string) => Promise<void>;
   setKeepConsistent: (enabled: boolean) => Promise<void>;
   undo: () => Promise<void>;
@@ -81,6 +85,7 @@ interface StudioStore {
   selectEntity: (entityId: string | null, additive?: boolean, range?: boolean) => void;
   setHoveredEntity: (entityId: string | null, panelLabel?: string | null) => void;
   setHoveredPalette: (paletteId: string | null) => void;
+  setHoveredStyle: (styleId: string | null) => void;
   setHoveredSwatch: (swatch: { entityId: string; hex: string } | null) => void;
   setComparingOriginal: (comparing: boolean) => void;
   toggleSplitCompare: () => void;
@@ -113,6 +118,7 @@ function closeActiveEventSource(): void {
 export const useStudioStore = create<StudioStore>((set, get) => ({
   pageMode: "landing",
   palettes: [],
+  styles: [],
   presets: [],
   openedFigureIds: [],
   sessionFigures: [],
@@ -128,6 +134,7 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
   hoveredEntityId: null,
   hoveredPanelLabel: null,
   hoveredPaletteId: null,
+  hoveredStyleId: null,
   hoveredSwatch: null,
 
   isComparingOriginal: false,
@@ -146,6 +153,7 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
     const data = await res.json();
     set({
       palettes: data.palettes || [],
+      styles: data.styles || [],
       presets: data.presets || [],
     });
   },
@@ -272,6 +280,7 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
       selectedIds: [],
       hoveredEntityId: null,
       hoveredPaletteId: null,
+      hoveredStyleId: null,
       hoveredSwatch: null,
       openedFigureIds: nextOpened,
       slowWarning: Boolean(data.slow_warning),
@@ -287,6 +296,7 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
       selectedIds: [],
       hoveredEntityId: null,
       hoveredPaletteId: null,
+      hoveredStyleId: null,
       hoveredSwatch: null,
     });
   },
@@ -329,6 +339,7 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
 
       return {
         hoveredPaletteId: null,
+        hoveredStyleId: null,
         hoveredSwatch: null,
         figure: {
           ...state.figure,
@@ -340,6 +351,7 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
           panel_palettes: diff.panel_palettes ?? state.figure.panel_palettes ?? {},
           rule: diff.rule,
           vibrancy: diff.vibrancy,
+          aesthetic_style: diff.aesthetic_style ?? null,
           keep_consistent: diff.keep_consistent,
           can_undo: diff.can_undo,
           can_redo: diff.can_redo,
@@ -419,6 +431,9 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
   setVibrancy: async (vibrancy: VibrancyMode) => {
     await get().mutateState({ action: "set_vibrancy", vibrancy });
   },
+  setAestheticStyle: async (styleId: string | null) => {
+    await get().mutateState({ action: "set_aesthetic_style", aesthetic_style: styleId });
+  },
   invertScale: async (scaleId: string) => {
     await get().mutateState({ action: "invert_scale", scale_id: scaleId });
   },
@@ -468,6 +483,9 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
   },
   setHoveredPalette: (paletteId: string | null) => {
     set({ hoveredPaletteId: paletteId });
+  },
+  setHoveredStyle: (styleId: string | null) => {
+    set({ hoveredStyleId: styleId });
   },
   setHoveredSwatch: (swatch) => {
     set({ hoveredSwatch: swatch });

@@ -58,6 +58,18 @@ export interface PaletteItem {
   convention_keys: string[];
 }
 
+export interface StyleProfileItem {
+  id: string;
+  name: LocalizedText;
+  description: LocalizedText;
+  l_band: [number, number];
+  c_band: [number, number];
+  hue_anchors: number[];
+  hue_sector: [number, number] | null;
+  hue_pull: number;
+  preview_swatches: string[];
+}
+
 export interface PresetSummary {
   preset_id: string;
   filename: string;
@@ -167,6 +179,7 @@ export interface FigureState {
   panel_palettes?: Record<string, string>;
   rule: CrossPanelRule;
   vibrancy: VibrancyMode;
+  aesthetic_style: string | null;
   keep_consistent: boolean;
   can_undo: boolean;
   can_redo: boolean;

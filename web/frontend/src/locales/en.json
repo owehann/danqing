@@ -182,6 +182,12 @@
       "vivid": "Vivid"
     }
   },
+  "styles": {
+    "heading": "Style sculpting",
+    "optionalTag": "Optional",
+    "off": "Off",
+    "lead": "Harmonize the active palette into a unified tonal mood while keeping group contrast clear."
+  },
   "export": {
     "title": "Export figure",
     "formatLabel": "Format",

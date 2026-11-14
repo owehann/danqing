@@ -17,6 +17,7 @@ export function FigureCanvas(): React.ReactElement | null {
   const hoveredEntityId = useStudioStore((s) => s.hoveredEntityId);
   const hoveredPanelLabel = useStudioStore((s) => s.hoveredPanelLabel);
   const hoveredPaletteId = useStudioStore((s) => s.hoveredPaletteId);
+  const hoveredStyleId = useStudioStore((s) => s.hoveredStyleId);
   const hoveredSwatch = useStudioStore((s) => s.hoveredSwatch);
   const isComparingOriginal = useStudioStore((s) => s.isComparingOriginal);
   const splitCompareActive = useStudioStore((s) => s.splitCompareActive);
@@ -136,6 +137,9 @@ export function FigureCanvas(): React.ReactElement | null {
         params.set("panels", targetPanels.join(","));
       }
     }
+    if (hoveredStyleId) {
+      params.set("style", hoveredStyleId);
+    }
     if (hoveredSwatch) {
       params.set("pe", hoveredSwatch.entityId);
       params.set("ph", hoveredSwatch.hex.replace("#", ""));
@@ -148,7 +152,7 @@ export function FigureCanvas(): React.ReactElement | null {
       params.set("retry", String(retryNonce));
     }
     return `/api/v2/figures/${figure.figure_id}/render?${params.toString()}`;
-  }, [figure, hoveredPaletteId, targetPanels, hoveredSwatch, zoomFactor, retryNonce]);
+  }, [figure, hoveredPaletteId, hoveredStyleId, targetPanels, hoveredSwatch, zoomFactor, retryNonce]);
 
   // Abortable fetch + offscreen decode + silent auto-retry (prevents hover backlog & transient complex-PDF failures)
   useEffect(() => {

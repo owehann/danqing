@@ -21,12 +21,13 @@ from .exporter import (
 from .manuscript_matcher import match_manuscript_palettes
 from .palettes import get_palette, list_palettes
 from .pdf_engine import export_recolored_pdf, parse_pdf_scene
-from .solver import evaluate_gates, solve_scene_colors
+from .solver import SolveResult, evaluate_gates, solve_scene_colors
+from .style_engine import STYLE_PROFILES, apply_style_to_solve_result, list_styles, sculpt_scene_style
 from .svg_engine import export_recolored_svg, parse_svg_scene
 
 SERVER_INFO = {
     "name": "danqing_mcp",
-    "version": "0.4.0",
+    "version": "0.5.0",
 }
 
 TOOLS: list[dict[str, Any]] = [
@@ -124,6 +125,15 @@ TOOLS: list[dict[str, Any]] = [
                     "enum": ["muted", "standard", "vivid"],
                     "default": "standard",
                 },
+                "aesthetic_style": {
+                    "type": "string",
+                    "enum": list(STYLE_PROFILES.keys()),
+                    "description": (
+                        "Optional post-palette OKLCH aesthetic style sculpting envelope "
+                        "(e.g. 'aegean_blue_white', 'qingbai_porcelain', 'warm_terracotta', "
+                        "'bauhaus_airy', 'ink_vermilion', 'vermeer_jewel', 'twilight_indigo', 'kyoto_moss')."
+                    ),
+                },
                 "write_code_snippets": {
                     "type": "boolean",
                     "description": "If true, writes companion .R, .py, and .csv mapping files next to output_path.",
@@ -131,6 +141,17 @@ TOOLS: list[dict[str, Any]] = [
                 },
             },
             "required": ["input_path", "output_path"],
+        },
+    },
+    {
+        "name": "danqing_list_styles",
+        "description": (
+            "List Danqing's palette-independent OKLCH aesthetic style sculpting profiles "
+            "(applied optionally after palette selection to harmonize discrete groups and continuous scales)."
+        ),
+        "inputSchema": {
+            "type": "object",
+            "properties": {},
         },
     },
     {
@@ -254,19 +275,53 @@ def execute_tool(name: str, args: dict[str, Any]) -> dict[str, Any]:
     if name == "danqing_recolor_figure":
         in_p = Path(str(args["input_path"])).expanduser().resolve()
         out_p = Path(str(args["output_path"])).expanduser().resolve()
-        pal_id = str(args.get("palette_id", "cns_harmony_lineage"))
+        pal_id = str(args.get("palette_id", "cns_harmony_lineage")).strip()
+        aesthetic_style = str(args.get("aesthetic_style") or "").strip().lower() or None
         rule = "global_strict" if args.get("cross_panel_rule") == "unique" else "panel_scoped"
         vib = str(args.get("vibrancy", "standard"))
         kind, scene = _parse_any_scene(in_p, int(args.get("page_index", 0)))
 
-        solved = solve_scene_colors(
-            scene.entities,
-            scene.continuous_scales,
-            scene.evidence_regions,
-            style_id=pal_id,
-            collision_scope=rule,  # type: ignore[arg-type]
-            vibrancy=vib,  # type: ignore[arg-type]
-        )
+        if pal_id.lower() in ("", "original", "none"):
+            if aesthetic_style:
+                sc_res = sculpt_scene_style(scene, aesthetic_style, collision_scope=rule)  # type: ignore[arg-type]
+                solved = SolveResult(
+                    palette_id="original",
+                    collision_scope=rule,  # type: ignore[arg-type]
+                    vibrancy=vib,  # type: ignore[arg-type]
+                    entity_hex=sc_res.entity_hex,
+                    group_hex=sc_res.group_hex,
+                    scale_stops=sc_res.scale_stops,
+                    entity_swatches={},
+                    inspector_swatches={},
+                    diagnostics=sc_res.diagnostics,
+                )
+            else:
+                orig_ent = {eid: ent.original_hex for eid, ent in scene.entities.items()}
+                orig_grp = {gid: cg.original_hex for gid, cg in scene.color_groups.items()}
+                orig_sc = {sid: list(cs.original_stops_hex) for sid, cs in scene.continuous_scales.items()}
+                solved = SolveResult(
+                    palette_id="original",
+                    collision_scope=rule,  # type: ignore[arg-type]
+                    vibrancy=vib,  # type: ignore[arg-type]
+                    entity_hex=orig_ent,
+                    group_hex=orig_grp,
+                    scale_stops=orig_sc,
+                    entity_swatches={},
+                    inspector_swatches={},
+                    diagnostics=evaluate_gates(scene.entities, orig_ent, rule),  # type: ignore[arg-type]
+                )
+        else:
+            solved = solve_scene_colors(
+                scene.entities,
+                scene.continuous_scales,
+                scene.evidence_regions,
+                style_id=pal_id,
+                collision_scope=rule,  # type: ignore[arg-type]
+                vibrancy=vib,  # type: ignore[arg-type]
+            )
+            if aesthetic_style:
+                solved = apply_style_to_solve_result(scene, solved, aesthetic_style)
+
         out_p.parent.mkdir(parents=True, exist_ok=True)
         if kind == "pdf":
             out_bytes, audit = export_recolored_pdf(scene, solved.group_hex, solved.scale_stops, verify=True)
@@ -274,6 +329,7 @@ def execute_tool(name: str, args: dict[str, Any]) -> dict[str, Any]:
             out_bytes, audit = export_recolored_svg(scene, solved.group_hex, solved.scale_stops, verify=True)
         out_p.write_bytes(out_bytes)
 
+        snip_tag = f"{pal_id}+{aesthetic_style}" if aesthetic_style else pal_id
         written_files = [str(out_p)]
         if args.get("write_code_snippets", True):
             r_path = out_p.with_suffix(".palette.R")
@@ -281,7 +337,7 @@ def execute_tool(name: str, args: dict[str, Any]) -> dict[str, Any]:
             csv_path = out_p.with_suffix(".changes.csv")
             r_path.write_text(
                 generate_r_ggplot_snippet(
-                    pal_id,
+                    snip_tag,
                     scene.entities,
                     solved.entity_hex,
                     scene.continuous_scales,
@@ -291,7 +347,7 @@ def execute_tool(name: str, args: dict[str, Any]) -> dict[str, Any]:
             )
             py_path.write_text(
                 generate_python_mpl_snippet(
-                    pal_id,
+                    snip_tag,
                     scene.entities,
                     solved.entity_hex,
                     scene.continuous_scales,
@@ -305,12 +361,16 @@ def execute_tool(name: str, args: dict[str, Any]) -> dict[str, Any]:
         return {
             "output_path": str(out_p),
             "palette_id": pal_id,
+            "aesthetic_style": aesthetic_style,
             "written_files": written_files,
             "integrity_audit": {
                 "geometry_and_text_identical": bool(audit.get("g6_geometry_identical", True)),
                 "raw_experimental_images_identical": bool(audit.get("g0_evidence_bit_identical", True)),
             },
         }
+
+    if name == "danqing_list_styles":
+        return {"count": len(STYLE_PROFILES), "styles": [s.to_api_dict() for s in list_styles()]}
 
     if name == "danqing_list_palettes":
         col = args.get("collection")
