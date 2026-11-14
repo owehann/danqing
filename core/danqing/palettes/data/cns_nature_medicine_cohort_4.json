@@ -1,0 +1,61 @@
+{
+  "id": "cns_nature_medicine_cohort_4",
+  "name": {
+    "en": "CNS Nature Medicine Cohort 4",
+    "zh": "CNS 自然医学四臂队列"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#5B7FA6",
+    "#5FA292",
+    "#E09F5A",
+    "#C85A53"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_teal_navy_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC3",
+      "#D8AAA0",
+      "#C7887E",
+      "#B5675D",
+      "#A1443D",
+      "#8D1B1D"
+    ],
+    "paired_diverging_stops": [
+      "#5B7FA6",
+      "#8CA5C0",
+      "#BFCCD9",
+      "#F4F3F2",
+      "#EFD8C1",
+      "#E8BC8F",
+      "#E09F5A"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Nature Medicine Cohort 4)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 25.41,
+    "min_de2000_deutan_first6": 15.48,
+    "min_de2000_protan_first6": 18.3,
+    "min_de2000_tritan_first6": 10.2,
+    "optimal6_min_de2000": 25.41,
+    "optimal6_min_de2000_deutan": 15.48,
+    "optimal6_min_de2000_protan": 18.3,
+    "grayscale_L_spread": 0.166,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

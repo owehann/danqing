@@ -11,7 +11,7 @@
   <a href="./README.zh-CN.md"><strong>简体中文文档</strong></a> ·
   <a href="#-why-danqing">Why Danqing</a> ·
   <a href="#-quickstart--zero-cost-deployment">Quickstart &amp; Cloud</a> ·
-  <a href="#-manuscript-match--the-3406-palettes">Manuscript Match &amp; 3,406 Palettes</a> ·
+  <a href="#-manuscript-match--the-3434-palettes">Manuscript Match &amp; 3,434 Palettes</a> ·
   <a href="#-agent-plugin--mcp-server">Plugin &amp; MCP</a> ·
   <a href="#-citation--attribution">Citation</a>
 </p>
@@ -19,7 +19,7 @@
 [![Live Studio](https://img.shields.io/badge/Live_Studio-danqing.onrender.com-C84B31?style=flat-square&logo=googlechrome&logoColor=white)](https://danqing.onrender.com)
 [![CI Status](https://github.com/owehann/danqing/actions/workflows/ci.yml/badge.svg)](https://github.com/owehann/danqing/actions/workflows/ci.yml)
 [![Deploy to Render](https://img.shields.io/badge/Deploy_to_Render-Free_%240_Blueprint-0D9488?style=flat-square&logo=render)](https://render.com/deploy?repo=https://github.com/owehann/danqing)
-[![Palettes: 3,406 Verified](https://img.shields.io/badge/Palettes-3%2C406_Primary--Source_Verified-C84B31?style=flat-square)](#-manuscript-match--the-3406-palettes)
+[![Palettes: 3,434 Verified](https://img.shields.io/badge/Palettes-3%2C434_Primary--Source_Verified-C84B31?style=flat-square)](#-manuscript-match--the-3434-palettes)
 [![Plugin + MCP](https://img.shields.io/badge/Antigravity_%2B_MCP-danqing__mcp-0F766E?style=flat-square)](#-agent-plugin--mcp-server)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-0284C7?style=flat-square)](./LICENSE)
 
@@ -46,7 +46,7 @@ Scientists and students shouldn't lose hours tweaking hex codes, re-running plot
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🎨 3. 3,406 Verified Palettes &amp; Paired Ramps</h3>
+      <h3>🎨 3. 3,434 Verified Palettes &amp; Paired Ramps</h3>
       <p>Spans <strong>Accessible</strong> (Okabe–Ito, Petroff IEEE VIS, Paul Tol), <strong>Journal &amp; Scientific</strong> (NPG/NEJM/Lancet, CNS Iso-Chroma, <code>pypalettes</code>), <strong>World Museums</strong> (<code>MetBrewer</code>, <code>MoMAColors</code>, <code>nice-color-palettes</code>), <strong>CC0 Eastern Artifacts &amp; Sanzo Wada</strong>, and <strong>Crameri v8.0 / cmocean</strong> continuous maps — every palette paired with homologous 7-stop sequential &amp; diverging ramps.</p>
     </td>
     <td width="50%" valign="top">
@@ -92,18 +92,18 @@ Open `http://127.0.0.1:8765`.
 
 ---
 
-## 🎨 Manuscript Match & The 3,406 Palettes
+## 🎨 Manuscript Match & The 3,434 Palettes
 
 Click **Manuscript Match (`论文配色定调`)** in the studio sidebar to select a journal aesthetic (`CNS Clean`, `Clinical`, `Omics Atlas`, `Mineral & Museum`) or describe your manuscript (with optional session-only Google AI Studio Gemini key support and zero-cost perceptual fallback). Every discrete palette also exposes homologous 7-stop `paired_sequential_stops` and `paired_diverging_stops` so discrete panels and heatmaps stay visually unified.
 
 | Collection | Count | Representative Palettes & Provenance |
 | :--- | :---: | :--- |
 | **Accessible** | `16` | Okabe–Ito, Petroff 6/8/10 (*Matplotlib 3.10 / IEEE VIS*), IBM Safe, Paul Tol (*Bright, Vibrant, Muted, High-Contrast*), CARTO Safe |
-| **Journal & Data-Vis** | `1,689` | NPG, AAAS, NEJM, Lancet, JAMA, JCO, BMJ (`*-inspired`), LocusZoom GWAS, Observable 10, Tableau 10, Seaborn, Scanpy 10, CNS Iso-Chroma 12, curated `pypalettes` & `thiagodnf` schemes |
-| **Museum, Art & Nature** | `1,111` | Metropolitan Museum of Art (`MetBrewer`, CC0), MoMA (`MoMAColors`, MIT), `PNWColors`, `NatParksPalettes`, Ghibli/cinema & `nice-color-palettes` (MIT) |
+| **Journal & Data-Vis** | `728` | 22 curated CNS Iso-Chroma series (*Nature Immunology*, *Cell Spatial Atlas*, *Science Translational*, *Cancer Discovery*, *Nature Medicine*), NPG/AAAS/NEJM/Lancet/JAMA/JCO (`*-inspired`), LocusZoom GWAS, Observable 10, Seaborn, Scanpy 10 & academic visualization schemes |
+| **Museum, Art & Design** | `2,094` | Metropolitan Museum of Art (`MetBrewer`, CC0), MoMA (`MoMAColors`, MIT), `PNWColors`, `NatParksPalettes`, Ghibli/cinema & `nice-color-palettes` (MIT) |
 | **Eastern & Sanzo Wada** | `252` | 24 deterministic CC0 Cleveland Museum of Art mineral artifact suites (Ru/Jun/Longquan celadons, Zhao Mengfu landscape, Hokusai Red Fuji) + 228 Sanzo Wada (1933) *Dictionary of Color Combinations* (MIT) |
 | **Many Colors (Single-Cell)** | `13` | Polychrome 36, Green-Armytage 25, Scanpy 20, Zeileis 28 & Ultra-Cluster 64, Kelly 22, Glasbey + dynamic hull expansion (`K > N`) |
-| **Continuous & Diverging** | `319` | Crameri *Scientific colour maps* v8.0 (`batlow`, `lipari`, `navia`, `vik`, `roma`, `bam`), `cmocean`, Viridis/Cividis, ColorBrewer 2.0, `pypalettes` gradients, zero-midpoint lock |
+| **Continuous & Diverging** | `325` | 6 CNS white-paper ramps (`cns_ramp_*`, `cns_div_*`), Crameri *Scientific colour maps* v8.0 (`batlow`, `lipari`, `navia`, `vik`, `roma`, `bam`), `cmocean`, Viridis/Cividis, ColorBrewer 2.0, zero-midpoint lock |
 | **Domain Conventions** | `6` | COSMIC SBS-6 mutational signatures, Manhattan alternating chromosomes, Volcano `Up/Down/NS`, Cell Cycle `G1/S/G2M`, CNV `Gain/Loss/Neutral`, `A/C/G/T` bases |
 
 ---
@@ -115,7 +115,7 @@ Danqing is packaged as a ready-to-use **Google Antigravity Plugin** ([`plugin.js
 - `danqing_inspect_figure` — Inspect discrete groups, panels, continuous scales, protected raw images, and deuteranopia diagnostics.
 - `danqing_match_manuscript_palettes` — Recommend the 3 most comfortable palettes for a figure or manuscript brief.
 - `danqing_recolor_figure` — Losslessly recolor a `.pdf` or `.svg` with byte-level geometry/image verification plus `.palette.R` & `.palette.py` code output.
-- `danqing_list_palettes` — Search and filter the 3,406 verified palettes (including homologous paired gradient stops).
+- `danqing_list_palettes` — Search and filter the 3,434 verified palettes (including homologous paired gradient stops).
 
 ---
 

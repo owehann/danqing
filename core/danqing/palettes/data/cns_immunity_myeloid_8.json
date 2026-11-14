@@ -1,0 +1,65 @@
+{
+  "id": "cns_immunity_myeloid_8",
+  "name": {
+    "en": "CNS Immunity Myeloid 8",
+    "zh": "CNS 髓系免疫八色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4F9D8D",
+    "#5B7FA6",
+    "#8F72B5",
+    "#86A873",
+    "#D9796C",
+    "#E09F5A",
+    "#6AA6A2",
+    "#B67A8A"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_terracotta_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#DACFD6",
+      "#BEB1C5",
+      "#A492B3",
+      "#8A75A1",
+      "#71588F",
+      "#5A3B7D"
+    ],
+    "paired_diverging_stops": [
+      "#8F72B5",
+      "#AF9CCA",
+      "#D1C7DE",
+      "#F4F3F2",
+      "#EFD8C1",
+      "#E8BC8F",
+      "#E09F5A"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Immunity Myeloid 8)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 15.34,
+    "min_de2000_deutan_first6": 2.56,
+    "min_de2000_protan_first6": 4.44,
+    "min_de2000_tritan_first6": 8.77,
+    "optimal6_min_de2000": 15.34,
+    "optimal6_min_de2000_deutan": 2.56,
+    "optimal6_min_de2000_protan": 4.44,
+    "grayscale_L_spread": 0.166,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

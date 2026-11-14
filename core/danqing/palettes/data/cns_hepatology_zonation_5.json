@@ -1,0 +1,62 @@
+{
+  "id": "cns_hepatology_zonation_5",
+  "name": {
+    "en": "CNS Hepatology Zonation 5",
+    "zh": "CNS 肝小叶分带五色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3B6E9C",
+    "#5FA292",
+    "#C8A64B",
+    "#D98A56",
+    "#B85650"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_teal_navy_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC4",
+      "#D5ABA2",
+      "#C38A81",
+      "#B06961",
+      "#9D4842",
+      "#872423"
+    ],
+    "paired_diverging_stops": [
+      "#3B6E9C",
+      "#7899B9",
+      "#B5C6D6",
+      "#F4F3F2",
+      "#E5DABD",
+      "#D7C087",
+      "#C8A64B"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Hepatology Zonation 5)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 18.11,
+    "min_de2000_deutan_first6": 3.91,
+    "min_de2000_protan_first6": 7.84,
+    "min_de2000_tritan_first6": 9.59,
+    "optimal6_min_de2000": 18.11,
+    "optimal6_min_de2000_deutan": 3.91,
+    "optimal6_min_de2000_protan": 7.84,
+    "grayscale_L_spread": 0.214,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

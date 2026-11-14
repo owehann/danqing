@@ -1,0 +1,61 @@
+{
+  "id": "cns_clinical_survival_4",
+  "name": {
+    "en": "CNS Clinical Survival 4",
+    "zh": "CNS 临床生存四组"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2F5C85",
+    "#C2594F",
+    "#4D8E84",
+    "#C9964C"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_teal_navy_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC3",
+      "#D7AAA0",
+      "#C5897E",
+      "#B3685D",
+      "#A0463D",
+      "#8B1F1B"
+    ],
+    "paired_diverging_stops": [
+      "#2F5C85",
+      "#6F8DA9",
+      "#B0BFCE",
+      "#F4F3F2",
+      "#E6D4BC",
+      "#D8B586",
+      "#C9964C"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Clinical Survival 4)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 27.67,
+    "min_de2000_deutan_first6": 12.88,
+    "min_de2000_protan_first6": 15.55,
+    "min_de2000_tritan_first6": 15.75,
+    "optimal6_min_de2000": 27.67,
+    "optimal6_min_de2000_deutan": 12.88,
+    "optimal6_min_de2000_protan": 15.55,
+    "grayscale_L_spread": 0.245,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

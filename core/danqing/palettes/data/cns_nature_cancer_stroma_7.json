@@ -1,0 +1,64 @@
+{
+  "id": "cns_nature_cancer_stroma_7",
+  "name": {
+    "en": "CNS Nature Cancer Stroma 7",
+    "zh": "CNS 肿瘤微环境七色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#A87559",
+    "#6AA6A2",
+    "#7C96D2",
+    "#C8A64B",
+    "#C85A53",
+    "#4E79A7",
+    "#9B7BB8"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_terracotta_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC3",
+      "#D8AAA0",
+      "#C7887E",
+      "#B5675D",
+      "#A1443D",
+      "#8D1B1D"
+    ],
+    "paired_diverging_stops": [
+      "#7C96D2",
+      "#A3B5DE",
+      "#CBD4E8",
+      "#F4F3F2",
+      "#E5DABD",
+      "#D7C087",
+      "#C8A64B"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Nature Cancer Stroma 7)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 12.6,
+    "min_de2000_deutan_first6": 2.11,
+    "min_de2000_protan_first6": 5.29,
+    "min_de2000_tritan_first6": 6.55,
+    "optimal6_min_de2000": 12.6,
+    "optimal6_min_de2000_deutan": 2.11,
+    "optimal6_min_de2000_protan": 5.29,
+    "grayscale_L_spread": 0.174,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

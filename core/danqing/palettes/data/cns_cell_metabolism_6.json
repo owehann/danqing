@@ -1,0 +1,63 @@
+{
+  "id": "cns_cell_metabolism_6",
+  "name": {
+    "en": "CNS Cell Metabolism 6",
+    "zh": "CNS 细胞代谢六色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#457B9D",
+    "#C96A52",
+    "#589982",
+    "#D8A657",
+    "#7D6B9E",
+    "#997B66"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_terracotta_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E5CDC2",
+      "#D4AC9E",
+      "#C28C7A",
+      "#AF6B58",
+      "#9B4B36",
+      "#86280F"
+    ],
+    "paired_diverging_stops": [
+      "#457B9D",
+      "#7FA2B9",
+      "#B9CAD6",
+      "#F4F3F2",
+      "#EBDAC0",
+      "#E2C08E",
+      "#D8A657"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Cell Metabolism 6)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.59,
+    "min_de2000_deutan_first6": 1.0,
+    "min_de2000_protan_first6": 3.64,
+    "min_de2000_tritan_first6": 9.32,
+    "optimal6_min_de2000": 14.59,
+    "optimal6_min_de2000_deutan": 1.0,
+    "optimal6_min_de2000_protan": 3.64,
+    "grayscale_L_spread": 0.196,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

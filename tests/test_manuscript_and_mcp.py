@@ -7,6 +7,7 @@ from pathlib import Path
 
 from fastapi.testclient import TestClient
 
+from danqing.manuscript_matcher import match_manuscript_palettes
 from danqing.mcp_server import handle_jsonrpc_message
 from danqing.palettes import get_palette, list_palettes
 from danqing.pdf_engine import parse_pdf_scene
@@ -130,12 +131,26 @@ def test_mcp_server_tools_end_to_end(tmp_path: Path) -> None:
     assert out_pdf.with_suffix(".palette.py").is_file()
 
 
-def test_expanded_3406_palettes_and_homologous_paired_ramps() -> None:
+def test_expanded_3434_palettes_cns_purity_and_homologous_paired_ramps() -> None:
     all_pals = list_palettes(include_conventions=True)
-    assert len(all_pals) == 3406
+    assert len(all_pals) == 3434
+
+    # Journal collection purity: non-academic pop-culture prefixes are moved to `museum`
+    non_academic_prefixes = (
+        "pypal_palettetown_",
+        "pypal_nbapalettes_",
+        "pypal_tvthemes_",
+        "pypal_beyonce_",
+        "pypal_harrypotter_",
+        "pypal_gameofthrones_",
+        "pypal_taylorswift_",
+    )
+    journal_ids = [p.id for p in all_pals if p.collection == "journal"]
+    assert len(journal_ids) == 728
+    assert not any(jid.startswith(non_academic_prefixes) for jid in journal_ids)
 
     # Every palette exposes 7-stop paired_sequential_stops & paired_diverging_stops in to_api_dict()
-    for pid in ("okabe_ito", "east_ru_celadon", "sanzo_wada_121", "nice_cl_0002"):
+    for pid in ("okabe_ito", "cns_nature_immunology_8", "cns_ramp_teal_navy_7", "sanzo_wada_121", "nice_cl_0002"):
         pal = get_palette(pid)
         api_d = pal.to_api_dict()
         seq_stops = api_d["partners"]["paired_sequential_stops"]
@@ -143,25 +158,41 @@ def test_expanded_3406_palettes_and_homologous_paired_ramps() -> None:
         assert len(seq_stops) == 7
         assert len(div_stops) == 7
 
-    # Web API /api/v2/palettes serves all 3,406 palettes with paired stops
+    # CNS Clean Manuscript Match returns curated CNS palettes + paired CNS continuous/diverging ramps
+    cns_res = match_manuscript_palettes(preset="cns_clean", has_continuous=True, gemini_api_key="")
+    cns_ids = [r["palette_id"] for r in cns_res["recommendations"]]
+    assert len(cns_ids) == 3
+    assert all(pid.startswith("cns_") for pid in cns_ids)
+    assert all(r["paired_sequential"].startswith("cns_ramp_") for r in cns_res["recommendations"])
+    assert all(r["paired_diverging"].startswith("cns_div_") for r in cns_res["recommendations"])
+
+    cns_seq_only = match_manuscript_palettes(preset="cns_clean", required_k=1, has_continuous=True, gemini_api_key="")
+    assert cns_seq_only["recommendations"][0]["palette_id"] == "cns_ramp_teal_navy_7"
+
+    cns_div_only = match_manuscript_palettes(
+        preset="cns_clean", required_k=1, has_continuous=True, has_diverging=True, gemini_api_key=""
+    )
+    assert cns_div_only["recommendations"][0]["palette_id"] == "cns_div_slate_terracotta_7"
+
+    # Web API /api/v2/palettes serves all 3,434 palettes with paired stops
     c = TestClient(app)
     res = c.get("/api/v2/palettes")
     assert res.status_code == 200
     payload = res.json()
-    assert len(payload["palettes"]) == 3406
-    sample_api = next(x for x in payload["palettes"] if x["id"] == "sanzo_wada_121")
+    assert len(payload["palettes"]) == 3434
+    sample_api = next(x for x in payload["palettes"] if x["id"] == "cns_nature_immunology_8")
     assert len(sample_api["partners"]["paired_sequential_stops"]) == 7
     assert len(sample_api["partners"]["paired_diverging_stops"]) == 7
 
     # Solver uses homologous paired_sequential_stops & paired_diverging_stops on continuous scales
     sc_seq = parse_pdf_scene(SAMPLE_PDF.read_bytes(), SAMPLE_PDF.name, "seq_pair_test")
-    pal_sw = get_palette("sanzo_wada_121")
-    sr_seq = solve_scene_colors(sc_seq.entities, sc_seq.continuous_scales, sc_seq.evidence_regions, "sanzo_wada_121")
+    pal_sw = get_palette("cns_nature_immunology_8")
+    sr_seq = solve_scene_colors(sc_seq.entities, sc_seq.continuous_scales, sc_seq.evidence_regions, "cns_nature_immunology_8")
     sid_seq = next(iter(sc_seq.continuous_scales))
     assert sr_seq.scale_stops[sid_seq] == list(pal_sw.paired_sequential_stops)
 
     sc_div = parse_pdf_scene(SHIELD_PDF.read_bytes(), SHIELD_PDF.name, "div_pair_test")
-    sr_div = solve_scene_colors(sc_div.entities, sc_div.continuous_scales, sc_div.evidence_regions, "sanzo_wada_121")
+    sr_div = solve_scene_colors(sc_div.entities, sc_div.continuous_scales, sc_div.evidence_regions, "cns_nature_immunology_8")
     sid_div = next(iter(sc_div.continuous_scales))
     assert sr_div.scale_stops[sid_div] == list(pal_sw.paired_diverging_stops)
 
@@ -171,7 +202,7 @@ def test_expanded_3406_palettes_and_homologous_paired_ramps() -> None:
             "jsonrpc": "2.0",
             "id": 99,
             "method": "tools/call",
-            "params": {"name": "danqing_list_palettes", "arguments": {"query": "sanzo_wada_121", "limit": 5}},
+            "params": {"name": "danqing_list_palettes", "arguments": {"query": "cns_nature_immunology_8", "limit": 5}},
         }
     )
     assert mcp_pals is not None and not mcp_pals["result"]["isError"]

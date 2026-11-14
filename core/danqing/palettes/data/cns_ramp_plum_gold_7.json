@@ -1,0 +1,64 @@
+{
+  "id": "cns_ramp_plum_gold_7",
+  "name": {
+    "en": "CNS Plum-Gold Signal 7",
+    "zh": "CNS 紫金信号渐变七阶"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#F5F2F6",
+    "#DFD3E3",
+    "#BEA8C9",
+    "#987BA8",
+    "#B37A6E",
+    "#CE8E52",
+    "#A85928"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_teal_navy_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F5F2F6",
+      "#DFD3E3",
+      "#BEA8C9",
+      "#987BA8",
+      "#B37A6E",
+      "#CE8E52",
+      "#A85928"
+    ],
+    "paired_diverging_stops": [
+      "#F5F2F6",
+      "#F5F2F5",
+      "#F4F3F3",
+      "#F4F3F2",
+      "#DDBFAF",
+      "#C48C6D",
+      "#A85928"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Plum-Gold Signal 7)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 9.24,
+    "min_de2000_deutan_first6": 7.21,
+    "min_de2000_protan_first6": 7.8,
+    "min_de2000_tritan_first6": 7.29,
+    "optimal6_min_de2000": 13.94,
+    "optimal6_min_de2000_deutan": 12.51,
+    "optimal6_min_de2000_protan": 13.95,
+    "grayscale_L_spread": 0.415,
+    "colorblind_safe": false,
+    "print_friendly": true
+  }
+}

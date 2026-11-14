@@ -1,0 +1,64 @@
+{
+  "id": "cns_div_slate_terracotta_7",
+  "name": {
+    "en": "CNS Diverging Slate-Terracotta 7",
+    "zh": "CNS 蓝灰赤陶双向七阶"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#2B547E",
+    "#638BB2",
+    "#A8C0D6",
+    "#F4F3F0",
+    "#E2A68C",
+    "#C96D54",
+    "#8F2D28"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_teal_navy_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC3",
+      "#D6ABA1",
+      "#C5897F",
+      "#B2695E",
+      "#9E473F",
+      "#89211E"
+    ],
+    "paired_diverging_stops": [
+      "#2B547E",
+      "#638BB2",
+      "#A8C0D6",
+      "#F4F3F0",
+      "#E2A68C",
+      "#C96D54",
+      "#8F2D28"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Diverging Slate-Terracotta 7)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 15.83,
+    "min_de2000_deutan_first6": 13.42,
+    "min_de2000_protan_first6": 16.44,
+    "min_de2000_tritan_first6": 15.6,
+    "optimal6_min_de2000": 17.22,
+    "optimal6_min_de2000_deutan": 17.96,
+    "optimal6_min_de2000_protan": 16.44,
+    "grayscale_L_spread": 0.527,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

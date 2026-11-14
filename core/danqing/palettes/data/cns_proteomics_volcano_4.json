@@ -1,0 +1,61 @@
+{
+  "id": "cns_proteomics_volcano_4",
+  "name": {
+    "en": "CNS Proteomics Contrast 4",
+    "zh": "CNS 蛋白质组四对比色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#C45B4D",
+    "#3F6F9C",
+    "#5B9A8B",
+    "#A6B0BA"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_teal_navy_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC3",
+      "#D7AB9F",
+      "#C6897C",
+      "#B3685B",
+      "#A04639",
+      "#8B2016"
+    ],
+    "paired_diverging_stops": [
+      "#C45B4D",
+      "#D88F83",
+      "#E8C1B9",
+      "#F4F3F2",
+      "#B6C6D6",
+      "#7A9AB9",
+      "#3F6F9C"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Proteomics Contrast 4)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 4,
+    "max_colors": 4,
+    "min_de2000_first6": 21.71,
+    "min_de2000_deutan_first6": 12.1,
+    "min_de2000_protan_first6": 13.35,
+    "min_de2000_tritan_first6": 13.52,
+    "optimal6_min_de2000": 21.71,
+    "optimal6_min_de2000_deutan": 12.1,
+    "optimal6_min_de2000_protan": 13.35,
+    "grayscale_L_spread": 0.225,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

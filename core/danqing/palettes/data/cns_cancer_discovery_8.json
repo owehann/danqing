@@ -1,0 +1,65 @@
+{
+  "id": "cns_cancer_discovery_8",
+  "name": {
+    "en": "CNS Cancer Discovery 8",
+    "zh": "CNS 肿瘤发现八色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#355C7D",
+    "#C0564B",
+    "#4B8F8C",
+    "#D89A5B",
+    "#7B689E",
+    "#6B9E78",
+    "#B37388",
+    "#8C9AA6"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_teal_navy_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC3",
+      "#D7AA9F",
+      "#C6897D",
+      "#B4685C",
+      "#A0463B",
+      "#8B1E19"
+    ],
+    "paired_diverging_stops": [
+      "#355C7D",
+      "#728CA3",
+      "#B1BFCA",
+      "#F4F3F2",
+      "#ECD6C1",
+      "#E3B88F",
+      "#D89A5B"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Cancer Discovery 8)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 8,
+    "max_colors": 8,
+    "min_de2000_first6": 14.15,
+    "min_de2000_deutan_first6": 10.28,
+    "min_de2000_protan_first6": 8.45,
+    "min_de2000_tritan_first6": 7.31,
+    "optimal6_min_de2000": 14.15,
+    "optimal6_min_de2000_deutan": 10.28,
+    "optimal6_min_de2000_protan": 8.45,
+    "grayscale_L_spread": 0.273,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

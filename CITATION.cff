@@ -5,13 +5,13 @@ title: "Danqing (丹青): Lossless Scientific Figure & Manuscript Recoloring Stu
 abstract: >-
   Open-source lossless vector PDF/SVG scientific figure and manuscript recoloring studio,
   MCP server, and AI agent plugin. Eliminates hours of tedious trial-and-error hex tweaking
-  with 3,406 primary-source-verified accessible, journal, museum, Sanzo Wada, and CC0 Eastern mineral palettes
+  with 3,434 primary-source-verified accessible, CNS/journal, museum, Sanzo Wada, and CC0 Eastern mineral palettes
   while keeping every coordinate, glyph, and raw experimental image (Western blots, H&E) intact.
 authors:
   - family-names: "Han"
     given-names: "Xinyin"
     alias: "owehann"
-version: "0.4.0"
+version: "0.4.1"
 date-released: "2026-11-14"
 license: "Apache-2.0"
 repository-code: "https://github.com/owehann/danqing"

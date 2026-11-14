@@ -11,7 +11,7 @@
   <a href="./README.md"><strong>English Documentation</strong></a> ·
   <a href="#-为什么做丹青">为什么做丹青</a> ·
   <a href="#-快速使用与零成本部署">快速使用与云部署</a> ·
-  <a href="#-论文配色定调与-3406-套核验色库">论文配色定调与色库</a> ·
+  <a href="#-论文配色定调与-3434-套核验色库">论文配色定调与色库</a> ·
   <a href="#-agent-插件与-mcp-服务">Agent 插件与 MCP</a> ·
   <a href="#-软件署名与引用">软件署名</a>
 </p>
@@ -19,7 +19,7 @@
 [![Live Studio](https://img.shields.io/badge/在线工作台-danqing.onrender.com-C84B31?style=flat-square&logo=googlechrome&logoColor=white)](https://danqing.onrender.com)
 [![CI Status](https://github.com/owehann/danqing/actions/workflows/ci.yml/badge.svg)](https://github.com/owehann/danqing/actions/workflows/ci.yml)
 [![Deploy to Render](https://img.shields.io/badge/Render_免费云部署-%240_免绑卡蓝图-0D9488?style=flat-square&logo=render)](https://render.com/deploy?repo=https://github.com/owehann/danqing)
-[![Palettes: 3,406 Verified](https://img.shields.io/badge/权威调色板-3%2C406_套溯源核验-C84B31?style=flat-square)](#-论文配色定调与-3406-套核验色库)
+[![Palettes: 3,434 Verified](https://img.shields.io/badge/权威调色板-3%2C434_套溯源核验-C84B31?style=flat-square)](#-论文配色定调与-3434-套核验色库)
 [![Plugin + MCP](https://img.shields.io/badge/Antigravity_%2B_MCP-danqing__mcp-0F766E?style=flat-square)](#-agent-插件与-mcp-服务)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-0284C7?style=flat-square)](./LICENSE)
 
@@ -46,7 +46,7 @@
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🎨 3. 7 大馆藏级核验色库（3,406 套 + 同源渐变）</h3>
+      <h3>🎨 3. 7 大馆藏级核验色库（3,434 套 + 同源渐变）</h3>
       <p>囊括<strong>色盲无障碍标准</strong>（Okabe–Ito、Petroff、Paul Tol）、<strong>期刊与科研可视化</strong>（NPG/NEJM/Lancet、CNS 等彩度十二色、<code>pypalettes</code>）、<strong>世界艺术馆藏</strong>（大都会 <code>MetBrewer</code>、MoMA、精选设计色卡）、<strong>CC0 东方器物与和田三造《配色总鉴》</strong>及 <strong>Crameri v8.0 / cmocean</strong> 连续色阶，每套离散色卡均自带 7 阶同源连续与发散渐变。</p>
     </td>
     <td width="50%" valign="top">
@@ -92,18 +92,18 @@ pip install -e ".[dev]"
 
 ---
 
-## 🎨 论文配色定调与 3,406 套核验色库
+## 🎨 论文配色定调与 3,434 套核验色库
 
 在右侧调色板栏顶部点击 **「论文配色定调」**，即可按投稿刊风（`顶刊清朗` / `临床医学` / `高维组学` / `温润博物`）或自由输入课题方向，自动根据当前图表的组别数量与连续热图结构筛出最舒适耐看的 3 套推荐方案。全库每套色板均附带 7 阶同源连续与发散色阶（`paired_sequential_stops` / `paired_diverging_stops`），让多栏离散图与热图自然呼应。
 
 | 分类 | 数量 | 代表配色与学术/馆藏溯源 |
 | :--- | :---: | :--- |
 | **色盲友好（Accessible）** | `16` | Okabe–Ito、Petroff 6/8/10（*IEEE VIS / Matplotlib 3.10*）、IBM Safe、Paul Tol 全系列、CARTO Safe |
-| **期刊与现代数据科学（Journal）** | `1,689` | NPG、AAAS、NEJM、Lancet、JAMA、JCO、BMJ（`*-inspired`）、LocusZoom GWAS、Observable 10、Scanpy 10、CNS 等彩度十二色、`pypalettes` 与 `thiagodnf` 精选方案 |
-| **世界馆藏与自然博物（Museum）** | `1,111` | 大都会博物馆 `MetBrewer`（CC0）、现代艺术博物馆 `MoMAColors`（MIT）、`PNWColors`、`NatParksPalettes`、`nice-color-palettes` 精选色卡（MIT） |
+| **期刊与现代数据科学（Journal）** | `728` | 22 套纯正 CNS 等彩度低疲劳系列（*Nature Immunology*、*Cell Spatial Atlas*、*Science Translational*、*Cancer Discovery*、*Nature Medicine*）、NPG/AAAS/NEJM/Lancet/JAMA/JCO（`*-inspired`）、LocusZoom、Observable 10、Scanpy 10 与统计可视化色库 |
+| **世界馆藏与自然设计（Museum）** | `2,094` | 大都会博物馆 `MetBrewer`（CC0）、现代艺术博物馆 `MoMAColors`（MIT）、`PNWColors`、`NatParksPalettes`、`nice-color-palettes` 及精选艺术/设计色卡（MIT） |
 | **东方器物与和田三造（Eastern）** | `252` | 克利夫兰艺术博物馆 48 幅 CC0 藏品确定性提取 24 套矿物色（汝钧青瓷、赵孟頫青绿山水、赤富士等）+ 和田三造 1933《配色总鉴》228 套经典组合（MIT） |
 | **单细胞/空间多簇（Many Colors）** | `13` | Polychrome 36、Green-Armytage 25、Scanpy 20、Zeileis 28 / Ultra-Cluster 64、Kelly 22、Glasbey + 动态多簇扩展 |
-| **连续与发散色阶（Continuous）** | `319` | Crameri v8.0 科学色阶（`batlow`、`lipari`、`navia`、`vik`、`roma`）、`cmocean`、Viridis/Cividis、ColorBrewer 2.0、`pypalettes` 连续梯度，发散色阶自动锁定零点 |
+| **连续与发散色阶（Continuous）** | `325` | 6 套 CNS 白底专用连续/双向色阶（`cns_ramp_*`、`cns_div_*`）、Crameri v8.0 科学色阶（`batlow`、`lipari`、`navia`、`vik`、`roma`）、`cmocean`、Viridis/Cividis、ColorBrewer 2.0，发散色阶自动锁定零点 |
 | **学科常规约定（Conventions）** | `6` | COSMIC SBS-6 突变谱、曼哈顿图染色体双色、火山图 `Up/Down/NS`、细胞周期 `G1/S/G2M`、拷贝数 `Gain/Loss/Neutral`、四碱基 `A/C/G/T` |
 
 ---
@@ -115,7 +115,7 @@ pip install -e ".[dev]"
 - `danqing_inspect_figure` — 解析 PDF/SVG 分栏、离散组别、连续色阶、受保护实验原图与色盲安全指标；
 - `danqing_match_manuscript_palettes` — 根据论文期刊与组数一键推荐 3 套最舒适和谐的科研色板；
 - `danqing_recolor_figure` — 字节级无损换色导出，并同步写出 `.palette.R`（`ggplot2`）与 `.palette.py`（`matplotlib`）代码；
-- `danqing_list_palettes` — 按分类、颜色数或无障碍属性检索全部 3,406 套核验色库（含同源连续/发散渐变）。
+- `danqing_list_palettes` — 按分类、颜色数或无障碍属性检索全部 3,434 套核验色库（含同源连续/发散渐变）。
 
 ---
 

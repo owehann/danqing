@@ -88,7 +88,7 @@ TOOLS: list[dict[str, Any]] = [
     {
         "name": "danqing_recolor_figure",
         "description": (
-            "Losslessly recolor a vector .pdf or .svg figure using one of Danqing's 3,406 verified palettes "
+            "Losslessly recolor a vector .pdf or .svg figure using one of Danqing's 3,434 verified palettes "
             "(with homologous paired sequential/diverging ramps) while guaranteeing bit-identical geometry, text, "
             "and raw experimental images (Western blots, H&E). Optionally writes reusable R (ggplot2) and Python (matplotlib) palette snippets."
         ),
@@ -135,7 +135,7 @@ TOOLS: list[dict[str, Any]] = [
     },
     {
         "name": "danqing_list_palettes",
-        "description": "Search and filter Danqing's 3,406 verified palettes (including homologous paired gradient stops) by collection, minimum colors, or color-blind safety.",
+        "description": "Search and filter Danqing's 3,434 verified palettes (including homologous paired gradient stops) by collection, minimum colors, or color-blind safety.",
         "inputSchema": {
             "type": "object",
             "properties": {

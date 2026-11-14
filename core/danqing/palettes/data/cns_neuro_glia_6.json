@@ -1,0 +1,63 @@
+{
+  "id": "cns_neuro_glia_6",
+  "name": {
+    "en": "CNS Neuro-Glia 6",
+    "zh": "CNS 神经胶质六色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3A668C",
+    "#5698A3",
+    "#7DA374",
+    "#D49B54",
+    "#B86B6B",
+    "#8771A6"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_terracotta_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D3D5",
+      "#ADB8C2",
+      "#899DAF",
+      "#67839D",
+      "#456A8A",
+      "#225177"
+    ],
+    "paired_diverging_stops": [
+      "#3A668C",
+      "#7693AE",
+      "#B4C3D0",
+      "#F4F3F2",
+      "#EAD6BF",
+      "#E0B98B",
+      "#D49B54"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Neuro-Glia 6)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 20.61,
+    "min_de2000_deutan_first6": 5.95,
+    "min_de2000_protan_first6": 7.8,
+    "min_de2000_tritan_first6": 10.61,
+    "optimal6_min_de2000": 20.61,
+    "optimal6_min_de2000_deutan": 5.95,
+    "optimal6_min_de2000_protan": 7.8,
+    "grayscale_L_spread": 0.234,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

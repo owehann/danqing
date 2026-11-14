@@ -1,0 +1,67 @@
+{
+  "id": "cns_cell_atlas_10",
+  "name": {
+    "en": "CNS Cell Spatial Atlas 10",
+    "zh": "CNS Cell 空间图谱十色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3D6B99",
+    "#D1685E",
+    "#4F9D8D",
+    "#D99B52",
+    "#8B6BB1",
+    "#5FA8C6",
+    "#A87559",
+    "#7FA66B",
+    "#C07A92",
+    "#7C96D2"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_teal_navy_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D3D6",
+      "#ACB8C5",
+      "#889DB3",
+      "#6583A2",
+      "#436990",
+      "#1E4F7E"
+    ],
+    "paired_diverging_stops": [
+      "#3D6B99",
+      "#7897B7",
+      "#B5C5D5",
+      "#F4F3F2",
+      "#ECD6BE",
+      "#E3B98A",
+      "#D99B52"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Cell Spatial Atlas 10)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 19.05,
+    "min_de2000_deutan_first6": 8.37,
+    "min_de2000_protan_first6": 5.4,
+    "min_de2000_tritan_first6": 6.14,
+    "optimal6_min_de2000": 19.05,
+    "optimal6_min_de2000_deutan": 8.37,
+    "optimal6_min_de2000_protan": 5.4,
+    "grayscale_L_spread": 0.219,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

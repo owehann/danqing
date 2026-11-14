@@ -1,0 +1,62 @@
+{
+  "id": "cns_nordic_slate_5",
+  "name": {
+    "en": "CNS Nordic Slate 5",
+    "zh": "CNS 北欧岩板低饱和五色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3C5A78",
+    "#658AA6",
+    "#6A9E96",
+    "#C99B63",
+    "#B5635C"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_teal_navy_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E3CEC5",
+      "#D1ADA4",
+      "#BD8D84",
+      "#A96E65",
+      "#954F48",
+      "#7F2F2B"
+    ],
+    "paired_diverging_stops": [
+      "#3C5A78",
+      "#768BA0",
+      "#B3BEC8",
+      "#F4F3F2",
+      "#E6D6C2",
+      "#D8B893",
+      "#C99B63"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Nordic Slate 5)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 5,
+    "max_colors": 5,
+    "min_de2000_first6": 17.74,
+    "min_de2000_deutan_first6": 12.53,
+    "min_de2000_protan_first6": 15.14,
+    "min_de2000_tritan_first6": 5.69,
+    "optimal6_min_de2000": 17.74,
+    "optimal6_min_de2000_deutan": 12.53,
+    "optimal6_min_de2000_protan": 15.14,
+    "grayscale_L_spread": 0.263,
+    "colorblind_safe": true,
+    "print_friendly": false
+  }
+}

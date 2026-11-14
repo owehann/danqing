@@ -1,0 +1,63 @@
+{
+  "id": "cns_science_translational_6",
+  "name": {
+    "en": "CNS Science Translational 6",
+    "zh": "CNS Science 转化医学六色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2E5F8A",
+    "#C45B4D",
+    "#4A9086",
+    "#D49A4E",
+    "#7C6BA3",
+    "#7E8C99"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_terracotta_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC3",
+      "#D7AB9F",
+      "#C6897C",
+      "#B3685B",
+      "#A04639",
+      "#8B2016"
+    ],
+    "paired_diverging_stops": [
+      "#2E5F8A",
+      "#6F8FAD",
+      "#B0C0CF",
+      "#F4F3F2",
+      "#EAD6BD",
+      "#E0B888",
+      "#D49A4E"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Science Translational 6)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 17.03,
+    "min_de2000_deutan_first6": 5.27,
+    "min_de2000_protan_first6": 7.62,
+    "min_de2000_tritan_first6": 13.75,
+    "optimal6_min_de2000": 17.03,
+    "optimal6_min_de2000_deutan": 5.27,
+    "optimal6_min_de2000_protan": 7.62,
+    "grayscale_L_spread": 0.255,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

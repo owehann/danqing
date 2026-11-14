@@ -1,0 +1,63 @@
+{
+  "id": "cns_gastroenterology_6",
+  "name": {
+    "en": "CNS Gastroenterology 6",
+    "zh": "CNS 胃肠肝病六色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#3D6B99",
+    "#C46854",
+    "#54998A",
+    "#D6A358",
+    "#836FA6",
+    "#8FA3B0"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_terracotta_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D0D3D6",
+      "#ACB8C5",
+      "#889DB3",
+      "#6583A2",
+      "#436990",
+      "#1E4F7E"
+    ],
+    "paired_diverging_stops": [
+      "#3D6B99",
+      "#7897B7",
+      "#B5C5D5",
+      "#F4F3F2",
+      "#EBD9C0",
+      "#E1BE8E",
+      "#D6A358"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Gastroenterology 6)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 18.54,
+    "min_de2000_deutan_first6": 8.22,
+    "min_de2000_protan_first6": 4.54,
+    "min_de2000_tritan_first6": 12.84,
+    "optimal6_min_de2000": 18.54,
+    "optimal6_min_de2000_deutan": 8.22,
+    "optimal6_min_de2000_protan": 4.54,
+    "grayscale_L_spread": 0.232,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

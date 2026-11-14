@@ -1,0 +1,63 @@
+{
+  "id": "cns_nature_biotech_6",
+  "name": {
+    "en": "CNS Nature Biotechnology 6",
+    "zh": "CNS 自然生物技术六色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#2D6A8E",
+    "#4FA69A",
+    "#D49B4E",
+    "#C45D53",
+    "#7A6AA3",
+    "#7A94A6"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_terracotta_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E6CDC3",
+      "#D6ABA0",
+      "#C5897F",
+      "#B2685E",
+      "#9F473E",
+      "#8A211D"
+    ],
+    "paired_diverging_stops": [
+      "#2D6A8E",
+      "#7096AF",
+      "#B1C4D1",
+      "#F4F3F2",
+      "#EAD6BD",
+      "#E0B988",
+      "#D49B4E"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Nature Biotechnology 6)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 18.7,
+    "min_de2000_deutan_first6": 6.75,
+    "min_de2000_protan_first6": 4.82,
+    "min_de2000_tritan_first6": 11.04,
+    "optimal6_min_de2000": 18.7,
+    "optimal6_min_de2000_deutan": 6.75,
+    "optimal6_min_de2000_protan": 4.82,
+    "grayscale_L_spread": 0.228,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

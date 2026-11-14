@@ -1,0 +1,67 @@
+{
+  "id": "cns_microbiome_taxa_10",
+  "name": {
+    "en": "CNS Microbiome Taxa 10",
+    "zh": "CNS 微生物菌群十色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#4A779D",
+    "#5FA08E",
+    "#86A873",
+    "#C8A64B",
+    "#D98A56",
+    "#C85A53",
+    "#B67A8A",
+    "#8F72B5",
+    "#659BB5",
+    "#9B8778"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_teal_navy_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E7CCC3",
+      "#D8AAA0",
+      "#C7887E",
+      "#B5675D",
+      "#A1443D",
+      "#8D1B1D"
+    ],
+    "paired_diverging_stops": [
+      "#C8A64B",
+      "#D7C087",
+      "#E5DABD",
+      "#F4F3F2",
+      "#D1C7DE",
+      "#AF9CCA",
+      "#8F72B5"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Microbiome Taxa 10)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 10,
+    "max_colors": 10,
+    "min_de2000_first6": 13.32,
+    "min_de2000_deutan_first6": 3.91,
+    "min_de2000_protan_first6": 5.84,
+    "min_de2000_tritan_first6": 9.59,
+    "optimal6_min_de2000": 13.32,
+    "optimal6_min_de2000_deutan": 3.91,
+    "optimal6_min_de2000_protan": 5.84,
+    "grayscale_L_spread": 0.185,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

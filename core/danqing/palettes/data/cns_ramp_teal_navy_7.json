@@ -1,0 +1,64 @@
+{
+  "id": "cns_ramp_teal_navy_7",
+  "name": {
+    "en": "CNS Teal-Navy Depth 7",
+    "zh": "CNS 青黛深度渐变七阶"
+  },
+  "collection": "continuous",
+  "kind": "sequential",
+  "order": "gradient",
+  "colors": [
+    "#F2F6F7",
+    "#D5E8E7",
+    "#A3D0CC",
+    "#68B0AB",
+    "#3E899E",
+    "#265E82",
+    "#163554"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_terracotta_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F2F6F7",
+      "#D5E8E7",
+      "#A3D0CC",
+      "#68B0AB",
+      "#3E899E",
+      "#265E82",
+      "#163554"
+    ],
+    "paired_diverging_stops": [
+      "#F2F6F7",
+      "#F3F5F5",
+      "#F3F4F4",
+      "#F4F3F2",
+      "#A4B0BB",
+      "#5B7087",
+      "#163554"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Teal-Navy Depth 7)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 7.32,
+    "min_de2000_deutan_first6": 4.02,
+    "min_de2000_protan_first6": 3.34,
+    "min_de2000_tritan_first6": 8.3,
+    "optimal6_min_de2000": 10.92,
+    "optimal6_min_de2000_deutan": 10.39,
+    "optimal6_min_de2000_protan": 9.03,
+    "grayscale_L_spread": 0.648,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}

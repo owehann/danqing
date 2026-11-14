@@ -1,0 +1,63 @@
+{
+  "id": "cns_epigenomics_chromatin_6",
+  "name": {
+    "en": "CNS Epigenomics Chromatin 6",
+    "zh": "CNS 表观遗传六色"
+  },
+  "collection": "journal",
+  "kind": "qualitative",
+  "order": "discrete",
+  "colors": [
+    "#446E9B",
+    "#8668A6",
+    "#4D9489",
+    "#D4885C",
+    "#C8A44F",
+    "#6B8FA3"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_terracotta_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#D1D3D6",
+      "#ADB8C4",
+      "#899DB2",
+      "#6782A0",
+      "#46698E",
+      "#234F7C"
+    ],
+    "paired_diverging_stops": [
+      "#446E9B",
+      "#7D99B8",
+      "#B7C6D5",
+      "#F4F3F2",
+      "#E5D9BE",
+      "#D7BF89",
+      "#C8A44F"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Epigenomics Chromatin 6)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 6,
+    "max_colors": 6,
+    "min_de2000_first6": 14.72,
+    "min_de2000_deutan_first6": 4.92,
+    "min_de2000_protan_first6": 2.37,
+    "min_de2000_tritan_first6": 6.06,
+    "optimal6_min_de2000": 14.72,
+    "optimal6_min_de2000_deutan": 4.92,
+    "optimal6_min_de2000_protan": 2.37,
+    "grayscale_L_spread": 0.207,
+    "colorblind_safe": false,
+    "print_friendly": false
+  }
+}

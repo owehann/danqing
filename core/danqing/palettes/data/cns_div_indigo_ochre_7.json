@@ -1,0 +1,64 @@
+{
+  "id": "cns_div_indigo_ochre_7",
+  "name": {
+    "en": "CNS Diverging Indigo-Ochre 7",
+    "zh": "CNS 靛蓝赭石双向七阶"
+  },
+  "collection": "continuous",
+  "kind": "diverging",
+  "order": "gradient",
+  "colors": [
+    "#394E85",
+    "#6B80B5",
+    "#AAB7D9",
+    "#F5F4F2",
+    "#DFC28C",
+    "#C79248",
+    "#8E571D"
+  ],
+  "neutral": "#C9D6DF",
+  "partners": {
+    "sequential": "cns_ramp_teal_navy_7",
+    "diverging": "cns_div_slate_terracotta_7",
+    "paired_sequential_stops": [
+      "#F6EFE7",
+      "#E0D0C0",
+      "#CBB19A",
+      "#B59374",
+      "#A0764F",
+      "#8A5929",
+      "#743D00"
+    ],
+    "paired_diverging_stops": [
+      "#394E85",
+      "#6B80B5",
+      "#AAB7D9",
+      "#F5F4F2",
+      "#DFC28C",
+      "#C79248",
+      "#8E571D"
+    ]
+  },
+  "source": {
+    "title": "Danqing CNS Iso-Chroma Curated Series (CNS Diverging Indigo-Ochre 7)",
+    "author": "Xinyin Han (Danqing CNS Visual Aesthetics)",
+    "year": 2026,
+    "url": "https://github.com/owehann/danqing",
+    "license": "MIT"
+  },
+  "artifact": null,
+  "qc": {
+    "color_count": 7,
+    "max_colors": 7,
+    "min_de2000_first6": 14.02,
+    "min_de2000_deutan_first6": 12.23,
+    "min_de2000_protan_first6": 14.1,
+    "min_de2000_tritan_first6": 13.62,
+    "optimal6_min_de2000": 17.84,
+    "optimal6_min_de2000_deutan": 18.43,
+    "optimal6_min_de2000_protan": 17.14,
+    "grayscale_L_spread": 0.533,
+    "colorblind_safe": true,
+    "print_friendly": true
+  }
+}
