@@ -1,0 +1,13 @@
+species,variable,mean,std,count,p_value
+Adelie,bill_length_mm,38.791391,2.663405,151,2.694614e-91
+Adelie,bill_depth_mm,18.346358,1.216650,151,1.513659e-53
+Adelie,flipper_length_mm,189.953642,6.539457,151,1.351183e-87
+Adelie,body_mass_g,3700.662252,458.566126,151,2.892368e-82
+Chinstrap,bill_length_mm,48.833824,3.339256,68,2.694614e-91
+Chinstrap,bill_depth_mm,18.420588,1.135395,68,1.513659e-53
+Chinstrap,flipper_length_mm,195.823529,7.131894,68,1.351183e-87
+Chinstrap,body_mass_g,3733.088235,384.335081,68,2.892368e-82
+Gentoo,bill_length_mm,47.504878,3.081857,123,2.694614e-91
+Gentoo,bill_depth_mm,14.982114,0.981220,123,1.513659e-53
+Gentoo,flipper_length_mm,217.186992,6.484976,123,1.351183e-87
+Gentoo,body_mass_g,5076.016260,504.116237,123,NA

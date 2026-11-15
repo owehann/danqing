@@ -19,6 +19,8 @@ RUNTIME_PACKAGES = (
     "uvicorn",
     "python-multipart",
     "pydantic",
+    "openpyxl",
+    "python-docx",
 )
 
 FORBIDDEN_TOKENS = ("agpl", "gnu general public license", "gplv2", "gplv3", "gpl-2", "gpl-3")

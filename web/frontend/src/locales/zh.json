@@ -259,5 +259,346 @@
     "presetThumbAlt": "示例图表：{{title}}",
     "pageThumbAlt": "第 {{num}} 页缩略图",
     "closeDrawer": "关闭调色板抽屉"
+  },
+  "tableStudio": {
+    "a11y": {
+      "modeSwitcher": "切换工作台模式",
+      "structureRegion": "表格结构与布局栏",
+      "styleRegion": "表格样式与配色栏",
+      "tableScrollRegion": "可滚动表格预览区域",
+      "rawPreviewLabel": "原始表格预览：{{title}}",
+      "closeStyleDrawer": "关闭样式抽屉"
+    },
+    "mode": {
+      "figure": "矢量图 (.pdf/.svg)",
+      "table": "表格 (.csv/.xlsx)"
+    },
+    "landing": {
+      "headline": "先看原表再整理，导出原生 Excel 与 Word",
+      "tagline": "原样检视导入网格，支持长转宽透视、双层跨列表头、均值标准差合并与 P 值防进位排版，一键下载 .xlsx 与 .docx 表格。",
+      "dropTitle": "拖入 CSV、TSV、TXT 或 XLSX 文件",
+      "browseButton": "选择表格文件",
+      "pasteButton": "粘贴数据",
+      "formats": "支持 CSV、TSV、TXT、Excel (.xlsx) 或按 Ctrl/⌘+V 直接粘贴 · 上限 25 MB",
+      "privacy": "表格仅在当前会话内存中解析，关闭标签页即自动清除。",
+      "samplesHeading": "或试一试公开原始数据导出的待整理表格",
+      "needsPrefix": "需整理：{{detail}}",
+      "sourceCredit": "原始数据：{{provider}}（{{license}}）· 汇总由本工具脚本计算"
+    },
+    "topbar": {
+      "datasetSwitcher": "切换表格文档",
+      "removeDoc": "移除 {{name}}",
+      "reuploadTag": "需重新上传",
+      "uploadMenu": "上传表格…",
+      "pasteMenu": "粘贴数据…",
+      "backHome": "返回首页",
+      "holdCompare": "按住对比",
+      "styleDrawer": "样式",
+      "moreExportActions": "更多导出操作"
+    },
+    "copy": {
+      "copyShortBtn": "复制表格",
+      "copiedToast": "表格已复制到剪贴板",
+      "failedToast": "浏览器限制了剪贴板写入"
+    },
+    "errors": {
+      "noDataRows": "未在该表格中检测到有效数据行。",
+      "emptyFile": "所选文件为空。",
+      "decodeFailed": "无法解析该文件，请检查编码格式或分隔符。",
+      "tooLarge": "文件大小超过 25 MB 上限。",
+      "unsupported": "不支持该文件类型，请选择 .csv、.tsv、.txt 或 .xlsx 文件。",
+      "network": "网络请求失败，请确认本地服务正在运行。",
+      "exportFailed": "导出文件生成失败，请重试。",
+      "dismiss": "关闭提示"
+    },
+    "warnings": {
+      "badgeCount": "{{count}} 项提示",
+      "FORMULA_NO_CACHE": "列“{{column}}”包含无缓存计算结果的 Excel 公式，已原样保留公式文本。",
+      "RAGGED_ROWS": "共有 {{rows}} 行单元格数量少于表头，已自动补齐空位。",
+      "DUPLICATE_HEADERS": "检测到重复列名，已自动添加数字后缀区分。",
+      "LOCALE_DECIMAL_COMMA": "检测到欧式小数逗号格式，已自动按小数点解析。",
+      "EMPTY_SHEET": "该工作表不包含有效数据行。",
+      "TITLE_ROWS_SKIPPED": "检测到表头上方有 {{rows}} 行标题行。",
+      "FOOTER_ROWS_DETECTED": "检测到表底有 {{rows}} 行注释或脚注。"
+    },
+    "suggest": {
+      "detectedLead": "检测到：",
+      "readyToTidy": "已载入原始网格，点击整理即可编辑表头、列顺序与配色样式",
+      "headerRows": "多层表头与标题行",
+      "footer": "{{count}} 行表底脚注",
+      "partBy": "按“{{col}}”分块",
+      "merges": "{{count}} 组均值/区间合并",
+      "sig": "P 值列规范排版",
+      "sparkline": "{{count}} 个序列列合成趋势线",
+      "pivot": "长格式转宽表",
+      "decimalComma": "欧式小数逗号",
+      "applyStructureOnly": "一键整理结构",
+      "applyAll": "整理并美化",
+      "review": "逐条查看",
+      "hideReview": "收起列表",
+      "accept": "采纳",
+      "dismiss": "忽略"
+    },
+    "canvas": {
+      "dropOverlay": "松开以载入 CSV、TSV、TXT 或 XLSX 原表",
+      "stageRaw": "原表",
+      "stageTidied": "已整理",
+      "stageStyled": "已美化",
+      "styledSubhint": "已美化 · 下载后可在 Excel / Word 中编辑",
+      "dimensions": "{{rows}} 行 × {{cols}} 列",
+      "blocksCount": "{{count}} 个分块",
+      "sheetLabel": "工作表",
+      "emptySheetSuffix": "空",
+      "rawHeaderTag": "建议表头行",
+      "rawFooterTag": "建议表底脚注",
+      "editTableNumPlaceholder": "Table 1",
+      "editTitlePlaceholder": "点击输入表格标题…",
+      "editSubtitlePlaceholder": "点击添加副标题或队列说明（可选）…",
+      "originalValueTitle": "原值：{{value}}",
+      "editCellLabel": "编辑单元格内容",
+      "editFootnoteSymbol": "脚注符号",
+      "editFootnoteText": "脚注文字",
+      "addFootnote": "添加脚注",
+      "multiSelected": "已选 {{count}} 列",
+      "multiAddSpanner": "添加跨列表头",
+      "multiMerge": "合并列",
+      "multiSparkline": "生成趋势线",
+      "multiHide": "隐藏",
+      "multiClear": "取消选择",
+      "spannerPromptPlaceholder": "输入跨列表头名称…",
+      "tidiedReadyLead": "结构整理完成（当前为无装饰素格），可在左栏继续调整结构，或一键套用推荐版式与配色。",
+      "applyRecommendedStyle": "套用推荐美化（{{preset}}）",
+      "heatLegendAria": "热图色阶图例"
+    },
+    "colMenu": {
+      "openLabel": "列操作菜单：{{name}}",
+      "renameLabel": "列名",
+      "roleLabel": "角色",
+      "precisionLabel": "小数位",
+      "unitLabel": "单位",
+      "unitPlaceholder": "如 %、mm",
+      "sortLabel": "排序",
+      "sortAsc": "升序",
+      "sortDesc": "降序",
+      "sortClear": "清除",
+      "moveLeft": "左移",
+      "moveRight": "右移",
+      "hideCol": "隐藏该列",
+      "setBlock": "设为分块依据",
+      "clearBlock": "取消分块依据",
+      "mergeRightParen": "合并右侧列：a (b)",
+      "mergeRightPm": "合并右侧列：a ± b",
+      "mergeRightCi": "三列合并：a (b–c)",
+      "unmerge": "拆分已合并列",
+      "spannerRight": "与右侧列添加跨列表头…",
+      "setSigSource": "设为显著性来源列",
+      "ratioHint": "比值列建议：中心点设为 1、开启对数尺度并选用发散色阶。",
+      "logBlockedHint": "该列包含 ≤ 0 的数值，对数热图已跳过着色。"
+    },
+    "roles": {
+      "normal": "普通",
+      "count": "计数 (整数)",
+      "part": "分块",
+      "heat": "热图",
+      "sig": "P / FDR",
+      "bar": "行内条形"
+    },
+    "precisions": {
+      "auto": "自动",
+      "d0": "0 位",
+      "d1": "1 位",
+      "d2": "2 位",
+      "d3": "3 位"
+    },
+    "structure": {
+      "secTitles": "1. 标题",
+      "tableNumber": "表号",
+      "title": "主标题",
+      "subtitle": "副标题",
+      "secColumns": "2. 列",
+      "dragColHandle": "拖动调整列顺序：{{name}}",
+      "toggleColVis": "切换列显示或隐藏：{{name}}",
+      "colListHint": "拖动行或按 Alt + ↑/↓ 调整顺序；双击列名可改名。",
+      "secGrouping": "3. 分组与排序",
+      "blockBy": "分块依据",
+      "none": "无",
+      "blockOrder": "分块顺序",
+      "orderAppearance": "按原表出现顺序",
+      "orderCustom": "自定义顺序",
+      "moveUp": "上移",
+      "moveDown": "下移",
+      "sortCol": "分块内排序",
+      "indentRows": "亚组行缩进",
+      "indentRowToggle": "缩进第 {{row}} 行",
+      "secCombos": "4. 组合",
+      "mergesTitle": "合并列",
+      "noMerges": "暂无合并列。",
+      "addMergeBtn": "合并",
+      "fmtParen": "a (b)",
+      "fmtPlusMinus": "a ± b",
+      "fmtCi": "a (b–c)",
+      "spannersTitle": "跨列表头",
+      "noSpanners": "暂无跨列表头。",
+      "addSpannerBtn": "添加跨列表头",
+      "fromCol": "起始列",
+      "toCol": "结束列",
+      "sparklinesTitle": "趋势线",
+      "noSparklines": "暂无趋势线列。",
+      "createSparklineFromRun": "一键生成趋势线 ({{label}})",
+      "createSparklineRange": "合成区间趋势线",
+      "sharedScale": "共享 y 轴范围",
+      "hideSources": "隐藏源数据列",
+      "pivotTitle": "长格式转宽表",
+      "enablePivot": "启用长转宽透视",
+      "pivotRowKey": "行变量列",
+      "pivotColKey": "列分组列",
+      "pivotValCols": "数值列",
+      "secFootnotes": "5. 脚注",
+      "noFootnotes": "暂无自定义脚注。",
+      "anchorCol": "关联表头列",
+      "noAnchor": "不挂载上标",
+      "removeItem": "删除",
+      "secSig": "6. 显著性与缺失值",
+      "sigSource": "P 值来源列",
+      "sigTargets": "星号与加粗目标列",
+      "pStyle": "P 值格式",
+      "pStyleNejm": "NEJM (0.03 / <0.001)",
+      "pStyleApa": "APA (.032 / <.001)",
+      "pStyleExact": "精确科学计数 (2.7×10⁻⁹¹)",
+      "showStars": "附加显著性星号 (* / ** / ***)",
+      "missingLabel": "缺失值显示",
+      "missingDash": "破折号 (—)",
+      "missingNa": "NA",
+      "missingBlank": "留空"
+    },
+    "sig": {
+      "legend": "* P < 0.05；** P < 0.01；*** P < 0.001。"
+    },
+    "style": {
+      "secPreset": "预设",
+      "secRamp": "色阶",
+      "secHeatmap": "热图",
+      "secEmphasis": "强调方式",
+      "secRhythm": "行节奏",
+      "presets": {
+        "raw": {
+          "title": "原表素格",
+          "desc": "仅展示结构化黑白网格，不叠加底色装饰"
+        },
+        "matrix_heatmap": {
+          "title": "矩阵热图",
+          "desc": "微圆角瓦片间距配合柔和连续色阶"
+        },
+        "cns_three_line": {
+          "title": "CNS 三线表",
+          "desc": "标准顶线、栏目线与底线，零竖线"
+        },
+        "ft_editorial": {
+          "title": "FT 财经风",
+          "desc": "粗顶线、衬线主标题与清晰水平分隔线"
+        }
+      },
+      "heatDisabledHint": "请在表头菜单或左栏中将至少一个数值列角色设为“热图”。",
+      "rampNeedHeatmapNote": "色阶色块需在“矩阵热图”预设下展示（当前色阶作用于分块色条与趋势图）。",
+      "scopeNeedHeatmapNote": "切换为“矩阵热图”预设后即可在数值列渲染热图色块。",
+      "switchToHeatmapBtn": "切换为矩阵热图",
+      "multiScaleRowHint": "检测到各行量纲跨度较大，建议改为“按行”归一化以凸显组间差异。",
+      "switchToPerRowBtn": "改为按行归一化",
+      "scopeLabel": "归一化范围",
+      "scopes": {
+        "per_column": "按列",
+        "per_part": "按分块",
+        "per_row": "按行",
+        "global": "整表统一"
+      },
+      "globalDisabledReason": "各热图列单位不一致，不能整表统一归一化。",
+      "centerLabel": "发散中心",
+      "centerAuto": "自动（跨 0 时取 0）",
+      "centerCustom": "指定数值",
+      "centerInputLabel": "自定义热图中心值",
+      "logScale": "归一化前取对数 (log10)",
+      "emphasisDisabledHint": "请先在左栏“显著性与缺失值”中指定 P 值来源列。",
+      "emphasisModes": {
+        "bold_star_mono": {
+          "title": "纯黑加粗（禁用彩色字）",
+          "desc": "仅以纯黑字重与星号标注显著项，清爽耐看"
+        },
+        "accent_bold": {
+          "title": "单强调色 + 加粗",
+          "desc": "在浅底单元格使用沉稳暗红字重强调"
+        },
+        "hairline_box": {
+          "title": "细内框标注",
+          "desc": "为显著单元格绘制 1 px 深色细内框"
+        },
+        "off": {
+          "title": "关闭强调",
+          "desc": "所有单元格保持常规字重"
+        }
+      },
+      "rhythmDisabledHint": "矩阵热图预设下，热图单元格底色会覆盖行交替底色。",
+      "rhythms": {
+        "none": "纯白留白",
+        "zebra": "隔行斑马纹",
+        "group_breathing": "每 3 行呼吸底色"
+      },
+      "tabularNums": "等宽数字右对齐 (tabular-nums)"
+    },
+    "palettes": {
+      "autoContrastBadge": "自动反白/反黑",
+      "umiTeal": "清朗青蓝 (umi_ramp)",
+      "sdiTerracotta": "暖陶砂岩 (sdi_ramp)",
+      "dualPart": "双分块同源色阶（青蓝 + 暖陶）",
+      "qingbaiJade": "影青玉调",
+      "divergingBuRd": "冷暖发散色阶",
+      "kyotoMoss": "京都松苔绿",
+      "slateInk": "克制水墨灰阶",
+      "moreCatalog": "从色库搜索更多连续/发散渐变",
+      "searchCatalog": "搜索连续或发散色阶名称…"
+    },
+    "pasteDialog": {
+      "title": "粘贴来自 Excel / Word / 网页的表格数据",
+      "lead": "直接将复制的单元格区域粘贴至下方，自动识别 HTML 表格、Tab 分隔、CSV 与分号分隔文本。",
+      "placeholder": "在此粘贴包含表头的多行表格数据…",
+      "fillSample": "填入测试数据 (Penguins 前 5 行)",
+      "parsing": "正在解析…",
+      "submit": "打开原表"
+    },
+    "exportDialog": {
+      "title": "导出表格文件",
+      "filenameLabel": "文件名",
+      "tableNumLabel": "表号",
+      "tableTitleLabel": "标题",
+      "includeFootnotes": "包含表底脚注",
+      "formatLabel": "导出格式",
+      "formats": {
+        "xlsx": {
+          "title": "Excel 工作簿 · .xlsx（推荐）",
+          "desc": "写入真实数值与格式、原生上标、跨列合并、手改批注，并附带未合并的 data 工作表"
+        },
+        "docx": {
+          "title": "Word 投稿三线表 · .docx",
+          "desc": "1.5 pt / 0.75 pt 规范三线、gridSpan 跨列表头、跨页重复表头与原生上标"
+        },
+        "html": {
+          "title": "独立网页表格 · .html",
+          "desc": "单文件独立 HTML 表格，内嵌完整可复现规则元数据"
+        },
+        "zip": {
+          "title": "可复现规则代码包 · .zip",
+          "desc": "内含 table.json 规则配置、未合并 data.csv 与可直接运行的 Python great_tables 脚本"
+        }
+      },
+      "previewHeading": "导出内容摘要与预览",
+      "summaryHeaderLayers": "表头层数：{{count}} 层",
+      "summaryColumns": "可见列数：{{count}} 列（共 {{rows}} 行）",
+      "summaryBlocks": "分块数量：{{count}} 个",
+      "summaryFootnotes": "表底脚注：{{count}} 条",
+      "summaryEdits": "手改单元格（写入批注留痕）：{{count}} 处",
+      "summaryRawDataSheet": "附带 data 原始数值工作表，方便二次计算",
+      "sparklineFallbackNote": "趋势线在单元格中以字符迷你图呈现，完整数值序列已同步写入 data 工作表。",
+      "downloadBtn": "下载 {{ext}}",
+      "generating": "正在生成…"
+    }
   }
 }

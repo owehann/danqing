@@ -259,5 +259,346 @@
     "presetThumbAlt": "Sample figure: {{title}}",
     "pageThumbAlt": "Page {{num}} preview",
     "closeDrawer": "Close palettes drawer"
+  },
+  "tableStudio": {
+    "a11y": {
+      "modeSwitcher": "Switch studio mode",
+      "structureRegion": "Table structure and layout",
+      "styleRegion": "Table styling rules",
+      "tableScrollRegion": "Scrollable table preview",
+      "rawPreviewLabel": "Raw sample preview: {{title}}",
+      "closeStyleDrawer": "Close style drawer"
+    },
+    "mode": {
+      "figure": "Figure (.pdf/.svg)",
+      "table": "Table (.csv/.xlsx)"
+    },
+    "landing": {
+      "headline": "Tidy messy tables, export native Excel and Word",
+      "tagline": "Inspect the raw grid first, reshape long-to-wide layouts, merge summary pairs, format P values safely, and download editable .xlsx or .docx files.",
+      "dropTitle": "Drop CSV, TSV, TXT, or XLSX here",
+      "browseButton": "Choose table file",
+      "pasteButton": "Paste data",
+      "formats": "CSV, TSV, TXT, Excel (.xlsx), or press Ctrl/⌘+V to paste · Up to 25 MB",
+      "privacy": "Tables stay in session memory only and clear when you close the tab.",
+      "samplesHeading": "Or inspect a public raw dataset",
+      "needsPrefix": "Needs tidying: {{detail}}",
+      "sourceCredit": "Raw data: {{provider}} ({{license}}) · Summary computed by build script"
+    },
+    "topbar": {
+      "datasetSwitcher": "Switch table document",
+      "removeDoc": "Remove {{name}}",
+      "reuploadTag": "Re-upload needed",
+      "uploadMenu": "Upload table…",
+      "pasteMenu": "Paste data…",
+      "backHome": "Back to home",
+      "holdCompare": "Hold to compare",
+      "styleDrawer": "Style",
+      "moreExportActions": "More export options"
+    },
+    "copy": {
+      "copyShortBtn": "Copy table",
+      "copiedToast": "Table copied to clipboard",
+      "failedToast": "Clipboard write blocked by browser"
+    },
+    "errors": {
+      "noDataRows": "No data rows were found in this table.",
+      "emptyFile": "The uploaded file is empty.",
+      "decodeFailed": "Could not parse this file. Check encoding or delimiter format.",
+      "tooLarge": "File exceeds the 25 MB limit.",
+      "unsupported": "Unsupported format. Choose a .csv, .tsv, .txt, or .xlsx file.",
+      "network": "Network request failed. Check that the local server is running.",
+      "exportFailed": "Could not generate the export file. Please try again.",
+      "dismiss": "Dismiss"
+    },
+    "warnings": {
+      "badgeCount": "{{count}} warnings",
+      "FORMULA_NO_CACHE": "Column '{{column}}' contains uncached Excel formulas; formula text is shown as-is.",
+      "RAGGED_ROWS": "{{rows}} rows had fewer cells than the header and were padded.",
+      "DUPLICATE_HEADERS": "Duplicate column headers were disambiguated with numeric suffixes.",
+      "LOCALE_DECIMAL_COMMA": "European decimal commas were detected and parsed as decimal points.",
+      "EMPTY_SHEET": "This worksheet has no tabular rows.",
+      "TITLE_ROWS_SKIPPED": "{{rows}} title rows above the header were detected.",
+      "FOOTER_ROWS_DETECTED": "{{rows}} footer note rows at the bottom were detected."
+    },
+    "suggest": {
+      "detectedLead": "Detected:",
+      "readyToTidy": "Raw grid loaded — tidy layout to edit headers, columns, and styling",
+      "headerRows": "Multi-row header & title",
+      "footer": "{{count}} footer note rows",
+      "partBy": "Block by '{{col}}'",
+      "merges": "{{count}} paired summary columns",
+      "sig": "P-value formatting",
+      "sparkline": "{{count}} series columns → sparkline",
+      "pivot": "Long-to-wide reshape",
+      "decimalComma": "Decimal comma locale",
+      "applyStructureOnly": "Tidy layout",
+      "applyAll": "Tidy & style",
+      "review": "Review items",
+      "hideReview": "Hide items",
+      "accept": "Accept",
+      "dismiss": "Dismiss"
+    },
+    "canvas": {
+      "dropOverlay": "Drop CSV, TSV, TXT, or XLSX to open raw table",
+      "stageRaw": "Raw",
+      "stageTidied": "Tidied",
+      "stageStyled": "Styled",
+      "styledSubhint": "Styled · Editable after download in Excel or Word",
+      "dimensions": "{{rows}} rows × {{cols}} cols",
+      "blocksCount": "{{count}} blocks",
+      "sheetLabel": "Sheet",
+      "emptySheetSuffix": "empty",
+      "rawHeaderTag": "Suggested header",
+      "rawFooterTag": "Suggested footnote",
+      "editTableNumPlaceholder": "Table 1",
+      "editTitlePlaceholder": "Click to add table title…",
+      "editSubtitlePlaceholder": "Optional subtitle or cohort note…",
+      "originalValueTitle": "Original value: {{value}}",
+      "editCellLabel": "Edit cell value",
+      "editFootnoteSymbol": "Footnote symbol",
+      "editFootnoteText": "Footnote text",
+      "addFootnote": "Add footnote",
+      "multiSelected": "{{count}} columns selected",
+      "multiAddSpanner": "Add spanner",
+      "multiMerge": "Merge",
+      "multiSparkline": "Make sparkline",
+      "multiHide": "Hide",
+      "multiClear": "Clear",
+      "spannerPromptPlaceholder": "Spanner label…",
+      "tidiedReadyLead": "Structure tidied (unstyled grid). Refine columns on the left or apply the recommended style.",
+      "applyRecommendedStyle": "Apply recommended style ({{preset}})",
+      "heatLegendAria": "Heatmap scale legend"
+    },
+    "colMenu": {
+      "openLabel": "Column options for {{name}}",
+      "renameLabel": "Column header",
+      "roleLabel": "Role",
+      "precisionLabel": "Decimals",
+      "unitLabel": "Unit",
+      "unitPlaceholder": "e.g. %, mm",
+      "sortLabel": "Sort",
+      "sortAsc": "Asc",
+      "sortDesc": "Desc",
+      "sortClear": "Clear",
+      "moveLeft": "Move left",
+      "moveRight": "Move right",
+      "hideCol": "Hide column",
+      "setBlock": "Use as block column",
+      "clearBlock": "Clear block grouping",
+      "mergeRightParen": "Merge right: a (b)",
+      "mergeRightPm": "Merge right: a ± b",
+      "mergeRightCi": "Merge 3 cols: a (b–c)",
+      "unmerge": "Split merged columns",
+      "spannerRight": "Group with right column…",
+      "setSigSource": "Set as P-value source",
+      "ratioHint": "Ratio column: consider center = 1, log scale, and diverging ramp.",
+      "logBlockedHint": "Contains ≤ 0 values; log10 heatmap is skipped on this column."
+    },
+    "roles": {
+      "normal": "Normal",
+      "count": "Count (int)",
+      "part": "Block",
+      "heat": "Heatmap",
+      "sig": "P / FDR",
+      "bar": "Inline bar"
+    },
+    "precisions": {
+      "auto": "Auto",
+      "d0": "0",
+      "d1": "1",
+      "d2": "2",
+      "d3": "3"
+    },
+    "structure": {
+      "secTitles": "1. Titles",
+      "tableNumber": "Number",
+      "title": "Title",
+      "subtitle": "Subtitle",
+      "secColumns": "2. Columns",
+      "dragColHandle": "Drag to reorder {{name}}",
+      "toggleColVis": "Toggle visibility for {{name}}",
+      "colListHint": "Drag or press Alt + ↑/↓ to reorder; double-click name to rename.",
+      "secGrouping": "3. Grouping & sort",
+      "blockBy": "Block by",
+      "none": "None",
+      "blockOrder": "Block order",
+      "orderAppearance": "As in data",
+      "orderCustom": "Custom order",
+      "moveUp": "Move up",
+      "moveDown": "Move down",
+      "sortCol": "Sort within block",
+      "indentRows": "Subgroup row indent",
+      "indentRowToggle": "Indent row {{row}}",
+      "secCombos": "4. Combinations",
+      "mergesTitle": "Merged columns",
+      "noMerges": "No merged columns yet.",
+      "addMergeBtn": "Merge",
+      "fmtParen": "a (b)",
+      "fmtPlusMinus": "a ± b",
+      "fmtCi": "a (b–c)",
+      "spannersTitle": "Spanner headers",
+      "noSpanners": "No spanner headers yet.",
+      "addSpannerBtn": "Add spanner",
+      "fromCol": "From column",
+      "toCol": "To column",
+      "sparklinesTitle": "Sparklines",
+      "noSparklines": "No sparkline columns yet.",
+      "createSparklineFromRun": "Create sparkline ({{label}})",
+      "createSparklineRange": "Combine range",
+      "sharedScale": "Shared Y axis",
+      "hideSources": "Hide source columns",
+      "pivotTitle": "Long-to-wide pivot",
+      "enablePivot": "Enable long-to-wide pivot",
+      "pivotRowKey": "Row variable",
+      "pivotColKey": "Column group",
+      "pivotValCols": "Value columns",
+      "secFootnotes": "5. Footnotes",
+      "noFootnotes": "No custom footnotes.",
+      "anchorCol": "Anchor column",
+      "noAnchor": "No column anchor",
+      "removeItem": "Remove",
+      "secSig": "6. Significance & missing",
+      "sigSource": "P-value source",
+      "sigTargets": "Attach stars / emphasis to",
+      "pStyle": "P format",
+      "pStyleNejm": "NEJM (0.03 / <0.001)",
+      "pStyleApa": "APA (.032 / <.001)",
+      "pStyleExact": "Exact (2.7×10⁻⁹¹)",
+      "showStars": "Append significance stars (* / ** / ***)",
+      "missingLabel": "Missing display",
+      "missingDash": "Em dash (—)",
+      "missingNa": "NA",
+      "missingBlank": "Blank"
+    },
+    "sig": {
+      "legend": "* P < 0.05; ** P < 0.01; *** P < 0.001."
+    },
+    "style": {
+      "secPreset": "Preset",
+      "secRamp": "Color ramp",
+      "secHeatmap": "Heatmap",
+      "secEmphasis": "Emphasis",
+      "secRhythm": "Row rhythm",
+      "presets": {
+        "raw": {
+          "title": "Unstyled grid",
+          "desc": "Plain black-and-white structure without styling fills"
+        },
+        "matrix_heatmap": {
+          "title": "Matrix heatmap",
+          "desc": "Rounded tile spacing with calm continuous color ramps"
+        },
+        "cns_three_line": {
+          "title": "CNS three-line",
+          "desc": "Top, header, and bottom rules only — zero vertical lines"
+        },
+        "ft_editorial": {
+          "title": "FT editorial",
+          "desc": "Editorial headline rule, serif title, and crisp horizontal lines"
+        }
+      },
+      "heatDisabledHint": "Set at least one numeric column role to Heatmap in the column menu.",
+      "rampNeedHeatmapNote": "Color ramps fill cells in Matrix heatmap mode (currently tinting accents and series).",
+      "scopeNeedHeatmapNote": "Switch preset to Matrix heatmap to display colored cell tiles.",
+      "switchToHeatmapBtn": "Switch to Matrix heatmap",
+      "multiScaleRowHint": "Rows span different units or scales — Per row normalization highlights group contrasts.",
+      "switchToPerRowBtn": "Normalize per row",
+      "scopeLabel": "Normalization",
+      "scopes": {
+        "per_column": "Per column",
+        "per_part": "Per block",
+        "per_row": "Per row",
+        "global": "Whole table"
+      },
+      "globalDisabledReason": "Heatmap columns have different units and cannot share one scale.",
+      "centerLabel": "Center",
+      "centerAuto": "Auto (0 if +/-)",
+      "centerCustom": "Custom value",
+      "centerInputLabel": "Custom heatmap center",
+      "logScale": "Log10 scale before normalization",
+      "emphasisDisabledHint": "Select a P-value source column in Structure → Significance first.",
+      "emphasisModes": {
+        "bold_star_mono": {
+          "title": "Black bold (no colored text)",
+          "desc": "Highlights significant cells with crisp black weight only"
+        },
+        "accent_bold": {
+          "title": "Muted crimson + bold",
+          "desc": "Applies deep accent ink on light cells"
+        },
+        "hairline_box": {
+          "title": "Hairline inner frame",
+          "desc": "Draws a 1 px dark frame around significant cells"
+        },
+        "off": {
+          "title": "Off",
+          "desc": "Uniform font weight across all cells"
+        }
+      },
+      "rhythmDisabledHint": "Heatmap cell fills override row background stripes in Matrix Heatmap.",
+      "rhythms": {
+        "none": "Clean white",
+        "zebra": "Alternating zebra",
+        "group_breathing": "3-row breathing tint"
+      },
+      "tabularNums": "Monospaced right-aligned digits (tabular-nums)"
+    },
+    "palettes": {
+      "autoContrastBadge": "WCAG AA",
+      "umiTeal": "Aegean Teal (umi_ramp)",
+      "sdiTerracotta": "Warm Terracotta (sdi_ramp)",
+      "dualPart": "Dual-Block Teal & Terracotta",
+      "qingbaiJade": "Qingbai Celadon",
+      "divergingBuRd": "Balanced Blue–Coral Diverging",
+      "kyotoMoss": "Kyoto Moss & Bamboo",
+      "slateInk": "Monochrome Ink Wash",
+      "moreCatalog": "Browse continuous ramps from catalog",
+      "searchCatalog": "Search sequential or diverging ramps…"
+    },
+    "pasteDialog": {
+      "title": "Paste table from Excel, Word, or web",
+      "lead": "Paste copied cells directly below. HTML tables, Tab-separated rows, CSV, and semicolon tables are detected automatically.",
+      "placeholder": "Paste spreadsheet rows or HTML table here…",
+      "fillSample": "Insert test rows (Penguins)",
+      "parsing": "Parsing…",
+      "submit": "Open raw table"
+    },
+    "exportDialog": {
+      "title": "Export table",
+      "filenameLabel": "Filename",
+      "tableNumLabel": "Table no.",
+      "tableTitleLabel": "Title",
+      "includeFootnotes": "Include footnotes",
+      "formatLabel": "Format",
+      "formats": {
+        "xlsx": {
+          "title": "Excel workbook · .xlsx (Recommended)",
+          "desc": "Numeric cells + formats, superscripts, spanner merges, cell edit notes, and unmerged 'data' sheet"
+        },
+        "docx": {
+          "title": "Word three-line table · .docx",
+          "desc": "1.5 pt / 0.75 pt academic rules, gridSpan spanners, repeating header row, and true superscripts"
+        },
+        "html": {
+          "title": "Standalone HTML · .html",
+          "desc": "Self-contained HTML table with embedded reproducible rule metadata"
+        },
+        "zip": {
+          "title": "Reproducible bundle · .zip",
+          "desc": "Contains table.json rules, unmerged data.csv, and runnable Python great_tables script"
+        }
+      },
+      "previewHeading": "Export summary & preview",
+      "summaryHeaderLayers": "Header layers: {{count}}",
+      "summaryColumns": "Visible columns: {{count}} ({{rows}} rows)",
+      "summaryBlocks": "Blocks: {{count}}",
+      "summaryFootnotes": "Footnotes: {{count}}",
+      "summaryEdits": "Edited cells (saved as comments): {{count}}",
+      "summaryRawDataSheet": "Includes unmerged 'data' worksheet for recalculation",
+      "sparklineFallbackNote": "Sparklines export as Unicode mini-bars in cells plus full numeric series in the 'data' worksheet.",
+      "downloadBtn": "Download {{ext}}",
+      "generating": "Generating…"
+    }
   }
 }

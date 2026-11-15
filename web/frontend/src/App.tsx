@@ -6,13 +6,21 @@ import { FigureCanvas } from "./components/FigureCanvas";
 import { LandingView } from "./components/LandingView";
 import { ProcessingView } from "./components/ProcessingView";
 import { RightSidebar } from "./components/RightSidebar";
+import { TableCanvas } from "./components/table/TableCanvas";
+import { TableDialogs } from "./components/table/TableDialogs";
+import { TableLandingView } from "./components/table/TableLandingView";
+import { TableStructurePanel } from "./components/table/TableStructurePanel";
+import { TableStylePanel } from "./components/table/TableStylePanel";
 import { TopBar } from "./components/TopBar";
 import { UploadDialogs } from "./components/UploadDialogs";
 import { useStudioStore } from "./store";
+import { useTableStudioStore } from "./table/tableStore";
 
 export function App(): React.ReactElement {
   const { t } = useTranslation();
+  const studioMode = useStudioStore((s) => s.studioMode);
   const pageMode = useStudioStore((s) => s.pageMode);
+  const tablePageMode = useTableStudioStore((s) => s.tablePageMode);
   const initCatalog = useStudioStore((s) => s.initCatalog);
   const uploadFile = useStudioStore((s) => s.uploadFile);
   const uploadSvgText = useStudioStore((s) => s.uploadSvgText);
@@ -76,7 +84,17 @@ export function App(): React.ReactElement {
         void uploadFile(files[0]);
         return;
       }
+      const html = e.clipboardData?.getData("text/html") || "";
       const txt = e.clipboardData?.getData("text/plain") || "";
+      if (
+        useStudioStore.getState().studioMode === "table" &&
+        ((html && html.toLowerCase().includes("<table")) ||
+          (txt.includes("\t") && txt.includes("\n")))
+      ) {
+        e.preventDefault();
+        void useTableStudioStore.getState().submitPaste({ html, text: txt });
+        return;
+      }
       if (txt.includes("<svg") && txt.includes("</svg>")) {
         e.preventDefault();
         void uploadSvgText(txt);
@@ -97,6 +115,38 @@ export function App(): React.ReactElement {
       if (e.key === "?") {
         e.preventDefault();
         state.openDialog("shortcuts");
+        return;
+      }
+
+      if (state.studioMode === "table") {
+        const tblState = useTableStudioStore.getState();
+        if (e.key === "Escape") {
+          if (tblState.isComparingRaw) {
+            tblState.setComparingRaw(false);
+          }
+          return;
+        }
+        if (tblState.tablePageMode !== "editor" || tblState.activeModal !== null) return;
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "z") {
+          e.preventDefault();
+          if (e.shiftKey) {
+            tblState.redo();
+          } else {
+            tblState.undo();
+          }
+          return;
+        }
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "y") {
+          e.preventDefault();
+          tblState.redo();
+          return;
+        }
+        if (e.key === "\\") {
+          tblState.setComparingRaw(true);
+        } else if (e.key.toLowerCase() === "e" && !e.metaKey && !e.ctrlKey && !e.altKey) {
+          e.preventDefault();
+          tblState.setActiveModal("export");
+        }
         return;
       }
 
@@ -156,6 +206,7 @@ export function App(): React.ReactElement {
     const onKeyUp = (e: KeyboardEvent): void => {
       if (e.key === "\\") {
         useStudioStore.getState().setComparingOriginal(false);
+        useTableStudioStore.getState().setComparingRaw(false);
       }
     };
 
@@ -201,25 +252,49 @@ export function App(): React.ReactElement {
           {t("a11y.skipToMain")}
         </a>
 
-        {windowDragActive && pageMode === "editor" ? (
+        {windowDragActive &&
+        ((studioMode === "table" &&
+          (tablePageMode === "editor" || tablePageMode === "landing")) ||
+          (studioMode === "figure" && pageMode === "editor")) ? (
           <div className="dq-drop-overlay">
-            <div className="dq-drop-overlay__box">{t("canvas.dropOverlay")}</div>
+            <div className="dq-drop-overlay__box">
+              {studioMode === "table"
+                ? t("tableStudio.canvas.dropOverlay")
+                : t("canvas.dropOverlay")}
+            </div>
           </div>
         ) : null}
 
         <TopBar />
 
-        {pageMode === "landing" ? <LandingView /> : null}
-        {pageMode === "processing" ? <ProcessingView /> : null}
-        {pageMode === "editor" ? (
-          <div className="dq-editor">
-            <ElementsPanel />
-            <FigureCanvas />
-            <RightSidebar />
-          </div>
-        ) : null}
+        {studioMode === "table" ? (
+          <>
+            {tablePageMode === "landing" ? (
+              <TableLandingView />
+            ) : (
+              <div className="dq-table-editor">
+                <TableStructurePanel />
+                <TableCanvas />
+                <TableStylePanel />
+              </div>
+            )}
+            <TableDialogs />
+          </>
+        ) : (
+          <>
+            {pageMode === "landing" ? <LandingView /> : null}
+            {pageMode === "processing" ? <ProcessingView /> : null}
+            {pageMode === "editor" ? (
+              <div className="dq-editor">
+                <ElementsPanel />
+                <FigureCanvas />
+                <RightSidebar />
+              </div>
+            ) : null}
+            <ExportDialog />
+          </>
+        )}
 
-        <ExportDialog />
         <UploadDialogs />
       </div>
     </>

@@ -34,6 +34,8 @@ RUN pip install --upgrade pip && pip install .
 
 COPY web/backend/ ./web/backend/
 COPY bench/figures/ ./bench/figures/
+COPY bench/tables/MANIFEST.json ./bench/tables/MANIFEST.json
+COPY bench/tables/out/ ./bench/tables/out/
 COPY --from=frontend-builder /build/web/frontend/dist ./web/frontend/dist
 
 RUN chown -R danqing:danqing /app

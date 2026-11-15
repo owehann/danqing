@@ -1,0 +1,60 @@
+{
+  "script_version": "2.0.0",
+  "generated_at_utc": "2026-11-15T10:20:35Z",
+  "samples": [
+    {
+      "id": "penguins_long",
+      "filename": "penguins_long.csv",
+      "raw_filename": "penguins.csv",
+      "url": "https://raw.githubusercontent.com/allisonhorst/palmerpenguins/main/inst/extdata/penguins.csv",
+      "source_page": "https://allisonhorst.github.io/palmerpenguins/",
+      "provider_en": "Palmer Station LTER (Horst, Hill & Gorman, 2020)",
+      "provider_zh": "Palmer Station LTER（Horst, Hill & Gorman, 2020）",
+      "license": "CC0-1.0",
+      "title_en": "Palmer Penguins — Long Groupby Export",
+      "title_zh": "企鹅形态学 — Pandas 长格式汇总导出",
+      "needs_en": "Long format · scientific-notation P · 6 decimals · snake_case labels",
+      "needs_zh": "需整理：长格式透视 · 科学计数法 P 值 · 6 位小数 · 原始变量名",
+      "raw_sha256": "f204db2c753b0937caac3cb35258562c14f073e4bbc76be24b4c51ce22767a93",
+      "out_sha256": "2bab71ab6c58cea2c89cca1aa0ebdd01d1bddbdd9f2175635c5e6327617be61c",
+      "rows": 12,
+      "cols": 6
+    },
+    {
+      "id": "uci_cleveland_table1",
+      "filename": "uci_cleveland_table1.xlsx",
+      "raw_filename": "processed.cleveland.data",
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data",
+      "source_page": "https://archive.ics.uci.edu/dataset/45/heart+disease",
+      "provider_en": "UCI Machine Learning Repository (Cleveland Heart Disease)",
+      "provider_zh": "UCI 机器学习仓库（Cleveland 心脏病队列）",
+      "license": "CC BY 4.0",
+      "title_en": "UCI Cleveland Heart Disease — Raw Excel Export",
+      "title_zh": "UCI 心脏病队列 — 带合并表头的原始 Excel 导出",
+      "needs_en": "Title row · 2-row merged header · mixed Mean/SD & n(%) · footer note",
+      "needs_zh": "需整理：首行废标题 · 两层合并表头 · 均值/SD 与 n(%) 混排 · 表底脚注行",
+      "raw_sha256": "a74b7efa387bc9d108d7d0115d831fe9b414b29ae7124f331b622b4efa0427c8",
+      "out_sha256": "2b5840ea7e3ea4dac9b71e9bb4845675908d3101476af23d33097c87bf3fcf65",
+      "rows": 8,
+      "cols": 6
+    },
+    {
+      "id": "owid_renewables_wide",
+      "filename": "owid_renewables_wide.csv",
+      "raw_filename": "share-electricity-renewables.csv",
+      "url": "https://ourworldindata.org/grapher/share-electricity-renewables.csv?v=1&csvType=full&useColumnShortNames=true",
+      "source_page": "https://ourworldindata.org/renewable-energy",
+      "provider_en": "Our World in Data (Ember & Energy Institute)",
+      "provider_zh": "Our World in Data（Ember 与 Energy Institute）",
+      "license": "CC BY 4.0",
+      "title_en": "Our World in Data — Renewable Electricity (2000–2023)",
+      "title_zh": "OWID 可再生电力占比宽表（2000–2023，24 年）",
+      "needs_en": "24 wide year columns · uneven decimals · sparkline compression",
+      "needs_zh": "需整理：24 个年份宽列 · 小数位不齐 · 适合压缩为行内趋势线",
+      "raw_sha256": "6439f5d494fac451d3806b0aa97beff2fb83e89e7f3d257c972d216027ef3022",
+      "out_sha256": "32600dafc65f4e9e1992a234ee540b4e268510fcfd7cc0a0a71d7c0c52b519c2",
+      "rows": 8,
+      "cols": 26
+    }
+  ]
+}

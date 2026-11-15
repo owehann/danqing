@@ -1,0 +1,276 @@
+{
+  "version": "2.0.0",
+  "description": "Shared deterministic numeric parsing vectors for Danqing Table Studio (Python table_studio.py + TypeScript numeric.ts).",
+  "vectors": [
+    {
+      "id": "thousands_comma_dot",
+      "input": "1,234.5",
+      "decimal_comma": false,
+      "value": 1234.5,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "thousands_multi_comma",
+      "input": "1,234,567.89",
+      "decimal_comma": false,
+      "value": 1234567.89,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "euro_thousands_and_comma",
+      "input": "1.234,5",
+      "decimal_comma": true,
+      "value": 1234.5,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "euro_simple_comma",
+      "input": "72,4",
+      "decimal_comma": true,
+      "value": 72.4,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "euro_negative_comma",
+      "input": "-14,08",
+      "decimal_comma": true,
+      "value": -14.08,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "accounting_paren_negative",
+      "input": "(3.2)",
+      "decimal_comma": false,
+      "value": -3.2,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "accounting_paren_euro",
+      "input": "(1.204,5)",
+      "decimal_comma": true,
+      "value": -1204.5,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "explicit_plus",
+      "input": "+1276.8",
+      "decimal_comma": false,
+      "value": 1276.8,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "percent_tight",
+      "input": "12.5%",
+      "decimal_comma": false,
+      "value": 12.5,
+      "prefix": "",
+      "unit": "%",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "percent_spaced",
+      "input": "12.5 %",
+      "decimal_comma": false,
+      "value": 12.5,
+      "prefix": "",
+      "unit": "%",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "euro_percent",
+      "input": "68,3 %",
+      "decimal_comma": true,
+      "value": 68.3,
+      "prefix": "",
+      "unit": "%",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "scientific_small",
+      "input": "2.69e-91",
+      "decimal_comma": false,
+      "value": 2.69e-91,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "scientific_upper",
+      "input": "1.45E+04",
+      "decimal_comma": false,
+      "value": 14500.0,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "less_than_p",
+      "input": "<0.001",
+      "decimal_comma": false,
+      "value": 0.001,
+      "prefix": "<",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "less_than_p_euro",
+      "input": "<0,001",
+      "decimal_comma": true,
+      "value": 0.001,
+      "prefix": "<",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "less_than_spaced",
+      "input": "< 0.0001",
+      "decimal_comma": false,
+      "value": 0.0001,
+      "prefix": "<",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "greater_than",
+      "input": ">0.99",
+      "decimal_comma": false,
+      "value": 0.99,
+      "prefix": ">",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "missing_na",
+      "input": "NA",
+      "decimal_comma": false,
+      "value": null,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "missing_n_slash_a",
+      "input": "N/A",
+      "decimal_comma": false,
+      "value": null,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "missing_hyphen",
+      "input": "-",
+      "decimal_comma": false,
+      "value": null,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "missing_emdash",
+      "input": "—",
+      "decimal_comma": false,
+      "value": null,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "missing_empty",
+      "input": "   ",
+      "decimal_comma": false,
+      "value": null,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    },
+    {
+      "id": "ns_lower",
+      "input": "n.s.",
+      "decimal_comma": false,
+      "value": null,
+      "prefix": "",
+      "unit": "",
+      "p_text": "n.s.",
+      "is_sequence": false
+    },
+    {
+      "id": "ns_upper",
+      "input": "NS",
+      "decimal_comma": false,
+      "value": null,
+      "prefix": "",
+      "unit": "",
+      "p_text": "n.s.",
+      "is_sequence": false
+    },
+    {
+      "id": "comma_separated_sequence_two",
+      "input": "38.8, 43.5",
+      "decimal_comma": false,
+      "value": null,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": true
+    },
+    {
+      "id": "comma_separated_sequence_four",
+      "input": "10.2, 14.5, 19.1, 22.8",
+      "decimal_comma": false,
+      "value": null,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": true
+    },
+    {
+      "id": "unicode_minus",
+      "input": "−4.25",
+      "decimal_comma": false,
+      "value": -4.25,
+      "prefix": "",
+      "unit": "",
+      "p_text": null,
+      "is_sequence": false
+    }
+  ]
+}

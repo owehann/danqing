@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { useTableStudioStore } from "./table/tableStore";
 import type {
   CrossPanelRule,
   CvdMode,
@@ -12,6 +13,7 @@ import type {
   VibrancyMode,
 } from "./types";
 
+export type StudioMode = "figure" | "table";
 export type PageMode = "landing" | "processing" | "editor";
 export type ActiveDialog = "export" | "raster" | "multipage" | "shortcuts" | "error" | null;
 
@@ -22,6 +24,7 @@ interface ErrorModalPayload {
 }
 
 interface StudioStore {
+  studioMode: StudioMode;
   pageMode: PageMode;
   palettes: PaletteItem[];
   styles: StyleProfileItem[];
@@ -54,6 +57,7 @@ interface StudioStore {
   onboardingDismissed: boolean;
 
   initCatalog: () => Promise<void>;
+  setStudioMode: (mode: StudioMode) => void;
   refreshSessionFigures: () => Promise<void>;
   uploadFile: (file: File, pageIndex?: number) => Promise<void>;
   uploadSvgText: (svgText: string) => Promise<void>;
@@ -116,6 +120,7 @@ function closeActiveEventSource(): void {
 }
 
 export const useStudioStore = create<StudioStore>((set, get) => ({
+  studioMode: "figure",
   pageMode: "landing",
   palettes: [],
   styles: [],
@@ -158,6 +163,10 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
     });
   },
 
+  setStudioMode: (mode: StudioMode) => {
+    set({ studioMode: mode });
+  },
+
   refreshSessionFigures: async () => {
     const res = await fetch("/api/v2/figures");
     if (!res.ok) return;
@@ -171,6 +180,12 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
 
   uploadFile: async (file: File, pageIndex?: number) => {
     const ext = file.name.includes(".") ? `.${file.name.split(".").pop()!.toLowerCase()}` : "";
+    if ([".csv", ".tsv", ".txt", ".xlsx", ".xls"].includes(ext)) {
+      set({ studioMode: "table" });
+      await useTableStudioStore.getState().uploadTableFile(file);
+      return;
+    }
+    set({ studioMode: "figure" });
     if ([".png", ".jpg", ".jpeg", ".tif", ".tiff", ".webp", ".bmp", ".gif"].includes(ext)) {
       set({ activeDialog: "raster" });
       return;
@@ -291,6 +306,7 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
   goToLanding: () => {
     closeActiveEventSource();
     set({
+      studioMode: "figure",
       pageMode: "landing",
       targetPanels: [],
       selectedIds: [],

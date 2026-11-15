@@ -1,23 +1,42 @@
-import React, { useEffect, useId, useRef } from "react";
+import React, { useEffect, useId, useRef, useState } from "react";
 import {
   Check,
   ChevronDown,
+  ClipboardPaste,
+  Copy,
   Eye,
   HelpCircle,
+  Home,
   Palette,
   Plus,
   Redo2,
+  Table2,
   Undo2,
+  Upload,
+  X,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useStudioStore } from "../store";
+import {
+  copyRichTableToClipboard,
+  formatLiveStatusMessage,
+} from "../table/clipboardCopy";
+import {
+  buildClipboardTsv,
+  buildStandaloneStyledHtml,
+} from "../table/exporters";
+import { buildModel } from "../table/pipeline";
+import { useTableStudioStore } from "../table/tableStore";
 import { BrandMark } from "./BrandMark";
 import { tetherPopoverFallback } from "./ModalDialog";
 
 export function TopBar(): React.ReactElement {
   const { t, i18n } = useTranslation();
+  const studioMode = useStudioStore((s) => s.studioMode);
+  const setStudioMode = useStudioStore((s) => s.setStudioMode);
   const pageMode = useStudioStore((s) => s.pageMode);
   const figure = useStudioStore((s) => s.figure);
+  const catalogPalettes = useStudioStore((s) => s.palettes);
   const sessionFigures = useStudioStore((s) => s.sessionFigures);
   const isComparingOriginal = useStudioStore((s) => s.isComparingOriginal);
   const palettesDrawerOpen = useStudioStore((s) => s.palettesDrawerOpen);
@@ -32,20 +51,67 @@ export function TopBar(): React.ReactElement {
   const setPalettesDrawerOpen = useStudioStore((s) => s.setPalettesDrawerOpen);
   const openDialog = useStudioStore((s) => s.openDialog);
 
+  // Table Studio v2 state
+  const tablePageMode = useTableStudioStore((s) => s.tablePageMode);
+  const tableSamples = useTableStudioStore((s) => s.samples);
+  const tableDocs = useTableStudioStore((s) => s.docs);
+  const pendingReuploads = useTableStudioStore((s) => s.pendingReuploads);
+  const tableOrder = useTableStudioStore((s) => s.order);
+  const activeTableId = useTableStudioStore((s) => s.activeId);
+  const historyPast = useTableStudioStore((s) => s.historyPast);
+  const historyFuture = useTableStudioStore((s) => s.historyFuture);
+  const isComparingRaw = useTableStudioStore((s) => s.isComparingRaw);
+  const styleDrawerOpen = useTableStudioStore((s) => s.styleDrawerOpen);
+
+  const goToTableLanding = useTableStudioStore((s) => s.goToTableLanding);
+  const switchDoc = useTableStudioStore((s) => s.switchDoc);
+  const removeDoc = useTableStudioStore((s) => s.removeDoc);
+  const tableUndo = useTableStudioStore((s) => s.undo);
+  const tableRedo = useTableStudioStore((s) => s.redo);
+  const setComparingRaw = useTableStudioStore((s) => s.setComparingRaw);
+  const setTableModal = useTableStudioStore((s) => s.setActiveModal);
+  const setStyleDrawerOpen = useTableStudioStore((s) => s.setStyleDrawerOpen);
+
+  const activeTableDoc = activeTableId ? tableDocs[activeTableId] : undefined;
+  const canTableUndo = (historyPast[activeTableId]?.length ?? 0) > 0;
+  const canTableRedo = (historyFuture[activeTableId]?.length ?? 0) > 0;
+
   const toolbarRef = useRef<HTMLDivElement | null>(null);
   const figTriggerRef = useRef<HTMLButtonElement | null>(null);
   const figPopoverRef = useRef<HTMLDivElement | null>(null);
   const addFileInputRef = useRef<HTMLInputElement | null>(null);
+
+  const tblTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const tblPopoverRef = useRef<HTMLDivElement | null>(null);
+  const tblFileInputRef = useRef<HTMLInputElement | null>(null);
+
+  const exportSplitTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const exportSplitPopoverRef = useRef<HTMLDivElement | null>(null);
+
+  const compareDownTsRef = useRef<number>(0);
+  const comparePointerHeldRef = useRef<boolean>(false);
+  const wasStickyCompareRef = useRef<boolean>(false);
+
   const figPopoverId = useId();
   const addFileInputId = useId();
+  const tblPopoverId = useId();
+  const tblFileInputId = useId();
+  const exportSplitPopoverId = useId();
 
   const isZh = i18n.language.startsWith("zh");
+  const langKey: "en" | "zh" = isZh ? "zh" : "en";
+
+  const [topCopyState, setTopCopyState] = useState<"idle" | "copied" | "failed">("idle");
+  const [topCopyMsg, setTopCopyMsg] = useState("");
+  const topCopyTimerRef = useRef<number | null>(null);
+
+  const supportsFocusGroup =
+    typeof HTMLElement !== "undefined" && "focusGroup" in HTMLElement.prototype;
 
   // Roving tabindex fallback when native focusgroup is unsupported
   useEffect(() => {
     const bar = toolbarRef.current;
-    if (!bar) return;
-    if (typeof HTMLElement !== "undefined" && "focusGroup" in HTMLElement.prototype) return;
+    if (!bar || supportsFocusGroup) return;
 
     const getItems = (): HTMLButtonElement[] =>
       Array.from(bar.querySelectorAll<HTMLButtonElement>("button"));
@@ -95,7 +161,7 @@ export function TopBar(): React.ReactElement {
       bar.removeEventListener("focusin", onFocusIn);
       bar.removeEventListener("keydown", onKeyDown);
     };
-  }, [pageMode, figure?.figure_id]);
+  }, [studioMode, pageMode, figure?.figure_id, supportsFocusGroup]);
 
   // Tether figure switcher popover when CSS Anchor Positioning is unsupported
   useEffect(() => {
@@ -109,26 +175,132 @@ export function TopBar(): React.ReactElement {
     };
     pop.addEventListener("toggle", onToggle);
     return () => pop.removeEventListener("toggle", onToggle);
-  }, [pageMode, figure?.figure_id]);
+  }, [studioMode, pageMode, figure?.figure_id]);
+
+  useEffect(() => {
+    const pop = tblPopoverRef.current;
+    if (!pop) return;
+    const onToggle = (ev: Event): void => {
+      const te = ev as ToggleEvent;
+      if (te.newState === "open") {
+        tetherPopoverFallback(pop, tblTriggerRef.current, false);
+      }
+    };
+    pop.addEventListener("toggle", onToggle);
+    return () => pop.removeEventListener("toggle", onToggle);
+  }, [studioMode, activeTableId]);
+
+  useEffect(() => {
+    const pop = exportSplitPopoverRef.current;
+    if (!pop) return;
+    const onToggle = (ev: Event): void => {
+      const te = ev as ToggleEvent;
+      if (te.newState === "open") {
+        tetherPopoverFallback(pop, exportSplitTriggerRef.current, true);
+      }
+    };
+    pop.addEventListener("toggle", onToggle);
+    return () => pop.removeEventListener("toggle", onToggle);
+  }, [studioMode, activeTableId]);
 
   const closeFigPopover = (): void => {
     const pop = figPopoverRef.current as (HTMLDivElement & { hidePopover?: () => void }) | null;
     pop?.hidePopover?.();
   };
 
-  const toolbarFocusGroupAttrs = { focusgroup: "toolbar wrap" } as Record<string, unknown>;
+  const closeTblPopover = (): void => {
+    const pop = tblPopoverRef.current as (HTMLDivElement & { hidePopover?: () => void }) | null;
+    pop?.hidePopover?.();
+  };
+
+  const closeExportSplitPopover = (): void => {
+    const pop = exportSplitPopoverRef.current as (HTMLDivElement & { hidePopover?: () => void }) | null;
+    pop?.hidePopover?.();
+  };
+
+  const getDocDisplayName = (sampleId: string | undefined, filename: string): string => {
+    if (sampleId) {
+      const found = tableSamples.find((s) => s.id === sampleId);
+      if (found) return isZh ? found.title_zh : found.title_en;
+    }
+    return filename;
+  };
+
+  const activeDocLabel = activeTableDoc
+    ? getDocDisplayName(activeTableDoc.raw.sampleId, activeTableDoc.raw.source.filename)
+    : "";
+
+  const handleTopCopyRichTable = async (): Promise<void> => {
+    if (!activeTableDoc) return;
+    const model = buildModel(activeTableDoc, langKey, catalogPalettes);
+    const ok = await copyRichTableToClipboard(
+      buildStandaloneStyledHtml(activeTableDoc, model),
+      buildClipboardTsv(model),
+    );
+    if (topCopyTimerRef.current !== null) window.clearTimeout(topCopyTimerRef.current);
+    setTopCopyState(ok ? "copied" : "failed");
+    setTopCopyMsg(
+      formatLiveStatusMessage(
+        ok ? t("tableStudio.copy.copiedToast") : t("tableStudio.copy.failedToast"),
+      ),
+    );
+    topCopyTimerRef.current = window.setTimeout(() => {
+      setTopCopyState("idle");
+      setTopCopyMsg("");
+    }, 2200);
+  };
+
+  const toolbarFocusGroupAttrs = supportsFocusGroup
+    ? ({ focusgroup: "toolbar wrap" } as Record<string, unknown>)
+    : {};
   const popoverTriggerAttrs = { popovertarget: figPopoverId } as Record<string, unknown>;
+  const tblPopoverTriggerAttrs = { popovertarget: tblPopoverId } as Record<string, unknown>;
+  const exportSplitTriggerAttrs = { popovertarget: exportSplitPopoverId } as Record<string, unknown>;
   const popoverPanelAttrs = { popover: "auto" } as Record<string, unknown>;
 
   return (
     <header className="dq-topbar">
       <div className="dq-topbar__left">
-        <button type="button" className="dq-brand-btn" onClick={goToLanding}>
+        <button
+          type="button"
+          className="dq-brand-btn"
+          onClick={() => {
+            if (studioMode === "table") {
+              goToTableLanding();
+            } else {
+              goToLanding();
+            }
+          }}
+        >
           <BrandMark variant="mark" size={20} className="dq-brand-mark" />
           <span>{t("app.brand")}</span>
         </button>
 
-        {pageMode === "editor" && figure ? (
+        <div
+          className="dq-mode-switch"
+          role="group"
+          aria-label={t("tableStudio.a11y.modeSwitcher")}
+        >
+          <button
+            type="button"
+            className="dq-mode-switch__btn"
+            aria-pressed={studioMode === "figure"}
+            onClick={() => setStudioMode("figure")}
+          >
+            <span>{t("tableStudio.mode.figure")}</span>
+          </button>
+          <button
+            type="button"
+            className="dq-mode-switch__btn"
+            aria-pressed={studioMode === "table"}
+            onClick={() => setStudioMode("table")}
+          >
+            <Table2 size={13} strokeWidth={1.6} aria-hidden="true" />
+            <span>{t("tableStudio.mode.table")}</span>
+          </button>
+        </div>
+
+        {studioMode === "figure" && pageMode === "editor" && figure ? (
           <>
             <button
               ref={figTriggerRef}
@@ -182,7 +354,7 @@ export function TopBar(): React.ReactElement {
                 ref={addFileInputRef}
                 id={addFileInputId}
                 type="file"
-                accept=".pdf,.svg,image/*"
+                accept=".pdf,.svg,.csv,.tsv,.txt,.xlsx,.xls,image/*"
                 className="visually-hidden"
                 onChange={(e) => {
                   const files = e.target.files;
@@ -204,9 +376,137 @@ export function TopBar(): React.ReactElement {
             </div>
           </>
         ) : null}
+
+        {studioMode === "table" && tablePageMode === "editor" && activeTableDoc ? (
+          <>
+            <button
+              ref={tblTriggerRef}
+              type="button"
+              className="dq-fig-trigger dq-tbl-trigger"
+              aria-label={`${t("tableStudio.topbar.datasetSwitcher")}: ${activeDocLabel}`}
+              title={activeDocLabel}
+              {...tblPopoverTriggerAttrs}
+            >
+              <span className="dq-tbl-trigger__name">{activeDocLabel}</span>
+              <ChevronDown size={14} strokeWidth={1.5} aria-hidden="true" />
+            </button>
+
+            <label htmlFor={tblFileInputId} className="visually-hidden">
+              {t("tableStudio.topbar.uploadMenu")}
+            </label>
+            <input
+              ref={tblFileInputRef}
+              id={tblFileInputId}
+              type="file"
+              accept=".csv,.tsv,.txt,.xlsx,.pdf,.svg"
+              className="visually-hidden"
+              onChange={(e) => {
+                const files = e.target.files;
+                if (files && files.length > 0) {
+                  closeTblPopover();
+                  void uploadFile(files[0]);
+                }
+                e.currentTarget.value = "";
+              }}
+            />
+
+            <div
+              ref={tblPopoverRef}
+              id={tblPopoverId}
+              className="dq-popover dq-popover--wide"
+              {...popoverPanelAttrs}
+            >
+              {tableOrder.map((docId) => {
+                const docItem = tableDocs[docId];
+                const pendingMeta = pendingReuploads[docId];
+                if (!docItem && !pendingMeta) return null;
+                const itemLabel = docItem
+                  ? getDocDisplayName(docItem.raw.sampleId, docItem.raw.source.filename)
+                  : getDocDisplayName(pendingMeta.sampleId, pendingMeta.filename);
+                const isActive = docId === activeTableId;
+
+                return (
+                  <div key={docId} className="dq-popover-doc-row">
+                    <button
+                      type="button"
+                      className="dq-popover-item dq-popover-doc-row__main"
+                      onClick={() => {
+                        closeTblPopover();
+                        if (docItem) {
+                          switchDoc(docId);
+                        } else {
+                          tblFileInputRef.current?.click();
+                        }
+                      }}
+                    >
+                      <span className="dq-popover-doc-row__name">{itemLabel}</span>
+                      {!docItem ? (
+                        <span className="dq-reupload-tag">
+                          ({t("tableStudio.topbar.reuploadTag")})
+                        </span>
+                      ) : isActive ? (
+                        <Check size={14} strokeWidth={1.5} aria-hidden="true" />
+                      ) : null}
+                    </button>
+                    <button
+                      type="button"
+                      className="dq-btn dq-btn--ghost dq-btn--icon dq-popover-doc-row__rm"
+                      aria-label={t("tableStudio.topbar.removeDoc", { name: itemLabel })}
+                      title={t("tableStudio.topbar.removeDoc", { name: itemLabel })}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        removeDoc(docId);
+                      }}
+                    >
+                      <X size={13} strokeWidth={1.6} aria-hidden="true" />
+                    </button>
+                  </div>
+                );
+              })}
+
+              <div className="dq-popover-divider" />
+
+              <button
+                type="button"
+                className="dq-popover-item"
+                onClick={() => {
+                  closeTblPopover();
+                  tblFileInputRef.current?.click();
+                }}
+              >
+                <span>{t("tableStudio.topbar.uploadMenu")}</span>
+                <Upload size={14} strokeWidth={1.5} aria-hidden="true" />
+              </button>
+
+              <button
+                type="button"
+                className="dq-popover-item"
+                onClick={() => {
+                  closeTblPopover();
+                  setTableModal("paste");
+                }}
+              >
+                <span>{t("tableStudio.topbar.pasteMenu")}</span>
+                <ClipboardPaste size={14} strokeWidth={1.5} aria-hidden="true" />
+              </button>
+
+              <button
+                type="button"
+                className="dq-popover-item"
+                onClick={() => {
+                  closeTblPopover();
+                  goToTableLanding();
+                }}
+              >
+                <span>{t("tableStudio.topbar.backHome")}</span>
+                <Home size={14} strokeWidth={1.5} aria-hidden="true" />
+              </button>
+            </div>
+          </>
+        ) : null}
       </div>
 
-      {pageMode === "editor" && figure ? (
+      {studioMode === "figure" && pageMode === "editor" && figure ? (
         <div
           ref={toolbarRef}
           role="toolbar"
@@ -276,7 +576,7 @@ export function TopBar(): React.ReactElement {
       )}
 
       <div className="dq-topbar__right">
-        {pageMode === "editor" && figure ? (
+        {studioMode === "figure" && pageMode === "editor" && figure ? (
           <button
             type="button"
             className="dq-btn dq-drawer-trigger"
@@ -286,6 +586,172 @@ export function TopBar(): React.ReactElement {
             <Palette size={15} strokeWidth={1.5} aria-hidden="true" />
             <span>{t("topbar.palettesDrawer")}</span>
           </button>
+        ) : null}
+
+        {studioMode === "table" && tablePageMode === "editor" && activeTableDoc ? (
+          <>
+            <div role="group" aria-label={t("a11y.historyGroup")} className="dq-toolbar__group">
+              <button
+                type="button"
+                className="dq-btn dq-btn--icon"
+                aria-label={t("topbar.undo")}
+                title={t("topbar.undo")}
+                aria-disabled={!canTableUndo}
+                onClick={() => {
+                  if (!canTableUndo) return;
+                  tableUndo();
+                }}
+              >
+                <Undo2 size={15} strokeWidth={1.5} aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                className="dq-btn dq-btn--icon"
+                aria-label={t("topbar.redo")}
+                title={t("topbar.redo")}
+                aria-disabled={!canTableRedo}
+                onClick={() => {
+                  if (!canTableRedo) return;
+                  tableRedo();
+                }}
+              >
+                <Redo2 size={15} strokeWidth={1.5} aria-hidden="true" />
+              </button>
+            </div>
+
+            <button
+              type="button"
+              className="dq-btn dq-topbar-responsive-btn"
+              aria-label={t("tableStudio.topbar.holdCompare")}
+              title={t("tableStudio.topbar.holdCompare")}
+              aria-pressed={isComparingRaw}
+              onPointerDown={() => {
+                compareDownTsRef.current = performance.now();
+                comparePointerHeldRef.current = true;
+                wasStickyCompareRef.current = isComparingRaw;
+                if (!isComparingRaw) {
+                  setComparingRaw(true);
+                }
+              }}
+              onPointerUp={() => {
+                if (!comparePointerHeldRef.current) return;
+                comparePointerHeldRef.current = false;
+                const elapsed = performance.now() - compareDownTsRef.current;
+                if (elapsed >= 180) {
+                  setComparingRaw(false);
+                } else if (wasStickyCompareRef.current) {
+                  setComparingRaw(false);
+                }
+              }}
+              onPointerLeave={() => {
+                if (comparePointerHeldRef.current) {
+                  comparePointerHeldRef.current = false;
+                  setComparingRaw(false);
+                }
+              }}
+              onPointerCancel={() => {
+                if (comparePointerHeldRef.current) {
+                  comparePointerHeldRef.current = false;
+                  setComparingRaw(false);
+                }
+              }}
+              onKeyDown={(e) => {
+                if (e.key === " " || e.key === "Enter") {
+                  e.preventDefault();
+                  setComparingRaw(!isComparingRaw);
+                }
+              }}
+            >
+              <Eye size={15} strokeWidth={1.5} aria-hidden="true" />
+              <span className="dq-topbar-btn-label">{t("tableStudio.topbar.holdCompare")}</span>
+            </button>
+
+            <span className="dq-copy-status-wrap dq-topbar-copy-standalone">
+              <button
+                type="button"
+                className="dq-btn dq-topbar-responsive-btn"
+                aria-label={t("tableStudio.copy.copyShortBtn")}
+                title={t("tableStudio.copy.copyShortBtn")}
+                onClick={() => void handleTopCopyRichTable()}
+              >
+                {topCopyState === "copied" ? (
+                  <Check size={14} strokeWidth={1.8} aria-hidden="true" />
+                ) : (
+                  <Copy size={14} strokeWidth={1.6} aria-hidden="true" />
+                )}
+                <span className="dq-topbar-btn-label">{t("tableStudio.copy.copyShortBtn")}</span>
+              </button>
+              <span
+                role="status"
+                className={`dq-copy-live-bubble${
+                  topCopyState !== "idle" ? " dq-copy-live-bubble--visible" : ""
+                }`}
+              >
+                {topCopyMsg}
+              </span>
+            </span>
+
+            <div className="dq-export-split-group">
+              <button
+                type="button"
+                className="dq-btn dq-btn--primary dq-export-main-btn"
+                onClick={() => setTableModal("export")}
+              >
+                {t("topbar.export")}
+              </button>
+              <button
+                ref={exportSplitTriggerRef}
+                type="button"
+                className="dq-btn dq-btn--primary dq-export-split-caret"
+                aria-label={t("tableStudio.topbar.moreExportActions")}
+                title={t("tableStudio.topbar.moreExportActions")}
+                {...exportSplitTriggerAttrs}
+              >
+                <ChevronDown size={13} strokeWidth={1.8} aria-hidden="true" />
+              </button>
+
+              <div
+                ref={exportSplitPopoverRef}
+                id={exportSplitPopoverId}
+                className="dq-popover"
+                {...popoverPanelAttrs}
+              >
+                <button
+                  type="button"
+                  className="dq-popover-item"
+                  onClick={() => {
+                    closeExportSplitPopover();
+                    void handleTopCopyRichTable();
+                  }}
+                >
+                  <span>{t("tableStudio.copy.copyShortBtn")}</span>
+                  <Copy size={14} strokeWidth={1.5} aria-hidden="true" />
+                </button>
+                <button
+                  type="button"
+                  className="dq-popover-item"
+                  onClick={() => {
+                    closeExportSplitPopover();
+                    setTableModal("export");
+                  }}
+                >
+                  <span>{t("topbar.export")}</span>
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              className="dq-btn dq-table-drawer-btn dq-topbar-responsive-btn"
+              aria-label={t("tableStudio.topbar.styleDrawer")}
+              title={t("tableStudio.topbar.styleDrawer")}
+              aria-pressed={styleDrawerOpen}
+              onClick={() => setStyleDrawerOpen(!styleDrawerOpen)}
+            >
+              <Palette size={15} strokeWidth={1.5} aria-hidden="true" />
+              <span className="dq-topbar-btn-label">{t("tableStudio.topbar.styleDrawer")}</span>
+            </button>
+          </>
         ) : null}
 
         <button
@@ -315,7 +781,7 @@ export function TopBar(): React.ReactElement {
           </button>
         </div>
 
-        {pageMode === "editor" && figure ? (
+        {studioMode === "figure" && pageMode === "editor" && figure ? (
           <button
             type="button"
             className="dq-btn dq-btn--primary"
