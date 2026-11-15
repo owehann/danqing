@@ -1,3 +1,4 @@
+import { orientRampStops, resolveTableRamp } from "./color";
 import type { RenderModel, TableDoc } from "./model";
 
 function escapeHtml(text: string): string {
@@ -46,6 +47,7 @@ export function serializeToBackendExportPayload(
       label: h.label,
       superscript: h.superscript,
       align: h.align,
+      effective_visual: h.effectiveVisual,
     })),
     blocks: model.blocks.map((b) => ({
       part_name: b.partName,
@@ -63,6 +65,19 @@ export function serializeToBackendExportPayload(
           raw_number: c.parts ? null : c.value,
           number_format: c.numFmt,
           sparkline_values: c.sparklineValues,
+          bar_spec: c.barSpec
+            ? {
+                ratio: c.barSpec.ratio,
+                zero_pct: c.barSpec.zeroPct,
+                start_pct: c.barSpec.startPct,
+                width_pct: c.barSpec.widthPct,
+                fill_hex: c.barSpec.fillHex,
+                bidirectional: c.barSpec.bidirectional,
+                is_negative: c.barSpec.isNegative,
+                domain_min: c.barSpec.domainMin,
+                domain_max: c.barSpec.domainMax,
+              }
+            : null,
           edited_from: c.editedFrom,
           indent: c.indent,
         })),
@@ -184,6 +199,30 @@ export function serializeToBackendZipPayload(
     })
     .filter((mg) => mg.columns.length >= 2);
 
+  const gtHeatGroupMap = new Map<string, { columns: string[]; palette: string[] }>();
+  for (const h of model.headers) {
+    if (h.effectiveVisual !== "heat") continue;
+    const leadId = h.memberColIds[0] ?? h.colId;
+    const mappedName = colIdToName.get(leadId);
+    if (!mappedName) continue;
+    const colSpec = doc.structure.columns.find((x) => x.id === leadId);
+    const dir = colSpec?.visualConfig?.direction ?? "normal";
+    const wantDiv =
+      colSpec?.visualConfig?.center === "ratio_1" ||
+      typeof (colSpec?.visualConfig?.center ?? doc.style.heatCenter) === "number";
+    const stops = orientRampStops(resolveTableRamp(h.effectivePaletteId, [], wantDiv).stops, dir);
+    const pKey = stops.join("|");
+    let grp = gtHeatGroupMap.get(pKey);
+    if (!grp) {
+      grp = { columns: [], palette: stops };
+      gtHeatGroupMap.set(pKey, grp);
+    }
+    if (!grp.columns.includes(mappedName)) {
+      grp.columns.push(mappedName);
+    }
+  }
+  const gtHeatCols = Array.from(gtHeatGroupMap.values());
+
   return {
     filename_stem: filenameStem,
     table_json: buildRuleJsonObject(doc),
@@ -198,6 +237,7 @@ export function serializeToBackendZipPayload(
       decimals_map: decimalsMap,
       spanners: gtSpanners,
       merges: gtMerges,
+      heat_cols: gtHeatCols,
       footnotes: model.footnotes.map((f) => ({ symbol: f.symbol, text: f.text })),
     },
   };
@@ -214,6 +254,7 @@ export function buildPythonPreviewCode(doc: TableDoc, model: RenderModel): strin
       decimals_map: Record<string, number>;
       spanners: Array<{ label: string; columns: string[] }>;
       merges: Array<{ columns: string[]; pattern: string }>;
+      heat_cols: Array<{ columns: string[]; palette: string[] }>;
       footnotes: Array<{ symbol: string; text: string }>;
     };
   };
@@ -247,6 +288,11 @@ export function buildPythonPreviewCode(doc: TableDoc, model: RenderModel): strin
   for (const sp of m.spanners) {
     lines.push(
       `gt = gt.tab_spanner(label=${JSON.stringify(sp.label)}, columns=${JSON.stringify(sp.columns)})`,
+    );
+  }
+  for (const hc of m.heat_cols) {
+    lines.push(
+      `gt = gt.data_color(columns=${JSON.stringify(hc.columns)}, palette=${JSON.stringify(hc.palette)})`,
     );
   }
   for (const mg of m.merges) {
@@ -369,10 +415,24 @@ export function buildStandaloneStyledHtml(doc: TableDoc, model: RenderModel): st
           const padLeft = 10 + c.indent * 16;
           const btm =
             !isRawGrid && isLast ? "border-bottom:2px solid #000000;" : "";
+          const isHeatCol = model.headers[cIdx]?.effectiveVisual === "heat";
+          const partialHeatGap =
+            !isRawGrid && !isMatrix && isHeatCol && c.bgHex
+              ? "border-left:1px solid #FFFFFF;border-right:1px solid #FFFFFF;border-top:1px solid #FFFFFF;"
+              : "";
           const radius = isMatrix ? "border-radius:3px;" : "";
           const box = c.boxBorder ? "outline:1px solid #000000;outline-offset:-1px;" : "";
           const supHtml = c.superscript ? `<sup>${escapeHtml(c.superscript)}</sup>` : "";
-          return `<td style="text-align:${c.align};padding:6px 10px 6px ${padLeft}px;${bg}color:${c.fgHex};${fw}${cellBorder}${btm}${radius}${box}font-variant-numeric:tabular-nums;">${escapeHtml(c.display)}${supHtml}</td>`;
+          let cellInnerHtml = `${escapeHtml(c.display)}${supHtml}`;
+          if (c.barSpec) {
+            const bs = c.barSpec;
+            const zeroTickHtml = bs.bidirectional
+              ? `<span style="position:absolute;top:-1px;bottom:-1px;left:${bs.zeroPct.toFixed(1)}%;width:1px;background:#64748B;"></span>`
+              : "";
+            const barTrackHtml = `<span aria-hidden="true" style="position:relative;display:inline-block;vertical-align:middle;width:54px;height:8px;margin-left:8px;background:#EEF2F6;border-radius:2px;overflow:hidden;"><span style="position:absolute;top:0;bottom:0;left:${bs.startPct.toFixed(1)}%;width:${Math.max(bs.widthPct, bs.ratio > 0 ? 2 : 0).toFixed(1)}%;background:${bs.fillHex};border-radius:1.5px;"></span>${zeroTickHtml}</span>`;
+            cellInnerHtml = `<span style="display:inline-flex;align-items:center;justify-content:flex-end;"><span>${cellInnerHtml}</span>${barTrackHtml}</span>`;
+          }
+          return `<td style="text-align:${c.align};padding:6px 10px 6px ${padLeft}px;${bg}color:${c.fgHex};${fw}${cellBorder}${partialHeatGap}${btm}${radius}${box}font-variant-numeric:tabular-nums;">${cellInnerHtml}</td>`;
         })
         .join("");
       bodyRowsHtml.push(`<tr>${tds}</tr>`);

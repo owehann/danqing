@@ -13,12 +13,15 @@ import {
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useStudioStore } from "../../store";
+import { BUILTIN_TABLE_RAMPS } from "../../table/color";
 import type {
   ColumnRole,
   ColumnSpec,
+  ColumnVisualMode,
   Precision,
   RenderedCell,
   RenderedHeader,
+  SemanticRole,
 } from "../../table/model";
 import { stripStarsInput } from "../../table/numeric";
 import {
@@ -26,12 +29,14 @@ import {
   buildDerivedSparklineColumns,
   buildInternalRows,
   buildModel,
+  inferColumnDirectionHint,
   listAvailableSuggestions,
 } from "../../table/pipeline";
 import { useTableStudioStore } from "../../table/tableStore";
 import { tetherPopoverFallback } from "../ModalDialog";
 
-const ROLES: ColumnRole[] = ["normal", "count", "part", "heat", "sig", "bar"];
+const SEMANTIC_ROLES: SemanticRole[] = ["normal", "count", "part", "sig"];
+const VISUAL_MODES: ColumnVisualMode[] = ["auto", "plain", "heat", "bar"];
 const PRECISIONS: Precision[] = ["auto", 0, 1, 2, 3];
 
 function InlineSparklineSvg({
@@ -295,6 +300,35 @@ export function TableCanvas(): React.ReactElement | null {
     } else {
       openHeaderMenu(h, e.currentTarget);
     }
+  };
+
+  const applyVisualToColumnIds = (
+    targetColIds: string[],
+    nextVis: ColumnVisualMode,
+  ): void => {
+    commit((draft) => {
+      if (draft.structure.stage === "raw") {
+        draft.structure.stage = "tidied";
+      }
+      if ((nextVis === "heat" || nextVis === "bar") && draft.style.preset === "raw") {
+        draft.style.preset = "cns_three_line";
+      }
+      for (const cid of targetColIds) {
+        const c = draft.structure.columns.find((x) => x.id === cid);
+        if (!c) continue;
+        c.visual = nextVis;
+        if (nextVis === "plain" || nextVis === "auto") {
+          if (c.role === "heat" || c.role === "bar") c.role = "normal";
+        } else if (nextVis === "heat") {
+          if (c.role === "bar") c.role = "normal";
+          if (!c.visualConfig?.direction && inferColumnDirectionHint(c.label) === "reverse") {
+            c.visualConfig = { ...(c.visualConfig ?? {}), direction: "reverse" };
+          }
+        } else if (nextVis === "bar") {
+          if (c.role === "heat") c.role = "normal";
+        }
+      }
+    });
   };
 
   const commitCellEdit = (cell: RenderedCell): void => {
@@ -578,6 +612,49 @@ export function TableCanvas(): React.ReactElement | null {
           <span className="dq-multi-col-bar__count">
             {t("tableStudio.canvas.multiSelected", { count: selectedHeaderIds.length })}
           </span>
+
+          <div className="dq-inline-seg">
+            {(
+              [
+                ["auto", "tableStudio.canvas.multiVisualAuto"],
+                ["plain", "tableStudio.canvas.multiVisualPlain"],
+                ["heat", "tableStudio.canvas.multiVisualHeat"],
+                ["bar", "tableStudio.canvas.multiVisualBar"],
+              ] as const
+            ).map(([vm, labelKey]) => (
+              <button
+                key={vm}
+                type="button"
+                className="dq-btn dq-btn--xs"
+                onClick={() => applyVisualToColumnIds(selectedHeaderIds, vm)}
+              >
+                {t(labelKey)}
+              </button>
+            ))}
+          </div>
+
+          <select
+            className="dq-select dq-select--compact"
+            aria-label={t("tableStudio.canvas.multiPaletteAria")}
+            defaultValue=""
+            onChange={(e) => {
+              const palId = e.target.value || undefined;
+              commit((draft) => {
+                for (const cid of selectedHeaderIds) {
+                  const c = draft.structure.columns.find((x) => x.id === cid);
+                  if (!c) continue;
+                  c.visualConfig = { ...(c.visualConfig ?? {}), paletteId: palId };
+                }
+              });
+            }}
+          >
+            <option value="">{t("tableStudio.colMenu.rampInherit")}</option>
+            {BUILTIN_TABLE_RAMPS.map((r) => (
+              <option key={r.id} value={r.id}>
+                {t(r.labelKey)}
+              </option>
+            ))}
+          </select>
 
           {showMultiSpannerInput ? (
             <div className="dq-struct-inline-adder">
@@ -885,32 +962,43 @@ export function TableCanvas(): React.ReactElement | null {
                           ) : null}
                         </div>
 
-                        {model.heatLegend ? (
+                        {model.heatLegends.length > 0 ? (
                           <div
-                            className="dq-heat-legend"
+                            className="dq-heat-legend-group"
                             aria-label={t("tableStudio.canvas.heatLegendAria")}
                           >
-                            <span className="dq-heat-legend__scope">
-                              {t(`tableStudio.style.scopes.${model.heatLegend.scope}`)}
-                            </span>
-                            <span className="dq-heat-legend__tick">{model.heatLegend.minLabel}</span>
-                            <span className="dq-heat-legend__bars" aria-hidden="true">
-                              <span
-                                className="dq-heat-legend__bar"
-                                style={{
-                                  background: `linear-gradient(90deg, ${model.heatLegend.stops.join(", ")})`,
-                                }}
-                              />
-                              {model.heatLegend.secondaryStops ? (
-                                <span
-                                  className="dq-heat-legend__bar"
-                                  style={{
-                                    background: `linear-gradient(90deg, ${model.heatLegend.secondaryStops.join(", ")})`,
-                                  }}
-                                />
-                              ) : null}
-                            </span>
-                            <span className="dq-heat-legend__tick">{model.heatLegend.maxLabel}</span>
+                            {model.heatLegends.map((leg, lIdx) => (
+                              <div
+                                key={leg.id ?? `leg_${lIdx}`}
+                                className="dq-heat-legend"
+                              >
+                                {leg.label && model.heatLegends.length > 1 ? (
+                                  <span className="dq-heat-legend__label">{leg.label}</span>
+                                ) : (
+                                  <span className="dq-heat-legend__scope">
+                                    {t(`tableStudio.style.scopes.${leg.scope}`)}
+                                  </span>
+                                )}
+                                <span className="dq-heat-legend__tick">{leg.minLabel}</span>
+                                <span className="dq-heat-legend__bars" aria-hidden="true">
+                                  <span
+                                    className="dq-heat-legend__bar"
+                                    style={{
+                                      background: `linear-gradient(90deg, ${leg.stops.join(", ")})`,
+                                    }}
+                                  />
+                                  {leg.secondaryStops ? (
+                                    <span
+                                      className="dq-heat-legend__bar"
+                                      style={{
+                                        background: `linear-gradient(90deg, ${leg.secondaryStops.join(", ")})`,
+                                      }}
+                                    />
+                                  ) : null}
+                                </span>
+                                <span className="dq-heat-legend__tick">{leg.maxLabel}</span>
+                              </div>
+                            ))}
                           </div>
                         ) : null}
                       </div>
@@ -1062,126 +1150,198 @@ export function TableCanvas(): React.ReactElement | null {
                                 {h.superscript ? (
                                   <sup className="dq-table-sup">{h.superscript}</sup>
                                 ) : null}
-                                {h.sortDir === "asc" ? (
-                                  <ArrowUp size={11} strokeWidth={1.8} aria-hidden="true" />
-                                ) : h.sortDir === "desc" ? (
-                                  <ArrowDown size={11} strokeWidth={1.8} aria-hidden="true" />
+                                  {h.sortDir === "asc" ? (
+                                    <ArrowUp size={11} strokeWidth={1.8} aria-hidden="true" />
+                                  ) : h.sortDir === "desc" ? (
+                                    <ArrowDown size={11} strokeWidth={1.8} aria-hidden="true" />
+                                  ) : null}
+                                </button>
+                                {h.headerRampStops ? (
+                                  <span
+                                    className="dq-th-ramp-underline"
+                                    aria-hidden="true"
+                                    style={{
+                                      background: `linear-gradient(90deg, ${h.headerRampStops.join(", ")})`,
+                                    }}
+                                  />
                                 ) : null}
-                              </button>
-                            </th>
-                          );
-                        })}
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      {model.blocks.map((block) => (
-                        <React.Fragment key={`blk_${block.blockIndex}_${block.partName}`}>
-                          {block.partName ? (
-                            <tr className="dq-pub-part-row">
-                              <th
-                                colSpan={Math.max(1, model.headers.length)}
-                                scope="colgroup"
-                                className="dq-pub-part-cell"
-                                style={{ borderInlineStartColor: block.partAccent }}
-                              >
-                                {block.partName}
                               </th>
-                            </tr>
-                          ) : null}
+                            );
+                          })}
+                        </tr>
+                      </thead>
 
-                          {block.rows.map((row) => {
-                            bodyRowCounter += 1;
-                            const isLastRow = bodyRowCounter === totalRenderedBodyRows;
-                            return (
-                              <tr
-                                key={`row_${row[0]?.bodyRowIndex ?? bodyRowCounter}`}
-                                className={isLastRow ? "dq-pub-row--final" : undefined}
-                              >
-                                {row.map((cell, cIdx) => {
-                                  const hdr = model.headers[cIdx];
-                                  const CellTag =
-                                    cIdx === 0 && cell.align === "left" ? "th" : "td";
-                                  const isEditing = editingCellKey === cell.key;
-                                  const styleObj: React.CSSProperties = {
-                                    backgroundColor: cell.bgHex ?? undefined,
-                                    color: cell.fgHex,
-                                    fontWeight: cell.bold ? 700 : undefined,
-                                    paddingInlineStart:
-                                      cell.indent > 0 ? `${11 + cell.indent * 16}px` : undefined,
-                                  };
+                      <tbody>
+                        {model.blocks.map((block) => (
+                          <React.Fragment key={`blk_${block.blockIndex}_${block.partName}`}>
+                            {block.partName ? (
+                              <tr className="dq-pub-part-row">
+                                <th
+                                  colSpan={Math.max(1, model.headers.length)}
+                                  scope="colgroup"
+                                  className="dq-pub-part-cell"
+                                  style={{ borderInlineStartColor: block.partAccent }}
+                                >
+                                  {block.partName}
+                                </th>
+                              </tr>
+                            ) : null}
 
-                                  return (
-                                    <CellTag
-                                      key={cell.key}
-                                      scope={CellTag === "th" ? "row" : undefined}
-                                      style={styleObj}
-                                      title={
-                                        cell.edited
-                                          ? t("tableStudio.canvas.originalValueTitle", {
-                                              value: cell.editedFrom ?? "",
-                                            })
-                                          : undefined
-                                      }
-                                      onDoubleClick={() => {
-                                        if (!cell.editableColId) return;
-                                        setEditingCellKey(cell.key);
-                                        setCellDraft(stripStarsInput(cell.raw));
-                                      }}
-                                      className={`dq-pub-cell dq-pub-align-${cell.align}${
-                                        cIdx === 0 ? " dq-pub-sticky-col" : ""
-                                      }${cell.boxBorder ? " dq-pub-cell--boxed" : ""}${
-                                        cell.edited ? " dq-cell-edited" : ""
-                                      }`}
-                                    >
-                                      {isEditing ? (
-                                        <input
-                                          type="text"
-                                          className="dq-input dq-input--cell"
-                                          aria-label={t("tableStudio.canvas.editCellLabel")}
-                                          value={cellDraft}
-                                          autoFocus
-                                          onChange={(e) => setCellDraft(e.target.value)}
-                                          onBlur={() => commitCellEdit(cell)}
-                                          onKeyDown={(e) => {
-                                            if (e.key === "Enter") commitCellEdit(cell);
-                                            if (e.key === "Escape") setEditingCellKey(null);
-                                          }}
-                                        />
-                                      ) : cell.sparklineValues ? (
-                                        <span className="dq-sparkline-wrap">
-                                          <InlineSparklineSvg
-                                            values={cell.sparklineValues}
-                                            domain={cell.sparklineDomain}
-                                            strokeHex={
-                                              cell.bgHex && cell.fgHex === "#FFFFFF"
-                                                ? "#FFFFFF"
-                                                : model.preset === "raw"
-                                                  ? "#475569"
-                                                  : model.accentHex
-                                            }
+                            {block.rows.map((row) => {
+                              bodyRowCounter += 1;
+                              const isLastRow = bodyRowCounter === totalRenderedBodyRows;
+                              const isSummaryRow = Boolean(row[0]?.isSummaryRow);
+                              const rowClass =
+                                [
+                                  isLastRow ? "dq-pub-row--final" : "",
+                                  isSummaryRow ? "dq-pub-row--summary" : "",
+                                ]
+                                  .filter(Boolean)
+                                  .join(" ") || undefined;
+                              return (
+                                <tr
+                                  key={`row_${row[0]?.bodyRowIndex ?? bodyRowCounter}`}
+                                  className={rowClass}
+                                >
+                                  {row.map((cell, cIdx) => {
+                                    const hdr = model.headers[cIdx];
+                                    const CellTag =
+                                      cIdx === 0 && cell.align === "left" ? "th" : "td";
+                                    const isEditing = editingCellKey === cell.key;
+                                    const isPartialHeat =
+                                      model.preset !== "matrix_heatmap" &&
+                                      hdr?.effectiveVisual === "heat" &&
+                                      Boolean(cell.bgHex);
+                                    const styleObj: React.CSSProperties = {
+                                      backgroundColor: cell.bgHex ?? undefined,
+                                      color: cell.fgHex,
+                                      fontWeight: cell.bold ? 700 : undefined,
+                                      paddingInlineStart:
+                                        cell.indent > 0 ? `${11 + cell.indent * 16}px` : undefined,
+                                    };
+
+                                    return (
+                                      <CellTag
+                                        key={cell.key}
+                                        scope={CellTag === "th" ? "row" : undefined}
+                                        style={styleObj}
+                                        title={
+                                          cell.edited
+                                            ? t("tableStudio.canvas.originalValueTitle", {
+                                                value: cell.editedFrom ?? "",
+                                              })
+                                            : undefined
+                                        }
+                                        onDoubleClick={() => {
+                                          if (!cell.editableColId) return;
+                                          setEditingCellKey(cell.key);
+                                          setCellDraft(stripStarsInput(cell.raw));
+                                        }}
+                                        className={`dq-pub-cell dq-pub-align-${cell.align}${
+                                          cIdx === 0 ? " dq-pub-sticky-col" : ""
+                                        }${cell.boxBorder ? " dq-pub-cell--boxed" : ""}${
+                                          isPartialHeat ? " dq-pub-cell--partial-heat" : ""
+                                        }${cell.edited ? " dq-cell-edited" : ""}`}
+                                      >
+                                        {isEditing ? (
+                                          <input
+                                            type="text"
+                                            className="dq-input dq-input--cell"
+                                            aria-label={t("tableStudio.canvas.editCellLabel")}
+                                            value={cellDraft}
+                                            autoFocus
+                                            onChange={(e) => setCellDraft(e.target.value)}
+                                            onBlur={() => commitCellEdit(cell)}
+                                            onKeyDown={(e) => {
+                                              if (e.key === "Enter") commitCellEdit(cell);
+                                              if (e.key === "Escape") setEditingCellKey(null);
+                                            }}
                                           />
-                                          {cell.display ? (
-                                            <span className="dq-sparkline-end">{cell.display}</span>
-                                          ) : null}
-                                        </span>
-                                      ) : cell.barRatio !== null ? (
-                                        <span className="dq-inlinebar-wrap">
-                                          <span className="dq-inlinebar-track" aria-hidden="true">
-                                            <span
-                                              className="dq-inlinebar-fill"
-                                              style={{
-                                                width: `${Math.round(cell.barRatio * 100)}%`,
-                                                backgroundColor:
-                                                  cell.bgHex && cell.fgHex === "#FFFFFF"
-                                                    ? "rgb(255 255 255 / 0.85)"
-                                                    : model.accentHex,
-                                              }}
+                                        ) : cell.sparklineValues ? (
+                                          <span className="dq-sparkline-wrap">
+                                            <InlineSparklineSvg
+                                              values={cell.sparklineValues}
+                                              domain={cell.sparklineDomain}
+                                              strokeHex={
+                                                cell.bgHex && cell.fgHex === "#FFFFFF"
+                                                  ? "#FFFFFF"
+                                                  : model.preset === "raw"
+                                                    ? "#475569"
+                                                    : model.accentHex
+                                              }
                                             />
+                                            {cell.display ? (
+                                              <span className="dq-sparkline-end">{cell.display}</span>
+                                            ) : null}
                                           </span>
-                                          <span className="dq-inlinebar-val">{cell.display}</span>
-                                        </span>
-                                      ) : cell.parts &&
+                                        ) : cell.barSpec !== null ? (
+                                          <span className="dq-inlinebar-wrap">
+                                            <span
+                                              className="dq-inlinebar-val"
+                                              style={
+                                                hdr?.barValWidthCh
+                                                  ? { inlineSize: `${hdr.barValWidthCh}ch` }
+                                                  : undefined
+                                              }
+                                            >
+                                              {cell.parts &&
+                                              cell.parts.length === 2 &&
+                                              hdr?.partWidthsCh ? (
+                                                <span className="dq-num-merge">
+                                                  <span
+                                                    className="dq-num-a"
+                                                    style={{
+                                                      inlineSize: `${hdr.partWidthsCh[0]}ch`,
+                                                    }}
+                                                  >
+                                                    {cell.parts[0].display}
+                                                  </span>
+                                                  <span
+                                                    className="dq-num-b"
+                                                    style={{
+                                                      inlineSize: `${hdr.partWidthsCh[1]}ch`,
+                                                    }}
+                                                  >
+                                                    {cell.parts[1].display}
+                                                  </span>
+                                                </span>
+                                              ) : (
+                                                <>
+                                                  <span>{cell.display}</span>
+                                                  {cell.superscript ? (
+                                                    <sup className="dq-table-sup">
+                                                      {cell.superscript}
+                                                    </sup>
+                                                  ) : null}
+                                                </>
+                                              )}
+                                            </span>
+                                            <span className="dq-inlinebar-track" aria-hidden="true">
+                                              {cell.barSpec.bidirectional ? (
+                                                <span
+                                                  className="dq-inlinebar-zero"
+                                                  style={{
+                                                    left: `${cell.barSpec.zeroPct.toFixed(1)}%`,
+                                                  }}
+                                                />
+                                              ) : null}
+                                              <span
+                                                className="dq-inlinebar-fill"
+                                                style={{
+                                                  left: `${cell.barSpec.startPct.toFixed(1)}%`,
+                                                  width: `${Math.max(
+                                                    cell.barSpec.widthPct,
+                                                    cell.barSpec.ratio > 0 ? 2 : 0,
+                                                  ).toFixed(1)}%`,
+                                                  backgroundColor:
+                                                    cell.bgHex && cell.fgHex === "#FFFFFF"
+                                                      ? "rgb(255 255 255 / 0.85)"
+                                                      : cell.barSpec.fillHex,
+                                                }}
+                                              />
+                                            </span>
+                                          </span>
+                                        ) : cell.parts &&
                                         cell.parts.length === 2 &&
                                         hdr?.partWidthsCh ? (
                                         <span className="dq-num-merge">
@@ -1290,7 +1450,14 @@ export function TableCanvas(): React.ReactElement | null {
           className="dq-col-menu"
         >
           <label className="dq-field-label">
-            <span>{t("tableStudio.colMenu.renameLabel")}</span>
+            <span>
+              {activeMenuHeader.spannerPrefix ? (
+                <span className="dq-col-spanner-prefix">
+                  {`${activeMenuHeader.spannerPrefix} · `}
+                </span>
+              ) : null}
+              {t("tableStudio.colMenu.renameLabel")}
+            </span>
             <input
               type="text"
               className="dq-input dq-input--compact"
@@ -1320,6 +1487,236 @@ export function TableCanvas(): React.ReactElement | null {
             />
           </label>
 
+          {/* 4-Way Column Visual Mode Segmented Control */}
+          <div className="dq-col-menu__section">
+            <span className="dq-field-label">{t("tableStudio.colMenu.visualLabel")}</span>
+            <div className="dq-col-visual-seg">
+              {VISUAL_MODES.map((vm) => {
+                const disabled =
+                  (vm === "heat" || vm === "bar") && !activeMenuHeader.hasNumericValues;
+                return (
+                  <button
+                    key={vm}
+                    type="button"
+                    className="dq-btn dq-btn--xs"
+                    disabled={disabled}
+                    aria-pressed={activeMenuHeader.visualMode === vm}
+                    onClick={() => applyVisualToColumnIds([activeMenuColSpec.id], vm)}
+                  >
+                    {t(`tableStudio.visuals.${vm}`)}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Per-Column Color Ramp & Scale Controls */}
+          {activeMenuHeader.effectiveVisual === "heat" ||
+          activeMenuHeader.effectiveVisual === "bar" ? (
+            <div className="dq-col-menu__visual-box">
+              <label className="dq-field-label">
+                <span>{t("tableStudio.colMenu.colRampLabel")}</span>
+                <select
+                  className="dq-select dq-select--compact"
+                  value={activeMenuColSpec.visualConfig?.paletteId ?? ""}
+                  onChange={(e) => {
+                    const palId = e.target.value || undefined;
+                    commit((draft) => {
+                      const c = draft.structure.columns.find(
+                        (x) => x.id === activeMenuColSpec.id,
+                      );
+                      if (!c) return;
+                      c.visualConfig = { ...(c.visualConfig ?? {}), paletteId: palId };
+                    });
+                  }}
+                >
+                  <option value="">{t("tableStudio.colMenu.rampInherit")}</option>
+                  {BUILTIN_TABLE_RAMPS.map((r) => (
+                    <option key={r.id} value={r.id}>
+                      {t(r.labelKey)}
+                    </option>
+                  ))}
+                  {activeMenuColSpec.visualConfig?.paletteId &&
+                  !BUILTIN_TABLE_RAMPS.some(
+                    (r) => r.id === activeMenuColSpec.visualConfig?.paletteId,
+                  ) ? (
+                    <option value={activeMenuColSpec.visualConfig.paletteId}>
+                      {activeMenuColSpec.visualConfig.paletteId}
+                    </option>
+                  ) : null}
+                </select>
+              </label>
+
+              <div className="dq-col-ramp-pills">
+                {BUILTIN_TABLE_RAMPS.filter((r) => r.id !== "danqing_dual_part").map((r) => {
+                  const isActive = activeMenuColSpec.visualConfig?.paletteId === r.id;
+                  return (
+                    <button
+                      key={r.id}
+                      type="button"
+                      className="dq-col-ramp-pill"
+                      aria-pressed={isActive}
+                      aria-label={t(r.labelKey)}
+                      title={t(r.labelKey)}
+                      onClick={() =>
+                        commit((draft) => {
+                          const c = draft.structure.columns.find(
+                            (x) => x.id === activeMenuColSpec.id,
+                          );
+                          if (!c) return;
+                          const nextPal =
+                            c.visualConfig?.paletteId === r.id ? undefined : r.id;
+                          c.visualConfig = {
+                            ...(c.visualConfig ?? {}),
+                            paletteId: nextPal,
+                          };
+                        })
+                      }
+                    >
+                      <span
+                        className="dq-col-ramp-pill__bar"
+                        aria-hidden="true"
+                        style={{
+                          background: `linear-gradient(90deg, ${r.stops.join(", ")})`,
+                        }}
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+
+              {activeMenuHeader.effectiveVisual === "bar" ? (
+                <div className="dq-table-inline-field">
+                  <span className="dq-field-label">
+                    {t("tableStudio.colMenu.barDomainLabel")}
+                  </span>
+                  <div className="dq-inline-seg">
+                    <button
+                      type="button"
+                      className="dq-btn dq-btn--xs"
+                      aria-pressed={
+                        (activeMenuColSpec.visualConfig?.barDomain ?? "column_max") ===
+                        "column_max"
+                      }
+                      onClick={() =>
+                        commit((draft) => {
+                          const c = draft.structure.columns.find(
+                            (x) => x.id === activeMenuColSpec.id,
+                          );
+                          if (!c) return;
+                          c.visualConfig = {
+                            ...(c.visualConfig ?? {}),
+                            barDomain: "column_max",
+                          };
+                        })
+                      }
+                    >
+                      {t("tableStudio.colMenu.barDomainMax")}
+                    </button>
+                    <button
+                      type="button"
+                      className="dq-btn dq-btn--xs"
+                      aria-pressed={
+                        activeMenuColSpec.visualConfig?.barDomain === "percent_100"
+                      }
+                      onClick={() =>
+                        commit((draft) => {
+                          const c = draft.structure.columns.find(
+                            (x) => x.id === activeMenuColSpec.id,
+                          );
+                          if (!c) return;
+                          c.visualConfig = {
+                            ...(c.visualConfig ?? {}),
+                            barDomain: "percent_100",
+                          };
+                        })
+                      }
+                    >
+                      {t("tableStudio.colMenu.barDomainPct100")}
+                    </button>
+                  </div>
+                </div>
+              ) : null}
+
+              <label className="dq-check-row">
+                <input
+                  type="checkbox"
+                  checked={activeMenuColSpec.visualConfig?.direction === "reverse"}
+                  onChange={(e) => {
+                    const rev = e.target.checked;
+                    commit((draft) => {
+                      const c = draft.structure.columns.find(
+                        (x) => x.id === activeMenuColSpec.id,
+                      );
+                      if (!c) return;
+                      c.visualConfig = {
+                        ...(c.visualConfig ?? {}),
+                        direction: rev ? "reverse" : "normal",
+                      };
+                    });
+                  }}
+                />
+                <span>{t("tableStudio.colMenu.reverseScale")}</span>
+              </label>
+
+              {activeMenuHeader.effectiveVisual === "heat" ? (
+                <>
+                  <label className="dq-check-row">
+                    <input
+                      type="checkbox"
+                      checked={activeMenuColSpec.visualConfig?.center === "ratio_1"}
+                      onChange={(e) => {
+                        const checked = e.target.checked;
+                        commit((draft) => {
+                          const c = draft.structure.columns.find(
+                            (x) => x.id === activeMenuColSpec.id,
+                          );
+                          if (!c) return;
+                          c.visualConfig = {
+                            ...(c.visualConfig ?? {}),
+                            center: checked ? "ratio_1" : "auto",
+                          };
+                        });
+                      }}
+                    />
+                    <span>{t("tableStudio.colMenu.ratioCenterOne")}</span>
+                  </label>
+
+                  <label className="dq-check-row">
+                    <input
+                      type="checkbox"
+                      checked={
+                        (activeMenuColSpec.visualConfig?.domainClip ??
+                          doc.style.heatDomainClip ??
+                          "minmax") === "p5_p95"
+                      }
+                      onChange={(e) => {
+                        const checked = e.target.checked;
+                        commit((draft) => {
+                          const c = draft.structure.columns.find(
+                            (x) => x.id === activeMenuColSpec.id,
+                          );
+                          if (!c) return;
+                          c.visualConfig = {
+                            ...(c.visualConfig ?? {}),
+                            domainClip: checked ? "p5_p95" : "minmax",
+                          };
+                        });
+                      }}
+                    />
+                    <span>{t("tableStudio.colMenu.outlierClipP95")}</span>
+                  </label>
+
+                  {activeMenuColSpec.role === "sig" ? (
+                    <p className="dq-col-menu__hint">
+                      {t("tableStudio.colMenu.sigNegLogHint")}
+                    </p>
+                  ) : null}
+                </>
+              ) : null}
+            </div>
+          ) : null}
+
           {activeMenuHeader.ratioHint ? (
             <p className="dq-col-menu__hint">{t("tableStudio.colMenu.ratioHint")}</p>
           ) : null}
@@ -1332,7 +1729,11 @@ export function TableCanvas(): React.ReactElement | null {
               <span>{t("tableStudio.colMenu.roleLabel")}</span>
               <select
                 className="dq-select dq-select--compact"
-                value={activeMenuColSpec.role}
+                value={
+                  activeMenuColSpec.role === "heat" || activeMenuColSpec.role === "bar"
+                    ? "normal"
+                    : activeMenuColSpec.role
+                }
                 onChange={(e) => {
                   const nextRole = e.target.value as ColumnRole;
                   commit((draft) => {
@@ -1354,7 +1755,7 @@ export function TableCanvas(): React.ReactElement | null {
                   });
                 }}
               >
-                {ROLES.map((r) => (
+                {SEMANTIC_ROLES.map((r) => (
                   <option key={r} value={r}>
                     {t(`tableStudio.roles.${r}`)}
                   </option>

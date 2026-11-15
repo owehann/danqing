@@ -24,6 +24,7 @@ import {
   type SuggestionCategory,
   applySuggestionsToDoc,
   createInitialTableDoc,
+  normalizeLegacyTableDoc,
 } from "./pipeline";
 
 const SESSION_STORAGE_KEY = "danqing_table_studio_v2_session";
@@ -284,11 +285,11 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
             const snap = normalizeRawSnapshotPayload(
               (await sRes.json()) as Record<string, unknown>,
             );
-            restoredDocs[id] = {
+            restoredDocs[id] = normalizeLegacyTableDoc({
               raw: snap,
               structure: meta.structure,
               style: meta.style,
-            };
+            });
           }
         } catch {
           // Skip failed sample restore
@@ -579,11 +580,11 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
         if (matchingPendingEntry && !sheetName) {
           const [oldId, pMeta] = matchingPendingEntry;
           docId = oldId;
-          doc = {
+          doc = normalizeLegacyTableDoc({
             raw,
             structure: pMeta.structure,
             style: pMeta.style,
-          };
+          });
           delete nextPending[oldId];
         } else {
           doc = createInitialTableDoc(raw);
@@ -648,7 +649,7 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
       const baseDoc = createInitialTableDoc(raw);
       const finalDoc: TableDoc =
         restored?.structure && restored?.style
-          ? { raw, structure: restored.structure, style: restored.style }
+          ? normalizeLegacyTableDoc({ raw, structure: restored.structure, style: restored.style })
           : baseDoc;
 
       const docId = raw.snapshotId;

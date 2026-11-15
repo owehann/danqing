@@ -10,15 +10,25 @@ import {
   Trash2,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import type { ColumnRole, ColumnSpec, PStyle, Precision } from "../../table/model";
+import { BUILTIN_TABLE_RAMPS } from "../../table/color";
+import type {
+  ColumnRole,
+  ColumnSpec,
+  ColumnVisualMode,
+  PStyle,
+  Precision,
+  SemanticRole,
+} from "../../table/model";
 import {
   applySuggestionsToDoc,
   buildDerivedSparklineColumns,
+  inferColumnDirectionHint,
   sliceBodyRows,
 } from "../../table/pipeline";
 import { useTableStudioStore } from "../../table/tableStore";
 
-const ROLES: ColumnRole[] = ["normal", "count", "part", "heat", "sig", "bar"];
+const SEMANTIC_ROLES: SemanticRole[] = ["normal", "count", "part", "sig"];
+const VISUAL_MODES: ColumnVisualMode[] = ["auto", "plain", "heat", "bar"];
 const PRECISIONS: Precision[] = ["auto", 0, 1, 2, 3];
 
 export function TableStructurePanel(): React.ReactElement | null {
@@ -264,6 +274,28 @@ export function TableStructurePanel(): React.ReactElement | null {
               {structure.columns.map((col, idx) => {
                 const isSelected = selectedColId === col.id;
                 const isDropTarget = dragOverColIdx === idx && dragColIdx !== idx;
+                const enclosingSpanner = structure.spanners.find((sp) =>
+                  sp.columnIds.includes(col.id),
+                );
+                const leadMerge = structure.merges.find(
+                  (mg) => mg.columnIds[0] === col.id,
+                );
+                const secondaryMerge = structure.merges.find((mg) =>
+                  mg.columnIds.slice(1).includes(col.id),
+                );
+                const curVisual: ColumnVisualMode =
+                  col.visual ??
+                  (col.role === "bar" ? "bar" : col.role === "heat" ? "auto" : "auto");
+                const colStat =
+                  col.source.kind === "grid" ? raw.columnStats?.[col.source.col] : undefined;
+                const isTextOnlyCol = Boolean(colStat && colStat.numericRatio === 0);
+                const showColRamp =
+                  !secondaryMerge &&
+                  !isTextOnlyCol &&
+                  col.role !== "part" &&
+                  (curVisual === "heat" ||
+                    curVisual === "bar" ||
+                    (doc.style.preset === "matrix_heatmap" && curVisual !== "plain"));
                 return (
                   <div
                     key={col.id}
@@ -273,7 +305,7 @@ export function TableStructurePanel(): React.ReactElement | null {
                     draggable={editingColId !== col.id}
                     className={`dq-col-item${col.hidden ? " dq-col-item--hidden" : ""}${
                       isDropTarget ? " dq-col-item--drop" : ""
-                    }`}
+                    }${secondaryMerge ? " dq-col-item--secondary" : ""}`}
                     onFocus={() => setSelectedColId(col.id)}
                     onClick={() => setSelectedColId(col.id)}
                     onKeyDown={(e) => {
@@ -366,71 +398,207 @@ export function TableStructurePanel(): React.ReactElement | null {
                             setEditingColText(col.label);
                           }}
                         >
+                          {enclosingSpanner ? (
+                            <span className="dq-col-spanner-prefix">
+                              {`${enclosingSpanner.label} · `}
+                            </span>
+                          ) : null}
                           {col.label}
                         </span>
                       )}
+
+                      {leadMerge ? (
+                        <span className="dq-col-merged-badge">
+                          {t("tableStudio.canvas.mergedBadge")}
+                        </span>
+                      ) : null}
                     </div>
 
-                    <div className="dq-col-item__controls">
-                      <select
-                        className={`dq-table-role-select dq-table-role-select--${col.role}`}
-                        aria-label={t("tableStudio.colMenu.roleLabel")}
-                        value={col.role}
-                        onClick={(e) => e.stopPropagation()}
-                        onChange={(e) => {
-                          const nextRole = e.target.value as ColumnRole;
-                          commit((draft) => {
-                            ensureTidied(draft);
-                            const c = draft.structure.columns.find((x) => x.id === col.id);
-                            if (!c) return;
-                            c.role = nextRole;
-                            if (nextRole === "part") {
-                              draft.structure.partBy = col.id;
-                            } else if (draft.structure.partBy === col.id) {
-                              draft.structure.partBy = null;
+                    {secondaryMerge ? (
+                      <div className="dq-col-item__controls">
+                        <span className="dq-col-secondary-note">
+                          {t("tableStudio.canvas.mergedBadge")}
+                        </span>
+                        <select
+                          className="dq-table-prec-select"
+                          aria-label={t("tableStudio.colMenu.precisionLabel")}
+                          value={String(col.precision)}
+                          disabled={col.role === "sig" || col.role === "count"}
+                          onClick={(e) => e.stopPropagation()}
+                          onChange={(e) => {
+                            const val = e.target.value;
+                            const nextPrec: Precision =
+                              val === "auto" ? "auto" : (Number(val) as 0 | 1 | 2 | 3);
+                            commit((draft) => {
+                              ensureTidied(draft);
+                              const c = draft.structure.columns.find((x) => x.id === col.id);
+                              if (c) c.precision = nextPrec;
+                            });
+                          }}
+                        >
+                          {PRECISIONS.map((p) => (
+                            <option key={String(p)} value={String(p)}>
+                              {p === "auto"
+                                ? t("tableStudio.precisions.auto")
+                                : t(`tableStudio.precisions.d${p}`)}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="dq-col-item__controls dq-col-item__controls--tri">
+                          <select
+                            className={`dq-table-role-select dq-table-role-select--${col.role}`}
+                            aria-label={t("tableStudio.colMenu.roleLabel")}
+                            value={
+                              col.role === "heat" || col.role === "bar"
+                                ? "normal"
+                                : col.role
                             }
-                            if (nextRole === "sig" && !draft.structure.sig.sourceId) {
-                              draft.structure.sig.sourceId = col.id;
-                              if (draft.structure.sig.targetIds.length === 0) {
-                                draft.structure.sig.targetIds = [col.id];
-                              }
-                            }
-                          });
-                        }}
-                      >
-                        {ROLES.map((r) => (
-                          <option key={r} value={r}>
-                            {t(`tableStudio.roles.${r}`)}
-                          </option>
-                        ))}
-                      </select>
+                            onClick={(e) => e.stopPropagation()}
+                            onChange={(e) => {
+                              const nextRole = e.target.value as ColumnRole;
+                              commit((draft) => {
+                                ensureTidied(draft);
+                                const c = draft.structure.columns.find((x) => x.id === col.id);
+                                if (!c) return;
+                                c.role = nextRole;
+                                if (nextRole === "part") {
+                                  draft.structure.partBy = col.id;
+                                } else if (draft.structure.partBy === col.id) {
+                                  draft.structure.partBy = null;
+                                }
+                                if (nextRole === "sig" && !draft.structure.sig.sourceId) {
+                                  draft.structure.sig.sourceId = col.id;
+                                  if (draft.structure.sig.targetIds.length === 0) {
+                                    draft.structure.sig.targetIds = [col.id];
+                                  }
+                                }
+                              });
+                            }}
+                          >
+                            {SEMANTIC_ROLES.map((r) => (
+                              <option key={r} value={r}>
+                                {t(`tableStudio.roles.${r}`)}
+                              </option>
+                            ))}
+                          </select>
 
-                      <select
-                        className="dq-table-prec-select"
-                        aria-label={t("tableStudio.colMenu.precisionLabel")}
-                        value={String(col.precision)}
-                        disabled={col.role === "sig" || col.role === "count"}
-                        onClick={(e) => e.stopPropagation()}
-                        onChange={(e) => {
-                          const val = e.target.value;
-                          const nextPrec: Precision =
-                            val === "auto" ? "auto" : (Number(val) as 0 | 1 | 2 | 3);
-                          commit((draft) => {
-                            ensureTidied(draft);
-                            const c = draft.structure.columns.find((x) => x.id === col.id);
-                            if (c) c.precision = nextPrec;
-                          });
-                        }}
-                      >
-                        {PRECISIONS.map((p) => (
-                          <option key={String(p)} value={String(p)}>
-                            {p === "auto"
-                              ? t("tableStudio.precisions.auto")
-                              : t(`tableStudio.precisions.d${p}`)}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
+                          <select
+                            className={`dq-table-role-select${
+                              curVisual === "heat" || curVisual === "bar"
+                                ? " dq-table-role-select--heat"
+                                : ""
+                            }`}
+                            aria-label={t("tableStudio.structure.colVisualAria", {
+                              name: col.label,
+                            })}
+                            value={curVisual}
+                            disabled={col.role === "part"}
+                            onClick={(e) => e.stopPropagation()}
+                            onChange={(e) => {
+                              const nextVis = e.target.value as ColumnVisualMode;
+                              commit((draft) => {
+                                ensureTidied(draft);
+                                if (
+                                  (nextVis === "heat" || nextVis === "bar") &&
+                                  draft.style.preset === "raw"
+                                ) {
+                                  draft.style.preset = "cns_three_line";
+                                }
+                                const c = draft.structure.columns.find((x) => x.id === col.id);
+                                if (!c) return;
+                                c.visual = nextVis;
+                                if (nextVis === "plain" || nextVis === "auto") {
+                                  if (c.role === "heat" || c.role === "bar") c.role = "normal";
+                                } else if (nextVis === "heat") {
+                                  if (c.role === "bar") c.role = "normal";
+                                  if (
+                                    !c.visualConfig?.direction &&
+                                    inferColumnDirectionHint(c.label) === "reverse"
+                                  ) {
+                                    c.visualConfig = {
+                                      ...(c.visualConfig ?? {}),
+                                      direction: "reverse",
+                                    };
+                                  }
+                                } else if (nextVis === "bar") {
+                                  if (c.role === "heat") c.role = "normal";
+                                }
+                              });
+                            }}
+                          >
+                            {VISUAL_MODES.map((vm) => (
+                              <option key={vm} value={vm}>
+                                {t(`tableStudio.visuals.${vm}`)}
+                              </option>
+                            ))}
+                          </select>
+
+                          <select
+                            className="dq-table-prec-select"
+                            aria-label={t("tableStudio.colMenu.precisionLabel")}
+                            value={String(col.precision)}
+                            disabled={col.role === "sig" || col.role === "count"}
+                            onClick={(e) => e.stopPropagation()}
+                            onChange={(e) => {
+                              const val = e.target.value;
+                              const nextPrec: Precision =
+                                val === "auto" ? "auto" : (Number(val) as 0 | 1 | 2 | 3);
+                              commit((draft) => {
+                                ensureTidied(draft);
+                                const c = draft.structure.columns.find((x) => x.id === col.id);
+                                if (c) c.precision = nextPrec;
+                              });
+                            }}
+                          >
+                            {PRECISIONS.map((p) => (
+                              <option key={String(p)} value={String(p)}>
+                                {p === "auto"
+                                  ? t("tableStudio.precisions.auto")
+                                  : t(`tableStudio.precisions.d${p}`)}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+
+                        {showColRamp ? (
+                          <div className="dq-col-item__ramp-row">
+                            <select
+                              className="dq-table-role-select"
+                              aria-label={t("tableStudio.structure.colRampAria", {
+                                name: col.label,
+                              })}
+                              value={col.visualConfig?.paletteId ?? ""}
+                              onClick={(e) => e.stopPropagation()}
+                              onChange={(e) => {
+                                const palId = e.target.value || undefined;
+                                commit((draft) => {
+                                  const c = draft.structure.columns.find(
+                                    (x) => x.id === col.id,
+                                  );
+                                  if (!c) return;
+                                  c.visualConfig = {
+                                    ...(c.visualConfig ?? {}),
+                                    paletteId: palId,
+                                  };
+                                });
+                              }}
+                            >
+                              <option value="">
+                                {t("tableStudio.colMenu.rampInherit")}
+                              </option>
+                              {BUILTIN_TABLE_RAMPS.map((r) => (
+                                <option key={r.id} value={r.id}>
+                                  {t(r.labelKey)}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        ) : null}
+                      </>
+                    )}
                   </div>
                 );
               })}
@@ -591,6 +759,21 @@ export function TableStructurePanel(): React.ReactElement | null {
                 </button>
               ) : null}
             </div>
+
+            <label className="dq-check-row">
+              <input
+                type="checkbox"
+                checked={structure.excludeSummaryRows !== false}
+                onChange={(e) => {
+                  const checked = e.target.checked;
+                  commit((draft) => {
+                    ensureTidied(draft);
+                    draft.structure.excludeSummaryRows = checked;
+                  });
+                }}
+              />
+              <span>{t("tableStudio.structure.excludeSummaryRows")}</span>
+            </label>
 
             {bodyPreviewLabels.length > 0 && !structure.pivot ? (
               <div className="dq-struct-subbox">

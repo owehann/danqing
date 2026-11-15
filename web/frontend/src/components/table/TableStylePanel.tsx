@@ -96,6 +96,7 @@ export function TableStylePanel(): React.ReactElement | null {
   const model = buildModel(doc, langKey, catalogPalettes);
   const { style, structure } = doc;
   const hasSigSource = Boolean(structure.sig.sourceId);
+  const hasAnyHeatCapable = model.hasHeatColumns || model.hasActiveHeatColumns;
   const rhythmDisabled = style.preset === "matrix_heatmap";
 
   return (
@@ -162,12 +163,20 @@ export function TableStylePanel(): React.ReactElement | null {
             <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
           </summary>
           <div className="dq-style-acc__body">
-            {style.preset !== "matrix_heatmap" && model.hasHeatColumns ? (
+            {model.activeHueCount > 3 ? (
+              <p className="dq-gentle-hue-note">
+                {t("tableStudio.style.multiHueGentleNote", { count: model.activeHueCount })}
+              </p>
+            ) : null}
+
+            {style.preset !== "matrix_heatmap" &&
+            !model.hasActiveHeatColumns &&
+            model.hasHeatColumns ? (
               <div className="dq-style-mode-hint">
-                <span>{t("tableStudio.style.rampNeedHeatmapNote")}</span>
+                <span>{t("tableStudio.style.partialHeatNote")}</span>
                 <button
                   type="button"
-                  className="dq-btn dq-btn--primary dq-btn--xs"
+                  className="dq-btn dq-btn--xs"
                   onClick={() =>
                     commit((draft) => {
                       draft.style.preset = "matrix_heatmap";
@@ -181,6 +190,27 @@ export function TableStylePanel(): React.ReactElement | null {
                 </button>
               </div>
             ) : null}
+
+            {model.hasColumnVisualOverrides ? (
+              <button
+                type="button"
+                className="dq-btn dq-btn--xs"
+                onClick={() =>
+                  commit((draft) => {
+                    for (const col of draft.structure.columns) {
+                      col.visual = "auto";
+                      col.visualConfig = undefined;
+                      if (col.role === "heat" || col.role === "bar") {
+                        col.role = "normal";
+                      }
+                    }
+                  })
+                }
+              >
+                {t("tableStudio.style.resetColumnVisualsBtn")}
+              </button>
+            ) : null}
+
             <div className="dq-table-ramp-list">
               {BUILTIN_TABLE_RAMPS.map((ramp) => (
                 <button
@@ -273,17 +303,17 @@ export function TableStylePanel(): React.ReactElement | null {
           </summary>
           <div
             className={`dq-style-acc__body${
-              !model.hasHeatColumns ? " dq-style-acc__body--disabled" : ""
+              !hasAnyHeatCapable ? " dq-style-acc__body--disabled" : ""
             }`}
           >
-            {!model.hasHeatColumns ? (
+            {!hasAnyHeatCapable ? (
               <p className="dq-style-disabled-note">{t("tableStudio.style.heatDisabledHint")}</p>
-            ) : style.preset !== "matrix_heatmap" ? (
+            ) : style.preset !== "matrix_heatmap" && !model.hasActiveHeatColumns ? (
               <div className="dq-style-mode-hint">
                 <span>{t("tableStudio.style.scopeNeedHeatmapNote")}</span>
                 <button
                   type="button"
-                  className="dq-btn dq-btn--primary dq-btn--xs"
+                  className="dq-btn dq-btn--xs"
                   onClick={() =>
                     commit((draft) => {
                       draft.style.preset = "matrix_heatmap";
@@ -317,7 +347,7 @@ export function TableStylePanel(): React.ReactElement | null {
             <div className="dq-table-2x2-grid">
               {HEAT_SCOPES.map((sc) => {
                 const blockedGlobal = sc === "global" && !model.globalHeatAllowed;
-                const disabled = !model.hasHeatColumns || blockedGlobal;
+                const disabled = !hasAnyHeatCapable || blockedGlobal;
                 return (
                   <button
                     key={sc}
@@ -341,7 +371,7 @@ export function TableStylePanel(): React.ReactElement | null {
                 );
               })}
             </div>
-            {!model.globalHeatAllowed && model.hasHeatColumns ? (
+            {!model.globalHeatAllowed && hasAnyHeatCapable ? (
               <p className="dq-style-disabled-note">
                 {t("tableStudio.style.globalDisabledReason")}
               </p>
@@ -353,7 +383,7 @@ export function TableStylePanel(): React.ReactElement | null {
                 <button
                   type="button"
                   className="dq-btn dq-btn--xs"
-                  disabled={!model.hasHeatColumns}
+                  disabled={!hasAnyHeatCapable}
                   aria-pressed={style.heatCenter === "auto"}
                   onClick={() =>
                     commit((draft) => {
@@ -366,7 +396,7 @@ export function TableStylePanel(): React.ReactElement | null {
                 <button
                   type="button"
                   className="dq-btn dq-btn--xs"
-                  disabled={!model.hasHeatColumns}
+                  disabled={!hasAnyHeatCapable}
                   aria-pressed={typeof style.heatCenter === "number"}
                   onClick={() => {
                     const num = Number(customCenterText);
@@ -385,7 +415,7 @@ export function TableStylePanel(): React.ReactElement | null {
                 type="number"
                 step="any"
                 className="dq-input dq-input--compact"
-                disabled={!model.hasHeatColumns}
+                disabled={!hasAnyHeatCapable}
                 aria-label={t("tableStudio.style.centerInputLabel")}
                 value={String(style.heatCenter)}
                 onChange={(e) => {
@@ -403,7 +433,7 @@ export function TableStylePanel(): React.ReactElement | null {
             <label className="dq-check-row">
               <input
                 type="checkbox"
-                disabled={!model.hasHeatColumns}
+                disabled={!hasAnyHeatCapable}
                 checked={style.heatLog}
                 onChange={(e) =>
                   commit((draft) => {
@@ -412,6 +442,35 @@ export function TableStylePanel(): React.ReactElement | null {
                 }
               />
               <span>{t("tableStudio.style.logScale")}</span>
+            </label>
+
+            <label className="dq-check-row">
+              <input
+                type="checkbox"
+                disabled={!hasAnyHeatCapable}
+                checked={(style.heatDomainClip ?? "minmax") === "p5_p95"}
+                onChange={(e) => {
+                  const checked = e.target.checked;
+                  commit((draft) => {
+                    draft.style.heatDomainClip = checked ? "p5_p95" : "minmax";
+                  });
+                }}
+              />
+              <span>{t("tableStudio.style.outlierClipGlobal")}</span>
+            </label>
+
+            <label className="dq-check-row">
+              <input
+                type="checkbox"
+                checked={structure.excludeSummaryRows !== false}
+                onChange={(e) => {
+                  const checked = e.target.checked;
+                  commit((draft) => {
+                    draft.structure.excludeSummaryRows = checked;
+                  });
+                }}
+              />
+              <span>{t("tableStudio.style.excludeSummaryRows")}</span>
             </label>
           </div>
         </details>

@@ -212,6 +212,62 @@ export function contrastRatio(hexA: string, hexB: string): number {
   return (hi + 0.05) / (lo + 0.05);
 }
 
+export function orientRampStops(
+  stops: string[],
+  direction: "normal" | "reverse",
+): string[] {
+  return direction === "reverse" ? [...stops].reverse() : stops;
+}
+
+export function isChromaticPalette(
+  paletteId: string,
+  catalogPalettes: PaletteItem[],
+): boolean {
+  if (paletteId === "danqing_slate_ink") return false;
+  const resolved = resolveTableRamp(paletteId, catalogPalettes, false);
+  return resolved.stops.some((hex) => {
+    const [r, g, b] = hexToRgb(hex);
+    return Math.max(r, g, b) - Math.min(r, g, b) >= 26;
+  });
+}
+
+export function resolveColumnBarColors(
+  paletteId: string,
+  catalogPalettes: PaletteItem[],
+  direction: "normal" | "reverse" = "normal",
+): { posHex: string; negHex: string } {
+  const pairMap: Record<string, { posHex: string; negHex: string }> = {
+    danqing_umi_teal: { posHex: "#2E6F95", negHex: "#C6593F" },
+    danqing_sdi_terracotta: { posHex: "#C45B3E", negHex: "#387D98" },
+    danqing_dual_part: { posHex: "#2E6F95", negHex: "#C45B3E" },
+    danqing_qingbai_jade: { posHex: "#4E7D7E", negHex: "#C6593F" },
+    danqing_diverging_bu_rd: { posHex: "#9E2A2B", negHex: "#2166AC" },
+    danqing_kyoto_moss: { posHex: "#5A7F53", negHex: "#C6593F" },
+    danqing_slate_ink: { posHex: "#475569", negHex: "#94A3B8" },
+  };
+
+  let base = pairMap[paletteId];
+  if (!base) {
+    const resolved = resolveTableRamp(paletteId, catalogPalettes, false);
+    if (resolved.diverging && resolved.stops.length >= 3) {
+      base = {
+        posHex: resolved.stops[resolved.stops.length - 1],
+        negHex: resolved.stops[0],
+      };
+    } else {
+      const darkStop =
+        resolved.stops[Math.max(0, resolved.stops.length - 2)] ??
+        resolved.partAccents[0] ??
+        "#2E6F95";
+      base = { posHex: darkStop, negHex: "#C6593F" };
+    }
+  }
+
+  return direction === "reverse"
+    ? { posHex: base.negHex, negHex: base.posHex }
+    : base;
+}
+
 export function pickWcagForeground(bgHex: string | null): string {
   if (!bgHex) return "#111827";
   const darkInk = "#111827";

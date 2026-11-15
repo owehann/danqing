@@ -2,13 +2,20 @@ import type { PaletteItem } from "../types";
 import {
   cushionSmallSampleT,
   interpolateRampHex,
+  isChromaticPalette,
+  orientRampStops,
   pickWcagForeground,
+  resolveColumnBarColors,
   resolveTableRamp,
 } from "./color";
 import type {
+  BarDomainMode,
+  BarRenderSpec,
   ColumnRole,
   ColumnSpec,
+  ColumnVisualMode,
   DerivedMetricKind,
+  DomainClipMode,
   FootnoteSpec,
   HeatLegendModel,
   HeatScope,
@@ -40,9 +47,38 @@ import {
 } from "./numeric";
 
 const RATIO_NAME_RE = /\b(OR|HR|RR|odds|hazard|ratio)\b/i;
+const LOWER_BETTER_NAME_RE = /\b(RMSE|MAE|MSE|MAPE|NLL|BIC|AIC|IC50|EC50|KD|Ki|error|loss|latency|rank|brier)\b/i;
 const SUPERSCRIPT_TOKEN_RE = /\^([a-zA-Z0-9,*†‡§]+)/;
 const LEADING_FN_SYM_RE = /^([a-zA-Z*†‡§])\s+(.+)$/;
 const TABLE_NUM_PREFIX_RE = /^(Table\s+\d+|表\s*\d+)\s*[.:：·—–-]?\s*(.*)$/i;
+const SUMMARY_ROW_EXACT_RE =
+  /^(?:total|totals|grand\s+total|subtotal|overall|sum|all(?:\s+(?:patients|subjects|participants|cases|samples|cohorts))?|合计|总计|小计|汇总|全队列|总体)(?:\s*(?:[,:：]\s*(?:n\b.*)?|\([^)]*\)|（[^）]*）|\[[^\]]*\]))?$/i;
+
+export function isSummaryRowLabel(rawLabel: string): boolean {
+  const clean = rawLabel.replace(SUPERSCRIPT_TOKEN_RE, "").trim();
+  if (!clean) return false;
+  return SUMMARY_ROW_EXACT_RE.test(clean);
+}
+
+export function inferColumnDirectionHint(label: string): "normal" | "reverse" {
+  return LOWER_BETTER_NAME_RE.test(label) ? "reverse" : "normal";
+}
+
+export function normalizeLegacyTableDoc(doc: TableDoc): TableDoc {
+  const next = structuredClone(doc);
+  if (next.structure.excludeSummaryRows === undefined) {
+    next.structure.excludeSummaryRows = true;
+  }
+  if (next.style.heatDomainClip === undefined) {
+    next.style.heatDomainClip = "minmax";
+  }
+  for (const col of next.structure.columns) {
+    if (!col.visual) {
+      col.visual = "auto";
+    }
+  }
+  return next;
+}
 
 function splitInlineSuperscript(raw: string): { clean: string; sup: string } {
   const m = SUPERSCRIPT_TOKEN_RE.exec(raw);
@@ -244,6 +280,7 @@ export function createInitialTableDoc(raw: RawSnapshot): TableDoc {
       label: resolved || fallback,
       hidden: false,
       role: "normal",
+      visual: "auto",
       precision: "auto",
       unit: stat?.detectedUnit ?? "",
     };
@@ -275,6 +312,7 @@ export function createInitialTableDoc(raw: RawSnapshot): TableDoc {
       stars: true,
     },
     dismissedSuggestions: [],
+    excludeSummaryRows: true,
   };
 
   const style: StyleLayer = {
@@ -283,6 +321,7 @@ export function createInitialTableDoc(raw: RawSnapshot): TableDoc {
     heatScope: "per_column",
     heatCenter: "auto",
     heatLog: false,
+    heatDomainClip: "minmax",
     emphasis: "bold_star_mono",
     rowRhythm: "none",
     tabularNums: true,
@@ -800,8 +839,13 @@ export function buildModel(
       editedCount: 0,
       globalHeatAllowed: true,
       hasHeatColumns: false,
+      hasActiveHeatColumns: false,
+      hasColumnVisualOverrides: false,
+      activeHueCount: 0,
+      detectedSummaryRowCount: 0,
       isMultiScaleHeat: false,
       heatLegend: null,
+      heatLegends: [],
       rawDataSheet: {
         headers: raw.grid[0] ?? [],
         rows: raw.grid.slice(1),
@@ -986,15 +1030,22 @@ export function buildModel(
     }
   }
 
-  // Bar column max values
-  const barMaxByColId: Record<string, number> = {};
-  for (const slot of slots) {
-    const p = slot.memberSpecs[0];
-    if (!slot.mergeSpec && p.role === "bar") {
-      const vals = (colParsedValues[p.id] ?? []).map((v) => Math.abs(v));
-      barMaxByColId[p.id] = vals.length > 0 ? Math.max(...vals, 1e-9) : 1;
+  // Detect summary rows (Total / Overall / 合计) in the leading visible column
+  const detectedSummaryBodyIndices = new Set<number>();
+  const leadLabelColId = slots[0]?.memberSpecs[0]?.id ?? null;
+  if (leadLabelColId && internalRows.length >= 3) {
+    const matchingRows = internalRows.filter((ir) =>
+      isSummaryRowLabel(ir.cellsByColId[leadLabelColId] ?? ""),
+    );
+    if (matchingRows.length > 0 && internalRows.length - matchingRows.length >= 2) {
+      for (const mr of matchingRows) {
+        detectedSummaryBodyIndices.add(mr.bodyRowIndex);
+      }
     }
   }
+  const detectedSummaryRowCount = detectedSummaryBodyIndices.size;
+  const excludeSummaryActive =
+    (structure.excludeSummaryRows ?? true) && detectedSummaryRowCount > 0;
 
   // Significance per bodyRowIndex (from structure.sig.sourceId)
   const sigSourceId = structure.sig.sourceId;
@@ -1046,6 +1097,7 @@ export function buildModel(
 
     const renderedRows: RenderedCell[][] = bRows.map((iRow) => {
       const indentLvl = structure.rowIndents[iRow.bodyRowIndex] ?? 0;
+      const isSummaryRow = detectedSummaryBodyIndices.has(iRow.bodyRowIndex);
 
       return slots.map((slot, sIdx) => {
         const primary = slot.memberSpecs[0];
@@ -1072,7 +1124,6 @@ export function buildModel(
 
             let mDisp: string = structure.missingToken;
             let mNumFmt = "";
-            let mBarRatio: number | null = null;
             if (mVal !== null) {
               const baseFmt = formatNumberFixed(mVal, decPrimary);
               mDisp = metric === "delta" && mVal > 0 ? `+${baseFmt}` : baseFmt;
@@ -1080,14 +1131,6 @@ export function buildModel(
                 metric === "delta"
                   ? `+${buildExcelNumFmt(decPrimary)};-${buildExcelNumFmt(decPrimary)};${buildExcelNumFmt(decPrimary)}`
                   : buildExcelNumFmt(decPrimary);
-              if (
-                primary.role === "bar" &&
-                !isUnstyledGrid &&
-                style.preset !== "matrix_heatmap"
-              ) {
-                const denom = barMaxByColId[primary.id] ?? 1;
-                mBarRatio = Math.max(0, Math.min(1, Math.abs(mVal) / denom));
-              }
             }
 
             return {
@@ -1097,7 +1140,7 @@ export function buildModel(
               editableColId: null,
               raw: mVal !== null ? String(mVal) : "",
               value: mVal,
-              heatValue: primary.role === "sig" || primary.role === "count" ? null : mVal,
+              heatValue: primary.role === "part" ? null : mVal,
               display: mDisp,
               superscript: "",
               numFmt: mNumFmt,
@@ -1108,13 +1151,15 @@ export function buildModel(
               role: primary.role,
               bgHex: null,
               fgHex: "#111827",
-              bold: false,
+              bold: !isUnstyledGrid && isSummaryRow,
               boxBorder: false,
               noWrap: true,
               parts: null,
               sparklineValues: null,
               sparklineDomain: null,
-              barRatio: mBarRatio,
+              barRatio: null,
+              barSpec: null,
+              isSummaryRow,
             };
           }
 
@@ -1152,13 +1197,15 @@ export function buildModel(
             role: primary.role,
             bgHex: null,
             fgHex: "#111827",
-            bold: false,
+            bold: !isUnstyledGrid && isSummaryRow,
             boxBorder: false,
             noWrap: true,
             parts: null,
             sparklineValues: sVals.length >= 2 ? sVals : null,
             sparklineDomain: domain,
             barRatio: null,
+            barSpec: null,
+            isSummaryRow,
           };
         }
 
@@ -1260,8 +1307,7 @@ export function buildModel(
             editableColId: m0.id,
             raw: raw0,
             value: p0.value,
-            heatValue:
-              m0.role === "sig" || m0.role === "count" ? null : mergedHeatVal,
+            heatValue: m0.role === "part" ? null : mergedHeatVal,
             display: disp,
             superscript: "",
             numFmt: "",
@@ -1273,13 +1319,17 @@ export function buildModel(
             bgHex: null,
             fgHex:
               isSigHighlight && style.emphasis === "accent_bold" ? "#9E2A2B" : "#111827",
-            bold: isSigHighlight && style.emphasis !== "hairline_box",
+            bold:
+              (!isUnstyledGrid && isSummaryRow) ||
+              (isSigHighlight && style.emphasis !== "hairline_box"),
             boxBorder: isSigHighlight && style.emphasis === "hairline_box",
             noWrap: true,
             parts,
             sparklineValues: null,
             sparklineDomain: null,
             barRatio: null,
+            barSpec: null,
+            isSummaryRow,
           };
         }
 
@@ -1292,7 +1342,6 @@ export function buildModel(
         let display = "";
         let numFmt = "";
         let sparkVals: number[] | null = null;
-        let barRatio: number | null = null;
 
         if (primary.role === "sig") {
           if (parsed.value === null && !parsed.pText) {
@@ -1311,14 +1360,6 @@ export function buildModel(
         } else if (parsed.value !== null) {
           display = formatNumberFixed(parsed.value, decPrimary, parsed.prefix);
           numFmt = buildExcelNumFmt(decPrimary);
-          if (
-            primary.role === "bar" &&
-            !isUnstyledGrid &&
-            style.preset !== "matrix_heatmap"
-          ) {
-            const denom = barMaxByColId[primary.id] ?? 1;
-            barRatio = Math.max(0, Math.min(1, Math.abs(parsed.value) / denom));
-          }
         } else {
           display = cleanStr === "" || parseNumber(cleanStr, decimalComma).value === null && ["NA", "N/A", "-", "—"].includes(cleanStr.trim())
             ? structure.missingToken
@@ -1342,16 +1383,21 @@ export function buildModel(
           primary.role === "heat" ||
           primary.role === "count" ||
           primary.role === "bar" ||
+          primary.visual === "heat" ||
+          primary.visual === "bar" ||
           parsed.value !== null ||
           sparkVals !== null;
 
         const singleHeatVal =
-          primary.role === "sig" ||
-          primary.role === "count" ||
-          primary.role === "part" ||
-          sparkVals !== null
+          primary.role === "part" || sparkVals !== null
             ? null
-            : parsed.value;
+            : primary.role === "sig"
+              ? parsed.value !== null && parsed.value >= 0
+                ? parsed.prefix === "<"
+                  ? parsed.value * 0.5
+                  : parsed.value
+                : null
+              : parsed.value;
 
         return {
           key: `r${iRow.bodyRowIndex}_${primary.id}`,
@@ -1371,13 +1417,17 @@ export function buildModel(
           role: primary.role,
           bgHex: null,
           fgHex: isSigHighlight && style.emphasis === "accent_bold" ? "#9E2A2B" : "#111827",
-          bold: isSigHighlight && style.emphasis !== "hairline_box",
+          bold:
+            (!isUnstyledGrid && isSummaryRow) ||
+            (isSigHighlight && style.emphasis !== "hairline_box"),
           boxBorder: isSigHighlight && style.emphasis === "hairline_box",
           noWrap: false,
           parts: null,
           sparklineValues: sparkVals,
           sparklineDomain: sparkVals ? [Math.min(...sparkVals), Math.max(...sparkVals)] : null,
-          barRatio,
+          barRatio: null,
+          barSpec: null,
+          isSummaryRow,
         };
       });
     });
@@ -1390,9 +1440,25 @@ export function buildModel(
     };
   });
 
-  // Evaluate Heatmap Slot Candidates & Unit / Scale Compatibility (§2.5)
+  // Evaluate numeric values per slot (optionally excluding summary rows from bounds)
   const totalBodyRows = blocks.reduce((acc, b) => acc + b.rows.length, 0);
-  const slotHeatValues: number[][] = slots.map((_, sIdx) => {
+  const slotNumericValuesForBounds: number[][] = slots.map((_, sIdx) => {
+    const arr: number[] = [];
+    blocks.forEach((b) =>
+      b.rows.forEach((r) => {
+        const cell = r[sIdx];
+        if (!cell) return;
+        if (excludeSummaryActive && cell.isSummaryRow) return;
+        const hv = cell.heatValue;
+        if (hv !== null && hv !== undefined && Number.isFinite(hv)) {
+          arr.push(hv);
+        }
+      }),
+    );
+    return arr;
+  });
+
+  const slotAllNumericValues: number[][] = slots.map((_, sIdx) => {
     const arr: number[] = [];
     blocks.forEach((b) =>
       b.rows.forEach((r) => {
@@ -1405,12 +1471,34 @@ export function buildModel(
     return arr;
   });
 
-  const explicitHeatSlotIndices: number[] = [];
-  const autoNumericSlotIndices: number[] = [];
+  // Resolve visualMode & effectiveVisual per slot
+  const slotVisualModes: ColumnVisualMode[] = slots.map((slot) => {
+    const primary = slot.memberSpecs[0];
+    if (primary.visual && primary.visual !== "auto") return primary.visual;
+    const memberOverride = slot.memberSpecs.find((ms) => ms.visual && ms.visual !== "auto");
+    return memberOverride?.visual ?? primary.visual ?? "auto";
+  });
+
+  const slotIsSparklineSvg = (slot: EffectiveDisplaySlot): boolean => {
+    const p = slot.memberSpecs[0];
+    if (p.source.kind === "derived" && (p.source.metric ?? "sparkline") === "sparkline") {
+      return true;
+    }
+    return blocks.some((b) =>
+      b.rows.some((r) => {
+        const sIdx = slots.indexOf(slot);
+        return sIdx >= 0 && r[sIdx]?.sparklineValues !== null;
+      }),
+    );
+  };
+
+  const autoHeatCandidateSlots: number[] = [];
+  const legacyRoleHeatSlots: number[] = [];
   slots.forEach((slot, sIdx) => {
     const primary = slot.memberSpecs[0];
-    const vals = slotHeatValues[sIdx];
+    const vals = slotAllNumericValues[sIdx];
     if (vals.length === 0) return;
+    if (slotIsSparklineSvg(slot)) return;
     if (primary.role === "sig" || primary.role === "count" || primary.role === "part") return;
     const isLabelFirstCol =
       sIdx === 0 &&
@@ -1419,35 +1507,191 @@ export function buildModel(
       vals.length / Math.max(1, totalBodyRows) < 0.6;
     if (isLabelFirstCol) return;
 
-    autoNumericSlotIndices.push(sIdx);
+    autoHeatCandidateSlots.push(sIdx);
     if (slot.memberSpecs.some((ms) => ms.role === "heat")) {
-      explicitHeatSlotIndices.push(sIdx);
+      legacyRoleHeatSlots.push(sIdx);
     }
   });
 
-  const candidateHeatSlots =
-    explicitHeatSlotIndices.length > 0 ? explicitHeatSlotIndices : autoNumericSlotIndices;
+  const defaultMatrixHeatSlotSet = new Set<number>(
+    legacyRoleHeatSlots.length > 0 ? legacyRoleHeatSlots : autoHeatCandidateSlots,
+  );
+
+  const slotEffectiveVisuals: Array<"plain" | "heat" | "bar"> = slots.map((slot, sIdx) => {
+    const primary = slot.memberSpecs[0];
+    const vm = slotVisualModes[sIdx];
+    const hasNums = slotAllNumericValues[sIdx].length > 0 && !slotIsSparklineSvg(slot);
+    if (isUnstyledGrid || !hasNums) return "plain";
+    if (vm === "plain") return "plain";
+    if (vm === "heat") return "heat";
+    if (vm === "bar") return "bar";
+    // vm === "auto"
+    if (style.preset === "matrix_heatmap") {
+      return defaultMatrixHeatSlotSet.has(sIdx) ? "heat" : "plain";
+    }
+    if (primary.role === "bar") {
+      return "bar";
+    }
+    return "plain";
+  });
+
+  const slotEffectivePaletteIds: string[] = slots.map((slot) => {
+    const vc = slot.memberSpecs[0].visualConfig;
+    return vc?.paletteId && vc.paletteId !== "inherit" ? vc.paletteId : style.paletteId;
+  });
+
+  // Render Inline Bar Specs & compute aligned barValWidthCh for all active bar slots
+  const barValWidthChBySlot: Record<number, number> = {};
+  slots.forEach((slot, sIdx) => {
+    if (slotEffectiveVisuals[sIdx] !== "bar") return;
+    const primary = slot.memberSpecs[0];
+    const vc = primary.visualConfig ?? {};
+    const barDomainMode: BarDomainMode = vc.barDomain ?? "column_max";
+    const direction = vc.direction ?? "normal";
+    const effPaletteId = slotEffectivePaletteIds[sIdx];
+    const { posHex, negHex } = resolveColumnBarColors(effPaletteId, catalogPalettes, direction);
+
+    const boundVals =
+      slotNumericValuesForBounds[sIdx].length > 0
+        ? slotNumericValuesForBounds[sIdx]
+        : slotAllNumericValues[sIdx];
+    if (boundVals.length === 0) return;
+
+    const rawMin = Math.min(...boundVals);
+    const rawMax = Math.max(...boundVals);
+
+    let domainMin = 0;
+    let domainMax = 1;
+    let bidirectional = false;
+    let zeroPct = 0;
+
+    if (rawMin >= 0) {
+      domainMin = 0;
+      domainMax =
+        barDomainMode === "percent_100" ? Math.max(100, rawMax) : Math.max(rawMax, 1e-9);
+      bidirectional = false;
+      zeroPct = 0;
+    } else if (rawMax <= 0) {
+      domainMax = 0;
+      domainMin =
+        barDomainMode === "percent_100" ? Math.min(-100, rawMin) : Math.min(rawMin, -1e-9);
+      bidirectional = true;
+      zeroPct = 100;
+    } else {
+      domainMin = barDomainMode === "percent_100" ? Math.min(-100, rawMin) : rawMin;
+      domainMax = barDomainMode === "percent_100" ? Math.max(100, rawMax) : rawMax;
+      const span = Math.max(domainMax - domainMin, 1e-9);
+      bidirectional = true;
+      zeroPct = (Math.abs(domainMin) / span) * 100;
+    }
+
+    const spanTotal = Math.max(domainMax - domainMin, 1e-9);
+    const maxAbsBound = Math.max(Math.abs(domainMin), Math.abs(domainMax), 1e-9);
+
+    let maxLabelChars = 0;
+    const mergedPartWidths = maxPartWidthsBySlot[sIdx];
+    if (mergedPartWidths) {
+      maxLabelChars = mergedPartWidths[0] + 1 + mergedPartWidths[1];
+    }
+
+    blocks.forEach((b) =>
+      b.rows.forEach((r) => {
+        const cell = r[sIdx];
+        if (!cell) return;
+        if (!mergedPartWidths) {
+          const charLen =
+            (cell.display?.length ?? 0) + (cell.superscript ? cell.superscript.length * 0.75 : 0);
+          if (charLen > maxLabelChars) maxLabelChars = charLen;
+        }
+        if (excludeSummaryActive && cell.isSummaryRow) {
+          cell.barRatio = null;
+          cell.barSpec = null;
+          return;
+        }
+        const mVal = cell.heatValue;
+        if (mVal === null || mVal === undefined || !Number.isFinite(mVal)) {
+          cell.barRatio = null;
+          cell.barSpec = null;
+          return;
+        }
+
+        let startPct = 0;
+        let widthPct = 0;
+        let ratio = 0;
+        if (!bidirectional) {
+          ratio = Math.max(0, Math.min(1, mVal / Math.max(domainMax, 1e-9)));
+          startPct = 0;
+          widthPct = ratio * 100;
+        } else if (domainMax === 0) {
+          ratio = Math.max(0, Math.min(1, Math.abs(mVal) / Math.max(Math.abs(domainMin), 1e-9)));
+          widthPct = ratio * 100;
+          startPct = Math.max(0, 100 - widthPct);
+        } else {
+          widthPct = Math.max(0, Math.min(100, (Math.abs(mVal) / spanTotal) * 100));
+          startPct = mVal >= 0 ? zeroPct : Math.max(0, zeroPct - widthPct);
+          ratio = Math.max(0, Math.min(1, Math.abs(mVal) / maxAbsBound));
+        }
+
+        const spec: BarRenderSpec = {
+          ratio,
+          zeroPct,
+          startPct,
+          widthPct,
+          fillHex: mVal < 0 ? negHex : posHex,
+          bidirectional,
+          isNegative: mVal < 0,
+          domainMin,
+          domainMax,
+        };
+        cell.barRatio = ratio;
+        cell.barSpec = spec;
+      }),
+    );
+
+    barValWidthChBySlot[sIdx] = Math.max(3.5, Math.ceil((maxLabelChars + 0.5) * 2) / 2);
+  });
+
+  // Evaluate Heatmap Slot Candidates & Unit / Scale Compatibility (§2.5 + v0.6.1 Multi-Cohort Engine)
+  const activeHeatSlots: number[] = [];
+  slots.forEach((_, sIdx) => {
+    if (slotEffectiveVisuals[sIdx] === "heat") {
+      activeHeatSlots.push(sIdx);
+    }
+  });
+  const activeHeatSlotSet = new Set<number>(activeHeatSlots);
+
+  const compatibilityHeatSlots =
+    activeHeatSlots.length > 0 ? activeHeatSlots : Array.from(defaultMatrixHeatSlotSet);
 
   const heatUnits = new Set<string>();
   const logBlockedCols = new Set<string>();
   let isMultiScaleHeat = false;
 
-  for (const sIdx of candidateHeatSlots) {
+  for (const sIdx of compatibilityHeatSlots) {
     const primary = slots[sIdx].memberSpecs[0];
-    heatUnits.add(primary.unit || "");
-    const vals = slotHeatValues[sIdx];
-    if (style.heatLog && vals.some((v) => v <= 0)) {
+    const vc = primary.visualConfig ?? {};
+    const isSigCol = primary.role === "sig";
+    const isRatioOne = !isSigCol && vc.center === "ratio_1";
+    const useLog10 = !isSigCol && !isRatioOne && style.heatLog;
+
+    heatUnits.add(isSigCol ? "-log10P" : primary.unit || "");
+    const vals =
+      slotNumericValuesForBounds[sIdx].length > 0
+        ? slotNumericValuesForBounds[sIdx]
+        : slotAllNumericValues[sIdx];
+    if ((useLog10 || isRatioOne) && vals.some((v) => v <= 0)) {
       logBlockedCols.add(primary.id);
     }
     const posAbs = vals.map((v) => Math.abs(v)).filter((v) => v > 0);
-    if (candidateHeatSlots.length >= 2 && posAbs.length >= 2) {
+    if (compatibilityHeatSlots.length >= 2 && posAbs.length >= 2) {
       if (Math.max(...posAbs) / Math.max(Math.min(...posAbs), 1e-12) >= 20) {
         isMultiScaleHeat = true;
       }
     }
   }
 
-  const hasHeatColumns = candidateHeatSlots.length > 0;
+  const hasHeatColumns = compatibilityHeatSlots.length > 0;
+  const hasActiveHeatColumns = activeHeatSlots.length > 0;
   const globalHeatAllowed = heatUnits.size <= 1 && !hasMixedRowUnits;
   const effectiveHeatScope: HeatScope =
     style.heatScope === "global" && !globalHeatAllowed
@@ -1456,279 +1700,29 @@ export function buildModel(
         : "per_column"
       : style.heatScope;
 
-  let heatLegend: HeatLegendModel | null = null;
-
-  // Step 11: Style Layer — Heatmap Normalization (in Matrix Heatmap) & Row Rhythm
-  if (style.preset === "matrix_heatmap") {
-    const transformVal = (v: number): number | null => {
-      if (!style.heatLog) return v;
-      return v > 0 ? Math.log10(v) : null;
-    };
-
-    const normalizeT = (val: number, lo: number, hi: number, count: number): number => {
-      const center =
-        typeof style.heatCenter === "number"
-          ? style.heatLog
-            ? style.heatCenter > 0
-              ? Math.log10(style.heatCenter)
-              : 0
-            : style.heatCenter
-          : lo < 0 && hi > 0
-            ? 0
-            : null;
-
-      if (center !== null && ramp.diverging) {
-        const maxArm = Math.max(Math.abs(hi - center), Math.abs(center - lo), 1e-12);
-        return Math.max(0, Math.min(1, 0.5 + 0.5 * ((val - center) / maxArm)));
-      }
-      if (hi - lo <= 1e-12) return 0.45;
-      const rawT = Math.max(0, Math.min(1, (val - lo) / (hi - lo)));
-      return cushionSmallSampleT(rawT, count, ramp.diverging);
-    };
-
-    const paintHeatCell = (cell: RenderedCell, stops: string[], tNorm: number) => {
-      const bg = interpolateRampHex(stops, tNorm);
-      cell.bgHex = bg;
-      const wcagFg = pickWcagForeground(bg);
-      if (cell.bold && style.emphasis === "accent_bold" && wcagFg === "#111827") {
-        cell.fgHex = "#7F1D1D";
-      } else {
-        cell.fgHex = wcagFg;
-      }
-    };
-
-    const eligibleHeatSlots = candidateHeatSlots.filter(
-      (sIdx) => !logBlockedCols.has(slots[sIdx].memberSpecs[0].id),
-    );
-
-    if (eligibleHeatSlots.length > 0) {
-      let globalMinRaw = Infinity;
-      let globalMaxRaw = -Infinity;
-      eligibleHeatSlots.forEach((sIdx) => {
-        for (const v of slotHeatValues[sIdx]) {
-          if (v < globalMinRaw) globalMinRaw = v;
-          if (v > globalMaxRaw) globalMaxRaw = v;
-        }
-      });
-
-      if (effectiveHeatScope === "global") {
-        const allT: number[] = [];
-        blocks.forEach((b) =>
-          b.rows.forEach((r) =>
-            eligibleHeatSlots.forEach((sIdx) => {
-              const v = r[sIdx]?.heatValue;
-              if (v !== null && v !== undefined) {
-                const tv = transformVal(v);
-                if (tv !== null) allT.push(tv);
-              }
-            }),
-          ),
-        );
-        if (allT.length > 0) {
-          const lo = Math.min(...allT);
-          const hi = Math.max(...allT);
-          blocks.forEach((b, bIdx) => {
-            const stops =
-              bIdx % 2 === 1 && ramp.secondaryStops ? ramp.secondaryStops : ramp.stops;
-            b.rows.forEach((r) =>
-              eligibleHeatSlots.forEach((sIdx) => {
-                const cell = r[sIdx];
-                if (cell.heatValue !== null) {
-                  const tv = transformVal(cell.heatValue);
-                  if (tv !== null) {
-                    paintHeatCell(cell, stops, normalizeT(tv, lo, hi, allT.length));
-                  }
-                }
-              }),
-            );
-          });
-        }
-      } else if (effectiveHeatScope === "per_part") {
-        blocks.forEach((b, bIdx) => {
-          const stops =
-            bIdx % 2 === 1 && ramp.secondaryStops ? ramp.secondaryStops : ramp.stops;
-          const partVals: number[] = [];
-          b.rows.forEach((r) =>
-            eligibleHeatSlots.forEach((sIdx) => {
-              const v = r[sIdx]?.heatValue;
-              if (v !== null && v !== undefined) {
-                const tv = transformVal(v);
-                if (tv !== null) partVals.push(tv);
-              }
-            }),
-          );
-          if (partVals.length > 0) {
-            const lo = Math.min(...partVals);
-            const hi = Math.max(...partVals);
-            b.rows.forEach((r) =>
-              eligibleHeatSlots.forEach((sIdx) => {
-                const cell = r[sIdx];
-                if (cell.heatValue !== null) {
-                  const tv = transformVal(cell.heatValue);
-                  if (tv !== null) {
-                    paintHeatCell(cell, stops, normalizeT(tv, lo, hi, partVals.length));
-                  }
-                }
-              }),
-            );
-          }
-        });
-      } else if (effectiveHeatScope === "per_row") {
-        blocks.forEach((b, bIdx) => {
-          const stops =
-            bIdx % 2 === 1 && ramp.secondaryStops ? ramp.secondaryStops : ramp.stops;
-          b.rows.forEach((r) => {
-            const rowVals: number[] = [];
-            eligibleHeatSlots.forEach((sIdx) => {
-              const v = r[sIdx]?.heatValue;
-              if (v !== null && v !== undefined) {
-                const tv = transformVal(v);
-                if (tv !== null) rowVals.push(tv);
-              }
-            });
-            if (rowVals.length > 0) {
-              const lo = Math.min(...rowVals);
-              const hi = Math.max(...rowVals);
-              eligibleHeatSlots.forEach((sIdx) => {
-                const cell = r[sIdx];
-                if (cell.heatValue !== null) {
-                  const tv = transformVal(cell.heatValue);
-                  if (tv !== null) {
-                    paintHeatCell(cell, stops, normalizeT(tv, lo, hi, rowVals.length));
-                  }
-                }
-              });
-            }
-          });
-        });
-      } else {
-        // per_column
-        eligibleHeatSlots.forEach((sIdx) => {
-          const colVals: number[] = [];
-          blocks.forEach((b) =>
-            b.rows.forEach((r) => {
-              const v = r[sIdx]?.heatValue;
-              if (v !== null && v !== undefined) {
-                const tv = transformVal(v);
-                if (tv !== null) colVals.push(tv);
-              }
-            }),
-          );
-          if (colVals.length > 0) {
-            const lo = Math.min(...colVals);
-            const hi = Math.max(...colVals);
-            blocks.forEach((b, bIdx) => {
-              const stops =
-                bIdx % 2 === 1 && ramp.secondaryStops ? ramp.secondaryStops : ramp.stops;
-              b.rows.forEach((r) => {
-                const cell = r[sIdx];
-                if (cell.heatValue !== null) {
-                  const tv = transformVal(cell.heatValue);
-                  if (tv !== null) {
-                    paintHeatCell(cell, stops, normalizeT(tv, lo, hi, colVals.length));
-                  }
-                }
-              });
-            });
-          }
-        });
-      }
-
-      const fmtLegendNum = (n: number): string =>
-        Math.abs(n) >= 100 ? Math.round(n).toLocaleString() : Number(n.toFixed(1)).toString();
-
-      heatLegend = {
-        stops: ramp.stops,
-        secondaryStops: blocks.length >= 2 ? ramp.secondaryStops : undefined,
-        scope: effectiveHeatScope,
-        minLabel:
-          effectiveHeatScope === "global" && Number.isFinite(globalMinRaw)
-            ? fmtLegendNum(globalMinRaw)
-            : lang === "zh"
-              ? "低"
-              : "Low",
-        maxLabel:
-          effectiveHeatScope === "global" && Number.isFinite(globalMaxRaw)
-            ? fmtLegendNum(globalMaxRaw)
-            : lang === "zh"
-              ? "高"
-              : "High",
-        diverging: ramp.diverging,
+  const computeDomainBounds = (vals: number[], clipMode: DomainClipMode): [number, number] => {
+    if (vals.length === 0) return [0, 1];
+    const sorted = [...vals].sort((a, b) => a - b);
+    const loAll = sorted[0];
+    const hiAll = sorted[sorted.length - 1];
+    if (clipMode === "p5_p95" && sorted.length >= 5) {
+      const interp = (q: number) => {
+        const pos = q * (sorted.length - 1);
+        const i0 = Math.floor(pos);
+        const i1 = Math.min(sorted.length - 1, i0 + 1);
+        const f = pos - i0;
+        return sorted[i0] + (sorted[i1] - sorted[i0]) * f;
       };
-    }
-  } else if (style.preset !== "raw" && style.rowRhythm !== "none") {
-    // Row rhythm (only when NOT raw and NOT matrix_heatmap, per §5.6 L329)
-    const tintHex = style.preset === "ft_editorial" ? "#F5EFE6" : "#F3F6FA";
-    blocks.forEach((b) => {
-      b.rows.forEach((r, rIdx) => {
-        const tinted =
-          style.rowRhythm === "zebra"
-            ? rIdx % 2 === 1
-            : Math.floor(rIdx / 3) % 2 === 1;
-        if (tinted) {
-          r.forEach((cell) => {
-            if (!cell.bgHex) {
-              cell.bgHex = tintHex;
-            }
-          });
-        }
-      });
-    });
-  }
-
-  // Build RenderedHeaders & RenderedSpanners
-  const headers: RenderedHeader[] = slots.map((slot, sIdx) => {
-    const primary = slot.memberSpecs[0];
-    const { clean: cleanLbl, sup: inlineSup } = splitInlineSuperscript(primary.label);
-    const anchoredSups = slot.memberSpecs.flatMap((ms) => anchorSupsByColId[ms.id] ?? []);
-    const allSups = [inlineSup, ...anchoredSups].filter(Boolean).join(",");
-
-    let displayLabel = cleanLbl;
-    if (slot.mergeSpec) {
-      if (slot.mergeSpec.mergedLabel) {
-        displayLabel = slot.mergeSpec.mergedLabel;
-      } else if (slot.mergeSpec.pattern === "ci") {
-        displayLabel = `${cleanLbl} (95% CI)`;
-      } else if (slot.mergeSpec.pattern === "plusminus") {
-        displayLabel = `${cleanLbl} ± ${leafHeaderName(slot.memberSpecs[1].label)}`;
-      } else {
-        displayLabel = `${cleanLbl} (${leafHeaderName(slot.memberSpecs[1].label)})`;
+      const q05 = interp(0.05);
+      const q95 = interp(0.95);
+      if (q95 - q05 > 1e-12) {
+        return [q05, q95];
       }
     }
+    return [loAll, hiAll];
+  };
 
-    if (
-      primary.unit &&
-      !displayLabel.includes(`(${primary.unit})`) &&
-      !displayLabel.endsWith(primary.unit)
-    ) {
-      displayLabel = `${displayLabel} (${primary.unit})`;
-    }
-
-    const activeSort = structure.sort.find((s) => s.columnId === primary.id);
-    const firstCellAlign = blocks[0]?.rows[0]?.[sIdx]?.align;
-    const align: "left" | "right" =
-      sIdx === 0 && primary.role === "normal" && !slot.mergeSpec
-        ? "left"
-        : firstCellAlign ?? "right";
-
-    return {
-      colId: slot.slotId,
-      memberColIds: slot.memberSpecs.map((m) => m.id),
-      label: displayLabel,
-      rawLabel: primary.label,
-      unit: primary.unit,
-      superscript: allSups,
-      role: primary.role,
-      align,
-      isMerged: Boolean(slot.mergeSpec),
-      partWidthsCh: maxPartWidthsBySlot[sIdx] ?? null,
-      sortDir: activeSort?.dir ?? null,
-      ratioHint: RATIO_NAME_RE.test(primary.label),
-      logBlocked: logBlockedCols.has(primary.id),
-    };
-  });
-
-  // Map StructureLayer spanners onto visible slot indices
+  // Map StructureLayer spanners onto visible slot indices first so legends & headers know spanner prefixes
   const spanners: RenderedSpanner[] = [];
   for (const sp of structure.spanners) {
     const matchedSlotIndices: number[] = [];
@@ -1754,6 +1748,451 @@ export function buildModel(
       }
     }
   }
+
+  const spannerPrefixBySlot: string[] = slots.map((_, sIdx) => {
+    const enc = spanners.find((sp) => sIdx >= sp.startCol && sIdx <= sp.endCol);
+    return enc ? enc.label : "";
+  });
+
+  const buildSlotDisplayLabel = (slot: EffectiveDisplaySlot): string => {
+    const primary = slot.memberSpecs[0];
+    const { clean: cleanLbl } = splitInlineSuperscript(primary.label);
+    let displayLabel = cleanLbl;
+    if (slot.mergeSpec) {
+      if (slot.mergeSpec.mergedLabel) {
+        displayLabel = slot.mergeSpec.mergedLabel;
+      } else if (slot.mergeSpec.pattern === "ci") {
+        displayLabel = `${cleanLbl} (95% CI)`;
+      } else if (slot.mergeSpec.pattern === "plusminus") {
+        displayLabel = `${cleanLbl} ± ${leafHeaderName(slot.memberSpecs[1].label)}`;
+      } else {
+        displayLabel = `${cleanLbl} (${leafHeaderName(slot.memberSpecs[1].label)})`;
+      }
+    }
+    if (
+      primary.unit &&
+      !displayLabel.includes(`(${primary.unit})`) &&
+      !displayLabel.endsWith(primary.unit)
+    ) {
+      displayLabel = `${displayLabel} (${primary.unit})`;
+    }
+    return displayLabel;
+  };
+
+  const slotDisplayLabels = slots.map((sl) => buildSlotDisplayLabel(sl));
+
+  // Step 11: Multi-Cohort Heatmap Normalization (works in Matrix Heatmap AND selective columns in CNS / FT)
+  const heatLegends: HeatLegendModel[] = [];
+  const headerRampStopsBySlot: Record<number, string[]> = {};
+
+  if (!isUnstyledGrid && activeHeatSlots.length > 0) {
+    interface HeatCohort {
+      key: string;
+      slotIndices: number[];
+      paletteId: string;
+      direction: "normal" | "reverse";
+      center: "auto" | "ratio_1" | number;
+      domainClip: DomainClipMode;
+      isSigNegLog: boolean;
+      isRatioOne: boolean;
+      useLog10: boolean;
+    }
+
+    const cohortMap = new Map<string, HeatCohort>();
+    for (const sIdx of activeHeatSlots) {
+      const primary = slots[sIdx].memberSpecs[0];
+      if (logBlockedCols.has(primary.id)) continue;
+      const vc = primary.visualConfig ?? {};
+      const paletteId = slotEffectivePaletteIds[sIdx];
+      const direction = vc.direction ?? "normal";
+      const center: "auto" | "ratio_1" | number = vc.center ?? style.heatCenter;
+      const domainClip: DomainClipMode = vc.domainClip ?? style.heatDomainClip ?? "minmax";
+      const isSigNegLog = primary.role === "sig";
+      const isRatioOne = !isSigNegLog && center === "ratio_1";
+      const useLog10 = !isSigNegLog && !isRatioOne && style.heatLog;
+      const unitKey = isSigNegLog ? "__sig_neglog10__" : primary.unit || "";
+      const scaleKey = isSigNegLog
+        ? "sig"
+        : isRatioOne
+          ? "ratio1"
+          : useLog10
+            ? "log10"
+            : "lin";
+      const key = `${paletteId}|${unitKey}|${direction}|${String(center)}|${scaleKey}|${domainClip}`;
+
+      let cohort = cohortMap.get(key);
+      if (!cohort) {
+        cohort = {
+          key,
+          slotIndices: [],
+          paletteId,
+          direction,
+          center,
+          domainClip,
+          isSigNegLog,
+          isRatioOne,
+          useLog10,
+        };
+        cohortMap.set(key, cohort);
+      }
+      cohort.slotIndices.push(sIdx);
+    }
+
+    const paintHeatCell = (cell: RenderedCell, stops: string[], tNorm: number) => {
+      const bg = interpolateRampHex(stops, tNorm);
+      cell.bgHex = bg;
+      const wcagFg = pickWcagForeground(bg);
+      if (cell.bold && style.emphasis === "accent_bold" && wcagFg === "#111827") {
+        cell.fgHex = "#7F1D1D";
+      } else {
+        cell.fgHex = wcagFg;
+      }
+    };
+
+    const fmtLegendNum = (n: number): string =>
+      Math.abs(n) >= 100 ? Math.round(n).toLocaleString() : Number(n.toFixed(1)).toString();
+
+    const cohorts = Array.from(cohortMap.values());
+
+    for (const cohort of cohorts) {
+      const wantDiverging =
+        cohort.isRatioOne || typeof cohort.center === "number";
+      const resolvedCohortRamp = resolveTableRamp(
+        cohort.paletteId,
+        catalogPalettes,
+        wantDiverging,
+      );
+      const primaryStops = orientRampStops(resolvedCohortRamp.stops, cohort.direction);
+      const secondaryStops = resolvedCohortRamp.secondaryStops
+        ? orientRampStops(resolvedCohortRamp.secondaryStops, cohort.direction)
+        : undefined;
+
+      const transformCohortVal = (v: number): number | null => {
+        if (!Number.isFinite(v)) return null;
+        if (cohort.isSigNegLog) {
+          return -Math.log10(Math.max(v, 1e-16));
+        }
+        if (cohort.isRatioOne) {
+          return v > 0 ? Math.log10(v) : null;
+        }
+        if (cohort.useLog10) {
+          return v > 0 ? Math.log10(v) : null;
+        }
+        return v;
+      };
+
+      const normalizeCohortT = (val: number, lo: number, hi: number, count: number): number => {
+        const clampedVal = Math.max(lo, Math.min(hi, val));
+        const numericCenter = cohort.isRatioOne
+          ? 0
+          : typeof cohort.center === "number"
+            ? cohort.useLog10
+              ? cohort.center > 0
+                ? Math.log10(cohort.center)
+                : 0
+              : cohort.center
+            : lo < 0 && hi > 0
+              ? 0
+              : null;
+
+        if (numericCenter !== null && resolvedCohortRamp.diverging) {
+          const maxArm = Math.max(
+            Math.abs(hi - numericCenter),
+            Math.abs(numericCenter - lo),
+            1e-12,
+          );
+          return Math.max(0, Math.min(1, 0.5 + 0.5 * ((clampedVal - numericCenter) / maxArm)));
+        }
+        if (hi - lo <= 1e-12) return 0.45;
+        const rawT = Math.max(0, Math.min(1, (clampedVal - lo) / (hi - lo)));
+        return cushionSmallSampleT(rawT, count, resolvedCohortRamp.diverging);
+      };
+
+      // Single-column cohort cannot normalize per_row (lo === hi), so fall back cleanly to per_column
+      const cohortScope: HeatScope =
+        effectiveHeatScope === "per_row" && cohort.slotIndices.length < 2
+          ? "per_column"
+          : effectiveHeatScope;
+
+      let cohortMinRaw = Infinity;
+      let cohortMaxRaw = -Infinity;
+      cohort.slotIndices.forEach((sIdx) => {
+        const rawPool =
+          slotNumericValuesForBounds[sIdx].length > 0
+            ? slotNumericValuesForBounds[sIdx]
+            : slotAllNumericValues[sIdx];
+        for (const v of rawPool) {
+          if (v < cohortMinRaw) cohortMinRaw = v;
+          if (v > cohortMaxRaw) cohortMaxRaw = v;
+        }
+      });
+
+      if (cohortScope === "global") {
+        const boundT: number[] = [];
+        blocks.forEach((b) =>
+          b.rows.forEach((r) =>
+            cohort.slotIndices.forEach((sIdx) => {
+              const cell = r[sIdx];
+              if (!cell || (excludeSummaryActive && cell.isSummaryRow)) return;
+              if (cell.heatValue !== null) {
+                const tv = transformCohortVal(cell.heatValue);
+                if (tv !== null) boundT.push(tv);
+              }
+            }),
+          ),
+        );
+        if (boundT.length > 0) {
+          const [lo, hi] = computeDomainBounds(boundT, cohort.domainClip);
+          blocks.forEach((b, bIdx) => {
+            const stops = bIdx % 2 === 1 && secondaryStops ? secondaryStops : primaryStops;
+            b.rows.forEach((r) =>
+              cohort.slotIndices.forEach((sIdx) => {
+                const cell = r[sIdx];
+                if (!cell || (excludeSummaryActive && cell.isSummaryRow)) return;
+                if (cell.heatValue !== null) {
+                  const tv = transformCohortVal(cell.heatValue);
+                  if (tv !== null) {
+                    paintHeatCell(cell, stops, normalizeCohortT(tv, lo, hi, boundT.length));
+                  }
+                }
+              }),
+            );
+          });
+        }
+      } else if (cohortScope === "per_part") {
+        blocks.forEach((b, bIdx) => {
+          const stops = bIdx % 2 === 1 && secondaryStops ? secondaryStops : primaryStops;
+          const partVals: number[] = [];
+          b.rows.forEach((r) =>
+            cohort.slotIndices.forEach((sIdx) => {
+              const cell = r[sIdx];
+              if (!cell || (excludeSummaryActive && cell.isSummaryRow)) return;
+              if (cell.heatValue !== null) {
+                const tv = transformCohortVal(cell.heatValue);
+                if (tv !== null) partVals.push(tv);
+              }
+            }),
+          );
+          if (partVals.length > 0) {
+            const [lo, hi] = computeDomainBounds(partVals, cohort.domainClip);
+            b.rows.forEach((r) =>
+              cohort.slotIndices.forEach((sIdx) => {
+                const cell = r[sIdx];
+                if (!cell || (excludeSummaryActive && cell.isSummaryRow)) return;
+                if (cell.heatValue !== null) {
+                  const tv = transformCohortVal(cell.heatValue);
+                  if (tv !== null) {
+                    paintHeatCell(cell, stops, normalizeCohortT(tv, lo, hi, partVals.length));
+                  }
+                }
+              }),
+            );
+          }
+        });
+      } else if (cohortScope === "per_row") {
+        blocks.forEach((b, bIdx) => {
+          const stops = bIdx % 2 === 1 && secondaryStops ? secondaryStops : primaryStops;
+          b.rows.forEach((r) => {
+            const firstCell = r[cohort.slotIndices[0]];
+            if (excludeSummaryActive && firstCell?.isSummaryRow) return;
+            const rowVals: number[] = [];
+            cohort.slotIndices.forEach((sIdx) => {
+              const v = r[sIdx]?.heatValue;
+              if (v !== null && v !== undefined) {
+                const tv = transformCohortVal(v);
+                if (tv !== null) rowVals.push(tv);
+              }
+            });
+            if (rowVals.length > 0) {
+              const [lo, hi] = computeDomainBounds(rowVals, cohort.domainClip);
+              cohort.slotIndices.forEach((sIdx) => {
+                const cell = r[sIdx];
+                if (cell && cell.heatValue !== null) {
+                  const tv = transformCohortVal(cell.heatValue);
+                  if (tv !== null) {
+                    paintHeatCell(cell, stops, normalizeCohortT(tv, lo, hi, rowVals.length));
+                  }
+                }
+              });
+            }
+          });
+        });
+      } else {
+        // per_column
+        cohort.slotIndices.forEach((sIdx) => {
+          const colVals: number[] = [];
+          blocks.forEach((b) =>
+            b.rows.forEach((r) => {
+              const cell = r[sIdx];
+              if (!cell || (excludeSummaryActive && cell.isSummaryRow)) return;
+              if (cell.heatValue !== null) {
+                const tv = transformCohortVal(cell.heatValue);
+                if (tv !== null) colVals.push(tv);
+              }
+            }),
+          );
+          if (colVals.length > 0) {
+            const [lo, hi] = computeDomainBounds(colVals, cohort.domainClip);
+            blocks.forEach((b, bIdx) => {
+              const stops = bIdx % 2 === 1 && secondaryStops ? secondaryStops : primaryStops;
+              b.rows.forEach((r) => {
+                const cell = r[sIdx];
+                if (!cell || (excludeSummaryActive && cell.isSummaryRow)) return;
+                if (cell.heatValue !== null) {
+                  const tv = transformCohortVal(cell.heatValue);
+                  if (tv !== null) {
+                    paintHeatCell(cell, stops, normalizeCohortT(tv, lo, hi, colVals.length));
+                  }
+                }
+              });
+            });
+          }
+        });
+      }
+
+      for (const sIdx of cohort.slotIndices) {
+        headerRampStopsBySlot[sIdx] = primaryStops;
+      }
+
+      let cohortLabel: string | undefined;
+      if (cohorts.length > 1) {
+        const names = cohort.slotIndices.map((sIdx) => {
+          const sp = spannerPrefixBySlot[sIdx];
+          const lbl = slotDisplayLabels[sIdx];
+          return sp ? `${sp} · ${lbl}` : lbl;
+        });
+        cohortLabel =
+          names.length <= 2 ? names.join(", ") : `${names[0]} +${names.length - 1}`;
+      }
+
+      const showNumericEnds =
+        !cohort.isSigNegLog &&
+        !cohort.isRatioOne &&
+        (cohortScope === "global" || cohort.slotIndices.length === 1) &&
+        Number.isFinite(cohortMinRaw) &&
+        Number.isFinite(cohortMaxRaw);
+
+      const minLabel = cohort.isSigNegLog
+        ? "n.s."
+        : cohort.isRatioOne
+          ? "< 1"
+          : showNumericEnds
+            ? fmtLegendNum(cohortMinRaw)
+            : lang === "zh"
+              ? "低"
+              : "Low";
+
+      const maxLabel = cohort.isSigNegLog
+        ? "-log₁₀P"
+        : cohort.isRatioOne
+          ? "> 1"
+          : showNumericEnds
+            ? fmtLegendNum(cohortMaxRaw)
+            : lang === "zh"
+              ? "高"
+              : "High";
+
+      heatLegends.push({
+        id: cohort.key,
+        label: cohortLabel,
+        stops: primaryStops,
+        secondaryStops: blocks.length >= 2 ? secondaryStops : undefined,
+        scope: cohortScope,
+        minLabel,
+        maxLabel,
+        diverging: resolvedCohortRamp.diverging,
+        reversed: cohort.direction === "reverse",
+      });
+    }
+  }
+
+  // Row rhythm on non-heat columns when preset is cns_three_line or ft_editorial
+  if (!isUnstyledGrid && style.preset !== "matrix_heatmap" && style.rowRhythm !== "none") {
+    const tintHex = style.preset === "ft_editorial" ? "#F5EFE6" : "#F3F6FA";
+    blocks.forEach((b) => {
+      b.rows.forEach((r, rIdx) => {
+        const tinted =
+          style.rowRhythm === "zebra"
+            ? rIdx % 2 === 1
+            : Math.floor(rIdx / 3) % 2 === 1;
+        if (tinted) {
+          r.forEach((cell, sIdx) => {
+            if (!cell.bgHex && !activeHeatSlotSet.has(sIdx)) {
+              cell.bgHex = tintHex;
+            }
+          });
+        }
+      });
+    });
+  }
+
+  const heatLegend: HeatLegendModel | null = heatLegends[0] ?? null;
+
+  // Compute activeHueCount (distinct chromatic palettes across active heat/bar slots) & override indicator
+  const activeChromaticPalettes = new Set<string>();
+  slots.forEach((_, sIdx) => {
+    const ev = slotEffectiveVisuals[sIdx];
+    if (ev === "heat" || ev === "bar") {
+      const pid = slotEffectivePaletteIds[sIdx];
+      if (isChromaticPalette(pid, catalogPalettes)) {
+        activeChromaticPalettes.add(pid);
+      }
+    }
+  });
+  const activeHueCount = activeChromaticPalettes.size;
+
+  const hasColumnVisualOverrides = visibleCols.some((c) => {
+    if (c.visual && c.visual !== "auto") return true;
+    const vc = c.visualConfig;
+    if (!vc) return false;
+    return Boolean(
+      (vc.paletteId && vc.paletteId !== "inherit") ||
+        (vc.direction && vc.direction !== "normal") ||
+        (vc.center !== undefined && vc.center !== "auto") ||
+        (vc.domainClip && vc.domainClip !== "minmax") ||
+        (vc.barDomain && vc.barDomain !== "column_max"),
+    );
+  });
+
+  // Build RenderedHeaders
+  const showHeaderInlineRamps = heatLegends.length > 3;
+  const headers: RenderedHeader[] = slots.map((slot, sIdx) => {
+    const primary = slot.memberSpecs[0];
+    const { sup: inlineSup } = splitInlineSuperscript(primary.label);
+    const anchoredSups = slot.memberSpecs.flatMap((ms) => anchorSupsByColId[ms.id] ?? []);
+    const allSups = [inlineSup, ...anchoredSups].filter(Boolean).join(",");
+    const displayLabel = slotDisplayLabels[sIdx];
+
+    const activeSort = structure.sort.find((s) => s.columnId === primary.id);
+    const firstCellAlign = blocks[0]?.rows[0]?.[sIdx]?.align;
+    const align: "left" | "right" =
+      sIdx === 0 && primary.role === "normal" && !slot.mergeSpec
+        ? "left"
+        : firstCellAlign ?? "right";
+
+    return {
+      colId: slot.slotId,
+      memberColIds: slot.memberSpecs.map((m) => m.id),
+      label: displayLabel,
+      rawLabel: primary.label,
+      spannerPrefix: spannerPrefixBySlot[sIdx] ?? "",
+      unit: primary.unit,
+      superscript: allSups,
+      role: primary.role,
+      visualMode: slotVisualModes[sIdx],
+      effectiveVisual: slotEffectiveVisuals[sIdx],
+      effectivePaletteId: slotEffectivePaletteIds[sIdx],
+      headerRampStops: showHeaderInlineRamps ? (headerRampStopsBySlot[sIdx] ?? null) : null,
+      align,
+      isMerged: Boolean(slot.mergeSpec),
+      partWidthsCh: maxPartWidthsBySlot[sIdx] ?? null,
+      barValWidthCh: barValWidthChBySlot[sIdx] ?? null,
+      hasNumericValues: slotAllNumericValues[sIdx].length > 0 && !slotIsSparklineSvg(slot),
+      sortDir: activeSort?.dir ?? null,
+      ratioHint: RATIO_NAME_RE.test(primary.label),
+      logBlocked: logBlockedCols.has(primary.id),
+    };
+  });
 
   // Build Footnotes + automatic read-only star legend (§2.4 L177, §6 L361)
   const footnotes: RenderedFootnote[] = structure.footnotes.map((fn) => ({
@@ -1839,8 +2278,13 @@ export function buildModel(
     editedCount,
     globalHeatAllowed,
     hasHeatColumns,
+    hasActiveHeatColumns,
+    hasColumnVisualOverrides,
+    activeHueCount,
+    detectedSummaryRowCount,
     isMultiScaleHeat,
     heatLegend,
+    heatLegends: showHeaderInlineRamps ? [] : heatLegends,
     rawDataSheet,
   };
 }

@@ -483,3 +483,213 @@ def test_end_to_end_all_3_samples_and_6_hostile_fixtures_parse_to_xlsx_and_docx(
         doc = Document(io.BytesIO(rd.content))
         assert len(doc.tables) == 1
 
+
+def test_export_v061_inline_bars_and_partial_heatmap_xlsx_docx_and_zip(tmp_path: Path) -> None:
+    payload = {
+        "filename_stem": "v061_mixed_visuals",
+        "title": "Table 2. Selective Heatmaps and Inline Bars",
+        "subtitle": "",
+        "preset": "cns_three_line",
+        "spanners": [],
+        "headers": [
+            {"label": "Arm", "superscript": "", "align": "left", "effective_visual": "plain"},
+            {"label": "ORR (%)", "superscript": "", "align": "right", "effective_visual": "bar"},
+            {"label": "Mean (SD)", "superscript": "", "align": "right", "effective_visual": "bar"},
+            {"label": "AUROC", "superscript": "", "align": "right", "effective_visual": "heat"},
+        ],
+        "blocks": [
+            {
+                "part_name": "",
+                "part_accent": "#2E6F95",
+                "rows": [
+                    [
+                        {
+                            "text": "Combo",
+                            "superscript": "",
+                            "align": "left",
+                            "bg_hex": "#FFFFFF",
+                            "fg_hex": "#111827",
+                            "bold": False,
+                            "box_border": False,
+                            "raw_number": None,
+                            "number_format": "",
+                        },
+                        {
+                            "text": "78.5",
+                            "superscript": "",
+                            "align": "right",
+                            "bg_hex": "#FFFFFF",
+                            "fg_hex": "#111827",
+                            "bold": False,
+                            "box_border": False,
+                            "raw_number": 78.5,
+                            "number_format": "0.0",
+                            "bar_spec": {
+                                "ratio": 0.785,
+                                "fill_hex": "#2E6F95",
+                                "is_negative": False,
+                                "domain_min": 0.0,
+                                "domain_max": 100.0,
+                            },
+                        },
+                        {
+                            "text": "64.2 (8.1)",
+                            "superscript": "",
+                            "align": "right",
+                            "bg_hex": "#FFFFFF",
+                            "fg_hex": "#111827",
+                            "bold": False,
+                            "box_border": False,
+                            "raw_number": None,
+                            "number_format": "",
+                            "no_wrap": True,
+                            "bar_spec": {
+                                "ratio": 1.0,
+                                "fill_hex": "#C6593F",
+                                "is_negative": False,
+                                "domain_min": 0.0,
+                                "domain_max": 64.2,
+                            },
+                        },
+                        {
+                            "text": "0.91",
+                            "superscript": "",
+                            "align": "right",
+                            "bg_hex": "#2E6F95",
+                            "fg_hex": "#FFFFFF",
+                            "bold": True,
+                            "box_border": False,
+                            "raw_number": 0.91,
+                            "number_format": "0.00",
+                        },
+                    ],
+                    [
+                        {
+                            "text": "Control",
+                            "superscript": "",
+                            "align": "left",
+                            "bg_hex": "#FFFFFF",
+                            "fg_hex": "#111827",
+                            "bold": False,
+                            "box_border": False,
+                            "raw_number": None,
+                            "number_format": "",
+                        },
+                        {
+                            "text": "31.0",
+                            "superscript": "",
+                            "align": "right",
+                            "bg_hex": "#FFFFFF",
+                            "fg_hex": "#111827",
+                            "bold": False,
+                            "box_border": False,
+                            "raw_number": 31.0,
+                            "number_format": "0.0",
+                            "bar_spec": {
+                                "ratio": 0.31,
+                                "fill_hex": "#2E6F95",
+                                "is_negative": False,
+                                "domain_min": 0.0,
+                                "domain_max": 100.0,
+                            },
+                        },
+                        {
+                            "text": "32.1 (7.4)",
+                            "superscript": "",
+                            "align": "right",
+                            "bg_hex": "#FFFFFF",
+                            "fg_hex": "#111827",
+                            "bold": False,
+                            "box_border": False,
+                            "raw_number": None,
+                            "number_format": "",
+                            "no_wrap": True,
+                            "bar_spec": {
+                                "ratio": 0.5,
+                                "fill_hex": "#C6593F",
+                                "is_negative": False,
+                                "domain_min": 0.0,
+                                "domain_max": 64.2,
+                            },
+                        },
+                        {
+                            "text": "0.68",
+                            "superscript": "",
+                            "align": "right",
+                            "bg_hex": "#C2E2DC",
+                            "fg_hex": "#111827",
+                            "bold": False,
+                            "box_border": False,
+                            "raw_number": 0.68,
+                            "number_format": "0.00",
+                        },
+                    ],
+                ],
+            }
+        ],
+        "footnotes": [],
+        "raw_data_sheet": {
+            "headers": ["Arm", "ORR", "Mean", "SD", "AUROC"],
+            "rows": [
+                ["Combo", 78.5, 64.2, 8.1, 0.91],
+                ["Control", 31.0, 32.1, 7.4, 0.68],
+            ],
+        },
+    }
+
+    rx = client.post("/api/v2/tables/export/xlsx", json=payload)
+    assert rx.status_code == 200
+    wb = openpyxl.load_workbook(io.BytesIO(rx.content), rich_text=True)
+    ws = wb["Table"]
+    # Numeric bar column B (ORR %) keeps native float values + attaches native Excel DataBar conditional formatting!
+    assert isinstance(ws["B3"].value, float)
+    assert abs(ws["B3"].value - 78.5) < 1e-6
+    assert len(ws.conditional_formatting) >= 1
+    # Merged string bar column C ("64.2 (8.1)") gets CellRichText with Unicode proportional bar
+    assert isinstance(ws["C3"].value, CellRichText)
+    assert "█" in str(ws["C3"].value)
+
+    rd = client.post("/api/v2/tables/export/docx", json=payload)
+    assert rd.status_code == 200
+    doc = Document(io.BytesIO(rd.content))
+    tbl = doc.tables[0]
+    assert "█" in tbl.rows[1].cells[1].text
+    assert "█" in tbl.rows[1].cells[2].text
+
+    # Also verify reproducible great_tables script emits gt.data_color for partial heat_cols
+    zip_payload = {
+        "filename_stem": "v061_gt_heat",
+        "table_json": {"schema": "danqing.table_studio.v2"},
+        "csv_headers": ["Arm", "AUROC", "RMSE"],
+        "csv_rows": [["Combo", 0.91, 0.12], ["Control", 0.68, 0.45]],
+        "gt_meta": {
+            "title": "Selective Heat",
+            "subtitle": "",
+            "rowname_col": "Arm",
+            "p_cols": [],
+            "decimals_map": {"AUROC": 2, "RMSE": 2},
+            "spanners": [],
+            "merges": [],
+            "footnotes": [],
+            "heat_cols": [
+                {"columns": ["AUROC"], "palette": ["#F2F6F7", "#2E6F95", "#163554"]},
+                {"columns": ["RMSE"], "palette": ["#781E20", "#E29D52", "#F4EFE6"]},
+            ],
+        },
+    }
+    rz = client.post("/api/v2/tables/export/zip", json=zip_payload)
+    assert rz.status_code == 200
+    with zipfile.ZipFile(io.BytesIO(rz.content)) as zf:
+        zf.extractall(tmp_path)
+    py_code = (tmp_path / "make_table.py").read_text("utf-8")
+    assert "gt.data_color" in py_code
+    proc = subprocess.run(
+        [sys.executable, str(tmp_path / "make_table.py")],
+        cwd=str(tmp_path),
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    assert proc.returncode == 0, f"make_table.py failed:\n{proc.stderr}"
+
+

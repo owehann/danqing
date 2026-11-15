@@ -39,6 +39,7 @@ from lxml import html as lxml_html
 from openpyxl.cell.rich_text import CellRichText, TextBlock
 from openpyxl.cell.text import InlineFont
 from openpyxl.comments import Comment
+from openpyxl.formatting.rule import DataBarRule
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
@@ -1210,6 +1211,18 @@ def _unicode_sparkbars(vals: list[float]) -> str:
     return "".join(out)
 
 
+_HBAR_EIGHTHS = ("", "▏", "▎", "▍", "▌", "▋", "▊", "▉", "█")
+
+
+def _unicode_hbar(ratio: float, max_chars: int = 6) -> str:
+    clamped = max(0.0, min(1.0, float(ratio)))
+    total_eighths = int(round(clamped * max_chars * 8))
+    if total_eighths <= 0 and clamped > 0.0:
+        total_eighths = 1
+    full_blocks, rem = divmod(total_eighths, 8)
+    return ("█" * full_blocks) + (_HBAR_EIGHTHS[rem] if rem > 0 else "")
+
+
 def _excel_rich_text_with_sup(
     base_text: str,
     superscript: str,
@@ -1217,19 +1230,36 @@ def _excel_rich_text_with_sup(
     bold: bool = False,
     color_hex: str = "111827",
     base_sz: float = 10.0,
+    bar_text: str = "",
+    bar_color_hex: str = "2E6F95",
 ) -> CellRichText | str:
     sup = superscript.strip()
-    if not sup:
+    if not sup and not bar_text:
         return base_text
-    base_font = InlineFont(rFont="Arial", sz=base_sz, b=bold, color=color_hex)
-    sup_font = InlineFont(
-        rFont="Arial",
-        sz=max(7.5, base_sz - 2.0),
-        b=bold,
-        color=color_hex,
-        vertAlign="superscript",
-    )
-    return CellRichText(TextBlock(base_font, base_text), TextBlock(sup_font, sup))
+    blocks: list[TextBlock | str] = [
+        TextBlock(InlineFont(rFont="Arial", sz=base_sz, b=bold, color=color_hex), base_text)
+    ]
+    if sup:
+        blocks.append(
+            TextBlock(
+                InlineFont(
+                    rFont="Arial",
+                    sz=max(7.5, base_sz - 2.0),
+                    b=bold,
+                    color=color_hex,
+                    vertAlign="superscript",
+                ),
+                sup,
+            )
+        )
+    if bar_text:
+        blocks.append(
+            TextBlock(
+                InlineFont(rFont="Arial", sz=max(8.0, base_sz - 0.5), b=False, color=bar_color_hex),
+                f"  {bar_text}",
+            )
+        )
+    return CellRichText(*blocks)
 
 
 def export_styled_xlsx(payload: dict[str, Any]) -> bytes:
@@ -1360,6 +1390,7 @@ def export_styled_xlsx(payload: dict[str, Any]) -> bytes:
 
     total_data_rows = sum(len(b.get("rows") or []) for b in blocks)
     emitted_data_rows = 0
+    numeric_bar_cells_by_col: dict[int, list[tuple[int, float, float, str]]] = {}
 
     for block in blocks:
         part_name = str(block.get("part_name") or "").strip()
@@ -1397,8 +1428,11 @@ def export_styled_xlsx(payload: dict[str, Any]) -> bytes:
                 txt = str(c_meta.get("text") or "")
                 sup = str(c_meta.get("superscript") or "").strip()
                 spark_vals = c_meta.get("sparkline_values")
+                bar_spec = c_meta.get("bar_spec")
                 edited_from = c_meta.get("edited_from")
                 indent_lvl = int(c_meta.get("indent") or 0)
+                col_hdr = headers[c_idx - 1] if c_idx - 1 < len(headers) else {}
+                is_col_heat = col_hdr.get("effective_visual") == "heat"
 
                 if isinstance(spark_vals, list) and len(spark_vals) >= 2:
                     bars = _unicode_sparkbars([float(v) for v in spark_vals])
@@ -1410,24 +1444,53 @@ def export_styled_xlsx(payload: dict[str, Any]) -> bytes:
                 box_border = bool(c_meta.get("box_border", False))
                 align_h = "left" if c_meta.get("align") == "left" else "right"
 
+                bar_ratio = 0.0
+                bar_color_hex = "2E6F95"
+                bar_is_neg = False
+                bar_dom_min = 0.0
+                bar_dom_max = 1.0
+                has_bar_spec = isinstance(bar_spec, dict)
+                if has_bar_spec:
+                    bar_ratio = float(bar_spec.get("ratio") or 0.0)
+                    bar_color_hex = _clean_hex6(bar_spec.get("fill_hex"), "2E6F95")
+                    bar_is_neg = bool(bar_spec.get("is_negative", False))
+                    bar_dom_min = float(bar_spec.get("domain_min") or 0.0)
+                    bar_dom_max = float(bar_spec.get("domain_max") or 1.0)
+
                 cell = ws.cell(row=row_cursor, column=c_idx)
                 has_stars = "*" in txt or txt.startswith(("<", ">", "≤", "≥"))
-                if (
+                is_pure_numeric_cell = (
                     isinstance(raw_num, (int, float))
                     and not isinstance(raw_num, bool)
                     and not sup
                     and not spark_vals
                     and not has_stars
-                ):
+                )
+                if is_pure_numeric_cell:
                     cell.value = int(raw_num) if (isinstance(raw_num, int) or (num_fmt == "0" and float(raw_num).is_integer())) else float(raw_num)
                     if num_fmt:
                         cell.number_format = num_fmt
-                elif sup:
-                    cell.value = _excel_rich_text_with_sup(
-                        txt, sup, bold=is_bold, color_hex=fg_hex, base_sz=9.5
-                    )
+                    if has_bar_spec:
+                        numeric_bar_cells_by_col.setdefault(c_idx, []).append(
+                            (row_cursor, bar_dom_min, bar_dom_max, bar_color_hex)
+                        )
                 else:
-                    cell.value = txt
+                    bar_glyph = ""
+                    if has_bar_spec:
+                        hbar = _unicode_hbar(bar_ratio, max_chars=6)
+                        bar_glyph = f"◀{hbar}" if (bar_is_neg and hbar) else hbar
+                    if sup or bar_glyph:
+                        cell.value = _excel_rich_text_with_sup(
+                            txt,
+                            sup,
+                            bold=is_bold,
+                            color_hex=fg_hex,
+                            base_sz=9.5,
+                            bar_text=bar_glyph,
+                            bar_color_hex=bar_color_hex,
+                        )
+                    else:
+                        cell.value = txt
 
                 cell.font = Font(name="Arial", size=9.5, bold=is_bold, color=fg_hex)
                 cell.alignment = Alignment(
@@ -1441,6 +1504,7 @@ def export_styled_xlsx(payload: dict[str, Any]) -> bytes:
                 if edited_from is not None:
                     cell.comment = Comment(f"Original: {edited_from}", "Danqing Table Studio")
 
+                white_gap = Side(style="thin", color="FFFFFF")
                 if box_border:
                     cell.border = Border(
                         left=rule_box,
@@ -1449,18 +1513,53 @@ def export_styled_xlsx(payload: dict[str, Any]) -> bytes:
                         bottom=rule_heavy if is_last_row else rule_box,
                     )
                 elif is_last_row:
-                    cell.border = Border(bottom=rule_heavy)
-                elif preset == "matrix_heatmap":
-                    white_gap = Side(style="thin", color="FFFFFF")
+                    if is_col_heat and bg_hex != "FFFFFF" and preset != "matrix_heatmap":
+                        cell.border = Border(
+                            left=white_gap, right=white_gap, top=white_gap, bottom=rule_heavy
+                        )
+                    else:
+                        cell.border = Border(bottom=rule_heavy)
+                elif preset == "matrix_heatmap" or (is_col_heat and bg_hex != "FFFFFF"):
                     cell.border = Border(
                         left=white_gap, right=white_gap, top=white_gap, bottom=white_gap
                     )
 
-                disp_len = len(txt) + len(sup) + indent_lvl * 2
+                extra_bar_chars = 8 if has_bar_spec else 0
+                disp_len = len(txt) + len(sup) + indent_lvl * 2 + extra_bar_chars
                 if c_idx - 1 < len(max_col_chars):
                     max_col_chars[c_idx - 1] = max(max_col_chars[c_idx - 1], disp_len)
 
             row_cursor += 1
+
+    # Attach native Excel DataBar conditional formatting rules onto numeric bar columns
+    for col_idx, entries in numeric_bar_cells_by_col.items():
+        if not entries:
+            continue
+        col_letter = get_column_letter(col_idx)
+        # Split into contiguous row spans (e.g. across Part banner rows)
+        spans: list[list[tuple[int, float, float, str]]] = []
+        for ent in entries:
+            if not spans or ent[0] != spans[-1][-1][0] + 1:
+                spans.append([ent])
+            else:
+                spans[-1].append(ent)
+        for sp_entries in spans:
+            r0 = sp_entries[0][0]
+            r1 = sp_entries[-1][0]
+            dom_lo = sp_entries[0][1]
+            dom_hi = sp_entries[0][2]
+            if dom_hi - dom_lo <= 1e-12:
+                dom_hi = dom_lo + 1.0
+            bar_hex = sp_entries[0][3]
+            rule = DataBarRule(
+                start_type="num",
+                start_value=dom_lo,
+                end_type="num",
+                end_value=dom_hi,
+                color=bar_hex,
+                showValue=True,
+            )
+            ws.conditional_formatting.add(f"{col_letter}{r0}:{col_letter}{r1}", rule)
 
     # Footnotes below closing rule
     for fn in footnotes:
@@ -1837,6 +1936,18 @@ def export_styled_docx(payload: dict[str, Any]) -> bytes:
                     color_hex=fg_hex,
                     superscript=str(c_meta.get("superscript") or "").strip(),
                 )
+                bar_spec = c_meta.get("bar_spec")
+                if isinstance(bar_spec, dict):
+                    b_ratio = float(bar_spec.get("ratio") or 0.0)
+                    b_hex = _clean_hex6(bar_spec.get("fill_hex"), "2E6F95")
+                    b_neg = bool(bar_spec.get("is_negative", False))
+                    hbar = _unicode_hbar(b_ratio, max_chars=5)
+                    if hbar:
+                        glyph = f"  ◀{hbar}" if b_neg else f"  {hbar}"
+                        r_bar = p.add_run(glyph)
+                        r_bar.font.name = "Arial"
+                        r_bar.font.size = Pt(max(7.0, body_pt - 0.5))
+                        r_bar.font.color.rgb = RGBColor.from_string(b_hex)
             r_ptr += 1
 
     for fn in footnotes:
@@ -1874,6 +1985,7 @@ def build_great_tables_script(bundle_meta: dict[str, Any]) -> str:
     groupname_col = bundle_meta.get("groupname_col") or ""
     spanners = bundle_meta.get("spanners") or []
     merges = bundle_meta.get("merges") or []
+    heat_cols = bundle_meta.get("heat_cols") or []
     p_cols = bundle_meta.get("p_cols") or []
     decimals_map = bundle_meta.get("decimals_map") or {}
     footnotes = bundle_meta.get("footnotes") or []
@@ -1917,6 +2029,14 @@ def build_great_tables_script(bundle_meta: dict[str, Any]) -> str:
         sp_cols = sp.get("columns") or []
         if sp_label and sp_cols:
             lines.append(f"gt = gt.tab_spanner(label={sp_label!r}, columns={sp_cols!r})")
+
+    for hc in heat_cols:
+        h_cols = hc.get("columns") or []
+        h_pal = hc.get("palette") or []
+        if h_cols and h_pal:
+            lines.append(
+                f"gt = gt.data_color(columns=[c for c in {h_cols!r} if c in df.columns], palette={h_pal!r})"
+            )
 
     for mg in merges:
         cols = mg.get("columns") or []

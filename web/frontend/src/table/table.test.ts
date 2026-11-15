@@ -593,4 +593,202 @@ describe("pipeline.ts pure functional transformation & store undo/redo", () => {
     expect(terraModel.blocks[0].rows[0][3].bgHex).not.toBeNull();
     expect(tealModel.blocks[0].rows[0][3].bgHex).not.toBe(terraModel.blocks[0].rows[0][3].bgHex);
   });
+
+  it("supports v0.6.1 partial column heatmaps, plain exclusions in matrix_heatmap, missing-cell white isolation, and multi-palette cohorts", () => {
+    const snap = normalizeRawSnapshotPayload({
+      snapshot_id: "tbl_v061_partial",
+      source: { filename: "bench.csv", sheet: "Sheet1", sheets: ["Sheet1"], kind: "sample", sha256: "v061a" },
+      sheets_meta: [{ name: "Sheet1", empty: false }],
+      column_stats: [
+        { col: 0, name: "Model", numeric_ratio: 0, detected_unit: "", role: "normal" },
+        { col: 1, name: "AUROC", numeric_ratio: 1, detected_unit: "", role: "normal" },
+        { col: 2, name: "RMSE", numeric_ratio: 1, detected_unit: "", role: "normal" },
+        { col: 3, name: "OR", numeric_ratio: 1, detected_unit: "", role: "normal" },
+        { col: 4, name: "FDR", numeric_ratio: 1, detected_unit: "", role: "sig" },
+      ],
+      grid: [
+        ["Model", "AUROC", "RMSE", "OR", "FDR"],
+        ["Method A", "0.94", "0.12", "2.00", "0.0001"],
+        ["Method B", "NA", "0.45", "0.50", "0.040"],
+        ["Method C", "0.72", "0.88", "1.00", "0.50"],
+        ["Total bilirubin", "0.85", "0.30", "1.25", "0.008"],
+        ["Total", "0.84", "99.9", "100.0", "0.000001"],
+      ],
+      cell_merges: [],
+      warnings: [],
+      suggestions: {
+        header_rows: [0, 0],
+        body_range: [1, 5],
+        title_candidate: null,
+        footnote_candidates: [],
+        spanners: [],
+        roles: { "0": "normal", "1": "normal", "2": "normal", "3": "normal", "4": "sig" },
+        merges: [],
+        part_by: null,
+        sparkline_runs: [],
+        pivot: null,
+        decimal_comma: false,
+        resolved_headers: ["Model", "AUROC", "RMSE", "OR", "FDR"],
+      },
+    });
+
+    const doc = applySuggestionsToDoc(createInitialTableDoc(snap), "all", true);
+    doc.style.preset = "cns_three_line";
+    doc.style.rowRhythm = "zebra";
+
+    // Turn ON heat ONLY on AUROC (umi_teal) and RMSE (sdi_terracotta, reversed), OR (diverging_bu_rd, ratio_1), FDR (-log10(P))
+    const colAuroc = doc.structure.columns[1];
+    const colRmse = doc.structure.columns[2];
+    const colOr = doc.structure.columns[3];
+    const colFdr = doc.structure.columns[4];
+
+    colAuroc.visual = "heat";
+    colAuroc.visualConfig = { paletteId: "danqing_umi_teal" };
+
+    colRmse.visual = "heat";
+    colRmse.visualConfig = { paletteId: "danqing_sdi_terracotta", direction: "reverse" };
+
+    colOr.visual = "plain";
+    colFdr.visual = "plain";
+
+    const m1 = buildModel(doc, "zh");
+    expect(m1.hasActiveHeatColumns).toBe(true);
+    expect(m1.heatLegends).toHaveLength(2);
+    expect(m1.detectedSummaryRowCount).toBe(1);
+
+    // Row 3 ("Total bilirubin", index 3) MUST NOT be flagged as summary row; Row 4 ("Total", index 4) MUST be flagged!
+    expect(m1.blocks[0].rows[3][0].isSummaryRow).toBe(false);
+    expect(m1.blocks[0].rows[4][0].isSummaryRow).toBe(true);
+    // With default excludeSummaryRows !== false, "Total" row has no heat bg and its extreme 99.9 RMSE does not crush Method A/B/C!
+    expect(m1.blocks[0].rows[4][1].bgHex).toBeNull();
+    expect(m1.blocks[0].rows[4][2].bgHex).toBeNull();
+    expect(m1.blocks[0].rows[0][2].bgHex).not.toBe(m1.blocks[0].rows[2][2].bgHex);
+
+    // Missing "NA" cell in Row 1 ("Method B", zebra odd row) of partial heat column AUROC stays null/white, NOT zebra gray (#F3F6FA)!
+    expect(m1.blocks[0].rows[1][1].bgHex).toBeNull();
+    // Meanwhile plain column OR on the same zebra row still gets zebra tint (#F3F6FA)
+    expect(m1.blocks[0].rows[1][3].bgHex).toBe("#F3F6FA");
+
+    // Toggle excludeSummaryRows OFF (User Decision #3): "Total" row now participates in coloring!
+    doc.structure.excludeSummaryRows = false;
+    const mSummaryIncluded = buildModel(doc, "zh");
+    expect(mSummaryIncluded.blocks[0].rows[4][1].bgHex).not.toBeNull();
+    expect(mSummaryIncluded.blocks[0].rows[4][2].bgHex).not.toBeNull();
+    doc.structure.excludeSummaryRows = true;
+
+    // Neutral slate_ink on FDR does NOT inflate chromatic activeHueCount
+    colFdr.visual = "heat";
+    colFdr.visualConfig = { paletteId: "danqing_slate_ink" };
+    expect(buildModel(doc, "zh").activeHueCount).toBe(2);
+
+    // OR ratio_1 center + FDR -log10(P) heatmap + >3 chromatic hues gentle counter (User Decision #1)
+    colOr.visual = "heat";
+    colOr.visualConfig = { paletteId: "danqing_diverging_bu_rd", center: "ratio_1" };
+    colFdr.visual = "heat";
+    colFdr.visualConfig = { paletteId: "danqing_kyoto_moss" };
+
+    const m4Hues = buildModel(doc, "zh");
+    expect(m4Hues.activeHueCount).toBe(4);
+    // When >3 cohorts exist, caption legends collapse and headers carry inline ramp underlines!
+    expect(m4Hues.heatLegends).toHaveLength(0);
+    expect(m4Hues.headers[1].headerRampStops).not.toBeNull();
+    // FDR preserves "<0.001***" text while receiving a darker heat fill than 0.50
+    expect(m4Hues.blocks[0].rows[0][4].display).toContain("<0.001");
+    expect(m4Hues.blocks[0].rows[0][4].bgHex).not.toBe(m4Hues.blocks[0].rows[2][4].bgHex);
+    // OR = 1.00 sits at neutral center while OR = 2.00 and OR = 0.50 diverge to opposite poles
+    expect(m4Hues.blocks[0].rows[0][3].bgHex).not.toBe(m4Hues.blocks[0].rows[1][3].bgHex);
+
+    // Cohort isolation under per_row: single-column cohort falls back to per_column instead of flattening to 0.5!
+    doc.style.heatScope = "per_row";
+    const mPerRow = buildModel(doc, "zh");
+    expect(mPerRow.blocks[0].rows[0][1].bgHex).not.toBe(mPerRow.blocks[0].rows[2][1].bgHex);
+
+    // Turning OFF heatmap ("plain") on 1 column inside matrix_heatmap leaves all other columns heated
+    doc.style.preset = "matrix_heatmap";
+    doc.style.heatScope = "per_column";
+    for (const c of doc.structure.columns) {
+      c.visual = "auto";
+      c.visualConfig = undefined;
+    }
+    colRmse.visual = "plain";
+    const mMatrix = buildModel(doc, "zh");
+    expect(mMatrix.blocks[0].rows[0][1].bgHex).not.toBeNull();
+    expect(mMatrix.blocks[0].rows[0][2].bgHex).toBeNull();
+  });
+
+  it("supports v0.6.1 universal inline bars on merged Mean (SD), 0-100 fixed domain, and signed bidirectional zero-axis geometry", () => {
+    const snap = normalizeRawSnapshotPayload({
+      snapshot_id: "tbl_v061_bars",
+      source: { filename: "bars.csv", sheet: "Sheet1", sheets: ["Sheet1"], kind: "sample", sha256: "v061b" },
+      sheets_meta: [{ name: "Sheet1", empty: false }],
+      column_stats: [
+        { col: 0, name: "Group", numeric_ratio: 0, detected_unit: "", role: "normal" },
+        { col: 1, name: "ResponseRate", numeric_ratio: 1, detected_unit: "%", role: "normal" },
+        { col: 2, name: "Delta", numeric_ratio: 1, detected_unit: "", role: "normal" },
+        { col: 3, name: "Score_Mean", numeric_ratio: 1, detected_unit: "", role: "normal" },
+        { col: 4, name: "Score_SD", numeric_ratio: 1, detected_unit: "", role: "normal" },
+      ],
+      grid: [
+        ["Group", "ResponseRate", "Delta", "Score_Mean", "Score_SD"],
+        ["Arm 1", "40", "-20", "75.2", "4.1"],
+        ["Arm 2", "80", "80", "50.0", "6.3"],
+      ],
+      cell_merges: [],
+      warnings: [],
+      suggestions: {
+        header_rows: [0, 0],
+        body_range: [1, 2],
+        title_candidate: null,
+        footnote_candidates: [],
+        spanners: [],
+        roles: { "0": "normal", "1": "normal", "2": "normal", "3": "normal", "4": "normal" },
+        merges: [{ source_cols: [3, 4], pattern: "paren" }],
+        part_by: null,
+        sparkline_runs: [],
+        pivot: null,
+        decimal_comma: false,
+        resolved_headers: ["Group", "ResponseRate", "Delta", "Score_Mean", "Score_SD"],
+      },
+    });
+
+    const doc = applySuggestionsToDoc(createInitialTableDoc(snap), "all", true);
+    doc.style.preset = "cns_three_line";
+
+    // Enable bar on ResponseRate (column_max vs percent_100), Delta (signed bidirectional), and merged Score_Mean (SD)!
+    doc.structure.columns[1].visual = "bar";
+    doc.structure.columns[2].visual = "bar";
+    doc.structure.columns[3].visual = "bar";
+
+    const mMax = buildModel(doc, "en");
+    // Under default column_max, 80 is max -> widthPct = 100%, 40 -> widthPct = 50%
+    expect(mMax.blocks[0].rows[1][1].barSpec?.widthPct).toBeCloseTo(100, 1);
+    expect(mMax.blocks[0].rows[0][1].barSpec?.widthPct).toBeCloseTo(50, 1);
+
+    // Switch ResponseRate to 0-100 fixed domain (User Decision #2): 80 -> widthPct = 80%, 40 -> widthPct = 40%
+    doc.structure.columns[1].visualConfig = { barDomain: "percent_100" };
+    const mPct = buildModel(doc, "en");
+    expect(mPct.blocks[0].rows[1][1].barSpec?.widthPct).toBeCloseTo(80, 1);
+    expect(mPct.blocks[0].rows[0][1].barSpec?.widthPct).toBeCloseTo(40, 1);
+
+    // Signed bidirectional Delta (-20 and +80 -> span 100, zeroPct = 20%)
+    const negBar = mPct.blocks[0].rows[0][2].barSpec!;
+    const posBar = mPct.blocks[0].rows[1][2].barSpec!;
+    expect(negBar.bidirectional).toBe(true);
+    expect(negBar.zeroPct).toBeCloseTo(20, 1);
+    expect(negBar.startPct).toBeCloseTo(0, 1);
+    expect(negBar.widthPct).toBeCloseTo(20, 1);
+    expect(negBar.isNegative).toBe(true);
+
+    expect(posBar.zeroPct).toBeCloseTo(20, 1);
+    expect(posBar.startPct).toBeCloseTo(20, 1);
+    expect(posBar.widthPct).toBeCloseTo(80, 1);
+    expect(posBar.isNegative).toBe(false);
+    expect(negBar.fillHex).not.toBe(posBar.fillHex);
+
+    // Merged Mean (SD) column carries BOTH aligned dual-part numbers AND barSpec + barValWidthCh!
+    const mergedCell = mPct.blocks[0].rows[0][3];
+    expect(mergedCell.parts).toHaveLength(2);
+    expect(mergedCell.barSpec).not.toBeNull();
+    expect(mPct.headers[3].barValWidthCh).toBeGreaterThanOrEqual(8);
+  });
 });

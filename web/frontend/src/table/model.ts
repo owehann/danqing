@@ -1,6 +1,18 @@
 export type ColumnRole = "normal" | "count" | "part" | "heat" | "sig" | "bar";
+export type SemanticRole = "normal" | "count" | "part" | "sig";
+export type ColumnVisualMode = "auto" | "plain" | "heat" | "bar";
+export type DomainClipMode = "minmax" | "p5_p95";
+export type BarDomainMode = "column_max" | "percent_100";
 export type Precision = "auto" | 0 | 1 | 2 | 3;
 export type PStyle = "nejm" | "apa" | "exact";
+
+export interface ColumnVisualConfig {
+  paletteId: "inherit" | string;
+  direction: "normal" | "reverse";
+  center: "auto" | "ratio_1" | number;
+  domainClip: DomainClipMode;
+  barDomain: BarDomainMode;
+}
 
 export type ParseWarningCode =
   | "FORMULA_NO_CACHE"
@@ -87,6 +99,8 @@ export interface ColumnSpec {
   label: string;
   hidden: boolean;
   role: ColumnRole;
+  visual?: ColumnVisualMode;
+  visualConfig?: Partial<ColumnVisualConfig>;
   precision: Precision;
   unit: string;
 }
@@ -146,6 +160,7 @@ export interface StructureLayer {
   footnotes: FootnoteSpec[];
   sig: SigConfig;
   dismissedSuggestions: string[];
+  excludeSummaryRows?: boolean;
 }
 
 export type TablePresetId = "raw" | "matrix_heatmap" | "cns_three_line" | "ft_editorial";
@@ -159,6 +174,7 @@ export interface StyleLayer {
   heatScope: HeatScope;
   heatCenter: "auto" | number;
   heatLog: boolean;
+  heatDomainClip?: DomainClipMode;
   emphasis: EmphasisPolicy;
   rowRhythm: RowRhythm;
   tabularNums: boolean;
@@ -195,6 +211,18 @@ export interface RenderedCellPart {
   value: number | null;
 }
 
+export interface BarRenderSpec {
+  ratio: number;
+  zeroPct: number;
+  startPct: number;
+  widthPct: number;
+  fillHex: string;
+  bidirectional: boolean;
+  isNegative: boolean;
+  domainMin: number;
+  domainMax: number;
+}
+
 export interface RenderedCell {
   key: string;
   bodyRowIndex: number;
@@ -220,6 +248,8 @@ export interface RenderedCell {
   sparklineValues: number[] | null;
   sparklineDomain: [number, number] | null;
   barRatio: number | null;
+  barSpec: BarRenderSpec | null;
+  isSummaryRow?: boolean;
 }
 
 export interface RenderedHeader {
@@ -227,12 +257,19 @@ export interface RenderedHeader {
   memberColIds: string[];
   label: string;
   rawLabel: string;
+  spannerPrefix: string;
   unit: string;
   superscript: string;
   role: ColumnRole;
+  visualMode: ColumnVisualMode;
+  effectiveVisual: "plain" | "heat" | "bar";
+  effectivePaletteId: string;
+  headerRampStops: string[] | null;
   align: "left" | "right";
   isMerged: boolean;
   partWidthsCh: [number, number] | null;
+  barValWidthCh: number | null;
+  hasNumericValues: boolean;
   sortDir: "asc" | "desc" | null;
   ratioHint: boolean;
   logBlocked: boolean;
@@ -267,12 +304,15 @@ export interface RawDataSheetModel {
 }
 
 export interface HeatLegendModel {
+  id?: string;
+  label?: string;
   stops: string[];
   secondaryStops?: string[];
   scope: HeatScope;
   minLabel: string;
   maxLabel: string;
   diverging: boolean;
+  reversed?: boolean;
 }
 
 export interface RenderModel {
@@ -297,7 +337,12 @@ export interface RenderModel {
   editedCount: number;
   globalHeatAllowed: boolean;
   hasHeatColumns: boolean;
+  hasActiveHeatColumns: boolean;
+  hasColumnVisualOverrides: boolean;
+  activeHueCount: number;
+  detectedSummaryRowCount: number;
   isMultiScaleHeat: boolean;
   heatLegend: HeatLegendModel | null;
+  heatLegends: HeatLegendModel[];
   rawDataSheet: RawDataSheetModel;
 }
