@@ -385,3 +385,57 @@ def test_v063_multilayer_preset_split_layers_and_lossless_opacity_pdf_svg(client
     ver_pdf = client.post(f"/api/v2/figures/{fid_p}/export/verify", json={"format": "pdf"}).json()
     assert ver_pdf["checks"]["shapes_and_text_unchanged"] is True
     client.delete(f"/api/v2/figures/{fid_p}")
+
+
+def test_v064_single_panel_isolation_after_layer_split(client: TestClient) -> None:
+    res = client.post("/api/v2/figures", data={"preset_id": "cleveland_multilayer_svg"}).json()
+    fid = res["figure_id"]
+    m0 = client.get(f"/api/v2/figures/{fid}").json()
+    eid_nocad = m0["elements"][0]["entity_id"]
+
+    # 1. Split `No CAD` into `(图形)`, `(线条)`, `(散点)`
+    sp = client.patch(
+        f"/api/v2/figures/{fid}/state",
+        json={"action": "split_layers", "entity_id": eid_nocad, "lang": "zh"},
+    ).json()
+    pts_el = next(e for e in sp["elements"] if e["label"] == "No CAD (散点)")
+    assert pts_el["panels"] == ["Panel A", "Panel B", "Panel C"]
+
+    # 2. Pick color `#D55E00` on `No CAD (散点)` scoped ONLY to `target_panels=["Panel A"]`!
+    scoped_pick = client.patch(
+        f"/api/v2/figures/{fid}/state",
+        json={
+            "action": "pick_color",
+            "entity_id": pts_el["entity_id"],
+            "hex_color": "#D55E00",
+            "target_panels": ["Panel A"],
+        },
+    ).json()
+    assert scoped_pick["structure_changed"] is True
+    pa_eid = scoped_pick["selected_entity_id"]
+    assert pa_eid is not None
+    pa_el = next(e for e in scoped_pick["elements"] if e["entity_id"] == pa_eid)
+    rest_el = next(e for e in scoped_pick["elements"] if e["entity_id"] == pts_el["entity_id"])
+    assert pa_el["panels"] == ["Panel A"]
+    assert pa_el["current_hex"] == "#D55E00"
+    assert rest_el["panels"] == ["Panel B", "Panel C"]
+    assert rest_el["current_hex"].upper() != "#D55E00"
+
+    # 3. Also test explicit 1-click `isolate_panel` on `Mild-Mod CAD` for `Panel A` -> then `split_layers` ONLY inside Panel A!
+    eid_mild = next(e["entity_id"] for e in scoped_pick["elements"] if e["label"] == "Mild-Mod CAD")
+    iso = client.patch(
+        f"/api/v2/figures/{fid}/state",
+        json={"action": "isolate_panel", "entity_id": eid_mild, "target_panels": ["Panel A"]},
+    ).json()
+    mild_pa_id = iso["selected_entity_id"]
+    mild_pa = next(e for e in iso["elements"] if e["entity_id"] == mild_pa_id)
+    assert mild_pa["panels"] == ["Panel A"]
+    assert mild_pa["has_overlay_layers"] is True
+
+    sp_pa = client.patch(
+        f"/api/v2/figures/{fid}/state",
+        json={"action": "split_layers", "entity_id": mild_pa_id, "lang": "zh"},
+    ).json()
+    assert any(e["label"] == "Mild-Mod CAD · Panel A (图形)" for e in sp_pa["elements"])
+    assert any(e["label"] == "Mild-Mod CAD · Panel A (散点)" for e in sp_pa["elements"])
+    client.delete(f"/api/v2/figures/{fid}")

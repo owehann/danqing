@@ -155,6 +155,8 @@
     "opacityLabel": "不透明度",
     "overlayBanner": "含叠加图层（面状图形与散点同组）",
     "splitLayersBtn": "拆分为独立图层",
+    "isolatePanelBtn": "仅独立 {{panel}}",
+    "splitPanelsBtn": "拆分为各栏独立",
     "tooCloseTo": "与 {{label}} 过于接近",
     "distinguishableAll": "与其他元素可清晰区分",
     "lockedHint": "已锁定——切换调色板时保持不变",

@@ -45,10 +45,14 @@ const TAB_KEYS: TabCategory[] = [
 function InspectorCard({ el }: { el: FigureElement }): React.ReactElement {
   const { t, i18n } = useTranslation();
   const selectEntity = useStudioStore((s) => s.selectEntity);
+  const selectedPanelId = useStudioStore((s) => s.selectedPanelId);
+  const targetPanels = useStudioStore((s) => s.targetPanels);
   const setElementRoles = useStudioStore((s) => s.setElementRoles);
   const pickElementColor = useStudioStore((s) => s.pickElementColor);
   const setElementOpacity = useStudioStore((s) => s.setElementOpacity);
   const splitElementLayers = useStudioStore((s) => s.splitElementLayers);
+  const splitSameName = useStudioStore((s) => s.splitSameName);
+  const isolateElementPanel = useStudioStore((s) => s.isolateElementPanel);
   const toggleElementLock = useStudioStore((s) => s.toggleElementLock);
   const resetElement = useStudioStore((s) => s.resetElement);
   const setHoveredSwatch = useStudioStore((s) => s.setHoveredSwatch);
@@ -88,6 +92,12 @@ function InspectorCard({ el }: { el: FigureElement }): React.ReactElement {
   const activeSw = el.inspector_swatches.find(
     (sw) => sw.hex.toUpperCase() === el.current_hex.toUpperCase(),
   );
+  const focusPanel =
+    selectedPanelId && el.panels.includes(selectedPanelId)
+      ? selectedPanelId
+      : targetPanels.length === 1 && el.panels.includes(targetPanels[0])
+        ? targetPanels[0]
+        : null;
 
   const commitCustomHex = (val: string): void => {
     const cleaned = val.trim();
@@ -122,6 +132,27 @@ function InspectorCard({ el }: { el: FigureElement }): React.ReactElement {
           <X size={14} strokeWidth={1.5} aria-hidden="true" />
         </button>
       </div>
+
+      {el.panels.length > 1 ? (
+        <div className="dq-inspector-panel-actions">
+          {focusPanel ? (
+            <button
+              type="button"
+              className="dq-btn dq-btn--primary dq-inspector-overlay-box__btn"
+              onClick={() => void isolateElementPanel(el.entity_id, focusPanel)}
+            >
+              {t("inspector.isolatePanelBtn", { panel: focusPanel })}
+            </button>
+          ) : null}
+          <button
+            type="button"
+            className="dq-btn dq-inspector-overlay-box__btn"
+            onClick={() => void splitSameName(el.entity_id, i18n.language, focusPanel)}
+          >
+            {t("inspector.splitPanelsBtn")}
+          </button>
+        </div>
+      ) : null}
 
       {el.has_overlay_layers ? (
         <div className="dq-inspector-overlay-box">

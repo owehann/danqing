@@ -144,10 +144,16 @@ export function FigureCanvas(): React.ReactElement | null {
     if (hoveredSwatch) {
       params.set("pe", hoveredSwatch.entityId);
       params.set("ph", hoveredSwatch.hex.replace("#", ""));
+      if (targetPanels.length > 0 && figure.panels.length > 1) {
+        params.set("panels", targetPanels.join(","));
+      }
     }
     if (hoveredAlpha) {
       params.set("pe", hoveredAlpha.entityId);
       params.set("pa", String(hoveredAlpha.alpha));
+      if (targetPanels.length > 0 && figure.panels.length > 1) {
+        params.set("panels", targetPanels.join(","));
+      }
     }
     if (zoomFactor > 1.5 && figure.kind === "pdf") {
       const hiScale = Math.min(5.0, +(figure.preview_scale * zoomFactor).toFixed(2));
@@ -682,7 +688,7 @@ export function FigureCanvas(): React.ReactElement | null {
               }
               return;
             }
-            selectEntity(hit.entityId, e.metaKey || e.ctrlKey, e.shiftKey);
+            selectEntity(hit.entityId, e.metaKey || e.ctrlKey, e.shiftKey, hit.panelId);
           }}
         >
           <img

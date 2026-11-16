@@ -1467,6 +1467,75 @@ def get_v2_figure(figure_id: str) -> Response:
     return JSONResponse(_serialize_v2_figure(sess))
 
 
+def _isolate_single_entity_by_panels(
+    p: ParsedPdfScene | SvgScene,
+    target_eid: str,
+    target_panels: set[str],
+) -> tuple[str, bool]:
+    """If `target_eid` spans both `target_panels` and other panels, split out the `target_panels` slice in-place."""
+    if not target_panels or target_eid not in p.entities:
+        return target_eid, False
+    ent = p.entities[target_eid]
+    in_gids = [g for g in ent.member_group_ids if g in p.color_groups and p.color_groups[g].panel_id in target_panels]
+    out_gids = [g for g in ent.member_group_ids if g in p.color_groups and g not in set(in_gids)]
+    if not in_gids or not out_gids:
+        return target_eid, False
+
+    out_panels = list(dict.fromkeys(p.color_groups[g].panel_id for g in out_gids))
+    in_panels = list(dict.fromkeys(p.color_groups[g].panel_id for g in in_gids))
+    cg_out = p.color_groups[out_gids[0]]
+    cg_in = p.color_groups[in_gids[0]]
+
+    used_ids = set(p.entities.keys())
+    slug = "".join(ch.lower() if ch.isalnum() else "_" for ch in in_panels[0]).strip("_") or "sub"
+    cand_id = f"{target_eid}_{slug}"
+    seq_i = 2
+    while cand_id in used_ids:
+        cand_id = f"{target_eid}_{slug}_{seq_i}"
+        seq_i += 1
+
+    panel_tag = ", ".join(in_panels)
+    isolated_lbl = ent.label if panel_tag in ent.label else f"{ent.label} · {panel_tag}"[:64]
+
+    new_entities: dict[str, SemanticEntity] = {}
+    for k_eid, k_ent in p.entities.items():
+        if k_eid != target_eid:
+            new_entities[k_eid] = k_ent
+            continue
+        new_entities[target_eid] = SemanticEntity(
+            entity_id=target_eid,
+            label=ent.label,
+            category_group=out_panels[0] if out_panels else ent.category_group,
+            panels=out_panels,
+            member_group_ids=out_gids,
+            original_hex=cg_out.original_hex,
+            current_hex=ent.current_hex,
+            original_alpha=cg_out.alpha,
+            alpha=ent.alpha,
+            encoding=ent.encoding,
+            tier=ent.tier,
+            locked=ent.locked,
+            unlinked=True,
+        )
+        new_entities[cand_id] = SemanticEntity(
+            entity_id=cand_id,
+            label=isolated_lbl,
+            category_group=in_panels[0] if in_panels else ent.category_group,
+            panels=in_panels,
+            member_group_ids=in_gids,
+            original_hex=cg_in.original_hex,
+            current_hex=ent.current_hex,
+            original_alpha=cg_in.alpha,
+            alpha=ent.alpha,
+            encoding=ent.encoding,
+            tier=ent.tier,
+            locked=False,
+            unlinked=True,
+        )
+    p.entities = new_entities
+    return cand_id, True
+
+
 class PatchStateRequest(BaseModel):
     action: Literal[
         "set_palette",
@@ -1479,6 +1548,7 @@ class PatchStateRequest(BaseModel):
         "rename_element",
         "split_same_name",
         "split_layers",
+        "isolate_panel",
         "reset_element",
         "set_rule",
         "set_vibrancy",
@@ -1491,6 +1561,7 @@ class PatchStateRequest(BaseModel):
     palette_id: str | None = None
     aesthetic_style: str | None = None
     target_panels: list[str] | None = None
+    preferred_panel: str | None = None
     entity_id: str | None = None
     entity_ids: list[str] | None = None
     role: Literal["focus", "normal", "background"] | None = None
@@ -1515,6 +1586,7 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
     p = sess.parsed
     structure_changed = False
     split_entity_ids: list[str] = []
+    selected_entity_id: str | None = None
 
     if req.action == "undo":
         if sess.undo_stack:
@@ -1611,30 +1683,63 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
             else:
                 raise HTTPException(status_code=400, detail=f"Unknown aesthetic style: {req.aesthetic_style}")
         elif req.action == "set_roles" and req.role:
-            targets = req.entity_ids or ([req.entity_id] if req.entity_id else [])
-            for tid in targets:
+            raw_targets = req.entity_ids or ([req.entity_id] if req.entity_id else [])
+            eff_targets: list[str] = []
+            for tid in raw_targets:
+                if tid in p.entities:
+                    if is_subset_scope:
+                        tid, did_iso = _isolate_single_entity_by_panels(p, tid, set(valid_target_panels))
+                        if did_iso:
+                            structure_changed = True
+                    eff_targets.append(tid)
+            for tid in eff_targets:
                 if tid in p.entities:
                     p.entities[tid].tier = req.role
                     p.entities[tid].locked = False
+            if len(eff_targets) == 1:
+                selected_entity_id = eff_targets[0]
             sess.is_original_mode = False
         elif req.action == "pick_color" and req.entity_id and req.hex_color:
-            if req.entity_id in p.entities:
+            target_eid = req.entity_id
+            if target_eid in p.entities and is_subset_scope:
+                target_eid, did_iso = _isolate_single_entity_by_panels(p, target_eid, set(valid_target_panels))
+                if did_iso:
+                    structure_changed = True
+                    selected_entity_id = target_eid
+            if target_eid in p.entities:
                 hx = req.hex_color.strip().upper()
                 if not hx.startswith("#"):
                     hx = f"#{hx}"
-                ent = p.entities[req.entity_id]
+                ent = p.entities[target_eid]
                 ent.current_hex = hx
                 # Spec 4.6: clicking a swatch or custom color automatically locks the element,
                 # while keeping `is_original_mode` intact so all other unlocked elements stay at their original colors!
                 ent.locked = True
-                if ws.keep_consistent:
+                if ws.keep_consistent and not ent.unlinked:
                     ws.manuscript_registry[ent.label.strip().lower()] = hx
         elif req.action == "set_opacity" and req.opacity is not None:
-            targets = req.entity_ids or ([req.entity_id] if req.entity_id else [])
+            raw_targets = req.entity_ids or ([req.entity_id] if req.entity_id else [])
             clamped_op = max(0.05, min(1.0, round(float(req.opacity), 2)))
-            for tid in targets:
+            eff_targets = []
+            for tid in raw_targets:
+                if tid in p.entities:
+                    if is_subset_scope:
+                        tid, did_iso = _isolate_single_entity_by_panels(p, tid, set(valid_target_panels))
+                        if did_iso:
+                            structure_changed = True
+                    eff_targets.append(tid)
+            for tid in eff_targets:
                 if tid in p.entities:
                     p.entities[tid].alpha = clamped_op
+            if len(eff_targets) == 1:
+                selected_entity_id = eff_targets[0]
+        elif req.action == "isolate_panel" and req.entity_id and valid_target_panels:
+            if req.entity_id in p.entities:
+                iso_id, did_iso = _isolate_single_entity_by_panels(p, req.entity_id, set(valid_target_panels))
+                if did_iso:
+                    structure_changed = True
+                    p.entities[iso_id].locked = False
+                    selected_entity_id = iso_id
         elif req.action == "set_lock" and req.entity_id is not None and req.locked is not None:
             if req.entity_id in p.entities:
                 p.entities[req.entity_id].locked = bool(req.locked)
@@ -1643,8 +1748,13 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
             if clean_lbl and req.entity_id in p.entities:
                 p.entities[req.entity_id].label = clean_lbl[:64]
         elif req.action == "split_layers" and req.entity_id:
-            if req.entity_id in p.entities:
-                ent = p.entities[req.entity_id]
+            target_eid = req.entity_id
+            if target_eid in p.entities and is_subset_scope:
+                target_eid, did_iso = _isolate_single_entity_by_panels(p, target_eid, set(valid_target_panels))
+                if did_iso:
+                    structure_changed = True
+            if target_eid in p.entities:
+                ent = p.entities[target_eid]
                 valid_gids = [gid for gid in ent.member_group_ids if gid in p.color_groups]
                 by_kind: dict[str, list[str]] = {}
                 for gid in valid_gids:
@@ -1664,18 +1774,18 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                     )
                     new_entities: dict[str, SemanticEntity] = {}
                     for k_eid, k_ent in p.entities.items():
-                        if k_eid != req.entity_id:
+                        if k_eid != target_eid:
                             new_entities[k_eid] = k_ent
                             continue
                         for idx_mk, mk in enumerate(ordered_kinds):
                             kgids = by_kind[mk]
                             if idx_mk == 0:
-                                sub_id = req.entity_id
+                                sub_id = target_eid
                             else:
-                                sub_id = f"{req.entity_id}_{mk}"
+                                sub_id = f"{target_eid}_{mk}"
                                 seq_i = 2
                                 while sub_id in used_eids or sub_id in new_entities:
-                                    sub_id = f"{req.entity_id}_{mk}_{seq_i}"
+                                    sub_id = f"{target_eid}_{mk}_{seq_i}"
                                     seq_i += 1
                             used_eids.add(sub_id)
                             split_entity_ids.append(sub_id)
@@ -1694,11 +1804,12 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                                 original_alpha=cg0.alpha,
                                 alpha=ent.alpha,
                                 tier=ent.tier,
-                                # Unlock freshly split layers so both box/shapes and points can immediately accept palette/swatch edits
                                 locked=False,
                                 unlinked=True,
                             )
                     p.entities = new_entities
+                    if split_entity_ids:
+                        selected_entity_id = split_entity_ids[0]
         elif req.action == "split_same_name" and req.entity_id:
             if req.entity_id in p.entities:
                 ent = p.entities[req.entity_id]
@@ -1726,10 +1837,13 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                                         seq_i += 1
                                 used_eids.add(sub_id)
                                 split_entity_ids.append(sub_id)
+                                if req.preferred_panel and sp_panel == req.preferred_panel:
+                                    selected_entity_id = sub_id
                                 cg0 = p.color_groups[gids[0]]
+                                panel_lbl = ent.label if sp_panel in ent.label else f"{ent.label} · {sp_panel}"[:64]
                                 new_entities[sub_id] = SemanticEntity(
                                     entity_id=sub_id,
-                                    label=ent.label,
+                                    label=panel_lbl,
                                     category_group=sp_panel,
                                     panels=[sp_panel],
                                     member_group_ids=gids,
@@ -1738,10 +1852,12 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                                     original_alpha=cg0.alpha,
                                     alpha=ent.alpha,
                                     tier=ent.tier,
-                                    locked=ent.locked,
+                                    locked=False,
                                     unlinked=True,
                                 )
                         p.entities = new_entities
+                        if selected_entity_id is None and split_entity_ids:
+                            selected_entity_id = split_entity_ids[0]
                     else:
                         # Single-panel overlaying graph (`area`/`line` + `point` groups): split into independent layers!
                         structure_changed = True
@@ -1842,6 +1958,7 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
         "diagnostics": sr.diagnostics,
         "structure_changed": structure_changed,
         "split_entity_ids": split_entity_ids,
+        "selected_entity_id": selected_entity_id,
     }
     if structure_changed:
         resp["elements"] = _serialize_elements(p, sr)
@@ -1916,7 +2033,7 @@ def _render_figure_with_cache(
         sess.revision if not is_temp_solve else -1,
         pal_norm or sess.palette_id,
         eff_style or "",
-        valid_prev_panels if pal_norm else (),
+        valid_prev_panels if (pal_norm or preview_entity) else (),
         tuple(sorted(sess.panel_palettes.items())) if is_temp_solve else (),
         sess.is_original_mode if is_temp_solve else False,
         sess.rule if is_temp_solve else "",
@@ -1999,13 +2116,15 @@ def _render_figure_with_cache(
 
     group_alpha = _build_group_alpha_map(p)
     if preview_entity and preview_entity in p.entities:
+        prev_scope_set = set(valid_prev_panels) if (0 < len(valid_prev_panels) < len(all_panel_ids)) else None
         if ph_norm:
             hx = f"#{ph_norm}"
             for gid in p.entities[preview_entity].member_group_ids:
-                group_hex[gid] = hx
+                if gid in p.color_groups and (prev_scope_set is None or p.color_groups[gid].panel_id in prev_scope_set):
+                    group_hex[gid] = hx
         if pa_norm is not None:
             for gid in p.entities[preview_entity].member_group_ids:
-                if gid in p.color_groups:
+                if gid in p.color_groups and (prev_scope_set is None or p.color_groups[gid].panel_id in prev_scope_set):
                     group_alpha[gid] = pa_norm
 
     if is_hover and my_hover_seq != sess.hover_seq:

@@ -155,6 +155,8 @@
     "opacityLabel": "Opacity",
     "overlayBanner": "Overlaid layers (shapes & points bound)",
     "splitLayersBtn": "Split layers",
+    "isolatePanelBtn": "Isolate {{panel}}",
+    "splitPanelsBtn": "Split by panel",
     "tooCloseTo": "Too close to {{label}}",
     "distinguishableAll": "Distinguishable from other elements",
     "lockedHint": "Locked — stays when you switch palettes",

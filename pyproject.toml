@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "danqing"
-version = "0.6.3"
+version = "0.6.4"
 description = "Lossless Scientific Figure, Table & Manuscript Studio, 3,434 Verified Palettes, OKLCH Style Engine, and MCP Server"
 readme = "README.md"
 license = { text = "Apache-2.0" }

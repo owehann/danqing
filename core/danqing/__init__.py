@@ -16,7 +16,7 @@ from .style_engine import (
     sculpt_scene_style,
 )
 
-__version__ = "0.6.3"
+__version__ = "0.6.4"
 
 __all__ = [
     "STYLE_PROFILES",

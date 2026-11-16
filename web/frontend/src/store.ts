@@ -40,6 +40,7 @@ interface StudioStore {
   figure: FigureState | null;
   targetPanels: string[];
   selectedIds: string[];
+  selectedPanelId: string | null;
   hoveredEntityId: string | null;
   hoveredPanelLabel: string | null;
   hoveredPaletteId: string | null;
@@ -78,7 +79,8 @@ interface StudioStore {
   setElementOpacity: (entityId: string, opacity: number) => Promise<void>;
   toggleElementLock: (entityId: string, locked: boolean) => Promise<void>;
   renameElement: (entityId: string, label: string) => Promise<void>;
-  splitSameName: (entityId: string, lang?: string) => Promise<void>;
+  splitSameName: (entityId: string, lang?: string, preferredPanel?: string | null) => Promise<void>;
+  isolateElementPanel: (entityId: string, panelId: string) => Promise<void>;
   splitElementLayers: (entityId: string, lang?: string) => Promise<void>;
   resetElement: (entityId: string) => Promise<void>;
   setRule: (rule: CrossPanelRule) => Promise<void>;
@@ -89,7 +91,12 @@ interface StudioStore {
   undo: () => Promise<void>;
   redo: () => Promise<void>;
 
-  selectEntity: (entityId: string | null, additive?: boolean, range?: boolean) => void;
+  selectEntity: (
+    entityId: string | null,
+    additive?: boolean,
+    range?: boolean,
+    panelId?: string | null,
+  ) => void;
   setHoveredEntity: (entityId: string | null, panelLabel?: string | null) => void;
   setHoveredPalette: (paletteId: string | null) => void;
   setHoveredStyle: (styleId: string | null) => void;
@@ -140,6 +147,7 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
   figure: null,
   targetPanels: [],
   selectedIds: [],
+  selectedPanelId: null,
   hoveredEntityId: null,
   hoveredPanelLabel: null,
   hoveredPaletteId: null,
@@ -361,11 +369,15 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
           }));
 
       const nextSelectedIds =
-        payload.action === "split_layers" && Array.isArray(diff.split_entity_ids) && diff.split_entity_ids.length > 0
-          ? [String(diff.split_entity_ids[0])]
-          : state.selectedIds.filter((sid) =>
-              (updatedElements as Array<{ entity_id: string }>).some((e) => e.entity_id === sid),
-            );
+        typeof diff.selected_entity_id === "string" && diff.selected_entity_id
+          ? [diff.selected_entity_id]
+          : payload.action === "split_layers" &&
+              Array.isArray(diff.split_entity_ids) &&
+              diff.split_entity_ids.length > 0
+            ? [String(diff.split_entity_ids[0])]
+            : state.selectedIds.filter((sid) =>
+                (updatedElements as Array<{ entity_id: string }>).some((e) => e.entity_id === sid),
+              );
 
       return {
         selectedIds: nextSelectedIds,
@@ -440,13 +452,31 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
     await get().mutateState({ action: "reset_panel", target_panels: tp });
   },
   setElementRoles: async (entityIds: string[], role: ElementRole) => {
-    await get().mutateState({ action: "set_roles", entity_ids: entityIds, role });
+    const tp = get().targetPanels;
+    await get().mutateState({
+      action: "set_roles",
+      entity_ids: entityIds,
+      role,
+      ...(tp.length > 0 ? { target_panels: tp } : {}),
+    });
   },
   pickElementColor: async (entityId: string, hexColor: string) => {
-    await get().mutateState({ action: "pick_color", entity_id: entityId, hex_color: hexColor });
+    const tp = get().targetPanels;
+    await get().mutateState({
+      action: "pick_color",
+      entity_id: entityId,
+      hex_color: hexColor,
+      ...(tp.length > 0 ? { target_panels: tp } : {}),
+    });
   },
   setElementOpacity: async (entityId: string, opacity: number) => {
-    await get().mutateState({ action: "set_opacity", entity_id: entityId, opacity });
+    const tp = get().targetPanels;
+    await get().mutateState({
+      action: "set_opacity",
+      entity_id: entityId,
+      opacity,
+      ...(tp.length > 0 ? { target_panels: tp } : {}),
+    });
   },
   toggleElementLock: async (entityId: string, locked: boolean) => {
     await get().mutateState({ action: "set_lock", entity_id: entityId, locked });
@@ -454,11 +484,29 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
   renameElement: async (entityId: string, label: string) => {
     await get().mutateState({ action: "rename_element", entity_id: entityId, label });
   },
-  splitSameName: async (entityId: string, lang?: string) => {
-    await get().mutateState({ action: "split_same_name", entity_id: entityId, ...(lang ? { lang } : {}) });
+  splitSameName: async (entityId: string, lang?: string, preferredPanel?: string | null) => {
+    await get().mutateState({
+      action: "split_same_name",
+      entity_id: entityId,
+      ...(lang ? { lang } : {}),
+      ...(preferredPanel ? { preferred_panel: preferredPanel } : {}),
+    });
+  },
+  isolateElementPanel: async (entityId: string, panelId: string) => {
+    await get().mutateState({
+      action: "isolate_panel",
+      entity_id: entityId,
+      target_panels: [panelId],
+    });
   },
   splitElementLayers: async (entityId: string, lang?: string) => {
-    await get().mutateState({ action: "split_layers", entity_id: entityId, ...(lang ? { lang } : {}) });
+    const tp = get().targetPanels;
+    await get().mutateState({
+      action: "split_layers",
+      entity_id: entityId,
+      ...(lang ? { lang } : {}),
+      ...(tp.length > 0 ? { target_panels: tp } : {}),
+    });
   },
   resetElement: async (entityId: string) => {
     await get().mutateState({ action: "reset_element", entity_id: entityId });
@@ -487,9 +535,9 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
     await get().mutateState({ action: "redo" });
   },
 
-  selectEntity: (entityId: string | null, additive = false, range = false) => {
+  selectEntity: (entityId: string | null, additive = false, range = false, panelId = null) => {
     if (!entityId) {
-      set({ selectedIds: [] });
+      set({ selectedIds: [], selectedPanelId: null });
       return;
     }
     const fig = get().figure;
@@ -501,19 +549,19 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
       if (a >= 0 && b >= 0) {
         const [lo, hi] = a < b ? [a, b] : [b, a];
         const slice = order.slice(lo, hi + 1);
-        set({ selectedIds: Array.from(new Set([...prev, ...slice])) });
+        set({ selectedIds: Array.from(new Set([...prev, ...slice])), selectedPanelId: null });
         return;
       }
     }
     if (additive) {
       if (prev.includes(entityId)) {
-        set({ selectedIds: prev.filter((id) => id !== entityId) });
+        set({ selectedIds: prev.filter((id) => id !== entityId), selectedPanelId: null });
       } else {
-        set({ selectedIds: [...prev, entityId] });
+        set({ selectedIds: [...prev, entityId], selectedPanelId: null });
       }
       return;
     }
-    set({ selectedIds: [entityId] });
+    set({ selectedIds: [entityId], selectedPanelId: panelId ?? null });
   },
 
   setHoveredEntity: (entityId: string | null, panelLabel: string | null = null) => {
