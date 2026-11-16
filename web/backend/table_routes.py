@@ -5,13 +5,14 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 from urllib.parse import quote
 
 from fastapi import APIRouter, File, Form, Response, UploadFile
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 
+from danqing.table_compute import compute_statistical_table
 from danqing.table_studio import (
     TableParseError,
     export_rule_bundle_zip,
@@ -43,6 +44,7 @@ class TableExportPayload(BaseModel):
     blocks: list[dict[str, Any]] = Field(default_factory=list)
     footnotes: list[dict[str, Any]] = Field(default_factory=list)
     raw_data_sheet: dict[str, Any] | None = None
+    source_data_sheet: dict[str, Any] | None = None
 
 
 class TableZipExportPayload(BaseModel):
@@ -51,6 +53,18 @@ class TableZipExportPayload(BaseModel):
     csv_headers: list[str] = Field(default_factory=list)
     csv_rows: list[list[Any]] = Field(default_factory=list)
     gt_meta: dict[str, Any] = Field(default_factory=dict)
+    source_data_sheet: dict[str, Any] | None = None
+
+
+class TableComputePayload(BaseModel):
+    grid: list[list[str]] = Field(default_factory=list)
+    header_rows: tuple[int, int] = (0, 0)
+    body_range: tuple[int, int] = (1, 1)
+    decimal_comma: bool = False
+    source: dict[str, Any] = Field(default_factory=dict)
+    mode: Literal["subject_table1", "replicate_collapse"] = "subject_table1"
+    options: dict[str, Any] = Field(default_factory=dict)
+    lang: Literal["en", "zh"] = "zh"
 
 
 def _safe_disposition_filename(stem: str, ext: str) -> str:
@@ -150,6 +164,32 @@ async def parse_v2_table(
         return JSONResponse(
             status_code=422,
             content={"error_key": "tableStudio.errors.decodeFailed"},
+        )
+
+
+@table_router.post("/compute")
+def compute_v2_statistical_table(payload: TableComputePayload) -> Response:
+    if len(payload.grid) < 2 or not payload.grid[0]:
+        return JSONResponse(
+            status_code=422,
+            content={"error_key": "tableStudio.errors.noDataRows"},
+        )
+    try:
+        result = compute_statistical_table(
+            raw_grid=payload.grid,
+            header_rows=payload.header_rows,
+            body_range=payload.body_range,
+            decimal_comma=payload.decimal_comma,
+            source_meta=payload.source,
+            mode=payload.mode,
+            options=payload.options,
+            lang=payload.lang,
+        )
+        return JSONResponse(content=result)
+    except Exception as exc:
+        return JSONResponse(
+            status_code=422,
+            content={"error_key": "tableStudio.errors.decodeFailed", "detail": str(exc)},
         )
 
 

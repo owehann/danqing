@@ -31,7 +31,16 @@ export function makeSafeFilenameStem(doc: TableDoc): string {
 export function serializeToBackendExportPayload(
   model: RenderModel,
   filenameStem: string,
+  sourceRaw?: TableDoc["sourceRaw"],
 ): Record<string, unknown> {
+  const sourceDataSheet =
+    sourceRaw && sourceRaw.grid.length > 0
+      ? {
+          headers: sourceRaw.grid[0] ?? [],
+          rows: sourceRaw.grid.slice(1),
+        }
+      : null;
+
   return {
     filename_stem: filenameStem,
     title: composeFullTitle(model),
@@ -88,6 +97,7 @@ export function serializeToBackendExportPayload(
       text: fn.text,
     })),
     raw_data_sheet: model.rawDataSheet,
+    ...(sourceDataSheet ? { source_data_sheet: sourceDataSheet } : {}),
   };
 }
 
@@ -190,11 +200,15 @@ export function serializeToBackendZipPayload(
         .map((cid) => colIdToName.get(cid))
         .filter((x): x is string => Boolean(x));
       const pattern =
-        mg.pattern === "ci" && cols.length >= 3
-          ? "{0} ({1}–{2})"
-          : mg.pattern === "plusminus"
-            ? "{0} ± {1}"
-            : "{0} ({1})";
+        mg.pattern === "iqr"
+          ? cols.length >= 3
+            ? "{0} [{1}–{2}]"
+            : "{0} [{1}]"
+          : mg.pattern === "ci" && cols.length >= 3
+            ? "{0} ({1}–{2})"
+            : mg.pattern === "plusminus"
+              ? "{0} ± {1}"
+              : "{0} ({1})";
       return { columns: cols, pattern };
     })
     .filter((mg) => mg.columns.length >= 2);
@@ -223,11 +237,20 @@ export function serializeToBackendZipPayload(
   }
   const gtHeatCols = Array.from(gtHeatGroupMap.values());
 
+  const sourceDataSheet =
+    doc.sourceRaw && doc.sourceRaw.grid.length > 0
+      ? {
+          headers: doc.sourceRaw.grid[0] ?? [],
+          rows: doc.sourceRaw.grid.slice(1),
+        }
+      : null;
+
   return {
     filename_stem: filenameStem,
     table_json: buildRuleJsonObject(doc),
     csv_headers: uniqueCsvHeaders,
     csv_rows: csvRows,
+    ...(sourceDataSheet ? { source_data_sheet: sourceDataSheet } : {}),
     gt_meta: {
       title: composeFullTitle(model),
       subtitle: model.subtitle,

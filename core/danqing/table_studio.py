@@ -43,6 +43,14 @@ from openpyxl.formatting.rule import DataBarRule
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
+from danqing.table_compute import (
+    classify_narrative_roles,
+    detect_smart_compute,
+    infer_enhanced_merges,
+    infer_flat_header_spanners,
+    infer_sig_bindings,
+)
+
 ColumnRole = Literal["normal", "count", "part", "heat", "sig", "bar"]
 
 _MISSING_TOKENS = {
@@ -100,7 +108,10 @@ _SIG_SUBSTR_HINTS = (
     "pvalue",
     "p_val",
     "p-val",
+    "pval",
     "p_adj",
+    "padj",
+    "fdr",
     "q-value",
     "q_value",
     "qval",
@@ -535,44 +546,7 @@ def _infer_suggestions_and_stats(
         if len(_non_empty_indices(grid[r])) > 0
     ]
 
-    # 1. Detect adjacent column merges (2-col Mean+SD, OR+CI, and 3-col Estimate+Lower+Upper)
-    merges: list[dict[str, Any]] = []
-    merged_member_cols: set[int] = set()
-    idx = 0
-    while idx < n_cols - 1:
-        # Check 3-col CI first
-        if idx + 2 < n_cols:
-            p1, p2, p3 = _span_prefix(headers[idx]), _span_prefix(headers[idx + 1]), _span_prefix(headers[idx + 2])
-            l1, l2, l3 = _leaf_header(headers[idx]).lower(), _leaf_header(headers[idx + 1]).lower(), _leaf_header(headers[idx + 2]).lower()
-            is_low = any(k in l2 for k in ("lower", "lcl", "ci_low", "下限"))
-            is_high = any(k in l3 for k in ("upper", "ucl", "ci_high", "上限"))
-            is_est = any(k in l1 for k in ("or", "hr", "rr", "est", "beta", "diff", "mean", "比值", "效应", "均值"))
-            if is_est and is_low and is_high and (p1 == p2 == p3 or not p2):
-                merges.append({"source_cols": [idx, idx + 1, idx + 2], "pattern": "ci"})
-                merged_member_cols.update((idx, idx + 1, idx + 2))
-                idx += 3
-                continue
-
-        p1, p2 = _span_prefix(headers[idx]), _span_prefix(headers[idx + 1])
-        l1, l2 = _leaf_header(headers[idx]).lower(), _leaf_header(headers[idx + 1]).lower()
-        same_group = (p1 == p2) or (not p1 and not p2)
-
-        is_mean_sd = same_group and (
-            any(k in l1 for k in ("mean", "avg", "均值", "平均"))
-            and (any(k in l2 for k in ("sd", "std", "标准差")) or l2 in ("se", "sem"))
-        )
-        is_est_ci = same_group and (
-            any(k in l1 for k in ("or", "hr", "rr", "beta", "hazard", "odds", "diff", "比值", "风险比"))
-            and ("ci" in l2 or "置信区间" in l2)
-        )
-        if is_mean_sd or is_est_ci:
-            merges.append({"source_cols": [idx, idx + 1], "pattern": "paren"})
-            merged_member_cols.update((idx, idx + 1))
-            idx += 2
-            continue
-        idx += 1
-
-    # 2. Per-column numeric statistics & unit detection
+    # 1. Per-column numeric statistics & unit detection
     col_stats: list[dict[str, Any]] = []
     parsed_matrix: list[list[ParsedNumber]] = [
         [parse_number(row[c], decimal_comma=decimal_comma) for row in body_rows]
@@ -605,6 +579,14 @@ def _infer_suggestions_and_stats(
                 "is_all_int": is_all_int,
             }
         )
+
+    # 2. Layer 1A & 1B: Token-Tree flat-header spanners + mathematical-invariant merges
+    spanners, leaf_headers = infer_flat_header_spanners(headers, spanners, header_rows)
+    merges, merged_member_cols, pct_promoted_cols = infer_enhanced_merges(
+        headers, leaf_headers, spanners, parsed_matrix, col_stats
+    )
+    for pc in pct_promoted_cols:
+        col_stats[pc]["detected_unit"] = "%"
 
     # 3. Sparkline runs across >= 4 adjacent year columns
     sparkline_runs: list[dict[str, Any]] = []
@@ -739,39 +721,44 @@ def _infer_suggestions_and_stats(
                         "col_counts": col_counts,
                     }
 
-    # 6. Column roles
-    roles: dict[str, ColumnRole] = {}
-    for c in range(n_cols):
-        st = col_stats[c]
-        leaf_low = _leaf_header(headers[c]).lower()
-        min_v = st["min_val"]
-        max_v = st["max_val"]
-        in_unit_interval = (
-            min_v is not None and max_v is not None and -1e-9 <= min_v and max_v <= 1.0 + 1e-9
-        )
-        is_sig = any(h in leaf_low for h in _SIG_SUBSTR_HINTS) or (
-            leaf_low in _SIG_EXACT_HINTS and st["numeric_ratio"] >= 0.6 and in_unit_interval
-        )
-
-        if part_by == c:
-            role: ColumnRole = "part"
-        elif is_sig and st["numeric_ratio"] >= 0.5:
-            role = "sig"
-        elif leaf_low in _COUNT_EXACT_HINTS and st["is_all_int"]:
-            role = "count"
-        elif st["seq_ratio"] >= 0.5:
-            role = "bar"
-        elif c in merged_member_cols:
-            role = "normal"
-        elif st["numeric_ratio"] >= 0.65 and not any(
-            leaf_low == nh or leaf_low.endswith(f"_{nh}") for nh in _NON_HEAT_HINTS
-        ):
-            role = "heat"
-        else:
-            role = "normal"
-
-        roles[str(c)] = role
-        st["role"] = role
+    # 6. Layer 2 & 3: Five-tier narrative column roles, multi-scope sig bindings & raw-column smart compute
+    roles_raw = classify_narrative_roles(
+        headers=headers,
+        leaf_headers=leaf_headers,
+        col_stats=col_stats,
+        part_by=part_by,
+        merged_member_cols=merged_member_cols,
+        sig_Substr_hints=_SIG_SUBSTR_HINTS,
+        sig_exact_hints=_SIG_EXACT_HINTS,
+        count_exact_hints=_COUNT_EXACT_HINTS,
+    )
+    roles: dict[str, ColumnRole] = {k: v for k, v in roles_raw.items()}  # type: ignore[misc]
+    sig_bindings = infer_sig_bindings(
+        headers=headers,
+        leaf_headers=leaf_headers,
+        roles=roles_raw,
+        merges=merges,
+        spanners=spanners,
+        parsed_matrix=parsed_matrix,
+    )
+    smart_compute = detect_smart_compute(
+        headers=headers,
+        body_rows=body_rows,
+        col_stats=col_stats,
+        roles=roles_raw,
+        pivot_suggestion=pivot_suggestion,
+        sparkline_runs=sparkline_runs,
+        merges=merges,
+    )
+    # Do not auto-propose `part_by` on wide raw patient cohorts (where `Group` is for Table 1 aggregation)
+    if smart_compute is not None and smart_compute.get("kind") == "subject_table1":
+        if part_by is not None and roles.get(str(part_by)) == "part":
+            roles[str(part_by)] = "normal"
+            col_stats[part_by]["role"] = "normal"
+        part_by = None
+        # Also suppress replicate/flat spanners when raw records are unaggregated subject rows
+        spanners = []
+        leaf_headers = [h.split(" · ")[-1].strip() for h in headers]
 
     suggestions = {
         "header_rows": [header_rows[0], header_rows[1]],
@@ -786,6 +773,9 @@ def _infer_suggestions_and_stats(
         "pivot": pivot_suggestion,
         "decimal_comma": decimal_comma,
         "resolved_headers": headers,
+        "leaf_headers": leaf_headers,
+        "sig_bindings": sig_bindings,
+        "smart_compute": smart_compute,
     }
     return suggestions, col_stats
 
@@ -1627,6 +1617,26 @@ def export_styled_xlsx(payload: dict[str, Any]) -> bytes:
                     d_row.append(rn if isinstance(rn, (int, float)) else str(c_meta.get("text") or ""))
                 ws_data.append(d_row)
 
+    # Optional 3rd worksheet (`source_data`) preserving unaggregated raw subject/replicate observations
+    source_data_sheet = payload.get("source_data_sheet")
+    if isinstance(source_data_sheet, dict) and isinstance(source_data_sheet.get("headers"), list):
+        ws_src = wb.create_sheet(title="source_data")
+        ws_src.append([str(h) for h in source_data_sheet["headers"]])
+        for s_row in source_data_sheet.get("rows") or []:
+            parsed_s_row: list[Any] = []
+            for item in s_row:
+                if isinstance(item, (int, float)) and not isinstance(item, bool):
+                    parsed_s_row.append(item)
+                elif item is None:
+                    parsed_s_row.append("")
+                else:
+                    pn = parse_number(str(item), decimal_comma=False)
+                    if pn.value is not None and pn.prefix == "" and pn.unit == "" and not pn.is_sequence:
+                        parsed_s_row.append(pn.value)
+                    else:
+                        parsed_s_row.append(str(item))
+            ws_src.append(parsed_s_row)
+
     out = io.BytesIO()
     wb.save(out)
     return out.getvalue()
@@ -2085,4 +2095,12 @@ def export_rule_bundle_zip(payload: dict[str, Any]) -> bytes:
         )
         zf.writestr("data.csv", csv_buf.getvalue())
         zf.writestr("make_table.py", py_code)
+        src_sheet = payload.get("source_data_sheet")
+        if isinstance(src_sheet, dict) and isinstance(src_sheet.get("headers"), list):
+            src_buf = io.StringIO()
+            src_writer = csv.writer(src_buf, lineterminator="\n")
+            src_writer.writerow([str(h) for h in src_sheet["headers"]])
+            for sr in src_sheet.get("rows") or []:
+                src_writer.writerow(["" if v is None else v for v in sr])
+            zf.writestr("source_data.csv", src_buf.getvalue())
     return zbuf.getvalue()

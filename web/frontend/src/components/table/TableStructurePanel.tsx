@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import {
   ArrowDown,
+  ArrowRight,
   ArrowUp,
   ChevronDown,
   Eye,
@@ -15,6 +16,7 @@ import type {
   ColumnRole,
   ColumnSpec,
   ColumnVisualMode,
+  MergePattern,
   PStyle,
   Precision,
   SemanticRole,
@@ -53,7 +55,7 @@ export function TableStructurePanel(): React.ReactElement | null {
 
   // Quick-builder states for Section 4 (Combinations)
   const [mergeFirstId, setMergeFirstId] = useState("");
-  const [mergePattern, setMergePattern] = useState<"paren" | "plusminus" | "ci">("paren");
+  const [mergePattern, setMergePattern] = useState<MergePattern>("paren");
   const [spanFromId, setSpanFromId] = useState("");
   const [spanToId, setSpanToId] = useState("");
   const [spanLabel, setSpanLabel] = useState("");
@@ -832,7 +834,7 @@ export function TableStructurePanel(): React.ReactElement | null {
                           aria-label={t("tableStudio.structure.mergesTitle")}
                           value={mg.pattern}
                           onChange={(e) => {
-                            const pat = e.target.value as "paren" | "plusminus" | "ci";
+                            const pat = e.target.value as MergePattern;
                             commit((draft) => {
                               const item = draft.structure.merges.find((x) => x.id === mg.id);
                               if (item) item.pattern = pat;
@@ -843,6 +845,7 @@ export function TableStructurePanel(): React.ReactElement | null {
                           <option value="plusminus">
                             {t("tableStudio.structure.fmtPlusMinus")}
                           </option>
+                          <option value="iqr">{t("tableStudio.structure.fmtIqr")}</option>
                           {mg.columnIds.length >= 3 ? (
                             <option value="ci">{t("tableStudio.structure.fmtCi")}</option>
                           ) : null}
@@ -886,12 +889,11 @@ export function TableStructurePanel(): React.ReactElement | null {
                     className="dq-table-prec-select"
                     aria-label={t("tableStudio.structure.mergesTitle")}
                     value={mergePattern}
-                    onChange={(e) =>
-                      setMergePattern(e.target.value as "paren" | "plusminus" | "ci")
-                    }
+                    onChange={(e) => setMergePattern(e.target.value as MergePattern)}
                   >
                     <option value="paren">{t("tableStudio.structure.fmtParen")}</option>
                     <option value="plusminus">{t("tableStudio.structure.fmtPlusMinus")}</option>
+                    <option value="iqr">{t("tableStudio.structure.fmtIqr")}</option>
                     <option value="ci">{t("tableStudio.structure.fmtCi")}</option>
                   </select>
                   <button
@@ -901,7 +903,7 @@ export function TableStructurePanel(): React.ReactElement | null {
                       const firstId = mergeFirstId || visibleNonPartCols[0]?.id;
                       const startIdx = visibleNonPartCols.findIndex((c) => c.id === firstId);
                       if (startIdx < 0) return;
-                      const count = mergePattern === "ci" ? 3 : 2;
+                      const count = mergePattern === "ci" || mergePattern === "iqr" ? 3 : 2;
                       const slice = visibleNonPartCols.slice(startIdx, startIdx + count);
                       if (slice.length < 2) return;
                       commit((draft) => {
@@ -909,7 +911,12 @@ export function TableStructurePanel(): React.ReactElement | null {
                         draft.structure.merges.push({
                           id: `mg_manual_${Date.now()}`,
                           columnIds: slice.map((s) => s.id),
-                          pattern: slice.length === 3 ? mergePattern : mergePattern === "ci" ? "paren" : mergePattern,
+                          pattern:
+                            slice.length === 3
+                              ? mergePattern
+                              : mergePattern === "ci"
+                                ? "paren"
+                                : mergePattern,
                         });
                       });
                     }}
@@ -1384,36 +1391,127 @@ export function TableStructurePanel(): React.ReactElement | null {
             <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
           </summary>
           <div className="dq-struct-sec__body">
-            <label className="dq-field-label">
-              <span>{t("tableStudio.structure.sigSource")}</span>
-              <select
-                className="dq-select dq-select--compact"
-                value={structure.sig.sourceId ?? ""}
-                onChange={(e) => {
-                  const sid = e.target.value || null;
-                  commit((draft) => {
-                    ensureTidied(draft);
-                    draft.structure.sig.sourceId = sid;
-                    if (sid) {
-                      const c = draft.structure.columns.find((x) => x.id === sid);
-                      if (c) c.role = "sig";
-                      if (draft.structure.sig.targetIds.length === 0) {
-                        draft.structure.sig.targetIds = [sid];
+            {(structure.sig.bindings?.length ?? 0) >= 2 ? (
+              <div className="dq-struct-subbox">
+                <span className="dq-field-label">
+                  {t("tableStudio.structure.sigBindingsTitle")}
+                </span>
+                <div className="dq-mini-list">
+                  {(structure.sig.bindings ?? []).map((bind) => (
+                    <div key={bind.id} className="dq-fn-edit-card">
+                      {bind.label ? (
+                        <span className="dq-sig-bind-scope">{bind.label}</span>
+                      ) : null}
+                      <div className="dq-struct-inline-adder">
+                        <select
+                          className="dq-select dq-select--compact"
+                          aria-label={t("tableStudio.structure.sigSource")}
+                          value={bind.sourceId}
+                          onChange={(e) => {
+                            const nextSrc = e.target.value;
+                            commit((draft) => {
+                              const b = draft.structure.sig.bindings?.find(
+                                (x) => x.id === bind.id,
+                              );
+                              if (b) {
+                                b.sourceId = nextSrc;
+                                const col = draft.structure.columns.find((x) => x.id === nextSrc);
+                                if (col) col.role = "sig";
+                              }
+                            });
+                          }}
+                        >
+                          {structure.columns.map((c) => (
+                            <option key={c.id} value={c.id}>
+                              {c.label}
+                            </option>
+                          ))}
+                        </select>
+                        <ArrowRight size={12} strokeWidth={1.6} aria-hidden="true" />
+                        <select
+                          className="dq-select dq-select--compact"
+                          aria-label={t("tableStudio.structure.bindingTargetArrow")}
+                          value={bind.targetIds[0] ?? bind.sourceId}
+                          onChange={(e) => {
+                            const nextTgt = e.target.value;
+                            commit((draft) => {
+                              const b = draft.structure.sig.bindings?.find(
+                                (x) => x.id === bind.id,
+                              );
+                              if (b) b.targetIds = [nextTgt];
+                            });
+                          }}
+                        >
+                          {visibleNonPartCols.map((c) => (
+                            <option key={c.id} value={c.id}>
+                              {c.label}
+                            </option>
+                          ))}
+                        </select>
+                        <button
+                          type="button"
+                          className="dq-btn dq-btn--ghost dq-btn--icon"
+                          aria-label={t("tableStudio.structure.removeItem")}
+                          title={t("tableStudio.structure.removeItem")}
+                          onClick={() =>
+                            commit((draft) => {
+                              const nextB = (draft.structure.sig.bindings ?? []).filter(
+                                (x) => x.id !== bind.id,
+                              );
+                              draft.structure.sig.bindings = nextB;
+                              draft.structure.sig.sourceId = nextB[0]?.sourceId ?? null;
+                              draft.structure.sig.targetIds = nextB[0]?.targetIds ?? [];
+                            })
+                          }
+                        >
+                          <Trash2 size={12} strokeWidth={1.6} aria-hidden="true" />
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <label className="dq-field-label">
+                <span>{t("tableStudio.structure.sigSource")}</span>
+                <select
+                  className="dq-select dq-select--compact"
+                  value={structure.sig.sourceId ?? ""}
+                  onChange={(e) => {
+                    const sid = e.target.value || null;
+                    commit((draft) => {
+                      ensureTidied(draft);
+                      draft.structure.sig.sourceId = sid;
+                      if (sid) {
+                        const c = draft.structure.columns.find((x) => x.id === sid);
+                        if (c) c.role = "sig";
+                        if (draft.structure.sig.targetIds.length === 0) {
+                          draft.structure.sig.targetIds = [sid];
+                        }
+                        draft.structure.sig.bindings = [
+                          {
+                            id: "sb_0",
+                            sourceId: sid,
+                            targetIds: draft.structure.sig.targetIds,
+                          },
+                        ];
+                      } else {
+                        draft.structure.sig.bindings = [];
                       }
-                    }
-                  });
-                }}
-              >
-                <option value="">{t("tableStudio.structure.none")}</option>
-                {structure.columns.map((c) => (
-                  <option key={c.id} value={c.id}>
-                    {c.label}
-                  </option>
-                ))}
-              </select>
-            </label>
+                    });
+                  }}
+                >
+                  <option value="">{t("tableStudio.structure.none")}</option>
+                  {structure.columns.map((c) => (
+                    <option key={c.id} value={c.id}>
+                      {c.label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            )}
 
-            {structure.sig.sourceId ? (
+            {structure.sig.sourceId || (structure.sig.bindings?.length ?? 0) > 0 ? (
               <>
                 <label className="dq-field-label">
                   <span>{t("tableStudio.structure.pStyle")}</span>
@@ -1446,29 +1544,87 @@ export function TableStructurePanel(): React.ReactElement | null {
                   <span>{t("tableStudio.structure.showStars")}</span>
                 </label>
 
-                <div className="dq-field-label">{t("tableStudio.structure.sigTargets")}</div>
-                <div className="dq-target-checks">
-                  {visibleNonPartCols.map((c) => {
-                    const checked = structure.sig.targetIds.includes(c.id);
-                    return (
-                      <label key={c.id} className="dq-check-row dq-check-row--xs">
-                        <input
-                          type="checkbox"
-                          checked={checked}
-                          onChange={(e) =>
-                            commit((draft) => {
-                              const setIds = new Set(draft.structure.sig.targetIds);
-                              if (e.target.checked) setIds.add(c.id);
-                              else setIds.delete(c.id);
-                              draft.structure.sig.targetIds = Array.from(setIds);
-                            })
-                          }
-                        />
-                        <span>{c.label}</span>
-                      </label>
-                    );
-                  })}
-                </div>
+                {(structure.sig.bindings?.length ?? 0) < 2 ? (
+                  <>
+                    <div className="dq-field-label">{t("tableStudio.structure.sigTargets")}</div>
+                    <div className="dq-target-checks">
+                      {visibleNonPartCols.map((c) => {
+                        const checked = structure.sig.targetIds.includes(c.id);
+                        return (
+                          <label key={c.id} className="dq-check-row dq-check-row--xs">
+                            <input
+                              type="checkbox"
+                              checked={checked}
+                              onChange={(e) =>
+                                commit((draft) => {
+                                  const setIds = new Set(draft.structure.sig.targetIds);
+                                  if (e.target.checked) setIds.add(c.id);
+                                  else setIds.delete(c.id);
+                                  const arr = Array.from(setIds);
+                                  draft.structure.sig.targetIds = arr;
+                                  if (draft.structure.sig.sourceId) {
+                                    draft.structure.sig.bindings = [
+                                      {
+                                        id: "sb_0",
+                                        sourceId: draft.structure.sig.sourceId,
+                                        targetIds: arr,
+                                      },
+                                    ];
+                                  }
+                                })
+                              }
+                            />
+                            <span>{c.label}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </>
+                ) : null}
+
+                {visibleNonPartCols.length >= 2 ? (
+                  <button
+                    type="button"
+                    className="dq-btn dq-btn--xs"
+                    onClick={() =>
+                      commit((draft) => {
+                        ensureTidied(draft);
+                        const existing =
+                          draft.structure.sig.bindings && draft.structure.sig.bindings.length > 0
+                            ? [...draft.structure.sig.bindings]
+                            : draft.structure.sig.sourceId
+                              ? [
+                                  {
+                                    id: "sb_0",
+                                    sourceId: draft.structure.sig.sourceId,
+                                    targetIds:
+                                      draft.structure.sig.targetIds.length > 0
+                                        ? draft.structure.sig.targetIds
+                                        : [draft.structure.sig.sourceId],
+                                  },
+                                ]
+                              : [];
+                        const fallbackSig =
+                          draft.structure.columns.find(
+                            (c) =>
+                              c.role === "sig" &&
+                              !existing.some((b) => b.sourceId === c.id),
+                          ) ?? visibleNonPartCols[visibleNonPartCols.length - 1];
+                        if (!fallbackSig) return;
+                        existing.push({
+                          id: `sb_${Date.now()}`,
+                          sourceId: fallbackSig.id,
+                          targetIds: [fallbackSig.id],
+                        });
+                        draft.structure.sig.bindings = existing;
+                        draft.structure.sig.sourceId = existing[0].sourceId;
+                      })
+                    }
+                  >
+                    <Plus size={12} strokeWidth={1.6} aria-hidden="true" />
+                    <span>{t("tableStudio.structure.addSigBindingBtn")}</span>
+                  </button>
+                ) : null}
               </>
             ) : null}
 

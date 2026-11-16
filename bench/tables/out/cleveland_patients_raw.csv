@@ -1,0 +1,304 @@
+Patient_ID,Diagnosis,Age_yr,Sex,Chest_Pain,Resting_BP_mmHg,Cholesterol_mg_dL,Fasting_BS,Max_HR_bpm,ST_Depression_mV,Major_Vessels
+PT-001,No CAD,63,Male,Typical angina,145,233,>120 mg/dL,150,2.3,0
+PT-002,CAD,67,Male,Asymptomatic,160,286,<=120 mg/dL,108,1.5,3
+PT-003,CAD,67,Male,Asymptomatic,120,229,<=120 mg/dL,129,2.6,2
+PT-004,No CAD,37,Male,Non-anginal pain,130,250,<=120 mg/dL,187,3.5,0
+PT-005,No CAD,41,Female,Atypical angina,130,204,<=120 mg/dL,172,1.4,0
+PT-006,No CAD,56,Male,Atypical angina,120,236,<=120 mg/dL,178,0.8,0
+PT-007,CAD,62,Female,Asymptomatic,140,268,<=120 mg/dL,160,3.6,2
+PT-008,No CAD,57,Female,Asymptomatic,120,354,<=120 mg/dL,163,0.6,0
+PT-009,CAD,63,Male,Asymptomatic,130,254,<=120 mg/dL,147,1.4,1
+PT-010,CAD,53,Male,Asymptomatic,140,203,>120 mg/dL,155,3.1,0
+PT-011,No CAD,57,Male,Asymptomatic,140,192,<=120 mg/dL,148,0.4,0
+PT-012,No CAD,56,Female,Atypical angina,140,294,<=120 mg/dL,153,1.3,0
+PT-013,CAD,56,Male,Non-anginal pain,130,256,>120 mg/dL,142,0.6,1
+PT-014,No CAD,44,Male,Atypical angina,120,263,<=120 mg/dL,173,0.0,0
+PT-015,No CAD,52,Male,Non-anginal pain,172,199,>120 mg/dL,162,0.5,0
+PT-016,No CAD,57,Male,Non-anginal pain,150,168,<=120 mg/dL,174,1.6,0
+PT-017,CAD,48,Male,Atypical angina,110,229,<=120 mg/dL,168,1.0,0
+PT-018,No CAD,54,Male,Asymptomatic,140,239,<=120 mg/dL,160,1.2,0
+PT-019,No CAD,48,Female,Non-anginal pain,130,275,<=120 mg/dL,139,0.2,0
+PT-020,No CAD,49,Male,Atypical angina,130,266,<=120 mg/dL,171,0.6,0
+PT-021,No CAD,64,Male,Typical angina,110,211,<=120 mg/dL,144,1.8,0
+PT-022,No CAD,58,Female,Typical angina,150,283,>120 mg/dL,162,1.0,0
+PT-023,CAD,58,Male,Atypical angina,120,284,<=120 mg/dL,160,1.8,0
+PT-024,CAD,58,Male,Non-anginal pain,132,224,<=120 mg/dL,173,3.2,2
+PT-025,CAD,60,Male,Asymptomatic,130,206,<=120 mg/dL,132,2.4,2
+PT-026,No CAD,50,Female,Non-anginal pain,120,219,<=120 mg/dL,158,1.6,0
+PT-027,No CAD,58,Female,Non-anginal pain,120,340,<=120 mg/dL,172,0.0,0
+PT-028,No CAD,66,Female,Typical angina,150,226,<=120 mg/dL,114,2.6,0
+PT-029,No CAD,43,Male,Asymptomatic,150,247,<=120 mg/dL,171,1.5,0
+PT-030,CAD,40,Male,Asymptomatic,110,167,<=120 mg/dL,114,2.0,0
+PT-031,No CAD,69,Female,Typical angina,140,239,<=120 mg/dL,151,1.8,2
+PT-032,CAD,60,Male,Asymptomatic,117,230,>120 mg/dL,160,1.4,2
+PT-033,CAD,64,Male,Non-anginal pain,140,335,<=120 mg/dL,158,0.0,0
+PT-034,No CAD,59,Male,Asymptomatic,135,234,<=120 mg/dL,161,0.5,0
+PT-035,No CAD,44,Male,Non-anginal pain,130,233,<=120 mg/dL,179,0.4,0
+PT-036,No CAD,42,Male,Asymptomatic,140,226,<=120 mg/dL,178,0.0,0
+PT-037,CAD,43,Male,Asymptomatic,120,177,<=120 mg/dL,120,2.5,0
+PT-038,CAD,57,Male,Asymptomatic,150,276,<=120 mg/dL,112,0.6,1
+PT-039,CAD,55,Male,Asymptomatic,132,353,<=120 mg/dL,132,1.2,1
+PT-040,No CAD,61,Male,Non-anginal pain,150,243,>120 mg/dL,137,1.0,0
+PT-041,CAD,65,Female,Asymptomatic,150,225,<=120 mg/dL,114,1.0,3
+PT-042,No CAD,40,Male,Typical angina,140,199,<=120 mg/dL,178,1.4,0
+PT-043,No CAD,71,Female,Atypical angina,160,302,<=120 mg/dL,162,0.4,2
+PT-044,No CAD,59,Male,Non-anginal pain,150,212,>120 mg/dL,157,1.6,0
+PT-045,CAD,61,Female,Asymptomatic,130,330,<=120 mg/dL,169,0.0,0
+PT-046,CAD,58,Male,Non-anginal pain,112,230,<=120 mg/dL,165,2.5,1
+PT-047,No CAD,51,Male,Non-anginal pain,110,175,<=120 mg/dL,123,0.6,0
+PT-048,CAD,50,Male,Asymptomatic,150,243,<=120 mg/dL,128,2.6,0
+PT-049,No CAD,65,Female,Non-anginal pain,140,417,>120 mg/dL,157,0.8,1
+PT-050,No CAD,53,Male,Non-anginal pain,130,197,>120 mg/dL,152,1.2,0
+PT-051,No CAD,41,Female,Atypical angina,105,198,<=120 mg/dL,168,0.0,1
+PT-052,No CAD,65,Male,Asymptomatic,120,177,<=120 mg/dL,140,0.4,0
+PT-053,CAD,44,Male,Asymptomatic,112,290,<=120 mg/dL,153,0.0,1
+PT-054,No CAD,44,Male,Atypical angina,130,219,<=120 mg/dL,188,0.0,0
+PT-055,CAD,60,Male,Asymptomatic,130,253,<=120 mg/dL,144,1.4,1
+PT-056,CAD,54,Male,Asymptomatic,124,266,<=120 mg/dL,109,2.2,1
+PT-057,CAD,50,Male,Non-anginal pain,140,233,<=120 mg/dL,163,0.6,1
+PT-058,CAD,41,Male,Asymptomatic,110,172,<=120 mg/dL,158,0.0,0
+PT-059,No CAD,54,Male,Non-anginal pain,125,273,<=120 mg/dL,152,0.5,1
+PT-060,No CAD,51,Male,Typical angina,125,213,<=120 mg/dL,125,1.4,1
+PT-061,CAD,51,Female,Asymptomatic,130,305,<=120 mg/dL,142,1.2,0
+PT-062,No CAD,46,Female,Non-anginal pain,142,177,<=120 mg/dL,160,1.4,0
+PT-063,CAD,58,Male,Asymptomatic,128,216,<=120 mg/dL,131,2.2,3
+PT-064,No CAD,54,Female,Non-anginal pain,135,304,>120 mg/dL,170,0.0,0
+PT-065,CAD,54,Male,Asymptomatic,120,188,<=120 mg/dL,113,1.4,1
+PT-066,CAD,60,Male,Asymptomatic,145,282,<=120 mg/dL,142,2.8,2
+PT-067,CAD,60,Male,Non-anginal pain,140,185,<=120 mg/dL,155,3.0,0
+PT-068,No CAD,54,Male,Non-anginal pain,150,232,<=120 mg/dL,165,1.6,0
+PT-069,CAD,59,Male,Asymptomatic,170,326,<=120 mg/dL,140,3.4,0
+PT-070,CAD,46,Male,Non-anginal pain,150,231,<=120 mg/dL,147,3.6,0
+PT-071,No CAD,65,Female,Non-anginal pain,155,269,<=120 mg/dL,148,0.8,0
+PT-072,CAD,67,Male,Asymptomatic,125,254,>120 mg/dL,163,0.2,2
+PT-073,CAD,62,Male,Asymptomatic,120,267,<=120 mg/dL,99,1.8,2
+PT-074,CAD,65,Male,Asymptomatic,110,248,<=120 mg/dL,158,0.6,2
+PT-075,CAD,44,Male,Asymptomatic,110,197,<=120 mg/dL,177,0.0,1
+PT-076,No CAD,65,Female,Non-anginal pain,160,360,<=120 mg/dL,151,0.8,0
+PT-077,CAD,60,Male,Asymptomatic,125,258,<=120 mg/dL,141,2.8,1
+PT-078,No CAD,51,Female,Non-anginal pain,140,308,<=120 mg/dL,142,1.5,1
+PT-079,No CAD,48,Male,Atypical angina,130,245,<=120 mg/dL,180,0.2,0
+PT-080,CAD,58,Male,Asymptomatic,150,270,<=120 mg/dL,111,0.8,0
+PT-081,No CAD,45,Male,Asymptomatic,104,208,<=120 mg/dL,148,3.0,0
+PT-082,No CAD,53,Female,Asymptomatic,130,264,<=120 mg/dL,143,0.4,0
+PT-083,No CAD,39,Male,Non-anginal pain,140,321,<=120 mg/dL,182,0.0,0
+PT-084,CAD,68,Male,Non-anginal pain,180,274,>120 mg/dL,150,1.6,0
+PT-085,No CAD,52,Male,Atypical angina,120,325,<=120 mg/dL,172,0.2,0
+PT-086,No CAD,44,Male,Non-anginal pain,140,235,<=120 mg/dL,180,0.0,0
+PT-087,No CAD,47,Male,Non-anginal pain,138,257,<=120 mg/dL,156,0.0,0
+PT-088,No CAD,53,Female,Non-anginal pain,128,216,<=120 mg/dL,115,0.0,0
+PT-089,No CAD,53,Female,Asymptomatic,138,234,<=120 mg/dL,160,0.0,0
+PT-090,No CAD,51,Female,Non-anginal pain,130,256,<=120 mg/dL,149,0.5,0
+PT-091,No CAD,66,Male,Asymptomatic,120,302,<=120 mg/dL,151,0.4,0
+PT-092,CAD,62,Female,Asymptomatic,160,164,<=120 mg/dL,145,6.2,3
+PT-093,No CAD,62,Male,Non-anginal pain,130,231,<=120 mg/dL,146,1.8,3
+PT-094,No CAD,44,Female,Non-anginal pain,108,141,<=120 mg/dL,175,0.6,0
+PT-095,No CAD,63,Female,Non-anginal pain,135,252,<=120 mg/dL,172,0.0,0
+PT-096,CAD,52,Male,Asymptomatic,128,255,<=120 mg/dL,161,0.0,1
+PT-097,CAD,59,Male,Asymptomatic,110,239,<=120 mg/dL,142,1.2,1
+PT-098,CAD,60,Female,Asymptomatic,150,258,<=120 mg/dL,157,2.6,2
+PT-099,No CAD,52,Male,Atypical angina,134,201,<=120 mg/dL,158,0.8,1
+PT-100,No CAD,48,Male,Asymptomatic,122,222,<=120 mg/dL,186,0.0,0
+PT-101,No CAD,45,Male,Asymptomatic,115,260,<=120 mg/dL,185,0.0,0
+PT-102,No CAD,34,Male,Typical angina,118,182,<=120 mg/dL,174,0.0,0
+PT-103,No CAD,57,Female,Asymptomatic,128,303,<=120 mg/dL,159,0.0,1
+PT-104,No CAD,71,Female,Non-anginal pain,110,265,>120 mg/dL,130,0.0,1
+PT-105,CAD,49,Male,Non-anginal pain,120,188,<=120 mg/dL,139,2.0,3
+PT-106,No CAD,54,Male,Atypical angina,108,309,<=120 mg/dL,156,0.0,0
+PT-107,CAD,59,Male,Asymptomatic,140,177,<=120 mg/dL,162,0.0,1
+PT-108,CAD,57,Male,Non-anginal pain,128,229,<=120 mg/dL,150,0.4,1
+PT-109,CAD,61,Male,Asymptomatic,120,260,<=120 mg/dL,140,3.6,1
+PT-110,CAD,39,Male,Asymptomatic,118,219,<=120 mg/dL,140,1.2,0
+PT-111,CAD,61,Female,Asymptomatic,145,307,<=120 mg/dL,146,1.0,0
+PT-112,CAD,56,Male,Asymptomatic,125,249,>120 mg/dL,144,1.2,1
+PT-113,No CAD,52,Male,Typical angina,118,186,<=120 mg/dL,190,0.0,0
+PT-114,CAD,43,Female,Asymptomatic,132,341,>120 mg/dL,136,3.0,0
+PT-115,CAD,62,Female,Non-anginal pain,130,263,<=120 mg/dL,97,1.2,1
+PT-116,No CAD,41,Male,Atypical angina,135,203,<=120 mg/dL,132,0.0,0
+PT-117,No CAD,58,Male,Non-anginal pain,140,211,>120 mg/dL,165,0.0,0
+PT-118,No CAD,35,Female,Asymptomatic,138,183,<=120 mg/dL,182,1.4,0
+PT-119,CAD,63,Male,Asymptomatic,130,330,>120 mg/dL,132,1.8,3
+PT-120,CAD,65,Male,Asymptomatic,135,254,<=120 mg/dL,127,2.8,1
+PT-121,CAD,48,Male,Asymptomatic,130,256,>120 mg/dL,150,0.0,2
+PT-122,CAD,63,Female,Asymptomatic,150,407,<=120 mg/dL,154,4.0,3
+PT-123,No CAD,51,Male,Non-anginal pain,100,222,<=120 mg/dL,143,1.2,0
+PT-124,CAD,55,Male,Asymptomatic,140,217,<=120 mg/dL,111,5.6,0
+PT-125,CAD,65,Male,Typical angina,138,282,>120 mg/dL,174,1.4,1
+PT-126,No CAD,45,Female,Atypical angina,130,234,<=120 mg/dL,175,0.6,0
+PT-127,CAD,56,Female,Asymptomatic,200,288,>120 mg/dL,133,4.0,2
+PT-128,CAD,54,Male,Asymptomatic,110,239,<=120 mg/dL,126,2.8,1
+PT-129,No CAD,44,Male,Atypical angina,120,220,<=120 mg/dL,170,0.0,0
+PT-130,No CAD,62,Female,Asymptomatic,124,209,<=120 mg/dL,163,0.0,0
+PT-131,No CAD,54,Male,Non-anginal pain,120,258,<=120 mg/dL,147,0.4,0
+PT-132,No CAD,51,Male,Non-anginal pain,94,227,<=120 mg/dL,154,0.0,1
+PT-133,No CAD,29,Male,Atypical angina,130,204,<=120 mg/dL,202,0.0,0
+PT-134,No CAD,51,Male,Asymptomatic,140,261,<=120 mg/dL,186,0.0,0
+PT-135,No CAD,43,Female,Non-anginal pain,122,213,<=120 mg/dL,165,0.2,0
+PT-136,No CAD,55,Female,Atypical angina,135,250,<=120 mg/dL,161,1.4,0
+PT-137,CAD,70,Male,Asymptomatic,145,174,<=120 mg/dL,125,2.6,0
+PT-138,CAD,62,Male,Atypical angina,120,281,<=120 mg/dL,103,1.4,1
+PT-139,CAD,35,Male,Asymptomatic,120,198,<=120 mg/dL,130,1.6,0
+PT-140,No CAD,51,Male,Non-anginal pain,125,245,>120 mg/dL,166,2.4,0
+PT-141,No CAD,59,Male,Atypical angina,140,221,<=120 mg/dL,164,0.0,0
+PT-142,CAD,59,Male,Typical angina,170,288,<=120 mg/dL,159,0.2,0
+PT-143,No CAD,52,Male,Atypical angina,128,205,>120 mg/dL,184,0.0,0
+PT-144,CAD,64,Male,Non-anginal pain,125,309,<=120 mg/dL,131,1.8,0
+PT-145,No CAD,58,Male,Non-anginal pain,105,240,<=120 mg/dL,154,0.6,0
+PT-146,CAD,47,Male,Non-anginal pain,108,243,<=120 mg/dL,152,0.0,0
+PT-147,CAD,57,Male,Asymptomatic,165,289,>120 mg/dL,124,1.0,3
+PT-148,No CAD,41,Male,Non-anginal pain,112,250,<=120 mg/dL,179,0.0,0
+PT-149,No CAD,45,Male,Atypical angina,128,308,<=120 mg/dL,170,0.0,0
+PT-150,No CAD,60,Female,Non-anginal pain,102,318,<=120 mg/dL,160,0.0,1
+PT-151,No CAD,52,Male,Typical angina,152,298,>120 mg/dL,178,1.2,0
+PT-152,No CAD,42,Female,Asymptomatic,102,265,<=120 mg/dL,122,0.6,0
+PT-153,No CAD,67,Female,Non-anginal pain,115,564,<=120 mg/dL,160,1.6,0
+PT-154,CAD,55,Male,Asymptomatic,160,289,<=120 mg/dL,145,0.8,1
+PT-155,CAD,64,Male,Asymptomatic,120,246,<=120 mg/dL,96,2.2,1
+PT-156,CAD,70,Male,Asymptomatic,130,322,<=120 mg/dL,109,2.4,3
+PT-157,CAD,51,Male,Asymptomatic,140,299,<=120 mg/dL,173,1.6,0
+PT-158,CAD,58,Male,Asymptomatic,125,300,<=120 mg/dL,171,0.0,2
+PT-159,CAD,60,Male,Asymptomatic,140,293,<=120 mg/dL,170,1.2,2
+PT-160,No CAD,68,Male,Non-anginal pain,118,277,<=120 mg/dL,151,1.0,1
+PT-161,No CAD,46,Male,Atypical angina,101,197,>120 mg/dL,156,0.0,0
+PT-162,CAD,77,Male,Asymptomatic,125,304,<=120 mg/dL,162,0.0,3
+PT-163,No CAD,54,Female,Non-anginal pain,110,214,<=120 mg/dL,158,1.6,0
+PT-164,No CAD,58,Female,Asymptomatic,100,248,<=120 mg/dL,122,1.0,0
+PT-165,No CAD,48,Male,Non-anginal pain,124,255,>120 mg/dL,175,0.0,2
+PT-166,No CAD,57,Male,Asymptomatic,132,207,<=120 mg/dL,168,0.0,0
+PT-167,No CAD,52,Male,Non-anginal pain,138,223,<=120 mg/dL,169,0.0,
+PT-168,No CAD,54,Female,Atypical angina,132,288,>120 mg/dL,159,0.0,1
+PT-169,CAD,35,Male,Asymptomatic,126,282,<=120 mg/dL,156,0.0,0
+PT-170,No CAD,45,Female,Atypical angina,112,160,<=120 mg/dL,138,0.0,0
+PT-171,CAD,70,Male,Non-anginal pain,160,269,<=120 mg/dL,112,2.9,1
+PT-172,No CAD,53,Male,Asymptomatic,142,226,<=120 mg/dL,111,0.0,0
+PT-173,CAD,59,Female,Asymptomatic,174,249,<=120 mg/dL,143,0.0,0
+PT-174,No CAD,62,Female,Asymptomatic,140,394,<=120 mg/dL,157,1.2,0
+PT-175,CAD,64,Male,Asymptomatic,145,212,<=120 mg/dL,132,2.0,2
+PT-176,CAD,57,Male,Asymptomatic,152,274,<=120 mg/dL,88,1.2,1
+PT-177,No CAD,52,Male,Asymptomatic,108,233,>120 mg/dL,147,0.1,3
+PT-178,CAD,56,Male,Asymptomatic,132,184,<=120 mg/dL,105,2.1,1
+PT-179,No CAD,43,Male,Non-anginal pain,130,315,<=120 mg/dL,162,1.9,1
+PT-180,No CAD,53,Male,Non-anginal pain,130,246,>120 mg/dL,173,0.0,3
+PT-181,CAD,48,Male,Asymptomatic,124,274,<=120 mg/dL,166,0.5,0
+PT-182,CAD,56,Female,Asymptomatic,134,409,<=120 mg/dL,150,1.9,2
+PT-183,No CAD,42,Male,Typical angina,148,244,<=120 mg/dL,178,0.8,2
+PT-184,No CAD,59,Male,Typical angina,178,270,<=120 mg/dL,145,4.2,0
+PT-185,CAD,60,Female,Asymptomatic,158,305,<=120 mg/dL,161,0.0,0
+PT-186,No CAD,63,Female,Atypical angina,140,195,<=120 mg/dL,179,0.0,2
+PT-187,No CAD,42,Male,Non-anginal pain,120,240,>120 mg/dL,194,0.8,0
+PT-188,CAD,66,Male,Atypical angina,160,246,<=120 mg/dL,120,0.0,3
+PT-189,CAD,54,Male,Atypical angina,192,283,<=120 mg/dL,195,0.0,1
+PT-190,CAD,69,Male,Non-anginal pain,140,254,<=120 mg/dL,146,2.0,3
+PT-191,No CAD,50,Male,Non-anginal pain,129,196,<=120 mg/dL,163,0.0,0
+PT-192,CAD,51,Male,Asymptomatic,140,298,<=120 mg/dL,122,4.2,3
+PT-193,CAD,43,Male,Asymptomatic,132,247,>120 mg/dL,143,0.1,
+PT-194,CAD,62,Female,Asymptomatic,138,294,>120 mg/dL,106,1.9,3
+PT-195,No CAD,68,Female,Non-anginal pain,120,211,<=120 mg/dL,115,1.5,0
+PT-196,CAD,67,Male,Asymptomatic,100,299,<=120 mg/dL,125,0.9,2
+PT-197,No CAD,69,Male,Typical angina,160,234,>120 mg/dL,131,0.1,1
+PT-198,No CAD,45,Female,Asymptomatic,138,236,<=120 mg/dL,152,0.2,0
+PT-199,No CAD,50,Female,Atypical angina,120,244,<=120 mg/dL,162,1.1,0
+PT-200,CAD,59,Male,Typical angina,160,273,<=120 mg/dL,125,0.0,0
+PT-201,No CAD,50,Female,Asymptomatic,110,254,<=120 mg/dL,159,0.0,0
+PT-202,No CAD,64,Female,Asymptomatic,180,325,<=120 mg/dL,154,0.0,0
+PT-203,No CAD,57,Male,Non-anginal pain,150,126,>120 mg/dL,173,0.2,1
+PT-204,No CAD,64,Female,Non-anginal pain,140,313,<=120 mg/dL,133,0.2,0
+PT-205,No CAD,43,Male,Asymptomatic,110,211,<=120 mg/dL,161,0.0,0
+PT-206,CAD,45,Male,Asymptomatic,142,309,<=120 mg/dL,147,0.0,3
+PT-207,CAD,58,Male,Asymptomatic,128,259,<=120 mg/dL,130,3.0,2
+PT-208,CAD,50,Male,Asymptomatic,144,200,<=120 mg/dL,126,0.9,0
+PT-209,No CAD,55,Male,Atypical angina,130,262,<=120 mg/dL,155,0.0,0
+PT-210,CAD,62,Female,Asymptomatic,150,244,<=120 mg/dL,154,1.4,0
+PT-211,No CAD,37,Female,Non-anginal pain,120,215,<=120 mg/dL,170,0.0,0
+PT-212,CAD,38,Male,Typical angina,120,231,<=120 mg/dL,182,3.8,0
+PT-213,No CAD,41,Male,Non-anginal pain,130,214,<=120 mg/dL,168,2.0,0
+PT-214,CAD,66,Female,Asymptomatic,178,228,>120 mg/dL,165,1.0,2
+PT-215,CAD,52,Male,Asymptomatic,112,230,<=120 mg/dL,160,0.0,1
+PT-216,No CAD,56,Male,Typical angina,120,193,<=120 mg/dL,162,1.9,0
+PT-217,No CAD,46,Female,Atypical angina,105,204,<=120 mg/dL,172,0.0,0
+PT-218,No CAD,46,Female,Asymptomatic,138,243,<=120 mg/dL,152,0.0,0
+PT-219,No CAD,64,Female,Asymptomatic,130,303,<=120 mg/dL,122,2.0,2
+PT-220,No CAD,59,Male,Asymptomatic,138,271,<=120 mg/dL,182,0.0,0
+PT-221,No CAD,41,Female,Non-anginal pain,112,268,<=120 mg/dL,172,0.0,0
+PT-222,No CAD,54,Female,Non-anginal pain,108,267,<=120 mg/dL,167,0.0,0
+PT-223,No CAD,39,Female,Non-anginal pain,94,199,<=120 mg/dL,179,0.0,0
+PT-224,CAD,53,Male,Asymptomatic,123,282,<=120 mg/dL,95,2.0,2
+PT-225,CAD,63,Female,Asymptomatic,108,269,<=120 mg/dL,169,1.8,2
+PT-226,No CAD,34,Female,Atypical angina,118,210,<=120 mg/dL,192,0.7,0
+PT-227,No CAD,47,Male,Asymptomatic,112,204,<=120 mg/dL,143,0.1,0
+PT-228,No CAD,67,Female,Non-anginal pain,152,277,<=120 mg/dL,172,0.0,1
+PT-229,CAD,54,Male,Asymptomatic,110,206,<=120 mg/dL,108,0.0,1
+PT-230,CAD,66,Male,Asymptomatic,112,212,<=120 mg/dL,132,0.1,1
+PT-231,No CAD,52,Female,Non-anginal pain,136,196,<=120 mg/dL,169,0.1,0
+PT-232,CAD,55,Female,Asymptomatic,180,327,<=120 mg/dL,117,3.4,0
+PT-233,CAD,49,Male,Non-anginal pain,118,149,<=120 mg/dL,126,0.8,3
+PT-234,No CAD,74,Female,Atypical angina,120,269,<=120 mg/dL,121,0.2,1
+PT-235,No CAD,54,Female,Non-anginal pain,160,201,<=120 mg/dL,163,0.0,1
+PT-236,CAD,54,Male,Asymptomatic,122,286,<=120 mg/dL,116,3.2,2
+PT-237,CAD,56,Male,Asymptomatic,130,283,>120 mg/dL,103,1.6,0
+PT-238,CAD,46,Male,Asymptomatic,120,249,<=120 mg/dL,144,0.8,0
+PT-239,No CAD,49,Female,Atypical angina,134,271,<=120 mg/dL,162,0.0,0
+PT-240,No CAD,42,Male,Atypical angina,120,295,<=120 mg/dL,162,0.0,0
+PT-241,No CAD,41,Male,Atypical angina,110,235,<=120 mg/dL,153,0.0,0
+PT-242,No CAD,41,Female,Atypical angina,126,306,<=120 mg/dL,163,0.0,0
+PT-243,No CAD,49,Female,Asymptomatic,130,269,<=120 mg/dL,163,0.0,0
+PT-244,CAD,61,Male,Typical angina,134,234,<=120 mg/dL,145,2.6,2
+PT-245,No CAD,60,Female,Non-anginal pain,120,178,>120 mg/dL,96,0.0,0
+PT-246,CAD,67,Male,Asymptomatic,120,237,<=120 mg/dL,71,1.0,0
+PT-247,CAD,58,Male,Asymptomatic,100,234,<=120 mg/dL,156,0.1,1
+PT-248,CAD,47,Male,Asymptomatic,110,275,<=120 mg/dL,118,1.0,1
+PT-249,CAD,52,Male,Asymptomatic,125,212,<=120 mg/dL,168,1.0,2
+PT-250,No CAD,62,Male,Atypical angina,128,208,>120 mg/dL,140,0.0,0
+PT-251,No CAD,57,Male,Asymptomatic,110,201,<=120 mg/dL,126,1.5,0
+PT-252,CAD,58,Male,Asymptomatic,146,218,<=120 mg/dL,105,2.0,1
+PT-253,No CAD,64,Male,Asymptomatic,128,263,<=120 mg/dL,105,0.2,1
+PT-254,No CAD,51,Female,Non-anginal pain,120,295,<=120 mg/dL,157,0.6,0
+PT-255,No CAD,43,Male,Asymptomatic,115,303,<=120 mg/dL,181,1.2,0
+PT-256,No CAD,42,Female,Non-anginal pain,120,209,<=120 mg/dL,173,0.0,0
+PT-257,No CAD,67,Female,Asymptomatic,106,223,<=120 mg/dL,142,0.3,2
+PT-258,No CAD,76,Female,Non-anginal pain,140,197,<=120 mg/dL,116,1.1,0
+PT-259,No CAD,70,Male,Atypical angina,156,245,<=120 mg/dL,143,0.0,0
+PT-260,CAD,57,Male,Atypical angina,124,261,<=120 mg/dL,141,0.3,0
+PT-261,No CAD,44,Female,Non-anginal pain,118,242,<=120 mg/dL,149,0.3,1
+PT-262,CAD,58,Female,Atypical angina,136,319,>120 mg/dL,152,0.0,2
+PT-263,No CAD,60,Female,Typical angina,150,240,<=120 mg/dL,171,0.9,0
+PT-264,No CAD,44,Male,Non-anginal pain,120,226,<=120 mg/dL,169,0.0,0
+PT-265,CAD,61,Male,Asymptomatic,138,166,<=120 mg/dL,125,3.6,1
+PT-266,CAD,42,Male,Asymptomatic,136,315,<=120 mg/dL,125,1.8,0
+PT-267,CAD,52,Male,Asymptomatic,128,204,>120 mg/dL,156,1.0,0
+PT-268,CAD,59,Male,Non-anginal pain,126,218,>120 mg/dL,134,2.2,1
+PT-269,CAD,40,Male,Asymptomatic,152,223,<=120 mg/dL,181,0.0,0
+PT-270,No CAD,42,Male,Non-anginal pain,130,180,<=120 mg/dL,150,0.0,0
+PT-271,CAD,61,Male,Asymptomatic,140,207,<=120 mg/dL,138,1.9,1
+PT-272,No CAD,66,Male,Asymptomatic,160,228,<=120 mg/dL,138,2.3,0
+PT-273,CAD,46,Male,Asymptomatic,140,311,<=120 mg/dL,120,1.8,2
+PT-274,No CAD,71,Female,Asymptomatic,112,149,<=120 mg/dL,125,1.6,0
+PT-275,CAD,59,Male,Typical angina,134,204,<=120 mg/dL,162,0.8,2
+PT-276,No CAD,64,Male,Typical angina,170,227,<=120 mg/dL,155,0.6,0
+PT-277,No CAD,66,Female,Non-anginal pain,146,278,<=120 mg/dL,152,0.0,1
+PT-278,No CAD,39,Female,Non-anginal pain,138,220,<=120 mg/dL,152,0.0,0
+PT-279,CAD,57,Male,Atypical angina,154,232,<=120 mg/dL,164,0.0,1
+PT-280,No CAD,58,Female,Asymptomatic,130,197,<=120 mg/dL,131,0.6,0
+PT-281,CAD,57,Male,Asymptomatic,110,335,<=120 mg/dL,143,3.0,1
+PT-282,No CAD,47,Male,Non-anginal pain,130,253,<=120 mg/dL,179,0.0,0
+PT-283,CAD,55,Female,Asymptomatic,128,205,<=120 mg/dL,130,2.0,1
+PT-284,No CAD,35,Male,Atypical angina,122,192,<=120 mg/dL,174,0.0,0
+PT-285,CAD,61,Male,Asymptomatic,148,203,<=120 mg/dL,161,0.0,1
+PT-286,CAD,58,Male,Asymptomatic,114,318,<=120 mg/dL,140,4.4,3
+PT-287,CAD,58,Female,Asymptomatic,170,225,>120 mg/dL,146,2.8,2
+PT-288,No CAD,58,Male,Atypical angina,125,220,<=120 mg/dL,144,0.4,
+PT-289,No CAD,56,Male,Atypical angina,130,221,<=120 mg/dL,163,0.0,0
+PT-290,No CAD,56,Male,Atypical angina,120,240,<=120 mg/dL,169,0.0,0
+PT-291,CAD,67,Male,Non-anginal pain,152,212,<=120 mg/dL,150,0.8,0
+PT-292,No CAD,55,Female,Atypical angina,132,342,<=120 mg/dL,166,1.2,0
+PT-293,CAD,44,Male,Asymptomatic,120,169,<=120 mg/dL,144,2.8,0
+PT-294,CAD,63,Male,Asymptomatic,140,187,<=120 mg/dL,144,4.0,2
+PT-295,CAD,63,Female,Asymptomatic,124,197,<=120 mg/dL,136,0.0,0
+PT-296,No CAD,41,Male,Atypical angina,120,157,<=120 mg/dL,182,0.0,0
+PT-297,CAD,59,Male,Asymptomatic,164,176,>120 mg/dL,90,1.0,2
+PT-298,CAD,57,Female,Asymptomatic,140,241,<=120 mg/dL,123,0.2,0
+PT-299,CAD,45,Male,Typical angina,110,264,<=120 mg/dL,132,1.2,0
+PT-300,CAD,68,Male,Asymptomatic,144,193,>120 mg/dL,141,3.4,2
+PT-301,CAD,57,Male,Asymptomatic,130,131,<=120 mg/dL,115,1.2,1
+PT-302,CAD,57,Female,Atypical angina,130,236,<=120 mg/dL,174,0.0,1
+PT-303,No CAD,38,Male,Non-anginal pain,138,175,<=120 mg/dL,173,0.0,

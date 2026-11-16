@@ -9,12 +9,14 @@ import {
 import type {
   ColumnRole,
   ColumnStat,
+  MergePattern,
   ParseWarning,
   PivotSpec,
   RawSnapshot,
   RenderModel,
   SampleCatalogItem,
   SheetMeta,
+  SmartComputeSuggestion,
   StructureLayer,
   StyleLayer,
   TableDoc,
@@ -31,6 +33,8 @@ const SESSION_STORAGE_KEY = "danqing_table_studio_v2_session";
 const MAX_HISTORY_STEPS = 50;
 
 interface HistoryEntry {
+  raw?: RawSnapshot;
+  sourceRaw?: RawSnapshot | null;
   structure: StructureLayer;
   style: StyleLayer;
 }
@@ -41,6 +45,7 @@ interface PersistedDocMeta {
   filename: string;
   sha256: string;
   kind: RawSnapshot["source"]["kind"];
+  computedRaw?: RawSnapshot;
   structure: StructureLayer;
   style: StyleLayer;
 }
@@ -76,6 +81,53 @@ export function normalizeRawSnapshotPayload(apiData: Record<string, unknown>): R
       }
     : null;
 
+  const rawSmart = (sug.smart_compute ?? sug.smartCompute ?? null) as Record<
+    string,
+    unknown
+  > | null;
+  let smartCompute: SmartComputeSuggestion | null = null;
+  if (rawSmart && rawSmart.kind === "subject_table1") {
+    smartCompute = {
+      kind: "subject_table1",
+      nSubjects: Number(rawSmart.n_subjects ?? rawSmart.nSubjects ?? 0),
+      defaultGroupCol: Number(rawSmart.default_group_col ?? rawSmart.defaultGroupCol ?? 0),
+      candidateGroupCols: (
+        (rawSmart.candidate_group_cols ?? rawSmart.candidateGroupCols ?? []) as Array<
+          Record<string, unknown>
+        >
+      ).map((cg) => ({
+        col: Number(cg.col ?? 0),
+        name: String(cg.name ?? ""),
+        groups: (cg.groups ?? {}) as Record<string, number>,
+      })),
+      excludedIdCols: ((rawSmart.excluded_id_cols ?? rawSmart.excludedIdCols ?? []) as number[]).map(
+        Number,
+      ),
+      nContinuous: Number(rawSmart.n_continuous ?? rawSmart.nContinuous ?? 0),
+      nCategorical: Number(rawSmart.n_categorical ?? rawSmart.nCategorical ?? 0),
+    };
+  } else if (rawSmart && rawSmart.kind === "replicate_collapse") {
+    smartCompute = {
+      kind: "replicate_collapse",
+      nFeatures: Number(rawSmart.n_features ?? rawSmart.nFeatures ?? 0),
+      featureCol: Number(rawSmart.feature_col ?? rawSmart.featureCol ?? 0),
+      groups: ((rawSmart.groups ?? []) as Array<Record<string, unknown>>).map((g) => ({
+        name: String(g.name ?? ""),
+        cols: ((g.cols ?? []) as number[]).map(Number),
+        n: Number(g.n ?? 0),
+      })),
+      canPair: Boolean(rawSmart.can_pair ?? rawSmart.canPair ?? false),
+      defaultEffect: ((rawSmart.default_effect ?? rawSmart.defaultEffect ?? "log2fc") as
+        | "log2fc"
+        | "fc"
+        | "diff"),
+    };
+  }
+
+  const rawSigBindings = (sug.sig_bindings ?? sug.sigBindings ?? []) as Array<
+    Record<string, unknown>
+  >;
+
   const suggestions: TidySuggestions = {
     headerRows: ((sug.header_rows ?? sug.headerRows ?? [0, 0]) as [number, number]),
     bodyRange: ((sug.body_range ?? sug.bodyRange ?? [1, 1]) as [number, number]),
@@ -88,7 +140,7 @@ export function normalizeRawSnapshotPayload(apiData: Record<string, unknown>): R
     roles: numericRoles,
     merges: ((sug.merges ?? []) as Array<Record<string, unknown>>).map((mg) => ({
       sourceCols: ((mg.source_cols ?? mg.sourceCols ?? []) as number[]).map(Number),
-      pattern: (mg.pattern as "paren" | "plusminus" | "ci") ?? "paren",
+      pattern: (mg.pattern as MergePattern) ?? "paren",
     })),
     partBy:
       sug.part_by !== undefined && sug.part_by !== null
@@ -105,6 +157,13 @@ export function normalizeRawSnapshotPayload(apiData: Record<string, unknown>): R
     pivot,
     decimalComma: Boolean(sug.decimal_comma ?? sug.decimalComma ?? false),
     resolvedHeaders: ((sug.resolved_headers ?? sug.resolvedHeaders ?? []) as string[]),
+    leafHeaders: ((sug.leaf_headers ?? sug.leafHeaders ?? undefined) as string[] | undefined),
+    sigBindings: rawSigBindings.map((sb) => ({
+      sourceCol: Number(sb.source_col ?? sb.sourceCol ?? 0),
+      targetCols: ((sb.target_cols ?? sb.targetCols ?? []) as number[]).map(Number),
+      label: sb.label ? String(sb.label) : undefined,
+    })),
+    smartCompute,
   };
 
   const columnStats: ColumnStat[] = (
@@ -175,10 +234,11 @@ function writePersistedSession(
     for (const [id, doc] of Object.entries(docs)) {
       outDocs[id] = {
         id,
-        sampleId: doc.raw.sampleId,
-        filename: doc.raw.source.filename,
-        sha256: doc.raw.source.sha256,
-        kind: doc.raw.source.kind,
+        sampleId: (doc.sourceRaw ?? doc.raw).sampleId,
+        filename: (doc.sourceRaw ?? doc.raw).source.filename,
+        sha256: (doc.sourceRaw ?? doc.raw).source.sha256,
+        kind: (doc.sourceRaw ?? doc.raw).source.kind,
+        ...(doc.sourceRaw ? { computedRaw: doc.raw } : {}),
         structure: doc.structure,
         style: doc.style,
       };
@@ -222,6 +282,12 @@ interface TableStudioStoreState {
 
   applySuggestions: (which: SuggestionCategory, alsoStyle?: boolean) => void;
   dismissSuggestion: (which: Exclude<SuggestionCategory, "all">) => void;
+  runSmartCompute: (
+    mode: "subject_table1" | "replicate_collapse",
+    options?: Record<string, unknown>,
+    lang?: "en" | "zh",
+  ) => Promise<boolean>;
+  revertComputedToRaw: () => void;
 
   setComparingRaw: (comparing: boolean) => void;
   setActiveModal: (modal: "paste" | "export" | null) => void;
@@ -286,7 +352,8 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
               (await sRes.json()) as Record<string, unknown>,
             );
             restoredDocs[id] = normalizeLegacyTableDoc({
-              raw: snap,
+              raw: meta.computedRaw ?? snap,
+              sourceRaw: meta.computedRaw ? snap : null,
               structure: meta.structure,
               style: meta.style,
             });
@@ -416,6 +483,8 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
       if (!current) return state;
 
       const prevSnap: HistoryEntry = {
+        raw: current.raw,
+        sourceRaw: current.sourceRaw ?? null,
         structure: structuredClone(current.structure),
         style: structuredClone(current.style),
       };
@@ -428,6 +497,7 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
       const past = [...(state.historyPast[id] ?? []), prevSnap].slice(-MAX_HISTORY_STEPS);
       const updatedDoc: TableDoc = {
         raw: current.raw,
+        sourceRaw: current.sourceRaw ?? null,
         structure: draft.structure,
         style: draft.style,
       };
@@ -452,12 +522,15 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
       const previous = past[past.length - 1];
       const restPast = past.slice(0, -1);
       const curSnap: HistoryEntry = {
+        raw: current.raw,
+        sourceRaw: current.sourceRaw ?? null,
         structure: structuredClone(current.structure),
         style: structuredClone(current.style),
       };
       const nextFuture = [curSnap, ...(state.historyFuture[id] ?? [])].slice(0, MAX_HISTORY_STEPS);
       const updatedDoc: TableDoc = {
-        raw: current.raw,
+        raw: previous.raw ?? current.raw,
+        sourceRaw: previous.sourceRaw !== undefined ? previous.sourceRaw : (current.sourceRaw ?? null),
         structure: previous.structure,
         style: previous.style,
       };
@@ -481,12 +554,16 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
 
       const [nextEntry, ...restFuture] = future;
       const curSnap: HistoryEntry = {
+        raw: current.raw,
+        sourceRaw: current.sourceRaw ?? null,
         structure: structuredClone(current.structure),
         style: structuredClone(current.style),
       };
       const nextPast = [...(state.historyPast[id] ?? []), curSnap].slice(-MAX_HISTORY_STEPS);
       const updatedDoc: TableDoc = {
-        raw: current.raw,
+        raw: nextEntry.raw ?? current.raw,
+        sourceRaw:
+          nextEntry.sourceRaw !== undefined ? nextEntry.sourceRaw : (current.sourceRaw ?? null),
         structure: nextEntry.structure,
         style: nextEntry.style,
       };
@@ -527,6 +604,113 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
       if (!draft.structure.dismissedSuggestions.includes(which)) {
         draft.structure.dismissedSuggestions.push(which);
       }
+    });
+  },
+
+  runSmartCompute: async (mode, options = {}, lang = "zh") => {
+    const state = get();
+    const id = state.activeId;
+    const cur = state.docs[id];
+    if (!cur) return false;
+
+    const baseRaw = cur.sourceRaw ?? cur.raw;
+    set({ busy: true, errorKey: null });
+    try {
+      const res = await fetch("/api/v2/tables/compute", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          grid: baseRaw.grid,
+          header_rows: baseRaw.suggestions.headerRows,
+          body_range: baseRaw.suggestions.bodyRange,
+          decimal_comma: baseRaw.suggestions.decimalComma,
+          source: baseRaw.source,
+          mode,
+          options,
+          lang,
+        }),
+      });
+      const body = (await res.json()) as Record<string, unknown>;
+      if (!res.ok) {
+        set({
+          busy: false,
+          errorKey: String(body.error_key ?? "tableStudio.errors.decodeFailed"),
+        });
+        return false;
+      }
+
+      const compRaw = normalizeRawSnapshotPayload(
+        (body.snapshot ?? {}) as Record<string, unknown>,
+      );
+      if (baseRaw.sampleId) {
+        compRaw.sampleId = baseRaw.sampleId;
+      }
+      const compStruct = body.structure as StructureLayer;
+      const compStyle = body.style as StyleLayer;
+
+      // Normalize stringified rowIndents keys from JSON into numeric keys
+      const normalizedIndents: Record<number, 0 | 1> = {};
+      for (const [k, v] of Object.entries(compStruct.rowIndents ?? {})) {
+        normalizedIndents[Number(k)] = v ? 1 : 0;
+      }
+      compStruct.rowIndents = normalizedIndents;
+
+      set((prev) => {
+        const current = prev.docs[id];
+        if (!current) return { busy: false };
+        const prevSnap: HistoryEntry = {
+          raw: current.raw,
+          sourceRaw: current.sourceRaw ?? null,
+          structure: structuredClone(current.structure),
+          style: structuredClone(current.style),
+        };
+        const past = [...(prev.historyPast[id] ?? []), prevSnap].slice(-MAX_HISTORY_STEPS);
+        const updatedDoc = normalizeLegacyTableDoc({
+          raw: compRaw,
+          sourceRaw: baseRaw,
+          structure: compStruct,
+          style: compStyle,
+        });
+        const nextDocs = { ...prev.docs, [id]: updatedDoc };
+        writePersistedSession(nextDocs, prev.pendingReuploads, prev.order, id);
+        return {
+          docs: nextDocs,
+          historyPast: { ...prev.historyPast, [id]: past },
+          historyFuture: { ...prev.historyFuture, [id]: [] },
+          isComparingRaw: false,
+          busy: false,
+          errorKey: null,
+        };
+      });
+      return true;
+    } catch {
+      set({ busy: false, errorKey: "tableStudio.errors.network" });
+      return false;
+    }
+  },
+
+  revertComputedToRaw: () => {
+    set((state) => {
+      const id = state.activeId;
+      const current = state.docs[id];
+      if (!current || !current.sourceRaw) return state;
+
+      const prevSnap: HistoryEntry = {
+        raw: current.raw,
+        sourceRaw: current.sourceRaw,
+        structure: structuredClone(current.structure),
+        style: structuredClone(current.style),
+      };
+      const past = [...(state.historyPast[id] ?? []), prevSnap].slice(-MAX_HISTORY_STEPS);
+      const restored = createInitialTableDoc(current.sourceRaw);
+      const nextDocs = { ...state.docs, [id]: restored };
+      writePersistedSession(nextDocs, state.pendingReuploads, state.order, id);
+      return {
+        docs: nextDocs,
+        historyPast: { ...state.historyPast, [id]: past },
+        historyFuture: { ...state.historyFuture, [id]: [] },
+        isComparingRaw: false,
+      };
     });
   },
 
@@ -702,7 +886,7 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
       const payload =
         format === "zip"
           ? serializeToBackendZipPayload(cur, model, stem)
-          : serializeToBackendExportPayload(model, stem);
+          : serializeToBackendExportPayload(model, stem, cur.sourceRaw);
 
       const res = await fetch(endpoint, {
         method: "POST",

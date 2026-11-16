@@ -47,6 +47,7 @@ import {
 } from "./numeric";
 
 const RATIO_NAME_RE = /\b(OR|HR|RR|odds|hazard|ratio)\b/i;
+const DIMENSIONLESS_EFFECT_RE = /\b(log2?fc|lfc|fold[\s_]?change|fc|or|hr|rr|odds|hazard|auc|r2|corr)\b/i;
 const LOWER_BETTER_NAME_RE = /\b(RMSE|MAE|MSE|MAPE|NLL|BIC|AIC|IC50|EC50|KD|Ki|error|loss|latency|rank|brier)\b/i;
 const SUPERSCRIPT_TOKEN_RE = /\^([a-zA-Z0-9,*†‡§]+)/;
 const LEADING_FN_SYM_RE = /^([a-zA-Z*†‡§])\s+(.+)$/;
@@ -210,16 +211,25 @@ export function inferRecommendedStyle(doc: TableDoc): {
       }
     }
   }
+  const activePivot = structure.pivot ?? sug.pivot;
   if (hasBinaryPctRow && hasContinuousMergeRow) {
     return {
       preset: "cns_three_line",
       heatScope: "per_row",
-      rowRhythm: "zebra",
+      rowRhythm: Object.keys(structure.rowIndents).length > 0 ? "none" : "zebra",
+    };
+  }
+
+  // 2b. Non-pivoted contrast / regression / clinical tables with statistical merges -> CNS three-line
+  if (!activePivot && checkMerges.length > 0) {
+    return {
+      preset: "cns_three_line",
+      heatScope: "per_row",
+      rowRhythm: Object.keys(structure.rowIndents).length > 0 ? "none" : "zebra",
     };
   }
 
   // 3. Long-to-wide pivoted summary tables (e.g. Palmer Penguins) -> Matrix heatmap
-  const activePivot = structure.pivot ?? sug.pivot;
   if (activePivot) {
     const primaryVc = activePivot.valueCols[0];
     const posVals: number[] = [];
@@ -394,12 +404,18 @@ export function applySuggestionsToDoc(
           .filter((x): x is string => Boolean(x));
         if (colIds.length >= 2) {
           newSpanners.push({ id: `sp_${idx}`, label: sp.label, columnIds: colIds });
-          for (const cid of colIds) {
-            const colObj = nextStruct.columns.find((c) => c.id === cid);
-            if (colObj && colObj.label.startsWith(`${sp.label} · `)) {
+          sp.sourceCols.forEach((sc) => {
+            const colObj = nextStruct.columns.find(
+              (c) => c.source.kind === "grid" && c.source.col === sc,
+            );
+            if (!colObj) return;
+            const suggestedLeaf = sug.leafHeaders?.[sc];
+            if (suggestedLeaf && suggestedLeaf !== colObj.label) {
+              colObj.label = suggestedLeaf;
+            } else if (colObj.label.startsWith(`${sp.label} · `)) {
               colObj.label = colObj.label.slice(`${sp.label} · `.length).trim();
             }
-          }
+          });
         }
       });
       nextStruct.spanners = newSpanners;
@@ -437,12 +453,52 @@ export function applySuggestionsToDoc(
         }
       }
     }
+    if (sug.sigBindings && sug.sigBindings.length > 0 && !nextStruct.pivot) {
+      const builtBindings = sug.sigBindings
+        .map((sb, idx) => {
+          const srcCol = nextStruct.columns.find(
+            (c) => c.source.kind === "grid" && c.source.col === sb.sourceCol && !c.hidden,
+          );
+          if (!srcCol) return null;
+          const tIds = sb.targetCols
+            .map(
+              (tc) =>
+                nextStruct.columns.find((c) => c.source.kind === "grid" && c.source.col === tc)?.id,
+            )
+            .filter((x): x is string => Boolean(x));
+          if (sug.leafHeaders?.[sb.sourceCol]) {
+            srcCol.label = sug.leafHeaders[sb.sourceCol];
+          }
+          return {
+            id: `sb_${idx}`,
+            sourceId: srcCol.id,
+            targetIds: tIds.length > 0 ? tIds : [srcCol.id],
+            label: sb.label,
+          };
+        })
+        .filter((x): x is NonNullable<typeof x> => Boolean(x));
+
+      if (builtBindings.length > 0) {
+        nextStruct.sig.bindings = builtBindings;
+        nextStruct.sig.sourceId = builtBindings[0].sourceId;
+        nextStruct.sig.targetIds = builtBindings[0].targetIds;
+        return;
+      }
+    }
+
     const sigCol = nextStruct.columns.find((c) => c.role === "sig" && !c.hidden);
     if (sigCol) {
       nextStruct.sig.sourceId = sigCol.id;
       if (nextStruct.sig.targetIds.length === 0) {
         nextStruct.sig.targetIds = [sigCol.id];
       }
+      nextStruct.sig.bindings = [
+        {
+          id: "sb_0",
+          sourceId: sigCol.id,
+          targetIds: nextStruct.sig.targetIds,
+        },
+      ];
     }
   };
 
@@ -944,13 +1000,24 @@ export function buildModel(
       }
     }
     colParsedValues[col.id] = vals;
-    colResolvedDecimals[col.id] = resolvePrecision(col.precision, vals, col.role, col.unit);
-    if (col.precision === "auto" && col.role !== "count" && col.role !== "sig" && !col.unit.includes("%")) {
+    const isDimensionlessEffect = DIMENSIONLESS_EFFECT_RE.test(col.label);
+    colResolvedDecimals[col.id] =
+      col.precision === "auto" && isDimensionlessEffect
+        ? 2
+        : resolvePrecision(col.precision, vals, col.role, col.unit);
+    if (
+      col.precision === "auto" &&
+      !isDimensionlessEffect &&
+      col.role !== "count" &&
+      col.role !== "sig" &&
+      col.role !== "bar" &&
+      !col.unit.includes("%")
+    ) {
       const posAbs = vals.map((v) => Math.abs(v)).filter((v) => v > 0);
       if (posAbs.length >= 2) {
         const minAbs = Math.min(...posAbs);
         const maxAbs = Math.max(...posAbs);
-        if (maxAbs / Math.max(minAbs, 1e-12) >= 20) {
+        if (maxAbs >= 50 && maxAbs / Math.max(minAbs, 1e-12) >= 20) {
           colIsMultiScaleAuto[col.id] = true;
         }
       }
@@ -1047,28 +1114,43 @@ export function buildModel(
   const excludeSummaryActive =
     (structure.excludeSummaryRows ?? true) && detectedSummaryRowCount > 0;
 
-  // Significance per bodyRowIndex (from structure.sig.sourceId)
-  const sigSourceId = structure.sig.sourceId;
-  const sigTargets = new Set(
-    structure.sig.targetIds.length > 0
-      ? structure.sig.targetIds
-      : sigSourceId
-        ? [sigSourceId]
-        : [],
-  );
-  const rowStarsByBodyIdx: Record<number, "" | "*" | "**" | "***"> = {};
-  const rowIsSigByBodyIdx: Record<number, boolean> = {};
+  // Multi-scope significance bindings per (bodyRowIndex, targetColId)
+  const effectiveSigBindings =
+    structure.sig.bindings && structure.sig.bindings.length > 0
+      ? structure.sig.bindings.filter((b) => Boolean(b.sourceId))
+      : structure.sig.sourceId
+        ? [
+            {
+              id: "sb_legacy",
+              sourceId: structure.sig.sourceId,
+              targetIds:
+                structure.sig.targetIds.length > 0
+                  ? structure.sig.targetIds
+                  : [structure.sig.sourceId],
+            },
+          ]
+        : [];
+
+  const hasAnySigSource = effectiveSigBindings.length > 0;
+  const cellStarsByRowCol: Record<string, "" | "*" | "**" | "***"> = {};
+  const cellIsSigByRowCol: Record<string, boolean> = {};
   let anyStarEmitted = false;
 
-  if (sigSourceId) {
+  for (const bind of effectiveSigBindings) {
+    const srcId = bind.sourceId;
+    const tIds = bind.targetIds.length > 0 ? bind.targetIds : [srcId];
     for (const r of internalRows) {
-      const rawSig = r.cellsByColId[sigSourceId] ?? "";
+      const rawSig = r.cellsByColId[srcId] ?? "";
       const pSig = parseNumber(rawSig, decimalComma);
       const stars = computeSigStars(pSig.value, pSig.prefix);
-      rowStarsByBodyIdx[r.bodyRowIndex] = stars;
-      rowIsSigByBodyIdx[r.bodyRowIndex] = stars !== "";
-      if (stars !== "" && structure.sig.stars) {
-        anyStarEmitted = true;
+      if (stars !== "") {
+        for (const tid of tIds) {
+          cellStarsByRowCol[`${r.bodyRowIndex}:${tid}`] = stars;
+          cellIsSigByRowCol[`${r.bodyRowIndex}:${tid}`] = true;
+        }
+        if (structure.sig.stars) {
+          anyStarEmitted = true;
+        }
       }
     }
   }
@@ -1097,6 +1179,8 @@ export function buildModel(
 
     const renderedRows: RenderedCell[][] = bRows.map((iRow) => {
       const indentLvl = structure.rowIndents[iRow.bodyRowIndex] ?? 0;
+      const isCatParentRow =
+        indentLvl === 0 && (structure.rowIndents[iRow.bodyRowIndex + 1] ?? 0) === 1;
       const isSummaryRow = detectedSummaryBodyIndices.has(iRow.bodyRowIndex);
 
       return slots.map((slot, sIdx) => {
@@ -1228,19 +1312,30 @@ export function buildModel(
             (m2 ? iRow.editedFromByColId[m2.id] : undefined) ??
             null;
 
-          let disp: string = structure.missingToken;
+          let disp: string =
+            isCatParentRow && raw0.trim() === "" && raw1.trim() === ""
+              ? ""
+              : structure.missingToken;
           let parts: RenderedCellPart[] | null = null;
           let mergedHeatVal: number | null = p0.value;
 
           if (p0.value !== null) {
             const isBinaryCountPct =
-              Number.isInteger(p0.value) && p1.value !== null && p1.unit === "%";
+              Number.isInteger(p0.value) && p1.value !== null && (p1.unit === "%" || m1.unit === "%");
 
             if (isBinaryCountPct && p1.value !== null) {
               hasMixedRowUnits = true;
               mergedHeatVal = p1.value;
               const partA = String(Math.round(p0.value));
               const partB = `(${p1.value.toFixed(1)}%)`;
+              disp = `${partA} ${partB}`;
+              parts = [
+                { display: partA, value: p0.value },
+                { display: partB, value: p1.value },
+              ];
+            } else if (slot.mergeSpec.pattern === "iqr" && m2 && p1.value !== null && p2?.value !== null) {
+              const partA = formatNumberFixed(p0.value, decPrimary, p0.prefix);
+              const partB = `[${formatNumberFixed(p1.value, decPrimary)}–${formatNumberFixed(p2!.value, decPrimary)}]`;
               disp = `${partA} ${partB}`;
               parts = [
                 { display: partA, value: p0.value },
@@ -1258,15 +1353,28 @@ export function buildModel(
               const partA = formatNumberFixed(p0.value, decPrimary, p0.prefix);
               const fmtB = formatNumberFixed(p1.value, decPrimary, p1.prefix);
               const partB =
-                slot.mergeSpec.pattern === "plusminus" ? `± ${fmtB}` : `(${fmtB})`;
+                slot.mergeSpec.pattern === "plusminus"
+                  ? `± ${fmtB}`
+                  : slot.mergeSpec.pattern === "iqr"
+                    ? `[${fmtB}]`
+                    : `(${fmtB})`;
               disp = `${partA} ${partB}`;
               parts = [
                 { display: partA, value: p0.value },
                 { display: partB, value: p1.value },
               ];
             } else if (raw1.trim() !== "") {
-              const partA = formatNumberFixed(p0.value, decPrimary, p0.prefix);
-              const partB = `(${raw1.trim()})`;
+              const t1 = raw1.trim();
+              const alreadyBracketed =
+                (t1.startsWith("[") && t1.endsWith("]")) ||
+                (t1.startsWith("(") && t1.endsWith(")"));
+              const rawDecMatch = /\.(\d+)$/.exec(raw0.trim());
+              const effDec: 0 | 1 | 2 | 3 =
+                alreadyBracketed && m0.precision === "auto" && rawDecMatch
+                  ? (Math.min(3, rawDecMatch[1].length) as 0 | 1 | 2 | 3)
+                  : decPrimary;
+              const partA = formatNumberFixed(p0.value, effDec, p0.prefix);
+              const partB = alreadyBracketed ? t1 : `(${t1})`;
               disp = `${partA} ${partB}`;
               parts = [
                 { display: partA, value: p0.value },
@@ -1277,9 +1385,13 @@ export function buildModel(
             }
           }
 
-          const isTarget = slot.memberSpecs.some((ms) => sigTargets.has(ms.id));
-          const rowStars = rowStarsByBodyIdx[iRow.bodyRowIndex] ?? "";
-          if (isTarget && structure.sig.stars && rowStars) {
+          const matchedMemberTarget = slot.memberSpecs.find(
+            (ms) => Boolean(cellIsSigByRowCol[`${iRow.bodyRowIndex}:${ms.id}`]),
+          );
+          const rowStars = matchedMemberTarget
+            ? (cellStarsByRowCol[`${iRow.bodyRowIndex}:${matchedMemberTarget.id}`] ?? "")
+            : "";
+          if (matchedMemberTarget && structure.sig.stars && rowStars && disp !== "") {
             disp = `${disp}${rowStars}`;
             if (parts && parts.length === 2) {
               parts[1] = { ...parts[1], display: `${parts[1].display}${rowStars}` };
@@ -1296,8 +1408,7 @@ export function buildModel(
 
           const isSigHighlight =
             !isUnstyledGrid &&
-            isTarget &&
-            Boolean(rowIsSigByBodyIdx[iRow.bodyRowIndex]) &&
+            Boolean(matchedMemberTarget) &&
             style.emphasis !== "off";
 
           return {
@@ -1345,7 +1456,7 @@ export function buildModel(
 
         if (primary.role === "sig") {
           if (parsed.value === null && !parsed.pText) {
-            display = cleanStr ? cleanStr : structure.missingToken;
+            display = cleanStr ? cleanStr : indentLvl === 1 ? "" : structure.missingToken;
           } else {
             display = formatP(parsed.value, parsed.prefix, structure.sig.pStyle, parsed.pText);
           }
@@ -1362,20 +1473,28 @@ export function buildModel(
           numFmt = buildExcelNumFmt(decPrimary);
         } else {
           display = cleanStr === "" || parseNumber(cleanStr, decimalComma).value === null && ["NA", "N/A", "-", "—"].includes(cleanStr.trim())
-            ? structure.missingToken
+            ? isCatParentRow && sIdx > 0
+              ? ""
+              : structure.missingToken
             : cleanStr;
         }
 
-        const isTarget = sigTargets.has(primary.id);
-        const rowStars = rowStarsByBodyIdx[iRow.bodyRowIndex] ?? "";
-        if (isTarget && structure.sig.stars && rowStars && display !== structure.missingToken && display !== "n.s.") {
+        const isTarget = Boolean(cellIsSigByRowCol[`${iRow.bodyRowIndex}:${primary.id}`]);
+        const rowStars = cellStarsByRowCol[`${iRow.bodyRowIndex}:${primary.id}`] ?? "";
+        if (
+          isTarget &&
+          structure.sig.stars &&
+          rowStars &&
+          display !== "" &&
+          display !== structure.missingToken &&
+          display !== "n.s."
+        ) {
           display = `${display}${rowStars}`;
         }
 
         const isSigHighlight =
           !isUnstyledGrid &&
           isTarget &&
-          Boolean(rowIsSigByBodyIdx[iRow.bodyRowIndex]) &&
           style.emphasis !== "off";
 
         const isNumericAligned =
@@ -1761,6 +1880,11 @@ export function buildModel(
     if (slot.mergeSpec) {
       if (slot.mergeSpec.mergedLabel) {
         displayLabel = slot.mergeSpec.mergedLabel;
+      } else if (slot.mergeSpec.pattern === "iqr") {
+        displayLabel =
+          slot.memberSpecs.length >= 3
+            ? `${cleanLbl} [IQR]`
+            : `${cleanLbl} [${leafHeaderName(slot.memberSpecs[1].label)}]`;
       } else if (slot.mergeSpec.pattern === "ci") {
         displayLabel = `${cleanLbl} (95% CI)`;
       } else if (slot.mergeSpec.pattern === "plusminus") {
@@ -2202,7 +2326,7 @@ export function buildModel(
     readOnly: false,
   }));
 
-  if (sigSourceId && structure.sig.stars && anyStarEmitted) {
+  if (hasAnySigSource && structure.sig.stars && anyStarEmitted) {
     const legendText =
       lang === "zh"
         ? "* P < 0.05；** P < 0.01；*** P < 0.001。"

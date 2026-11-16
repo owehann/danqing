@@ -26,6 +26,9 @@ def test_manifest_and_hashes_match() -> None:
     assert manifest["script_version"] == builder.SCRIPT_VERSION
     samples = {s["id"]: s for s in manifest["samples"]}
     assert set(samples.keys()) == {
+        "cleveland_patients_raw",
+        "wdbc_biopsy_replicates",
+        "hcv_multicohort_contrasts",
         "penguins_long",
         "uci_cleveland_table1",
         "owid_renewables_wide",
@@ -112,3 +115,26 @@ def test_owid_renewables_recomputation_and_no_trend_p() -> None:
                 assert act_cell == ""
             else:
                 assert float(act_cell) == pytest.approx(float(exp_cell), rel=1e-9, abs=1e-12)
+
+
+def test_v3_new_samples_recomputation_cell_by_cell() -> None:
+    # 1. cleveland_patients_raw.csv (303 raw patients x 11 cols)
+    exp_clev = builder.compute_cleveland_patients_raw(builder.RAW_DIR / "processed.cleveland.data")
+    with (builder.OUT_DIR / "cleveland_patients_raw.csv").open("r", encoding="utf-8", newline="") as fh:
+        act_clev = list(csv.reader(fh))
+    assert act_clev == exp_clev
+    assert len(act_clev) == 304  # header + 303 patients
+
+    # 2. wdbc_biopsy_replicates.csv (10 features x 13 cols)
+    exp_wdbc = builder.compute_wdbc_biopsy_replicates(builder.RAW_DIR / "wdbc.data")
+    with (builder.OUT_DIR / "wdbc_biopsy_replicates.csv").open("r", encoding="utf-8", newline="") as fh:
+        act_wdbc = list(csv.reader(fh))
+    assert act_wdbc == exp_wdbc
+    assert len(act_wdbc) == 11
+
+    # 3. hcv_multicohort_contrasts.csv (10 biomarkers x 11 cols)
+    exp_hcv = builder.compute_hcv_multicohort_contrasts(builder.RAW_DIR / "hcvdat0.csv")
+    with (builder.OUT_DIR / "hcv_multicohort_contrasts.csv").open("r", encoding="utf-8", newline="") as fh:
+        act_hcv = list(csv.reader(fh))
+    assert act_hcv == exp_hcv
+    assert len(act_hcv) == 11

@@ -5,8 +5,10 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUp,
+  Calculator,
   ChevronRight,
   Plus,
+  RotateCcw,
   Sparkles,
   Wand2,
   X,
@@ -93,6 +95,9 @@ export function TableCanvas(): React.ReactElement | null {
   const commit = useTableStudioStore((s) => s.commit);
   const applySuggestions = useTableStudioStore((s) => s.applySuggestions);
   const dismissSuggestion = useTableStudioStore((s) => s.dismissSuggestion);
+  const runSmartCompute = useTableStudioStore((s) => s.runSmartCompute);
+  const revertComputedToRaw = useTableStudioStore((s) => s.revertComputedToRaw);
+  const busy = useTableStudioStore((s) => s.busy);
   const switchSheet = useTableStudioStore((s) => s.switchSheet);
   const announce = useTableStudioStore((s) => s.announce);
 
@@ -137,6 +142,38 @@ export function TableCanvas(): React.ReactElement | null {
 
   const [dragHeaderColId, setDragHeaderColId] = useState<string | null>(null);
   const [dropTargetColId, setDropTargetColId] = useState<string | null>(null);
+
+  // Smart statistical compute controls (synced to active doc's smartCompute / activeCompute)
+  const [t1GroupCol, setT1GroupCol] = useState<string>("");
+  const [t1ContMode, setT1ContMode] = useState<"auto" | "parametric" | "nonparametric">("auto");
+  const [t1Overall, setT1Overall] = useState<boolean>(true);
+  const [t1AdjustP, setT1AdjustP] = useState<boolean>(false);
+  const [repSumMode, setRepSumMode] = useState<"parametric" | "nonparametric">("parametric");
+  const [repEffect, setRepEffect] = useState<"auto" | "log2fc" | "fc" | "diff">("auto");
+  const [repPaired, setRepPaired] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (!doc) return;
+    const baseRaw = doc.sourceRaw ?? doc.raw;
+    const sc = baseRaw.suggestions.smartCompute;
+    const ac = doc.structure.activeCompute;
+    if (sc?.kind === "subject_table1") {
+      setT1GroupCol(
+        ac?.groupCol !== undefined
+          ? ac.groupCol === null
+            ? "none"
+            : String(ac.groupCol)
+          : String(sc.defaultGroupCol),
+      );
+      setT1ContMode(ac?.continuousMode ?? "auto");
+      setT1Overall(ac?.includeOverall ?? true);
+      setT1AdjustP(ac?.adjustP ?? false);
+    } else if (sc?.kind === "replicate_collapse") {
+      setRepSumMode(ac?.summaryMode ?? "parametric");
+      setRepEffect(ac?.effectMetric ?? "auto");
+      setRepPaired(ac?.paired ?? false);
+    }
+  }, [doc?.raw.snapshotId, doc?.sourceRaw?.snapshotId, doc?.structure.activeCompute]);
 
   // Close header menu on Escape or outside click
   useEffect(() => {
@@ -370,10 +407,13 @@ export function TableCanvas(): React.ReactElement | null {
     ? model.headers.findIndex((h) => h.colId === openMenuColId)
     : -1;
 
-  const displayRowCount = showingRaw ? raw.grid.length : model.totalRows;
-  const displayColCount = showingRaw ? (raw.grid[0]?.length ?? 0) : model.totalCols;
+  const rawForCompare = isComparingRaw && doc.sourceRaw ? doc.sourceRaw : raw;
+  const displayRowCount = showingRaw ? rawForCompare.grid.length : model.totalRows;
+  const displayColCount = showingRaw ? (rawForCompare.grid[0]?.length ?? 0) : model.totalCols;
   const totalRenderedBodyRows = model.blocks.reduce((s, b) => s + b.rows.length, 0);
   let bodyRowCounter = 0;
+
+  const baseSmartCompute = (doc.sourceRaw ?? raw).suggestions.smartCompute ?? null;
 
   return (
     <main id="main-canvas" className="dq-canvas-area dq-table-canvas-area">
@@ -488,8 +528,324 @@ export function TableCanvas(): React.ReactElement | null {
         </div>
       ) : null}
 
-      {/* Tidy Suggestion Bar (shown in Raw stage) */}
-      {structure.stage === "raw" && !isComparingRaw ? (
+      {/* Smart Statistical Compute Card (Raw Stage on Subject Records or Replicate Matrix) */}
+      {structure.stage === "raw" && !isComparingRaw && raw.suggestions.smartCompute ? (
+        <div className="dq-compute-banner">
+          <div className="dq-compute-banner__top">
+            <div className="dq-compute-banner__lead">
+              <Calculator size={15} strokeWidth={1.7} aria-hidden="true" />
+              <span>
+                {raw.suggestions.smartCompute.kind === "subject_table1"
+                  ? t("tableStudio.compute.t1Lead", {
+                      rows: raw.suggestions.smartCompute.nSubjects,
+                      cont: raw.suggestions.smartCompute.nContinuous,
+                      cat: raw.suggestions.smartCompute.nCategorical,
+                    })
+                  : t("tableStudio.compute.repLead", {
+                      groups: raw.suggestions.smartCompute.groups.length,
+                      cols: raw.suggestions.smartCompute.groups.reduce((s, g) => s + g.n, 0),
+                      rows: raw.suggestions.smartCompute.nFeatures,
+                    })}
+              </span>
+            </div>
+            <button
+              type="button"
+              className="dq-btn dq-btn--ghost dq-btn--xs"
+              onClick={() => applySuggestions("all", true)}
+            >
+              {t("tableStudio.compute.tidyWithoutCompute")}
+            </button>
+          </div>
+
+          {raw.suggestions.smartCompute.kind === "subject_table1" ? (
+            <div className="dq-compute-banner__controls">
+              <label className="dq-compute-ctrl">
+                <span>{t("tableStudio.compute.groupLabel")}</span>
+                <select
+                  className="dq-select dq-select--compact"
+                  value={t1GroupCol}
+                  onChange={(e) => setT1GroupCol(e.target.value)}
+                >
+                  {raw.suggestions.smartCompute.candidateGroupCols.map((cg) => (
+                    <option key={cg.col} value={String(cg.col)}>
+                      {cg.name} ({Object.keys(cg.groups).length})
+                    </option>
+                  ))}
+                  <option value="none">{t("tableStudio.compute.overallOnlyOption")}</option>
+                </select>
+              </label>
+
+              <label className="dq-compute-ctrl">
+                <span>{t("tableStudio.compute.distLabel")}</span>
+                <select
+                  className="dq-select dq-select--compact"
+                  value={t1ContMode}
+                  onChange={(e) =>
+                    setT1ContMode(e.target.value as "auto" | "parametric" | "nonparametric")
+                  }
+                >
+                  <option value="auto">{t("tableStudio.compute.distAuto")}</option>
+                  <option value="parametric">{t("tableStudio.compute.distParam")}</option>
+                  <option value="nonparametric">{t("tableStudio.compute.distNonparam")}</option>
+                </select>
+              </label>
+
+              {t1GroupCol !== "none" ? (
+                <>
+                  <label className="dq-check-row dq-check-row--xs">
+                    <input
+                      type="checkbox"
+                      checked={t1Overall}
+                      onChange={(e) => setT1Overall(e.target.checked)}
+                    />
+                    <span>{t("tableStudio.compute.includeOverall")}</span>
+                  </label>
+
+                  <label className="dq-check-row dq-check-row--xs">
+                    <input
+                      type="checkbox"
+                      checked={t1AdjustP}
+                      onChange={(e) => setT1AdjustP(e.target.checked)}
+                    />
+                    <span>{t("tableStudio.compute.adjustFdr")}</span>
+                  </label>
+                </>
+              ) : null}
+
+              <button
+                type="button"
+                className="dq-btn dq-btn--primary dq-btn--xs"
+                disabled={busy}
+                onClick={() =>
+                  void runSmartCompute(
+                    "subject_table1",
+                    {
+                      group_col: t1GroupCol === "none" ? "none" : Number(t1GroupCol),
+                      continuous_mode: t1ContMode,
+                      include_overall: t1Overall,
+                      adjust_p: t1AdjustP,
+                    },
+                    langKey,
+                  )
+                }
+              >
+                <Sparkles size={13} strokeWidth={1.6} aria-hidden="true" />
+                <span>{t("tableStudio.compute.runTable1Btn")}</span>
+              </button>
+            </div>
+          ) : (
+            <div className="dq-compute-banner__controls">
+              <label className="dq-compute-ctrl">
+                <span>{t("tableStudio.compute.repSummaryLabel")}</span>
+                <select
+                  className="dq-select dq-select--compact"
+                  value={repSumMode}
+                  onChange={(e) =>
+                    setRepSumMode(e.target.value as "parametric" | "nonparametric")
+                  }
+                >
+                  <option value="parametric">{t("tableStudio.compute.repParam")}</option>
+                  <option value="nonparametric">{t("tableStudio.compute.repNonparam")}</option>
+                </select>
+              </label>
+
+              <label className="dq-compute-ctrl">
+                <span>{t("tableStudio.compute.effectLabel")}</span>
+                <select
+                  className="dq-select dq-select--compact"
+                  value={repEffect}
+                  onChange={(e) =>
+                    setRepEffect(e.target.value as "auto" | "log2fc" | "fc" | "diff")
+                  }
+                >
+                  <option value="auto">{t("tableStudio.compute.effectAuto")}</option>
+                  <option value="log2fc">{t("tableStudio.compute.effectLog2fc")}</option>
+                  <option value="fc">{t("tableStudio.compute.effectFc")}</option>
+                  <option value="diff">{t("tableStudio.compute.effectDiff")}</option>
+                </select>
+              </label>
+
+              {raw.suggestions.smartCompute.canPair ? (
+                <label className="dq-check-row dq-check-row--xs">
+                  <input
+                    type="checkbox"
+                    checked={repPaired}
+                    onChange={(e) => setRepPaired(e.target.checked)}
+                  />
+                  <span>{t("tableStudio.compute.pairedCheck")}</span>
+                </label>
+              ) : null}
+
+              <button
+                type="button"
+                className="dq-btn dq-btn--primary dq-btn--xs"
+                disabled={busy}
+                onClick={() =>
+                  void runSmartCompute(
+                    "replicate_collapse",
+                    {
+                      summary_mode: repSumMode,
+                      effect_metric: repEffect,
+                      paired: repPaired,
+                    },
+                    langKey,
+                  )
+                }
+              >
+                <Sparkles size={13} strokeWidth={1.6} aria-hidden="true" />
+                <span>{t("tableStudio.compute.runRepBtn")}</span>
+              </button>
+            </div>
+          )}
+        </div>
+      ) : null}
+
+      {/* Live Recompute Provenance Bar (shown after auto-computing from raw observations) */}
+      {doc.sourceRaw && !isComparingRaw && baseSmartCompute ? (
+        <div className="dq-computed-bar">
+          <div className="dq-computed-bar__meta">
+            <Calculator size={13} strokeWidth={1.7} aria-hidden="true" />
+            <strong>
+              {baseSmartCompute.kind === "subject_table1"
+                ? t("tableStudio.compute.computedProvenanceT1", {
+                    rows: baseSmartCompute.nSubjects,
+                  })
+                : t("tableStudio.compute.computedProvenanceRep", {
+                    cols: baseSmartCompute.groups.reduce((s, g) => s + g.n, 0),
+                  })}
+            </strong>
+            <span className="dq-computed-bar__sub">
+              {t("tableStudio.compute.sourceSheetNote")}
+            </span>
+          </div>
+
+          <div className="dq-computed-bar__controls">
+            {baseSmartCompute.kind === "subject_table1" ? (
+              <>
+                <select
+                  className="dq-select dq-select--compact"
+                  aria-label={t("tableStudio.compute.groupLabel")}
+                  value={t1GroupCol}
+                  disabled={busy}
+                  onChange={(e) => {
+                    const nextG = e.target.value;
+                    setT1GroupCol(nextG);
+                    void runSmartCompute(
+                      "subject_table1",
+                      {
+                        group_col: nextG === "none" ? "none" : Number(nextG),
+                        continuous_mode: t1ContMode,
+                        include_overall: t1Overall,
+                        adjust_p: t1AdjustP,
+                      },
+                      langKey,
+                    );
+                  }}
+                >
+                  {baseSmartCompute.candidateGroupCols.map((cg) => (
+                    <option key={cg.col} value={String(cg.col)}>
+                      {cg.name} ({Object.keys(cg.groups).length})
+                    </option>
+                  ))}
+                  <option value="none">{t("tableStudio.compute.overallOnlyOption")}</option>
+                </select>
+
+                <select
+                  className="dq-select dq-select--compact"
+                  aria-label={t("tableStudio.compute.distLabel")}
+                  value={t1ContMode}
+                  disabled={busy}
+                  onChange={(e) => {
+                    const nextM = e.target.value as "auto" | "parametric" | "nonparametric";
+                    setT1ContMode(nextM);
+                    void runSmartCompute(
+                      "subject_table1",
+                      {
+                        group_col: t1GroupCol === "none" ? "none" : Number(t1GroupCol),
+                        continuous_mode: nextM,
+                        include_overall: t1Overall,
+                        adjust_p: t1AdjustP,
+                      },
+                      langKey,
+                    );
+                  }}
+                >
+                  <option value="auto">{t("tableStudio.compute.distAuto")}</option>
+                  <option value="parametric">{t("tableStudio.compute.distParam")}</option>
+                  <option value="nonparametric">{t("tableStudio.compute.distNonparam")}</option>
+                </select>
+              </>
+            ) : (
+              <>
+                <select
+                  className="dq-select dq-select--compact"
+                  aria-label={t("tableStudio.compute.repSummaryLabel")}
+                  value={repSumMode}
+                  disabled={busy}
+                  onChange={(e) => {
+                    const nextS = e.target.value as "parametric" | "nonparametric";
+                    setRepSumMode(nextS);
+                    void runSmartCompute(
+                      "replicate_collapse",
+                      {
+                        summary_mode: nextS,
+                        effect_metric: repEffect,
+                        paired: repPaired,
+                      },
+                      langKey,
+                    );
+                  }}
+                >
+                  <option value="parametric">{t("tableStudio.compute.repParam")}</option>
+                  <option value="nonparametric">{t("tableStudio.compute.repNonparam")}</option>
+                </select>
+
+                <select
+                  className="dq-select dq-select--compact"
+                  aria-label={t("tableStudio.compute.effectLabel")}
+                  value={repEffect}
+                  disabled={busy}
+                  onChange={(e) => {
+                    const nextE = e.target.value as "auto" | "log2fc" | "fc" | "diff";
+                    setRepEffect(nextE);
+                    void runSmartCompute(
+                      "replicate_collapse",
+                      {
+                        summary_mode: repSumMode,
+                        effect_metric: nextE,
+                        paired: repPaired,
+                      },
+                      langKey,
+                    );
+                  }}
+                >
+                  <option value="auto">{t("tableStudio.compute.effectAuto")}</option>
+                  <option value="log2fc">{t("tableStudio.compute.effectLog2fc")}</option>
+                  <option value="fc">{t("tableStudio.compute.effectFc")}</option>
+                  <option value="diff">{t("tableStudio.compute.effectDiff")}</option>
+                </select>
+              </>
+            )}
+
+            <button
+              type="button"
+              className="dq-btn dq-btn--xs"
+              disabled={busy}
+              onClick={revertComputedToRaw}
+            >
+              <RotateCcw size={12} strokeWidth={1.7} aria-hidden="true" />
+              <span>
+                {t("tableStudio.compute.revertToRawBtn", {
+                  rows: Math.max(0, doc.sourceRaw.grid.length - 1),
+                })}
+              </span>
+            </button>
+          </div>
+        </div>
+      ) : null}
+
+      {/* Tidy Suggestion Bar (shown in Raw stage when not a Smart Compute raw dataset) */}
+      {structure.stage === "raw" && !isComparingRaw && !raw.suggestions.smartCompute ? (
         <div className="dq-suggest-bar">
           <div className="dq-suggest-bar__main">
             <div className="dq-suggest-bar__summary">
@@ -844,8 +1200,8 @@ export function TableCanvas(): React.ReactElement | null {
                 /* Raw Grid View (`stage === "raw"` or Hold-to-Compare) */
                 <table className="dq-raw-grid">
                   <tbody>
-                    {raw.grid.map((row, rIdx) => {
-                      const [h0, h1] = raw.suggestions.headerRows;
+                    {rawForCompare.grid.map((row, rIdx) => {
+                      const [h0, h1] = rawForCompare.suggestions.headerRows;
                       const isSugHeader = rIdx >= h0 && rIdx <= h1;
                       const isSugFooter =
                         model.suggestedFooterRowStart !== null &&

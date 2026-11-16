@@ -227,8 +227,9 @@ def test_samples_api_endpoints() -> None:
     resp = client.get("/api/v2/tables/samples")
     assert resp.status_code == 200
     samples = resp.json()["samples"]
-    assert len(samples) == 3
+    assert len(samples) == 6
     for s in samples:
+        assert s.get("workflow_mode") in ("auto_compute", "smart_tidy")
         assert 1 <= len(s["preview_grid"]) <= 6
         r_item = client.get(f"/api/v2/tables/samples/{s['id']}")
         assert r_item.status_code == 200

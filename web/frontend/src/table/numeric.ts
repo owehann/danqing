@@ -175,8 +175,10 @@ export function resolvePrecision(
 }
 
 export function formatNumberFixed(value: number, decimals: 0 | 1 | 2 | 3, prefix = ""): string {
-  const cleanZero = Object.is(value, -0) || Math.abs(value) < 0.5 * Math.pow(10, -decimals - 4) ? 0 : value;
-  return `${prefix}${cleanZero.toFixed(decimals)}`;
+  const safeVal = Object.is(value, -0) ? 0 : value;
+  const fixed = safeVal.toFixed(decimals);
+  const normalized = /^-(0(?:\.0+)?)$/.test(fixed) ? fixed.slice(1) : fixed;
+  return `${prefix}${normalized}`;
 }
 
 export function buildExcelNumFmt(decimals: 0 | 1 | 2 | 3): string {

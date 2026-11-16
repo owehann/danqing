@@ -152,9 +152,22 @@ export function TableLandingView(): React.ReactElement {
                     </div>
 
                     <div className="dq-sample-card__meta">
-                      <span className="dq-sample-card__title">{titleText}</span>
+                      <div className="dq-sample-card__title-row">
+                        <span className="dq-sample-card__title">{titleText}</span>
+                        <span
+                          className={`dq-sample-workflow-badge dq-sample-workflow-badge--${
+                            sample.workflow_mode === "auto_compute" ? "compute" : "tidy"
+                          }`}
+                        >
+                          {sample.workflow_mode === "auto_compute"
+                            ? t("tableStudio.landing.badgeAutoCompute")
+                            : t("tableStudio.landing.badgeSmartTidy")}
+                        </span>
+                      </div>
                       <span className="dq-sample-card__sub">
-                        {t("tableStudio.landing.needsPrefix", { detail: needsText })}
+                        {sample.workflow_mode === "auto_compute"
+                          ? t("tableStudio.landing.computePrefix", { detail: needsText })
+                          : t("tableStudio.landing.needsPrefix", { detail: needsText })}
                       </span>
                     </div>
                   </button>

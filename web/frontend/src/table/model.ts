@@ -53,6 +53,50 @@ export interface PivotSpec {
   colCounts?: Record<string, string>;
 }
 
+export type MergePattern = "paren" | "plusminus" | "ci" | "iqr";
+
+export interface SmartComputeGroupCol {
+  col: number;
+  name: string;
+  groups: Record<string, number>;
+}
+
+export interface ReplicateGroupCandidate {
+  name: string;
+  cols: number[];
+  n: number;
+}
+
+export type SmartComputeSuggestion =
+  | {
+      kind: "subject_table1";
+      nSubjects: number;
+      defaultGroupCol: number;
+      candidateGroupCols: SmartComputeGroupCol[];
+      excludedIdCols: number[];
+      nContinuous: number;
+      nCategorical: number;
+    }
+  | {
+      kind: "replicate_collapse";
+      nFeatures: number;
+      featureCol: number;
+      groups: ReplicateGroupCandidate[];
+      canPair: boolean;
+      defaultEffect: "log2fc" | "fc" | "diff";
+    };
+
+export interface ActiveComputeSpec {
+  mode: "subject_table1" | "replicate_collapse";
+  groupCol?: number | null;
+  continuousMode?: "auto" | "parametric" | "nonparametric";
+  includeOverall?: boolean;
+  adjustP?: boolean;
+  summaryMode?: "parametric" | "nonparametric";
+  effectMetric?: "auto" | "log2fc" | "fc" | "diff";
+  paired?: boolean;
+}
+
 export interface TidySuggestions {
   headerRows: [number, number];
   bodyRange: [number, number];
@@ -60,12 +104,15 @@ export interface TidySuggestions {
   footnoteCandidates: string[];
   spanners: Array<{ label: string; sourceCols: number[] }>;
   roles: Record<number, ColumnRole>;
-  merges: Array<{ sourceCols: number[]; pattern: "paren" | "plusminus" | "ci" }>;
+  merges: Array<{ sourceCols: number[]; pattern: MergePattern }>;
   partBy: number | null;
   sparklineRuns: Array<{ sourceCols: number[]; label: string }>;
   pivot: PivotSpec | null;
   decimalComma: boolean;
   resolvedHeaders: string[];
+  leafHeaders?: string[];
+  sigBindings?: Array<{ sourceCol: number; targetCols: number[]; label?: string }>;
+  smartCompute?: SmartComputeSuggestion | null;
 }
 
 export interface RawSnapshot {
@@ -114,7 +161,7 @@ export interface SpannerSpec {
 export interface MergeSpec {
   id: string;
   columnIds: string[];
-  pattern: "paren" | "plusminus" | "ci";
+  pattern: MergePattern;
   mergedLabel?: string;
 }
 
@@ -132,9 +179,17 @@ export interface FootnoteSpec {
   anchorColumnIds: string[];
 }
 
+export interface SigBindingSpec {
+  id: string;
+  sourceId: string;
+  targetIds: string[];
+  label?: string;
+}
+
 export interface SigConfig {
   sourceId: string | null;
   targetIds: string[];
+  bindings?: SigBindingSpec[];
   pStyle: PStyle;
   stars: boolean;
 }
@@ -161,6 +216,7 @@ export interface StructureLayer {
   sig: SigConfig;
   dismissedSuggestions: string[];
   excludeSummaryRows?: boolean;
+  activeCompute?: ActiveComputeSpec | null;
 }
 
 export type TablePresetId = "raw" | "matrix_heatmap" | "cns_three_line" | "ft_editorial";
@@ -182,6 +238,7 @@ export interface StyleLayer {
 
 export interface TableDoc {
   raw: RawSnapshot;
+  sourceRaw?: RawSnapshot | null;
   structure: StructureLayer;
   style: StyleLayer;
 }
@@ -195,6 +252,7 @@ export interface SampleCatalogItem {
   provider_en: string;
   provider_zh: string;
   license: string;
+  workflow_mode?: "auto_compute" | "smart_tidy";
   title_en: string;
   title_zh: string;
   needs_en: string;

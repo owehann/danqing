@@ -791,4 +791,177 @@ describe("pipeline.ts pure functional transformation & store undo/redo", () => {
     expect(mergedCell.barSpec).not.toBeNull();
     expect(mPct.headers[3].barValWidthCh).toBeGreaterThanOrEqual(8);
   });
+
+  it("evaluates v3 multi-scope sigBindings, Median [IQR] merges, flat-header spanners, and protagonist inline bars", () => {
+    const hcvPath = path.resolve(
+      __dirname,
+      "../../../../bench/tables/out/hcv_multicohort_contrasts.csv",
+    );
+    const grid = fs
+      .readFileSync(hcvPath, "utf-8")
+      .trim()
+      .split(/\r?\n/)
+      .map((line: string) => line.split(","));
+
+    const snap = normalizeRawSnapshotPayload({
+      snapshot_id: "tbl_hcv_test",
+      sample_id: "hcv_multicohort_contrasts",
+      source: {
+        filename: "hcv_multicohort_contrasts.csv",
+        sheet: "Sheet1",
+        sheets: ["Sheet1"],
+        kind: "sample",
+        sha256: "hcv",
+      },
+      sheets_meta: [{ name: "Sheet1", empty: false }],
+      column_stats: grid[0].map((name: string, col: number) => ({
+        col,
+        name,
+        numeric_ratio: col === 0 ? 0 : 1,
+        detected_unit: "",
+        role: col === 5 || col === 10 ? "sig" : col === 4 || col === 9 ? "bar" : "normal",
+      })),
+      grid,
+      cell_merges: [],
+      warnings: [],
+      suggestions: {
+        header_rows: [0, 0],
+        body_range: [1, grid.length - 1],
+        title_candidate: null,
+        footnote_candidates: [],
+        spanners: [
+          { label: "Donor", source_cols: [1, 2, 3] },
+          { label: "Fibrosis vs Donor", source_cols: [4, 5] },
+          { label: "Cirrhosis", source_cols: [6, 7, 8] },
+          { label: "Cirrhosis vs Donor", source_cols: [9, 10] },
+        ],
+        roles: {
+          "0": "normal",
+          "1": "normal",
+          "2": "normal",
+          "3": "normal",
+          "4": "bar",
+          "5": "sig",
+          "6": "normal",
+          "7": "normal",
+          "8": "normal",
+          "9": "bar",
+          "10": "sig",
+        },
+        merges: [
+          { source_cols: [1, 2, 3], pattern: "iqr" },
+          { source_cols: [6, 7, 8], pattern: "iqr" },
+        ],
+        part_by: null,
+        sparkline_runs: [],
+        pivot: null,
+        decimal_comma: false,
+        resolved_headers: grid[0],
+        leaf_headers: [
+          "Biomarker",
+          "Median",
+          "Q1",
+          "Q3",
+          "log2FC",
+          "FDR",
+          "Median",
+          "Q1",
+          "Q3",
+          "log2FC",
+          "FDR",
+        ],
+        sig_bindings: [
+          { source_col: 5, target_cols: [4], label: "Fibrosis vs Donor" },
+          { source_col: 10, target_cols: [9], label: "Cirrhosis vs Donor" },
+        ],
+      },
+    });
+
+    const tidied = applySuggestionsToDoc(createInitialTableDoc(snap), "all", true);
+    expect(tidied.style.preset).toBe("cns_three_line");
+    expect(tidied.structure.sig.bindings).toHaveLength(2);
+
+    const model = buildModel(tidied, "en");
+    expect(model.headers.map((h) => h.label)).toEqual([
+      "Biomarker",
+      "Median [IQR]",
+      "log2FC",
+      "FDR",
+      "Median [IQR]",
+      "log2FC",
+      "FDR",
+    ]);
+    expect(model.headers[2].effectiveVisual).toBe("bar");
+    expect(model.headers[5].effectiveVisual).toBe("bar");
+    expect(model.headers[1].effectiveVisual).toBe("plain");
+
+    // Row 0: Albumin -> Fibrosis n.s. (-0.04, uniform 2 decimals, never -0.0!), Cirrhosis *** (-0.35***)
+    const rowAlb = model.blocks[0].rows[0];
+    expect(rowAlb[1].display).toContain("[");
+    expect(rowAlb[2].display).toBe("-0.04");
+    expect(rowAlb[2].bold).toBe(false);
+    expect(rowAlb[5].display).toBe("-0.35***");
+    expect(rowAlb[5].bold).toBe(true);
+
+    // Row 1: Alkaline phosphatase -> Fibrosis *** (-0.75***), Cirrhosis n.s. (0.26)
+    const rowAlp = model.blocks[0].rows[1];
+    expect(rowAlp[2].display).toBe("-0.75***");
+    expect(rowAlp[2].bold).toBe(true);
+    expect(rowAlp[5].display).toBe("0.26");
+    expect(rowAlp[5].bold).toBe(false);
+  });
+
+  it("formats computed Table 1 parent categorical rows, indented n(%) levels, and pre-bracketed [Q1–Q3] cleanly", () => {
+    const snap = normalizeRawSnapshotPayload({
+      snapshot_id: "tbl_comp_t1",
+      source: { filename: "raw.csv", sheet: "Computed", sheets: ["Computed"], kind: "csv", sha256: "t1c" },
+      sheets_meta: [{ name: "Computed", empty: false }],
+      column_stats: [
+        { col: 0, name: "Characteristic", numeric_ratio: 0, detected_unit: "", role: "normal" },
+        { col: 1, name: "No CAD_val", numeric_ratio: 0.75, detected_unit: "", role: "normal" },
+        { col: 2, name: "No CAD_aux", numeric_ratio: 0.5, detected_unit: "", role: "normal" },
+        { col: 3, name: "P value", numeric_ratio: 0.67, detected_unit: "", role: "sig" },
+      ],
+      grid: [
+        ["Characteristic", "No CAD_val", "No CAD_aux", "P value"],
+        ["Age (yr)^a", "52.6", "9.5", "0.0001"],
+        ["ST Depression (mV)^c", "0.2", "[0.0–1.0]", "0.00001"],
+        ["Sex, n (%)^b", "", "", "0.00001"],
+        ["Male", "92", "56.1%", ""],
+      ],
+      cell_merges: [],
+      warnings: [],
+      suggestions: {
+        header_rows: [0, 0],
+        body_range: [1, 4],
+        title_candidate: "Table 1",
+        footnote_candidates: [],
+        spanners: [],
+        roles: { "0": "normal", "1": "normal", "2": "normal", "3": "sig" },
+        merges: [{ source_cols: [1, 2], pattern: "plusminus" }],
+        part_by: null,
+        sparkline_runs: [],
+        pivot: null,
+        decimal_comma: false,
+        resolved_headers: ["Characteristic", "No CAD_val", "No CAD_aux", "P value"],
+      },
+    });
+
+    const doc = applySuggestionsToDoc(createInitialTableDoc(snap), "all", true);
+    doc.structure.merges[0].mergedLabel = "No CAD (n=164)";
+    doc.structure.rowIndents[3] = 1; // "Male" sub-row indented
+
+    const model = buildModel(doc, "en");
+    const rows = model.blocks[0].rows;
+    expect(rows[0][1].display).toBe("52.6 ± 9.5");
+    // Pre-bracketed IQR string must NOT be double-wrapped as `([0.0–1.0])`
+    expect(rows[1][1].display).toBe("0.2 [0.0–1.0]");
+    // Categorical parent row ("Sex, n (%)") arm cell stays blank "" while P value formats cleanly
+    expect(rows[2][1].display).toBe("");
+    expect(rows[2][2].display).toBe("<0.001***");
+    // Indented sub-row ("Male") renders n (pct%) while P value cell stays blank ""
+    expect(rows[3][0].indent).toBe(1);
+    expect(rows[3][1].display).toBe("92 (56.1%)");
+    expect(rows[3][2].display).toBe("");
+  });
 });
