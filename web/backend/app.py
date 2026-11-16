@@ -123,16 +123,22 @@ PRESET_MANIFEST: list[dict[str, Any]] = [
         "default_style": "east_ming_blue_white",
     },
     {
-        "preset_id": "egfr_pathway_svg",
-        "filename": "03_EGFR_MAPK_Pathway_Lemmon2010.svg",
-        "title": {"en": "EGFR–MAPK Signaling Gradients", "zh": "EGFR–MAPK 信号通路矢量渐变图"},
-        "subtitle": {"en": "SVG · Linear & radial gradients", "zh": "SVG · 线性与径向渐变"},
-        "citation": {
-            "en": "Adapted from Lemmon & Schlessinger, Cell 2010 · KEGG hsa04012",
-            "zh": "改编自 Lemmon & Schlessinger, Cell 2010 · KEGG hsa04012",
+        "preset_id": "cleveland_multilayer_svg",
+        "filename": "05_Cleveland_Cardiology_MultiLayer_Detrano1989.svg",
+        "title": {
+            "en": "Clinical Multi-Layer Raincloud & Kinetics",
+            "zh": "冠心病队列多图层云雨、置信带与条形叠加图",
         },
-        "source_url": "https://doi.org/10.1016/j.cell.2010.06.011",
-        "default_style": "east_cloisonne_enamel",
+        "subtitle": {
+            "en": "SVG · Violins, boxes, 303 points & CI bands",
+            "zh": "SVG · 小提琴 + 箱线 + 303 散点 + 置信带（可拆图层/调透明度）",
+        },
+        "citation": {
+            "en": "UCI Cleveland Heart Disease Cohort · Detrano et al., Am. J. Cardiol. 1989 (CC BY 4.0)",
+            "zh": "UCI 克利夫兰心脏病队列 · Detrano 等, Am. J. Cardiol. 1989 (CC BY 4.0)",
+        },
+        "source_url": "https://doi.org/10.1016/0002-9149(89)90524-9",
+        "default_style": "okabe_ito",
     },
     {
         "preset_id": "visium_brain_complex",
@@ -147,6 +153,23 @@ PRESET_MANIFEST: list[dict[str, Any]] = [
         "default_style": "east_ru_celadon",
     },
 ]
+
+LEGACY_PRESET_ITEMS: list[dict[str, Any]] = [
+    {
+        "preset_id": "egfr_pathway_svg",
+        "filename": "03_EGFR_MAPK_Pathway_Lemmon2010.svg",
+        "title": {"en": "EGFR–MAPK Signaling Gradients", "zh": "EGFR–MAPK 信号通路矢量渐变图"},
+        "subtitle": {"en": "SVG · Linear & radial gradients", "zh": "SVG · 线性与径向渐变"},
+        "citation": {
+            "en": "Adapted from Lemmon & Schlessinger, Cell 2010 · KEGG hsa04012",
+            "zh": "改编自 Lemmon & Schlessinger, Cell 2010 · KEGG hsa04012",
+        },
+        "source_url": "https://doi.org/10.1016/j.cell.2010.06.011",
+        "default_style": "east_cloisonne_enamel",
+    },
+]
+
+ALL_PRESET_ITEMS: list[dict[str, Any]] = PRESET_MANIFEST + LEGACY_PRESET_ITEMS
 
 LEGACY_STYLE_MAP: dict[str, str] = {
     "qianli_jiangshan": "east_blue_green_landscape",
@@ -190,7 +213,7 @@ _VISITOR_SID_HEX_RE = re.compile(r"^[a-f0-9]{32}$")
 _SERVER_COOKIE_SECRET: bytes = secrets.token_bytes(32)
 PARSE_SEMAPHORE = threading.BoundedSemaphore(2)
 CURRENT_VISITOR_SID: contextvars.ContextVar[str] = contextvars.ContextVar("CURRENT_VISITOR_SID", default="default_local_visitor")
-PRESET_IDS: frozenset[str] = frozenset(it["preset_id"] for it in PRESET_MANIFEST)
+PRESET_IDS: frozenset[str] = frozenset(it["preset_id"] for it in ALL_PRESET_ITEMS)
 
 
 def _sign_visitor_cookie(vsid: str) -> str:
@@ -457,6 +480,8 @@ def _split_entities_by_panel_scope(
                 member_group_ids=out_gids,
                 original_hex=cg_out.original_hex,
                 current_hex=ent.current_hex,
+                original_alpha=cg_out.alpha,
+                alpha=ent.alpha,
                 encoding=ent.encoding,
                 tier=ent.tier,
                 locked=ent.locked,
@@ -479,6 +504,8 @@ def _split_entities_by_panel_scope(
                 member_group_ids=in_gids,
                 original_hex=cg_in.original_hex,
                 current_hex=ent.current_hex,
+                original_alpha=cg_in.alpha,
+                alpha=ent.alpha,
                 encoding=ent.encoding,
                 tier=ent.tier,
                 locked=ent.locked,
@@ -685,10 +712,32 @@ def _build_categorical_lut(p: ParsedPdfScene | SvgScene, sr: SolveResult) -> lis
     ]
 
 
+def _effective_entity_alpha(p: ParsedPdfScene | SvgScene, ent: SemanticEntity) -> float:
+    if ent.alpha is not None:
+        return round(float(ent.alpha), 3)
+    valid = [p.color_groups[g] for g in ent.member_group_ids if g in p.color_groups]
+    if valid:
+        return round(float(valid[0].alpha), 3)
+    return round(float(ent.original_alpha), 3)
+
+
+def _build_group_alpha_map(p: ParsedPdfScene | SvgScene) -> dict[str, float]:
+    out: dict[str, float] = {}
+    for ent in p.entities.values():
+        if ent.alpha is not None:
+            a_val = max(0.05, min(1.0, float(ent.alpha)))
+            for gid in ent.member_group_ids:
+                if gid in p.color_groups:
+                    out[gid] = a_val
+    return out
+
+
 def _serialize_elements(p: ParsedPdfScene | SvgScene, sr: SolveResult) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     for ent in p.entities.values():
-        prim_cnt = sum(p.color_groups[gid].primitive_count for gid in ent.member_group_ids if gid in p.color_groups)
+        valid_cgs = [p.color_groups[gid] for gid in ent.member_group_ids if gid in p.color_groups]
+        prim_cnt = sum(cg.primitive_count for cg in valid_cgs)
+        mk_list = list(dict.fromkeys(getattr(cg, "mark_kind", "area") for cg in valid_cgs))
         out.append(
             {
                 "entity_id": ent.entity_id,
@@ -697,6 +746,11 @@ def _serialize_elements(p: ParsedPdfScene | SvgScene, sr: SolveResult) -> list[d
                 "member_group_ids": list(ent.member_group_ids),
                 "original_hex": ent.original_hex,
                 "current_hex": sr.entity_hex.get(ent.entity_id, ent.current_hex),
+                "alpha": _effective_entity_alpha(p, ent),
+                "original_alpha": round(float(ent.original_alpha), 3),
+                "custom_alpha": round(float(ent.alpha), 3) if ent.alpha is not None else None,
+                "mark_kinds": mk_list,
+                "has_overlay_layers": len(mk_list) > 1,
                 "role": normalize_role(ent.tier),
                 "tier": ent.tier,
                 "locked": ent.locked,
@@ -1014,7 +1068,7 @@ def list_v2_styles() -> dict[str, Any]:
 
 @app.get("/api/v2/presets/{preset_id}/thumbnail")
 def get_preset_thumbnail(preset_id: str) -> Response:
-    item = next((x for x in PRESET_MANIFEST if x["preset_id"] == preset_id), None)
+    item = next((x for x in ALL_PRESET_ITEMS if x["preset_id"] == preset_id), None)
     if not item:
         raise HTTPException(status_code=404, detail="Preset not found")
     data = _render_preset_thumbnail(item)
@@ -1138,7 +1192,7 @@ async def create_v2_figure(
             "combo1_spatial": "visium_brain_complex",
         }
         preset_id = legacy_preset_alias.get(preset_id, preset_id)
-        item = next((x for x in PRESET_MANIFEST if x["preset_id"] == preset_id), None)
+        item = next((x for x in ALL_PRESET_ITEMS if x["preset_id"] == preset_id), None)
         if not item:
             raise HTTPException(status_code=404, detail=f"Unknown preset {preset_id!r}")
 
@@ -1152,6 +1206,7 @@ async def create_v2_figure(
                 existing.parsed.entities = copy.deepcopy(existing.initial_entities)
             for ent in existing.parsed.entities.values():
                 ent.locked = False
+                ent.alpha = None
                 ent.tier = "normal"
             for cs in existing.parsed.continuous_scales.values():
                 cs.inverted_polarity = False
@@ -1393,7 +1448,7 @@ async def stream_v2_figure_events(figure_id: str) -> StreamingResponse:
 def get_v2_figure(figure_id: str) -> Response:
     sess = _get_owned_scene(figure_id)
     if sess is None:
-        match = next((x for x in PRESET_MANIFEST if x["preset_id"] == figure_id), None)
+        match = next((x for x in ALL_PRESET_ITEMS if x["preset_id"] == figure_id), None)
         if match:
             sess = _load_preset_item(match, keep_original=True)
     if not sess:
@@ -1419,9 +1474,11 @@ class PatchStateRequest(BaseModel):
         "reset_panel",
         "set_roles",
         "pick_color",
+        "set_opacity",
         "set_lock",
         "rename_element",
         "split_same_name",
+        "split_layers",
         "reset_element",
         "set_rule",
         "set_vibrancy",
@@ -1438,8 +1495,10 @@ class PatchStateRequest(BaseModel):
     entity_ids: list[str] | None = None
     role: Literal["focus", "normal", "background"] | None = None
     hex_color: str | None = None
+    opacity: float | None = None
     locked: bool | None = None
     label: str | None = None
+    lang: str | None = None
     rule: Literal["same_name", "unique"] | None = None
     vibrancy: VibrancyMode | None = None
     scale_id: str | None = None
@@ -1455,6 +1514,7 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
     ws = _get_visitor_workspace(sess.owner_sid)
     p = sess.parsed
     structure_changed = False
+    split_entity_ids: list[str] = []
 
     if req.action == "undo":
         if sess.undo_stack:
@@ -1518,6 +1578,7 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
             for ent in p.entities.values():
                 if bool(set(ent.panels) & tset):
                     ent.locked = False
+                    ent.alpha = None
                     ent.tier = "normal"
             for cs in p.continuous_scales.values():
                 if cs.panel_id in tset:
@@ -1537,6 +1598,7 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                 structure_changed = list(p.entities.keys()) != prev_ids
             for ent in p.entities.values():
                 ent.locked = False
+                ent.alpha = None
                 ent.tier = "normal"
             for cs in p.continuous_scales.values():
                 cs.inverted_polarity = False
@@ -1567,6 +1629,12 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                 ent.locked = True
                 if ws.keep_consistent:
                     ws.manuscript_registry[ent.label.strip().lower()] = hx
+        elif req.action == "set_opacity" and req.opacity is not None:
+            targets = req.entity_ids or ([req.entity_id] if req.entity_id else [])
+            clamped_op = max(0.05, min(1.0, round(float(req.opacity), 2)))
+            for tid in targets:
+                if tid in p.entities:
+                    p.entities[tid].alpha = clamped_op
         elif req.action == "set_lock" and req.entity_id is not None and req.locked is not None:
             if req.entity_id in p.entities:
                 p.entities[req.entity_id].locked = bool(req.locked)
@@ -1574,6 +1642,63 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
             clean_lbl = req.label.strip()
             if clean_lbl and req.entity_id in p.entities:
                 p.entities[req.entity_id].label = clean_lbl[:64]
+        elif req.action == "split_layers" and req.entity_id:
+            if req.entity_id in p.entities:
+                ent = p.entities[req.entity_id]
+                valid_gids = [gid for gid in ent.member_group_ids if gid in p.color_groups]
+                by_kind: dict[str, list[str]] = {}
+                for gid in valid_gids:
+                    mk = getattr(p.color_groups[gid], "mark_kind", "area")
+                    by_kind.setdefault(mk, []).append(gid)
+                ordered_kinds = [k for k in ("area", "line", "point") if k in by_kind] + [
+                    k for k in by_kind if k not in ("area", "line", "point")
+                ]
+                if len(ordered_kinds) > 1:
+                    structure_changed = True
+                    used_eids = set(p.entities.keys())
+                    is_zh_lang = bool(req.lang and req.lang.lower().startswith("zh"))
+                    kind_suffix = (
+                        {"area": "图形", "line": "线条", "point": "散点"}
+                        if is_zh_lang
+                        else {"area": "shapes", "line": "lines", "point": "points"}
+                    )
+                    new_entities: dict[str, SemanticEntity] = {}
+                    for k_eid, k_ent in p.entities.items():
+                        if k_eid != req.entity_id:
+                            new_entities[k_eid] = k_ent
+                            continue
+                        for idx_mk, mk in enumerate(ordered_kinds):
+                            kgids = by_kind[mk]
+                            if idx_mk == 0:
+                                sub_id = req.entity_id
+                            else:
+                                sub_id = f"{req.entity_id}_{mk}"
+                                seq_i = 2
+                                while sub_id in used_eids or sub_id in new_entities:
+                                    sub_id = f"{req.entity_id}_{mk}_{seq_i}"
+                                    seq_i += 1
+                            used_eids.add(sub_id)
+                            split_entity_ids.append(sub_id)
+                            cg0 = p.color_groups[kgids[0]]
+                            sub_panels = list(dict.fromkeys(p.color_groups[g].panel_id for g in kgids))
+                            mk_tag = kind_suffix.get(mk, mk)
+                            sub_lbl = f"{ent.label} ({mk_tag})"[:64]
+                            new_entities[sub_id] = SemanticEntity(
+                                entity_id=sub_id,
+                                label=sub_lbl,
+                                category_group=sub_panels[0] if sub_panels else ent.category_group,
+                                panels=sub_panels,
+                                member_group_ids=kgids,
+                                original_hex=cg0.original_hex,
+                                current_hex=ent.current_hex,
+                                original_alpha=cg0.alpha,
+                                alpha=ent.alpha,
+                                tier=ent.tier,
+                                # Unlock freshly split layers so both box/shapes and points can immediately accept palette/swatch edits
+                                locked=False,
+                                unlinked=True,
+                            )
+                    p.entities = new_entities
         elif req.action == "split_same_name" and req.entity_id:
             if req.entity_id in p.entities:
                 ent = p.entities[req.entity_id]
@@ -1585,7 +1710,7 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                     used_eids = set(p.entities.keys())
                     if len(by_panel) > 1:
                         structure_changed = True
-                        new_entities: dict[str, SemanticEntity] = {}
+                        new_entities = {}
                         for k_eid, k_ent in p.entities.items():
                             if k_eid != req.entity_id:
                                 new_entities[k_eid] = k_ent
@@ -1600,6 +1725,7 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                                         sub_id = f"{req.entity_id}_p{idx_sp+1}_{seq_i}"
                                         seq_i += 1
                                 used_eids.add(sub_id)
+                                split_entity_ids.append(sub_id)
                                 cg0 = p.color_groups[gids[0]]
                                 new_entities[sub_id] = SemanticEntity(
                                     entity_id=sub_id,
@@ -1609,6 +1735,8 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                                     member_group_ids=gids,
                                     original_hex=cg0.original_hex,
                                     current_hex=ent.current_hex,
+                                    original_alpha=cg0.alpha,
+                                    alpha=ent.alpha,
                                     tier=ent.tier,
                                     locked=ent.locked,
                                     unlinked=True,
@@ -1618,7 +1746,12 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                         # Single-panel overlaying graph (`area`/`line` + `point` groups): split into independent layers!
                         structure_changed = True
                         new_entities = {}
-                        kind_suffix = {"point": "points", "area": "shapes", "line": "lines"}
+                        is_zh_lang = bool(req.lang and req.lang.lower().startswith("zh"))
+                        kind_suffix = (
+                            {"point": "散点", "area": "图形", "line": "线条"}
+                            if is_zh_lang
+                            else {"point": "points", "area": "shapes", "line": "lines"}
+                        )
                         for k_eid, k_ent in p.entities.items():
                             if k_eid != req.entity_id:
                                 new_entities[k_eid] = k_ent
@@ -1633,6 +1766,7 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                                         sub_id = f"{req.entity_id}_l{idx_lg+1}_{seq_i}"
                                         seq_i += 1
                                 used_eids.add(sub_id)
+                                split_entity_ids.append(sub_id)
                                 cg_l = p.color_groups[gid]
                                 mk_tag = kind_suffix.get(getattr(cg_l, "mark_kind", "area"), f"layer {idx_lg+1}")
                                 sub_lbl = f"{ent.label} ({mk_tag})"[:64]
@@ -1644,8 +1778,10 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                                     member_group_ids=[gid],
                                     original_hex=cg_l.original_hex,
                                     current_hex=ent.current_hex,
+                                    original_alpha=cg_l.alpha,
+                                    alpha=ent.alpha,
                                     tier=ent.tier,
-                                    locked=ent.locked,
+                                    locked=False,
                                     unlinked=True,
                                 )
                         p.entities = new_entities
@@ -1655,6 +1791,7 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
             if req.entity_id in p.entities:
                 ent = p.entities[req.entity_id]
                 ent.current_hex = ent.original_hex
+                ent.alpha = None
                 ent.tier = "normal"
                 ent.locked = True
         elif req.action == "set_rule" and req.rule:
@@ -1694,6 +1831,8 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                 "locked": e.locked,
                 "unlinked": e.unlinked,
                 "panels": list(e.panels),
+                "alpha": _effective_entity_alpha(p, e),
+                "custom_alpha": round(float(e.alpha), 3) if e.alpha is not None else None,
             }
             for eid, e in p.entities.items()
         },
@@ -1702,6 +1841,7 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
         "inspector_swatches": sr.inspector_swatches,
         "diagnostics": sr.diagnostics,
         "structure_changed": structure_changed,
+        "split_entity_ids": split_entity_ids,
     }
     if structure_changed:
         resp["elements"] = _serialize_elements(p, sr)
@@ -1716,6 +1856,7 @@ def _render_figure_with_cache(
     preview_panels: tuple[str, ...] = (),
     preview_entity: str = "",
     preview_hex: str = "",
+    preview_alpha: float | None = None,
     scale: float | None = None,
     force_png: bool = False,
 ) -> tuple[bytes, str]:
@@ -1740,13 +1881,16 @@ def _render_figure_with_cache(
     style_hover_changed = eff_style != sess.aesthetic_style
 
     ph_norm = preview_hex.strip().lstrip("#").upper() if preview_hex else ""
+    pa_norm = max(0.05, min(1.0, round(float(preview_alpha), 2))) if preview_alpha is not None else None
     all_panel_ids = [pb.panel_id for pb in p.panels]
     valid_prev_panels = tuple(pid for pid in preview_panels if pid in set(all_panel_ids))
 
     # Instant 0 ms shortcut when displaying unmodified original figure at base preview scale
-    has_manual_diff = any(
-        e.locked and e.current_hex.upper() != e.original_hex.upper() for e in p.entities.values()
-    ) or any(cs.inverted_polarity for cs in p.continuous_scales.values())
+    has_manual_diff = (
+        any(e.locked and e.current_hex.upper() != e.original_hex.upper() for e in p.entities.values())
+        or any(e.alpha is not None for e in p.entities.values())
+        or any(cs.inverted_polarity for cs in p.continuous_scales.values())
+    )
     if (
         sess.is_original_mode
         and not has_manual_diff
@@ -1779,6 +1923,7 @@ def _render_figure_with_cache(
         sess.vibrancy if is_temp_solve else "",
         preview_entity,
         ph_norm,
+        pa_norm if pa_norm is not None else -1.0,
         eff_scale,
         force_png,
     )
@@ -1852,10 +1997,16 @@ def _render_figure_with_cache(
         group_hex = dict(sess.last_solve.group_hex)
         scale_stops = dict(sess.last_solve.scale_stops)
 
-    if preview_entity and ph_norm and preview_entity in p.entities:
-        hx = f"#{ph_norm}"
-        for gid in p.entities[preview_entity].member_group_ids:
-            group_hex[gid] = hx
+    group_alpha = _build_group_alpha_map(p)
+    if preview_entity and preview_entity in p.entities:
+        if ph_norm:
+            hx = f"#{ph_norm}"
+            for gid in p.entities[preview_entity].member_group_ids:
+                group_hex[gid] = hx
+        if pa_norm is not None:
+            for gid in p.entities[preview_entity].member_group_ids:
+                if gid in p.color_groups:
+                    group_alpha[gid] = pa_norm
 
     if is_hover and my_hover_seq != sess.hover_seq:
         raise _StaleHoverAbort()
@@ -1864,10 +2015,10 @@ def _render_figure_with_cache(
         with PDFIUM_LOCK:
             if is_hover and my_hover_seq != sess.hover_seq:
                 raise _StaleHoverAbort()
-            data = render_preview_png(p, group_hex, scale_stops, scale=eff_scale)
+            data = render_preview_png(p, group_hex, scale_stops, scale=eff_scale, group_alpha_map=group_alpha)
         media = "image/png"
     else:
-        svg_b, _ = export_recolored_svg(p, group_hex, scale_stops)
+        svg_b, _ = export_recolored_svg(p, group_hex, scale_stops, group_alpha_map=group_alpha)
         if force_png:
             data = render_svg_bytes_to_png(svg_b, zoom=eff_scale, background="#ffffff")
             media = "image/png"
@@ -1894,6 +2045,7 @@ def get_v2_figure_render(
     panels: str = "",
     pe: str = "",
     ph: str = "",
+    pa: float | None = None,
     fmt: str = "",
 ) -> Response:
     sess = _get_owned_scene(figure_id)
@@ -1909,6 +2061,7 @@ def get_v2_figure_render(
             preview_panels=panel_tuple,
             preview_entity=pe,
             preview_hex=ph,
+            preview_alpha=pa,
             scale=scale,
             force_png=(fmt == "png"),
         )
@@ -1977,10 +2130,15 @@ def _compute_verified_export(sess: SceneSession, fmt: str) -> tuple[bytes, str, 
     if cached is not None:
         vec_bytes, audit = cached
     else:
+        group_alpha = _build_group_alpha_map(p)
         if isinstance(p, ParsedPdfScene):
-            vec_bytes, audit = export_recolored_pdf(p, sr.group_hex, sr.scale_stops, verify=True)
+            vec_bytes, audit = export_recolored_pdf(
+                p, sr.group_hex, sr.scale_stops, verify=True, group_alpha_map=group_alpha
+            )
         else:
-            vec_bytes, audit = export_recolored_svg(p, sr.group_hex, sr.scale_stops)
+            vec_bytes, audit = export_recolored_svg(
+                p, sr.group_hex, sr.scale_stops, group_alpha_map=group_alpha
+            )
         with sess.render_lock:
             sess.verified_export_cache[vec_key] = (vec_bytes, audit)
 

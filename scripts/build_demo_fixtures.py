@@ -814,6 +814,306 @@ def build_complex_mouse_brain_visium_pdf(out_path: Path, brain: dict[str, object
     pdf.save(out_path)
 
 
+def build_cleveland_multilayer_svg(out_path: Path) -> None:
+    """Build a 3-panel multi-layer composite clinical SVG from UCI Cleveland Heart Disease (Detrano et al., Am J Cardiol 1989, CC BY 4.0).
+
+    Layers per clinical cohort (`No CAD`, `Mild-Mod CAD`, `Severe CAD`):
+      - Panel A: Raincloud half-violin KDE (`area`, fill-opacity=0.24) + IQR boxplot (`area`, fill-opacity=0.46)
+                 + 303 individual patient scatter points (`point`, fill-opacity=0.88, #2B2B2B stroke).
+      - Panel B: Age-stratified Peak Heart Rate OLS trajectory (`line`, stroke-opacity=0.96)
+                 + 95% CI confidence band (`area`, fill-opacity=0.22) + age-quintile cohort markers (`point`).
+      - Panel C: Exercise ST-depression group bars (`area`, fill-opacity=0.42) + overlaid patient dots (`point`, fill-opacity=0.86)
+                 + coupled `<linearGradient>` continuous ischemia score bar.
+    """
+    raw_p = REPO_ROOT / "bench" / "tables" / "raw" / "processed.cleveland.data"
+    cohorts: dict[str, list[tuple[float, float, float, float]]] = {
+        "No CAD": [],
+        "Mild-Mod CAD": [],
+        "Severe CAD": [],
+    }
+    for line in raw_p.read_text(encoding="utf-8").splitlines():
+        parts = [x.strip() for x in line.split(",")]
+        if len(parts) < 14 or "?" in (parts[0], parts[3], parts[7], parts[9], parts[13]):
+            continue
+        age = float(parts[0])
+        sbp = float(parts[3])
+        hr = float(parts[7])
+        oldpeak = float(parts[9])
+        num = int(float(parts[13]))
+        grp = "No CAD" if num == 0 else ("Mild-Mod CAD" if num in (1, 2) else "Severe CAD")
+        cohorts[grp].append((age, hr, oldpeak, sbp))
+
+    # Intentional classic clinical starter palette (steel blue / amber / coral red) ready for Danqing recoloring
+    cohort_order = [
+        ("No CAD", "#4E79A7"),
+        ("Mild-Mod CAD", "#E09F5A"),
+        ("Severe CAD", "#C85A53"),
+    ]
+
+    w, h = 980, 412
+    parts_svg: list[str] = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}">',
+        "  <defs>",
+        '    <linearGradient id="IschemiaRiskScale" x1="0%" y1="100%" x2="0%" y2="0%">',
+        '      <stop offset="0%" stop-color="#F4EFE6"/>',
+        '      <stop offset="35%" stop-color="#EDD6A4"/>',
+        '      <stop offset="70%" stop-color="#C6593F"/>',
+        '      <stop offset="100%" stop-color="#781E20"/>',
+        "    </linearGradient>",
+        "  </defs>",
+        f'  <rect x="0" y="0" width="{w}" height="{h}" fill="#FFFFFF"/>',
+    ]
+
+    # Panel tags (14px bold pure black at top-left of each subplot so `_detect_svg_panels` partitions A / B / C cleanly)
+    parts_svg.append('  <text x="16" y="24" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">A</text>')
+    parts_svg.append('  <text x="48" y="24" font-family="Helvetica, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#000000">Peak Exercise Heart Rate (n = 303)</text>')
+    parts_svg.append('  <text x="352" y="24" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">B</text>')
+    parts_svg.append('  <text x="382" y="24" font-family="Helvetica, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#000000">Age Trajectory &amp; 95% CI Ribbon</text>')
+    parts_svg.append('  <text x="676" y="24" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">C</text>')
+    parts_svg.append('  <text x="706" y="24" font-family="Helvetica, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#000000">ST Depression &amp; Risk Scale</text>')
+
+    # ------------------------------------------------------------------
+    # PANEL A: Raincloud Half-Violin + Boxplot + 303 Individual Points
+    # ------------------------------------------------------------------
+    ax_x0, ax_x1 = 54.0, 326.0
+    ax_y0, ax_y1 = 44.0, 316.0  # y0=top (210 bpm), y1=bottom (70 bpm)
+    hr_min, hr_max = 70.0, 210.0
+
+    def _y_hr(v: float) -> float:
+        return ax_y1 - (v - hr_min) / (hr_max - hr_min) * (ax_y1 - ax_y0)
+
+    # Subtle horizontal reference gridlines + crisp black axes
+    for tick_v in (80, 110, 140, 170, 200):
+        ty = _y_hr(float(tick_v))
+        parts_svg.append(f'  <line x1="{ax_x0:.1f}" y1="{ty:.1f}" x2="{ax_x1:.1f}" y2="{ty:.1f}" stroke="#EAECEF" stroke-width="0.8"/>')
+        parts_svg.append(f'  <line x1="{ax_x0 - 4:.1f}" y1="{ty:.1f}" x2="{ax_x0:.1f}" y2="{ty:.1f}" stroke="#000000" stroke-width="1"/>')
+        parts_svg.append(f'  <text x="{ax_x0 - 7:.1f}" y="{ty + 3.5:.1f}" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="9.5" fill="#000000">{tick_v}</text>')
+    parts_svg.append(f'  <line x1="{ax_x0:.1f}" y1="{ax_y0:.1f}" x2="{ax_x0:.1f}" y2="{ax_y1:.1f}" stroke="#000000" stroke-width="1.1"/>')
+    parts_svg.append(f'  <line x1="{ax_x0:.1f}" y1="{ax_y1:.1f}" x2="{ax_x1:.1f}" y2="{ax_y1:.1f}" stroke="#000000" stroke-width="1.1"/>')
+    parts_svg.append(
+        f'  <text x="16" y="{0.5 * (ax_y0 + ax_y1):.1f}" text-anchor="middle" transform="rotate(-90 16 {0.5 * (ax_y0 + ax_y1):.1f})" '
+        'font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#000000">Max Heart Rate (bpm)</text>'
+    )
+
+    centers_a = [104.0, 194.0, 282.0]
+    grid_hr = np.linspace(74.0, 204.0, 44)
+    for idx_c, (cname, chex) in enumerate(cohort_order):
+        cx = centers_a[idx_c]
+        vals = np.array(sorted(r[1] for r in cohorts[cname]), dtype=np.float64)
+        q25, q50, q75 = np.percentile(vals, [25, 50, 75])
+        iqr = q75 - q25
+        lo_w = float(vals[vals >= q25 - 1.5 * iqr].min())
+        hi_w = float(vals[vals <= q75 + 1.5 * iqr].max())
+
+        # Gaussian KDE half-violin extending left of cx - 12
+        bw_kde = max(5.5, 1.06 * float(np.std(vals)) * (len(vals) ** -0.2))
+        dens = np.mean(np.exp(-0.5 * ((grid_hr[:, None] - vals[None, :]) / bw_kde) ** 2), axis=1)
+        dens = dens / max(1e-9, float(dens.max()))
+        v_base = cx - 11.0
+        pts_v = [(v_base, _y_hr(float(vals.min() - 4.0)))]
+        for gv, dv in zip(grid_hr, dens):
+            if vals.min() - 5.0 <= gv <= vals.max() + 5.0:
+                pts_v.append((v_base - dv * 26.0, _y_hr(float(gv))))
+        pts_v.append((v_base, _y_hr(float(vals.max() + 4.0))))
+        poly_str = " ".join(f"{px:.1f},{py:.1f}" for px, py in pts_v)
+        parts_svg.append(
+            f'  <polygon points="{poly_str}" fill="{chex}" fill-opacity="0.24" stroke="#444444" stroke-width="0.7" stroke-opacity="0.55"/>'
+        )
+
+        # Whiskers, caps & median (neutral dark charcoal so data color belongs cleanly to box fill & scatter)
+        bx_w = 24.0
+        bx_x0 = cx - 6.0
+        bx_mid = bx_x0 + 0.5 * bx_w
+        parts_svg.append(f'  <line x1="{bx_mid:.1f}" y1="{_y_hr(hi_w):.1f}" x2="{bx_mid:.1f}" y2="{_y_hr(q75):.1f}" stroke="#4A4E54" stroke-width="1.0"/>')
+        parts_svg.append(f'  <line x1="{bx_mid:.1f}" y1="{_y_hr(q25):.1f}" x2="{bx_mid:.1f}" y2="{_y_hr(lo_w):.1f}" stroke="#4A4E54" stroke-width="1.0"/>')
+        parts_svg.append(f'  <line x1="{bx_mid - 6:.1f}" y1="{_y_hr(hi_w):.1f}" x2="{bx_mid + 6:.1f}" y2="{_y_hr(hi_w):.1f}" stroke="#4A4E54" stroke-width="1.0"/>')
+        parts_svg.append(f'  <line x1="{bx_mid - 6:.1f}" y1="{_y_hr(lo_w):.1f}" x2="{bx_mid + 6:.1f}" y2="{_y_hr(lo_w):.1f}" stroke="#4A4E54" stroke-width="1.0"/>')
+
+        # Translucent IQR Boxplot (`area` layer)
+        by_top = _y_hr(float(q75))
+        by_bot = _y_hr(float(q25))
+        parts_svg.append(
+            f'  <rect x="{bx_x0:.1f}" y="{by_top:.1f}" width="{bx_w:.1f}" height="{max(2.0, by_bot - by_top):.1f}" '
+            f'rx="1.5" fill="{chex}" fill-opacity="0.44" stroke="#333333" stroke-width="0.95"/>'
+        )
+        parts_svg.append(
+            f'  <line x1="{bx_x0:.1f}" y1="{_y_hr(float(q50)):.1f}" x2="{bx_x0 + bx_w:.1f}" y2="{_y_hr(float(q50)):.1f}" stroke="#222222" stroke-width="1.5"/>'
+        )
+
+        # Overlaid Individual Patient Scatter Dots (`point` layer — deterministic golden-ratio horizontal spread inside box)
+        for idx_p, v_hr in enumerate(vals):
+            frac = ((idx_p * 0.61803398875) % 1.0) - 0.5
+            jx = bx_mid + frac * 17.5
+            jy = _y_hr(float(v_hr))
+            parts_svg.append(
+                f'  <circle cx="{jx:.2f}" cy="{jy:.2f}" r="2.55" fill="{chex}" fill-opacity="0.88" stroke="#2B2B2B" stroke-width="0.55"/>'
+            )
+
+        short_lbl = cname.replace(" CAD", "") if cname != "No CAD" else "No CAD"
+        parts_svg.append(
+            f'  <text x="{cx:.1f}" y="{ax_y1 + 15:.1f}" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9.5" fill="#000000">{short_lbl}</text>'
+        )
+        parts_svg.append(
+            f'  <text x="{cx:.1f}" y="{ax_y1 + 27:.1f}" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8.5" fill="#555555">n={len(vals)}</text>'
+        )
+
+    # ------------------------------------------------------------------
+    # PANEL B: Age Trajectory OLS Curves (`line`) + 95% CI Ribbons (`area`) + Markers (`point`)
+    # ------------------------------------------------------------------
+    bx0, bx1 = 392.0, 646.0
+    by0, by1 = 44.0, 316.0
+    age_min, age_max = 32.0, 76.0
+
+    def _x_age(a: float) -> float:
+        return bx0 + (a - age_min) / (age_max - age_min) * (bx1 - bx0)
+
+    for tick_v in (80, 110, 140, 170, 200):
+        ty = _y_hr(float(tick_v))
+        parts_svg.append(f'  <line x1="{bx0:.1f}" y1="{ty:.1f}" x2="{bx1:.1f}" y2="{ty:.1f}" stroke="#EAECEF" stroke-width="0.8"/>')
+        parts_svg.append(f'  <line x1="{bx0 - 4:.1f}" y1="{ty:.1f}" x2="{bx0:.1f}" y2="{ty:.1f}" stroke="#000000" stroke-width="1"/>')
+        parts_svg.append(f'  <text x="{bx0 - 7:.1f}" y="{ty + 3.5:.1f}" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="9.5" fill="#000000">{tick_v}</text>')
+    for tick_a in (35, 45, 55, 65, 75):
+        tx = _x_age(float(tick_a))
+        parts_svg.append(f'  <line x1="{tx:.1f}" y1="{by1:.1f}" x2="{tx:.1f}" y2="{by1 + 4:.1f}" stroke="#000000" stroke-width="1"/>')
+        parts_svg.append(f'  <text x="{tx:.1f}" y="{by1 + 15:.1f}" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9.5" fill="#000000">{tick_a}</text>')
+    parts_svg.append(f'  <line x1="{bx0:.1f}" y1="{by0:.1f}" x2="{bx0:.1f}" y2="{by1:.1f}" stroke="#000000" stroke-width="1.1"/>')
+    parts_svg.append(f'  <line x1="{bx0:.1f}" y1="{by1:.1f}" x2="{bx1:.1f}" y2="{by1:.1f}" stroke="#000000" stroke-width="1.1"/>')
+    parts_svg.append(
+        f'  <text x="{0.5 * (bx0 + bx1):.1f}" y="{by1 + 29:.1f}" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#000000">Patient Age (years)</text>'
+    )
+
+    x_grid = np.linspace(35.0, 74.0, 26)
+    for cname, chex in cohort_order:
+        pts_c = cohorts[cname]
+        ages = np.array([r[0] for r in pts_c], dtype=np.float64)
+        hrs = np.array([r[1] for r in pts_c], dtype=np.float64)
+        slope, intercept = np.polyfit(ages, hrs, 1)
+        y_hat = slope * x_grid + intercept
+        n_obs = len(ages)
+        resid_sd = float(np.sqrt(np.sum((hrs - (slope * ages + intercept)) ** 2) / max(1, n_obs - 2)))
+        a_mean = float(np.mean(ages))
+        s_xx = float(np.sum((ages - a_mean) ** 2))
+        se_fit = resid_sd * np.sqrt(1.0 / n_obs + ((x_grid - a_mean) ** 2) / max(1e-9, s_xx))
+        ci_hi = y_hat + 1.96 * se_fit
+        ci_lo = y_hat - 1.96 * se_fit
+
+        # 95% CI Ribbon (`area` layer)
+        rib_pts = [(_x_age(float(xg)), _y_hr(float(yh))) for xg, yh in zip(x_grid, ci_hi)] + [
+            (_x_age(float(xg)), _y_hr(float(yl))) for xg, yl in zip(reversed(x_grid), reversed(ci_lo))
+        ]
+        rib_str = " ".join(f"{px:.1f},{py:.1f}" for px, py in rib_pts)
+        parts_svg.append(f'  <polygon points="{rib_str}" fill="{chex}" fill-opacity="0.22" stroke="none"/>')
+
+        # OLS Regression Trajectory (`line` layer)
+        line_str = " ".join(f"{_x_age(float(xg)):.1f},{_y_hr(float(yv)):.1f}" for xg, yv in zip(x_grid, y_hat))
+        parts_svg.append(
+            f'  <polyline points="{line_str}" fill="none" stroke="{chex}" stroke-width="2.2" stroke-opacity="0.96"/>'
+        )
+
+        # Empirical Age-Quintile Mean Markers (`point` layer, 5 bins >= 3 points)
+        order_idx = np.argsort(ages)
+        splits = np.array_split(order_idx, 5)
+        for sp_idx in splits:
+            if len(sp_idx) == 0:
+                continue
+            ma = float(np.mean(ages[sp_idx]))
+            mh = float(np.mean(hrs[sp_idx]))
+            parts_svg.append(
+                f'  <circle cx="{_x_age(ma):.2f}" cy="{_y_hr(mh):.2f}" r="3.6" fill="{chex}" fill-opacity="0.95" stroke="#222222" stroke-width="0.8"/>'
+            )
+
+    # ------------------------------------------------------------------
+    # PANEL C: Exercise ST-Depression Mean Bars (`area`) + Patient Dots (`point`) + Gradient Scale
+    # ------------------------------------------------------------------
+    cx0, cx1 = 710.0, 902.0
+    cy0, cy1 = 44.0, 316.0
+    st_max = 5.2
+
+    def _y_st(v: float) -> float:
+        return cy1 - (v / st_max) * (cy1 - cy0)
+
+    for tick_s in (0, 1, 2, 3, 4, 5):
+        ty = _y_st(float(tick_s))
+        parts_svg.append(f'  <line x1="{cx0:.1f}" y1="{ty:.1f}" x2="{cx1:.1f}" y2="{ty:.1f}" stroke="#EAECEF" stroke-width="0.8"/>')
+        parts_svg.append(f'  <line x1="{cx0 - 4:.1f}" y1="{ty:.1f}" x2="{cx0:.1f}" y2="{ty:.1f}" stroke="#000000" stroke-width="1"/>')
+        parts_svg.append(f'  <text x="{cx0 - 7:.1f}" y="{ty + 3.5:.1f}" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="9.5" fill="#000000">{tick_s}</text>')
+    parts_svg.append(f'  <line x1="{cx0:.1f}" y1="{cy0:.1f}" x2="{cx0:.1f}" y2="{cy1:.1f}" stroke="#000000" stroke-width="1.1"/>')
+    parts_svg.append(f'  <line x1="{cx0:.1f}" y1="{cy1:.1f}" x2="{cx1:.1f}" y2="{cy1:.1f}" stroke="#000000" stroke-width="1.1"/>')
+    parts_svg.append(
+        f'  <text x="680" y="{0.5 * (cy0 + cy1):.1f}" text-anchor="middle" transform="rotate(-90 680 {0.5 * (cy0 + cy1):.1f})" '
+        'font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#000000">ST Depression (mV)</text>'
+    )
+
+    centers_c = [744.0, 806.0, 868.0]
+    for idx_c, (cname, chex) in enumerate(cohort_order):
+        bcx = centers_c[idx_c]
+        st_vals = np.array(sorted(r[2] for r in cohorts[cname]), dtype=np.float64)
+        mean_st = float(np.mean(st_vals))
+        sem_st = float(np.std(st_vals) / math.sqrt(len(st_vals)))
+        bar_w = 34.0
+        bar_top = _y_st(mean_st)
+        parts_svg.append(
+            f'  <rect x="{bcx - 0.5 * bar_w:.1f}" y="{bar_top:.1f}" width="{bar_w:.1f}" height="{max(2.0, cy1 - bar_top):.1f}" '
+            f'rx="1.5" fill="{chex}" fill-opacity="0.42" stroke="#333333" stroke-width="0.9"/>'
+        )
+        # SEM error bar
+        y_hi_e = _y_st(mean_st + sem_st)
+        y_lo_e = _y_st(max(0.0, mean_st - sem_st))
+        parts_svg.append(f'  <line x1="{bcx:.1f}" y1="{y_hi_e:.1f}" x2="{bcx:.1f}" y2="{y_lo_e:.1f}" stroke="#222222" stroke-width="1.2"/>')
+        parts_svg.append(f'  <line x1="{bcx - 6:.1f}" y1="{y_hi_e:.1f}" x2="{bcx + 6:.1f}" y2="{y_hi_e:.1f}" stroke="#222222" stroke-width="1.2"/>')
+
+        # Subsampled deterministic decile/every-2nd individual patient strip points (`point` layer)
+        sub_st = st_vals[::2] if len(st_vals) > 60 else st_vals
+        for idx_s, sv in enumerate(sub_st):
+            if sv > st_max:
+                continue
+            frac = ((idx_s * 0.61803398875) % 1.0) - 0.5
+            jx = bcx + frac * 22.0
+            jy = min(cy1 - 3.2, _y_st(float(sv)))
+            parts_svg.append(
+                f'  <circle cx="{jx:.2f}" cy="{jy:.2f}" r="2.35" fill="{chex}" fill-opacity="0.86" stroke="#2B2B2B" stroke-width="0.5"/>'
+            )
+
+        short_lbl = cname.replace(" CAD", "") if cname != "No CAD" else "No CAD"
+        parts_svg.append(
+            f'  <text x="{bcx:.1f}" y="{cy1 + 15:.1f}" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9.5" fill="#000000">{short_lbl}</text>'
+        )
+
+    # Coupled Continuous `<linearGradient>` Ischemia Score Bar on far right of Panel C
+    cb_x, cb_y, cb_w, cb_h = 924.0, 68.0, 14.0, 210.0
+    parts_svg.append(f'  <text x="{cb_x + 7:.1f}" y="{cb_y - 9:.1f}" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9" font-weight="bold" fill="#000000">Risk</text>')
+    parts_svg.append(f'  <rect x="{cb_x:.1f}" y="{cb_y:.1f}" width="{cb_w:.1f}" height="{cb_h:.1f}" rx="2" fill="url(#IschemiaRiskScale)" stroke="#333333" stroke-width="0.8"/>')
+    for frac_t, lbl_t in ((0.0, "High"), (0.5, "Mid"), (1.0, "Low")):
+        ty_cb = cb_y + frac_t * cb_h
+        parts_svg.append(f'  <text x="{cb_x + cb_w + 5:.1f}" y="{ty_cb + 3:.1f}" font-family="Helvetica, Arial, sans-serif" font-size="8.5" fill="#000000">{lbl_t}</text>')
+
+    # ------------------------------------------------------------------
+    # Shared Bottom Legend (aligned horizontal row of keys + labels)
+    # ------------------------------------------------------------------
+    leg_y = 368.0
+    leg_xs = [258.0, 442.0, 646.0]
+    for (cname, chex), lx in zip(cohort_order, leg_xs):
+        n_c = len(cohorts[cname])
+        parts_svg.append(
+            f'  <rect x="{lx:.1f}" y="{leg_y - 9:.1f}" width="12" height="10" rx="2" fill="{chex}" fill-opacity="0.55" stroke="#333333" stroke-width="0.7"/>'
+        )
+        parts_svg.append(
+            f'  <circle cx="{lx + 6:.1f}" cy="{leg_y - 4:.1f}" r="2.7" fill="{chex}" fill-opacity="0.95" stroke="#222222" stroke-width="0.55"/>'
+        )
+        parts_svg.append(
+            f'  <text x="{lx + 18:.1f}" y="{leg_y:.1f}" font-family="Helvetica, Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#000000">{cname} (n={n_c})</text>'
+        )
+
+    parts_svg.append(
+        '  <text x="18" y="399" font-family="Helvetica, Arial, sans-serif" font-size="8.5" fill="#555555">'
+        "Source: UCI Cleveland Clinic Heart Disease Cohort (Detrano et al., Am. J. Cardiol. 1989; CC BY 4.0, n = 303 patients)"
+        "</text>"
+    )
+    parts_svg.append("</svg>\n")
+    out_path.write_text("\n".join(parts_svg), encoding="utf-8")
+
+
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     # Remove ALL legacy files in bench/figures/ so zero private lab files remain
@@ -828,6 +1128,7 @@ def main() -> None:
     build_g0_evidence_pdf(OUT_DIR / "02_Histology_WB_EvidenceShield_10xVisium.pdf", brain)
     build_svg_pathway_demo(OUT_DIR / "03_EGFR_MAPK_Pathway_Lemmon2010.svg")
     build_complex_mouse_brain_visium_pdf(OUT_DIR / "04_MouseBrain_Visium_Complex_10xGenomics.pdf", brain)
+    build_cleveland_multilayer_svg(OUT_DIR / "05_Cleveland_Cardiology_MultiLayer_Detrano1989.svg")
 
     for p in sorted(OUT_DIR.iterdir()):
         print(f"Prepared public benchmark fixture: {p.name} ({p.stat().st_size / 1024:.1f} KB)")

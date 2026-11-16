@@ -11,7 +11,7 @@ authors:
   - family-names: "Han"
     given-names: "Xinyin"
     alias: "owehann"
-version: "0.6.2"
+version: "0.6.3"
 date-released: "2026-11-16"
 license: "Apache-2.0"
 repository-code: "https://github.com/owehann/danqing"

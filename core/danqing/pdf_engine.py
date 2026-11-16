@@ -127,7 +127,8 @@ _STREAM_CMD_RE = re.compile(
 _COLOR_STRIP_RE = re.compile(
     rb"(?<![A-Za-z0-9_./])(?:"
     rb"(?:" + _NUM_P + rb"\s++)++(?:/[A-Za-z0-9_.-]++\s++)?(?:rg|RG|g|G|k|K|scn?|SCN?)|"
-    rb"/[A-Za-z0-9_.-]++\s++(?:cs|CS)"
+    rb"/[A-Za-z0-9_.-]++\s++(?:cs|CS)|"
+    rb"/Dq[FS]A\d{1,3}\s++gs"
     rb")(?![A-Za-z0-9_])"
 )
 
@@ -394,6 +395,7 @@ class ColorOpSpan:
     paint_count: int = 0
     bbox: list[float] = field(default_factory=lambda: [1e9, 1e9, -1e9, -1e9])
     swatch_bboxes: list[tuple[float, float, float, float]] = field(default_factory=list, repr=False)
+    post_gs_ends: list[int] = field(default_factory=list, repr=False)
     mutable: bool = False
     group_id: str | None = None
     is_cell_text_op: bool = False
@@ -1133,6 +1135,20 @@ def parse_pdf_scene(
                     gs_name = tok.split()[0]
                     if gs_name in gs_alpha:
                         fill_alpha, stroke_alpha = gs_alpha[gs_name]
+                        if (
+                            cur_fill_span is not None
+                            and op_spans[cur_fill_span].stream_key == s_key
+                            and op_spans[cur_fill_span].paint_count == 0
+                        ):
+                            op_spans[cur_fill_span].alpha = fill_alpha
+                            op_spans[cur_fill_span].post_gs_ends.append(m.end())
+                        if (
+                            cur_stroke_span is not None
+                            and op_spans[cur_stroke_span].stream_key == s_key
+                            and op_spans[cur_stroke_span].paint_count == 0
+                        ):
+                            op_spans[cur_stroke_span].alpha = stroke_alpha
+                            op_spans[cur_stroke_span].post_gs_ends.append(m.end())
                 elif kind == "dash":
                     br_end = tok.find(b"]")
                     inside = tok[1:br_end].strip()
@@ -1430,18 +1446,42 @@ def parse_pdf_scene(
             pt_spans = [s for s in b_spans if s.max_subpath_dim <= 18.0]
             non_pt_spans = [s for s in b_spans if s.max_subpath_dim > 18.0]
             n_pt_marks = sum(s.paint_count for s in pt_spans)
+            emitted_gids: list[str] = []
             if non_pt_spans and pt_spans and n_pt_marks >= 3:
-                # Genuine overlaying graph (e.g. Boxplot/Violin/Bar + >= 3 Individual Data Points):
-                # keep separate ColorGroups for area/line vs points so both pick cleanly and can be unlinked!
-                base_kind = "area" if any(not s.is_stroke for s in non_pt_spans) else "line"
-                gid_base = _emit_color_group(non_pt_spans, base_kind)
-                gid_pts = _emit_color_group(pt_spans, "point")
-                sibling_layer_pairs.append((gid_base, gid_pts))
+                # Genuine overlaying graph (e.g. Violin/Boxplot/Ribbon + Curve + >= 3 Individual Data Points):
+                # emit clean independent ColorGroups for `area`, `line`, and `point` so each picks and adjusts opacity cleanly!
+                area_spans = [
+                    s for s in non_pt_spans if (not s.is_stroke) or (s.used_with_same_fill and not s.used_standalone)
+                ]
+                line_spans = [
+                    s for s in non_pt_spans if s.is_stroke and not (s.used_with_same_fill and not s.used_standalone)
+                ]
+                if area_spans:
+                    emitted_gids.append(_emit_color_group(area_spans, "area"))
+                if line_spans:
+                    emitted_gids.append(_emit_color_group(line_spans, "line"))
+                emitted_gids.append(_emit_color_group(pt_spans, "point"))
             elif non_pt_spans:
-                base_kind = "area" if any(not s.is_stroke for s in non_pt_spans) else "line"
-                _emit_color_group(b_spans, base_kind)
+                area_spans = [
+                    s for s in b_spans if (not s.is_stroke) or (s.used_with_same_fill and not s.used_standalone)
+                ]
+                line_spans = [
+                    s for s in b_spans if s.is_stroke and not (s.used_with_same_fill and not s.used_standalone)
+                ]
+                if area_spans and line_spans:
+                    emitted_gids.append(_emit_color_group(area_spans, "area"))
+                    emitted_gids.append(_emit_color_group(line_spans, "line"))
+                elif area_spans:
+                    emitted_gids.append(_emit_color_group(b_spans, "area"))
+                else:
+                    emitted_gids.append(_emit_color_group(b_spans, "line"))
             else:
-                _emit_color_group(b_spans, "point")
+                emitted_gids.append(_emit_color_group(b_spans, "point"))
+
+            if len(emitted_gids) > 1:
+                for i_em in range(len(emitted_gids)):
+                    for j_em in range(i_em + 1, len(emitted_gids)):
+                        sibling_layer_pairs.append((emitted_gids[i_em], emitted_gids[j_em]))
 
     # Couple ContinuousScales per panel
     continuous_scales: dict[str, ContinuousScale] = {}
@@ -1822,7 +1862,7 @@ def _bind_legend_labels(
             # Case 2: label directly below key (horizontal bottom/top legend)
             dy_b = t.bbox[1] - kbox[3]
             dx_b = abs(tcx - scx)
-            if -1.0 <= dy_b <= 15.0 and dx_b <= 20.0:
+            if pcnt <= 4 and (kbox[2] - kbox[0]) <= 26.0 and (kbox[3] - kbox[1]) <= 20.0 and -1.0 <= dy_b <= 15.0 and dx_b <= 20.0:
                 base_sc = 36.0 + margin_bonus + single_bonus + fill_bonus - 1.5 * dy_b - 1.5 * dx_b
                 cand_matches.append((pid, gid, kbox, t, base_sc, in_margin))
 
@@ -1885,10 +1925,10 @@ def _build_entities_and_collisions(
 ) -> tuple[dict[str, SemanticEntity], list[CollisionNotice], list[dict[str, Any]]]:
     entities: dict[str, SemanticEntity] = {}
     label_to_eid: dict[str, str] = {}
-    sibling_partner: dict[str, str] = {}
+    sibling_partners: dict[str, list[str]] = {}
     for ga, gb in sibling_layer_pairs or []:
-        sibling_partner[ga] = gb
-        sibling_partner[gb] = ga
+        sibling_partners.setdefault(ga, []).append(gb)
+        sibling_partners.setdefault(gb, []).append(ga)
     gid_to_eid: dict[str, str] = {}
     label_panel_hexes: dict[str, list[tuple[str, str, str]]] = {}
 
@@ -1897,7 +1937,10 @@ def _build_entities_and_collisions(
     for cg in cat_groups:
         raw_lbl = cg.local_label.strip()
         norm_key = _normalize_factor_key(raw_lbl).lower() if raw_lbl else ""
-        sib_gid = sibling_partner.get(cg.group_id)
+        matched_sib_eid = next(
+            (gid_to_eid[sg] for sg in sibling_partners.get(cg.group_id, []) if sg in gid_to_eid),
+            None,
+        )
         if norm_key and norm_key in label_to_eid:
             eid = label_to_eid[norm_key]
             ent = entities[eid]
@@ -1906,9 +1949,9 @@ def _build_entities_and_collisions(
                 ent.panels.append(cg.panel_id)
             gid_to_eid[cg.group_id] = eid
             label_panel_hexes[norm_key].append((cg.panel_id, cg.original_hex, eid))
-        elif not norm_key and sib_gid and sib_gid in gid_to_eid:
-            # Merge unlabeled overlaid points + area in the same panel & color cluster into one cohort entity by default
-            eid = gid_to_eid[sib_gid]
+        elif not norm_key and matched_sib_eid is not None:
+            # Merge unlabeled overlaid points + lines + area in the same panel & color cluster into one cohort entity by default
+            eid = matched_sib_eid
             ent = entities[eid]
             ent.member_group_ids.append(cg.group_id)
             gid_to_eid[cg.group_id] = eid
@@ -1934,6 +1977,7 @@ def _build_entities_and_collisions(
                 member_group_ids=[cg.group_id],
                 original_hex=cg.original_hex,
                 current_hex=cg.current_hex,
+                original_alpha=cg.alpha,
                 encoding="categorical",
                 tier="normal",
                 tier_reason="",
@@ -2233,9 +2277,16 @@ def render_preview_png(
     group_hex_map: dict[str, str],
     scale_stops_map: dict[str, list[str]],
     scale: float | None = None,
+    group_alpha_map: dict[str, float] | None = None,
 ) -> bytes:
     """Render the EXACT recolored PDF at `scale` (default `scene.preview_scale`), ensuring preview == export."""
-    pdf_bytes, _ = export_recolored_pdf(scene, group_hex_map, scale_stops_map, verify=False)
+    pdf_bytes, _ = export_recolored_pdf(
+        scene,
+        group_hex_map,
+        scale_stops_map,
+        verify=False,
+        group_alpha_map=group_alpha_map,
+    )
     target_scale = float(scale) if scale is not None else scene.preview_scale
     if pdf_bytes is scene.raw_pdf_bytes and abs(target_scale - scene.preview_scale) < 1e-4 and scene.original_png:
         return scene.original_png
@@ -2255,9 +2306,18 @@ def export_recolored_pdf(
     group_hex_map: dict[str, str],
     scale_stops_map: dict[str, list[str]],
     verify: bool = True,
+    group_alpha_map: dict[str, float] | None = None,
 ) -> tuple[bytes, dict[str, Any]]:
     """Write byte-exact vector PDF on `scene.page_index` with G0 raw-image lock and G6 geometry verification."""
     resolved_group_hex = dict(group_hex_map)
+    alpha_changed_groups: dict[str, float] = {}
+    if group_alpha_map:
+        for gid_a, raw_a in group_alpha_map.items():
+            if raw_a is not None and gid_a in scene.color_groups:
+                clamped_a = max(0.0, min(1.0, float(raw_a)))
+                if abs(clamped_a - scene.color_groups[gid_a].alpha) >= 0.005:
+                    alpha_changed_groups[gid_a] = clamped_a
+
     scale_luts: dict[str, np.ndarray] = {}
     scale_modified: dict[str, bool] = {}
     for sid, cs in scene.continuous_scales.items():
@@ -2279,10 +2339,14 @@ def export_recolored_pdf(
             idx = int(round(cg.continuous_t * 255.0))
             resolved_group_hex[gid] = srgb01_to_hex(lut[max(0, min(255, idx))])
 
-    any_changed = any(
-        resolved_group_hex.get(gid, cg.original_hex).upper() != cg.original_hex.upper()
-        for gid, cg in scene.color_groups.items()
-    ) or any(scale_modified.values())
+    any_changed = (
+        any(
+            resolved_group_hex.get(gid, cg.original_hex).upper() != cg.original_hex.upper()
+            for gid, cg in scene.color_groups.items()
+        )
+        or bool(alpha_changed_groups)
+        or any(scale_modified.values())
+    )
     if not any_changed:
         return scene.raw_pdf_bytes, {
             "g0_evidence_bit_identical": True,
@@ -2314,11 +2378,32 @@ def export_recolored_pdf(
                 if not (sp.active_cs_kind == "rgb" and sp.active_cs_ncomp == 3):
                     streams_switching_cs.add(sp.stream_key)
 
+    streams_switching_alpha: set[str] = set()
+    if alpha_changed_groups:
+        for sp in scene.op_spans:
+            if sp.mutable and sp.group_id in alpha_changed_groups:
+                streams_switching_alpha.add(sp.stream_key)
+
+    needed_alpha_gs: dict[str, dict[str, tuple[bool, int]]] = {}
     slices_by_stream: dict[str, list[tuple[int, int, bytes]]] = {}
     sc_rep_cache: dict[tuple[str, str], bytes] = {}
     mod_ops = 0
+
+    def _alpha_gs_suffix(stream_k: str, is_st: bool, a_val: float) -> bytes:
+        pct = max(0, min(100, int(round(a_val * 100.0))))
+        gs_tag = f"/DqSA{pct}" if is_st else f"/DqFA{pct}"
+        needed_alpha_gs.setdefault(stream_k, {})[gs_tag] = (is_st, pct)
+        return f" {gs_tag} gs".encode("ascii")
+
     for sp in scene.op_spans:
         gid = sp.group_id
+        in_alpha_stream = sp.stream_key in streams_switching_alpha
+        has_custom_alpha = bool(sp.mutable and gid is not None and gid in alpha_changed_groups)
+        alpha_suffix = b""
+        if in_alpha_stream:
+            target_a = alpha_changed_groups[gid] if has_custom_alpha and gid is not None else sp.alpha
+            alpha_suffix = _alpha_gs_suffix(sp.stream_key, sp.is_stroke, target_a)
+
         if sp.mutable and gid is not None and gid in changed_groups:
             fill_rep, stroke_rep, new_h = changed_groups[gid]
             if sp.cs_op in ("sc", "scn", "SC", "SCN") and sp.active_cs_kind == "rgb" and sp.active_cs_ncomp == 3:
@@ -2330,16 +2415,27 @@ def export_recolored_pdf(
                     sc_rep_cache[ck] = rep
             else:
                 rep = stroke_rep if sp.is_stroke else fill_rep
-            slices_by_stream.setdefault(sp.stream_key, []).append((sp.start, sp.end, rep))
+            slices_by_stream.setdefault(sp.stream_key, []).append((sp.start, sp.end, rep + alpha_suffix))
+            if has_custom_alpha and sp.post_gs_ends:
+                for gs_end in sp.post_gs_ends:
+                    slices_by_stream[sp.stream_key].append((gs_end, gs_end, alpha_suffix))
             mod_ops += 1
             continue
 
-        # If another span in this stream switched a non-RGB named ColorSpace to DeviceRGB, re-assert active `/CS` on unchanged `sc/scn`
-        if streams_switching_cs and sp.stream_key in streams_switching_cs and sp.cs_op in ("sc", "scn", "SC", "SCN") and sp.active_cs_name.startswith("/"):
-            cs_cmd = "CS" if sp.is_stroke else "cs"
+        need_cs_reassert = (
+            streams_switching_cs
+            and sp.stream_key in streams_switching_cs
+            and sp.cs_op in ("sc", "scn", "SC", "SCN")
+            and sp.active_cs_name.startswith("/")
+        )
+        if need_cs_reassert or in_alpha_stream:
             orig_slice = scene.raw_streams[sp.stream_key][sp.start : sp.end]
-            restored = f"{sp.active_cs_name} {cs_cmd} ".encode("latin1") + orig_slice
-            slices_by_stream.setdefault(sp.stream_key, []).append((sp.start, sp.end, restored))
+            prefix_cs = f"{sp.active_cs_name} {'CS' if sp.is_stroke else 'cs'} ".encode("latin1") if need_cs_reassert else b""
+            slices_by_stream.setdefault(sp.stream_key, []).append((sp.start, sp.end, prefix_cs + orig_slice + alpha_suffix))
+            if has_custom_alpha:
+                mod_ops += 1
+                for gs_end in sp.post_gs_ends:
+                    slices_by_stream[sp.stream_key].append((gs_end, gs_end, alpha_suffix))
 
     # Gate G3b: Adaptive in-cell text polarity (#000000 <-> #FFFFFF) on dark heatmap cells
     g3b_flips = 0
@@ -2357,6 +2453,23 @@ def export_recolored_pdf(
             )
             g3b_flips += 1
 
+    def _register_alpha_extgstates(holder_obj: pikepdf.Object, gs_defs: dict[str, tuple[bool, int]]) -> None:
+        if not gs_defs:
+            return
+        if "/Resources" not in holder_obj:
+            holder_obj["/Resources"] = pikepdf.Dictionary()
+        res_d = holder_obj["/Resources"]
+        if "/ExtGState" not in res_d:
+            res_d["/ExtGState"] = pikepdf.Dictionary()
+        ext_gs = res_d["/ExtGState"]
+        for gs_tag, (is_st, pct) in gs_defs.items():
+            ext_gs[gs_tag] = pikepdf.Dictionary(
+                {
+                    "/Type": pikepdf.Name("/ExtGState"),
+                    ("/CA" if is_st else "/ca"): round(pct / 100.0, 3),
+                }
+            )
+
     with pikepdf.open(io.BytesIO(scene.raw_pdf_bytes)) as pdf_out:
         p0 = pdf_out.pages[scene.page_index]
         for sk, repl_list in slices_by_stream.items():
@@ -2365,12 +2478,14 @@ def export_recolored_pdf(
             rewritten = _rewrite_stream_arbitrary(scene.raw_streams[sk], repl_list)
             if sk == "__page__":
                 p0.Contents = pdf_out.make_stream(rewritten)
+                _register_alpha_extgstates(p0.obj, needed_alpha_gs.get(sk, {}))
             elif sk in scene.form_xobj_paths:
                 fxo = _resolve_nested_xobject(
                     p0.obj, scene.form_xobj_paths[sk], pdf_out, clone_for_isolation=(scene.page_count > 1)
                 )
                 if fxo is not None:
                     fxo.write(rewritten)
+                    _register_alpha_extgstates(fxo, needed_alpha_gs.get(sk, {}))
 
         mod_rasters = 0
         for sid, cs in scene.continuous_scales.items():

@@ -45,6 +45,7 @@ interface StudioStore {
   hoveredPaletteId: string | null;
   hoveredStyleId: string | null;
   hoveredSwatch: { entityId: string; hex: string } | null;
+  hoveredAlpha: { entityId: string; alpha: number } | null;
 
   isComparingOriginal: boolean;
   splitCompareActive: boolean;
@@ -74,9 +75,11 @@ interface StudioStore {
   resetTargetPanels: () => Promise<void>;
   setElementRoles: (entityIds: string[], role: ElementRole) => Promise<void>;
   pickElementColor: (entityId: string, hexColor: string) => Promise<void>;
+  setElementOpacity: (entityId: string, opacity: number) => Promise<void>;
   toggleElementLock: (entityId: string, locked: boolean) => Promise<void>;
   renameElement: (entityId: string, label: string) => Promise<void>;
-  splitSameName: (entityId: string) => Promise<void>;
+  splitSameName: (entityId: string, lang?: string) => Promise<void>;
+  splitElementLayers: (entityId: string, lang?: string) => Promise<void>;
   resetElement: (entityId: string) => Promise<void>;
   setRule: (rule: CrossPanelRule) => Promise<void>;
   setVibrancy: (vibrancy: VibrancyMode) => Promise<void>;
@@ -91,6 +94,7 @@ interface StudioStore {
   setHoveredPalette: (paletteId: string | null) => void;
   setHoveredStyle: (styleId: string | null) => void;
   setHoveredSwatch: (swatch: { entityId: string; hex: string } | null) => void;
+  setHoveredAlpha: (item: { entityId: string; alpha: number } | null) => void;
   setComparingOriginal: (comparing: boolean) => void;
   toggleSplitCompare: () => void;
   setCvdMode: (mode: CvdMode) => void;
@@ -141,6 +145,7 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
   hoveredPaletteId: null,
   hoveredStyleId: null,
   hoveredSwatch: null,
+  hoveredAlpha: null,
 
   isComparingOriginal: false,
   splitCompareActive: false,
@@ -337,6 +342,8 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
             return {
               ...el,
               current_hex: diff.entity_colors?.[el.entity_id] ?? el.current_hex,
+              alpha: meta?.alpha ?? el.alpha,
+              custom_alpha: meta?.custom_alpha !== undefined ? meta.custom_alpha : el.custom_alpha,
               label: meta?.label ?? el.label,
               role: meta?.role ?? el.role,
               locked: meta?.locked ?? el.locked,
@@ -353,10 +360,19 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
             current_hex: diff.group_colors?.[entry.group_id] ?? entry.current_hex,
           }));
 
+      const nextSelectedIds =
+        payload.action === "split_layers" && Array.isArray(diff.split_entity_ids) && diff.split_entity_ids.length > 0
+          ? [String(diff.split_entity_ids[0])]
+          : state.selectedIds.filter((sid) =>
+              (updatedElements as Array<{ entity_id: string }>).some((e) => e.entity_id === sid),
+            );
+
       return {
+        selectedIds: nextSelectedIds,
         hoveredPaletteId: null,
         hoveredStyleId: null,
         hoveredSwatch: null,
+        hoveredAlpha: null,
         figure: {
           ...state.figure,
           revision: diff.revision,
@@ -429,14 +445,20 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
   pickElementColor: async (entityId: string, hexColor: string) => {
     await get().mutateState({ action: "pick_color", entity_id: entityId, hex_color: hexColor });
   },
+  setElementOpacity: async (entityId: string, opacity: number) => {
+    await get().mutateState({ action: "set_opacity", entity_id: entityId, opacity });
+  },
   toggleElementLock: async (entityId: string, locked: boolean) => {
     await get().mutateState({ action: "set_lock", entity_id: entityId, locked });
   },
   renameElement: async (entityId: string, label: string) => {
     await get().mutateState({ action: "rename_element", entity_id: entityId, label });
   },
-  splitSameName: async (entityId: string) => {
-    await get().mutateState({ action: "split_same_name", entity_id: entityId });
+  splitSameName: async (entityId: string, lang?: string) => {
+    await get().mutateState({ action: "split_same_name", entity_id: entityId, ...(lang ? { lang } : {}) });
+  },
+  splitElementLayers: async (entityId: string, lang?: string) => {
+    await get().mutateState({ action: "split_layers", entity_id: entityId, ...(lang ? { lang } : {}) });
   },
   resetElement: async (entityId: string) => {
     await get().mutateState({ action: "reset_element", entity_id: entityId });
@@ -505,6 +527,9 @@ export const useStudioStore = create<StudioStore>((set, get) => ({
   },
   setHoveredSwatch: (swatch) => {
     set({ hoveredSwatch: swatch });
+  },
+  setHoveredAlpha: (item) => {
+    set({ hoveredAlpha: item });
   },
   setComparingOriginal: (comparing: boolean) => {
     set({ isComparingOriginal: comparing });

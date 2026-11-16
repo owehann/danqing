@@ -19,13 +19,14 @@ interface ElementRowProps {
 }
 
 function ElementRow({ el, selected, hovered }: ElementRowProps): React.ReactElement {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const selectEntity = useStudioStore((s) => s.selectEntity);
   const setHoveredEntity = useStudioStore((s) => s.setHoveredEntity);
   const setElementRoles = useStudioStore((s) => s.setElementRoles);
   const toggleElementLock = useStudioStore((s) => s.toggleElementLock);
   const renameElement = useStudioStore((s) => s.renameElement);
   const splitSameName = useStudioStore((s) => s.splitSameName);
+  const splitElementLayers = useStudioStore((s) => s.splitElementLayers);
   const resetElement = useStudioStore((s) => s.resetElement);
 
   const [editing, setEditing] = useState(false);
@@ -81,7 +82,10 @@ function ElementRow({ el, selected, hovered }: ElementRowProps): React.ReactElem
     >
       <span
         className="dq-swatch-chip"
-        style={{ backgroundColor: el.current_hex }}
+        style={{
+          backgroundColor: el.current_hex,
+          opacity: Math.max(0.22, Math.min(1, el.alpha ?? 1)),
+        }}
         title={el.current_hex}
       />
 
@@ -211,13 +215,25 @@ function ElementRow({ el, selected, hovered }: ElementRowProps): React.ReactElem
         >
           <span>{t("elements.rename")}</span>
         </button>
+        {el.has_overlay_layers ? (
+          <button
+            type="button"
+            className="dq-popover-item"
+            onClick={() => {
+              closeMenu();
+              void splitElementLayers(el.entity_id, i18n.language);
+            }}
+          >
+            <span>{t("elements.splitLayers")}</span>
+          </button>
+        ) : null}
         {canSplit ? (
           <button
             type="button"
             className="dq-popover-item"
             onClick={() => {
               closeMenu();
-              void splitSameName(el.entity_id);
+              void splitSameName(el.entity_id, i18n.language);
             }}
           >
             <span>{t("elements.splitSameName")}</span>

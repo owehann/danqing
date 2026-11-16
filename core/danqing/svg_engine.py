@@ -455,6 +455,9 @@ class SvgPaintInstance:
     is_bg_white: bool = False
     use_ref_id: str | None = None
     alpha: float = 1.0
+    fill_alpha: float = 1.0
+    stroke_alpha: float = 1.0
+    anc_alpha: float = 1.0
     is_dashed: bool = False
     in_axis_group: bool = False
     is_line_only: bool = False
@@ -493,7 +496,18 @@ def canonical_svg_geometry_hash(svg_bytes: bytes) -> str:
     root = etree.fromstring(svg_bytes, parser=parser)
     h = hashlib.sha256()
     ignore_attrs = frozenset(
-        {"fill", "stroke", "color", "stop-color", "style", "offset", "data-danqing-interp"}
+        {
+            "fill",
+            "stroke",
+            "color",
+            "stop-color",
+            "style",
+            "offset",
+            "data-danqing-interp",
+            "fill-opacity",
+            "stroke-opacity",
+            "opacity",
+        }
     )
     for el in list(root.iter()):
         if not isinstance(el.tag, str):
@@ -684,7 +698,7 @@ def _bind_svg_legend_labels(
 
             dy_b = t.bbox[1] - kbox[3]
             dx_b = abs(tcx - scx)
-            if -2.0 <= dy_b <= 18.0 and dx_b <= 26.0:
+            if pcnt <= 4 and (kbox[2] - kbox[0]) <= 26.0 and (kbox[3] - kbox[1]) <= 20.0 and -2.0 <= dy_b <= 18.0 and dx_b <= 26.0:
                 base_sc = 36.0 + margin_bonus + single_bonus + fill_bonus - 1.4 * abs(dy_b) - 1.2 * dx_b
                 cand_matches.append((pid, gid, kbox, t, base_sc, in_margin))
 
@@ -886,14 +900,23 @@ def parse_svg_scene(
         eff_stroke = _pick_paint("stroke", inh_stroke)
         op_s = inline_map.get("opacity") or matched_css.get("opacity") or el.get("opacity")
         fop_s = inline_map.get("fill-opacity") or matched_css.get("fill-opacity") or el.get("fill-opacity")
-        alpha = inh_alpha
-        for s_val in (op_s, fop_s):
-            if s_val:
-                try:
-                    alpha *= max(0.0, min(1.0, float(s_val.strip())))
-                except ValueError:
-                    pass
-        return eff_fill, eff_stroke, eff_col, alpha
+        sop_s = inline_map.get("stroke-opacity") or matched_css.get("stroke-opacity") or el.get("stroke-opacity")
+
+        def _parse_alpha_tok(raw_v: str | None, fallback: float) -> float:
+            if not raw_v:
+                return fallback
+            try:
+                return max(0.0, min(1.0, float(raw_v.strip())))
+            except ValueError:
+                return fallback
+
+        el_op = _parse_alpha_tok(op_s, 1.0)
+        f_op = _parse_alpha_tok(fop_s, 1.0)
+        s_op = _parse_alpha_tok(sop_s, 1.0)
+        next_group_alpha = inh_alpha * el_op
+        eff_f_alpha = next_group_alpha * f_op
+        eff_s_alpha = next_group_alpha * s_op
+        return eff_fill, eff_stroke, eff_col, next_group_alpha, eff_f_alpha, eff_s_alpha
 
     def _walk(
         el: etree._Element,
@@ -909,7 +932,7 @@ def parse_svg_scene(
             return
         local = etree.QName(el).localname
         cur_ctm = _mat_mul2d(ctm, _parse_svg_transform(el.get("transform")))
-        eff_fill, eff_stroke, eff_col, eff_alpha = _effective_props(
+        eff_fill, eff_stroke, eff_col, next_group_alpha, eff_f_alpha, eff_s_alpha = _effective_props(
             el, ancestors, inh_fill, inh_stroke, inh_color, inh_alpha
         )
 
@@ -1040,11 +1063,11 @@ def parse_svg_scene(
                         ref_el = defs_by_id.get(ref_id)
                         if ref_el is not None:
                             use_ref_id = ref_id
-                            rf, rs, _, _ = _effective_props(ref_el, [], None, None, eff_col, 1.0)
+                            rf, rs, _, _, _, _ = _effective_props(ref_el, [], None, None, eff_col, 1.0)
                             if (rf is None and rs is None) and etree.QName(ref_el).localname in ("g", "symbol"):
                                 for sub_ch in ref_el:
                                     if isinstance(sub_ch.tag, str) and etree.QName(sub_ch).localname in _SHAPE_TAGS:
-                                        crf, crs, _, _ = _effective_props(sub_ch, [ref_el], None, None, eff_col, 1.0)
+                                        crf, crs, _, _, _, _ = _effective_props(sub_ch, [ref_el], None, None, eff_col, 1.0)
                                         rf = rf or crf
                                         rs = rs or crs
                             if rf and rf != "none" and (final_f is None or final_f == "none"):
@@ -1091,7 +1114,10 @@ def parse_svg_scene(
                             grad_id=grad_ref if (grad_ref and grad_ref in grad_id_to_scale) else None,
                             is_bg_white=is_bg_w,
                             use_ref_id=use_ref_id,
-                            alpha=eff_alpha,
+                            alpha=eff_f_alpha if hx_f else eff_s_alpha,
+                            fill_alpha=eff_f_alpha,
+                            stroke_alpha=eff_s_alpha,
+                            anc_alpha=inh_alpha,
                             is_dashed=has_dash,
                             in_axis_group=in_axis_g,
                             is_line_only=(local in ("line", "polyline") or hx_f is None),
@@ -1101,7 +1127,7 @@ def parse_svg_scene(
 
         next_anc = ancestors + [el]
         for child in el:
-            _walk(child, next_anc, cur_ctm, eff_fill, eff_stroke, eff_col, eff_alpha, now_in_defs)
+            _walk(child, next_anc, cur_ctm, eff_fill, eff_stroke, eff_col, next_group_alpha, now_in_defs)
 
     svg_clip_rects: list[tuple[float, float, float, float]] = []
     for el_cp in all_elems:
@@ -1124,6 +1150,20 @@ def parse_svg_scene(
         ev.panel_id = _assign_panel(ev.bbox, panels)
     for inst in raw_instances:
         inst.panel_id = _assign_panel(inst.bbox, panels)
+        sid_g = grad_id_to_scale.get(inst.grad_id) if inst.grad_id else None
+        if sid_g and sid_g in continuous_scales:
+            cs_g = continuous_scales[sid_g]
+            cs_g.panel_id = inst.panel_id
+            cs_g.colorbar_bbox = tuple(round(v, 2) for v in inst.bbox)
+            for t_g in texts:
+                if (
+                    t_g.panel_id == inst.panel_id
+                    and len(t_g.text.strip()) >= 2
+                    and not t_g.text.strip().replace(".", "").replace("-", "").isdigit()
+                ):
+                    if -6.0 <= (inst.bbox[1] - t_g.bbox[3]) <= 28.0 and abs(t_g.bbox[0] - inst.bbox[0]) <= 55.0:
+                        cs_g.title = t_g.text.strip()
+                        break
 
     def _is_mutable_svg_color(hx: str, bbox: tuple[float, float, float, float], is_bg_w: bool) -> bool:
         if is_bg_w:
@@ -1182,7 +1222,7 @@ def parse_svg_scene(
         tot_area = 0.0
         min_mk = 9999.0
         bx0, by0, bx1, by1 = 1e9, 1e9, -1e9, -1e9
-        alpha_v = recs[0][0].alpha
+        alpha_v = recs[0][0].fill_alpha if recs[0][1] == "fill" else recs[0][0].stroke_alpha
         for inst_r, r_kind, _ in recs:
             if r_kind == "fill":
                 inst_r.fill_gid = gid
@@ -1217,16 +1257,48 @@ def parse_svg_scene(
         pt_recs = [r for r in recs if r[2]]
         non_pt_recs = [r for r in recs if not r[2]]
         n_pt_elems = len({r[0].elem_idx for r in pt_recs})
+        emitted_svg_gids: list[str] = []
         if non_pt_recs and pt_recs and n_pt_elems >= 3:
-            base_kind: Literal["area", "line"] = "area" if any(r[1] == "fill" for r in non_pt_recs) else "line"
-            gid_base = _emit_svg_group(pid_g, hx_g, non_pt_recs, base_kind)
-            gid_pts = _emit_svg_group(pid_g, hx_g, pt_recs, "point")
-            sibling_layer_pairs.append((gid_base, gid_pts))
+            area_recs = [
+                r
+                for r in non_pt_recs
+                if r[1] == "fill" or (r[0].fill_hex is not None and r[0].fill_hex.upper() == hx_g.upper())
+            ]
+            line_recs = [
+                r
+                for r in non_pt_recs
+                if r[1] == "stroke" and not (r[0].fill_hex is not None and r[0].fill_hex.upper() == hx_g.upper())
+            ]
+            if area_recs:
+                emitted_svg_gids.append(_emit_svg_group(pid_g, hx_g, area_recs, "area"))
+            if line_recs:
+                emitted_svg_gids.append(_emit_svg_group(pid_g, hx_g, line_recs, "line"))
+            emitted_svg_gids.append(_emit_svg_group(pid_g, hx_g, pt_recs, "point"))
         elif non_pt_recs:
-            base_kind = "area" if any(r[1] == "fill" for r in non_pt_recs) else "line"
-            _emit_svg_group(pid_g, hx_g, recs, base_kind)
+            area_recs = [
+                r
+                for r in recs
+                if r[1] == "fill" or (r[0].fill_hex is not None and r[0].fill_hex.upper() == hx_g.upper())
+            ]
+            line_recs = [
+                r
+                for r in recs
+                if r[1] == "stroke" and not (r[0].fill_hex is not None and r[0].fill_hex.upper() == hx_g.upper())
+            ]
+            if area_recs and line_recs:
+                emitted_svg_gids.append(_emit_svg_group(pid_g, hx_g, area_recs, "area"))
+                emitted_svg_gids.append(_emit_svg_group(pid_g, hx_g, line_recs, "line"))
+            elif area_recs:
+                emitted_svg_gids.append(_emit_svg_group(pid_g, hx_g, recs, "area"))
+            else:
+                emitted_svg_gids.append(_emit_svg_group(pid_g, hx_g, recs, "line"))
         else:
-            _emit_svg_group(pid_g, hx_g, recs, "point")
+            emitted_svg_gids.append(_emit_svg_group(pid_g, hx_g, recs, "point"))
+
+        if len(emitted_svg_gids) > 1:
+            for i_s in range(len(emitted_svg_gids)):
+                for j_s in range(i_s + 1, len(emitted_svg_gids)):
+                    sibling_layer_pairs.append((emitted_svg_gids[i_s], emitted_svg_gids[j_s]))
 
     if progress_cb:
         progress_cb("binding_legends", 68)
@@ -1342,6 +1414,7 @@ def parse_svg_scene(
                 member_group_ids=[cg.group_id],
                 original_hex=cg.original_hex,
                 current_hex=cg.current_hex,
+                original_alpha=cg.alpha,
                 tier="normal",
                 is_control_candidate=is_ctrl,
             )
@@ -1437,7 +1510,15 @@ def parse_svg_scene(
     return scene
 
 
-def _apply_inline_paint(el: etree._Element, fill_val: str | None, stroke_val: str | None) -> None:
+def _apply_inline_paint(
+    el: etree._Element,
+    fill_val: str | None,
+    stroke_val: str | None,
+    fill_alpha_val: float | None = None,
+    stroke_alpha_val: float | None = None,
+    orig_fill_local_alpha: float | None = None,
+    orig_stroke_local_alpha: float | None = None,
+) -> None:
     style_map = _parse_style_attr(el.get("style"))
     if fill_val is not None:
         el.set("fill", fill_val)
@@ -1447,8 +1528,34 @@ def _apply_inline_paint(el: etree._Element, fill_val: str | None, stroke_val: st
         el.set("stroke", stroke_val)
         if "stroke" in style_map or el.get("class"):
             style_map["stroke"] = stroke_val
+    if fill_alpha_val is not None or stroke_alpha_val is not None:
+        # Unpack element-level `opacity` (e.g. Matplotlib boxplot `style="opacity: 0.35"`) into independent fill/stroke-opacity
+        had_elem_opacity = ("opacity" in style_map) or ("opacity" in el.attrib)
+        if had_elem_opacity:
+            style_map.pop("opacity", None)
+            el.attrib.pop("opacity", None)
+            if fill_alpha_val is None and orig_fill_local_alpha is not None and orig_fill_local_alpha < 0.999:
+                fa_keep = f"{max(0.0, min(1.0, orig_fill_local_alpha)):.3f}"
+                el.set("fill-opacity", fa_keep)
+                style_map["fill-opacity"] = fa_keep
+            if stroke_alpha_val is None and orig_stroke_local_alpha is not None and orig_stroke_local_alpha < 0.999:
+                sa_keep = f"{max(0.0, min(1.0, orig_stroke_local_alpha)):.3f}"
+                el.set("stroke-opacity", sa_keep)
+                style_map["stroke-opacity"] = sa_keep
+        if fill_alpha_val is not None:
+            fa_s = f"{max(0.0, min(1.0, fill_alpha_val)):.3f}"
+            el.set("fill-opacity", fa_s)
+            if "fill-opacity" in style_map or had_elem_opacity or el.get("class"):
+                style_map["fill-opacity"] = fa_s
+        if stroke_alpha_val is not None:
+            sa_s = f"{max(0.0, min(1.0, stroke_alpha_val)):.3f}"
+            el.set("stroke-opacity", sa_s)
+            if "stroke-opacity" in style_map or had_elem_opacity or el.get("class"):
+                style_map["stroke-opacity"] = sa_s
     if style_map:
         el.set("style", ";".join(f"{k}:{v}" for k, v in style_map.items()))
+    elif "style" in el.attrib and (fill_alpha_val is not None or stroke_alpha_val is not None):
+        del el.attrib["style"]
 
 
 def _strip_element_paint_for_use_cascade(el: etree._Element) -> None:
@@ -1613,8 +1720,9 @@ def render_svg_preview_png(
     group_hex_map: dict[str, str],
     scale_stops_map: dict[str, list[str]],
     scale: float | None = None,
+    group_alpha_map: dict[str, float] | None = None,
 ) -> bytes:
-    svg_out, _ = export_recolored_svg(scene, group_hex_map, scale_stops_map)
+    svg_out, _ = export_recolored_svg(scene, group_hex_map, scale_stops_map, group_alpha_map=group_alpha_map)
     z = float(scale) if scale is not None else scene.preview_scale
     return render_svg_bytes_to_png(svg_out, zoom=z, background="#ffffff")
 
@@ -1623,8 +1731,17 @@ def export_recolored_svg(
     scene: SvgScene,
     group_hex_map: dict[str, str],
     scale_stops_map: dict[str, list[str]],
+    group_alpha_map: dict[str, float] | None = None,
 ) -> tuple[bytes, dict[str, Any]]:
     resolved_group_hex = dict(group_hex_map)
+    alpha_changed_groups: dict[str, float] = {}
+    if group_alpha_map:
+        for gid_a, raw_a in group_alpha_map.items():
+            if raw_a is not None and gid_a in scene.color_groups:
+                clamped_a = max(0.0, min(1.0, float(raw_a)))
+                if abs(clamped_a - scene.color_groups[gid_a].alpha) >= 0.005:
+                    alpha_changed_groups[gid_a] = clamped_a
+
     scale_modified: dict[str, bool] = {}
     scale_luts: dict[str, np.ndarray] = {}
 
@@ -1647,10 +1764,14 @@ def export_recolored_svg(
             idx = int(round(cg.continuous_t * 255.0))
             resolved_group_hex[gid] = srgb01_to_hex(lut[max(0, min(255, idx))])
 
-    any_changed = any(
-        resolved_group_hex.get(gid, cg.original_hex).upper() != cg.original_hex.upper()
-        for gid, cg in scene.color_groups.items()
-    ) or any(scale_modified.values())
+    any_changed = (
+        any(
+            resolved_group_hex.get(gid, cg.original_hex).upper() != cg.original_hex.upper()
+            for gid, cg in scene.color_groups.items()
+        )
+        or bool(alpha_changed_groups)
+        or any(scale_modified.values())
+    )
     if not any_changed:
         return scene.raw_svg_bytes, {
             "g0_evidence_bit_identical": True,
@@ -1707,23 +1828,46 @@ def export_recolored_svg(
             continue
         new_f: str | None = None
         new_s: str | None = None
+        new_fa: float | None = None
+        new_sa: float | None = None
+        anc_a = max(0.05, inst.anc_alpha)
+
         if inst.fill_gid and inst.fill_gid in resolved_group_hex:
             cand_f = resolved_group_hex[inst.fill_gid]
-            if cand_f.upper() != (inst.fill_hex or "").upper():
+            if cand_f.upper() != (inst.fill_hex or "").upper() or (
+                inst.use_ref_id and inst.use_ref_id in scene.defs_ids_to_strip_color
+            ):
                 new_f = cand_f
+            if inst.fill_gid in alpha_changed_groups:
+                new_fa = max(0.0, min(1.0, alpha_changed_groups[inst.fill_gid] / anc_a))
         elif inst.use_ref_id and inst.use_ref_id in scene.defs_ids_to_strip_color and inst.fill_hex:
             new_f = inst.fill_hex
 
         if inst.stroke_gid and inst.stroke_gid in resolved_group_hex:
             cand_s = resolved_group_hex[inst.stroke_gid]
-            if cand_s.upper() != (inst.stroke_hex or "").upper():
+            if cand_s.upper() != (inst.stroke_hex or "").upper() or (
+                inst.use_ref_id and inst.use_ref_id in scene.defs_ids_to_strip_color
+            ):
                 new_s = cand_s
+            if inst.stroke_gid in alpha_changed_groups:
+                new_sa = max(0.0, min(1.0, alpha_changed_groups[inst.stroke_gid] / anc_a))
         elif inst.use_ref_id and inst.use_ref_id in scene.defs_ids_to_strip_color and inst.stroke_hex:
             new_s = inst.stroke_hex
 
-        if new_f is not None or new_s is not None:
-            _apply_inline_paint(el, new_f, new_s)
-            mod_ops += (1 if new_f is not None else 0) + (1 if new_s is not None else 0)
+        if new_f is not None or new_s is not None or new_fa is not None or new_sa is not None:
+            _apply_inline_paint(
+                el,
+                new_f,
+                new_s,
+                fill_alpha_val=new_fa,
+                stroke_alpha_val=new_sa,
+                orig_fill_local_alpha=inst.fill_alpha / anc_a,
+                orig_stroke_local_alpha=inst.stroke_alpha / anc_a,
+            )
+            mod_ops += (
+                (1 if (new_f is not None or new_fa is not None) else 0)
+                + (1 if (new_s is not None or new_sa is not None) else 0)
+            )
 
     out_bytes = etree.tostring(root, xml_declaration=True, encoding="utf-8")
 

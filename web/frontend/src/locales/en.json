@@ -6,8 +6,8 @@
     "desktopOnlyBody": "Use a browser window at least 600 px wide to inspect figures accurately."
   },
   "landing": {
-    "headline": "New color for discovery, faithful to every datum",
-    "tagline": "Reimagine vector PDFs and SVGs from R, Python, Prism, or Illustrator while keeping every line and raw image intact.",
+    "headline": "Living color for discovery, true to every trace",
+    "tagline": "Lend fresh pigment to vector figures from R, Python, Prism, and Illustrator—without shifting a single line, point, or raw image.",
     "dropTitle": "Drop PDF or SVG here",
     "browseButton": "Choose file",
     "formats": "Vector PDF or SVG · Up to 50 MB recommended",
@@ -44,7 +44,7 @@
   },
   "onboarding": {
     "step1": "1. Hover palettes on the right to preview",
-    "step2": "2. Click any element to set Focus or lock a color",
+    "step2": "2. Click any mark to tune color, opacity, or split layers",
     "step3": "3. Export vector PDF, SVG, and R or Python code",
     "dismiss": "Dismiss"
   },
@@ -62,6 +62,7 @@
     "lockColor": "Lock color",
     "unlockColor": "Unlock color",
     "rename": "Rename",
+    "splitLayers": "Split overlaid layers (shapes / points)",
     "splitSameName": "Split from same-name group",
     "resetElement": "Reset to original",
     "showAllPanels": "Show all",
@@ -151,6 +152,9 @@
     "colorLabel": "Color",
     "customColor": "Custom",
     "hexLabel": "Hex color",
+    "opacityLabel": "Opacity",
+    "overlayBanner": "Overlaid layers (shapes & points bound)",
+    "splitLayersBtn": "Split layers",
     "tooCloseTo": "Too close to {{label}}",
     "distinguishableAll": "Distinguishable from other elements",
     "lockedHint": "Locked — stays when you switch palettes",
@@ -274,8 +278,8 @@
       "table": "Table (.csv/.xlsx)"
     },
     "landing": {
-      "headline": "Clear order for complex numbers, craft in every detail",
-      "tagline": "Keep every raw value intact while shaping headers, statistical pairs, and gentle color scales into native Excel and Word tables.",
+      "headline": "Myriad numbers on a quiet page, grace in every measure",
+      "tagline": "Leave every raw value untouched while weaving headers, statistical pairs, and gentle color scales into native Excel and Word tables.",
       "dropTitle": "Drop CSV, TSV, TXT, or XLSX here",
       "browseButton": "Choose table file",
       "pasteButton": "Paste data",

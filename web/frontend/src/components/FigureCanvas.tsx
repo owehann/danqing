@@ -19,6 +19,7 @@ export function FigureCanvas(): React.ReactElement | null {
   const hoveredPaletteId = useStudioStore((s) => s.hoveredPaletteId);
   const hoveredStyleId = useStudioStore((s) => s.hoveredStyleId);
   const hoveredSwatch = useStudioStore((s) => s.hoveredSwatch);
+  const hoveredAlpha = useStudioStore((s) => s.hoveredAlpha);
   const isComparingOriginal = useStudioStore((s) => s.isComparingOriginal);
   const splitCompareActive = useStudioStore((s) => s.splitCompareActive);
   const cvdMode = useStudioStore((s) => s.cvdMode);
@@ -144,6 +145,10 @@ export function FigureCanvas(): React.ReactElement | null {
       params.set("pe", hoveredSwatch.entityId);
       params.set("ph", hoveredSwatch.hex.replace("#", ""));
     }
+    if (hoveredAlpha) {
+      params.set("pe", hoveredAlpha.entityId);
+      params.set("pa", String(hoveredAlpha.alpha));
+    }
     if (zoomFactor > 1.5 && figure.kind === "pdf") {
       const hiScale = Math.min(5.0, +(figure.preview_scale * zoomFactor).toFixed(2));
       params.set("scale", String(hiScale));
@@ -152,7 +157,7 @@ export function FigureCanvas(): React.ReactElement | null {
       params.set("retry", String(retryNonce));
     }
     return `/api/v2/figures/${figure.figure_id}/render?${params.toString()}`;
-  }, [figure, hoveredPaletteId, hoveredStyleId, targetPanels, hoveredSwatch, zoomFactor, retryNonce]);
+  }, [figure, hoveredPaletteId, hoveredStyleId, targetPanels, hoveredSwatch, hoveredAlpha, zoomFactor, retryNonce]);
 
   // Abortable fetch + offscreen decode + silent auto-retry (prevents hover backlog & transient complex-PDF failures)
   useEffect(() => {
@@ -206,7 +211,7 @@ export function FigureCanvas(): React.ReactElement | null {
           }
           setIsUpdating(false);
           // Only show persistent error banner for committed state renders, not transient hover previews
-          if (!hoveredPaletteId && !hoveredSwatch) {
+          if (!hoveredPaletteId && !hoveredSwatch && !hoveredAlpha) {
             setRenderError(true);
           }
         }
@@ -219,7 +224,7 @@ export function FigureCanvas(): React.ReactElement | null {
       cancelled = true;
       controller.abort();
     };
-  }, [targetRenderUrl, hoveredPaletteId, hoveredSwatch]);
+  }, [targetRenderUrl, hoveredPaletteId, hoveredSwatch, hoveredAlpha]);
 
   // Load and decode pick_url into offscreen RGBA array
   useEffect(() => {
@@ -417,7 +422,11 @@ export function FigureCanvas(): React.ReactElement | null {
   }, [pickMap, figure, targetPanels, hoveredEntityId, selectedIds, catMaps, isComparingOriginal]);
 
   const lookupHitAtClient = useCallback(
-    (clientX: number, clientY: number): { entityId: string | null; panelId: string | null } => {
+    (
+      clientX: number,
+      clientY: number,
+      cycleFromEntityId?: string | null,
+    ): { entityId: string | null; panelId: string | null } => {
       const stage = stageRef.current;
       if (!stage || !pickMap) return { entityId: null, panelId: null };
       const rect = stage.getBoundingClientRect();
@@ -428,30 +437,58 @@ export function FigureCanvas(): React.ReactElement | null {
       const px = Math.min(pickMap.width - 1, Math.max(0, Math.floor(nx * pickMap.width)));
       const py = Math.min(pickMap.height - 1, Math.max(0, Math.floor(ny * pickMap.height)));
       const readCatAt = (x: number, y: number): number => {
+        if (x < 0 || x >= pickMap.width || y < 0 || y >= pickMap.height) return -1;
         const off = (y * pickMap.width + x) * 4;
         const r = pickMap.pixels[off];
         return r >= 1 && r <= 240 ? r - 1 + pickMap.pixels[off + 1] * 240 : -1;
       };
 
       const centerCat = readCatAt(px, py);
-      let directAreaHit: { entityId: string | null; panelId: string | null } | null = null;
+      let directPointHit: { entityId: string; panelId: string | null } | null = null;
+      let directAreaHit: { entityId: string; panelId: string | null } | null = null;
       if (centerCat >= 0) {
         const eid = catMaps.toEntity.get(centerCat) || null;
         const pid = catMaps.toPanel.get(centerCat) || null;
-        if (eid && catMaps.toMarkKind.get(centerCat) !== "area") {
-          return { entityId: eid, panelId: pid };
-        }
         if (eid) {
-          directAreaHit = { entityId: eid, panelId: pid };
+          if (catMaps.toMarkKind.get(centerCat) !== "area") {
+            directPointHit = { entityId: eid, panelId: pid };
+          } else {
+            directAreaHit = { entityId: eid, panelId: pid };
+          }
         }
       }
 
-      // Magnetic 4px priority snap for individual scatter points & hollow markers overlaid on boxes/bars/violins
+      // Check if `(px, py)` sits inside a hollow open-circle marker overlaid on an `area` shape
+      if (!directPointHit && directAreaHit) {
+        for (const rRing of [1, 2, 3]) {
+          const leftC = readCatAt(px - rRing, py);
+          const rightC = readCatAt(px + rRing, py);
+          if (leftC >= 0 && rightC >= 0 && catMaps.toMarkKind.get(leftC) !== "area") {
+            const le = catMaps.toEntity.get(leftC);
+            if (le && le === catMaps.toEntity.get(rightC)) {
+              directPointHit = { entityId: le, panelId: catMaps.toPanel.get(leftC) || null };
+              break;
+            }
+          }
+          const upC = readCatAt(px, py - rRing);
+          const downC = readCatAt(px, py + rRing);
+          if (upC >= 0 && downC >= 0 && catMaps.toMarkKind.get(upC) !== "area") {
+            const ue = catMaps.toEntity.get(upC);
+            if (ue && ue === catMaps.toEntity.get(downC)) {
+              directPointHit = { entityId: ue, panelId: catMaps.toPanel.get(upC) || null };
+              break;
+            }
+          }
+        }
+      }
+
+      // Scan local radius for magnetic standalone-dot snap (when cursor is on empty background)
+      // AND for underlying `area` / nearby `point` layer cycling when clicking overlapping layers!
       let bestPointD2 = 999;
-      let bestPointHit: { entityId: string | null; panelId: string | null } | null = null;
+      let bestPointHit: { entityId: string; panelId: string | null } | null = null;
       let bestNearAreaD2 = 999;
-      let bestNearAreaHit: { entityId: string | null; panelId: string | null } | null = null;
-      const maxR = 4;
+      let bestNearAreaHit: { entityId: string; panelId: string | null } | null = directAreaHit;
+      const maxR = 5;
       for (let dy = -maxR; dy <= maxR; dy++) {
         const yy = py + dy;
         if (yy < 0 || yy >= pickMap.height) continue;
@@ -467,21 +504,34 @@ export function FigureCanvas(): React.ReactElement | null {
           if (!eid) continue;
           const mk = catMaps.toMarkKind.get(cIdx) || "area";
           if (mk !== "area") {
-            if (d2 < bestPointD2) {
+            if (d2 <= 9 && d2 < bestPointD2) {
               bestPointD2 = d2;
               bestPointHit = { entityId: eid, panelId: catMaps.toPanel.get(cIdx) || null };
             }
-          } else if (!directAreaHit && d2 <= 9 && d2 < bestNearAreaD2) {
+          } else if (d2 < bestNearAreaD2 && (!directPointHit || eid !== directPointHit.entityId)) {
             bestNearAreaD2 = d2;
             bestNearAreaHit = { entityId: eid, panelId: catMaps.toPanel.get(cIdx) || null };
           }
         }
       }
 
-      if (bestPointHit) return bestPointHit;
-      if (directAreaHit) return directAreaHit;
-      if (bestNearAreaHit) return bestNearAreaHit;
-      return { entityId: null, panelId: null };
+      const primary =
+        directPointHit ||
+        directAreaHit ||
+        bestPointHit ||
+        (bestNearAreaD2 <= 9 ? bestNearAreaHit : null);
+      if (!primary) return { entityId: null, panelId: null };
+
+      // Click-through cycling: if user clicks again on an already-selected point sitting over a boxplot (or vice versa), cycle layers!
+      if (cycleFromEntityId && primary.entityId === cycleFromEntityId) {
+        if (directPointHit && bestNearAreaHit && bestNearAreaHit.entityId !== primary.entityId) {
+          return bestNearAreaHit;
+        }
+        if (directAreaHit && bestPointHit && bestPointHit.entityId !== primary.entityId) {
+          return bestPointHit;
+        }
+      }
+      return primary;
     },
     [pickMap, catMaps],
   );
@@ -613,7 +663,11 @@ export function FigureCanvas(): React.ReactElement | null {
           }}
           onClick={(e) => {
             if (spaceDown || draggingPan) return;
-            const hit = lookupHitAtClient(e.clientX, e.clientY);
+            const cycleFrom =
+              !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && selectedIds.length === 1
+                ? selectedIds[0]
+                : null;
+            const hit = lookupHitAtClient(e.clientX, e.clientY, cycleFrom);
             if (!hit.entityId) {
               selectEntity(null);
               return;

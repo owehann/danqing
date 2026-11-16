@@ -301,3 +301,87 @@ def test_api_v2_overlay_split_layers_and_corpus_form_scatter_pick(client: TestCl
     assert st_pts["entity_colors"][pts_el["entity_id"]] == "#D55E00"
     assert st_pts["entity_colors"][shp_el["entity_id"]].upper() == "#1F77B4"
     client.delete(f"/api/v2/figures/{fid_ov}")
+
+
+def test_v063_multilayer_preset_split_layers_and_lossless_opacity_pdf_svg(client: TestClient) -> None:
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    # 1. Verify homepage preset #3 (`cleveland_multilayer_svg`) exposes 3 multi-layer cohorts + Risk scale,
+    #    supports 1-click `split_layers` into (图形/线条/散点), and passes Gate G6 after `set_opacity`!
+    cat = client.get("/api/v2/palettes").json()
+    preset_ids = [p["preset_id"] for p in cat["presets"]]
+    assert "cleveland_multilayer_svg" in preset_ids
+
+    res_c = client.post("/api/v2/figures", data={"preset_id": "cleveland_multilayer_svg"}).json()
+    fid_c = res_c["figure_id"]
+    mc = client.get(f"/api/v2/figures/{fid_c}").json()
+    assert [p["panel_id"] for p in mc["panels"]] == ["Panel A", "Panel B", "Panel C"]
+    assert [e["label"] for e in mc["elements"]] == ["No CAD", "Mild-Mod CAD", "Severe CAD"]
+    assert all(e["has_overlay_layers"] is True for e in mc["elements"])
+    assert set(mc["elements"][0]["mark_kinds"]) == {"area", "line", "point"}
+    assert len(mc["continuous_scales"]) == 1
+    assert mc["continuous_scales"][0]["panel_id"] == "Panel C"
+
+    sp_c = client.patch(
+        f"/api/v2/figures/{fid_c}/state",
+        json={"action": "split_layers", "entity_id": mc["elements"][0]["entity_id"], "lang": "zh"},
+    ).json()
+    assert sp_c["structure_changed"] is True
+    assert len(sp_c["split_entity_ids"]) == 3
+    labels_after = [e["label"] for e in sp_c["elements"]]
+    assert "No CAD (图形)" in labels_after
+    assert "No CAD (线条)" in labels_after
+    assert "No CAD (散点)" in labels_after
+
+    shape_id = sp_c["split_entity_ids"][0]
+    op_svg = client.patch(
+        f"/api/v2/figures/{fid_c}/state",
+        json={"action": "set_opacity", "entity_id": shape_id, "opacity": 0.15},
+    ).json()
+    assert abs(op_svg["entity_meta"][shape_id]["alpha"] - 0.15) < 0.01
+    ver_svg = client.post(f"/api/v2/figures/{fid_c}/export/verify", json={"format": "svg"}).json()
+    assert ver_svg["checks"]["shapes_and_text_unchanged"] is True
+    client.delete(f"/api/v2/figures/{fid_c}")
+
+    # 2. Verify PDF lossless `/ExtGState` opacity (`set_opacity`) visibly changes rendered boxplot pixels & passes Gate G6!
+    fig, ax = plt.subplots(figsize=(4.0, 3.6))
+    vals = [10.0 + (i % 6) * 1.2 for i in range(12)]
+    xs = [1.0 + ((i % 4) - 1.5) * 0.04 for i in range(12)]
+    bp = ax.boxplot([vals], patch_artist=True, widths=0.5)
+    bp["boxes"][0].set(facecolor="#0072B2", alpha=0.95, edgecolor="#333333")
+    bp["medians"][0].set_color("#333333")
+    ax.scatter(xs, vals, s=30, c="#0072B2", alpha=0.95, edgecolors="#222222", linewidths=0.5, zorder=3)
+    buf_pdf = io.BytesIO()
+    fig.savefig(buf_pdf, format="pdf")
+    plt.close(fig)
+
+    up_p = client.post("/api/v2/figures?sync=true", files={"file": ("opaque_box.pdf", buf_pdf.getvalue())}).json()
+    fid_p = up_p["figure_id"]
+    mp0 = client.get(f"/api/v2/figures/{fid_p}").json()
+    img_before = _png(client.get(mp0["render_url"]).content)
+
+    # Even if user first picked a color (auto-locking `e_01`), `split_layers` unlocks both layers cleanly!
+    eid_p = mp0["elements"][0]["entity_id"]
+    client.patch(f"/api/v2/figures/{fid_p}/state", json={"action": "pick_color", "entity_id": eid_p, "hex_color": "#C85A53"})
+    sp_p = client.patch(f"/api/v2/figures/{fid_p}/state", json={"action": "split_layers", "entity_id": eid_p, "lang": "en"}).json()
+    box_eid = next(el["entity_id"] for el in sp_p["elements"] if "(shapes)" in el["label"])
+    pts_eid = next(el["entity_id"] for el in sp_p["elements"] if "(points)" in el["label"])
+
+    # Lower ONLY the boxplot opacity to 20% while recoloring boxplot to sky blue (#56B4E9) and keeping points crimson (#C85A53) at 95%
+    client.patch(f"/api/v2/figures/{fid_p}/state", json={"action": "pick_color", "entity_id": box_eid, "hex_color": "#56B4E9"})
+    op_p = client.patch(f"/api/v2/figures/{fid_p}/state", json={"action": "set_opacity", "entity_id": box_eid, "opacity": 0.20}).json()
+    img_low_alpha = _png(client.get(op_p["render_url"]).content)
+
+    op_hi = client.patch(f"/api/v2/figures/{fid_p}/state", json={"action": "set_opacity", "entity_id": box_eid, "opacity": 0.95}).json()
+    img_high_alpha = _png(client.get(op_hi["render_url"]).content)
+
+    # Boxplot region must be measurably lighter (closer to 255 white) at 20% opacity than at 95% opacity!
+    assert float(img_low_alpha.mean()) > float(img_high_alpha.mean()) + 1.2
+    assert float(np.abs(img_low_alpha - img_before).max()) > 40.0
+
+    ver_pdf = client.post(f"/api/v2/figures/{fid_p}/export/verify", json={"format": "pdf"}).json()
+    assert ver_pdf["checks"]["shapes_and_text_unchanged"] is True
+    client.delete(f"/api/v2/figures/{fid_p}")

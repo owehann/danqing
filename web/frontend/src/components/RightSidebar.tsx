@@ -4,6 +4,7 @@ import {
   ChevronDown,
   ExternalLink,
   Info,
+  Layers,
   Lock,
   RotateCcw,
   Search,
@@ -42,21 +43,40 @@ const TAB_KEYS: TabCategory[] = [
 ];
 
 function InspectorCard({ el }: { el: FigureElement }): React.ReactElement {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const selectEntity = useStudioStore((s) => s.selectEntity);
   const setElementRoles = useStudioStore((s) => s.setElementRoles);
   const pickElementColor = useStudioStore((s) => s.pickElementColor);
+  const setElementOpacity = useStudioStore((s) => s.setElementOpacity);
+  const splitElementLayers = useStudioStore((s) => s.splitElementLayers);
   const toggleElementLock = useStudioStore((s) => s.toggleElementLock);
   const resetElement = useStudioStore((s) => s.resetElement);
   const setHoveredSwatch = useStudioStore((s) => s.setHoveredSwatch);
+  const setHoveredAlpha = useStudioStore((s) => s.setHoveredAlpha);
 
+  const effectiveAlphaPct = Math.max(5, Math.min(100, Math.round((el.alpha ?? 1) * 100)));
   const [hexDraft, setHexDraft] = useState(el.current_hex);
+  const [alphaPctDraft, setAlphaPctDraft] = useState<number>(effectiveAlphaPct);
   const colorPickerId = useId();
   const hexInputId = useId();
+  const opacityInputId = useId();
 
   useEffect(() => {
     setHexDraft(el.current_hex);
   }, [el.current_hex]);
+
+  useEffect(() => {
+    setAlphaPctDraft(effectiveAlphaPct);
+  }, [el.entity_id, effectiveAlphaPct]);
+
+  const commitOpacityPct = (pctVal: number): void => {
+    const clamped = Math.max(5, Math.min(100, Math.round(pctVal)));
+    setAlphaPctDraft(clamped);
+    setHoveredAlpha(null);
+    if (Math.abs(clamped - effectiveAlphaPct) >= 1) {
+      void setElementOpacity(el.entity_id, +(clamped / 100).toFixed(2));
+    }
+  };
 
   const roles: ElementRole[] = ["focus", "normal", "background"];
   const roleLabelKey: Record<ElementRole, string> = {
@@ -102,6 +122,22 @@ function InspectorCard({ el }: { el: FigureElement }): React.ReactElement {
           <X size={14} strokeWidth={1.5} aria-hidden="true" />
         </button>
       </div>
+
+      {el.has_overlay_layers ? (
+        <div className="dq-inspector-overlay-box">
+          <div className="dq-inspector-overlay-box__lead">
+            <Layers size={14} strokeWidth={1.6} aria-hidden="true" />
+            <span>{t("inspector.overlayBanner")}</span>
+          </div>
+          <button
+            type="button"
+            className="dq-btn dq-btn--primary dq-inspector-overlay-box__btn"
+            onClick={() => void splitElementLayers(el.entity_id, i18n.language)}
+          >
+            {t("inspector.splitLayersBtn")}
+          </button>
+        </div>
+      ) : null}
 
       <div className="dq-segmented" role="group" aria-label={t("inspector.roleLabel")}>
         {roles.map((r) => (
@@ -170,6 +206,42 @@ function InspectorCard({ el }: { el: FigureElement }): React.ReactElement {
             }
           }}
         />
+      </div>
+
+      <div className="dq-opacity-block">
+        <div className="dq-opacity-head">
+          <label htmlFor={opacityInputId}>{t("inspector.opacityLabel")}</label>
+          <span className="dq-opacity-pct">{alphaPctDraft}%</span>
+        </div>
+        <input
+          id={opacityInputId}
+          type="range"
+          min={5}
+          max={100}
+          step={5}
+          className="dq-opacity-slider"
+          value={alphaPctDraft}
+          onChange={(e) => {
+            const nextPct = Number(e.target.value);
+            setAlphaPctDraft(nextPct);
+            setHoveredAlpha({ entityId: el.entity_id, alpha: +(nextPct / 100).toFixed(2) });
+          }}
+          onPointerUp={(e) => commitOpacityPct(Number((e.target as HTMLInputElement).value))}
+          onKeyUp={(e) => commitOpacityPct(Number((e.target as HTMLInputElement).value))}
+          onBlur={() => commitOpacityPct(alphaPctDraft)}
+        />
+        <div className="dq-opacity-chips">
+          {[25, 45, 70, 100].map((pct) => (
+            <button
+              key={pct}
+              type="button"
+              className={`dq-opacity-chip${Math.abs(alphaPctDraft - pct) <= 2 ? " dq-opacity-chip--active" : ""}`}
+              onClick={() => commitOpacityPct(pct)}
+            >
+              {pct}%
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="dq-inspector__hint">

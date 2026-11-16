@@ -66,6 +66,7 @@ class ColorGroup:
     # Matched legend/label text if discovered locally inside this panel
     local_label: str = ""
     mark_kind: Literal["area", "point", "line"] = "area"
+    current_alpha: float | None = None
     is_continuous_member: bool = False
     continuous_scale_id: str | None = None
     continuous_t: float = 0.0
@@ -122,6 +123,8 @@ class SemanticEntity:
     member_group_ids: list[str]
     original_hex: str
     current_hex: str
+    original_alpha: float = 1.0
+    alpha: float | None = None
     encoding: EncodingKind = "categorical"
     tier: EmphasisTier = "supporting"
     tier_reason: str = "标准数据组"

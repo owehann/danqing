@@ -1133,7 +1133,7 @@ dialog::backdrop {
 /* Inspector Card */
 .dq-inspector {
   flex-shrink: 0;
-  max-height: 34vh;
+  max-height: 44vh;
   overflow-y: auto;
   padding: 10px 12px;
   border-bottom: 1px solid var(--border);
@@ -1141,6 +1141,32 @@ dialog::backdrop {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.dq-inspector-overlay-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--bg-panel);
+}
+
+.dq-inspector-overlay-box__lead {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  color: var(--text-2);
+}
+
+.dq-inspector-overlay-box__btn {
+  min-height: 24px;
+  padding: 2px 8px;
+  font-size: 11.5px;
 }
 
 .dq-inspector__head {
@@ -1228,6 +1254,56 @@ dialog::backdrop {
   border-radius: 4px;
   font-family: var(--font-mono);
   font-size: 12px;
+}
+
+.dq-opacity-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dq-opacity-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-2);
+}
+
+.dq-opacity-pct {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-1);
+}
+
+.dq-opacity-slider {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.dq-opacity-chips {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.dq-opacity-chip {
+  padding: 2px 4px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-panel);
+  color: var(--text-2);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.dq-opacity-chip--active {
+  border-color: var(--accent);
+  background: var(--bg-selected);
+  color: var(--text-1);
+  font-weight: 600;
 }
 
 .dq-inspector__hint {

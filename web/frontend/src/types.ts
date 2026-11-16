@@ -93,6 +93,11 @@ export interface FigureElement {
   member_group_ids: string[];
   original_hex: string;
   current_hex: string;
+  alpha?: number;
+  original_alpha?: number;
+  custom_alpha?: number | null;
+  mark_kinds?: Array<"area" | "point" | "line">;
+  has_overlay_layers?: boolean;
   role: ElementRole;
   locked: boolean;
   unlinked: boolean;
