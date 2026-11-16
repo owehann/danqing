@@ -129,28 +129,29 @@ function ElementRow({ el, selected, hovered }: ElementRowProps): React.ReactElem
           }}
           onDoubleClick={() => setEditing(true)}
         >
-          <span className="dq-element-label">{el.label}</span>
-          {el.role === "focus" ? (
-            <span className="dq-role-icon" title={t("elements.roleFocus")}>
-              <Star size={12} strokeWidth={1.8} aria-hidden="true" />
-            </span>
-          ) : null}
-          {el.role === "background" ? (
-            <span className="dq-role-icon" title={t("elements.roleBackground")}>
-              <CircleDashed size={12} strokeWidth={1.8} aria-hidden="true" />
-            </span>
-          ) : null}
-          {el.locked ? (
-            <span className="dq-role-icon" title={t("elements.lockColor")}>
-              <Lock size={12} strokeWidth={1.8} aria-hidden="true" />
-            </span>
+          <span className="dq-element-title-line">
+            <span className="dq-element-label">{el.label}</span>
+            {el.role === "focus" ? (
+              <span className="dq-role-icon" title={t("elements.roleFocus")}>
+                <Star size={12} strokeWidth={1.8} aria-hidden="true" />
+              </span>
+            ) : null}
+            {el.role === "background" ? (
+              <span className="dq-role-icon" title={t("elements.roleBackground")}>
+                <CircleDashed size={12} strokeWidth={1.8} aria-hidden="true" />
+              </span>
+            ) : null}
+            {el.locked ? (
+              <span className="dq-role-icon" title={t("elements.lockColor")}>
+                <Lock size={12} strokeWidth={1.8} aria-hidden="true" />
+              </span>
+            ) : null}
+          </span>
+          {el.panels.length > 0 ? (
+            <span className="dq-element-panels">{el.panels.join(", ")}</span>
           ) : null}
         </button>
       )}
-
-      {el.panels.length > 0 ? (
-        <span className="dq-element-panels">{el.panels.join(", ")}</span>
-      ) : null}
 
       <button
         ref={moreBtnRef}
