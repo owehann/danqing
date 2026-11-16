@@ -235,3 +235,69 @@ def test_corpus_preview_equals_export_sample(client: TestClient) -> None:
             ex = _render_pdf_bytes(ex_resp.content, meta["preview_scale"], 0)
             assert (np.abs(pv - ex).max(axis=2) > 20).mean() < 0.005
         client.delete(f"/api/v2/figures/{fid}")
+
+
+def test_api_v2_overlay_split_layers_and_corpus_form_scatter_pick(client: TestClient) -> None:
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    # 1. Corpus Matplotlib PDF scatter plots (`c09` UMAP `/P* Do` & `c12` Volcano `/M* Do`) must pick & recolor all points
+    for fname in ("c09_mpl_umap_22clusters.pdf", "c12_mpl_volcano_deg.pdf"):
+        fp = CORPUS_DIR / fname
+        res = client.post("/api/v2/figures?sync=true", files={"file": (fp.name, fp.read_bytes())}).json()
+        fid = res["figure_id"]
+        meta = client.get(f"/api/v2/figures/{fid}").json()
+        total_prims = sum(el["primitive_count"] for el in meta["elements"])
+        assert total_prims >= 100, f"{fname}: expected >= 100 scatter marks, got {total_prims}"
+        idm = _png(client.get(meta["pick_url"]).content).astype(np.int32)
+        base = _png(client.get(meta["render_url"]).content)
+        R, G = idm[..., 0], idm[..., 1]
+        cat_idx = (R - 1) + G * 240
+        ent0 = meta["elements"][0]
+        idxs = [e["cat_index"] for e in meta["categorical_lut"] if e["entity_id"] == ent0["entity_id"]]
+        mask = (R >= 1) & (R <= 240) & np.isin(cat_idx, idxs)
+        assert int(mask.sum()) >= 80
+        probed = _png(client.get(f"{meta['render_url']}&pe={ent0['entity_id']}&ph=00FF00").content)
+        changed = np.abs(probed - base).max(axis=2) > 30
+        assert changed[mask].mean() > 0.5
+        client.delete(f"/api/v2/figures/{fid}")
+
+    # 2. Single-panel Boxplot + Overlaid Scatter PDF: `split_same_name` unlinks shapes vs individual points
+    fig, ax = plt.subplots(figsize=(4.5, 4.0))
+    vals = [10.0 + (i % 7) * 1.1 for i in range(14)]
+    xs = [1.0 + ((i % 5) - 2) * 0.04 for i in range(14)]
+    bp = ax.boxplot([vals], patch_artist=True, widths=0.45)
+    bp["boxes"][0].set(facecolor="#1f77b4", alpha=0.35, edgecolor="#444444")
+    bp["medians"][0].set_color("#444444")
+    ax.scatter(xs, vals, s=32, c="#1f77b4", alpha=0.80, edgecolors="#222222", linewidths=0.5, zorder=3)
+    buf = io.BytesIO()
+    fig.savefig(buf, format="pdf")
+    plt.close(fig)
+
+    up = client.post("/api/v2/figures?sync=true", files={"file": ("single_overlay.pdf", buf.getvalue())}).json()
+    fid_ov = up["figure_id"]
+    m0 = client.get(f"/api/v2/figures/{fid_ov}").json()
+    assert len(m0["elements"]) == 1
+    eid0 = m0["elements"][0]["entity_id"]
+    assert len(m0["elements"][0]["member_group_ids"]) == 2
+    assert {e["mark_kind"] for e in m0["categorical_lut"]} == {"area", "point"}
+
+    sp_res = client.patch(
+        f"/api/v2/figures/{fid_ov}/state",
+        json={"action": "split_same_name", "entity_id": eid0},
+    ).json()
+    assert sp_res["structure_changed"] is True
+    assert len(sp_res["elements"]) == 2
+    pts_el = next(el for el in sp_res["elements"] if "(points)" in el["label"])
+    shp_el = next(el for el in sp_res["elements"] if "(shapes)" in el["label"])
+
+    # Recolor ONLY the overlaid points to crimson while keeping the underlying boxplot blue
+    st_pts = client.patch(
+        f"/api/v2/figures/{fid_ov}/state",
+        json={"action": "pick_color", "entity_id": pts_el["entity_id"], "hex_color": "#D55E00"},
+    ).json()
+    assert st_pts["entity_colors"][pts_el["entity_id"]] == "#D55E00"
+    assert st_pts["entity_colors"][shp_el["entity_id"]].upper() == "#1F77B4"
+    client.delete(f"/api/v2/figures/{fid_ov}")

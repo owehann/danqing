@@ -677,6 +677,7 @@ def _build_categorical_lut(p: ParsedPdfScene | SvgScene, sr: SolveResult) -> lis
             "entity_id": gid_to_eid.get(cg.group_id, ""),
             "panel_id": cg.panel_id,
             "role": cg.role,
+            "mark_kind": getattr(cg, "mark_kind", "area"),
             "original_hex": cg.original_hex,
             "current_hex": sr.group_hex.get(cg.group_id, cg.current_hex),
         }
@@ -1561,16 +1562,11 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                     hx = f"#{hx}"
                 ent = p.entities[req.entity_id]
                 ent.current_hex = hx
-                # Spec 4.6: clicking a swatch or custom color automatically locks the element!
+                # Spec 4.6: clicking a swatch or custom color automatically locks the element,
+                # while keeping `is_original_mode` intact so all other unlocked elements stay at their original colors!
                 ent.locked = True
                 if ws.keep_consistent:
                     ws.manuscript_registry[ent.label.strip().lower()] = hx
-                if sess.is_original_mode:
-                    # Lock all OTHER elements at their original colors if user edits one element before choosing a palette!
-                    for oid, oent in p.entities.items():
-                        if oid != req.entity_id:
-                            oent.current_hex = oent.original_hex
-                    sess.is_original_mode = False
         elif req.action == "set_lock" and req.entity_id is not None and req.locked is not None:
             if req.entity_id in p.entities:
                 p.entities[req.entity_id].locked = bool(req.locked)
@@ -1581,11 +1577,12 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
         elif req.action == "split_same_name" and req.entity_id:
             if req.entity_id in p.entities:
                 ent = p.entities[req.entity_id]
-                if len(ent.panels) > 1 and len(ent.member_group_ids) > 1:
+                valid_gids = [gid for gid in ent.member_group_ids if gid in p.color_groups]
+                if len(valid_gids) > 1:
                     by_panel: dict[str, list[str]] = {}
-                    for gid in ent.member_group_ids:
-                        if gid in p.color_groups:
-                            by_panel.setdefault(p.color_groups[gid].panel_id, []).append(gid)
+                    for gid in valid_gids:
+                        by_panel.setdefault(p.color_groups[gid].panel_id, []).append(gid)
+                    used_eids = set(p.entities.keys())
                     if len(by_panel) > 1:
                         structure_changed = True
                         new_entities: dict[str, SemanticEntity] = {}
@@ -1594,7 +1591,15 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                                 new_entities[k_eid] = k_ent
                                 continue
                             for idx_sp, (sp_panel, gids) in enumerate(by_panel.items()):
-                                sub_id = req.entity_id if idx_sp == 0 else f"{req.entity_id}_p{idx_sp+1}"
+                                if idx_sp == 0:
+                                    sub_id = req.entity_id
+                                else:
+                                    sub_id = f"{req.entity_id}_p{idx_sp+1}"
+                                    seq_i = 2
+                                    while sub_id in used_eids or sub_id in new_entities:
+                                        sub_id = f"{req.entity_id}_p{idx_sp+1}_{seq_i}"
+                                        seq_i += 1
+                                used_eids.add(sub_id)
                                 cg0 = p.color_groups[gids[0]]
                                 new_entities[sub_id] = SemanticEntity(
                                     entity_id=sub_id,
@@ -1603,6 +1608,41 @@ def patch_v2_figure_state(figure_id: str, req: PatchStateRequest) -> dict[str, A
                                     panels=[sp_panel],
                                     member_group_ids=gids,
                                     original_hex=cg0.original_hex,
+                                    current_hex=ent.current_hex,
+                                    tier=ent.tier,
+                                    locked=ent.locked,
+                                    unlinked=True,
+                                )
+                        p.entities = new_entities
+                    else:
+                        # Single-panel overlaying graph (`area`/`line` + `point` groups): split into independent layers!
+                        structure_changed = True
+                        new_entities = {}
+                        kind_suffix = {"point": "points", "area": "shapes", "line": "lines"}
+                        for k_eid, k_ent in p.entities.items():
+                            if k_eid != req.entity_id:
+                                new_entities[k_eid] = k_ent
+                                continue
+                            for idx_lg, gid in enumerate(valid_gids):
+                                if idx_lg == 0:
+                                    sub_id = req.entity_id
+                                else:
+                                    sub_id = f"{req.entity_id}_l{idx_lg+1}"
+                                    seq_i = 2
+                                    while sub_id in used_eids or sub_id in new_entities:
+                                        sub_id = f"{req.entity_id}_l{idx_lg+1}_{seq_i}"
+                                        seq_i += 1
+                                used_eids.add(sub_id)
+                                cg_l = p.color_groups[gid]
+                                mk_tag = kind_suffix.get(getattr(cg_l, "mark_kind", "area"), f"layer {idx_lg+1}")
+                                sub_lbl = f"{ent.label} ({mk_tag})"[:64]
+                                new_entities[sub_id] = SemanticEntity(
+                                    entity_id=sub_id,
+                                    label=sub_lbl,
+                                    category_group=cg_l.panel_id,
+                                    panels=[cg_l.panel_id],
+                                    member_group_ids=[gid],
+                                    original_hex=cg_l.original_hex,
                                     current_hex=ent.current_hex,
                                     tier=ent.tier,
                                     locked=ent.locked,
@@ -1704,8 +1744,12 @@ def _render_figure_with_cache(
     valid_prev_panels = tuple(pid for pid in preview_panels if pid in set(all_panel_ids))
 
     # Instant 0 ms shortcut when displaying unmodified original figure at base preview scale
+    has_manual_diff = any(
+        e.locked and e.current_hex.upper() != e.original_hex.upper() for e in p.entities.values()
+    ) or any(cs.inverted_polarity for cs in p.continuous_scales.values())
     if (
         sess.is_original_mode
+        and not has_manual_diff
         and not sess.panel_palettes
         and not pal_norm
         and not eff_style

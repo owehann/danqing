@@ -106,6 +106,7 @@ export interface CategoricalLutEntry {
   entity_id: string;
   panel_id: string;
   role: string;
+  mark_kind?: "area" | "point" | "line";
   original_hex: string;
   current_hex: string;
 }

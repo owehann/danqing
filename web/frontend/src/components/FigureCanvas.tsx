@@ -247,22 +247,24 @@ export function FigureCanvas(): React.ReactElement | null {
     };
   }, [figure?.figure_id, figure?.pick_url]);
 
-  // Map cat_index -> entity_id & panel_id
+  // Map cat_index -> entity_id, panel_id & mark_kind
   const catMaps = useMemo(() => {
     const toEntity = new Map<number, string>();
     const toPanel = new Map<number, string>();
+    const toMarkKind = new Map<number, string>();
     const entityToCats = new Map<string, Set<number>>();
     if (figure) {
       for (const entry of figure.categorical_lut) {
         toEntity.set(entry.cat_index, entry.entity_id);
         toPanel.set(entry.cat_index, entry.panel_id);
+        toMarkKind.set(entry.cat_index, entry.mark_kind || "area");
         if (!entityToCats.has(entry.entity_id)) {
           entityToCats.set(entry.entity_id, new Set());
         }
         entityToCats.get(entry.entity_id)!.add(entry.cat_index);
       }
     }
-    return { toEntity, toPanel, entityToCats };
+    return { toEntity, toPanel, toMarkKind, entityToCats };
   }, [figure]);
 
   // Draw hover dim veil (60%) + 2px white + 1px black contour for hovered / selected elements
@@ -425,14 +427,60 @@ export function FigureCanvas(): React.ReactElement | null {
       if (nx < 0 || nx > 1 || ny < 0 || ny > 1) return { entityId: null, panelId: null };
       const px = Math.min(pickMap.width - 1, Math.max(0, Math.floor(nx * pickMap.width)));
       const py = Math.min(pickMap.height - 1, Math.max(0, Math.floor(ny * pickMap.height)));
-      const offset = (py * pickMap.width + px) * 4;
-      const r = pickMap.pixels[offset];
-      if (r >= 1 && r <= 240) {
-        const catIdx = r - 1 + pickMap.pixels[offset + 1] * 240;
-        const eid = catMaps.toEntity.get(catIdx) || null;
-        const pid = catMaps.toPanel.get(catIdx) || null;
-        return { entityId: eid, panelId: pid };
+      const readCatAt = (x: number, y: number): number => {
+        const off = (y * pickMap.width + x) * 4;
+        const r = pickMap.pixels[off];
+        return r >= 1 && r <= 240 ? r - 1 + pickMap.pixels[off + 1] * 240 : -1;
+      };
+
+      const centerCat = readCatAt(px, py);
+      let directAreaHit: { entityId: string | null; panelId: string | null } | null = null;
+      if (centerCat >= 0) {
+        const eid = catMaps.toEntity.get(centerCat) || null;
+        const pid = catMaps.toPanel.get(centerCat) || null;
+        if (eid && catMaps.toMarkKind.get(centerCat) !== "area") {
+          return { entityId: eid, panelId: pid };
+        }
+        if (eid) {
+          directAreaHit = { entityId: eid, panelId: pid };
+        }
       }
+
+      // Magnetic 4px priority snap for individual scatter points & hollow markers overlaid on boxes/bars/violins
+      let bestPointD2 = 999;
+      let bestPointHit: { entityId: string | null; panelId: string | null } | null = null;
+      let bestNearAreaD2 = 999;
+      let bestNearAreaHit: { entityId: string | null; panelId: string | null } | null = null;
+      const maxR = 4;
+      for (let dy = -maxR; dy <= maxR; dy++) {
+        const yy = py + dy;
+        if (yy < 0 || yy >= pickMap.height) continue;
+        for (let dx = -maxR; dx <= maxR; dx++) {
+          if (dx === 0 && dy === 0) continue;
+          const d2 = dx * dx + dy * dy;
+          if (d2 > maxR * maxR) continue;
+          const xx = px + dx;
+          if (xx < 0 || xx >= pickMap.width) continue;
+          const cIdx = readCatAt(xx, yy);
+          if (cIdx < 0) continue;
+          const eid = catMaps.toEntity.get(cIdx) || null;
+          if (!eid) continue;
+          const mk = catMaps.toMarkKind.get(cIdx) || "area";
+          if (mk !== "area") {
+            if (d2 < bestPointD2) {
+              bestPointD2 = d2;
+              bestPointHit = { entityId: eid, panelId: catMaps.toPanel.get(cIdx) || null };
+            }
+          } else if (!directAreaHit && d2 <= 9 && d2 < bestNearAreaD2) {
+            bestNearAreaD2 = d2;
+            bestNearAreaHit = { entityId: eid, panelId: catMaps.toPanel.get(cIdx) || null };
+          }
+        }
+      }
+
+      if (bestPointHit) return bestPointHit;
+      if (directAreaHit) return directAreaHit;
+      if (bestNearAreaHit) return bestNearAreaHit;
       return { entityId: null, panelId: null };
     },
     [pickMap, catMaps],

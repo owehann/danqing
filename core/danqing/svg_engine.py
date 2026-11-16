@@ -404,6 +404,20 @@ def _local_shape_bbox(
         return None
     if local == "path":
         return _path_local_bbox(el.get("d"))
+    if local in ("g", "symbol"):
+        ub: list[float] | None = None
+        for ch in el:
+            if not isinstance(ch.tag, str) or etree.QName(ch).localname in _SKIP_CONTAINERS:
+                continue
+            cb = _local_shape_bbox(ch, defs_by_id, view_w, view_h)
+            if cb is not None:
+                c_mat = _parse_svg_transform(ch.get("transform"))
+                xb = _xform_bbox(c_mat, *cb)
+                if ub is None:
+                    ub = [xb[0], xb[1], xb[2], xb[3]]
+                else:
+                    ub = [min(ub[0], xb[0]), min(ub[1], xb[1]), max(ub[2], xb[2]), max(ub[3], xb[3])]
+        return (ub[0], ub[1], ub[2], ub[3]) if ub is not None else None
     if local == "use":
         ux = _parse_len(el.get("x"), 0.0, view_w)
         uy = _parse_len(el.get("y"), 0.0, view_h)
@@ -441,6 +455,9 @@ class SvgPaintInstance:
     is_bg_white: bool = False
     use_ref_id: str | None = None
     alpha: float = 1.0
+    is_dashed: bool = False
+    in_axis_group: bool = False
+    is_line_only: bool = False
 
 
 @dataclass
@@ -502,7 +519,11 @@ def _extract_grad_id_ref(val: str | None) -> str | None:
 
 
 def _detect_svg_panels(
-    texts: list[SvgTextItem], width: float, height: float, filename: str
+    texts: list[SvgTextItem],
+    width: float,
+    height: float,
+    filename: str,
+    clip_rects: list[tuple[float, float, float, float]] | None = None,
 ) -> list[PanelBox]:
     tags = [
         t
@@ -513,33 +534,84 @@ def _detect_svg_panels(
     for t in sorted(tags, key=lambda x: (-x.font_size, x.bbox[1], x.bbox[0])):
         if t.text not in seen_letters:
             seen_letters[t.text] = t
-    if len(seen_letters) < 2 or "A" not in seen_letters:
-        return [PanelBox(panel_id="Panel A", title=filename.rsplit(".", 1)[0], bbox=(0.0, 0.0, width, height))]
+    if len(seen_letters) >= 2 and "A" in seen_letters:
+        ordered = sorted(seen_letters.values(), key=lambda x: x.text)
+        y_vals = sorted(t.bbox[1] for t in ordered)
+        row_splits: list[float] = [0.0]
+        cur_row = [y_vals[0]]
+        for y in y_vals[1:]:
+            if y - cur_row[-1] > 0.18 * height:
+                row_splits.append(max(0.0, y - 10.0))
+                cur_row = [y]
+            else:
+                cur_row.append(y)
+        row_splits.append(height)
 
-    ordered = sorted(seen_letters.values(), key=lambda x: x.text)
-    y_vals = sorted(t.bbox[1] for t in ordered)
-    row_splits: list[float] = [0.0]
-    cur_row = [y_vals[0]]
-    for y in y_vals[1:]:
-        if y - cur_row[-1] > 0.18 * height:
-            row_splits.append(max(0.0, y - 10.0))
-            cur_row = [y]
-        else:
-            cur_row.append(y)
-    row_splits.append(height)
+        panels: list[PanelBox] = []
+        for r_i in range(len(row_splits) - 1):
+            ry0, ry1 = row_splits[r_i], row_splits[r_i + 1]
+            row_tags = sorted([t for t in ordered if ry0 - 12.0 <= t.bbox[1] < ry1], key=lambda x: x.bbox[0])
+            if not row_tags:
+                continue
+            col_splits = [0.0] + [max(0.0, rt.bbox[0] - 8.0) for rt in row_tags[1:]] + [width]
+            for c_i, rt in enumerate(row_tags):
+                cx0, cx1 = col_splits[c_i], col_splits[c_i + 1]
+                pid = f"Panel {rt.text}"
+                panels.append(PanelBox(panel_id=pid, title=pid, bbox=(round(cx0, 2), round(ry0, 2), round(cx1, 2), round(ry1, 2))))
+        if panels:
+            return panels
 
-    panels: list[PanelBox] = []
-    for r_i in range(len(row_splits) - 1):
-        ry0, ry1 = row_splits[r_i], row_splits[r_i + 1]
-        row_tags = sorted([t for t in ordered if ry0 - 12.0 <= t.bbox[1] < ry1], key=lambda x: x.bbox[0])
-        if not row_tags:
-            continue
-        col_splits = [0.0] + [max(0.0, rt.bbox[0] - 8.0) for rt in row_tags[1:]] + [width]
-        for c_i, rt in enumerate(row_tags):
-            cx0, cx1 = col_splits[c_i], col_splits[c_i + 1]
-            pid = f"Panel {rt.text}"
-            panels.append(PanelBox(panel_id=pid, title=pid, bbox=(round(cx0, 2), round(ry0, 2), round(cx1, 2), round(ry1, 2))))
-    return panels or [PanelBox(panel_id="Panel A", title=filename.rsplit(".", 1)[0], bbox=(0.0, 0.0, width, height))]
+    # Fallback for multi-subplot SVGs without single-letter A/B tags (e.g. Matplotlib/Seaborn `<clipPath>` subplots)
+    if clip_rects:
+        page_area = width * height
+        cands: list[tuple[float, float, float, float]] = []
+        for x0, y0, x1, y1 in clip_rects:
+            w_c, h_c = x1 - x0, y1 - y0
+            a_c = w_c * h_c
+            if w_c < 90.0 or h_c < 90.0 or a_c > 0.90 * page_area or a_c < 0.035 * page_area:
+                continue
+            if any(
+                abs(x0 - cx0) < 12.0 and abs(y0 - cy0) < 12.0 and abs(x1 - cx1) < 12.0 and abs(y1 - cy1) < 12.0
+                for cx0, cy0, cx1, cy1 in cands
+            ):
+                continue
+            cands.append((x0, y0, x1, y1))
+        outer: list[tuple[float, float, float, float]] = []
+        for i, (ax0, ay0, ax1, ay1) in enumerate(cands):
+            a_area = (ax1 - ax0) * (ay1 - ay0)
+            if any(
+                i != j
+                and (bx1 - bx0) * (by1 - by0) > a_area * 1.15
+                and ax0 >= bx0 - 4.0
+                and ay0 >= by0 - 4.0
+                and ax1 <= bx1 + 4.0
+                and ay1 <= by1 + 4.0
+                for j, (bx0, by0, bx1, by1) in enumerate(cands)
+            ):
+                continue
+            outer.append((ax0, ay0, ax1, ay1))
+        if len(outer) >= 2:
+            outer.sort(key=lambda b: (round(b[1] / 90.0), b[0]))
+            clip_panels: list[PanelBox] = []
+            for idx_p, (x0, y0, x1, y1) in enumerate(outer):
+                pid = f"Panel {chr(ord('A') + idx_p)}" if idx_p < 26 else f"Panel {idx_p + 1}"
+                title = pid
+                best_ty = 1e9
+                for t in texts:
+                    if len(t.text) < 4 or t.text.replace(".", "").isdigit():
+                        continue
+                    tx = 0.5 * (t.bbox[0] + t.bbox[2])
+                    ty = 0.5 * (t.bbox[1] + t.bbox[3])
+                    if x0 <= tx <= x1 and max(0.0, y0 - 36.0) <= ty <= y0 + 0.20 * (y1 - y0):
+                        if ty < best_ty and (t.bbox[2] - t.bbox[0]) > 28.0:
+                            best_ty = ty
+                            title = t.text
+                clip_panels.append(
+                    PanelBox(panel_id=pid, title=title, bbox=(round(x0, 2), round(y0, 2), round(x1, 2), round(y1, 2)))
+                )
+            return clip_panels
+
+    return [PanelBox(panel_id="Panel A", title=filename.rsplit(".", 1)[0], bbox=(0.0, 0.0, width, height))]
 
 
 def _assign_panel(bbox: tuple[float, float, float, float], panels: list[PanelBox]) -> str:
@@ -577,19 +649,26 @@ def _bind_svg_legend_labels(
                 if gid and gid in color_groups and not color_groups[gid].is_continuous_member:
                     raw_keys.append((inst.panel_id, gid, inst.bbox, color_groups[gid].primitive_count))
 
-    cand_matches: list[tuple[str, str, tuple[float, float, float, float], SvgTextItem, float]] = []
+    cand_matches: list[tuple[str, str, tuple[float, float, float, float], SvgTextItem, float, bool]] = []
     for pid, gid, kbox, pcnt in raw_keys:
         pb = panel_map[pid].bbox
         rel_x = (kbox[0] - pb[0]) / max(1.0, pb[2] - pb[0])
         rel_y = (kbox[1] - pb[1]) / max(1.0, pb[3] - pb[1])
-        margin_bonus = 35.0 if (rel_x > 0.62 or rel_x < 0.25 or rel_y > 0.78 or rel_y < 0.20) else 0.0
+        in_margin = bool(rel_x > 0.62 or rel_x < 0.25 or rel_y > 0.78 or rel_y < 0.20)
+        margin_bonus = 35.0 if in_margin else 0.0
         single_bonus = 15.0 if pcnt <= 4 else 0.0
+        fill_bonus = 2.5 if color_groups[gid].role == "fill" else 0.0
         scx = 0.5 * (kbox[0] + kbox[2])
         scy = 0.5 * (kbox[1] + kbox[3])
 
-        for t in panel_texts.get(pid, []):
+        cand_texts = texts if (in_margin and len(panels) > 1) else panel_texts.get(pid, [])
+        for t in cand_texts:
             txt_clean = t.text.strip()
-            if not txt_clean or re.fullmatch(r"[+-]?\d+(?:[.,]\d+)?%?", txt_clean):
+            if (
+                not txt_clean
+                or re.fullmatch(r"[+-]?\d+(?:[.,]\d+)?%?", txt_clean)
+                or re.fullmatch(r"[\u25a0-\u25ff\u2022\u2219\u2605\u2606\u2713-\u2718\s]+", txt_clean)
+            ):
                 continue
             if len(txt_clean) == 1 and "A" <= txt_clean <= "H" and t.font_size >= 11.0:
                 continue
@@ -599,23 +678,23 @@ def _bind_svg_legend_labels(
             dx_r = t.bbox[0] - kbox[2]
             dy_r = abs(tcy - scy)
             if -5.0 <= dx_r <= 40.0 and dy_r <= 10.5:
-                base_sc = 50.0 + margin_bonus + single_bonus - abs(dx_r) * 0.8 - 2.0 * dy_r
-                cand_matches.append((pid, gid, kbox, t, base_sc))
+                base_sc = 50.0 + margin_bonus + single_bonus + fill_bonus - abs(dx_r) * 0.8 - 2.0 * dy_r
+                cand_matches.append((pid, gid, kbox, t, base_sc, in_margin))
                 continue
 
             dy_b = t.bbox[1] - kbox[3]
             dx_b = abs(tcx - scx)
             if -2.0 <= dy_b <= 18.0 and dx_b <= 26.0:
-                base_sc = 36.0 + margin_bonus + single_bonus - 1.4 * abs(dy_b) - 1.2 * dx_b
-                cand_matches.append((pid, gid, kbox, t, base_sc))
+                base_sc = 36.0 + margin_bonus + single_bonus + fill_bonus - 1.4 * abs(dy_b) - 1.2 * dx_b
+                cand_matches.append((pid, gid, kbox, t, base_sc, in_margin))
 
-    best_match_for_group: dict[str, tuple[float, str]] = {}
-    for i, (pid, gid, kbox, t, base_sc) in enumerate(cand_matches):
+    scored_matches: list[tuple[float, str, SvgTextItem, tuple[float, float, float, float]]] = []
+    for i, (pid, gid, kbox, t, base_sc, in_margin) in enumerate(cand_matches):
         peers = sum(
             1
-            for j, (pid2, gid2, kbox2, t2, _) in enumerate(cand_matches)
+            for j, (pid2, gid2, kbox2, t2, _, in_margin2) in enumerate(cand_matches)
             if i != j
-            and pid2 == pid
+            and (pid2 == pid or (in_margin and in_margin2))
             and gid2 != gid
             and t2.text != t.text
             and (abs(kbox[0] - kbox2[0]) <= 6.0 or abs(kbox[1] - kbox2[1]) <= 6.0)
@@ -623,9 +702,31 @@ def _bind_svg_legend_labels(
         if peers == 0 and base_sc < 72.0:
             continue
         total_sc = base_sc + min(3, peers) * 24.0
-        prev = best_match_for_group.get(gid)
-        if prev is None or total_sc > prev[0]:
-            best_match_for_group[gid] = (total_sc, t.text.strip())
+        scored_matches.append((total_sc, gid, t, kbox))
+
+    scored_matches.sort(key=lambda x: x[0], reverse=True)
+    best_match_for_group: dict[str, tuple[float, str]] = {}
+    claimed_text_keys: list[tuple[int, str, tuple[float, float, float, float]]] = []
+    for total_sc, gid, t, kbox in scored_matches:
+        if gid in best_match_for_group:
+            continue
+        cg_cur = color_groups[gid]
+        conflict_same_swatch = False
+        for t_id, prev_hex, prev_kb in claimed_text_keys:
+            if t_id == id(t) and abs(kbox[0] - prev_kb[0]) <= 2.5 and abs(kbox[1] - prev_kb[1]) <= 2.5:
+                de_pair = float(
+                    ciede2000_matrix(
+                        hex_to_srgb01(cg_cur.original_hex)[None, :],
+                        hex_to_srgb01(prev_hex)[None, :],
+                    )[0, 0]
+                )
+                if de_pair >= 6.0:
+                    conflict_same_swatch = True
+                    break
+        if conflict_same_swatch:
+            continue
+        best_match_for_group[gid] = (total_sc, t.text.strip())
+        claimed_text_keys.append((id(t), cg_cur.original_hex, kbox))
 
     for gid, (_, lbl) in best_match_for_group.items():
         color_groups[gid].local_label = lbl
@@ -845,6 +946,28 @@ def parse_svg_scene(
 
         now_in_defs = in_defs or (local in _SKIP_CONTAINERS)
         if not now_in_defs:
+            # Handle Matplotlib `svg.fonttype = 'path'` outlined glyph groups (`<g id="text_..."> <!-- label --> ... </g>`)
+            # so gray/colored text glyphs are never misclassified as scatter points and legend/panel texts are preserved!
+            el_id_cur = el.get("id") or ""
+            if local == "g" and re.match(r"^text_\d+$", el_id_cur):
+                has_real_text_tag = any(
+                    isinstance(d.tag, str) and etree.QName(d).localname == "text" for d in el.iter()
+                )
+                if not has_real_text_tag:
+                    comments = [
+                        (c.text or "").strip()
+                        for c in el
+                        if isinstance(c, etree._Comment) and (c.text or "").strip()
+                    ]
+                    comment_txt = " ".join(" ".join(comments).split()).strip()
+                    if comment_txt:
+                        loc_tb = _local_shape_bbox(el, defs_by_id, width, height)
+                        if loc_tb is not None:
+                            g_tb = _xform_bbox(cur_ctm, *loc_tb)
+                            est_fs = max(6.0, min(36.0, g_tb[3] - g_tb[1]))
+                            texts.append(SvgTextItem(text=comment_txt, bbox=g_tb, font_size=est_fs))
+                    return
+
             if local == "image":
                 href = el.get("{http://www.w3.org/1999/xlink}href") or el.get("href") or ""
                 sha = hashlib.sha256(href.encode()).hexdigest()
@@ -896,6 +1019,15 @@ def parse_svg_scene(
                 return
 
             if local in _SHAPE_TAGS:
+                if local == "use":
+                    href_chk = (el.get("{http://www.w3.org/1999/xlink}href") or el.get("href") or "").strip()
+                    ref_chk = href_chk[1:] if href_chk.startswith("#") else ""
+                    # Skip Cairo/R/Matplotlib outlined font glyph `<use>` references (`glyph0-1`, `DejaVuSans-41`, etc.)
+                    if re.match(
+                        r"^(?:glyph\d+-\d+|(?:DejaVu|Arial|Helvetica|Liberation|Nimbus|CM[A-Z]+|STIX|Bitstream|Times|Courier)[A-Za-z0-9_]*-[0-9a-fA-F]+)$",
+                        ref_chk,
+                    ):
+                        return
                 loc_bb = _local_shape_bbox(el, defs_by_id, width, height)
                 if loc_bb is not None:
                     g_bb = _xform_bbox(cur_ctm, *loc_bb)
@@ -909,11 +1041,21 @@ def parse_svg_scene(
                         if ref_el is not None:
                             use_ref_id = ref_id
                             rf, rs, _, _ = _effective_props(ref_el, [], None, None, eff_col, 1.0)
-                            if rf and rf != "none":
+                            if (rf is None and rs is None) and etree.QName(ref_el).localname in ("g", "symbol"):
+                                for sub_ch in ref_el:
+                                    if isinstance(sub_ch.tag, str) and etree.QName(sub_ch).localname in _SHAPE_TAGS:
+                                        crf, crs, _, _ = _effective_props(sub_ch, [ref_el], None, None, eff_col, 1.0)
+                                        rf = rf or crf
+                                        rs = rs or crs
+                            if rf and rf != "none" and (final_f is None or final_f == "none"):
                                 final_f = rf
                                 defs_ids_to_strip_color.add(ref_id)
-                            if rs and rs != "none":
+                            elif rf and rf != "none":
+                                defs_ids_to_strip_color.add(ref_id)
+                            if rs and rs != "none" and (final_s is None or final_s == "none"):
                                 final_s = rs
+                                defs_ids_to_strip_color.add(ref_id)
+                            elif rs and rs != "none":
                                 defs_ids_to_strip_color.add(ref_id)
 
                     # In SVG, default fill when unspecified is black (#000000) except on <line>/<polyline>
@@ -922,6 +1064,14 @@ def parse_svg_scene(
                     grad_ref = _extract_grad_id_ref(final_f)
                     hx_f = None if (not final_f or final_f == "none" or grad_ref) else final_f
                     hx_s = None if (not final_s or final_s == "none" or final_s.startswith("url(")) else final_s
+
+                    inline_sh = _parse_style_attr(el.get("style"))
+                    dash_val = (inline_sh.get("stroke-dasharray") or el.get("stroke-dasharray") or "").strip().lower()
+                    has_dash = bool(dash_val and dash_val not in ("none", "0"))
+                    in_axis_g = any(
+                        (anc.get("id") or "").startswith(("matplotlib.axis_", "xtick_", "ytick_"))
+                        for anc in ancestors
+                    )
 
                     is_bg_w = False
                     if local == "rect" and hx_f:
@@ -942,6 +1092,9 @@ def parse_svg_scene(
                             is_bg_white=is_bg_w,
                             use_ref_id=use_ref_id,
                             alpha=eff_alpha,
+                            is_dashed=has_dash,
+                            in_axis_group=in_axis_g,
+                            is_line_only=(local in ("line", "polyline") or hx_f is None),
                         )
                     )
                 return
@@ -950,18 +1103,27 @@ def parse_svg_scene(
         for child in el:
             _walk(child, next_anc, cur_ctm, eff_fill, eff_stroke, eff_col, eff_alpha, now_in_defs)
 
+    svg_clip_rects: list[tuple[float, float, float, float]] = []
+    for el_cp in all_elems:
+        if isinstance(el_cp.tag, str) and etree.QName(el_cp).localname == "clipPath":
+            shape_children = [
+                ch for ch in el_cp if isinstance(ch.tag, str) and etree.QName(ch).localname in _SHAPE_TAGS
+            ]
+            if len(shape_children) == 1:
+                cbb = _local_shape_bbox(shape_children[0], defs_by_id, width, height)
+                if cbb is not None:
+                    c_mat = _parse_svg_transform(shape_children[0].get("transform"))
+                    svg_clip_rects.append(_xform_bbox(c_mat, *cbb))
+
     _walk(root, [], (1.0, 0.0, 0.0, 1.0, 0.0, 0.0), None, None, "#000000", 1.0, False)
 
-    panels = _detect_svg_panels(texts, width, height, filename)
+    panels = _detect_svg_panels(texts, width, height, filename, clip_rects=svg_clip_rects)
     for t in texts:
         t.panel_id = _assign_panel(t.bbox, panels)
     for ev in evidence_regions:
         ev.panel_id = _assign_panel(ev.bbox, panels)
     for inst in raw_instances:
         inst.panel_id = _assign_panel(inst.bbox, panels)
-
-    color_groups: dict[str, ColorGroup] = {}
-    key_to_gid: dict[tuple[str, str, str], str] = {}
 
     def _is_mutable_svg_color(hx: str, bbox: tuple[float, float, float, float], is_bg_w: bool) -> bool:
         if is_bg_w:
@@ -980,54 +1142,91 @@ def parse_svg_scene(
                 return False
         return True
 
+    # Collect mutable fill/stroke paint records per (panel_id, hex), separating overlay points vs area/line when >= 3 points!
+    panel_hex_records: dict[tuple[str, str], list[tuple[SvgPaintInstance, Literal["fill", "stroke"], bool]]] = {}
     for inst in raw_instances:
-        area = max(1.0, (inst.bbox[2] - inst.bbox[0]) * (inst.bbox[3] - inst.bbox[1]))
-        min_m = max(0.5, min(inst.bbox[2] - inst.bbox[0], inst.bbox[3] - inst.bbox[1]))
-        if inst.fill_hex and _is_mutable_svg_color(inst.fill_hex, inst.bbox, inst.is_bg_white):
-            k = (inst.panel_id, "fill", inst.fill_hex)
-            if k not in key_to_gid:
-                gid = f"g_{len(color_groups) + 1:03d}"
-                key_to_gid[k] = gid
-                color_groups[gid] = ColorGroup(
-                    group_id=gid,
-                    panel_id=inst.panel_id,
-                    role="fill",
-                    original_hex=inst.fill_hex,
-                    current_hex=inst.fill_hex,
-                    alpha=round(inst.alpha, 3),
-                    primitive_count=1,
-                    total_area_pt2=round(area, 2),
-                    min_mark_pt=round(min_m, 2),
-                    sample_bbox=tuple(round(v, 2) for v in inst.bbox),
-                )
-            else:
-                cg = color_groups[key_to_gid[k]]
-                cg.primitive_count += 1
-                cg.total_area_pt2 = round(cg.total_area_pt2 + area, 2)
-            inst.fill_gid = key_to_gid[k]
+        bw = inst.bbox[2] - inst.bbox[0]
+        bh = inst.bbox[3] - inst.bbox[1]
+        is_pt = max(bw, bh) <= 18.0
+        has_mut_fill = bool(
+            inst.fill_hex
+            and not (inst.in_axis_group and hex_to_oklch(inst.fill_hex)[1] < 0.014)
+            and _is_mutable_svg_color(inst.fill_hex, inst.bbox, inst.is_bg_white)
+        )
+        if has_mut_fill and inst.fill_hex:
+            panel_hex_records.setdefault((inst.panel_id, inst.fill_hex), []).append((inst, "fill", is_pt))
 
         if inst.stroke_hex and _is_mutable_svg_color(inst.stroke_hex, inst.bbox, False):
-            k = (inst.panel_id, "stroke", inst.stroke_hex)
-            if k not in key_to_gid:
-                gid = f"g_{len(color_groups) + 1:03d}"
-                key_to_gid[k] = gid
-                color_groups[gid] = ColorGroup(
-                    group_id=gid,
-                    panel_id=inst.panel_id,
-                    role="stroke",
-                    original_hex=inst.stroke_hex,
-                    current_hex=inst.stroke_hex,
-                    alpha=round(inst.alpha, 3),
-                    primitive_count=1,
-                    total_area_pt2=round(area, 2),
-                    min_mark_pt=round(min_m, 2),
-                    sample_bbox=tuple(round(v, 2) for v in inst.bbox),
-                )
+            _, Cs, _ = hex_to_oklch(inst.stroke_hex)
+            # Protect achromatic outline strokes on differently-colored fills, dashed threshold lines, and axis ticks
+            if Cs < 0.014 and (
+                inst.in_axis_group
+                or inst.is_dashed
+                or (inst.fill_hex is not None and inst.fill_hex.upper() != inst.stroke_hex.upper())
+            ):
+                continue
+            panel_hex_records.setdefault((inst.panel_id, inst.stroke_hex), []).append((inst, "stroke", is_pt))
+
+    color_groups: dict[str, ColorGroup] = {}
+    sibling_layer_pairs: list[tuple[str, str]] = []
+
+    def _emit_svg_group(
+        pid_g: str,
+        hx_g: str,
+        recs: list[tuple[SvgPaintInstance, Literal["fill", "stroke"], bool]],
+        m_kind: Literal["area", "point", "line"],
+    ) -> str:
+        gid = f"g_{len(color_groups) + 1:03d}"
+        has_fill_r = any(r_kind == "fill" for _, r_kind, _ in recs)
+        seen_inst_ids: set[int] = set()
+        tot_area = 0.0
+        min_mk = 9999.0
+        bx0, by0, bx1, by1 = 1e9, 1e9, -1e9, -1e9
+        alpha_v = recs[0][0].alpha
+        for inst_r, r_kind, _ in recs:
+            if r_kind == "fill":
+                inst_r.fill_gid = gid
             else:
-                cg = color_groups[key_to_gid[k]]
-                cg.primitive_count += 1
-                cg.total_area_pt2 = round(cg.total_area_pt2 + area, 2)
-            inst.stroke_gid = key_to_gid[k]
+                inst_r.stroke_gid = gid
+            if inst_r.elem_idx not in seen_inst_ids:
+                seen_inst_ids.add(inst_r.elem_idx)
+                iw_r = inst_r.bbox[2] - inst_r.bbox[0]
+                ih_r = inst_r.bbox[3] - inst_r.bbox[1]
+                tot_area += max(1.0, iw_r * ih_r)
+                min_mk = min(min_mk, max(0.5, min(iw_r, ih_r)))
+                bx0 = min(bx0, inst_r.bbox[0])
+                by0 = min(by0, inst_r.bbox[1])
+                bx1 = max(bx1, inst_r.bbox[2])
+                by1 = max(by1, inst_r.bbox[3])
+        color_groups[gid] = ColorGroup(
+            group_id=gid,
+            panel_id=pid_g,
+            role="fill" if has_fill_r else "stroke",
+            original_hex=hx_g,
+            current_hex=hx_g,
+            alpha=round(alpha_v, 3),
+            primitive_count=max(1, len(seen_inst_ids)),
+            total_area_pt2=round(tot_area, 2),
+            min_mark_pt=round(min_mk if min_mk < 9000.0 else 1.0, 2),
+            sample_bbox=(round(bx0, 2), round(by0, 2), round(bx1, 2), round(by1, 2)),
+            mark_kind=m_kind,
+        )
+        return gid
+
+    for (pid_g, hx_g), recs in panel_hex_records.items():
+        pt_recs = [r for r in recs if r[2]]
+        non_pt_recs = [r for r in recs if not r[2]]
+        n_pt_elems = len({r[0].elem_idx for r in pt_recs})
+        if non_pt_recs and pt_recs and n_pt_elems >= 3:
+            base_kind: Literal["area", "line"] = "area" if any(r[1] == "fill" for r in non_pt_recs) else "line"
+            gid_base = _emit_svg_group(pid_g, hx_g, non_pt_recs, base_kind)
+            gid_pts = _emit_svg_group(pid_g, hx_g, pt_recs, "point")
+            sibling_layer_pairs.append((gid_base, gid_pts))
+        elif non_pt_recs:
+            base_kind = "area" if any(r[1] == "fill" for r in non_pt_recs) else "line"
+            _emit_svg_group(pid_g, hx_g, recs, base_kind)
+        else:
+            _emit_svg_group(pid_g, hx_g, recs, "point")
 
     if progress_cb:
         progress_cb("binding_legends", 68)
@@ -1035,7 +1234,7 @@ def parse_svg_scene(
     _detect_svg_vector_colorbars(raw_instances, color_groups, continuous_scales, texts)
     _bind_svg_legend_labels(raw_instances, color_groups, texts, panels)
 
-    # Merge same-(panel, original_hex) fill+stroke so filled markers with matching stroke share one label/entity
+    # Sync labels across same-(panel, original_hex) sibling layers (`area`/`line` <-> `point`)
     hex_panel_label: dict[tuple[str, str], str] = {}
     for cg in color_groups.values():
         if cg.local_label and not cg.is_continuous_member:
@@ -1045,6 +1244,54 @@ def parse_svg_scene(
             shared = hex_panel_label.get((cg.panel_id, cg.original_hex))
             if shared:
                 cg.local_label = shared
+
+    # Propagate unambiguous shared figure-wide legend labels across sibling panels (e.g. `fig.legend`, `facet_wrap`)
+    if len(panels) > 1:
+        labeled_cgs = [cg for cg in color_groups.values() if cg.local_label and not cg.is_continuous_member]
+        if labeled_cgs:
+            lbl_srgbs = np.stack([hex_to_srgb01(cg.original_hex) for cg in labeled_cgs], axis=0)
+            for cg in color_groups.values():
+                if cg.local_label or cg.is_continuous_member:
+                    continue
+                d_vec = ciede2000_matrix(hex_to_srgb01(cg.original_hex)[None, :], lbl_srgbs)[0]
+                near_idxs = [idx_l for idx_l, dv in enumerate(d_vec) if float(dv) < 2.0]
+                if not near_idxs:
+                    continue
+                cand_norms = {
+                    re.sub(r"\s*\([^)]*\)\s*$", "", labeled_cgs[idx_l].local_label).strip().lower()
+                    for idx_l in near_idxs
+                }
+                if len(cand_norms) != 1:
+                    continue
+                best_lbl = labeled_cgs[min(near_idxs, key=lambda idx_l: float(d_vec[idx_l]))].local_label
+                target_norm = next(iter(cand_norms))
+                panel_conflict = any(
+                    other.panel_id == cg.panel_id
+                    and other.local_label
+                    and re.sub(r"\s*\([^)]*\)\s*$", "", other.local_label).strip().lower() == target_norm
+                    and float(
+                        ciede2000_matrix(
+                            hex_to_srgb01(cg.original_hex)[None, :],
+                            hex_to_srgb01(other.original_hex)[None, :],
+                        )[0, 0]
+                    )
+                    >= 5.0
+                    for other in color_groups.values()
+                )
+                if not panel_conflict:
+                    cg.local_label = best_lbl
+
+    # Prune unlabeled pure-achromatic stroke-only groups (boxplot whiskers, medians, caps, error bars, gray spines)
+    for gid_p in list(color_groups.keys()):
+        cg_p = color_groups[gid_p]
+        if cg_p.is_continuous_member or cg_p.role != "stroke" or cg_p.local_label:
+            continue
+        _, C_p, _ = hex_to_oklch(cg_p.original_hex)
+        if C_p < 0.012:
+            for inst_p in raw_instances:
+                if inst_p.stroke_gid == gid_p:
+                    inst_p.stroke_gid = None
+            del color_groups[gid_p]
 
     entities: dict[str, SemanticEntity] = {}
     label_to_eid: dict[str, str] = {}
@@ -1067,7 +1314,10 @@ def parse_svg_scene(
             label_panel_hexes[norm_key].append((cg.panel_id, cg.original_hex, eid))
         elif not norm_key and hp_key in hex_panel_to_eid:
             eid = hex_panel_to_eid[hp_key]
-            entities[eid].member_group_ids.append(cg.group_id)
+            ent = entities[eid]
+            ent.member_group_ids.append(cg.group_id)
+            tot_cnt = sum(color_groups[g].primitive_count for g in ent.member_group_ids if g in color_groups)
+            ent.label = describe_color_group(ent.original_hex, tot_cnt)
         else:
             eid = f"e_{len(entities) + 1:02d}"
             disp = (
@@ -1202,18 +1452,21 @@ def _apply_inline_paint(el: etree._Element, fill_val: str | None, stroke_val: st
 
 
 def _strip_element_paint_for_use_cascade(el: etree._Element) -> None:
-    for attr in ("fill", "stroke"):
-        if attr in el.attrib and el.attrib[attr].strip().lower() != "none":
-            del el.attrib[attr]
-    if el.get("style"):
-        smap = _parse_style_attr(el.get("style"))
+    for node in el.iter():
+        if not isinstance(node.tag, str):
+            continue
         for attr in ("fill", "stroke"):
-            if attr in smap and smap[attr].strip().lower() != "none":
-                del smap[attr]
-        if smap:
-            el.set("style", ";".join(f"{k}:{v}" for k, v in smap.items()))
-        else:
-            del el.attrib["style"]
+            if attr in node.attrib and node.attrib[attr].strip().lower() != "none":
+                del node.attrib[attr]
+        if node.get("style"):
+            smap = _parse_style_attr(node.get("style"))
+            for attr in ("fill", "stroke"):
+                if attr in smap and smap[attr].strip().lower() != "none":
+                    del smap[attr]
+            if smap:
+                node.set("style", ";".join(f"{k}:{v}" for k, v in smap.items()))
+            else:
+                del node.attrib["style"]
 
 
 def _render_svg_layers(scene: SvgScene) -> None:

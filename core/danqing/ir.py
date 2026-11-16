@@ -65,6 +65,7 @@ class ColorGroup:
     sample_bbox: tuple[float, float, float, float]
     # Matched legend/label text if discovered locally inside this panel
     local_label: str = ""
+    mark_kind: Literal["area", "point", "line"] = "area"
     is_continuous_member: bool = False
     continuous_scale_id: str | None = None
     continuous_t: float = 0.0

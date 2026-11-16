@@ -107,6 +107,8 @@ _CONTROL_PATTERNS = (
 _NUM_P = rb"[+-]?(?:\d++\.?\d*+|\.\d++)"
 _STREAM_CMD_RE = re.compile(
     rb"(?<![A-Za-z0-9_./])(?:"
+    rb"(?P<tf>/[A-Za-z0-9_.-]++\s++" + _NUM_P + rb"\s++Tf)|"
+    rb"(?P<tr>[0-7]\s++Tr)|"
     rb"(?P<numop>(?:" + _NUM_P + rb"\s++)++(?:/[A-Za-z0-9_.-]++\s++)?(?:cm|Tm|T[dD]|re|rg|RG|g|G|k|K|scn?|SCN?|m|l|c|v|y))|"
     rb"(?P<cs>/[A-Za-z0-9_.-]++\s++(?:cs|CS))|"
     rb"(?P<q>q)|(?P<Q>Q)|"
@@ -381,8 +383,12 @@ class ColorOpSpan:
     consumed_by_shape: bool = False
     consumed_by_text: bool = False
     is_dashed_grid: bool = False
+    used_with_diff_fill: bool = False
+    used_with_same_fill: bool = False
+    used_standalone: bool = False
     max_rect_area: float = 0.0
     max_subpath_area: float = 0.0
+    max_subpath_dim: float = 0.0
     total_area: float = 0.0
     min_dim: float = 9999.0
     paint_count: int = 0
@@ -646,6 +652,249 @@ def parse_pdf_scene(
         if progress_cb:
             progress_cb("colors", 40)
 
+        form_inherited_cache: dict[
+            str,
+            list[tuple[tuple[float, float, float, float], list[tuple[float, float, float, float]], bool, bool, bool]],
+        ] = {}
+        form_local_spans: dict[str, tuple[tuple[float, float, float, float, float, float], list[int]]] = {}
+
+        def _extract_dingbats_fonts(res_o: pikepdf.Object | None, inh_fonts: set[bytes] | None) -> set[bytes]:
+            out_f: set[bytes] = set(inh_fonts) if inh_fonts else set()
+            if res_o and "/Font" in res_o:
+                for k_f, f_obj in res_o["/Font"].items():
+                    try:
+                        bf = str(f_obj.get("/BaseFont", "")).lower()
+                        fd = f_obj.get("/FontDescriptor")
+                        fn = str(fd.get("/FontName", "")).lower() if fd else ""
+                        if "dingbats" in bf or "dingbats" in fn:
+                            out_f.add(str(k_f).encode("latin1"))
+                        else:
+                            out_f.discard(str(k_f).encode("latin1"))
+                    except Exception:
+                        pass
+            return out_f
+
+        def _apply_local_2d(
+            mat: tuple[float, float, float, float, float, float], lx: float, ly: float
+        ) -> tuple[float, float]:
+            a, b, c, d, e, f = mat
+            return a * lx + c * ly + e, b * lx + d * ly + f
+
+        def _xform_local_bbox(
+            mat: tuple[float, float, float, float, float, float], bb: tuple[float, float, float, float]
+        ) -> tuple[float, float, float, float]:
+            pts = [
+                _apply_local_2d(mat, bb[0], bb[1]),
+                _apply_local_2d(mat, bb[2], bb[1]),
+                _apply_local_2d(mat, bb[0], bb[3]),
+                _apply_local_2d(mat, bb[2], bb[3]),
+            ]
+            return (min(p[0] for p in pts), min(p[1] for p in pts), max(p[0] for p in pts), max(p[1] for p in pts))
+
+        def _analyze_form_inherited_ops(
+            f_skey: str,
+            xo_obj: pikepdf.Object,
+            f_bytes: bytes,
+            res_o: pikepdf.Object | None,
+            depth: int,
+        ) -> list[tuple[tuple[float, float, float, float], list[tuple[float, float, float, float]], bool, bool, bool]]:
+            if f_skey in form_inherited_cache:
+                return form_inherited_cache[f_skey]
+            inh_ops: list[
+                tuple[tuple[float, float, float, float], list[tuple[float, float, float, float]], bool, bool, bool]
+            ] = []
+            form_inherited_cache[f_skey] = inh_ops  # Guard against cyclic Form references
+            if depth > 6 or not f_bytes:
+                return inh_ops
+
+            l_ctm: tuple[float, float, float, float, float, float] = (1.0, 0.0, 0.0, 1.0, 0.0, 0.0)
+            has_loc_fill = False
+            has_loc_stroke = False
+            l_dashed = False
+            l_stack: list[tuple[Any, ...]] = []
+            l_path = [1e9, 1e9, -1e9, -1e9]
+            l_sub = [1e9, 1e9, -1e9, -1e9]
+            l_subs: list[tuple[float, float, float, float]] = []
+            sub_xobjs = res_o.get("/XObject") if res_o else None
+
+            def _l_flush() -> None:
+                nonlocal l_sub
+                if l_sub[0] < 1e8:
+                    l_subs.append((l_sub[0], l_sub[1], l_sub[2], l_sub[3]))
+                    l_sub = [1e9, 1e9, -1e9, -1e9]
+
+            for fm in _STREAM_CMD_RE.finditer(f_bytes):
+                fk = fm.lastgroup
+                ftok = fm.group(0)
+                if fk == "numop":
+                    fps = ftok.split()
+                    fop = fps[-1]
+                    if fop == b"m" and len(fps) >= 3:
+                        _l_flush()
+                        lx, ly = _apply_local_2d(l_ctm, float(fps[-3]), float(fps[-2]))
+                        l_path = [min(l_path[0], lx), min(l_path[1], ly), max(l_path[2], lx), max(l_path[3], ly)]
+                        l_sub = [lx, ly, lx, ly]
+                    elif fop == b"l" and len(fps) >= 3:
+                        lx, ly = _apply_local_2d(l_ctm, float(fps[-3]), float(fps[-2]))
+                        l_path = [min(l_path[0], lx), min(l_path[1], ly), max(l_path[2], lx), max(l_path[3], ly)]
+                        l_sub = [min(l_sub[0], lx), min(l_sub[1], ly), max(l_sub[2], lx), max(l_sub[3], ly)]
+                    elif fop in (b"c", b"v", b"y"):
+                        nc = 6 if fop == b"c" else 4
+                        if len(fps) >= nc + 1:
+                            cs_f = [float(x) for x in fps[-(nc + 1) : -1]]
+                            for jc in range(0, nc, 2):
+                                lx, ly = _apply_local_2d(l_ctm, cs_f[jc], cs_f[jc + 1])
+                                l_path = [min(l_path[0], lx), min(l_path[1], ly), max(l_path[2], lx), max(l_path[3], ly)]
+                                l_sub = [min(l_sub[0], lx), min(l_sub[1], ly), max(l_sub[2], lx), max(l_sub[3], ly)]
+                    elif fop == b"re" and len(fps) >= 5:
+                        _l_flush()
+                        ns_f = [float(x) for x in fps[-5:-1]]
+                        rb_f = _xform_local_bbox(l_ctm, (ns_f[0], ns_f[1], ns_f[0] + ns_f[2], ns_f[1] + ns_f[3]))
+                        l_path = [min(l_path[0], rb_f[0]), min(l_path[1], rb_f[1]), max(l_path[2], rb_f[2]), max(l_path[3], rb_f[3])]
+                        l_subs.append(rb_f)
+                    elif fop in (b"rg", b"g", b"k", b"sc", b"scn"):
+                        has_loc_fill = True
+                    elif fop in (b"RG", b"G", b"K", b"SC", b"SCN"):
+                        has_loc_stroke = True
+                    elif fop == b"cm" and len(fps) >= 7:
+                        l_ctm = _mat_mul(tuple(float(x) for x in fps[-7:-1]), l_ctm)
+                elif fk == "h":
+                    _l_flush()
+                elif fk == "q":
+                    l_stack.append((l_ctm, has_loc_fill, has_loc_stroke, l_dashed))
+                elif fk == "Q" and l_stack:
+                    l_ctm, has_loc_fill, has_loc_stroke, l_dashed = l_stack.pop()
+                elif fk == "dash":
+                    br_e = ftok.find(b"]")
+                    l_dashed = len(ftok[1:br_e].strip()) > 0
+                elif fk == "clip":
+                    l_path = [1e9, 1e9, -1e9, -1e9]
+                    l_sub = [1e9, 1e9, -1e9, -1e9]
+                    l_subs.clear()
+                elif fk == "paint":
+                    _l_flush()
+                    ops_f = ftok.decode("ascii")
+                    uf = ops_f in ("f", "f*", "F", "B", "B*", "b", "b*") and not has_loc_fill
+                    us = ops_f in ("S", "s", "B", "B*", "b", "b*") and not has_loc_stroke
+                    if uf or us:
+                        if l_path[0] < 1e8:
+                            ob = (l_path[0], l_path[1], l_path[2], l_path[3])
+                            inh_ops.append((ob, list(l_subs) if l_subs else [ob], uf, us, l_dashed))
+                        elif xo_obj.get("/BBox") is not None:
+                            bb_r = [float(x) for x in xo_obj["/BBox"]]
+                            fb = _xform_local_bbox(l_ctm, (min(bb_r[0], bb_r[2]), min(bb_r[1], bb_r[3]), max(bb_r[0], bb_r[2]), max(bb_r[1], bb_r[3])))
+                            inh_ops.append((fb, [fb], uf, us, l_dashed))
+                    l_path = [1e9, 1e9, -1e9, -1e9]
+                    l_sub = [1e9, 1e9, -1e9, -1e9]
+                    l_subs.clear()
+                elif fk == "do" and sub_xobjs and (not has_loc_fill or not has_loc_stroke):
+                    sx_name = ftok.split()[0].decode("latin1")
+                    if sx_name in sub_xobjs:
+                        sx_obj = sub_xobjs[sx_name]
+                        if str(sx_obj.get("/Subtype", "")) == "/Form":
+                            try:
+                                sx_bytes = sx_obj.read_bytes()
+                            except Exception:
+                                sx_bytes = b""
+                            sm_raw = sx_obj.get("/Matrix")
+                            sm = tuple(float(x) for x in sm_raw) if sm_raw is not None else (1.0, 0.0, 0.0, 1.0, 0.0, 0.0)
+                            sub_ctm = _mat_mul(sm, l_ctm)
+                            sub_inh = _analyze_form_inherited_ops(
+                                f"{f_skey}/{sx_name}",
+                                sx_obj,
+                                sx_bytes,
+                                sx_obj.get("/Resources") or res_o,
+                                depth + 1,
+                            )
+                            for sb_all, sb_list, sub_uf, sub_us, sub_dash in sub_inh:
+                                eff_uf = sub_uf and not has_loc_fill
+                                eff_us = sub_us and not has_loc_stroke
+                                if eff_uf or eff_us:
+                                    inh_ops.append(
+                                        (
+                                            _xform_local_bbox(sub_ctm, sb_all),
+                                            [_xform_local_bbox(sub_ctm, sbi) for sbi in sb_list],
+                                            eff_uf,
+                                            eff_us,
+                                            sub_dash or l_dashed,
+                                        )
+                                    )
+            return inh_ops
+
+        def _credit_shape_paint(
+            overall_bbox: tuple[float, float, float, float],
+            subpaths: list[tuple[float, float, float, float]],
+            uses_fill: bool,
+            uses_stroke: bool,
+            f_span_idx: int | None,
+            s_span_idx: int | None,
+            f_alpha: float,
+            s_alpha: float,
+            dashed_flag: bool,
+        ) -> None:
+            pw = max(0.2, overall_bbox[2] - overall_bbox[0])
+            ph = max(0.2, overall_bbox[3] - overall_bbox[1])
+            p_area = pw * ph
+            p_min = min(pw, ph)
+            subs = subpaths if subpaths else [overall_bbox]
+            max_sub_a = max(max(0.2, sb[2] - sb[0]) * max(0.2, sb[3] - sb[1]) for sb in subs)
+            max_sub_d = max(max(sb[2] - sb[0], sb[3] - sb[1]) for sb in subs)
+            small_subs = [
+                sb
+                for sb in subs
+                if 1.0 <= max(sb[2] - sb[0], sb[3] - sb[1]) <= 36.0
+                and (sb[2] - sb[0]) <= 36.0
+                and (sb[3] - sb[1]) <= 28.0
+            ]
+            both_painted = uses_fill and uses_stroke and f_span_idx is not None and s_span_idx is not None
+            same_fs = both_painted and op_spans[f_span_idx].srgb_hex == op_spans[s_span_idx].srgb_hex  # type: ignore[index]
+            diff_fs = both_painted and not same_fs
+
+            if uses_fill and f_span_idx is not None:
+                sp = op_spans[f_span_idx]
+                sp.alpha = f_alpha
+                sp.consumed_by_shape = True
+                sp.paint_count += max(1, len(subpaths))
+                sp.total_area += p_area
+                sp.max_rect_area = max(sp.max_rect_area, p_area)
+                sp.max_subpath_area = max(sp.max_subpath_area, max_sub_a)
+                sp.max_subpath_dim = max(sp.max_subpath_dim, max_sub_d)
+                sp.min_dim = min(sp.min_dim, p_min)
+                sp.bbox = [
+                    min(sp.bbox[0], overall_bbox[0]),
+                    min(sp.bbox[1], overall_bbox[1]),
+                    max(sp.bbox[2], overall_bbox[2]),
+                    max(sp.bbox[3], overall_bbox[3]),
+                ]
+                if len(sp.swatch_bboxes) < 16 and len(subs) <= 12:
+                    sp.swatch_bboxes.extend(small_subs[: 16 - len(sp.swatch_bboxes)])
+
+            if uses_stroke and s_span_idx is not None:
+                sp = op_spans[s_span_idx]
+                sp.alpha = s_alpha
+                sp.consumed_by_shape = True
+                sp.paint_count += max(1, len(subpaths))
+                sp.is_dashed_grid = sp.is_dashed_grid or dashed_flag
+                if diff_fs:
+                    sp.used_with_diff_fill = True
+                elif same_fs:
+                    sp.used_with_same_fill = True
+                else:
+                    sp.used_standalone = True
+                sp.total_area += max(pw, ph) * 1.2
+                sp.max_rect_area = max(sp.max_rect_area, p_area)
+                sp.max_subpath_area = max(sp.max_subpath_area, max_sub_a)
+                sp.max_subpath_dim = max(sp.max_subpath_dim, max_sub_d)
+                sp.min_dim = min(sp.min_dim, 1.5)
+                sp.bbox = [
+                    min(sp.bbox[0], overall_bbox[0]),
+                    min(sp.bbox[1], overall_bbox[1]),
+                    max(sp.bbox[2], overall_bbox[2]),
+                    max(sp.bbox[3], overall_bbox[3]),
+                ]
+                if len(sp.swatch_bboxes) < 16 and len(subs) <= 12:
+                    sp.swatch_bboxes.extend(small_subs[: 16 - len(sp.swatch_bboxes)])
+
         def _parse_stream_scope(
             s_key: str,
             s_bytes: bytes,
@@ -654,9 +903,13 @@ def parse_pdf_scene(
             inherited_cs: dict[str, ColorSpaceInfo] | None,
             xobj_chain: list[str],
             depth: int,
+            init_fill_alpha: float = 1.0,
+            init_stroke_alpha: float = 1.0,
+            inherited_dingbats: set[bytes] | None = None,
         ) -> None:
             nonlocal stream_op_counter
             cs_map = _extract_colorspaces(res_obj, inherited_cs)
+            dingbats_fonts = _extract_dingbats_fonts(res_obj, inherited_dingbats)
             gs_alpha: dict[bytes, tuple[float, float]] = {}
             if res_obj and "/ExtGState" in res_obj:
                 for k_gs, v_gs in res_obj["/ExtGState"].items():
@@ -677,9 +930,12 @@ def parse_pdf_scene(
                                 xobj_images[full_img_key] = (xo, rgb01, raw_b)
 
             ctm = init_ctm
-            fill_alpha, stroke_alpha = 1.0, 1.0
+            fill_alpha, stroke_alpha = init_fill_alpha, init_stroke_alpha
             is_dashed = False
             in_text = False
+            act_font = b""
+            act_font_size = 10.0
+            act_tr = 0
             act_fill_cs = cs_map["/DeviceRGB"]
             act_stroke_cs = cs_map["/DeviceRGB"]
             state_stack: list[tuple[Any, ...]] = []
@@ -706,6 +962,21 @@ def parse_pdf_scene(
                 stream_op_counter += 1
                 kind = m.lastgroup
                 tok = m.group(0)
+                if kind == "tf":
+                    tf_parts = tok.split()
+                    if len(tf_parts) >= 3:
+                        act_font = tf_parts[0]
+                        try:
+                            act_font_size = abs(float(tf_parts[1]))
+                        except ValueError:
+                            act_font_size = 10.0
+                    continue
+                if kind == "tr":
+                    try:
+                        act_tr = int(tok.split()[0])
+                    except ValueError:
+                        act_tr = 0
+                    continue
                 if kind == "cs":
                     cs_parts = tok.split()
                     cs_nm = cs_parts[0].decode("latin1")
@@ -822,10 +1093,36 @@ def parse_pdf_scene(
                 if kind == "h":
                     _flush_subpath()
                 elif kind == "q":
-                    state_stack.append((ctm, fill_alpha, stroke_alpha, is_dashed, cur_fill_span, cur_stroke_span, act_fill_cs, act_stroke_cs))
+                    state_stack.append(
+                        (
+                            ctm,
+                            fill_alpha,
+                            stroke_alpha,
+                            is_dashed,
+                            cur_fill_span,
+                            cur_stroke_span,
+                            act_fill_cs,
+                            act_stroke_cs,
+                            act_font,
+                            act_font_size,
+                            act_tr,
+                        )
+                    )
                 elif kind == "Q":
                     if state_stack:
-                        ctm, fill_alpha, stroke_alpha, is_dashed, cur_fill_span, cur_stroke_span, act_fill_cs, act_stroke_cs = state_stack.pop()
+                        (
+                            ctm,
+                            fill_alpha,
+                            stroke_alpha,
+                            is_dashed,
+                            cur_fill_span,
+                            cur_stroke_span,
+                            act_fill_cs,
+                            act_stroke_cs,
+                            act_font,
+                            act_font_size,
+                            act_tr,
+                        ) = state_stack.pop()
                 elif kind == "BT":
                     in_text = True
                     text_mat = (1.0, 0.0, 0.0, 1.0, 0.0, 0.0)
@@ -852,53 +1149,41 @@ def parse_pdf_scene(
                     uses_fill = op_s in ("f", "f*", "F", "B", "B*", "b", "b*")
                     uses_stroke = op_s in ("S", "s", "B", "B*", "b", "b*")
                     if cur_path_bbox[0] < 1e8:
-                        pw = max(0.2, cur_path_bbox[2] - cur_path_bbox[0])
-                        ph = max(0.2, cur_path_bbox[3] - cur_path_bbox[1])
-                        p_area = pw * ph
-                        p_min = min(pw, ph)
-                        max_sub_a = (
-                            max(max(0.2, sb[2] - sb[0]) * max(0.2, sb[3] - sb[1]) for sb in completed_subpaths)
-                            if completed_subpaths
-                            else p_area
+                        _credit_shape_paint(
+                            overall_bbox=(cur_path_bbox[0], cur_path_bbox[1], cur_path_bbox[2], cur_path_bbox[3]),
+                            subpaths=completed_subpaths,
+                            uses_fill=uses_fill,
+                            uses_stroke=uses_stroke,
+                            f_span_idx=cur_fill_span,
+                            s_span_idx=cur_stroke_span,
+                            f_alpha=fill_alpha,
+                            s_alpha=stroke_alpha,
+                            dashed_flag=is_dashed,
                         )
-                        small_subs = [
-                            sb
-                            for sb in completed_subpaths
-                            if 1.0 <= max(sb[2] - sb[0], sb[3] - sb[1]) <= 36.0
-                            and (sb[2] - sb[0]) <= 36.0
-                            and (sb[3] - sb[1]) <= 28.0
-                        ]
-                        if uses_fill and cur_fill_span is not None:
-                            sp = op_spans[cur_fill_span]
-                            sp.alpha = fill_alpha
-                            sp.consumed_by_shape = True
-                            sp.paint_count += max(1, len(completed_subpaths))
-                            sp.total_area += p_area
-                            sp.max_rect_area = max(sp.max_rect_area, p_area)
-                            sp.max_subpath_area = max(sp.max_subpath_area, max_sub_a)
-                            sp.min_dim = min(sp.min_dim, p_min)
-                            sp.bbox = [min(sp.bbox[0], cur_path_bbox[0]), min(sp.bbox[1], cur_path_bbox[1]), max(sp.bbox[2], cur_path_bbox[2]), max(sp.bbox[3], cur_path_bbox[3])]
-                            if len(sp.swatch_bboxes) < 16 and len(completed_subpaths) <= 12:
-                                sp.swatch_bboxes.extend(small_subs[: 16 - len(sp.swatch_bboxes)])
-                        if uses_stroke and cur_stroke_span is not None:
-                            sp = op_spans[cur_stroke_span]
-                            sp.alpha = stroke_alpha
-                            sp.consumed_by_shape = True
-                            sp.paint_count += max(1, len(completed_subpaths))
-                            sp.is_dashed_grid = sp.is_dashed_grid or is_dashed
-                            sp.total_area += max(pw, ph) * 1.2
-                            sp.max_rect_area = max(sp.max_rect_area, p_area)
-                            sp.max_subpath_area = max(sp.max_subpath_area, max_sub_a)
-                            sp.min_dim = min(sp.min_dim, 1.5)
-                            sp.bbox = [min(sp.bbox[0], cur_path_bbox[0]), min(sp.bbox[1], cur_path_bbox[1]), max(sp.bbox[2], cur_path_bbox[2]), max(sp.bbox[3], cur_path_bbox[3])]
-                            if len(sp.swatch_bboxes) < 16 and len(completed_subpaths) <= 12:
-                                sp.swatch_bboxes.extend(small_subs[: 16 - len(sp.swatch_bboxes)])
                     cur_path_bbox = [1e9, 1e9, -1e9, -1e9]
                     cur_subpath_bbox = [1e9, 1e9, -1e9, -1e9]
                     completed_subpaths.clear()
                     last_rect_page = None
                 elif kind == "tj":
-                    if cur_fill_span is not None:
+                    if act_font and act_font in dingbats_fonts:
+                        # R `grDevices::pdf(useDingbats=TRUE)` geometric scatter symbols (e.g. `(l) Tj` circles)
+                        eff_tm = _mat_mul(text_mat, ctm)
+                        sc_pt = max(0.5, float(np.hypot(eff_tm[0], eff_tm[1]) or np.hypot(eff_tm[2], eff_tm[3]) or 1.0))
+                        r_pt = max(1.2, min(16.0, 0.38 * max(1.0, act_font_size) * sc_pt))
+                        bx, by = cur_bt_pt
+                        db = (bx - r_pt, by - r_pt, bx + r_pt, by + r_pt)
+                        _credit_shape_paint(
+                            overall_bbox=db,
+                            subpaths=[db],
+                            uses_fill=act_tr in (0, 2, 4, 6),
+                            uses_stroke=act_tr in (1, 2, 5, 6),
+                            f_span_idx=cur_fill_span,
+                            s_span_idx=cur_stroke_span,
+                            f_alpha=fill_alpha,
+                            s_alpha=stroke_alpha,
+                            dashed_flag=is_dashed,
+                        )
+                    elif cur_fill_span is not None:
                         op_spans[cur_fill_span].consumed_by_text = True
                         if s_key == "__page__":
                             look_start = max(0, m.start() - 256)
@@ -921,6 +1206,7 @@ def parse_pdf_scene(
                             f_mat = tuple(float(x) for x in f_mat_raw) if f_mat_raw is not None else (1.0, 0.0, 0.0, 1.0, 0.0, 0.0)
                             form_ctm = _mat_mul(f_mat, ctm)
                             f_skey = f"form:{full_key}"
+                            f_res = xo_obj.get("/Resources") or res_obj
                             if f_skey not in raw_streams:
                                 try:
                                     f_bytes = xo_obj.read_bytes()
@@ -928,14 +1214,72 @@ def parse_pdf_scene(
                                     f_bytes = b""
                                 raw_streams[f_skey] = f_bytes
                                 form_xobj_paths[f_skey] = next_chain
+                                span_before = len(op_spans)
                                 _parse_stream_scope(
                                     s_key=f_skey,
                                     s_bytes=f_bytes,
-                                    res_obj=xo_obj.get("/Resources") or res_obj,
+                                    res_obj=f_res,
                                     init_ctm=form_ctm,
                                     inherited_cs=cs_map,
                                     xobj_chain=next_chain,
                                     depth=depth + 1,
+                                    init_fill_alpha=fill_alpha,
+                                    init_stroke_alpha=stroke_alpha,
+                                    inherited_dingbats=dingbats_fonts,
+                                )
+                                created_sids = [
+                                    sid_f
+                                    for sid_f in range(span_before, len(op_spans))
+                                    if op_spans[sid_f].stream_key == f_skey and op_spans[sid_f].consumed_by_shape
+                                ]
+                                if created_sids:
+                                    form_local_spans[f_skey] = (form_ctm, created_sids)
+                            else:
+                                f_bytes = raw_streams[f_skey]
+                                if f_skey in form_local_spans:
+                                    first_ctm, loc_sids = form_local_spans[f_skey]
+                                    p0_x, p0_y = _apply_ctm(first_ctm, 0.0, 0.0, page_h)
+                                    pn_x, pn_y = _apply_ctm(form_ctm, 0.0, 0.0, page_h)
+                                    dx_p, dy_p = pn_x - p0_x, pn_y - p0_y
+                                    for sid_f in loc_sids:
+                                        sp_f = op_spans[sid_f]
+                                        sp_f.paint_count += 1
+                                        if sp_f.bbox[0] < 1e8:
+                                            sb_shift = (
+                                                sp_f.bbox[0] + dx_p,
+                                                sp_f.bbox[1] + dy_p,
+                                                sp_f.bbox[2] + dx_p,
+                                                sp_f.bbox[3] + dy_p,
+                                            )
+                                            sp_f.bbox = [
+                                                min(sp_f.bbox[0], sb_shift[0]),
+                                                min(sp_f.bbox[1], sb_shift[1]),
+                                                max(sp_f.bbox[2], sb_shift[2]),
+                                                max(sp_f.bbox[3], sb_shift[3]),
+                                            ]
+                                            if len(sp_f.swatch_bboxes) < 16 and (sb_shift[2] - sb_shift[0]) <= 36.0 and (sb_shift[3] - sb_shift[1]) <= 28.0:
+                                                sp_f.swatch_bboxes.append(sb_shift)
+
+                            # Stamp any caller-inherited paint ops inside this Form XObject (e.g. Matplotlib `/M0 Do`, `/P0 Do` scatter points!)
+                            inh_list = _analyze_form_inherited_ops(f_skey, xo_obj, f_bytes, f_res, depth + 1)
+                            for lb_all, lb_subs, uf_inh, us_inh, dash_inh in inh_list:
+                                pb_all = _rect_to_page_bbox(
+                                    form_ctm, lb_all[0], lb_all[1], lb_all[2] - lb_all[0], lb_all[3] - lb_all[1], page_h
+                                )
+                                pb_subs = [
+                                    _rect_to_page_bbox(form_ctm, sb_i[0], sb_i[1], sb_i[2] - sb_i[0], sb_i[3] - sb_i[1], page_h)
+                                    for sb_i in lb_subs
+                                ]
+                                _credit_shape_paint(
+                                    overall_bbox=pb_all,
+                                    subpaths=pb_subs,
+                                    uses_fill=uf_inh,
+                                    uses_stroke=us_inh,
+                                    f_span_idx=cur_fill_span if uf_inh else None,
+                                    s_span_idx=cur_stroke_span if us_inh else None,
+                                    f_alpha=fill_alpha,
+                                    s_alpha=stroke_alpha,
+                                    dashed_flag=is_dashed or dash_inh,
                                 )
 
         _parse_stream_scope(
@@ -971,6 +1315,12 @@ def parse_pdf_scene(
         if L < 0.08 and C < 0.015:
             sp.mutable = False
             continue
+        # Protect achromatic outline strokes around differently-colored filled shapes (e.g. `#222222`/`#333333` scatter & boxplot borders)
+        # and achromatic dashed reference/threshold lines (`#555555` median lines), while keeping data categories!
+        if sp.is_stroke and C < 0.012:
+            if sp.is_dashed_grid or (sp.used_with_diff_fill and not sp.used_with_same_fill and not sp.used_standalone):
+                sp.mutable = False
+                continue
         # Protect only TRUE achromatic light-gray gridlines & panel backdrop rects (`C < 0.012`),
         # preserving low-chroma tinted data categories such as mist-slate (`#C9D6DF`, C ~ 0.019)!
         if C < 0.012 and L > 0.87 and (sp.is_dashed_grid or sp.is_stroke or sp.max_subpath_area > 2200.0):
@@ -1025,61 +1375,73 @@ def parse_pdf_scene(
             colorbar_lut_t[xo_name] = t_px.reshape(rgb01.shape[:2])
             raster_heatmaps_by_panel.setdefault(pid, []).append((xo_name, lut, is_div, mid_t))
 
-    # Aggregate mutable ColorOpSpans into ColorGroups per (panel_id, quantized_hex_cluster)
+    # Aggregate mutable ColorOpSpans into ColorGroups per (panel_id, quantized_hex_cluster, overlay_mark_layer)
     color_groups: dict[str, ColorGroup] = {}
-    panel_clusters: dict[str, list[tuple[np.ndarray, str]]] = {}
-    exact_hex_cluster_cache: dict[tuple[str, str], str] = {}
+    panel_color_buckets: dict[str, list[tuple[np.ndarray, list[ColorOpSpan]]]] = {}
+    exact_bucket_cache: dict[tuple[str, str], list[ColorOpSpan]] = {}
 
     for sp in op_spans:
         if not sp.mutable:
             continue
-        cache_key = (sp.panel_id, sp.srgb_hex)
-        matched_gid = exact_hex_cluster_cache.get(cache_key)
-        if matched_gid is None:
+        b_key = (sp.panel_id, sp.srgb_hex)
+        bucket = exact_bucket_cache.get(b_key)
+        if bucket is None:
             lab = srgb_to_oklab(hex_to_srgb01(sp.srgb_hex))
-            existing = panel_clusters.setdefault(sp.panel_id, [])
-            for c_lab, gid in existing:
+            existing = panel_color_buckets.setdefault(sp.panel_id, [])
+            for c_lab, b_list in existing:
                 if float(np.linalg.norm(lab - c_lab)) <= 0.016:
-                    matched_gid = gid
+                    bucket = b_list
                     break
-            if matched_gid is None:
-                matched_gid = f"g_{len(color_groups) + 1:03d}"
-                existing.append((lab, matched_gid))
-                color_groups[matched_gid] = ColorGroup(
-                    group_id=matched_gid,
-                    panel_id=sp.panel_id,
-                    role="stroke" if sp.is_stroke else "fill",
-                    original_hex=sp.srgb_hex,
-                    current_hex=sp.srgb_hex,
-                    alpha=round(sp.alpha, 3),
-                    primitive_count=sp.paint_count,
-                    total_area_pt2=round(sp.total_area, 2),
-                    min_mark_pt=round(sp.min_dim, 2),
-                    sample_bbox=(
-                        round(sp.bbox[0], 2),
-                        round(sp.bbox[1], 2),
-                        round(sp.bbox[2], 2),
-                        round(sp.bbox[3], 2),
-                    ),
-                    op_indices=[sp.span_id],
-                )
-                exact_hex_cluster_cache[cache_key] = matched_gid
-                sp.group_id = matched_gid
-                continue
-            exact_hex_cluster_cache[cache_key] = matched_gid
+            if bucket is None:
+                bucket = []
+                existing.append((lab, bucket))
+            exact_bucket_cache[b_key] = bucket
+        bucket.append(sp)
 
-        cg = color_groups[matched_gid]
-        cg.primitive_count += sp.paint_count
-        cg.total_area_pt2 = round(cg.total_area_pt2 + sp.total_area, 2)
-        cg.min_mark_pt = round(min(cg.min_mark_pt, sp.min_dim), 2)
-        cg.sample_bbox = (
-            round(min(cg.sample_bbox[0], sp.bbox[0]), 2),
-            round(min(cg.sample_bbox[1], sp.bbox[1]), 2),
-            round(max(cg.sample_bbox[2], sp.bbox[2]), 2),
-            round(max(cg.sample_bbox[3], sp.bbox[3]), 2),
+    def _emit_color_group(sps: list[ColorOpSpan], m_kind: str) -> str:
+        sp0 = sps[0]
+        gid = f"g_{len(color_groups) + 1:03d}"
+        has_fill = any(not s.is_stroke for s in sps)
+        bx0 = min(s.bbox[0] for s in sps)
+        by0 = min(s.bbox[1] for s in sps)
+        bx1 = max(s.bbox[2] for s in sps)
+        by1 = max(s.bbox[3] for s in sps)
+        color_groups[gid] = ColorGroup(
+            group_id=gid,
+            panel_id=sp0.panel_id,
+            role="fill" if has_fill else "stroke",
+            original_hex=sp0.srgb_hex,
+            current_hex=sp0.srgb_hex,
+            alpha=round(sp0.alpha, 3),
+            primitive_count=sum(s.paint_count for s in sps),
+            total_area_pt2=round(sum(s.total_area for s in sps), 2),
+            min_mark_pt=round(min(s.min_dim for s in sps), 2),
+            sample_bbox=(round(bx0, 2), round(by0, 2), round(bx1, 2), round(by1, 2)),
+            mark_kind=m_kind,  # type: ignore[arg-type]
+            op_indices=[s.span_id for s in sps],
         )
-        cg.op_indices.append(sp.span_id)
-        sp.group_id = matched_gid
+        for s in sps:
+            s.group_id = gid
+        return gid
+
+    sibling_layer_pairs: list[tuple[str, str]] = []
+    for pid_b, clusters_b in panel_color_buckets.items():
+        for _, b_spans in clusters_b:
+            pt_spans = [s for s in b_spans if s.max_subpath_dim <= 18.0]
+            non_pt_spans = [s for s in b_spans if s.max_subpath_dim > 18.0]
+            n_pt_marks = sum(s.paint_count for s in pt_spans)
+            if non_pt_spans and pt_spans and n_pt_marks >= 3:
+                # Genuine overlaying graph (e.g. Boxplot/Violin/Bar + >= 3 Individual Data Points):
+                # keep separate ColorGroups for area/line vs points so both pick cleanly and can be unlinked!
+                base_kind = "area" if any(not s.is_stroke for s in non_pt_spans) else "line"
+                gid_base = _emit_color_group(non_pt_spans, base_kind)
+                gid_pts = _emit_color_group(pt_spans, "point")
+                sibling_layer_pairs.append((gid_base, gid_pts))
+            elif non_pt_spans:
+                base_kind = "area" if any(not s.is_stroke for s in non_pt_spans) else "line"
+                _emit_color_group(b_spans, base_kind)
+            else:
+                _emit_color_group(b_spans, "point")
 
     # Couple ContinuousScales per panel
     continuous_scales: dict[str, ContinuousScale] = {}
@@ -1208,8 +1570,65 @@ def parse_pdf_scene(
     # Generalized Legend Swatch -> Text Binding
     _bind_legend_labels(op_spans, color_groups, texts, panels)
 
+    # Sync labels between overlaid sibling layers (`area`/`line` <-> `point`) in the same panel & color cluster
+    for gid_a, gid_b in sibling_layer_pairs:
+        cg_a = color_groups.get(gid_a)
+        cg_b = color_groups.get(gid_b)
+        if cg_a and cg_b:
+            if cg_a.local_label and not cg_b.local_label:
+                cg_b.local_label = cg_a.local_label
+            elif cg_b.local_label and not cg_a.local_label:
+                cg_a.local_label = cg_b.local_label
+
+    # Propagate unambiguous shared figure-wide legend labels (`fig.legend`, `patchwork`, `ggpubr`) across panels
+    if len(panels) > 1:
+        labeled_cgs = [cg for cg in color_groups.values() if cg.local_label and not cg.is_continuous_member]
+        if labeled_cgs:
+            lbl_srgbs = np.stack([hex_to_srgb01(cg.original_hex) for cg in labeled_cgs], axis=0)
+            for cg in color_groups.values():
+                if cg.local_label or cg.is_continuous_member:
+                    continue
+                d_vec = ciede2000_matrix(hex_to_srgb01(cg.original_hex)[None, :], lbl_srgbs)[0]
+                near_idxs = [idx_l for idx_l, dv in enumerate(d_vec) if float(dv) < 2.0]
+                if not near_idxs:
+                    continue
+                cand_norms = {_normalize_factor_key(labeled_cgs[idx_l].local_label).lower() for idx_l in near_idxs}
+                if len(cand_norms) != 1:
+                    continue
+                best_lbl = labeled_cgs[min(near_idxs, key=lambda idx_l: float(d_vec[idx_l]))].local_label
+                target_norm = next(iter(cand_norms))
+                panel_conflict = any(
+                    other.panel_id == cg.panel_id
+                    and other.local_label
+                    and _normalize_factor_key(other.local_label).lower() == target_norm
+                    and float(
+                        ciede2000_matrix(
+                            hex_to_srgb01(cg.original_hex)[None, :],
+                            hex_to_srgb01(other.original_hex)[None, :],
+                        )[0, 0]
+                    )
+                    >= 5.0
+                    for other in color_groups.values()
+                )
+                if not panel_conflict:
+                    cg.local_label = best_lbl
+
+    # Prune unlabeled pure-achromatic standalone strokes (boxplot whiskers, medians, caps, error bars, gray spines)
+    for gid_p in list(color_groups.keys()):
+        cg_p = color_groups[gid_p]
+        if cg_p.is_continuous_member or cg_p.role != "stroke" or cg_p.local_label:
+            continue
+        _, C_p, _ = hex_to_oklch(cg_p.original_hex)
+        if C_p < 0.012 and not any(op_spans[sid].used_with_same_fill for sid in cg_p.op_indices):
+            for sid in cg_p.op_indices:
+                op_spans[sid].mutable = False
+                op_spans[sid].group_id = None
+            del color_groups[gid_p]
+
     # Build Semantic Entities & Detect Plain-Language Notices
-    entities, collisions, plain_notices = _build_entities_and_collisions(color_groups, continuous_scales, panels)
+    entities, collisions, plain_notices = _build_entities_and_collisions(
+        color_groups, continuous_scales, panels, sibling_layer_pairs=sibling_layer_pairs
+    )
 
     # Scanned-PDF check (Spec 4.1: "This page contains only an image, no editable shapes.")
     has_big_img = any(
@@ -1364,20 +1783,28 @@ def _bind_legend_labels(
             for sb in sp.swatch_bboxes:
                 raw_keys.append((sp.panel_id, cg.group_id, sb, sp.paint_count))
 
-    # Pre-score candidate (key -> text) pairs per panel so we can reward aligned multi-item legend stacks!
-    cand_matches: list[tuple[str, str, tuple[float, float, float, float], TextItem, float]] = []
+    # Pre-score candidate (key -> text) pairs per panel (and shared figure margins) so aligned legend stacks win!
+    cand_matches: list[tuple[str, str, tuple[float, float, float, float], TextItem, float, bool]] = []
     for pid, gid, kbox, pcnt in raw_keys:
         pb = panel_map[pid].bbox
         rel_x = (kbox[0] - pb[0]) / max(1.0, pb[2] - pb[0])
         rel_y = (kbox[1] - pb[1]) / max(1.0, pb[3] - pb[1])
-        margin_bonus = 35.0 if (rel_x > 0.66 or rel_x < 0.24 or rel_y > 0.80 or rel_y < 0.18) else 0.0
+        in_margin = bool(rel_x > 0.66 or rel_x < 0.24 or rel_y > 0.80 or rel_y < 0.18)
+        margin_bonus = 35.0 if in_margin else 0.0
         single_bonus = 18.0 if pcnt <= 3 else 0.0
+        fill_bonus = 2.5 if color_groups[gid].role == "fill" else 0.0
         scx = 0.5 * (kbox[0] + kbox[2])
         scy = 0.5 * (kbox[1] + kbox[3])
 
-        for t in panel_texts.get(pid, []):
+        # For margin / shared figure legends (`fig.legend`, `patchwork`), also allow text just across a panel split
+        cand_texts = texts if (in_margin and len(panels) > 1) else panel_texts.get(pid, [])
+        for t in cand_texts:
             txt_clean = t.text.strip()
-            if not txt_clean or re.fullmatch(r"[+-]?\d+(?:[.,]\d+)?%?", txt_clean):
+            if (
+                not txt_clean
+                or re.fullmatch(r"[+-]?\d+(?:[.,]\d+)?%?", txt_clean)
+                or re.fullmatch(r"[\u25a0-\u25ff\u2022\u2219\u2605\u2606\u2713-\u2718\s]+", txt_clean)
+            ):
                 continue
             if len(txt_clean) == 1 and "A" <= txt_clean <= "Z" and (t.bbox[1] - pb[1]) < 35.0:
                 continue
@@ -1387,26 +1814,26 @@ def _bind_legend_labels(
             # Case 1: label to the right of key (vertical or multi-column legend)
             dx_r = t.bbox[0] - kbox[2]
             dy_r = abs(tcy - scy)
-            if -3.5 <= dx_r <= 30.0 and dy_r <= 8.0:
-                base_sc = 50.0 + margin_bonus + single_bonus - abs(dx_r) - 2.2 * dy_r
-                cand_matches.append((pid, gid, kbox, t, base_sc))
+            if -3.5 <= dx_r <= 34.0 and dy_r <= 8.5:
+                base_sc = 50.0 + margin_bonus + single_bonus + fill_bonus - abs(dx_r) - 2.2 * dy_r
+                cand_matches.append((pid, gid, kbox, t, base_sc, in_margin))
                 continue
 
             # Case 2: label directly below key (horizontal bottom/top legend)
             dy_b = t.bbox[1] - kbox[3]
             dx_b = abs(tcx - scx)
             if -1.0 <= dy_b <= 15.0 and dx_b <= 20.0:
-                base_sc = 36.0 + margin_bonus + single_bonus - 1.5 * dy_b - 1.5 * dx_b
-                cand_matches.append((pid, gid, kbox, t, base_sc))
+                base_sc = 36.0 + margin_bonus + single_bonus + fill_bonus - 1.5 * dy_b - 1.5 * dx_b
+                cand_matches.append((pid, gid, kbox, t, base_sc, in_margin))
 
     # Boost matches that form an aligned column (`|x0_a - x0_b| <= 4.5`) or row (`|y0_a - y0_b| <= 4.5`) with DIFFERENT group_ids!
-    best_match_for_group: dict[str, tuple[float, str]] = {}
-    for i, (pid, gid, kbox, t, base_sc) in enumerate(cand_matches):
+    scored_matches: list[tuple[float, str, TextItem, tuple[float, float, float, float]]] = []
+    for i, (pid, gid, kbox, t, base_sc, in_margin) in enumerate(cand_matches):
         peers = sum(
             1
-            for j, (pid2, gid2, kbox2, t2, _) in enumerate(cand_matches)
+            for j, (pid2, gid2, kbox2, t2, _, in_margin2) in enumerate(cand_matches)
             if i != j
-            and pid2 == pid
+            and (pid2 == pid or (in_margin and in_margin2))
             and gid2 != gid
             and t2.text != t.text
             and (abs(kbox[0] - kbox2[0]) <= 4.5 or abs(kbox[1] - kbox2[1]) <= 4.5)
@@ -1415,9 +1842,32 @@ def _bind_legend_labels(
         if peers == 0 and base_sc < 75.0:
             continue
         total_sc = base_sc + min(3, peers) * 24.0
-        prev = best_match_for_group.get(gid)
-        if prev is None or total_sc > prev[0]:
-            best_match_for_group[gid] = (total_sc, t.text.strip())
+        scored_matches.append((total_sc, gid, t, kbox))
+
+    # Sort best-first and prevent a differently-colored border stroke at the exact same kbox from stealing a filled swatch's label
+    scored_matches.sort(key=lambda x: x[0], reverse=True)
+    best_match_for_group: dict[str, tuple[float, str]] = {}
+    claimed_text_keys: list[tuple[int, str, tuple[float, float, float, float]]] = []
+    for total_sc, gid, t, kbox in scored_matches:
+        if gid in best_match_for_group:
+            continue
+        cg_cur = color_groups[gid]
+        conflict_same_swatch = False
+        for t_id, prev_hex, prev_kb in claimed_text_keys:
+            if t_id == id(t) and abs(kbox[0] - prev_kb[0]) <= 2.5 and abs(kbox[1] - prev_kb[1]) <= 2.5:
+                de_pair = float(
+                    ciede2000_matrix(
+                        hex_to_srgb01(cg_cur.original_hex)[None, :],
+                        hex_to_srgb01(prev_hex)[None, :],
+                    )[0, 0]
+                )
+                if de_pair >= 6.0:
+                    conflict_same_swatch = True
+                    break
+        if conflict_same_swatch:
+            continue
+        best_match_for_group[gid] = (total_sc, t.text.strip())
+        claimed_text_keys.append((id(t), cg_cur.original_hex, kbox))
 
     for gid, (_, lbl) in best_match_for_group.items():
         color_groups[gid].local_label = lbl
@@ -1431,9 +1881,15 @@ def _build_entities_and_collisions(
     color_groups: dict[str, ColorGroup],
     continuous_scales: dict[str, ContinuousScale],
     panels: list[PanelBox],
+    sibling_layer_pairs: list[tuple[str, str]] | None = None,
 ) -> tuple[dict[str, SemanticEntity], list[CollisionNotice], list[dict[str, Any]]]:
     entities: dict[str, SemanticEntity] = {}
     label_to_eid: dict[str, str] = {}
+    sibling_partner: dict[str, str] = {}
+    for ga, gb in sibling_layer_pairs or []:
+        sibling_partner[ga] = gb
+        sibling_partner[gb] = ga
+    gid_to_eid: dict[str, str] = {}
     label_panel_hexes: dict[str, list[tuple[str, str, str]]] = {}
 
     cat_groups = [cg for cg in color_groups.values() if not cg.is_continuous_member]
@@ -1441,19 +1897,30 @@ def _build_entities_and_collisions(
     for cg in cat_groups:
         raw_lbl = cg.local_label.strip()
         norm_key = _normalize_factor_key(raw_lbl).lower() if raw_lbl else ""
+        sib_gid = sibling_partner.get(cg.group_id)
         if norm_key and norm_key in label_to_eid:
             eid = label_to_eid[norm_key]
             ent = entities[eid]
             ent.member_group_ids.append(cg.group_id)
             if cg.panel_id not in ent.panels:
                 ent.panels.append(cg.panel_id)
+            gid_to_eid[cg.group_id] = eid
             label_panel_hexes[norm_key].append((cg.panel_id, cg.original_hex, eid))
+        elif not norm_key and sib_gid and sib_gid in gid_to_eid:
+            # Merge unlabeled overlaid points + area in the same panel & color cluster into one cohort entity by default
+            eid = gid_to_eid[sib_gid]
+            ent = entities[eid]
+            ent.member_group_ids.append(cg.group_id)
+            gid_to_eid[cg.group_id] = eid
+            tot_cnt = sum(color_groups[g].primitive_count for g in ent.member_group_ids if g in color_groups)
+            ent.label = describe_color_group(ent.original_hex, tot_cnt)
         else:
             eid = f"e_{len(entities) + 1:02d}"
             disp = _normalize_factor_key(raw_lbl) if raw_lbl else describe_color_group(cg.original_hex, cg.primitive_count)
             if norm_key:
                 label_to_eid[norm_key] = eid
                 label_panel_hexes[norm_key] = [(cg.panel_id, cg.original_hex, eid)]
+            gid_to_eid[cg.group_id] = eid
             low_l = disp.lower()
             is_ctrl = any(
                 low_l == pat or low_l.startswith(pat + "_") or low_l.startswith(pat + " ")
@@ -1627,15 +2094,18 @@ def _neutralize_resources_for_id_map(
 ) -> None:
     if not res:
         return
-    if "/ExtGState" in res:
-        for k_gs in list(res["/ExtGState"].keys()):
-            gs_obj = res["/ExtGState"][k_gs]
-            gs_obj["/ca"] = 1
-            gs_obj["/CA"] = 1
-            if "/SMask" in gs_obj:
-                gs_obj["/SMask"] = pikepdf.Name("/None")
-            if "/BM" in gs_obj:
-                gs_obj["/BM"] = pikepdf.Name("/Normal")
+    if "/ExtGState" not in res:
+        res["/ExtGState"] = pikepdf.Dictionary()
+    for k_gs in list(res["/ExtGState"].keys()):
+        gs_obj = res["/ExtGState"][k_gs]
+        gs_obj["/ca"] = 1
+        gs_obj["/CA"] = 1
+        if "/SMask" in gs_obj:
+            gs_obj["/SMask"] = pikepdf.Name("/None")
+        if "/BM" in gs_obj:
+            gs_obj["/BM"] = pikepdf.Name("/Normal")
+    res["/ExtGState"]["/DqS0"] = pikepdf.Dictionary({"/Type": pikepdf.Name("/ExtGState"), "/CA": 0})
+    res["/ExtGState"]["/DqS1"] = pikepdf.Dictionary({"/Type": pikepdf.Name("/ExtGState"), "/CA": 1})
 
     if "/XObject" in res:
         for k_xo in list(res["/XObject"].keys()):
@@ -1673,9 +2143,10 @@ def _neutralize_resources_for_id_map(
                     smask["/BitsPerComponent"] = 8
                     xo["/SMask"] = smask
             elif st == "/Form":
-                _neutralize_resources_for_id_map(
-                    xo.get("/Resources"), pdf_doc, mutable_xos, colorbar_lut_t, prefix + [str(k_xo)], visited
-                )
+                if "/Resources" in xo:
+                    _neutralize_resources_for_id_map(
+                        xo.get("/Resources"), pdf_doc, mutable_xos, colorbar_lut_t, prefix + [str(k_xo)], visited
+                    )
 
 
 def _render_interactive_layers(scene: ParsedPdfScene) -> None:
@@ -1719,7 +2190,8 @@ def _render_interactive_layers(scene: ParsedPdfScene) -> None:
         for sp in scene.op_spans:
             op_tok = "RG" if sp.is_stroke else "rg"
             if not sp.mutable or sp.group_id is None:
-                rep = f"0 0 0 {op_tok}".encode("ascii")
+                # Hide immutable strokes (`/CA = 0`) in pick map so point/boxplot outlines never eat or punch holes in fills
+                rep = b"/DqS0 gs 0 0 0 RG" if sp.is_stroke else b"0 0 0 rg"
             else:
                 cg = scene.color_groups[sp.group_id]
                 p_code = panel_to_idx.get(cg.panel_id, 1)
@@ -1730,7 +2202,8 @@ def _render_interactive_layers(scene: ParsedPdfScene) -> None:
                     c_idx = cat_gid_to_idx[cg.group_id]
                     r_u8 = 1 + (c_idx % 240)
                     g_u8 = (c_idx // 240) & 0xFF
-                rep = f"{r_u8 / 255.0:.6f} {g_u8 / 255.0:.6f} {p_code / 255.0:.6f} {op_tok}".encode("ascii")
+                prefix_gs = "/DqS1 gs " if sp.is_stroke else ""
+                rep = f"{prefix_gs}{r_u8 / 255.0:.6f} {g_u8 / 255.0:.6f} {p_code / 255.0:.6f} {op_tok}".encode("ascii")
             slices_by_stream.setdefault(sp.stream_key, []).append((sp.start, sp.end, rep))
 
         for sk, raw_b in scene.raw_streams.items():
