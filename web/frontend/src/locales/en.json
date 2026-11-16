@@ -274,14 +274,14 @@
       "table": "Table (.csv/.xlsx)"
     },
     "landing": {
-      "headline": "Tidy messy tables, export native Excel and Word",
-      "tagline": "Inspect the raw grid first, reshape long-to-wide layouts, merge summary pairs, format P values safely, and download editable .xlsx or .docx files.",
+      "headline": "Clear order for complex numbers, craft in every detail",
+      "tagline": "Keep every raw value intact while shaping headers, statistical pairs, and gentle color scales into native Excel and Word tables.",
       "dropTitle": "Drop CSV, TSV, TXT, or XLSX here",
       "browseButton": "Choose table file",
       "pasteButton": "Paste data",
       "formats": "CSV, TSV, TXT, Excel (.xlsx), or press Ctrl/⌘+V to paste · Up to 25 MB",
       "privacy": "Tables stay in session memory only and clear when you close the tab.",
-      "samplesHeading": "Or inspect a public raw dataset",
+      "samplesHeading": "Or try a sample raw table",
       "needsPrefix": "Needs tidying: {{detail}}",
       "sourceCredit": "Raw data: {{provider}} ({{license}}) · Summary computed by build script"
     },

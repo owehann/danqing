@@ -274,14 +274,14 @@
       "table": "表格 (.csv/.xlsx)"
     },
     "landing": {
-      "headline": "先看原表再整理，导出原生 Excel 与 Word",
-      "tagline": "原样检视导入网格，支持长转宽透视、双层跨列表头、均值标准差合并与 P 值防进位排版，一键下载 .xlsx 与 .docx 表格。",
+      "headline": "纳繁数于尺素，见章法于毫厘",
+      "tagline": "不动分毫原始数值，从容理顺行列经纬、统计合并与温润色阶，成稿可编辑的 Excel 与 Word 刊物表格。",
       "dropTitle": "拖入 CSV、TSV、TXT 或 XLSX 文件",
       "browseButton": "选择表格文件",
       "pasteButton": "粘贴数据",
       "formats": "支持 CSV、TSV、TXT、Excel (.xlsx) 或按 Ctrl/⌘+V 直接粘贴 · 上限 25 MB",
       "privacy": "表格仅在当前会话内存中解析，关闭标签页即自动清除。",
-      "samplesHeading": "或试一试公开原始数据导出的待整理表格",
+      "samplesHeading": "或试一试示例原表",
       "needsPrefix": "需整理：{{detail}}",
       "sourceCredit": "原始数据：{{provider}}（{{license}}）· 汇总由本工具脚本计算"
     },
