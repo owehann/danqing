@@ -19,6 +19,7 @@ from contextlib import asynccontextmanager
 import contextvars
 import copy
 import gc
+import gzip
 import hashlib
 import hmac
 import io
@@ -980,6 +981,90 @@ async def _lifespan(_: FastAPI):
     yield
 
 
+class _SelectiveTextGZipMiddleware:
+    """Compress compressible text/JSON/SVG/JS/CSS responses at fast level 5 while streaming PNG/PDF/ZIP/XLSX/DOCX raw."""
+
+    _COMPRESSIBLE_PREFIXES = (
+        b"application/json",
+        b"text/",
+        b"image/svg+xml",
+        b"application/javascript",
+        b"text/javascript",
+    )
+
+    def __init__(self, app_inner: Any, minimum_size: int = 1000, compresslevel: int = 5) -> None:
+        self.app = app_inner
+        self.minimum_size = minimum_size
+        self.compresslevel = compresslevel
+
+    async def __call__(self, scope: dict[str, Any], receive: Any, send: Any) -> None:
+        if scope["type"] != "http" or scope.get("path", "").endswith("/events"):
+            await self.app(scope, receive, send)
+            return
+        accept_enc = b""
+        for hk, hv in scope.get("headers", ()):
+            if hk == b"accept-encoding":
+                accept_enc = hv
+                break
+        if b"gzip" not in accept_enc.lower():
+            await self.app(scope, receive, send)
+            return
+
+        start_msg: dict[str, Any] | None = None
+        passthrough = False
+        chunks: list[bytes] = []
+
+        async def _send_wrapper(message: dict[str, Any]) -> None:
+            nonlocal start_msg, passthrough
+            mtype = message["type"]
+            if mtype == "http.response.start":
+                hdrs = message.get("headers", [])
+                ctype = b""
+                already_enc = False
+                for hk, hv in hdrs:
+                    lk = hk.lower()
+                    if lk == b"content-type":
+                        ctype = hv.lower()
+                    elif lk == b"content-encoding":
+                        already_enc = True
+                if already_enc or not ctype.startswith(self._COMPRESSIBLE_PREFIXES):
+                    passthrough = True
+                    await send(message)
+                else:
+                    start_msg = message
+                return
+
+            if mtype == "http.response.body":
+                if passthrough or start_msg is None:
+                    await send(message)
+                    return
+                chunks.append(message.get("body", b""))
+                if message.get("more_body", False):
+                    return
+                raw_body = b"".join(chunks)
+                orig_hdrs = [
+                    (hk, hv)
+                    for hk, hv in start_msg.get("headers", [])
+                    if hk.lower() != b"content-length"
+                ]
+                if len(raw_body) >= self.minimum_size:
+                    gz_body = gzip.compress(raw_body, compresslevel=self.compresslevel)
+                    orig_hdrs.append((b"content-encoding", b"gzip"))
+                    orig_hdrs.append((b"vary", b"Accept-Encoding"))
+                    orig_hdrs.append((b"content-length", str(len(gz_body)).encode("ascii")))
+                    await send({**start_msg, "headers": orig_hdrs})
+                    await send({"type": "http.response.body", "body": gz_body, "more_body": False})
+                else:
+                    orig_hdrs.append((b"content-length", str(len(raw_body)).encode("ascii")))
+                    await send({**start_msg, "headers": orig_hdrs})
+                    await send({"type": "http.response.body", "body": raw_body, "more_body": False})
+                return
+
+            await send(message)
+
+        await self.app(scope, receive, _send_wrapper)
+
+
 app = FastAPI(title="Danqing (丹青) Scientific Figure Recoloring API", version="2.0.0", lifespan=_lifespan)
 app.add_middleware(
     CORSMiddleware,
@@ -987,7 +1072,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.add_middleware(GZipMiddleware, minimum_size=1000)
+app.add_middleware(_SelectiveTextGZipMiddleware, minimum_size=1000, compresslevel=5)
 
 
 @app.middleware("http")
@@ -2234,8 +2319,8 @@ class ExportRequest(BaseModel):
     force: bool = False
 
 
-def _compute_verified_export(sess: SceneSession, fmt: str) -> tuple[bytes, str, str, dict[str, Any], dict[str, Any]]:
-    """Run real byte-verified vector export + optional high-DPI rasterization, returning live check results."""
+def _ensure_verified_vector_export(sess: SceneSession) -> tuple[bytes, dict[str, Any], dict[str, Any]]:
+    """Verify & cache the base recolored vector bytes (`PDF` or `SVG`) once per `sess.revision` without high-DPI rasterization."""
     assert sess.parsed is not None
     if sess.last_solve is None:
         _recompute_session(sess)
@@ -2243,23 +2328,22 @@ def _compute_verified_export(sess: SceneSession, fmt: str) -> tuple[bytes, str, 
     p = sess.parsed
     sr = sess.last_solve
 
-    vec_key = (sess.revision, sess.kind)
+    vec_key = (sess.revision, "__vec__")
     with sess.render_lock:
         cached = sess.verified_export_cache.get(vec_key)
     if cached is not None:
-        vec_bytes, audit = cached
+        vec_bytes, meta_bundle = cached
+        return vec_bytes, meta_bundle["checks"], meta_bundle["audit"]
+
+    group_alpha = _build_group_alpha_map(p)
+    if isinstance(p, ParsedPdfScene):
+        vec_bytes, audit = export_recolored_pdf(
+            p, sr.group_hex, sr.scale_stops, verify=True, group_alpha_map=group_alpha
+        )
     else:
-        group_alpha = _build_group_alpha_map(p)
-        if isinstance(p, ParsedPdfScene):
-            vec_bytes, audit = export_recolored_pdf(
-                p, sr.group_hex, sr.scale_stops, verify=True, group_alpha_map=group_alpha
-            )
-        else:
-            vec_bytes, audit = export_recolored_svg(
-                p, sr.group_hex, sr.scale_stops, group_alpha_map=group_alpha
-            )
-        with sess.render_lock:
-            sess.verified_export_cache[vec_key] = (vec_bytes, audit)
+        vec_bytes, audit = export_recolored_svg(
+            p, sr.group_hex, sr.scale_stops, group_alpha_map=group_alpha
+        )
 
     raw_img_count = sum(
         1 for ev in p.evidence_regions if ev.mutability in ("class0_sacrosanct_evidence", "class1_fluorescence_lut")
@@ -2283,9 +2367,36 @@ def _compute_verified_export(sess: SceneSession, fmt: str) -> tuple[bytes, str, 
         "integrity_passed": bool(shapes_ok and images_ok),
     }
 
-    stem = Path(p.filename).stem
+    with sess.render_lock:
+        sess.verified_export_cache[vec_key] = (vec_bytes, {"checks": checks, "audit": audit})
+    return vec_bytes, checks, audit
+
+
+def _export_filename_and_media(sess: SceneSession, fmt: str) -> tuple[str, str]:
+    assert sess.parsed is not None
+    stem = Path(sess.parsed.filename).stem
     base_slug = "original" if sess.is_original_mode else sess.palette_id
     pal_slug = f"{base_slug}_{sess.aesthetic_style}" if sess.aesthetic_style else base_slug
+    if fmt in ("png_300", "png_600"):
+        dpi = 300 if fmt == "png_300" else 600
+        return f"{stem}_danqing_{pal_slug}_{dpi}dpi.png", "image/png"
+    if fmt == "svg":
+        return f"{stem}_danqing_{pal_slug}.svg", "image/svg+xml"
+    return f"{stem}_danqing_{pal_slug}.pdf", "application/pdf"
+
+
+def _compute_verified_export(sess: SceneSession, fmt: str) -> tuple[bytes, str, str, dict[str, Any], dict[str, Any]]:
+    """Return formatted export artifact (`PDF`, `SVG`, `PNG 300/600 dpi`), caching formatted bytes per `(revision, fmt)`."""
+    assert sess.parsed is not None
+    p = sess.parsed
+    vec_bytes, checks, audit = _ensure_verified_vector_export(sess)
+    fig_name, media = _export_filename_and_media(sess, fmt)
+
+    fmt_key = (sess.revision, f"fmt:{fmt}")
+    with sess.render_lock:
+        cached_fmt = sess.verified_export_cache.get(fmt_key)
+    if cached_fmt is not None:
+        return cached_fmt[0], fig_name, media, checks, audit
 
     if fmt in ("png_300", "png_600"):
         dpi = 300 if fmt == "png_300" else 600
@@ -2297,20 +2408,14 @@ def _compute_verified_export(sess: SceneSession, fmt: str) -> tuple[bytes, str, 
                 fill_color=(255, 255, 255, 255),
             )
             buf = io.BytesIO()
-            pil.save(buf, format="PNG", dpi=(dpi, dpi), compress_level=4)
+            pil.save(buf, format="PNG", dpi=(dpi, dpi), compress_level=1)
             fig_bytes = buf.getvalue()
         else:
             fig_bytes = render_svg_bytes_to_png(vec_bytes, dpi=float(dpi), background="#ffffff")
-        fig_name = f"{stem}_danqing_{pal_slug}_{dpi}dpi.png"
-        media = "image/png"
     elif fmt == "svg" and isinstance(p, SvgScene):
         fig_bytes = vec_bytes
-        fig_name = f"{stem}_danqing_{pal_slug}.svg"
-        media = "image/svg+xml"
     elif fmt == "pdf" and isinstance(p, ParsedPdfScene):
         fig_bytes = vec_bytes
-        fig_name = f"{stem}_danqing_{pal_slug}.pdf"
-        media = "application/pdf"
     elif fmt == "pdf" and isinstance(p, SvgScene):
         # High-res 300 DPI PDF wrapper when exporting an SVG input as PDF
         png300 = render_svg_bytes_to_png(vec_bytes, dpi=300.0, background="#ffffff")
@@ -2318,10 +2423,8 @@ def _compute_verified_export(sess: SceneSession, fmt: str) -> tuple[bytes, str, 
         buf = io.BytesIO()
         pil.save(buf, format="PDF", resolution=300.0)
         fig_bytes = buf.getvalue()
-        fig_name = f"{stem}_danqing_{pal_slug}.pdf"
-        media = "application/pdf"
     else:
-        # PDF exported as SVG wrapper (300 DPI embedded or native fallback)
+        # PDF exported as SVG wrapper (300 DPI embedded fallback)
         pil = render_pdf_page_to_pil(
             vec_bytes,
             page_index=p.page_index,
@@ -2331,7 +2434,7 @@ def _compute_verified_export(sess: SceneSession, fmt: str) -> tuple[bytes, str, 
         import base64
 
         b_png = io.BytesIO()
-        pil.save(b_png, format="PNG")
+        pil.save(b_png, format="PNG", compress_level=1)
         b64 = base64.b64encode(b_png.getvalue()).decode("ascii")
         svg_wrap = (
             f'<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -2341,9 +2444,9 @@ def _compute_verified_export(sess: SceneSession, fmt: str) -> tuple[bytes, str, 
             f"</svg>\n"
         ).encode("utf-8")
         fig_bytes = svg_wrap
-        fig_name = f"{stem}_danqing_{pal_slug}.svg"
-        media = "image/svg+xml"
 
+    with sess.render_lock:
+        sess.verified_export_cache[fmt_key] = (fig_bytes, {})
     return fig_bytes, fig_name, media, checks, audit
 
 
@@ -2353,10 +2456,11 @@ def verify_v2_figure_export(figure_id: str, req: ExportRequest) -> dict[str, Any
     if not sess or sess.status != "ready" or sess.parsed is None:
         raise HTTPException(status_code=404, detail="Figure not found")
     sess.touch()
-    fig_bytes, fig_name, _, checks, _ = _compute_verified_export(sess, req.format)
+    vec_bytes, checks, _ = _ensure_verified_vector_export(sess)
+    fig_name, _ = _export_filename_and_media(sess, req.format)
     return {
         "filename": fig_name,
-        "size_kb": round(len(fig_bytes) / 1024.0, 1),
+        "size_kb": round(len(vec_bytes) / 1024.0, 1),
         "checks": checks,
     }
 
@@ -2395,8 +2499,9 @@ def export_v2_figure(figure_id: str, req: ExportRequest) -> Response:
     zip_name = f"{stem}_danqing_{pal_slug}.zip"
 
     zbuf = io.BytesIO()
-    with zipfile.ZipFile(zbuf, mode="w", compression=zipfile.ZIP_DEFLATED) as zf:
-        zf.writestr(fig_name, fig_bytes)
+    fig_comp_mode = zipfile.ZIP_STORED if fig_name.lower().endswith((".pdf", ".png")) else zipfile.ZIP_DEFLATED
+    with zipfile.ZipFile(zbuf, mode="w", compression=zipfile.ZIP_DEFLATED, compresslevel=1) as zf:
+        zf.writestr(fig_name, fig_bytes, compress_type=fig_comp_mode)
         if req.include_r:
             zf.writestr(
                 f"{stem}_palette_ggplot2.R",

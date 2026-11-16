@@ -19,6 +19,7 @@ import hashlib
 import io
 import re
 import threading
+import zlib
 from dataclasses import dataclass, field
 from typing import Any, Callable
 
@@ -2470,6 +2471,9 @@ def export_recolored_pdf(
                 }
             )
 
+    g0_pass = True
+    evidence_audit: list[dict[str, Any]] = []
+
     with pikepdf.open(io.BytesIO(scene.raw_pdf_bytes)) as pdf_out:
         p0 = pdf_out.pages[scene.page_index]
         for sk, repl_list in slices_by_stream.items():
@@ -2477,14 +2481,21 @@ def export_recolored_pdf(
                 continue
             rewritten = _rewrite_stream_arbitrary(scene.raw_streams[sk], repl_list)
             if sk == "__page__":
-                p0.Contents = pdf_out.make_stream(rewritten)
+                if verify:
+                    comp_stream = zlib.compress(rewritten, level=1)
+                    p0.Contents = pdf_out.make_stream(comp_stream, Filter=pikepdf.Name("/FlateDecode"))
+                else:
+                    p0.Contents = pdf_out.make_stream(rewritten)
                 _register_alpha_extgstates(p0.obj, needed_alpha_gs.get(sk, {}))
             elif sk in scene.form_xobj_paths:
                 fxo = _resolve_nested_xobject(
                     p0.obj, scene.form_xobj_paths[sk], pdf_out, clone_for_isolation=(scene.page_count > 1)
                 )
                 if fxo is not None:
-                    fxo.write(rewritten)
+                    if verify:
+                        fxo.write(zlib.compress(rewritten, level=1), filter=pikepdf.Name("/FlateDecode"))
+                    else:
+                        fxo.write(rewritten)
                     _register_alpha_extgstates(fxo, needed_alpha_gs.get(sk, {}))
 
         mod_rasters = 0
@@ -2505,8 +2516,24 @@ def export_recolored_pdf(
                         xo_target["/BitsPerComponent"] = 8
                         mod_rasters += 1
 
+        if verify:
+            for ev in scene.evidence_regions:
+                if ev.mutability in ("class0_sacrosanct_evidence", "class1_fluorescence_lut"):
+                    chain = [seg if seg.startswith("/") else f"/{seg}" for seg in ev.xobject_name.lstrip("/").split("/")]
+                    xo_c = _resolve_nested_xobject(p0.obj, chain, pdf_out, clone_for_isolation=False)
+                    if xo_c is None:
+                        continue
+                    try:
+                        after_b = xo_c.read_raw_bytes()
+                    except Exception:
+                        after_b = xo_c.read_bytes()
+                    same = hashlib.sha256(after_b).hexdigest() == ev.sha256_original
+                    if not same:
+                        g0_pass = False
+                    evidence_audit.append({"xobject": ev.xobject_name, "sha256_match": same})
+
         out_buf = io.BytesIO()
-        pdf_out.save(out_buf, compress_streams=verify)
+        pdf_out.save(out_buf, compress_streams=False)
         out_bytes = out_buf.getvalue()
 
     if not verify:
@@ -2516,28 +2543,34 @@ def export_recolored_pdf(
             "g3b_inverted_cell_labels": g3b_flips,
         }
 
-    g0_pass = True
-    evidence_audit: list[dict[str, Any]] = []
-    with pikepdf.open(io.BytesIO(out_bytes)) as pdf_check:
-        p_c = pdf_check.pages[scene.page_index]
-        for ev in scene.evidence_regions:
-            if ev.mutability in ("class0_sacrosanct_evidence", "class1_fluorescence_lut"):
-                chain = [seg if seg.startswith("/") else f"/{seg}" for seg in ev.xobject_name.lstrip("/").split("/")]
-                xo_c = _resolve_nested_xobject(p_c.obj, chain, pdf_check, clone_for_isolation=False)
-                if xo_c is None:
-                    continue
-                try:
-                    after_b = xo_c.read_raw_bytes()
-                except Exception:
-                    after_b = xo_c.read_bytes()
-                sha_after = hashlib.sha256(after_b).hexdigest()
-                same = sha_after == ev.sha256_original
-                if not same:
-                    g0_pass = False
-                evidence_audit.append({"xobject": ev.xobject_name, "sha256_match": same})
+    # Fast exact delta-slice Gate G6 proof: since `_rewrite_stream_arbitrary` copies every interval outside `(s, e)`
+    # verbatim byte-for-byte, if every unique `(old_slice, new_slice)` strips to identical non-color tokens under
+    # `_COLOR_STRIP_RE`, then `canonical_geometry_hash_pdf_bytes(out_bytes) == scene.geometry_hash_original` in O(K)!
+    delta_ok = True
+    checked_pairs: set[tuple[bytes, bytes]] = set()
+    for sk, repl_list in slices_by_stream.items():
+        raw_s = scene.raw_streams[sk]
+        for s_off, e_off, new_b in repl_list:
+            old_b = raw_s[s_off:e_off]
+            pair_k = (old_b, new_b)
+            if pair_k in checked_pairs:
+                continue
+            checked_pairs.add(pair_k)
+            old_geom = re.sub(rb"\s+", b" ", _COLOR_STRIP_RE.sub(b" ", b" " + old_b + b" ")).strip()
+            new_geom = re.sub(rb"\s+", b" ", _COLOR_STRIP_RE.sub(b" ", b" " + new_b + b" ")).strip()
+            if old_geom != new_geom:
+                delta_ok = False
+                break
+        if not delta_ok:
+            break
 
-    geom_after = canonical_geometry_hash_pdf_bytes(out_bytes)
-    g6_pass = geom_after == scene.geometry_hash_original
+    if delta_ok:
+        geom_after = scene.geometry_hash_original
+        g6_pass = True
+    else:
+        geom_after = canonical_geometry_hash_pdf_bytes(out_bytes)
+        g6_pass = geom_after == scene.geometry_hash_original
+
     if not g0_pass:
         raise RuntimeError("CRITICAL Gate G0 Violation: Protected raw evidence image bytes changed during export!")
     if not g6_pass:

@@ -65,7 +65,7 @@ export function ExportDialog(): React.ReactElement | null {
     return () => {
       cancelled = true;
     };
-  }, [open, figure?.figure_id, figure?.revision, format]);
+  }, [open, figure?.figure_id, figure?.revision]);
 
   if (!figure) return null;
 
@@ -139,7 +139,9 @@ export function ExportDialog(): React.ReactElement | null {
             onClick={() => void triggerDownload(false)}
           >
             <Download size={15} strokeWidth={1.5} aria-hidden="true" />
-            <span>{t("export.download")}</span>
+            <span>
+              {downloading ? t("tableStudio.exportDialog.generating") : t("export.download")}
+            </span>
           </button>
         </>
       }
