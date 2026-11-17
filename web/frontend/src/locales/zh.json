@@ -320,7 +320,9 @@
       "computedProvenanceT1": "已由 {{rows}} 行原始个案自动汇总计算",
       "computedProvenanceRep": "已由 {{cols}} 列原始重复样本折叠计算",
       "sourceSheetNote": "导出 Excel 自动附带 source_data 原表",
-      "revertToRawBtn": "退回原表 ({{rows}} 行)"
+      "revertToRawBtn": "退回原表 ({{rows}} 行)",
+      "reopenPill": "可汇总计算",
+      "hideCard": "收起提示"
     },
     "topbar": {
       "datasetSwitcher": "切换表格文档",
@@ -374,13 +376,15 @@
       "review": "逐条查看",
       "hideReview": "收起列表",
       "accept": "采纳",
-      "dismiss": "忽略"
+      "dismiss": "忽略",
+      "reopenPill": "{{count}} 项整理建议"
     },
     "canvas": {
       "dropOverlay": "松开以载入 CSV、TSV、TXT 或 XLSX 原表",
       "stageRaw": "原表",
       "stageTidied": "已整理",
       "stageStyled": "已美化",
+      "switchStageTitle": "切换至“{{stage}}”阶段",
       "styledSubhint": "已美化 · 下载后可在 Excel / Word 中编辑",
       "dimensions": "{{rows}} 行 × {{cols}} 列",
       "blocksCount": "{{count}} 个分块",
@@ -470,6 +474,10 @@
       "d3": "3 位"
     },
     "structure": {
+      "secCompute": "0. 统计汇总",
+      "computeActiveBadge": "已汇总",
+      "computeReadyBadge": "可计算",
+      "recomputeBtn": "更新统计结果",
       "secTitles": "1. 标题",
       "tableNumber": "表号",
       "title": "主标题",

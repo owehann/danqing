@@ -372,6 +372,40 @@ export function listAvailableSuggestions(doc: TableDoc): SuggestionCategory[] {
   return out;
 }
 
+export function listUnappliedSuggestions(doc: TableDoc): SuggestionCategory[] {
+  const s = doc.raw.suggestions;
+  const st = doc.structure;
+  const dismissed = new Set(st.dismissedSuggestions);
+  const out: SuggestionCategory[] = [];
+
+  const needHeaderOrSpanner =
+    (s.spanners.length > 0 && st.spanners.length === 0 && !st.pivot) ||
+    (Boolean(s.titleCandidate) && !st.title);
+  if (needHeaderOrSpanner && !dismissed.has("headerRows")) out.push("headerRows");
+
+  if (s.footnoteCandidates.length > 0 && st.footnotes.length === 0 && !dismissed.has("footer")) {
+    out.push("footer");
+  }
+  if (s.pivot && !st.pivot && !dismissed.has("pivot")) {
+    out.push("pivot");
+  } else if (!s.pivot) {
+    if (s.partBy !== null && st.partBy === null && !dismissed.has("partBy")) {
+      out.push("partBy");
+    }
+    if (s.merges.length > 0 && st.merges.length === 0 && !dismissed.has("merges")) {
+      out.push("merges");
+    }
+  }
+  if (s.sparklineRuns.length > 0 && st.derived.length === 0 && !dismissed.has("sparkline")) {
+    out.push("sparkline");
+  }
+  const hasSig = Object.values(s.roles).some((r) => r === "sig");
+  if (hasSig && !st.sig.sourceId && !dismissed.has("sig")) {
+    out.push("sig");
+  }
+  return out;
+}
+
 export function applySuggestionsToDoc(
   doc: TableDoc,
   which: SuggestionCategory,
@@ -710,9 +744,12 @@ export function applySuggestionsToDoc(
 
   if (alsoStyle && nextStyle.preset === "raw") {
     nextStyle.preset = rec.preset;
+    nextStyle.lastStyledPreset = rec.preset;
     if (rec.rowRhythm && nextStyle.rowRhythm === "none") {
       nextStyle.rowRhythm = rec.rowRhythm;
     }
+  } else if (nextStyle.preset !== "raw") {
+    nextStyle.lastStyledPreset = nextStyle.preset;
   }
 
   return { raw, structure: nextStruct, style: nextStyle };

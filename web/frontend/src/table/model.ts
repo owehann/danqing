@@ -226,6 +226,7 @@ export type RowRhythm = "none" | "zebra" | "group_breathing";
 
 export interface StyleLayer {
   preset: TablePresetId;
+  lastStyledPreset?: Exclude<TablePresetId, "raw">;
   paletteId: string;
   heatScope: HeatScope;
   heatCenter: "auto" | number;
@@ -236,9 +237,16 @@ export interface StyleLayer {
   tabularNums: boolean;
 }
 
+export interface StashedComputedState {
+  raw: RawSnapshot;
+  structure: StructureLayer;
+  style: StyleLayer;
+}
+
 export interface TableDoc {
   raw: RawSnapshot;
   sourceRaw?: RawSnapshot | null;
+  stashedComputed?: StashedComputedState | null;
   structure: StructureLayer;
   style: StyleLayer;
 }

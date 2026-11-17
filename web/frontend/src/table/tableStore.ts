@@ -17,6 +17,7 @@ import type {
   SampleCatalogItem,
   SheetMeta,
   SmartComputeSuggestion,
+  StashedComputedState,
   StructureLayer,
   StyleLayer,
   TableDoc,
@@ -26,6 +27,7 @@ import {
   type SuggestionCategory,
   applySuggestionsToDoc,
   createInitialTableDoc,
+  inferRecommendedStyle,
   normalizeLegacyTableDoc,
 } from "./pipeline";
 
@@ -35,6 +37,7 @@ const MAX_HISTORY_STEPS = 50;
 interface HistoryEntry {
   raw?: RawSnapshot;
   sourceRaw?: RawSnapshot | null;
+  stashedComputed?: StashedComputedState | null;
   structure: StructureLayer;
   style: StyleLayer;
 }
@@ -282,6 +285,7 @@ interface TableStudioStoreState {
 
   applySuggestions: (which: SuggestionCategory, alsoStyle?: boolean) => void;
   dismissSuggestion: (which: Exclude<SuggestionCategory, "all">) => void;
+  goToStage: (targetStage: "raw" | "tidied" | "styled") => void;
   runSmartCompute: (
     mode: "subject_table1" | "replicate_collapse",
     options?: Record<string, unknown>,
@@ -485,6 +489,7 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
       const prevSnap: HistoryEntry = {
         raw: current.raw,
         sourceRaw: current.sourceRaw ?? null,
+        stashedComputed: current.stashedComputed ?? null,
         structure: structuredClone(current.structure),
         style: structuredClone(current.style),
       };
@@ -498,6 +503,10 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
       const updatedDoc: TableDoc = {
         raw: current.raw,
         sourceRaw: current.sourceRaw ?? null,
+        stashedComputed:
+          current.structure.stage === "raw" && draft.structure.stage !== "raw"
+            ? null
+            : (current.stashedComputed ?? null),
         structure: draft.structure,
         style: draft.style,
       };
@@ -524,6 +533,7 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
       const curSnap: HistoryEntry = {
         raw: current.raw,
         sourceRaw: current.sourceRaw ?? null,
+        stashedComputed: current.stashedComputed ?? null,
         structure: structuredClone(current.structure),
         style: structuredClone(current.style),
       };
@@ -531,6 +541,10 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
       const updatedDoc: TableDoc = {
         raw: previous.raw ?? current.raw,
         sourceRaw: previous.sourceRaw !== undefined ? previous.sourceRaw : (current.sourceRaw ?? null),
+        stashedComputed:
+          previous.stashedComputed !== undefined
+            ? previous.stashedComputed
+            : (current.stashedComputed ?? null),
         structure: previous.structure,
         style: previous.style,
       };
@@ -556,6 +570,7 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
       const curSnap: HistoryEntry = {
         raw: current.raw,
         sourceRaw: current.sourceRaw ?? null,
+        stashedComputed: current.stashedComputed ?? null,
         structure: structuredClone(current.structure),
         style: structuredClone(current.style),
       };
@@ -564,6 +579,10 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
         raw: nextEntry.raw ?? current.raw,
         sourceRaw:
           nextEntry.sourceRaw !== undefined ? nextEntry.sourceRaw : (current.sourceRaw ?? null),
+        stashedComputed:
+          nextEntry.stashedComputed !== undefined
+            ? nextEntry.stashedComputed
+            : (current.stashedComputed ?? null),
         structure: nextEntry.structure,
         style: nextEntry.style,
       };
@@ -604,6 +623,192 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
       if (!draft.structure.dismissedSuggestions.includes(which)) {
         draft.structure.dismissedSuggestions.push(which);
       }
+    });
+  },
+
+  goToStage: (targetStage) => {
+    set((state) => {
+      const id = state.activeId;
+      const current = state.docs[id];
+      if (!current) return state;
+
+      const curEffStage: "raw" | "tidied" | "styled" =
+        current.structure.stage === "raw"
+          ? "raw"
+          : current.style.preset === "raw"
+            ? "tidied"
+            : "styled";
+
+      if (curEffStage === targetStage && !state.isComparingRaw) {
+        return state;
+      }
+
+      const prevSnap: HistoryEntry = {
+        raw: current.raw,
+        sourceRaw: current.sourceRaw ?? null,
+        stashedComputed: current.stashedComputed ?? null,
+        structure: structuredClone(current.structure),
+        style: structuredClone(current.style),
+      };
+      const past = [...(state.historyPast[id] ?? []), prevSnap].slice(-MAX_HISTORY_STEPS);
+
+      const hasPriorStructureWork = (st: StructureLayer): boolean =>
+        st.spanners.length > 0 ||
+        st.merges.length > 0 ||
+        st.derived.length > 0 ||
+        st.pivot !== null ||
+        st.partBy !== null ||
+        st.footnotes.length > 0 ||
+        Boolean(st.sig.sourceId) ||
+        Object.keys(st.cellOverrides).length > 0 ||
+        Boolean(st.title.trim()) ||
+        st.columns.some((c) => c.hidden || (c.visual && c.visual !== "auto"));
+
+      let updatedDoc: TableDoc;
+
+      if (targetStage === "raw") {
+        if (current.sourceRaw) {
+          const restoredRaw = createInitialTableDoc(current.sourceRaw);
+          updatedDoc = {
+            ...restoredRaw,
+            stashedComputed: {
+              raw: current.raw,
+              structure: structuredClone(current.structure),
+              style: structuredClone(current.style),
+            },
+          };
+        } else {
+          const nextStruct = structuredClone(current.structure);
+          const nextStyle = structuredClone(current.style);
+          nextStruct.stage = "raw";
+          nextStruct.dismissedSuggestions = [];
+          if (nextStyle.preset !== "raw") {
+            nextStyle.lastStyledPreset = nextStyle.preset;
+          }
+          updatedDoc = {
+            raw: current.raw,
+            sourceRaw: null,
+            stashedComputed: current.stashedComputed ?? null,
+            structure: nextStruct,
+            style: nextStyle,
+          };
+        }
+      } else if (targetStage === "tidied") {
+        if (current.stashedComputed) {
+          const stashed = current.stashedComputed;
+          const nextStyle = structuredClone(stashed.style);
+          if (nextStyle.preset !== "raw") {
+            nextStyle.lastStyledPreset = nextStyle.preset;
+          }
+          nextStyle.preset = "raw";
+          updatedDoc = {
+            raw: stashed.raw,
+            sourceRaw: current.raw,
+            stashedComputed: null,
+            structure: { ...structuredClone(stashed.structure), stage: "tidied" },
+            style: nextStyle,
+          };
+        } else if (current.structure.stage === "raw") {
+          if (hasPriorStructureWork(current.structure)) {
+            const nextStyle = structuredClone(current.style);
+            if (nextStyle.preset !== "raw") {
+              nextStyle.lastStyledPreset = nextStyle.preset;
+            }
+            nextStyle.preset = "raw";
+            updatedDoc = {
+              raw: current.raw,
+              sourceRaw: current.sourceRaw ?? null,
+              stashedComputed: null,
+              structure: { ...structuredClone(current.structure), stage: "tidied" },
+              style: nextStyle,
+            };
+          } else {
+            updatedDoc = applySuggestionsToDoc(current, "all", false);
+          }
+        } else {
+          const nextStyle = structuredClone(current.style);
+          if (nextStyle.preset !== "raw") {
+            nextStyle.lastStyledPreset = nextStyle.preset;
+          }
+          nextStyle.preset = "raw";
+          updatedDoc = {
+            raw: current.raw,
+            sourceRaw: current.sourceRaw ?? null,
+            stashedComputed: null,
+            structure: structuredClone(current.structure),
+            style: nextStyle,
+          };
+        }
+      } else {
+        // targetStage === "styled"
+        if (current.stashedComputed) {
+          const stashed = current.stashedComputed;
+          const nextStyle = structuredClone(stashed.style);
+          nextStyle.preset =
+            nextStyle.preset !== "raw"
+              ? nextStyle.preset
+              : (nextStyle.lastStyledPreset ?? "cns_three_line");
+          updatedDoc = {
+            raw: stashed.raw,
+            sourceRaw: current.raw,
+            stashedComputed: null,
+            structure: { ...structuredClone(stashed.structure), stage: "tidied" },
+            style: nextStyle,
+          };
+        } else if (current.structure.stage === "raw") {
+          if (hasPriorStructureWork(current.structure)) {
+            const nextStruct: StructureLayer = {
+              ...structuredClone(current.structure),
+              stage: "tidied",
+            };
+            const nextStyle = structuredClone(current.style);
+            const rec = inferRecommendedStyle({
+              raw: current.raw,
+              structure: nextStruct,
+              style: nextStyle,
+            });
+            nextStyle.preset =
+              nextStyle.preset !== "raw"
+                ? nextStyle.preset
+                : (nextStyle.lastStyledPreset ?? rec.preset);
+            if (rec.rowRhythm && nextStyle.rowRhythm === "none") {
+              nextStyle.rowRhythm = rec.rowRhythm;
+            }
+            updatedDoc = {
+              raw: current.raw,
+              sourceRaw: current.sourceRaw ?? null,
+              stashedComputed: null,
+              structure: nextStruct,
+              style: nextStyle,
+            };
+          } else {
+            updatedDoc = applySuggestionsToDoc(current, "all", true);
+          }
+        } else {
+          const nextStyle = structuredClone(current.style);
+          const rec = inferRecommendedStyle(current);
+          nextStyle.preset = nextStyle.lastStyledPreset ?? rec.preset;
+          if (rec.rowRhythm && nextStyle.rowRhythm === "none") {
+            nextStyle.rowRhythm = rec.rowRhythm;
+          }
+          updatedDoc = {
+            raw: current.raw,
+            sourceRaw: current.sourceRaw ?? null,
+            stashedComputed: null,
+            structure: structuredClone(current.structure),
+            style: nextStyle,
+          };
+        }
+      }
+
+      const nextDocs = { ...state.docs, [id]: updatedDoc };
+      writePersistedSession(nextDocs, state.pendingReuploads, state.order, id);
+      return {
+        docs: nextDocs,
+        historyPast: { ...state.historyPast, [id]: past },
+        historyFuture: { ...state.historyFuture, [id]: [] },
+        isComparingRaw: false,
+      };
     });
   },
 
@@ -661,6 +866,7 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
         const prevSnap: HistoryEntry = {
           raw: current.raw,
           sourceRaw: current.sourceRaw ?? null,
+          stashedComputed: current.stashedComputed ?? null,
           structure: structuredClone(current.structure),
           style: structuredClone(current.style),
         };
@@ -668,6 +874,7 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
         const updatedDoc = normalizeLegacyTableDoc({
           raw: compRaw,
           sourceRaw: baseRaw,
+          stashedComputed: null,
           structure: compStruct,
           style: compStyle,
         });
@@ -690,28 +897,10 @@ export const useTableStudioStore = create<TableStudioStoreState>((set, get) => (
   },
 
   revertComputedToRaw: () => {
-    set((state) => {
-      const id = state.activeId;
-      const current = state.docs[id];
-      if (!current || !current.sourceRaw) return state;
-
-      const prevSnap: HistoryEntry = {
-        raw: current.raw,
-        sourceRaw: current.sourceRaw,
-        structure: structuredClone(current.structure),
-        style: structuredClone(current.style),
-      };
-      const past = [...(state.historyPast[id] ?? []), prevSnap].slice(-MAX_HISTORY_STEPS);
-      const restored = createInitialTableDoc(current.sourceRaw);
-      const nextDocs = { ...state.docs, [id]: restored };
-      writePersistedSession(nextDocs, state.pendingReuploads, state.order, id);
-      return {
-        docs: nextDocs,
-        historyPast: { ...state.historyPast, [id]: past },
-        historyFuture: { ...state.historyFuture, [id]: [] },
-        isComparingRaw: false,
-      };
-    });
+    const state = get();
+    const current = state.docs[state.activeId];
+    if (!current || !current.sourceRaw) return;
+    state.goToStage("raw");
   },
 
   setComparingRaw: (comparing) => set({ isComparingRaw: comparing }),

@@ -22,6 +22,7 @@ import {
   buildModel,
   createInitialTableDoc,
   listAvailableSuggestions,
+  listUnappliedSuggestions,
 } from "./pipeline";
 import { normalizeRawSnapshotPayload, useTableStudioStore } from "./tableStore";
 
@@ -965,5 +966,143 @@ describe("pipeline.ts pure functional transformation & store undo/redo", () => {
     expect(rows[3][0].indent).toBe(1);
     expect(rows[3][1].display).toBe("130 (80.7%)");
     expect(rows[3][2].display).toBe("");
+  });
+
+  it("supports non-destructive goToStage round-trips, stashedComputed recall, and unapplied suggestion tracking", () => {
+    const rawSnap = normalizeRawSnapshotPayload({
+      snapshot_id: "tbl_stage_rt",
+      source: { filename: "rep.csv", sheet: "Sheet1", sheets: ["Sheet1"], kind: "csv", sha256: "rt1" },
+      sheets_meta: [{ name: "Sheet1", empty: false }],
+      column_stats: [
+        { col: 0, name: "Feature", numeric_ratio: 0, detected_unit: "", role: "normal" },
+        { col: 1, name: "Ctrl_val", numeric_ratio: 1, detected_unit: "", role: "normal" },
+        { col: 2, name: "Ctrl_sd", numeric_ratio: 1, detected_unit: "", role: "normal" },
+        { col: 3, name: "P value", numeric_ratio: 1, detected_unit: "", role: "sig" },
+      ],
+      grid: [
+        ["Feature", "Ctrl_val", "Ctrl_sd", "P value"],
+        ["Radius", "12.1", "1.7", "0.002"],
+        ["Area", "462.8", "134.3", "0.0004"],
+      ],
+      cell_merges: [],
+      warnings: [],
+      suggestions: {
+        header_rows: [0, 0],
+        body_range: [1, 2],
+        title_candidate: null,
+        footnote_candidates: ["* P < 0.05"],
+        spanners: [],
+        roles: { "0": "normal", "1": "normal", "2": "normal", "3": "sig" },
+        merges: [{ source_cols: [1, 2], pattern: "plusminus" }],
+        part_by: null,
+        sparkline_runs: [],
+        pivot: null,
+        decimal_comma: false,
+        resolved_headers: ["Feature", "Ctrl_val", "Ctrl_sd", "P value"],
+      },
+    });
+
+    // 1. User leaves `raw` stage by clicking a right-sidebar preset (`ft_editorial`) without running Tidy
+    const initDoc = createInitialTableDoc(rawSnap);
+    useTableStudioStore.setState({
+      docs: { d1: initDoc },
+      order: ["d1"],
+      activeId: "d1",
+      historyPast: { d1: [] },
+      historyFuture: { d1: [] },
+      isComparingRaw: false,
+    });
+
+    useTableStudioStore.getState().commit((draft) => {
+      draft.style.preset = "ft_editorial";
+      draft.style.lastStyledPreset = "ft_editorial";
+      draft.structure.stage = "tidied";
+      draft.structure.title = "Custom Cohort Title";
+    });
+
+    const afterPreset = useTableStudioStore.getState().docs.d1;
+    // Unapplied suggestions (`footer`, `merges`, `sig`) remain discoverable!
+    const unapplied = listUnappliedSuggestions(afterPreset);
+    expect(unapplied).toContain("footer");
+    expect(unapplied).toContain("merges");
+    expect(unapplied).toContain("sig");
+
+    // 2. User clicks `原表` (`goToStage("raw")`) -> switches to raw view WITHOUT losing custom title or `ft_editorial`
+    useTableStudioStore.getState().goToStage("raw");
+    const inRaw = useTableStudioStore.getState().docs.d1;
+    expect(inRaw.structure.stage).toBe("raw");
+    expect(inRaw.structure.title).toBe("Custom Cohort Title");
+    expect(inRaw.style.lastStyledPreset).toBe("ft_editorial");
+
+    // 3. User clicks `已整理` (`goToStage("tidied")`) -> unstyled grid (`preset === "raw"`), remembers `ft_editorial`
+    useTableStudioStore.getState().goToStage("tidied");
+    const inTidied = useTableStudioStore.getState().docs.d1;
+    expect(inTidied.structure.stage).toBe("tidied");
+    expect(inTidied.style.preset).toBe("raw");
+    expect(inTidied.style.lastStyledPreset).toBe("ft_editorial");
+
+    // 4. User clicks `已美化` (`goToStage("styled")`) -> restores `ft_editorial` AND custom title!
+    useTableStudioStore.getState().goToStage("styled");
+    const inStyled = useTableStudioStore.getState().docs.d1;
+    expect(inStyled.structure.stage).toBe("tidied");
+    expect(inStyled.style.preset).toBe("ft_editorial");
+    expect(inStyled.structure.title).toBe("Custom Cohort Title");
+
+    // 5. Auto-computed table (`sourceRaw != null`) stashes computed summary when clicking `原表` and restores on `已美化`
+    const computedSnap = normalizeRawSnapshotPayload({
+      snapshot_id: "tbl_comp_out",
+      source: { filename: "rep.csv", sheet: "Computed", sheets: ["Computed"], kind: "csv", sha256: "cp1" },
+      sheets_meta: [{ name: "Computed", empty: false }],
+      column_stats: [
+        { col: 0, name: "Feature", numeric_ratio: 0, detected_unit: "", role: "normal" },
+        { col: 1, name: "Mean", numeric_ratio: 1, detected_unit: "", role: "normal" },
+      ],
+      grid: [
+        ["Feature", "Mean"],
+        ["Radius", "12.1 ± 1.7"],
+      ],
+      cell_merges: [],
+      warnings: [],
+      suggestions: {
+        header_rows: [0, 0],
+        body_range: [1, 1],
+        title_candidate: "Computed Summary",
+        footnote_candidates: [],
+        spanners: [],
+        roles: { "0": "normal", "1": "normal" },
+        merges: [],
+        part_by: null,
+        sparkline_runs: [],
+        pivot: null,
+        decimal_comma: false,
+        resolved_headers: ["Feature", "Mean"],
+      },
+    });
+    const compDoc = applySuggestionsToDoc(createInitialTableDoc(computedSnap), "all", true);
+    compDoc.style.preset = "cns_three_line";
+    compDoc.style.lastStyledPreset = "cns_three_line";
+    compDoc.sourceRaw = rawSnap;
+    compDoc.structure.title = "Edited Computed Table";
+
+    useTableStudioStore.setState({
+      docs: { d1: compDoc },
+      historyPast: { d1: [] },
+      historyFuture: { d1: [] },
+    });
+
+    // Click `原表` (or `revertComputedToRaw`) -> restores rawSnap grid AND stashes computed table
+    useTableStudioStore.getState().revertComputedToRaw();
+    const backInRaw = useTableStudioStore.getState().docs.d1;
+    expect(backInRaw.structure.stage).toBe("raw");
+    expect(backInRaw.raw.snapshotId).toBe("tbl_stage_rt");
+    expect(backInRaw.stashedComputed?.structure.title).toBe("Edited Computed Table");
+
+    // Click `已美化` -> restores computed table + custom title!
+    useTableStudioStore.getState().goToStage("styled");
+    const restoredComp = useTableStudioStore.getState().docs.d1;
+    expect(restoredComp.raw.snapshotId).toBe("tbl_comp_out");
+    expect(restoredComp.sourceRaw?.snapshotId).toBe("tbl_stage_rt");
+    expect(restoredComp.structure.title).toBe("Edited Computed Table");
+    expect(restoredComp.style.preset).toBe("cns_three_line");
   });
 });

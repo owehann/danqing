@@ -33,6 +33,7 @@ import {
   buildModel,
   inferColumnDirectionHint,
   listAvailableSuggestions,
+  listUnappliedSuggestions,
 } from "../../table/pipeline";
 import { useTableStudioStore } from "../../table/tableStore";
 import { tetherPopoverFallback } from "../ModalDialog";
@@ -95,6 +96,7 @@ export function TableCanvas(): React.ReactElement | null {
   const commit = useTableStudioStore((s) => s.commit);
   const applySuggestions = useTableStudioStore((s) => s.applySuggestions);
   const dismissSuggestion = useTableStudioStore((s) => s.dismissSuggestion);
+  const goToStage = useTableStudioStore((s) => s.goToStage);
   const runSmartCompute = useTableStudioStore((s) => s.runSmartCompute);
   const revertComputedToRaw = useTableStudioStore((s) => s.revertComputedToRaw);
   const busy = useTableStudioStore((s) => s.busy);
@@ -113,6 +115,8 @@ export function TableCanvas(): React.ReactElement | null {
 
   const [showWarnings, setShowWarnings] = useState(false);
   const [reviewOpen, setReviewOpen] = useState(false);
+  const [computeDrawerOpen, setComputeDrawerOpen] = useState(false);
+  const [suggestDrawerOpen, setSuggestDrawerOpen] = useState(false);
   const [shadowLeft, setShadowLeft] = useState(false);
   const [shadowRight, setShadowRight] = useState(false);
 
@@ -151,6 +155,11 @@ export function TableCanvas(): React.ReactElement | null {
   const [repSumMode, setRepSumMode] = useState<"parametric" | "nonparametric">("parametric");
   const [repEffect, setRepEffect] = useState<"auto" | "log2fc" | "fc" | "diff">("auto");
   const [repPaired, setRepPaired] = useState<boolean>(false);
+
+  useEffect(() => {
+    setComputeDrawerOpen(false);
+    setSuggestDrawerOpen(false);
+  }, [doc?.raw.snapshotId, doc?.structure.stage]);
 
   useEffect(() => {
     if (!doc) return;
@@ -254,6 +263,9 @@ export function TableCanvas(): React.ReactElement | null {
   const showingRaw = structure.stage === "raw" || isComparingRaw;
   const effectiveStage = isComparingRaw ? "raw" : model.stage;
   const availableSuggestions = listAvailableSuggestions(doc);
+  const unappliedSuggestions = listUnappliedSuggestions(doc);
+  const activeSuggestionCats =
+    structure.stage === "raw" ? availableSuggestions : unappliedSuggestions;
 
   const describeSuggestion = (cat: Exclude<SuggestionCategory, "all">): string => {
     const sug = raw.suggestions;
@@ -420,30 +432,48 @@ export function TableCanvas(): React.ReactElement | null {
       {/* Status Bar (Zero Duplicate Action Buttons) */}
       <div className="dq-table-status-bar">
         <div className="dq-table-status-bar__left">
-          <div className="dq-stage-stepper" aria-label={t("tableStudio.a11y.modeSwitcher")}>
-            <span
+          <div className="dq-stage-stepper" role="group" aria-label={t("tableStudio.a11y.modeSwitcher")}>
+            <button
+              type="button"
               className={`dq-stage-step${
                 effectiveStage === "raw" ? " dq-stage-step--active" : ""
               }`}
+              aria-current={effectiveStage === "raw" ? "step" : undefined}
+              title={t("tableStudio.canvas.switchStageTitle", {
+                stage: t("tableStudio.canvas.stageRaw"),
+              })}
+              onClick={() => goToStage("raw")}
             >
               {t("tableStudio.canvas.stageRaw")}
-            </span>
+            </button>
             <ChevronRight size={12} strokeWidth={1.6} aria-hidden="true" />
-            <span
+            <button
+              type="button"
               className={`dq-stage-step${
                 effectiveStage === "tidied" ? " dq-stage-step--active" : ""
               }`}
+              aria-current={effectiveStage === "tidied" ? "step" : undefined}
+              title={t("tableStudio.canvas.switchStageTitle", {
+                stage: t("tableStudio.canvas.stageTidied"),
+              })}
+              onClick={() => goToStage("tidied")}
             >
               {t("tableStudio.canvas.stageTidied")}
-            </span>
+            </button>
             <ChevronRight size={12} strokeWidth={1.6} aria-hidden="true" />
-            <span
+            <button
+              type="button"
               className={`dq-stage-step${
                 effectiveStage === "styled" ? " dq-stage-step--active" : ""
               }`}
+              aria-current={effectiveStage === "styled" ? "step" : undefined}
+              title={t("tableStudio.canvas.switchStageTitle", {
+                stage: t("tableStudio.canvas.stageStyled"),
+              })}
+              onClick={() => goToStage("styled")}
             >
               {t("tableStudio.canvas.stageStyled")}
-            </span>
+            </button>
           </div>
 
           <span className="dq-table-meta-text">
@@ -486,6 +516,32 @@ export function TableCanvas(): React.ReactElement | null {
         </div>
 
         <div className="dq-table-status-bar__right">
+          {!showingRaw && !doc.sourceRaw && raw.suggestions.smartCompute ? (
+            <button
+              type="button"
+              className="dq-recall-pill dq-recall-pill--compute"
+              aria-expanded={computeDrawerOpen}
+              onClick={() => setComputeDrawerOpen((v) => !v)}
+            >
+              <Calculator size={12} strokeWidth={1.7} aria-hidden="true" />
+              <span>{t("tableStudio.compute.reopenPill")}</span>
+            </button>
+          ) : null}
+
+          {!showingRaw && !raw.suggestions.smartCompute && unappliedSuggestions.length > 0 ? (
+            <button
+              type="button"
+              className="dq-recall-pill dq-recall-pill--suggest"
+              aria-expanded={suggestDrawerOpen}
+              onClick={() => setSuggestDrawerOpen((v) => !v)}
+            >
+              <Wand2 size={12} strokeWidth={1.7} aria-hidden="true" />
+              <span>
+                {t("tableStudio.suggest.reopenPill", { count: unappliedSuggestions.length })}
+              </span>
+            </button>
+          ) : null}
+
           {raw.warnings.length > 0 ? (
             <button
               type="button"
@@ -528,8 +584,10 @@ export function TableCanvas(): React.ReactElement | null {
         </div>
       ) : null}
 
-      {/* Smart Statistical Compute Card (Raw Stage on Subject Records or Replicate Matrix) */}
-      {structure.stage === "raw" && !isComparingRaw && raw.suggestions.smartCompute ? (
+      {/* Smart Statistical Compute Card (Raw Stage or Recalled Drawer on Subject Records / Replicate Matrix) */}
+      {((structure.stage === "raw" && !isComparingRaw) ||
+        (computeDrawerOpen && !doc.sourceRaw && !isComparingRaw)) &&
+      raw.suggestions.smartCompute ? (
         <div className="dq-compute-banner">
           <div className="dq-compute-banner__top">
             <div className="dq-compute-banner__lead">
@@ -548,13 +606,23 @@ export function TableCanvas(): React.ReactElement | null {
                     })}
               </span>
             </div>
-            <button
-              type="button"
-              className="dq-btn dq-btn--ghost dq-btn--xs"
-              onClick={() => applySuggestions("all", true)}
-            >
-              {t("tableStudio.compute.tidyWithoutCompute")}
-            </button>
+            {structure.stage === "raw" ? (
+              <button
+                type="button"
+                className="dq-btn dq-btn--ghost dq-btn--xs"
+                onClick={() => applySuggestions("all", true)}
+              >
+                {t("tableStudio.compute.tidyWithoutCompute")}
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="dq-btn dq-btn--ghost dq-btn--xs"
+                onClick={() => setComputeDrawerOpen(false)}
+              >
+                {t("tableStudio.compute.hideCard")}
+              </button>
+            )}
           </div>
 
           {raw.suggestions.smartCompute.kind === "subject_table1" ? (
@@ -616,7 +684,8 @@ export function TableCanvas(): React.ReactElement | null {
                 type="button"
                 className="dq-btn dq-btn--primary dq-btn--xs"
                 disabled={busy}
-                onClick={() =>
+                onClick={() => {
+                  setComputeDrawerOpen(false);
                   void runSmartCompute(
                     "subject_table1",
                     {
@@ -626,8 +695,8 @@ export function TableCanvas(): React.ReactElement | null {
                       adjust_p: t1AdjustP,
                     },
                     langKey,
-                  )
-                }
+                  );
+                }}
               >
                 <Sparkles size={13} strokeWidth={1.6} aria-hidden="true" />
                 <span>{t("tableStudio.compute.runTable1Btn")}</span>
@@ -680,7 +749,8 @@ export function TableCanvas(): React.ReactElement | null {
                 type="button"
                 className="dq-btn dq-btn--primary dq-btn--xs"
                 disabled={busy}
-                onClick={() =>
+                onClick={() => {
+                  setComputeDrawerOpen(false);
                   void runSmartCompute(
                     "replicate_collapse",
                     {
@@ -689,8 +759,8 @@ export function TableCanvas(): React.ReactElement | null {
                       paired: repPaired,
                     },
                     langKey,
-                  )
-                }
+                  );
+                }}
               >
                 <Sparkles size={13} strokeWidth={1.6} aria-hidden="true" />
                 <span>{t("tableStudio.compute.runRepBtn")}</span>
@@ -844,16 +914,18 @@ export function TableCanvas(): React.ReactElement | null {
         </div>
       ) : null}
 
-      {/* Tidy Suggestion Bar (shown in Raw stage when not a Smart Compute raw dataset) */}
-      {structure.stage === "raw" && !isComparingRaw && !raw.suggestions.smartCompute ? (
+      {/* Tidy Suggestion Bar (shown in Raw stage or recalled via Status Bar pill) */}
+      {((structure.stage === "raw" && !raw.suggestions.smartCompute) ||
+        (suggestDrawerOpen && !raw.suggestions.smartCompute && unappliedSuggestions.length > 0)) &&
+      !isComparingRaw ? (
         <div className="dq-suggest-bar">
           <div className="dq-suggest-bar__main">
             <div className="dq-suggest-bar__summary">
               <Wand2 size={14} strokeWidth={1.6} aria-hidden="true" />
-              {availableSuggestions.length > 0 ? (
+              {activeSuggestionCats.length > 0 ? (
                 <span>
                   <strong>{t("tableStudio.suggest.detectedLead")}</strong>{" "}
-                  {availableSuggestions
+                  {activeSuggestionCats
                     .map((cat) =>
                       describeSuggestion(cat as Exclude<SuggestionCategory, "all">),
                     )
@@ -865,7 +937,7 @@ export function TableCanvas(): React.ReactElement | null {
             </div>
 
             <div className="dq-suggest-bar__actions">
-              {availableSuggestions.length > 0 ? (
+              {activeSuggestionCats.length > 0 ? (
                 <button
                   type="button"
                   className="dq-btn dq-btn--xs"
@@ -881,7 +953,10 @@ export function TableCanvas(): React.ReactElement | null {
               <button
                 type="button"
                 className="dq-btn dq-btn--xs"
-                onClick={() => applySuggestions("all", false)}
+                onClick={() => {
+                  setSuggestDrawerOpen(false);
+                  applySuggestions("all", false);
+                }}
               >
                 <span>{t("tableStudio.suggest.applyStructureOnly")}</span>
               </button>
@@ -889,17 +964,30 @@ export function TableCanvas(): React.ReactElement | null {
               <button
                 type="button"
                 className="dq-btn dq-btn--primary dq-btn--xs"
-                onClick={() => applySuggestions("all", true)}
+                onClick={() => {
+                  setSuggestDrawerOpen(false);
+                  applySuggestions("all", true);
+                }}
               >
                 <Sparkles size={13} strokeWidth={1.6} aria-hidden="true" />
                 <span>{t("tableStudio.suggest.applyAll")}</span>
               </button>
+
+              {structure.stage !== "raw" ? (
+                <button
+                  type="button"
+                  className="dq-btn dq-btn--ghost dq-btn--xs"
+                  onClick={() => setSuggestDrawerOpen(false)}
+                >
+                  {t("tableStudio.compute.hideCard")}
+                </button>
+              ) : null}
             </div>
           </div>
 
-          {reviewOpen && availableSuggestions.length > 0 ? (
+          {reviewOpen && activeSuggestionCats.length > 0 ? (
             <div className="dq-suggest-bar__items">
-              {availableSuggestions.map((cat) => {
+              {activeSuggestionCats.map((cat) => {
                 const typedCat = cat as Exclude<SuggestionCategory, "all">;
                 return (
                   <div key={typedCat} className="dq-suggest-item">

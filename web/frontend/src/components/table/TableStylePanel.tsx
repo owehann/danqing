@@ -136,6 +136,11 @@ export function TableStylePanel(): React.ReactElement | null {
                   aria-pressed={style.preset === pid}
                   onClick={() =>
                     commit((draft) => {
+                      if (pid === "raw" && draft.style.preset !== "raw") {
+                        draft.style.lastStyledPreset = draft.style.preset;
+                      } else if (pid !== "raw") {
+                        draft.style.lastStyledPreset = pid;
+                      }
                       draft.style.preset = pid;
                       if (pid !== "raw" && draft.structure.stage === "raw") {
                         draft.structure.stage = "tidied";
@@ -180,6 +185,7 @@ export function TableStylePanel(): React.ReactElement | null {
                   onClick={() =>
                     commit((draft) => {
                       draft.style.preset = "matrix_heatmap";
+                      draft.style.lastStyledPreset = "matrix_heatmap";
                       if (draft.structure.stage === "raw") {
                         draft.structure.stage = "tidied";
                       }
@@ -317,6 +323,7 @@ export function TableStylePanel(): React.ReactElement | null {
                   onClick={() =>
                     commit((draft) => {
                       draft.style.preset = "matrix_heatmap";
+                      draft.style.lastStyledPreset = "matrix_heatmap";
                       if (draft.structure.stage === "raw") {
                         draft.structure.stage = "tidied";
                       }

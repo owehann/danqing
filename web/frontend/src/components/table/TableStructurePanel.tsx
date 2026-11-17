@@ -3,11 +3,14 @@ import {
   ArrowDown,
   ArrowRight,
   ArrowUp,
+  Calculator,
   ChevronDown,
   Eye,
   EyeOff,
   GripVertical,
   Plus,
+  RotateCcw,
+  Sparkles,
   Trash2,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -34,19 +37,32 @@ const VISUAL_MODES: ColumnVisualMode[] = ["auto", "plain", "heat", "bar"];
 const PRECISIONS: Precision[] = ["auto", 0, 1, 2, 3];
 
 export function TableStructurePanel(): React.ReactElement | null {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const docs = useTableStudioStore((s) => s.docs);
   const activeId = useTableStudioStore((s) => s.activeId);
   const commit = useTableStudioStore((s) => s.commit);
+  const runSmartCompute = useTableStudioStore((s) => s.runSmartCompute);
+  const revertComputedToRaw = useTableStudioStore((s) => s.revertComputedToRaw);
+  const busy = useTableStudioStore((s) => s.busy);
   const announce = useTableStudioStore((s) => s.announce);
 
   const doc = docs[activeId];
+  const langKey: "en" | "zh" = i18n.language.startsWith("zh") ? "zh" : "en";
 
   const [selectedColId, setSelectedColId] = useState<string>("");
   const [editingColId, setEditingColId] = useState<string | null>(null);
   const [editingColText, setEditingColText] = useState("");
   const [dragColIdx, setDragColIdx] = useState<number | null>(null);
   const [dragOverColIdx, setDragOverColIdx] = useState<number | null>(null);
+
+  // Smart statistical compute controls (synced with active doc)
+  const [t1GroupCol, setT1GroupCol] = useState<string>("");
+  const [t1ContMode, setT1ContMode] = useState<"auto" | "parametric" | "nonparametric">("auto");
+  const [t1Overall, setT1Overall] = useState<boolean>(true);
+  const [t1AdjustP, setT1AdjustP] = useState<boolean>(false);
+  const [repSumMode, setRepSumMode] = useState<"parametric" | "nonparametric">("parametric");
+  const [repEffect, setRepEffect] = useState<"auto" | "log2fc" | "fc" | "diff">("auto");
+  const [repPaired, setRepPaired] = useState<boolean>(false);
 
   // Local buffered title fields so typing commits 1 clean undo step on blur/Enter
   const [localNum, setLocalNum] = useState("");
@@ -61,6 +77,29 @@ export function TableStructurePanel(): React.ReactElement | null {
   const [spanLabel, setSpanLabel] = useState("");
   const [sparkFromId, setSparkFromId] = useState("");
   const [sparkToId, setSparkToId] = useState("");
+
+  useEffect(() => {
+    if (!doc) return;
+    const baseRaw = doc.sourceRaw ?? doc.raw;
+    const sc = baseRaw.suggestions.smartCompute;
+    const ac = doc.structure.activeCompute;
+    if (sc?.kind === "subject_table1") {
+      setT1GroupCol(
+        ac?.groupCol !== undefined
+          ? ac.groupCol === null
+            ? "none"
+            : String(ac.groupCol)
+          : String(sc.defaultGroupCol),
+      );
+      setT1ContMode(ac?.continuousMode ?? "auto");
+      setT1Overall(ac?.includeOverall ?? true);
+      setT1AdjustP(ac?.adjustP ?? false);
+    } else if (sc?.kind === "replicate_collapse") {
+      setRepSumMode(ac?.summaryMode ?? "parametric");
+      setRepEffect(ac?.effectMetric ?? "auto");
+      setRepPaired(ac?.paired ?? false);
+    }
+  }, [doc?.raw.snapshotId, doc?.sourceRaw?.snapshotId, doc?.structure.activeCompute]);
 
   useEffect(() => {
     if (!doc) return;
@@ -177,6 +216,7 @@ export function TableStructurePanel(): React.ReactElement | null {
   };
 
   const bodyPreviewLabels = sliceBodyRows(doc).slice(0, 12);
+  const baseSmartCompute = (doc.sourceRaw ?? raw).suggestions.smartCompute ?? null;
 
   return (
     <aside
@@ -184,6 +224,198 @@ export function TableStructurePanel(): React.ReactElement | null {
       className="dq-elements-panel dq-table-structure-panel"
     >
       <div className="dq-table-structure-scroll">
+        {/* 0. Statistical Summary Compute (always reachable when dataset has raw observations) */}
+        {baseSmartCompute ? (
+          <details className="dq-struct-sec dq-struct-sec--compute" open={Boolean(doc.sourceRaw)}>
+            <summary className="dq-struct-sec__sum">
+              <span className="dq-struct-sec__title-icon">
+                <Calculator size={13} strokeWidth={1.7} aria-hidden="true" />
+                <span>{t("tableStudio.structure.secCompute")}</span>
+              </span>
+              <span
+                className={`dq-struct-count${
+                  doc.sourceRaw ? " dq-struct-count--active" : " dq-struct-count--ready"
+                }`}
+              >
+                {doc.sourceRaw
+                  ? t("tableStudio.structure.computeActiveBadge")
+                  : t("tableStudio.structure.computeReadyBadge")}
+              </span>
+              <ChevronDown
+                size={14}
+                strokeWidth={1.6}
+                className="dq-acc-chevron"
+                aria-hidden="true"
+              />
+            </summary>
+            <div className="dq-struct-sec__body">
+              {baseSmartCompute.kind === "subject_table1" ? (
+                <>
+                  <label className="dq-field-label">
+                    <span>{t("tableStudio.compute.groupLabel")}</span>
+                    <select
+                      className="dq-select dq-select--compact"
+                      value={t1GroupCol}
+                      onChange={(e) => setT1GroupCol(e.target.value)}
+                    >
+                      {baseSmartCompute.candidateGroupCols.map((cg) => (
+                        <option key={cg.col} value={String(cg.col)}>
+                          {cg.name} ({Object.keys(cg.groups).length})
+                        </option>
+                      ))}
+                      <option value="none">{t("tableStudio.compute.overallOnlyOption")}</option>
+                    </select>
+                  </label>
+
+                  <label className="dq-field-label">
+                    <span>{t("tableStudio.compute.distLabel")}</span>
+                    <select
+                      className="dq-select dq-select--compact"
+                      value={t1ContMode}
+                      onChange={(e) =>
+                        setT1ContMode(e.target.value as "auto" | "parametric" | "nonparametric")
+                      }
+                    >
+                      <option value="auto">{t("tableStudio.compute.distAuto")}</option>
+                      <option value="parametric">{t("tableStudio.compute.distParam")}</option>
+                      <option value="nonparametric">{t("tableStudio.compute.distNonparam")}</option>
+                    </select>
+                  </label>
+
+                  {t1GroupCol !== "none" ? (
+                    <div className="dq-struct-check-grid">
+                      <label className="dq-check-row dq-check-row--xs">
+                        <input
+                          type="checkbox"
+                          checked={t1Overall}
+                          onChange={(e) => setT1Overall(e.target.checked)}
+                        />
+                        <span>{t("tableStudio.compute.includeOverall")}</span>
+                      </label>
+                      <label className="dq-check-row dq-check-row--xs">
+                        <input
+                          type="checkbox"
+                          checked={t1AdjustP}
+                          onChange={(e) => setT1AdjustP(e.target.checked)}
+                        />
+                        <span>{t("tableStudio.compute.adjustFdr")}</span>
+                      </label>
+                    </div>
+                  ) : null}
+
+                  <button
+                    type="button"
+                    className="dq-btn dq-btn--primary dq-btn--xs"
+                    disabled={busy}
+                    onClick={() =>
+                      void runSmartCompute(
+                        "subject_table1",
+                        {
+                          group_col: t1GroupCol === "none" ? "none" : Number(t1GroupCol),
+                          continuous_mode: t1ContMode,
+                          include_overall: t1Overall,
+                          adjust_p: t1AdjustP,
+                        },
+                        langKey,
+                      )
+                    }
+                  >
+                    <Sparkles size={13} strokeWidth={1.6} aria-hidden="true" />
+                    <span>
+                      {doc.sourceRaw
+                        ? t("tableStudio.structure.recomputeBtn")
+                        : t("tableStudio.compute.runTable1Btn")}
+                    </span>
+                  </button>
+                </>
+              ) : (
+                <>
+                  <label className="dq-field-label">
+                    <span>{t("tableStudio.compute.repSummaryLabel")}</span>
+                    <select
+                      className="dq-select dq-select--compact"
+                      value={repSumMode}
+                      onChange={(e) =>
+                        setRepSumMode(e.target.value as "parametric" | "nonparametric")
+                      }
+                    >
+                      <option value="parametric">{t("tableStudio.compute.repParam")}</option>
+                      <option value="nonparametric">{t("tableStudio.compute.repNonparam")}</option>
+                    </select>
+                  </label>
+
+                  <label className="dq-field-label">
+                    <span>{t("tableStudio.compute.effectLabel")}</span>
+                    <select
+                      className="dq-select dq-select--compact"
+                      value={repEffect}
+                      onChange={(e) =>
+                        setRepEffect(e.target.value as "auto" | "log2fc" | "fc" | "diff")
+                      }
+                    >
+                      <option value="auto">{t("tableStudio.compute.effectAuto")}</option>
+                      <option value="log2fc">{t("tableStudio.compute.effectLog2fc")}</option>
+                      <option value="fc">{t("tableStudio.compute.effectFc")}</option>
+                      <option value="diff">{t("tableStudio.compute.effectDiff")}</option>
+                    </select>
+                  </label>
+
+                  {baseSmartCompute.canPair ? (
+                    <label className="dq-check-row dq-check-row--xs">
+                      <input
+                        type="checkbox"
+                        checked={repPaired}
+                        onChange={(e) => setRepPaired(e.target.checked)}
+                      />
+                      <span>{t("tableStudio.compute.pairedCheck")}</span>
+                    </label>
+                  ) : null}
+
+                  <button
+                    type="button"
+                    className="dq-btn dq-btn--primary dq-btn--xs"
+                    disabled={busy}
+                    onClick={() =>
+                      void runSmartCompute(
+                        "replicate_collapse",
+                        {
+                          summary_mode: repSumMode,
+                          effect_metric: repEffect,
+                          paired: repPaired,
+                        },
+                        langKey,
+                      )
+                    }
+                  >
+                    <Sparkles size={13} strokeWidth={1.6} aria-hidden="true" />
+                    <span>
+                      {doc.sourceRaw
+                        ? t("tableStudio.structure.recomputeBtn")
+                        : t("tableStudio.compute.runRepBtn")}
+                    </span>
+                  </button>
+                </>
+              )}
+
+              {doc.sourceRaw ? (
+                <button
+                  type="button"
+                  className="dq-btn dq-btn--xs"
+                  disabled={busy}
+                  onClick={revertComputedToRaw}
+                >
+                  <RotateCcw size={12} strokeWidth={1.7} aria-hidden="true" />
+                  <span>
+                    {t("tableStudio.compute.revertToRawBtn", {
+                      rows: Math.max(0, doc.sourceRaw.grid.length - 1),
+                    })}
+                  </span>
+                </button>
+              ) : null}
+            </div>
+          </details>
+        ) : null}
+
         {/* 1. Titles */}
         <details className="dq-struct-sec" open>
           <summary className="dq-struct-sec__sum">

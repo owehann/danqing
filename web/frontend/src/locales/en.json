@@ -320,7 +320,9 @@
       "computedProvenanceT1": "Auto-computed from {{rows}} raw subject records",
       "computedProvenanceRep": "Collapsed from {{cols}} raw replicate columns",
       "sourceSheetNote": "Excel export includes source_data sheet",
-      "revertToRawBtn": "Back to raw ({{rows}} rows)"
+      "revertToRawBtn": "Back to raw ({{rows}} rows)",
+      "reopenPill": "Auto-compute",
+      "hideCard": "Hide card"
     },
     "topbar": {
       "datasetSwitcher": "Switch table document",
@@ -374,13 +376,15 @@
       "review": "Review items",
       "hideReview": "Hide items",
       "accept": "Accept",
-      "dismiss": "Dismiss"
+      "dismiss": "Dismiss",
+      "reopenPill": "{{count}} tidy suggestions"
     },
     "canvas": {
       "dropOverlay": "Drop CSV, TSV, TXT, or XLSX to open raw table",
       "stageRaw": "Raw",
       "stageTidied": "Tidied",
       "stageStyled": "Styled",
+      "switchStageTitle": "Switch to {{stage}} stage",
       "styledSubhint": "Styled · Editable after download in Excel or Word",
       "dimensions": "{{rows}} rows × {{cols}} cols",
       "blocksCount": "{{count}} blocks",
@@ -470,6 +474,10 @@
       "d3": "3"
     },
     "structure": {
+      "secCompute": "0. Statistical summary",
+      "computeActiveBadge": "Active",
+      "computeReadyBadge": "Available",
+      "recomputeBtn": "Update statistics",
       "secTitles": "1. Titles",
       "tableNumber": "Number",
       "title": "Title",

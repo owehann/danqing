@@ -1930,12 +1930,16 @@ dialog::backdrop {
 
 .dq-select {
   width: 100%;
+  max-width: 100%;
   height: 30px;
   padding: 4px 8px;
   border: 1px solid var(--border);
   border-radius: 4px;
   background: var(--bg-panel);
   font-size: 12.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Export & Upload Dialog Internals */
@@ -2525,6 +2529,41 @@ details[open] > summary .dq-acc-chevron {
   font-variant-numeric: tabular-nums;
 }
 
+.dq-struct-sec__title-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dq-struct-sec__title-icon svg {
+  color: #0F766E;
+  flex-shrink: 0;
+}
+
+.dq-struct-count--ready {
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  color: #065F46;
+  font-weight: 600;
+}
+
+.dq-struct-count--active {
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  color: #1D4ED8;
+  font-weight: 600;
+}
+
+.dq-struct-check-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+}
+
 .dq-struct-sec__body {
   padding: 4px 12px 12px;
   display: flex;
@@ -2824,21 +2863,44 @@ details[open] > summary .dq-acc-chevron {
 .dq-stage-stepper {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 3px;
+  padding: 2px;
+  border-radius: 999px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
   font-size: 12px;
   color: var(--text-3);
 }
 
 .dq-stage-step {
-  padding: 1px 7px;
-  border-radius: 999px;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--text-2);
+  font: inherit;
+  font-size: 12px;
   font-weight: 500;
+  padding: 2px 9px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 140ms ease, color 140ms ease, box-shadow 140ms ease;
+}
+
+.dq-stage-step:hover:not(.dq-stage-step--active) {
+  background: rgba(15, 23, 42, 0.07);
+  color: #0F172A;
+}
+
+.dq-stage-step:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 1px;
 }
 
 .dq-stage-step--active {
   background: #111827;
   color: #FFFFFF;
   font-weight: 600;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.16);
 }
 
 .dq-table-meta-text {
@@ -2858,6 +2920,43 @@ details[open] > summary .dq-acc-chevron {
   gap: 5px;
   font-size: 11.5px;
   color: var(--text-2);
+}
+
+.dq-recall-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease;
+}
+
+.dq-recall-pill--compute {
+  border: 1px solid #A7F3D0;
+  background: #ECFDF5;
+  color: #065F46;
+}
+
+.dq-recall-pill--compute:hover,
+.dq-recall-pill--compute[aria-expanded="true"] {
+  background: #D1FAE5;
+  border-color: #6EE7B7;
+}
+
+.dq-recall-pill--suggest {
+  border: 1px solid #BFDBFE;
+  background: #EFF6FF;
+  color: #1E40AF;
+}
+
+.dq-recall-pill--suggest:hover,
+.dq-recall-pill--suggest[aria-expanded="true"] {
+  background: #DBEAFE;
+  border-color: #93C5FD;
 }
 
 .dq-warn-badge-btn {
