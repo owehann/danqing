@@ -926,8 +926,8 @@ describe("pipeline.ts pure functional transformation & store undo/redo", () => {
         ["Characteristic", "No CAD_val", "No CAD_aux", "P value"],
         ["Age (yr)^a", "52.6", "9.5", "0.0001"],
         ["ST Depression (mV)^c", "0.2", "[0.0–1.0]", "0.00001"],
-        ["Sex, n (%)^b", "", "", "0.00001"],
-        ["Male", "92", "56.1%", ""],
+        ["Major Vessels, n (%)^b", "", "", "0.00001"],
+        ["0", "130", "80.7%", ""],
       ],
       cell_merges: [],
       warnings: [],
@@ -949,19 +949,21 @@ describe("pipeline.ts pure functional transformation & store undo/redo", () => {
 
     const doc = applySuggestionsToDoc(createInitialTableDoc(snap), "all", true);
     doc.structure.merges[0].mergedLabel = "No CAD (n=164)";
-    doc.structure.rowIndents[3] = 1; // "Male" sub-row indented
+    doc.structure.rowIndents[3] = 1; // "0" numeric-code category sub-row indented
 
     const model = buildModel(doc, "en");
     const rows = model.blocks[0].rows;
     expect(rows[0][1].display).toBe("52.6 ± 9.5");
     // Pre-bracketed IQR string must NOT be double-wrapped as `([0.0–1.0])`
     expect(rows[1][1].display).toBe("0.2 [0.0–1.0]");
-    // Categorical parent row ("Sex, n (%)") arm cell stays blank "" while P value formats cleanly
+    // Categorical parent row arm cell stays blank "" while P value formats cleanly
     expect(rows[2][1].display).toBe("");
     expect(rows[2][2].display).toBe("<0.001***");
-    // Indented sub-row ("Male") renders n (pct%) while P value cell stays blank ""
+    // Indented numeric-coded category sub-row ("0") stays left-aligned literal "0" (NEVER right-aligned "0.00"!)
+    expect(rows[3][0].display).toBe("0");
+    expect(rows[3][0].align).toBe("left");
     expect(rows[3][0].indent).toBe(1);
-    expect(rows[3][1].display).toBe("92 (56.1%)");
+    expect(rows[3][1].display).toBe("130 (80.7%)");
     expect(rows[3][2].display).toBe("");
   });
 });

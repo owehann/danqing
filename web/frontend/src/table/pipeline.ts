@@ -1447,7 +1447,16 @@ export function buildModel(
         // Single Column Slot
         const rawCell = iRow.cellsByColId[primary.id] ?? "";
         const { clean: cleanStr, sup: cellSup } = splitInlineSuperscript(rawCell);
-        const parsed = parseNumber(cleanStr, decimalComma);
+        const isLeadingStubCol =
+          sIdx === 0 &&
+          primary.role === "normal" &&
+          primary.visual !== "heat" &&
+          primary.visual !== "bar" &&
+          (indentLvl > 0 ||
+            (colParsedValues[primary.id]?.length ?? 0) / Math.max(1, internalRows.length) < 0.6);
+        const parsed = isLeadingStubCol
+          ? { value: null, prefix: "", unit: "", pText: null, isSequence: false }
+          : parseNumber(cleanStr, decimalComma);
         const editedFrom = iRow.editedFromByColId[primary.id] ?? null;
 
         let display = "";
