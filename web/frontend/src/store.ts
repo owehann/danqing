@@ -13,7 +13,7 @@ import type {
   VibrancyMode,
 } from "./types";
 
-export type StudioMode = "figure" | "table";
+export type StudioMode = "layout" | "figure" | "table";
 export type PageMode = "landing" | "processing" | "editor";
 export type ActiveDialog = "export" | "raster" | "multipage" | "shortcuts" | "error" | null;
 
@@ -131,7 +131,7 @@ function closeActiveEventSource(): void {
 }
 
 export const useStudioStore = create<StudioStore>((set, get) => ({
-  studioMode: "figure",
+  studioMode: "layout",
   pageMode: "landing",
   palettes: [],
   styles: [],

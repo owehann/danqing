@@ -1,6 +1,7 @@
 import React, { useId, useRef, useState } from "react";
-import { ExternalLink, Upload } from "lucide-react";
+import { ArrowRight, ExternalLink, LayoutGrid, Upload } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useLayoutStudioStore } from "../layout/layoutStore";
 import { useStudioStore } from "../store";
 import { BrandMark } from "./BrandMark";
 
@@ -9,6 +10,10 @@ export function LandingView(): React.ReactElement {
   const presets = useStudioStore((s) => s.presets);
   const uploadFile = useStudioStore((s) => s.uploadFile);
   const openPreset = useStudioStore((s) => s.openPreset);
+  const layoutComposed = useLayoutStudioStore((s) => s.composed);
+  const layoutSelectedIds = useLayoutStudioStore((s) => s.selectedIds);
+  const layoutHandoffBusy = useLayoutStudioStore((s) => s.handoffBusy);
+  const exportHandoffSvgFile = useLayoutStudioStore((s) => s.exportHandoffSvgFile);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const fileInputId = useId();
   const [dragActive, setDragActive] = useState(false);
@@ -18,6 +23,12 @@ export function LandingView(): React.ReactElement {
   const handleFiles = (files: FileList | null): void => {
     if (!files || files.length === 0) return;
     void uploadFile(files[0]);
+  };
+
+  const handleLoadFromLayout = async (): Promise<void> => {
+    const file = await exportHandoffSvgFile();
+    if (!file) return;
+    await uploadFile(file);
   };
 
   return (
@@ -30,6 +41,37 @@ export function LandingView(): React.ReactElement {
           <h1>{t("landing.headline")}</h1>
           <p>{t("landing.tagline")}</p>
         </div>
+
+        {layoutComposed && layoutSelectedIds.length > 0 ? (
+          <div className="dq-layout-ready-banner">
+            <div className="dq-layout-ready-banner__info">
+              <LayoutGrid size={16} strokeWidth={1.6} aria-hidden="true" />
+              <div>
+                <strong>
+                  {t("layoutStudio.handoffBanner.title", {
+                    count: layoutSelectedIds.length,
+                    w: layoutComposed.page_width_mm,
+                    h: layoutComposed.page_height_mm,
+                  })}
+                </strong>
+                <p>{t("layoutStudio.handoffBanner.desc")}</p>
+              </div>
+            </div>
+            <button
+              type="button"
+              className="dq-btn dq-btn--primary"
+              disabled={layoutHandoffBusy}
+              onClick={() => void handleLoadFromLayout()}
+            >
+              <span>
+                {layoutHandoffBusy
+                  ? t("layoutStudio.topbar.sendingToColor")
+                  : t("layoutStudio.handoffBanner.btn")}
+              </span>
+              <ArrowRight size={14} strokeWidth={1.6} aria-hidden="true" />
+            </button>
+          </div>
+        ) : null}
 
         <div
           className={`dq-dropzone${dragActive ? " dq-dropzone--active" : ""}`}

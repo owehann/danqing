@@ -1143,7 +1143,19 @@ def parse_svg_scene(
 
     _walk(root, [], (1.0, 0.0, 0.0, 1.0, 0.0, 0.0), None, None, "#000000", 1.0, False)
 
-    panels = _detect_svg_panels(texts, width, height, filename, clip_rects=svg_clip_rects)
+    explicit_panels: list[PanelBox] = []
+    for el_p in all_elems:
+        if isinstance(el_p.tag, str) and etree.QName(el_p.localname if hasattr(el_p, "localname") else el_p.tag).localname == "g":
+            dp_id = el_p.get("data-danqing-panel")
+            dp_bb = el_p.get("data-panel-bbox")
+            if dp_id and dp_bb:
+                nums = [float(x) for x in dp_bb.split(",") if x.strip()]
+                if len(nums) == 4:
+                    explicit_panels.append(
+                        PanelBox(panel_id=dp_id, title=dp_id, bbox=(nums[0], nums[1], nums[2], nums[3]))
+                    )
+
+    panels = explicit_panels if explicit_panels else _detect_svg_panels(texts, width, height, filename, clip_rects=svg_clip_rects)
     for t in texts:
         t.panel_id = _assign_panel(t.bbox, panels)
     for ev in evidence_regions:
@@ -1155,15 +1167,28 @@ def parse_svg_scene(
             cs_g = continuous_scales[sid_g]
             cs_g.panel_id = inst.panel_id
             cs_g.colorbar_bbox = tuple(round(v, 2) for v in inst.bbox)
+            best_cb_t: tuple[float, str] | None = None
             for t_g in texts:
+                s_cand = t_g.text.strip()
                 if (
                     t_g.panel_id == inst.panel_id
-                    and len(t_g.text.strip()) >= 2
-                    and not t_g.text.strip().replace(".", "").replace("-", "").isdigit()
+                    and len(s_cand) >= 2
+                    and not s_cand.replace(".", "").replace("-", "").replace("+", "").isdigit()
                 ):
-                    if -6.0 <= (inst.bbox[1] - t_g.bbox[3]) <= 28.0 and abs(t_g.bbox[0] - inst.bbox[0]) <= 55.0:
-                        cs_g.title = t_g.text.strip()
-                        break
+                    above_bar = -4.0 <= (inst.bbox[1] - t_g.bbox[3]) <= 24.0 and abs(t_g.bbox[0] - inst.bbox[0]) <= 50.0
+                    left_of_bar = -4.0 <= (inst.bbox[0] - t_g.bbox[2]) <= 24.0 and abs(
+                        0.5 * (t_g.bbox[1] + t_g.bbox[3]) - 0.5 * (inst.bbox[1] + inst.bbox[3])
+                    ) <= 10.0
+                    if left_of_bar:
+                        dist_c = abs(inst.bbox[0] - t_g.bbox[2])
+                    elif above_bar:
+                        dist_c = abs(inst.bbox[1] - t_g.bbox[3]) + 0.35 * abs(t_g.bbox[0] - inst.bbox[0])
+                    else:
+                        continue
+                    if best_cb_t is None or dist_c < best_cb_t[0]:
+                        best_cb_t = (dist_c, s_cand)
+            if best_cb_t is not None:
+                cs_g.title = best_cb_t[1]
 
     def _is_mutable_svg_color(hx: str, bbox: tuple[float, float, float, float], is_bg_w: bool) -> bool:
         if is_bg_w:
@@ -1304,6 +1329,36 @@ def parse_svg_scene(
         progress_cb("binding_legends", 68)
 
     _detect_svg_vector_colorbars(raw_instances, color_groups, continuous_scales, texts)
+
+    # Link same-panel continuous data marks (e.g. DotPlot bubbles / choropleth cells) to <linearGradient> colorbars!
+    for cs_lg in continuous_scales.values():
+        if cs_lg.member_group_ids or len(cs_lg.original_stops_hex) < 2:
+            continue
+        cand_cgs = [
+            cg
+            for cg in color_groups.values()
+            if cg.panel_id == cs_lg.panel_id and not cg.is_continuous_member
+        ]
+        if len(cand_cgs) < 4:
+            continue
+        stops_arr = np.stack([hex_to_srgb01(h) for h in cs_lg.original_stops_hex], axis=0)
+        stop_xs = np.linspace(0.0, 255.0, len(stops_arr))
+        lut_xs = np.arange(256, dtype=float)
+        lut_lg = np.stack([np.interp(lut_xs, stop_xs, stops_arr[:, c]) for c in range(3)], axis=-1)
+        cand_srgbs = np.stack([hex_to_srgb01(cg.original_hex) for cg in cand_cgs], axis=0)
+        ts_lg, res_lg = project_colors_onto_lut(cand_srgbs, lut_lg)
+        matched_lg = [
+            (cg, float(tv))
+            for cg, tv, rv in zip(cand_cgs, ts_lg, res_lg)
+            if float(rv) <= 0.048
+        ]
+        if len(matched_lg) >= 4:
+            for cg, tv in matched_lg:
+                cg.is_continuous_member = True
+                cg.continuous_scale_id = cs_lg.scale_id
+                cg.continuous_t = round(tv, 4)
+                cs_lg.member_group_ids.append(cg.group_id)
+
     _bind_svg_legend_labels(raw_instances, color_groups, texts, panels)
 
     # Sync labels across same-(panel, original_hex) sibling layers (`area`/`line` <-> `point`)

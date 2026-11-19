@@ -1,21 +1,27 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import {
+  ArrowLeft,
+  ArrowRight,
   Check,
   ChevronDown,
   ClipboardPaste,
   Copy,
   Eye,
+  Grid,
   HelpCircle,
   Home,
+  LayoutGrid,
   Palette,
   Plus,
   Redo2,
+  SlidersHorizontal,
   Table2,
   Undo2,
   Upload,
   X,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useLayoutStudioStore } from "../layout/layoutStore";
 import { useStudioStore } from "../store";
 import {
   copyRichTableToClipboard,
@@ -75,6 +81,24 @@ export function TopBar(): React.ReactElement {
   const activeTableDoc = activeTableId ? tableDocs[activeTableId] : undefined;
   const canTableUndo = (historyPast[activeTableId]?.length ?? 0) > 0;
   const canTableRedo = (historyFuture[activeTableId]?.length ?? 0) > 0;
+
+  // Layout Studio state
+  const layoutPageMode = useLayoutStudioStore((s) => s.layoutPageMode);
+  const layoutComposed = useLayoutStudioStore((s) => s.composed);
+  const layoutSelectedIds = useLayoutStudioStore((s) => s.selectedIds);
+  const layoutComparingNaive = useLayoutStudioStore((s) => s.isComparingNaive);
+  const layoutShowGuides = useLayoutStudioStore((s) => s.showGuides);
+  const layoutInspectorOpen = useLayoutStudioStore((s) => s.inspectorDrawerOpen);
+  const layoutHandoffBusy = useLayoutStudioStore((s) => s.handoffBusy);
+  const goToLayoutLanding = useLayoutStudioStore((s) => s.goToLayoutLanding);
+  const setLayoutComparingNaive = useLayoutStudioStore((s) => s.setComparingNaive);
+  const setLayoutShowGuides = useLayoutStudioStore((s) => s.setShowGuides);
+  const setLayoutInspectorOpen = useLayoutStudioStore((s) => s.setInspectorDrawerOpen);
+  const setLayoutExportOpen = useLayoutStudioStore((s) => s.setExportModalOpen);
+  const exportHandoffSvgFile = useLayoutStudioStore((s) => s.exportHandoffSvgFile);
+  const uploadLayoutFiles = useLayoutStudioStore((s) => s.uploadLayoutFiles);
+  const layoutAddInputRef = useRef<HTMLInputElement | null>(null);
+  const layoutAddInputId = useId();
 
   const toolbarRef = useRef<HTMLDivElement | null>(null);
   const figTriggerRef = useRef<HTMLButtonElement | null>(null);
@@ -250,6 +274,14 @@ export function TopBar(): React.ReactElement {
     }, 2200);
   };
 
+  const handleTopSendLayoutToFigure = async (): Promise<void> => {
+    const file = await exportHandoffSvgFile();
+    if (!file) return;
+    setLayoutExportOpen(false);
+    setStudioMode("figure");
+    await uploadFile(file);
+  };
+
   const toolbarFocusGroupAttrs = supportsFocusGroup
     ? ({ focusgroup: "toolbar wrap" } as Record<string, unknown>)
     : {};
@@ -265,7 +297,9 @@ export function TopBar(): React.ReactElement {
           type="button"
           className="dq-brand-btn"
           onClick={() => {
-            if (studioMode === "table") {
+            if (studioMode === "layout") {
+              goToLayoutLanding();
+            } else if (studioMode === "table") {
               goToTableLanding();
             } else {
               goToLanding();
@@ -284,9 +318,19 @@ export function TopBar(): React.ReactElement {
           <button
             type="button"
             className="dq-mode-switch__btn"
+            aria-pressed={studioMode === "layout"}
+            onClick={() => setStudioMode("layout")}
+          >
+            <LayoutGrid size={13} strokeWidth={1.6} aria-hidden="true" />
+            <span>{t("tableStudio.mode.layout")}</span>
+          </button>
+          <button
+            type="button"
+            className="dq-mode-switch__btn"
             aria-pressed={studioMode === "figure"}
             onClick={() => setStudioMode("figure")}
           >
+            <Palette size={13} strokeWidth={1.6} aria-hidden="true" />
             <span>{t("tableStudio.mode.figure")}</span>
           </button>
           <button
@@ -299,6 +343,45 @@ export function TopBar(): React.ReactElement {
             <span>{t("tableStudio.mode.table")}</span>
           </button>
         </div>
+
+        {studioMode === "layout" && layoutPageMode === "editor" ? (
+          <>
+            <span className="dq-fig-trigger" style={{ cursor: "default" }}>
+              <span>
+                {t("layoutStudio.topbar.activeSummary", {
+                  count: layoutSelectedIds.length,
+                  w: layoutComposed?.page_width_mm ?? 183,
+                  h: layoutComposed?.page_height_mm ?? 166,
+                })}
+              </span>
+            </span>
+            <label htmlFor={layoutAddInputId} className="visually-hidden">
+              {t("layoutStudio.topbar.addPanels")}
+            </label>
+            <input
+              ref={layoutAddInputRef}
+              id={layoutAddInputId}
+              type="file"
+              multiple
+              accept=".pdf,.svg,.png,.jpg,.jpeg,.tif,.tiff,.webp"
+              className="visually-hidden"
+              onChange={(e) => {
+                if (e.target.files?.length) {
+                  void uploadLayoutFiles(e.target.files);
+                }
+                e.currentTarget.value = "";
+              }}
+            />
+            <button
+              type="button"
+              className="dq-btn dq-topbar-responsive-btn"
+              onClick={() => layoutAddInputRef.current?.click()}
+            >
+              <Plus size={14} strokeWidth={1.6} aria-hidden="true" />
+              <span className="dq-topbar-btn-label">{t("layoutStudio.topbar.addPanels")}</span>
+            </button>
+          </>
+        ) : null}
 
         {studioMode === "figure" && pageMode === "editor" && figure ? (
           <>
@@ -576,6 +659,40 @@ export function TopBar(): React.ReactElement {
       )}
 
       <div className="dq-topbar__right">
+        {studioMode === "layout" && layoutPageMode === "editor" ? (
+          <>
+            <button
+              type="button"
+              className="dq-btn dq-topbar-responsive-btn"
+              aria-pressed={layoutShowGuides}
+              onClick={() => setLayoutShowGuides(!layoutShowGuides)}
+            >
+              <Grid size={14} strokeWidth={1.5} aria-hidden="true" />
+              <span className="dq-topbar-btn-label">{t("layoutStudio.topbar.spineGuides")}</span>
+            </button>
+
+            <button
+              type="button"
+              className="dq-btn dq-topbar-responsive-btn"
+              aria-pressed={layoutComparingNaive}
+              onClick={() => setLayoutComparingNaive(!layoutComparingNaive)}
+            >
+              <Eye size={15} strokeWidth={1.5} aria-hidden="true" />
+              <span className="dq-topbar-btn-label">{t("layoutStudio.topbar.holdCompare")}</span>
+            </button>
+
+            <button
+              type="button"
+              className="dq-btn dq-drawer-trigger dq-topbar-responsive-btn"
+              aria-pressed={layoutInspectorOpen}
+              onClick={() => setLayoutInspectorOpen(!layoutInspectorOpen)}
+            >
+              <SlidersHorizontal size={14} strokeWidth={1.5} aria-hidden="true" />
+              <span className="dq-topbar-btn-label">{t("layoutStudio.topbar.inspectorDrawer")}</span>
+            </button>
+          </>
+        ) : null}
+
         {studioMode === "figure" && pageMode === "editor" && figure ? (
           <button
             type="button"
@@ -781,14 +898,56 @@ export function TopBar(): React.ReactElement {
           </button>
         </div>
 
+        {studioMode === "layout" && layoutPageMode === "editor" ? (
+          <>
+            <button
+              type="button"
+              className="dq-btn dq-layout-handoff-topbtn"
+              disabled={!layoutComposed || layoutHandoffBusy}
+              title={t("layoutStudio.topbar.sendToColorTitle")}
+              onClick={() => void handleTopSendLayoutToFigure()}
+            >
+              <Palette size={14} strokeWidth={1.6} aria-hidden="true" />
+              <span>
+                {layoutHandoffBusy
+                  ? t("layoutStudio.topbar.sendingToColor")
+                  : t("layoutStudio.topbar.sendToColor")}
+              </span>
+              <ArrowRight size={13} strokeWidth={1.7} aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              className="dq-btn dq-btn--primary"
+              onClick={() => setLayoutExportOpen(true)}
+            >
+              {t("layoutStudio.topbar.finishExport")}
+            </button>
+          </>
+        ) : null}
+
         {studioMode === "figure" && pageMode === "editor" && figure ? (
-          <button
-            type="button"
-            className="dq-btn dq-btn--primary"
-            onClick={() => openDialog("export")}
-          >
-            {t("topbar.export")}
-          </button>
+          <>
+            {figure.filename.startsWith("danqing_layout_") && layoutComposed ? (
+              <button
+                type="button"
+                className="dq-btn dq-topbar-responsive-btn"
+                title={t("layoutStudio.topbar.backToLayoutTitle")}
+                onClick={() => setStudioMode("layout")}
+              >
+                <ArrowLeft size={13} strokeWidth={1.7} aria-hidden="true" />
+                <span className="dq-topbar-btn-label">
+                  {t("layoutStudio.topbar.backToLayout")}
+                </span>
+              </button>
+            ) : null}
+            <button
+              type="button"
+              className="dq-btn dq-btn--primary"
+              onClick={() => openDialog("export")}
+            >
+              {t("topbar.export")}
+            </button>
+          </>
         ) : null}
       </div>
     </header>

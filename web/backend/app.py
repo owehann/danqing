@@ -2728,8 +2728,10 @@ def legacy_download(scene_id: str) -> Response:
     return Response(content=sess.cached_export_bytes, media_type=media)
 
 
+from web.backend.layout_routes import layout_router
 from web.backend.table_routes import table_router
 
+app.include_router(layout_router)
 app.include_router(table_router)
 
 if FRONTEND_DIST_DIR.exists():

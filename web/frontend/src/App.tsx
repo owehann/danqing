@@ -4,6 +4,11 @@ import { ElementsPanel } from "./components/ElementsPanel";
 import { ExportDialog } from "./components/ExportDialog";
 import { FigureCanvas } from "./components/FigureCanvas";
 import { LandingView } from "./components/LandingView";
+import { LayoutCanvas } from "./components/layout/LayoutCanvas";
+import { LayoutDialogs } from "./components/layout/LayoutDialogs";
+import { LayoutElementsPanel } from "./components/layout/LayoutElementsPanel";
+import { LayoutLandingView } from "./components/layout/LayoutLandingView";
+import { LayoutRightSidebar } from "./components/layout/LayoutRightSidebar";
 import { ProcessingView } from "./components/ProcessingView";
 import { RightSidebar } from "./components/RightSidebar";
 import { TableCanvas } from "./components/table/TableCanvas";
@@ -13,6 +18,7 @@ import { TableStructurePanel } from "./components/table/TableStructurePanel";
 import { TableStylePanel } from "./components/table/TableStylePanel";
 import { TopBar } from "./components/TopBar";
 import { UploadDialogs } from "./components/UploadDialogs";
+import { useLayoutStudioStore } from "./layout/layoutStore";
 import { useStudioStore } from "./store";
 import { useTableStudioStore } from "./table/tableStore";
 
@@ -21,6 +27,7 @@ export function App(): React.ReactElement {
   const studioMode = useStudioStore((s) => s.studioMode);
   const pageMode = useStudioStore((s) => s.pageMode);
   const tablePageMode = useTableStudioStore((s) => s.tablePageMode);
+  const layoutPageMode = useLayoutStudioStore((s) => s.layoutPageMode);
   const initCatalog = useStudioStore((s) => s.initCatalog);
   const uploadFile = useStudioStore((s) => s.uploadFile);
   const uploadSvgText = useStudioStore((s) => s.uploadSvgText);
@@ -64,7 +71,11 @@ export function App(): React.ReactElement {
       e.preventDefault();
       const files = e.dataTransfer?.files;
       if (files && files.length > 0) {
-        void uploadFile(files[0]);
+        if (useStudioStore.getState().studioMode === "layout") {
+          void useLayoutStudioStore.getState().uploadLayoutFiles(files);
+        } else {
+          void uploadFile(files[0]);
+        }
       }
     };
 
@@ -253,21 +264,38 @@ export function App(): React.ReactElement {
         </a>
 
         {windowDragActive &&
-        ((studioMode === "table" &&
-          (tablePageMode === "editor" || tablePageMode === "landing")) ||
+        ((studioMode === "layout" &&
+          (layoutPageMode === "editor" || layoutPageMode === "landing")) ||
+          (studioMode === "table" &&
+            (tablePageMode === "editor" || tablePageMode === "landing")) ||
           (studioMode === "figure" && pageMode === "editor")) ? (
           <div className="dq-drop-overlay">
             <div className="dq-drop-overlay__box">
-              {studioMode === "table"
-                ? t("tableStudio.canvas.dropOverlay")
-                : t("canvas.dropOverlay")}
+              {studioMode === "layout"
+                ? t("layoutStudio.canvas.dropOverlay")
+                : studioMode === "table"
+                  ? t("tableStudio.canvas.dropOverlay")
+                  : t("canvas.dropOverlay")}
             </div>
           </div>
         ) : null}
 
         <TopBar />
 
-        {studioMode === "table" ? (
+        {studioMode === "layout" ? (
+          <>
+            {layoutPageMode === "landing" ? (
+              <LayoutLandingView />
+            ) : (
+              <div className="dq-editor">
+                <LayoutElementsPanel />
+                <LayoutCanvas />
+                <LayoutRightSidebar />
+              </div>
+            )}
+            <LayoutDialogs />
+          </>
+        ) : studioMode === "table" ? (
           <>
             {tablePageMode === "landing" ? (
               <TableLandingView />
