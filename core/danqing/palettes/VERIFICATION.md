@@ -1,6 +1,6 @@
 # Danqing Palette Library — Primary Source Verification Ledger (3,434 Palettes)
 
-Verified on **2026-11-15** across **3,434 primary-source-verified JSON definitions** in `core/danqing/palettes/data/`.
+Verified on **2026-11-20** across **3,434 primary-source-verified JSON definitions** in `core/danqing/palettes/data/`.
 All palettes store unmodified upstream hex arrays (or deterministic CC0 Cleveland Museum of Art OKLab k-means extractions for museum artifacts), paired with homologous 7-stop OKLab sequential/diverging ramps (`partners.paired_sequential_stops` & `partners.paired_diverging_stops`), and exact CIEDE2000 + Machado (2009) CVD metrics computed by `scripts/palette_qc.py`.
 
 ## Summary Statistics

@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { ChevronDown, Search, X } from "lucide-react";
+import React, { useMemo, useState } from "react";
+import { ChevronDown, Search, Sparkles, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useStudioStore } from "../../store";
 import {
@@ -12,14 +12,18 @@ import type {
   RowRhythm,
   TablePresetId,
 } from "../../table/model";
-import { buildModel } from "../../table/pipeline";
+import {
+  applySuggestionsToDoc,
+  buildModel,
+  listUnappliedSuggestions,
+} from "../../table/pipeline";
 import { useTableStudioStore } from "../../table/tableStore";
 
 const PRESET_IDS: TablePresetId[] = [
-  "raw",
-  "matrix_heatmap",
   "cns_three_line",
+  "matrix_heatmap",
   "ft_editorial",
+  "raw",
 ];
 
 const HEAT_SCOPES: HeatScope[] = ["per_column", "per_part", "per_row", "global"];
@@ -46,32 +50,8 @@ export function TableStylePanel(): React.ReactElement | null {
   const isZh = i18n.language.startsWith("zh");
   const langKey: "en" | "zh" = isZh ? "zh" : "en";
 
-  const accordionRef = useRef<HTMLDivElement | null>(null);
   const [rampSearch, setRampSearch] = useState("");
   const [customCenterText, setCustomCenterText] = useState("0");
-
-  // Exclusive <details name="dq-style"> fallback for browsers without native Details `name` support
-  useEffect(() => {
-    const root = accordionRef.current;
-    if (!root) return;
-    if (
-      typeof HTMLDetailsElement !== "undefined" &&
-      Object.hasOwn(HTMLDetailsElement.prototype, "name")
-    ) {
-      return;
-    }
-    const onToggle = (ev: Event): void => {
-      const opened = ev.target as HTMLDetailsElement | null;
-      if (!opened || opened.tagName !== "DETAILS" || !opened.open) return;
-      const group = opened.getAttribute("name");
-      if (!group) return;
-      root.querySelectorAll<HTMLDetailsElement>(`details[name="${group}"][open]`).forEach((el) => {
-        if (el !== opened) el.open = false;
-      });
-    };
-    root.addEventListener("toggle", onToggle, true);
-    return () => root.removeEventListener("toggle", onToggle, true);
-  }, []);
 
   const continuousCatalog = useMemo(
     () => filterContinuousCatalogPalettes(catalogPalettes),
@@ -119,53 +99,70 @@ export function TableStylePanel(): React.ReactElement | null {
         </button>
       </div>
 
-      <div ref={accordionRef} className="dq-table-style-accordion">
-        {/* 1. Preset */}
-        <details name="dq-style" className="dq-style-acc" open>
-          <summary className="dq-style-acc__sum">
-            <span>{t("tableStudio.style.secPreset")}</span>
-            <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
-          </summary>
-          <div className="dq-style-acc__body">
-            <div className="dq-table-preset-list">
-              {PRESET_IDS.map((pid) => (
-                <button
-                  key={pid}
-                  type="button"
-                  className="dq-table-preset-card"
-                  aria-pressed={style.preset === pid}
-                  onClick={() =>
-                    commit((draft) => {
-                      if (pid === "raw" && draft.style.preset !== "raw") {
-                        draft.style.lastStyledPreset = draft.style.preset;
-                      } else if (pid !== "raw") {
-                        draft.style.lastStyledPreset = pid;
-                      }
-                      draft.style.preset = pid;
-                      if (pid !== "raw" && draft.structure.stage === "raw") {
-                        draft.structure.stage = "tidied";
-                      }
-                    })
-                  }
-                >
-                  <span className="dq-table-preset-card__title">
-                    {t(`tableStudio.style.presets.${pid}.title`)}
-                  </span>
-                  <span className="dq-table-preset-card__desc">
-                    {t(`tableStudio.style.presets.${pid}.desc`)}
-                  </span>
-                </button>
-              ))}
-            </div>
+      <div className="dq-table-style-accordion">
+        {/* 1. Foolproof One-Click Journal Table Presets (Always Open at Top) */}
+        <div className="dq-autopilot-card dq-autopilot-card--table">
+          <div className="dq-autopilot-card__head">
+            <span className="dq-autopilot-card__title">
+              <Sparkles size={13} strokeWidth={1.7} aria-hidden="true" />
+              <span>{t("tableStudio.style.quickHeading")}</span>
+            </span>
           </div>
-        </details>
+          <p className="dq-autopilot-card__sub">{t("tableStudio.style.quickSub")}</p>
+          <div className="dq-table-preset-list">
+            {PRESET_IDS.map((pid) => (
+              <button
+                key={pid}
+                type="button"
+                className="dq-table-preset-card"
+                aria-pressed={style.preset === pid}
+                onClick={() =>
+                  commit((draft) => {
+                    if (
+                      pid !== "raw" &&
+                      draft.structure.stage === "raw" &&
+                      listUnappliedSuggestions(doc).length > 0
+                    ) {
+                      const tidiedDoc = applySuggestionsToDoc(doc, "all", false);
+                      draft.structure = tidiedDoc.structure;
+                      if (
+                        tidiedDoc.style.heatScope !== "per_column" &&
+                        draft.style.heatScope === "per_column"
+                      ) {
+                        draft.style.heatScope = tidiedDoc.style.heatScope;
+                      }
+                    }
+                    if (pid === "raw" && draft.style.preset !== "raw") {
+                      draft.style.lastStyledPreset = draft.style.preset;
+                    } else if (pid !== "raw") {
+                      draft.style.lastStyledPreset = pid;
+                    }
+                    draft.style.preset = pid;
+                    if (pid !== "raw" && draft.structure.stage === "raw") {
+                      draft.structure.stage = "tidied";
+                    }
+                  })
+                }
+              >
+                <span className="dq-table-preset-card__title">
+                  {t(`tableStudio.style.presets.${pid}.title`)}
+                </span>
+                <span className="dq-table-preset-card__desc">
+                  {t(`tableStudio.style.presets.${pid}.desc`)}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
 
         {/* 2. Color Ramp */}
-        <details name="dq-style" className="dq-style-acc">
+        <details className="dq-style-acc">
           <summary className="dq-style-acc__sum">
-            <span>{t("tableStudio.style.secRamp")}</span>
+            <span className="dq-style-acc__lead">
+              <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+              <span>{t("tableStudio.style.secRamp")}</span>
+            </span>
             <span className="dq-style-acc__badge">{t("tableStudio.palettes.autoContrastBadge")}</span>
-            <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
           </summary>
           <div className="dq-style-acc__body">
             {model.activeHueCount > 3 ? (
@@ -302,10 +299,15 @@ export function TableStylePanel(): React.ReactElement | null {
         </details>
 
         {/* 3. Heatmap */}
-        <details name="dq-style" className="dq-style-acc">
+        <details className="dq-style-acc">
           <summary className="dq-style-acc__sum">
-            <span>{t("tableStudio.style.secHeatmap")}</span>
-            <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+            <span className="dq-style-acc__lead">
+              <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+              <span>{t("tableStudio.style.secHeatmap")}</span>
+            </span>
+            <span className="dq-style-acc__badge">
+              {t(`tableStudio.style.scopes.${style.heatScope}`)}
+            </span>
           </summary>
           <div
             className={`dq-style-acc__body${
@@ -483,10 +485,15 @@ export function TableStylePanel(): React.ReactElement | null {
         </details>
 
         {/* 4. Emphasis */}
-        <details name="dq-style" className="dq-style-acc">
+        <details className="dq-style-acc">
           <summary className="dq-style-acc__sum">
-            <span>{t("tableStudio.style.secEmphasis")}</span>
-            <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+            <span className="dq-style-acc__lead">
+              <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+              <span>{t("tableStudio.style.secEmphasis")}</span>
+            </span>
+            <span className="dq-style-acc__badge">
+              {t(`tableStudio.style.emphasisModes.${style.emphasis}.title`)}
+            </span>
           </summary>
           <div
             className={`dq-style-acc__body${!hasSigSource ? " dq-style-acc__body--disabled" : ""}`}
@@ -523,10 +530,15 @@ export function TableStylePanel(): React.ReactElement | null {
         </details>
 
         {/* 5. Row Rhythm & Tabular Nums */}
-        <details name="dq-style" className="dq-style-acc">
+        <details className="dq-style-acc">
           <summary className="dq-style-acc__sum">
-            <span>{t("tableStudio.style.secRhythm")}</span>
-            <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+            <span className="dq-style-acc__lead">
+              <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+              <span>{t("tableStudio.style.secRhythm")}</span>
+            </span>
+            <span className="dq-style-acc__badge">
+              {t(`tableStudio.style.rhythms.${style.rowRhythm}`)}
+            </span>
           </summary>
           <div className="dq-style-acc__body">
             {rhythmDisabled ? (

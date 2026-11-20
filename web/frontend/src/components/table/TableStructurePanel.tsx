@@ -417,10 +417,15 @@ export function TableStructurePanel(): React.ReactElement | null {
         ) : null}
 
         {/* 1. Titles */}
-        <details className="dq-struct-sec" open>
+        <details className="dq-struct-sec">
           <summary className="dq-struct-sec__sum">
-            <span>{t("tableStudio.structure.secTitles")}</span>
-            <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+            <span className="dq-struct-sec__lead">
+              <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+              <span>{t("tableStudio.structure.secTitles")}</span>
+            </span>
+            {structure.tableNumber ? (
+              <span className="dq-struct-count">{structure.tableNumber}</span>
+            ) : null}
           </summary>
           <div className="dq-struct-sec__body">
             <div className="dq-struct-field-row">
@@ -494,12 +499,14 @@ export function TableStructurePanel(): React.ReactElement | null {
         {/* 2. Columns (Sortable Listbox) */}
         <details className="dq-struct-sec" open>
           <summary className="dq-struct-sec__sum">
-            <span>{t("tableStudio.structure.secColumns")}</span>
+            <span className="dq-struct-sec__lead">
+              <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+              <span>{t("tableStudio.structure.secColumns")}</span>
+            </span>
             <span className="dq-struct-count">{structure.columns.length}</span>
-            <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
           </summary>
           <div className="dq-struct-sec__body">
-            <p className="dq-struct-hint">{t("tableStudio.structure.colListHint")}</p>
+            <p className="dq-struct-hint">{t("tableStudio.structure.colClickHint")}</p>
             <div
               role="listbox"
               aria-label={t("tableStudio.structure.secColumns")}
@@ -537,13 +544,21 @@ export function TableStructurePanel(): React.ReactElement | null {
                     aria-selected={isSelected}
                     tabIndex={0}
                     draggable={editingColId !== col.id}
-                    className={`dq-col-item${col.hidden ? " dq-col-item--hidden" : ""}${
-                      isDropTarget ? " dq-col-item--drop" : ""
-                    }${secondaryMerge ? " dq-col-item--secondary" : ""}`}
-                    onFocus={() => setSelectedColId(col.id)}
-                    onClick={() => setSelectedColId(col.id)}
+                    className={`dq-col-item${isSelected ? " dq-col-item--selected" : ""}${
+                      col.hidden ? " dq-col-item--hidden" : ""
+                    }${isDropTarget ? " dq-col-item--drop" : ""}${
+                      secondaryMerge ? " dq-col-item--secondary" : ""
+                    }`}
+                    onClick={() =>
+                      setSelectedColId((prev) => (prev === col.id ? "" : col.id))
+                    }
                     onKeyDown={(e) => {
-                      if (e.altKey && e.key === "ArrowUp") {
+                      if (e.key === "Enter" || e.key === " ") {
+                        if (editingColId !== col.id && e.target === e.currentTarget) {
+                          e.preventDefault();
+                          setSelectedColId((prev) => (prev === col.id ? "" : col.id));
+                        }
+                      } else if (e.altKey && e.key === "ArrowUp") {
                         e.preventDefault();
                         moveColumn(idx, idx - 1);
                       } else if (e.altKey && e.key === "ArrowDown") {
@@ -645,10 +660,22 @@ export function TableStructurePanel(): React.ReactElement | null {
                         <span className="dq-col-merged-badge">
                           {t("tableStudio.canvas.mergedBadge")}
                         </span>
+                      ) : secondaryMerge ? (
+                        <span className="dq-col-merged-badge">
+                          {t("tableStudio.canvas.mergedBadge")}
+                        </span>
+                      ) : curVisual === "heat" || curVisual === "bar" ? (
+                        <span className="dq-col-merged-badge">
+                          {t(`tableStudio.visuals.${curVisual}`)}
+                        </span>
+                      ) : col.role !== "normal" && col.role !== "heat" && col.role !== "bar" ? (
+                        <span className="dq-col-merged-badge">
+                          {t(`tableStudio.roles.${col.role}`)}
+                        </span>
                       ) : null}
                     </div>
 
-                    {secondaryMerge ? (
+                    {!isSelected ? null : secondaryMerge ? (
                       <div className="dq-col-item__controls">
                         <span className="dq-col-secondary-note">
                           {t("tableStudio.canvas.mergedBadge")}
@@ -843,8 +870,15 @@ export function TableStructurePanel(): React.ReactElement | null {
         {/* 3. Grouping & Sort */}
         <details className="dq-struct-sec">
           <summary className="dq-struct-sec__sum">
-            <span>{t("tableStudio.structure.secGrouping")}</span>
-            <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+            <span className="dq-struct-sec__lead">
+              <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+              <span>{t("tableStudio.structure.secGrouping")}</span>
+            </span>
+            {structure.partBy ? (
+              <span className="dq-struct-count">
+                {structure.columns.find((c) => c.id === structure.partBy)?.label ?? ""}
+              </span>
+            ) : null}
           </summary>
           <div className="dq-struct-sec__body">
             <label className="dq-field-label">
@@ -1043,8 +1077,15 @@ export function TableStructurePanel(): React.ReactElement | null {
         {/* 4. Combinations (Merges, Spanners, Sparklines, Pivot) */}
         <details className="dq-struct-sec">
           <summary className="dq-struct-sec__sum">
-            <span>{t("tableStudio.structure.secCombos")}</span>
-            <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+            <span className="dq-struct-sec__lead">
+              <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+              <span>{t("tableStudio.structure.secCombos")}</span>
+            </span>
+            {structure.merges.length + structure.spanners.length + structure.derived.length > 0 ? (
+              <span className="dq-struct-count">
+                {structure.merges.length + structure.spanners.length + structure.derived.length}
+              </span>
+            ) : null}
           </summary>
           <div className="dq-struct-sec__body">
             {/* 4a. Merges */}
@@ -1512,8 +1553,13 @@ export function TableStructurePanel(): React.ReactElement | null {
         {/* 5. Footnotes */}
         <details className="dq-struct-sec">
           <summary className="dq-struct-sec__sum">
-            <span>{t("tableStudio.structure.secFootnotes")}</span>
-            <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+            <span className="dq-struct-sec__lead">
+              <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+              <span>{t("tableStudio.structure.secFootnotes")}</span>
+            </span>
+            {structure.footnotes.length > 0 ? (
+              <span className="dq-struct-count">{structure.footnotes.length}</span>
+            ) : null}
           </summary>
           <div className="dq-struct-sec__body">
             {structure.footnotes.length === 0 ? (
@@ -1619,8 +1665,13 @@ export function TableStructurePanel(): React.ReactElement | null {
         {/* 6. Significance & Missing Values */}
         <details className="dq-struct-sec">
           <summary className="dq-struct-sec__sum">
-            <span>{t("tableStudio.structure.secSig")}</span>
-            <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+            <span className="dq-struct-sec__lead">
+              <ChevronDown size={14} strokeWidth={1.6} className="dq-acc-chevron" aria-hidden="true" />
+              <span>{t("tableStudio.structure.secSig")}</span>
+            </span>
+            {structure.sig.sourceId ? (
+              <span className="dq-struct-count">{structure.sig.pStyle.toUpperCase()}</span>
+            ) : null}
           </summary>
           <div className="dq-struct-sec__body">
             {(structure.sig.bindings?.length ?? 0) >= 2 ? (

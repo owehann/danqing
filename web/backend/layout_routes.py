@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections import OrderedDict
 import json
+import os
 from pathlib import Path
 from typing import Any, Literal
 from urllib.parse import quote
@@ -37,7 +38,7 @@ PANELS_DIR = REPO_ROOT / "bench" / "layout_panels"
 _CATALOG_META: list[dict[str, Any]] = []
 _PANEL_STORE: OrderedDict[str, PanelIR] = OrderedDict()
 _SAMPLE_PACKS_CACHE: list[dict[str, Any]] | None = None
-MAX_UPLOADED_PANELS = 96
+MAX_UPLOADED_PANELS = 24 if os.getenv("DANQING_LOW_MEMORY") == "1" else 96
 
 SAMPLE_PACK_SPECS: list[dict[str, Any]] = [
     {

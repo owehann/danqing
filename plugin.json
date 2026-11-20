@@ -1,7 +1,7 @@
 {
   "name": "danqing",
   "displayName": "Danqing (丹青)",
-  "version": "0.5.0",
+  "version": "0.8.1",
   "description": "Lossless vector PDF/SVG scientific figure & manuscript recoloring engine and MCP server with 3,434 verified palettes, homologous paired ramps, and palette-independent OKLCH Style Engine.",
   "logo": "assets/logo.svg",
   "author": {

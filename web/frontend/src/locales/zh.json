@@ -40,12 +40,17 @@
     "shortcuts": "快捷键",
     "langEn": "EN",
     "langZh": "中",
+    "moreMenu": "语言与快捷键",
+    "languageLabel": "界面语言",
     "export": "导出"
   },
   "onboarding": {
     "step1": "1. 悬停右侧调色板即可实时预览",
     "step2": "2. 点击元素可调色、调透明度或拆分叠加图层",
     "step3": "3. 一键导出 PDF/SVG 与 R/Python 代码",
+    "figureGuide": "原始实验图像像素已自动保护 · 点右侧「一键论文定调」整图换色，点图中元素可单独精修",
+    "layoutGuide": "特殊原图比例已无损锁定 · 点右侧「一键顶刊排版」快速成稿，或直接拖拽子图与分隔条微调",
+    "tableGuide": "点右侧「一键刊物成稿」即可自动理顺表头与三线表样式，双击任意单元格可直接改字",
     "dismiss": "知道了"
   },
   "elements": {
@@ -83,6 +88,11 @@
   },
   "palettes": {
     "heading": "调色板",
+    "tabGlobal": "整图配色",
+    "tabElement": "选中元素",
+    "backToPalettes": "返回色盘",
+    "filterBtn": "筛选",
+    "filterActiveCount": "筛选 ({{count}})",
     "scopeLabel": "作用范围",
     "scopeAll": "整张图",
     "scopeHint": "点击单选分栏；按住 Shift 或 ⌘ 可多选分栏",
@@ -113,6 +123,8 @@
     "resetOriginal": "恢复原图色",
     "manuscript": {
       "toggle": "论文配色定调",
+      "quickTitle": "一键论文定调",
+      "moreBriefToggle": "补充课题描述或密钥",
       "lead": "选择刊物气质或简述课题，告别反复凑色号。",
       "presets": {
         "cns_clean": "顶刊清朗",
@@ -166,6 +178,8 @@
   },
   "rules": {
     "heading": "规则",
+    "summarySameName": "同名同色",
+    "summaryUnique": "全图唯一",
     "crossPanelLabel": "跨分栏颜色规则",
     "sameName": "同名同色",
     "sameNameHelp": "同名元素跨分栏同色；颜色不足时才跨分栏复用。",
@@ -489,6 +503,7 @@
       "colVisualAria": "列视觉表现：{{name}}",
       "colRampAria": "单列色阶：{{name}}",
       "colListHint": "拖动行或按 Alt + ↑/↓ 调整顺序；双击列名可改名。",
+      "colClickHint": "点选列展开角色、热图/柱状条与小数位设置；双击列名可改名。",
       "secGrouping": "3. 分组与排序",
       "blockBy": "分块依据",
       "none": "无",
@@ -551,6 +566,8 @@
     },
     "style": {
       "secPreset": "预设",
+      "quickHeading": "一键刊物成稿",
+      "quickSub": "自动理顺多层表头、脚注与显著性并套用刊物规范",
       "secRamp": "色阶",
       "secHeatmap": "热图",
       "secEmphasis": "强调方式",
@@ -800,6 +817,18 @@
     "right": {
       "tabPage": "整页版式",
       "tabPanel": "单图精修 · {{name}}",
+      "backToPageBtn": "整页版式",
+      "quickHeading": "一键顶刊排版",
+      "quickSub": "自动配齐版心、最优网格、标准字号线宽与图例合并",
+      "quickPresets": {
+        "nature": "Nature 整版",
+        "science": "Science 整版",
+        "cell": "Cell 整版",
+        "nejm": "NEJM 临床"
+      },
+      "secFlowAndSpacing": "标号顺序 · 间距 · 图例合并",
+      "flowRowShort": "横向",
+      "flowColShort": "纵向",
       "journalSection": "刊物版心与模块化空间",
       "journalFamilyLabel": "目标刊物系列",
       "journalColTierLabel": "栏宽规格",

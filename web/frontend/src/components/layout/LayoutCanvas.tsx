@@ -18,6 +18,7 @@ import {
   Palette,
   Plus,
   RotateCcw,
+  Sparkles,
   Square,
   Type,
   X,
@@ -87,6 +88,7 @@ export function LayoutCanvas(): React.ReactElement {
   const setZoomPct = useLayoutStudioStore((s) => s.setZoomPct);
   const setLiveAnnouncement = useLayoutStudioStore((s) => s.setLiveAnnouncement);
 
+  const stageScrollRef = useRef<HTMLDivElement | null>(null);
   const paperRef = useRef<HTMLDivElement | null>(null);
   const panelGhostRef = useRef<HTMLDivElement | null>(null);
   const legToolbarRef = useRef<HTMLDivElement | null>(null);
@@ -96,6 +98,13 @@ export function LayoutCanvas(): React.ReactElement {
   const [draggingPanelId, setDraggingPanelId] = useState<string | null>(null);
   const [draggingPanelTag, setDraggingPanelTag] = useState<string>("");
   const [activeDrop, setActiveDrop] = useState<CanvasDropTarget | null>(null);
+  const [layoutGuideDismissed, setLayoutGuideDismissed] = useState<boolean>(() => {
+    try {
+      return window.localStorage.getItem("danqing_layout_guide_dismissed") === "1";
+    } catch {
+      return false;
+    }
+  });
 
   // Legend 120 FPS GPU drag state (only changes on drag start/end or magnetic zone crossing)
   const [legDragSlotId, setLegDragSlotId] = useState<string | null>(null);
@@ -797,6 +806,24 @@ export function LayoutCanvas(): React.ReactElement {
     document.addEventListener("pointercancel", onEnd);
   };
 
+  const fitPaperToStage = (): void => {
+    const el = stageScrollRef.current;
+    if (!el || !composed) {
+      setZoomPct(100);
+      return;
+    }
+    const basePx = (composed.page_width_mm / 25.4) * 96;
+    if (basePx <= 0) return;
+    const availW = Math.max(260, el.clientWidth - 40);
+    const idealPct = Math.max(55, Math.min(108, Math.floor((availW / basePx) * 100)));
+    setZoomPct(idealPct);
+  };
+
+  useEffect(() => {
+    fitPaperToStage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [composed?.page_width_mm]);
+
   const paperWidthPx = composed
     ? Math.round((composed.page_width_mm / 25.4) * 96 * (zoomPct / 100))
     : 692;
@@ -839,7 +866,30 @@ export function LayoutCanvas(): React.ReactElement {
         </div>
       ) : null}
 
-      <div className="dq-layout-stage__scroll">
+      <div ref={stageScrollRef} className="dq-layout-stage__scroll">
+        {!layoutGuideDismissed && composed ? (
+          <div className="dq-guide-pill dq-guide-pill--stage">
+            <div className="dq-guide-pill__lead">
+              <Sparkles size={14} strokeWidth={1.7} aria-hidden="true" />
+              <span>{t("onboarding.layoutGuide")}</span>
+            </div>
+            <button
+              type="button"
+              className="dq-guide-pill__dismiss"
+              onClick={() => {
+                setLayoutGuideDismissed(true);
+                try {
+                  window.localStorage.setItem("danqing_layout_guide_dismissed", "1");
+                } catch {
+                  // ignore storage errors
+                }
+              }}
+            >
+              {t("onboarding.dismiss")}
+            </button>
+          </div>
+        ) : null}
+
         {isComparingNaive && composed ? (
           <div className="dq-layout-notice dq-layout-notice--warn" style={{ maxWidth: `${paperWidthPx}px` }}>
             <strong>{t("layoutStudio.canvas.naiveBannerLead")}</strong>{" "}
@@ -1323,12 +1373,11 @@ export function LayoutCanvas(): React.ReactElement {
                     <div
                       ref={txtToolbarRef}
                       role="toolbar"
-                      {...({ focusgroup: "toolbar wrap" } as Record<string, string>)}
                       aria-label={t("layoutStudio.canvas.txtToolbarLabel", {
                         text: focusedTextItem.text,
                       })}
                       className={`dq-leg-toolbar${placeBelow ? " dq-leg-toolbar--below" : ""}`}
-                      style={{ left: `${cxPct}%`, top: `${yPct}%` }}
+                      style={{ left: `${Math.max(28, Math.min(72, cxPct))}%`, top: `${yPct}%` }}
                       onClick={(e) => e.stopPropagation()}
                       onKeyDown={(e) => {
                         if (e.key === "Escape") {
@@ -1590,7 +1639,7 @@ export function LayoutCanvas(): React.ReactElement {
                 }
 
                 const [lx0, ly0, lx1, ly1] = focusedSlot.legend_box_mm;
-                const cxPct = Math.max(20, Math.min(80, ((0.5 * (lx0 + lx1)) / composed.page_width_mm) * 100));
+                const cxPct = Math.max(28, Math.min(72, ((0.5 * (lx0 + lx1)) / composed.page_width_mm) * 100));
                 const placeBelow = ly0 < 12.0;
                 const yPct = placeBelow
                   ? (ly1 / composed.page_height_mm) * 100
@@ -1612,7 +1661,6 @@ export function LayoutCanvas(): React.ReactElement {
                   <div
                     ref={legToolbarRef}
                     role="toolbar"
-                    {...({ focusgroup: "toolbar wrap" } as Record<string, string>)}
                     aria-label={t("layoutStudio.canvas.legToolbarLabel", { tag: fTag })}
                     className={`dq-leg-toolbar${placeBelow ? " dq-leg-toolbar--below" : ""}`}
                     style={{ left: `${cxPct}%`, top: `${yPct}%` }}
@@ -1843,7 +1891,7 @@ export function LayoutCanvas(): React.ReactElement {
         <button
           type="button"
           className="dq-btn dq-btn--ghost"
-          onClick={() => setZoomPct(105)}
+          onClick={fitPaperToStage}
         >
           {t("layoutStudio.canvas.zoomFit")}
         </button>

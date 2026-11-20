@@ -11,6 +11,7 @@ import {
   HelpCircle,
   Home,
   LayoutGrid,
+  MoreHorizontal,
   Palette,
   Plus,
   Redo2,
@@ -111,6 +112,8 @@ export function TopBar(): React.ReactElement {
 
   const exportSplitTriggerRef = useRef<HTMLButtonElement | null>(null);
   const exportSplitPopoverRef = useRef<HTMLDivElement | null>(null);
+  const moreTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const morePopoverRef = useRef<HTMLDivElement | null>(null);
 
   const compareDownTsRef = useRef<number>(0);
   const comparePointerHeldRef = useRef<boolean>(false);
@@ -121,6 +124,7 @@ export function TopBar(): React.ReactElement {
   const tblPopoverId = useId();
   const tblFileInputId = useId();
   const exportSplitPopoverId = useId();
+  const morePopoverId = useId();
 
   const isZh = i18n.language.startsWith("zh");
   const langKey: "en" | "zh" = isZh ? "zh" : "en";
@@ -129,8 +133,7 @@ export function TopBar(): React.ReactElement {
   const [topCopyMsg, setTopCopyMsg] = useState("");
   const topCopyTimerRef = useRef<number | null>(null);
 
-  const supportsFocusGroup =
-    typeof HTMLElement !== "undefined" && "focusGroup" in HTMLElement.prototype;
+  const supportsFocusGroup = false;
 
   // Roving tabindex fallback when native focusgroup is unsupported
   useEffect(() => {
@@ -227,6 +230,24 @@ export function TopBar(): React.ReactElement {
     return () => pop.removeEventListener("toggle", onToggle);
   }, [studioMode, activeTableId]);
 
+  useEffect(() => {
+    const pop = morePopoverRef.current;
+    if (!pop) return;
+    const onToggle = (ev: Event): void => {
+      const te = ev as ToggleEvent;
+      if (te.newState === "open") {
+        tetherPopoverFallback(pop, moreTriggerRef.current, true);
+      }
+    };
+    pop.addEventListener("toggle", onToggle);
+    return () => pop.removeEventListener("toggle", onToggle);
+  }, []);
+
+  const closeMorePopover = (): void => {
+    const pop = morePopoverRef.current as (HTMLDivElement & { hidePopover?: () => void }) | null;
+    pop?.hidePopover?.();
+  };
+
   const closeFigPopover = (): void => {
     const pop = figPopoverRef.current as (HTMLDivElement & { hidePopover?: () => void }) | null;
     pop?.hidePopover?.();
@@ -288,6 +309,7 @@ export function TopBar(): React.ReactElement {
   const popoverTriggerAttrs = { popovertarget: figPopoverId } as Record<string, unknown>;
   const tblPopoverTriggerAttrs = { popovertarget: tblPopoverId } as Record<string, unknown>;
   const exportSplitTriggerAttrs = { popovertarget: exportSplitPopoverId } as Record<string, unknown>;
+  const morePopoverTriggerAttrs = { popovertarget: morePopoverId } as Record<string, unknown>;
   const popoverPanelAttrs = { popover: "auto" } as Record<string, unknown>;
 
   return (
@@ -872,29 +894,60 @@ export function TopBar(): React.ReactElement {
         ) : null}
 
         <button
+          ref={moreTriggerRef}
           type="button"
           className="dq-btn dq-btn--ghost dq-btn--icon"
-          aria-label={t("topbar.shortcuts")}
-          title={t("topbar.shortcuts")}
-          onClick={() => openDialog("shortcuts")}
+          aria-label={t("topbar.moreMenu")}
+          title={t("topbar.moreMenu")}
+          {...morePopoverTriggerAttrs}
         >
-          <HelpCircle size={16} strokeWidth={1.5} aria-hidden="true" />
+          <MoreHorizontal size={16} strokeWidth={1.6} aria-hidden="true" />
         </button>
 
-        <div className="dq-lang-switch">
+        <div
+          ref={morePopoverRef}
+          id={morePopoverId}
+          className="dq-popover dq-popover--utility"
+          {...popoverPanelAttrs}
+        >
+          <div className="dq-popover-lang-row">
+            <span>{t("topbar.languageLabel")}</span>
+            <div className="dq-lang-switch">
+              <button
+                type="button"
+                aria-pressed={!isZh}
+                onClick={() => {
+                  void i18n.changeLanguage("en");
+                  closeMorePopover();
+                }}
+              >
+                {t("topbar.langEn")}
+              </button>
+              <button
+                type="button"
+                aria-pressed={isZh}
+                onClick={() => {
+                  void i18n.changeLanguage("zh");
+                  closeMorePopover();
+                }}
+              >
+                {t("topbar.langZh")}
+              </button>
+            </div>
+          </div>
+
+          <div className="dq-popover-divider" />
+
           <button
             type="button"
-            aria-pressed={!isZh}
-            onClick={() => void i18n.changeLanguage("en")}
+            className="dq-popover-item"
+            onClick={() => {
+              closeMorePopover();
+              openDialog("shortcuts");
+            }}
           >
-            {t("topbar.langEn")}
-          </button>
-          <button
-            type="button"
-            aria-pressed={isZh}
-            onClick={() => void i18n.changeLanguage("zh")}
-          >
-            {t("topbar.langZh")}
+            <span>{t("topbar.shortcuts")}</span>
+            <HelpCircle size={14} strokeWidth={1.5} aria-hidden="true" />
           </button>
         </div>
 
@@ -902,13 +955,13 @@ export function TopBar(): React.ReactElement {
           <>
             <button
               type="button"
-              className="dq-btn dq-layout-handoff-topbtn"
+              className="dq-btn dq-layout-handoff-topbtn dq-topbar-responsive-btn"
               disabled={!layoutComposed || layoutHandoffBusy}
               title={t("layoutStudio.topbar.sendToColorTitle")}
               onClick={() => void handleTopSendLayoutToFigure()}
             >
               <Palette size={14} strokeWidth={1.6} aria-hidden="true" />
-              <span>
+              <span className="dq-topbar-btn-label">
                 {layoutHandoffBusy
                   ? t("layoutStudio.topbar.sendingToColor")
                   : t("layoutStudio.topbar.sendToColor")}

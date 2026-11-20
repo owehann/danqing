@@ -40,12 +40,17 @@
     "shortcuts": "Shortcuts",
     "langEn": "EN",
     "langZh": "中",
+    "moreMenu": "Language & shortcuts",
+    "languageLabel": "Language",
     "export": "Export"
   },
   "onboarding": {
     "step1": "1. Hover palettes on the right to preview",
     "step2": "2. Click any mark to tune color, opacity, or split layers",
     "step3": "3. Export vector PDF, SVG, and R or Python code",
+    "figureGuide": "Raw experimental images are protected · Pick a One-Click Journal Tone on the right, or click any mark to fine-tune",
+    "layoutGuide": "Raw image ratios are locked · Click a One-Click Journal Layout on the right, or drag panels and splitters on canvas",
+    "tableGuide": "Pick a One-Click Journal Table preset on the right to tidy headers and style, or double-click any cell to edit",
     "dismiss": "Dismiss"
   },
   "elements": {
@@ -83,6 +88,11 @@
   },
   "palettes": {
     "heading": "Palettes",
+    "tabGlobal": "Figure Colors",
+    "tabElement": "Selected",
+    "backToPalettes": "Palettes",
+    "filterBtn": "Filter",
+    "filterActiveCount": "Filter ({{count}})",
     "scopeLabel": "Apply to",
     "scopeAll": "All panels",
     "scopeHint": "Click a panel to solo; Shift- or ⌘-click to select multiple panels",
@@ -113,6 +123,8 @@
     "resetOriginal": "Original colors",
     "manuscript": {
       "toggle": "Manuscript Match",
+      "quickTitle": "One-Click Journal Tone",
+      "moreBriefToggle": "Add journal brief or key",
       "lead": "Pick a journal tone or describe your paper to skip tedious hex tweaking.",
       "presets": {
         "cns_clean": "CNS Clean",
@@ -166,6 +178,8 @@
   },
   "rules": {
     "heading": "Rules",
+    "summarySameName": "Same name",
+    "summaryUnique": "Unique",
     "crossPanelLabel": "Cross-panel colors",
     "sameName": "Same name, same color",
     "sameNameHelp": "Matching names share one color; other elements reuse only if needed.",
@@ -489,6 +503,7 @@
       "colVisualAria": "Visual mode for {{name}}",
       "colRampAria": "Color ramp for {{name}}",
       "colListHint": "Drag or press Alt + ↑/↓ to reorder; double-click name to rename.",
+      "colClickHint": "Click a column to expand role, heatmap/bar, and decimals; double-click to rename.",
       "secGrouping": "3. Grouping & sort",
       "blockBy": "Block by",
       "none": "None",
@@ -551,6 +566,8 @@
     },
     "style": {
       "secPreset": "Preset",
+      "quickHeading": "One-Click Journal Table",
+      "quickSub": "Tidies multi-row headers, footnotes, and P-values into publication style",
       "secRamp": "Color ramp",
       "secHeatmap": "Heatmap",
       "secEmphasis": "Emphasis",
@@ -800,6 +817,18 @@
     "right": {
       "tabPage": "Page & Grid",
       "tabPanel": "Panel · {{name}}",
+      "backToPageBtn": "Page",
+      "quickHeading": "One-Click Journal Layout",
+      "quickSub": "Sets page width, smart grid, standard type & stroke weights, and legend merge",
+      "quickPresets": {
+        "nature": "Nature Full",
+        "science": "Science Full",
+        "cell": "Cell Full",
+        "nejm": "NEJM Clinical"
+      },
+      "secFlowAndSpacing": "Numbering, Gutter & Legends",
+      "flowRowShort": "Row",
+      "flowColShort": "Col",
       "journalSection": "Journal Canvas & Modular Space",
       "journalFamilyLabel": "Journal family",
       "journalColTierLabel": "Column tier",

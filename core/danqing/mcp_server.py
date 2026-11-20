@@ -27,7 +27,7 @@ from .svg_engine import export_recolored_svg, parse_svg_scene
 
 SERVER_INFO = {
     "name": "danqing_mcp",
-    "version": "0.8.0",
+    "version": "0.8.1",
 }
 
 TOOLS: list[dict[str, Any]] = [

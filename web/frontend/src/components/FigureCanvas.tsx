@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Columns2, Maximize2, Minus, Plus } from "lucide-react";
+import { Columns2, Maximize2, Minus, Plus, ShieldCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useStudioStore } from "../store";
 
@@ -566,13 +566,12 @@ export function FigureCanvas(): React.ReactElement | null {
       <h1 className="visually-hidden">{figure.filename}</h1>
 
       {!onboardingDismissed ? (
-        <div className="dq-onboarding-bar">
-          <div className="dq-onboarding-steps">
-            <span>{t("onboarding.step1")}</span>
-            <span>{t("onboarding.step2")}</span>
-            <span>{t("onboarding.step3")}</span>
+        <div className="dq-guide-pill">
+          <div className="dq-guide-pill__lead">
+            <ShieldCheck size={14} strokeWidth={1.7} aria-hidden="true" />
+            <span>{t("onboarding.figureGuide")}</span>
           </div>
-          <button type="button" className="dq-btn" onClick={dismissOnboarding}>
+          <button type="button" className="dq-guide-pill__dismiss" onClick={dismissOnboarding}>
             {t("onboarding.dismiss")}
           </button>
         </div>

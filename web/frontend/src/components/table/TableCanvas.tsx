@@ -117,6 +117,13 @@ export function TableCanvas(): React.ReactElement | null {
   const [reviewOpen, setReviewOpen] = useState(false);
   const [computeDrawerOpen, setComputeDrawerOpen] = useState(false);
   const [suggestDrawerOpen, setSuggestDrawerOpen] = useState(false);
+  const [tableGuideDismissed, setTableGuideDismissed] = useState<boolean>(() => {
+    try {
+      return window.localStorage.getItem("danqing_table_guide_dismissed") === "1";
+    } catch {
+      return false;
+    }
+  });
   const [shadowLeft, setShadowLeft] = useState(false);
   const [shadowRight, setShadowRight] = useState(false);
 
@@ -557,6 +564,29 @@ export function TableCanvas(): React.ReactElement | null {
           ) : null}
         </div>
       </div>
+
+      {!tableGuideDismissed ? (
+        <div className="dq-guide-pill">
+          <div className="dq-guide-pill__lead">
+            <Sparkles size={14} strokeWidth={1.7} aria-hidden="true" />
+            <span>{t("onboarding.tableGuide")}</span>
+          </div>
+          <button
+            type="button"
+            className="dq-guide-pill__dismiss"
+            onClick={() => {
+              setTableGuideDismissed(true);
+              try {
+                window.localStorage.setItem("danqing_table_guide_dismissed", "1");
+              } catch {
+                // ignore storage errors
+              }
+            }}
+          >
+            {t("onboarding.dismiss")}
+          </button>
+        </div>
+      ) : null}
 
       {errorKey ? (
         <div className="dq-table-error-banner dq-table-error-banner--inline" role="alert">

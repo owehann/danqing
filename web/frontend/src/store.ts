@@ -111,7 +111,7 @@ interface StudioStore {
   dismissOnboarding: () => void;
 }
 
-const ONBOARDING_KEY = "danqing_onboarding_v2_dismissed";
+const ONBOARDING_KEY = "danqing_figure_guide_v3_dismissed";
 
 function readOnboardingDismissed(): boolean {
   try {
