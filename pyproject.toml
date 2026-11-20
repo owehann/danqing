@@ -43,6 +43,7 @@ dev = [
   "httpx>=0.27",
   "pandas>=2.2",
   "great_tables>=0.13",
+  "matplotlib>=3.8",
 ]
 
 [tool.setuptools.packages.find]
