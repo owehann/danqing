@@ -3,7 +3,9 @@ import {
   ArrowLeft,
   Check,
   ChevronDown,
+  Plus,
   RotateCcw,
+  ScanSearch,
   Sparkles,
   SplitSquareHorizontal,
   X,
@@ -11,9 +13,12 @@ import {
 import { useTranslation } from "react-i18next";
 import {
   DEFAULT_PANEL_OVERRIDE,
+  DEFAULT_ROI_CONFIG,
   DEFAULT_TEXT_ITEM_OVERRIDE,
   type LegendOrientMode,
   type LegendPosMode,
+  type ROILineStyle,
+  type ROIShapeMode,
   useLayoutStudioStore,
 } from "../../layout/layoutStore";
 
@@ -67,12 +72,27 @@ const SINGLE_ITEM_COLORS = [
   { id: "muted", hex: "#64748B" },
 ] as const;
 
+const ROI_COLOR_PRESETS = [
+  { id: "amber", hex: "#F59E0B", labelKey: "roiColorAmber" },
+  { id: "cyan", hex: "#38BDF8", labelKey: "roiColorCyan" },
+  { id: "crimson", hex: "#EF4444", labelKey: "roiColorCrimson" },
+  { id: "emerald", hex: "#10B981", labelKey: "roiColorEmerald" },
+  { id: "cobalt", hex: "#2563EB", labelKey: "roiColorCobalt" },
+  { id: "white", hex: "#FFFFFF", labelKey: "roiColorWhite" },
+  { id: "black", hex: "#111827", labelKey: "roiColorBlack" },
+] as const;
+
+const ROI_SHAPES: ROIShapeMode[] = ["rect", "rounded", "circle", "ellipse"];
+const ROI_LINE_STYLES: ROILineStyle[] = ["dashed", "solid", "dotted"];
+
 export function LayoutRightSidebar(): React.ReactElement {
   const { t } = useTranslation();
 
   const panels = useLayoutStudioStore((s) => s.panels);
+  const selectedIds = useLayoutStudioStore((s) => s.selectedIds);
   const journals = useLayoutStudioStore((s) => s.journals);
   const focusedPanelId = useLayoutStudioStore((s) => s.focusedPanelId);
+  const focusedRoiOwnerId = useLayoutStudioStore((s) => s.focusedRoiOwnerId);
   const focusedTextKey = useLayoutStudioStore((s) => s.focusedTextKey);
   const inspectorTab = useLayoutStudioStore((s) => s.inspectorTab);
   const journalId = useLayoutStudioStore((s) => s.journalId);
@@ -109,6 +129,9 @@ export function LayoutRightSidebar(): React.ReactElement {
   const setSpanOverride = useLayoutStudioStore((s) => s.setSpanOverride);
   const setLockedOverride = useLayoutStudioStore((s) => s.setLockedOverride);
   const updateRoi = useLayoutStudioStore((s) => s.updateRoi);
+  const spawnDerivedRoiPanel = useLayoutStudioStore((s) => s.spawnDerivedRoiPanel);
+  const setFocusedPanelId = useLayoutStudioStore((s) => s.setFocusedPanelId);
+  const setFocusedRoiOwnerId = useLayoutStudioStore((s) => s.setFocusedRoiOwnerId);
   const updatePanelOverride = useLayoutStudioStore((s) => s.updatePanelOverride);
   const setFocusedText = useLayoutStudioStore((s) => s.setFocusedText);
   const updateTextItemOverride = useLayoutStudioStore((s) => s.updateTextItemOverride);
@@ -131,6 +154,7 @@ export function LayoutRightSidebar(): React.ReactElement {
   const itemFontSelId = useId();
   const itemTextInpId = useId();
   const itemCustomColorId = useId();
+  const roiCustomColorId = useId();
 
   const currentJournal = useMemo(
     () => journals.find((j) => j.id === journalId) || journals[0] || null,
@@ -1353,8 +1377,376 @@ export function LayoutRightSidebar(): React.ReactElement {
             </details>
           ) : null}
 
-          {/* Disclosure: Per-Panel 4-Side Margin Trim & Special-Figure Vector ROI */}
-          <details className="dq-keynote-acc" open={Boolean(focusedIsLocked && focusedRoi?.enabled)}>
+          {/* Disclosure: Universal Region Framing & Linked Zoom (Works on ANY Raster OR Vector Panel!) */}
+          {(() => {
+            const slotRois = focusedSlot?.roi_boxes || [];
+            const isDerivedPanel = Boolean(focusedRoi?.linked_source_id);
+            const activeOwnerId = isDerivedPanel
+              ? focusedRoi?.own_crop
+                ? focusedPanel.panel_id
+                : focusedRoi?.linked_source_id || focusedPanel.panel_id
+              : focusedRoiOwnerId && slotRois.some((rb) => rb.owner_id === focusedRoiOwnerId)
+                ? focusedRoiOwnerId
+                : slotRois[0]?.owner_id || focusedPanel.panel_id;
+
+            const editRoi = {
+              ...DEFAULT_ROI_CONFIG,
+              ...(roiOverrides[activeOwnerId] ||
+                panels.find((p) => p.panel_id === activeOwnerId)?.default_roi ||
+                {}),
+            };
+            const curShape: ROIShapeMode = (editRoi.shape || "rect") as ROIShapeMode;
+            const curLine: ROILineStyle = (editRoi.line_style || (editRoi.dashed ? "dashed" : "solid")) as ROILineStyle;
+            const curRoiHex = (editRoi.color || "#F59E0B").toUpperCase();
+            const curStrokePt = editRoi.stroke_pt ?? 0.85;
+
+            const motherId = focusedRoi?.linked_source_id || focusedPanel.panel_id;
+            const linkedCount = selectedIds.filter((pid) => {
+              const r = roiOverrides[pid] || panels.find((x) => x.panel_id === pid)?.default_roi;
+              return r?.linked_source_id === motherId;
+            }).length;
+
+            return (
+              <details
+                className="dq-keynote-acc"
+                open={Boolean(isDerivedPanel || slotRois.length > 0 || editRoi.enabled)}
+              >
+                <summary className="dq-keynote-acc__sum">
+                  <span className="dq-keynote-acc__lead">
+                    <ChevronDown className="dq-styles-chevron" size={14} strokeWidth={1.6} aria-hidden="true" />
+                    <ScanSearch size={13} strokeWidth={1.8} aria-hidden="true" />
+                    <span>{t("layoutStudio.right.roiSectionHeading")}</span>
+                  </span>
+                  <span className="dq-style-pill">
+                    {isDerivedPanel
+                      ? `← ${focusedRoi?.linked_source_id}`
+                      : slotRois.length > 0
+                        ? `${slotRois.length} ROI`
+                        : curShape.toUpperCase()}
+                  </span>
+                </summary>
+                <div className="dq-keynote-acc__body">
+                  <p className="dq-layout-hint">{t("layoutStudio.right.roiSectionHint")}</p>
+
+                  {isDerivedPanel && focusedRoi?.linked_source_id ? (
+                    <div className="dq-roi-linked-banner">
+                      <p className="dq-layout-hint">
+                        {t("layoutStudio.right.roiLinkedNote", { src: focusedRoi.linked_source_id })}
+                      </p>
+                      <button
+                        type="button"
+                        className="dq-btn dq-btn--secondary dq-btn--compact"
+                        onClick={() => {
+                          const srcId = focusedRoi.linked_source_id!;
+                          setFocusedPanelId(srcId, true);
+                          setFocusedRoiOwnerId(
+                            focusedRoi.own_crop ? focusedPanel.panel_id : srcId,
+                            true,
+                          );
+                        }}
+                      >
+                        <ArrowLeft size={12} strokeWidth={1.8} aria-hidden="true" />
+                        <span>
+                          {t("layoutStudio.right.roiJumpToMotherBtn", {
+                            src: focusedRoi.linked_source_id,
+                          })}
+                        </span>
+                      </button>
+                    </div>
+                  ) : (
+                    <label className="dq-layout-check-label">
+                      <input
+                        type="checkbox"
+                        checked={Boolean(focusedRoi?.enabled)}
+                        onChange={(e) => {
+                          const on = e.target.checked;
+                          updateRoi(
+                            focusedPanel.panel_id,
+                            {
+                              enabled: on,
+                              x_norm: (focusedRoi?.w_norm ?? 0) > 0.04 ? focusedRoi!.x_norm : 0.28,
+                              y_norm: (focusedRoi?.h_norm ?? 0) > 0.04 ? focusedRoi!.y_norm : 0.24,
+                              w_norm: (focusedRoi?.w_norm ?? 0) > 0.04 ? focusedRoi!.w_norm : 0.34,
+                              h_norm: (focusedRoi?.h_norm ?? 0) > 0.04 ? focusedRoi!.h_norm : 0.34,
+                            },
+                            true,
+                          );
+                          if (on) setFocusedRoiOwnerId(focusedPanel.panel_id, true);
+                        }}
+                      />
+                      <span>{t("layoutStudio.right.roiToggle")}</span>
+                    </label>
+                  )}
+
+                  {/* One-Click Spawn Linked Zoom Panel (supports 1st ROI AND multi-ROI!) */}
+                  <div className="dq-roi-spawn-row">
+                    <button
+                      type="button"
+                      className="dq-btn dq-btn--primary dq-btn--compact dq-roi-spawn-btn"
+                      onClick={() => void spawnDerivedRoiPanel(focusedPanel.panel_id)}
+                    >
+                      <Plus size={13} strokeWidth={2.1} aria-hidden="true" />
+                      <span>
+                        {linkedCount > 0
+                          ? t("layoutStudio.right.roiSpawnAnotherBtn")
+                          : t("layoutStudio.right.roiSpawnPanelBtn")}
+                      </span>
+                    </button>
+                  </div>
+
+                  {/* Multi-ROI Switcher Chips when >= 2 ROIs exist on this mother panel */}
+                  {!isDerivedPanel && slotRois.length > 1 ? (
+                    <div className="dq-layout-field">
+                      <label>{t("layoutStudio.right.roiActiveListLabel")}</label>
+                      <div className="dq-layout-color-chips">
+                        {slotRois.map((rb) => (
+                          <button
+                            key={rb.owner_id}
+                            type="button"
+                            className="dq-layout-color-chip"
+                            aria-pressed={activeOwnerId === rb.owner_id}
+                            onClick={() => setFocusedRoiOwnerId(rb.owner_id, true)}
+                          >
+                            <span
+                              className="dq-layout-color-chip__dot"
+                              style={{ backgroundColor: rb.color }}
+                              aria-hidden="true"
+                            />
+                            <span>{rb.label || rb.owner_id}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
+
+                  {isDerivedPanel || editRoi.enabled ? (
+                    <div className="dq-layout-roi-controls">
+                      {/* Picture-in-Picture Inset Zoom Toggle (on Mother Panel's primary ROI) */}
+                      {!isDerivedPanel && activeOwnerId === focusedPanel.panel_id ? (
+                        <>
+                          <label className="dq-layout-check-label">
+                            <input
+                              type="checkbox"
+                              checked={Boolean(editRoi.inset_enabled)}
+                              onChange={(e) =>
+                                updateRoi(
+                                  activeOwnerId,
+                                  { inset_enabled: e.target.checked },
+                                  true,
+                                )
+                              }
+                            />
+                            <span>{t("layoutStudio.right.roiPipToggle")}</span>
+                          </label>
+                          {editRoi.inset_enabled ? (
+                            <div className="dq-layout-field">
+                              <label>
+                                {t("layoutStudio.right.roiPipScale", {
+                                  val: Math.round((editRoi.inset_scale ?? 0.36) * 100),
+                                })}
+                              </label>
+                              <input
+                                type="range"
+                                min={0.22}
+                                max={0.55}
+                                step={0.02}
+                                value={editRoi.inset_scale ?? 0.36}
+                                onChange={(e) =>
+                                  updateRoi(activeOwnerId, {
+                                    inset_scale: Number(e.target.value),
+                                  })
+                                }
+                              />
+                            </div>
+                          ) : null}
+                        </>
+                      ) : null}
+
+                      {/* Shape Selector: Rect / Rounded / Circle / Ellipse */}
+                      <div className="dq-layout-field">
+                        <label>{t("layoutStudio.right.roiShapeLabel")}</label>
+                        <div className="dq-roi-seg-4">
+                          {ROI_SHAPES.map((sh) => (
+                            <button
+                              key={sh}
+                              type="button"
+                              className="dq-layout-color-chip"
+                              aria-pressed={curShape === sh}
+                              onClick={() => updateRoi(activeOwnerId, { shape: sh }, true)}
+                            >
+                              <span>{t(`layoutStudio.right.roiShapes.${sh}`)}</span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Color Presets + Free Custom Color Picker */}
+                      <div className="dq-layout-field">
+                        <label>{t("layoutStudio.right.roiColor")}</label>
+                        <div className="dq-layout-color-chips">
+                          {ROI_COLOR_PRESETS.map((cp) => (
+                            <button
+                              key={cp.id}
+                              type="button"
+                              className="dq-layout-color-chip"
+                              aria-pressed={curRoiHex === cp.hex}
+                              onClick={() => updateRoi(activeOwnerId, { color: cp.hex }, true)}
+                            >
+                              <span
+                                className="dq-layout-color-chip__dot"
+                                style={{
+                                  backgroundColor: cp.hex,
+                                  border: cp.hex === "#FFFFFF" ? "1px solid #94A3B8" : undefined,
+                                }}
+                                aria-hidden="true"
+                              />
+                              <span>{t(`layoutStudio.right.${cp.labelKey}`)}</span>
+                            </button>
+                          ))}
+                          <label htmlFor={roiCustomColorId} className="dq-layout-color-chip dq-layout-color-chip--picker">
+                            <input
+                              id={roiCustomColorId}
+                              type="color"
+                              value={curRoiHex.startsWith("#") && curRoiHex.length === 7 ? curRoiHex : "#F59E0B"}
+                              onChange={(e) => updateRoi(activeOwnerId, { color: e.target.value }, true)}
+                            />
+                            <span>{t("layoutStudio.right.legendColorCustom")}</span>
+                          </label>
+                        </div>
+                      </div>
+
+                      {/* Line Style + Stroke Width + Leader Lines */}
+                      <div className="dq-layout-grid-2">
+                        <div className="dq-layout-field">
+                          <label>{t("layoutStudio.right.roiLineStyleLabel")}</label>
+                          <select
+                            value={curLine}
+                            onChange={(e) =>
+                              updateRoi(
+                                activeOwnerId,
+                                { line_style: e.target.value as ROILineStyle },
+                                true,
+                              )
+                            }
+                          >
+                            {ROI_LINE_STYLES.map((ls) => (
+                              <option key={ls} value={ls}>
+                                {t(`layoutStudio.right.roiLineStyles.${ls}`)}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                        <div className="dq-layout-field">
+                          <label>
+                            {t("layoutStudio.right.roiStrokeWidth", {
+                              val: curStrokePt.toFixed(2),
+                            })}
+                          </label>
+                          <input
+                            type="range"
+                            min={0.5}
+                            max={1.6}
+                            step={0.05}
+                            value={curStrokePt}
+                            onChange={(e) =>
+                              updateRoi(activeOwnerId, { stroke_pt: Number(e.target.value) })
+                            }
+                          />
+                        </div>
+                      </div>
+
+                      <label className="dq-layout-check-label">
+                        <input
+                          type="checkbox"
+                          checked={Boolean(editRoi.show_leaders)}
+                          onChange={(e) =>
+                            updateRoi(activeOwnerId, { show_leaders: e.target.checked }, true)
+                          }
+                        />
+                        <span>{t("layoutStudio.right.roiLeadersToggle")}</span>
+                      </label>
+
+                      {/* Fine-Tune Position & Size Sliders + Label */}
+                      <div className="dq-layout-grid-2">
+                        <div className="dq-layout-field">
+                          <label>
+                            {t("layoutStudio.right.roiX", { val: Math.round(editRoi.x_norm * 100) })}
+                          </label>
+                          <input
+                            type="range"
+                            min={0}
+                            max={0.88}
+                            step={0.01}
+                            value={editRoi.x_norm}
+                            onChange={(e) =>
+                              updateRoi(activeOwnerId, { x_norm: Number(e.target.value) })
+                            }
+                          />
+                        </div>
+                        <div className="dq-layout-field">
+                          <label>
+                            {t("layoutStudio.right.roiY", { val: Math.round(editRoi.y_norm * 100) })}
+                          </label>
+                          <input
+                            type="range"
+                            min={0}
+                            max={0.88}
+                            step={0.01}
+                            value={editRoi.y_norm}
+                            onChange={(e) =>
+                              updateRoi(activeOwnerId, { y_norm: Number(e.target.value) })
+                            }
+                          />
+                        </div>
+                        <div className="dq-layout-field">
+                          <label>
+                            {t("layoutStudio.right.roiW", { val: Math.round(editRoi.w_norm * 100) })}
+                          </label>
+                          <input
+                            type="range"
+                            min={0.06}
+                            max={0.85}
+                            step={0.01}
+                            value={editRoi.w_norm}
+                            onChange={(e) =>
+                              updateRoi(activeOwnerId, { w_norm: Number(e.target.value) })
+                            }
+                          />
+                        </div>
+                        <div className="dq-layout-field">
+                          <label>
+                            {t("layoutStudio.right.roiH", { val: Math.round(editRoi.h_norm * 100) })}
+                          </label>
+                          <input
+                            type="range"
+                            min={0.06}
+                            max={0.85}
+                            step={0.01}
+                            value={editRoi.h_norm}
+                            onChange={(e) =>
+                              updateRoi(activeOwnerId, { h_norm: Number(e.target.value) })
+                            }
+                          />
+                        </div>
+                      </div>
+
+                      <div className="dq-layout-field">
+                        <label>{t("layoutStudio.right.roiLabel")}</label>
+                        <input
+                          type="text"
+                          value={editRoi.label}
+                          onChange={(e) => updateRoi(activeOwnerId, { label: e.target.value })}
+                        />
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
+              </details>
+            );
+          })()}
+
+          {/* Disclosure: Per-Panel 4-Side Margin Trim */}
+          <details className="dq-keynote-acc">
             <summary className="dq-keynote-acc__sum">
               <span className="dq-keynote-acc__lead">
                 <ChevronDown className="dq-styles-chevron" size={14} strokeWidth={1.6} aria-hidden="true" />
@@ -1433,110 +1825,6 @@ export function LayoutRightSidebar(): React.ReactElement {
                   />
                 </div>
               </div>
-
-              {focusedIsLocked && focusedRoi && !focusedRoi.linked_source_id ? (
-                <div className="dq-layout-roi-controls">
-                  <label className="dq-layout-check-label">
-                    <input
-                      type="checkbox"
-                      checked={focusedRoi.enabled}
-                      onChange={(e) => updateRoi(focusedPanel.panel_id, { enabled: e.target.checked })}
-                    />
-                    <span>{t("layoutStudio.right.roiToggle")}</span>
-                  </label>
-
-                  {focusedRoi.enabled ? (
-                    <div className="dq-layout-grid-2">
-                      <div className="dq-layout-field">
-                        <label>
-                          {t("layoutStudio.right.roiX", { val: Math.round(focusedRoi.x_norm * 100) })}
-                        </label>
-                        <input
-                          type="range"
-                          min={0}
-                          max={0.85}
-                          step={0.01}
-                          value={focusedRoi.x_norm}
-                          onChange={(e) =>
-                            updateRoi(focusedPanel.panel_id, { x_norm: Number(e.target.value) })
-                          }
-                        />
-                      </div>
-                      <div className="dq-layout-field">
-                        <label>
-                          {t("layoutStudio.right.roiY", { val: Math.round(focusedRoi.y_norm * 100) })}
-                        </label>
-                        <input
-                          type="range"
-                          min={0}
-                          max={0.85}
-                          step={0.01}
-                          value={focusedRoi.y_norm}
-                          onChange={(e) =>
-                            updateRoi(focusedPanel.panel_id, { y_norm: Number(e.target.value) })
-                          }
-                        />
-                      </div>
-                      <div className="dq-layout-field">
-                        <label>
-                          {t("layoutStudio.right.roiW", { val: Math.round(focusedRoi.w_norm * 100) })}
-                        </label>
-                        <input
-                          type="range"
-                          min={0.08}
-                          max={0.8}
-                          step={0.01}
-                          value={focusedRoi.w_norm}
-                          onChange={(e) =>
-                            updateRoi(focusedPanel.panel_id, { w_norm: Number(e.target.value) })
-                          }
-                        />
-                      </div>
-                      <div className="dq-layout-field">
-                        <label>
-                          {t("layoutStudio.right.roiH", { val: Math.round(focusedRoi.h_norm * 100) })}
-                        </label>
-                        <input
-                          type="range"
-                          min={0.08}
-                          max={0.8}
-                          step={0.01}
-                          value={focusedRoi.h_norm}
-                          onChange={(e) =>
-                            updateRoi(focusedPanel.panel_id, { h_norm: Number(e.target.value) })
-                          }
-                        />
-                      </div>
-                      <div className="dq-layout-field">
-                        <label>{t("layoutStudio.right.roiLabel")}</label>
-                        <input
-                          type="text"
-                          value={focusedRoi.label}
-                          onChange={(e) => updateRoi(focusedPanel.panel_id, { label: e.target.value })}
-                        />
-                      </div>
-                      <div className="dq-layout-field">
-                        <label>{t("layoutStudio.right.roiColor")}</label>
-                        <select
-                          value={focusedRoi.color}
-                          onChange={(e) => updateRoi(focusedPanel.panel_id, { color: e.target.value })}
-                        >
-                          <option value="#F59E0B">{t("layoutStudio.right.roiColorAmber")}</option>
-                          <option value="#38BDF8">{t("layoutStudio.right.roiColorCyan")}</option>
-                          <option value="#EF4444">{t("layoutStudio.right.roiColorCrimson")}</option>
-                          <option value="#FFFFFF">{t("layoutStudio.right.roiColorWhite")}</option>
-                        </select>
-                      </div>
-                    </div>
-                  ) : null}
-                </div>
-              ) : null}
-
-              {focusedIsLocked && focusedRoi?.linked_source_id ? (
-                <p className="dq-layout-hint">
-                  {t("layoutStudio.right.roiLinkedNote", { src: focusedRoi.linked_source_id })}
-                </p>
-              ) : null}
             </div>
           </details>
         </div>

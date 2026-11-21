@@ -23,7 +23,10 @@ from danqing.layout.ir import (
     LegendPosMode,
     PanelIR,
     PanelStyleOverride,
+    ROIInsetPos,
+    ROILineStyle,
     ROIOverlaySpec,
+    ROIShapeMode,
     TextItemOverride,
 )
 from danqing.layout.parser import parse_svg_panel, parse_uploaded_file
@@ -153,9 +156,25 @@ class ROIPayload(BaseModel):
     label: str = "ROI"
     color: str = "#F59E0B"
     dashed: bool = True
+    shape: ROIShapeMode = "rect"
+    line_style: ROILineStyle | None = None
+    stroke_pt: float = 0.85
+    show_leaders: bool = False
+    inset_enabled: bool = False
+    inset_pos: ROIInsetPos = "br"
+    inset_x_norm: float = 0.58
+    inset_y_norm: float = 0.54
+    inset_scale: float = 0.36
+    own_crop: bool = False
     scale_bar_um: float | None = None
     fov_width_um: float | None = None
     linked_source_id: str | None = None
+
+
+class DeriveROIRequest(BaseModel):
+    source_panel_id: str
+    title_hint: str | None = None
+    roi: ROIPayload | None = None
 
 
 class TextItemOverridePayload(BaseModel):
@@ -238,10 +257,43 @@ class ExportRequest(ComposeRequest):
     dpi: int = 300
 
 
+def _build_derived_zoom_ir(
+    src: PanelIR,
+    derived_id: str,
+    roi_spec: ROIOverlaySpec,
+    title_hint: str | None = None,
+) -> PanelIR:
+    clean_title = (title_hint or f"{src.title_hint} ({roi_spec.label or 'Zoom'})").strip()[:38]
+    return PanelIR(
+        panel_id=derived_id,
+        title_hint=clean_title,
+        category_badge=f"Zoom <- {src.panel_id}",
+        source_citation=src.source_citation,
+        raw_width_pt=320.0,
+        raw_height_pt=320.0,
+        viewbox=src.viewbox,
+        spine_box=src.spine_box,
+        elasticity="L0_LOCKED_SPECIAL",
+        locked_special=True,
+        raw_svg_bytes=src.raw_svg_bytes,
+        rasters=list(src.rasters[:1]),
+        default_roi=roi_spec,
+        ideal_aspect=1.0 if roi_spec.shape == "circle" else max(0.65, min(1.85, src.ideal_aspect)),
+        min_aspect=0.55,
+        max_aspect=2.20,
+    )
+
+
 def _resolve_request(
     req: ComposeRequest,
 ) -> tuple[list[PanelIR], TypographyConfig, dict[str, ROIOverlaySpec], dict[str, PanelStyleOverride], list[BentoRow] | None]:
     _ensure_catalog()
+    rois = {pid: ROIOverlaySpec(**r.model_dump()) for pid, r in req.roi_overrides.items()}
+    for pid in req.panel_ids:
+        if pid not in _PANEL_STORE and pid in rois:
+            r_ov = rois[pid]
+            if r_ov.linked_source_id and r_ov.linked_source_id in _PANEL_STORE:
+                _PANEL_STORE[pid] = _build_derived_zoom_ir(_PANEL_STORE[r_ov.linked_source_id], pid, r_ov)
     selected = [_PANEL_STORE[pid] for pid in req.panel_ids if pid in _PANEL_STORE]
     if not selected:
         raise HTTPException(status_code=400, detail="No valid panels selected.")
@@ -266,7 +318,6 @@ def _resolve_request(
         show_panel_titles=req.show_panel_titles,
         hoist_shared_legends=req.hoist_shared_legends,
     )
-    rois = {pid: ROIOverlaySpec(**r.model_dump()) for pid, r in req.roi_overrides.items()}
     povs: dict[str, PanelStyleOverride] = {}
     for pid, ov in req.panel_overrides.items():
         d = ov.model_dump()
@@ -299,6 +350,63 @@ def api_layout_init() -> dict[str, Any]:
         "journal_families": JOURNAL_FAMILIES,
         "layout_modes": LAYOUT_MODES,
         "font_families": list(FONT_FAMILIES.keys()),
+    }
+
+
+@layout_router.post("/derive-roi")
+def api_layout_derive_roi(req: DeriveROIRequest) -> dict[str, Any]:
+    _ensure_catalog()
+    src = _PANEL_STORE.get(req.source_panel_id)
+    if src is None:
+        raise HTTPException(status_code=404, detail=f"Source panel '{req.source_panel_id}' not found.")
+    zid = f"Z_{req.source_panel_id}_{uuid.uuid4().hex[:4].upper()}"
+    if req.roi is not None:
+        roi_spec = ROIOverlaySpec(**req.roi.model_dump())
+        roi_spec.linked_source_id = req.source_panel_id
+        roi_spec.enabled = True
+    else:
+        src_r = src.default_roi
+        roi_spec = ROIOverlaySpec(
+            enabled=True,
+            x_norm=src_r.x_norm if src_r.w_norm > 0.03 else 0.28,
+            y_norm=src_r.y_norm if src_r.h_norm > 0.03 else 0.25,
+            w_norm=src_r.w_norm if src_r.w_norm > 0.03 else 0.32,
+            h_norm=src_r.h_norm if src_r.h_norm > 0.03 else 0.32,
+            label=src_r.label or "ROI",
+            color=src_r.color or "#F59E0B",
+            dashed=src_r.dashed,
+            shape=src_r.shape,
+            line_style=src_r.line_style,
+            stroke_pt=src_r.stroke_pt,
+            show_leaders=src_r.show_leaders,
+            scale_bar_um=(src_r.scale_bar_um * 0.25) if src_r.scale_bar_um else None,
+            fov_width_um=src_r.fov_width_um,
+            linked_source_id=req.source_panel_id,
+            own_crop=False,
+        )
+    ir = _build_derived_zoom_ir(src, zid, roi_spec, title_hint=req.title_hint)
+    _PANEL_STORE[zid] = ir
+    dyn_keys = [k for k in _PANEL_STORE if k.startswith(("U", "Z_"))]
+    while len(dyn_keys) > MAX_UPLOADED_PANELS * 2:
+        old_k = dyn_keys.pop(0)
+        _PANEL_STORE.pop(old_k, None)
+
+    return {
+        "panel": {
+            "panel_id": zid,
+            "filename": f"{ir.title_hint}.svg",
+            "elasticity": ir.elasticity,
+            "locked_special": True,
+            "has_legend": False,
+            "is_colorbar": False,
+            "is_categorical_x": False,
+            "default_selected": True,
+            "raw_size_desc": f"Zoom <- {req.source_panel_id}",
+            "source": ir.source_citation,
+            "is_builtin": False,
+            "thumb_svg": src.raw_svg_bytes.decode("utf-8", errors="replace"),
+            "default_roi": roi_spec.__dict__,
+        }
     }
 
 
@@ -350,6 +458,7 @@ def api_layout_compose(req: ComposeRequest) -> dict[str, Any]:
         roi_overrides=rois,
         panel_overrides=povs,
         bento_rows=rows,
+        source_lookup=dict(_PANEL_STORE),
     )
     modular_svg = render_scene_svg(scene, show_guides=req.show_guides)
     if req.include_naive:
@@ -368,7 +477,7 @@ def api_layout_compose(req: ComposeRequest) -> dict[str, Any]:
 
     txts_by_panel: dict[str, list[dict[str, Any]]] = {}
     for ct in scene.texts:
-        if not ct.panel_id or not ct.item_key or ct.role == "SCALEBAR_TEXT":
+        if not ct.panel_id or not ct.item_key or ct.role in ("SCALEBAR_TEXT", "INSET_TEXT"):
             continue
         txts_by_panel.setdefault(ct.panel_id, []).append(
             {
@@ -401,6 +510,24 @@ def api_layout_compose(req: ComposeRequest) -> dict[str, Any]:
             "outer_box_mm": [round(v, 3) for v in sl.outer_box_mm],
             "spine_box_mm": [round(v, 3) for v in sl.spine_box_mm],
             "legend_box_mm": [round(v, 3) for v in sl.legend_box_mm] if sl.legend_box_mm else None,
+            "inset_box_mm": [round(v, 3) for v in sl.inset_box_mm] if sl.inset_box_mm else None,
+            "roi_boxes": [
+                {
+                    "owner_id": rb.owner_id,
+                    "box_mm": [round(v, 3) for v in rb.box_mm],
+                    "x_norm": round(rb.x_norm, 4),
+                    "y_norm": round(rb.y_norm, 4),
+                    "w_norm": round(rb.w_norm, 4),
+                    "h_norm": round(rb.h_norm, 4),
+                    "shape": rb.shape,
+                    "line_style": rb.line_style,
+                    "color": rb.color,
+                    "stroke_pt": round(rb.stroke_pt, 2),
+                    "label": rb.label,
+                    "show_leaders": rb.show_leaders,
+                }
+                for rb in sl.roi_boxes
+            ],
             "effective_legend_pos": sl.effective_legend_pos,
             "effective_legend_orient": sl.effective_legend_orient,
             "has_legend": sl.has_legend,
@@ -448,6 +575,7 @@ def api_layout_export(req: ExportRequest) -> Response:
         roi_overrides=rois,
         panel_overrides=povs,
         bento_rows=rows,
+        source_lookup=dict(_PANEL_STORE),
     )
     fmt = req.format.lower()
     stem = f"danqing_layout_{req.journal_id}_{len(selected)}panels"

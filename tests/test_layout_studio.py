@@ -532,3 +532,232 @@ def test_v2_individual_single_legend_item_and_single_axis_tick_overrides() -> No
     assert leg2_meta["fill"] != "#000000" and leg2_meta["bold"] is True
 
 
+def test_universal_roi_spawn_on_vector_chart_and_locked_pathway() -> None:
+    """Any vector statistical chart (e.g. Volcano P08, PCA P05) or locked schematic (P12) can spawn live-linked zoomed sub-panels."""
+    client = TestClient(app)
+
+    # 1. Derive a zoomed panel from Volcano plot P08
+    r_drv = client.post(
+        "/api/v2/layout/derive-roi",
+        json={
+            "source_panel_id": "P08",
+            "title_hint": "Volcano Hit Cluster",
+            "roi": {
+                "enabled": True,
+                "x_norm": 0.52,
+                "y_norm": 0.08,
+                "w_norm": 0.42,
+                "h_norm": 0.45,
+                "label": "Up-Reg",
+                "color": "#EF4444",
+                "shape": "rounded",
+                "line_style": "dashed",
+                "stroke_pt": 0.9,
+                "show_leaders": True,
+            },
+        },
+    )
+    assert r_drv.status_code == 200
+    z_panel = r_drv.json()["panel"]
+    zid = z_panel["panel_id"]
+    assert zid.startswith("Z_P08_")
+
+    # Compose P08 alongside its zoomed panel and verify live dynamic zoom updates
+    roi_a = {
+        "enabled": True,
+        "x_norm": 0.52,
+        "y_norm": 0.08,
+        "w_norm": 0.42,
+        "h_norm": 0.45,
+        "label": "Up-Reg",
+        "color": "#EF4444",
+        "shape": "rounded",
+        "line_style": "dashed",
+        "stroke_pt": 0.9,
+        "show_leaders": True,
+    }
+    r_c1 = client.post(
+        "/api/v2/layout/compose",
+        json={
+            "panel_ids": ["P08", zid],
+            "roi_overrides": {
+                "P08": roi_a,
+                zid: {**roi_a, "linked_source_id": "P08", "own_crop": False},
+            },
+        },
+    )
+    assert r_c1.status_code == 200
+    d1 = r_c1.json()
+    assert d1["audit"]["all_passed"], f"Vector zoom failed gates: {d1['audit']['gates']}"
+    assert f"zclip-{zid}-main" in d1["modular_svg"]
+    assert 'id="callout-leaders-layer"' in d1["modular_svg"]
+    assert "#EF4444" in d1["modular_svg"]
+
+    # Shift the ROI window on P08 -> zoomed SVG updates immediately
+    roi_b = {**roi_a, "x_norm": 0.12, "y_norm": 0.42}
+    r_c2 = client.post(
+        "/api/v2/layout/compose",
+        json={
+            "panel_ids": ["P08", zid],
+            "roi_overrides": {
+                "P08": roi_b,
+                zid: {**roi_b, "linked_source_id": "P08", "own_crop": False},
+            },
+        },
+    )
+    assert r_c2.status_code == 200
+    assert r_c2.json()["modular_svg"] != d1["modular_svg"]
+
+
+def test_roi_shapes_custom_colors_multi_roi_and_pdf_clipping() -> None:
+    """Verify circular/elliptical/rounded shapes, custom HEX color sync, multi-ROI (`own_crop`), and native PDF vector clipping."""
+    client = TestClient(app)
+
+    # Spawn a 2nd ROI zoom panel on P01 alongside built-in P02!
+    r_z2 = client.post(
+        "/api/v2/layout/derive-roi",
+        json={
+            "source_panel_id": "P01",
+            "roi": {
+                "enabled": True,
+                "x_norm": 0.56,
+                "y_norm": 0.48,
+                "w_norm": 0.28,
+                "h_norm": 0.28,
+                "label": "ROI 2",
+                "color": "#8B5CF6",
+                "shape": "circle",
+                "line_style": "dotted",
+                "stroke_pt": 1.0,
+                "show_leaders": True,
+                "own_crop": True,
+            },
+        },
+    )
+    assert r_z2.status_code == 200
+    z2_id = r_z2.json()["panel"]["panel_id"]
+
+    roi_overrides = {
+        "P01": {
+            "enabled": True,
+            "x_norm": 0.18,
+            "y_norm": 0.20,
+            "w_norm": 0.34,
+            "h_norm": 0.26,
+            "label": "ROI 1",
+            "color": "#10B981",
+            "shape": "circle",
+            "line_style": "solid",
+            "stroke_pt": 1.05,
+            "show_leaders": True,
+            "fov_width_um": 6500.0,
+            "scale_bar_um": 1000.0,
+        },
+        "P02": {
+            "enabled": True,
+            "linked_source_id": "P01",
+            "own_crop": False,
+            "scale_bar_um": 250.0,
+        },
+        z2_id: {
+            "enabled": True,
+            "x_norm": 0.56,
+            "y_norm": 0.48,
+            "w_norm": 0.28,
+            "h_norm": 0.28,
+            "label": "ROI 2",
+            "color": "#8B5CF6",
+            "shape": "ellipse",
+            "line_style": "dotted",
+            "stroke_pt": 1.0,
+            "show_leaders": True,
+            "linked_source_id": "P01",
+            "own_crop": True,
+        },
+    }
+
+    r_comp = client.post(
+        "/api/v2/layout/compose",
+        json={"panel_ids": ["P01", "P02", z2_id], "roi_overrides": roi_overrides},
+    )
+    assert r_comp.status_code == 200
+    body = r_comp.json()
+    assert body["audit"]["all_passed"], f"Multi-ROI shape compose failed gates: {body['audit']['gates']}"
+
+    slots = {s["panel_id"]: s for s in body["slots"]}
+    # P01 must expose BOTH ROI boxes (`P01` primary + `z2_id` own_crop)
+    p01_rois = slots["P01"]["roi_boxes"]
+    assert len(p01_rois) == 2
+    # Primary ROI is `shape == "circle"` -> physical width_mm == height_mm!
+    rb1 = next(r for r in p01_rois if r["owner_id"] == "P01")
+    assert abs((rb1["box_mm"][2] - rb1["box_mm"][0]) - (rb1["box_mm"][3] - rb1["box_mm"][1])) < 0.02
+    # Linked P02 zoom frame must also be a 1:1 physical circle and carry custom emerald `#10B981`
+    p02_sp = slots["P02"]["spine_box_mm"]
+    assert abs((p02_sp[2] - p02_sp[0]) - (p02_sp[3] - p02_sp[1])) < 0.02
+    assert "#10B981" in body["modular_svg"]
+    assert "#8B5CF6" in body["modular_svg"]
+
+    # Export print-ready PDF and verify cubic-Bézier clip operator `W n` is emitted cleanly
+    r_pdf = client.post(
+        "/api/v2/layout/export",
+        json={"panel_ids": ["P01", "P02", z2_id], "roi_overrides": roi_overrides, "format": "pdf"},
+    )
+    assert r_pdf.status_code == 200
+    pdf_doc = pikepdf.open(io.BytesIO(r_pdf.content))
+    assert len(pdf_doc.pages) == 1
+    raw_stream = bytes(pdf_doc.pages[0].Contents.read_bytes()).decode("latin1")
+    assert "c h W n" in raw_stream
+
+
+def test_picture_in_picture_inset_zoom_on_vector_and_raster_panels() -> None:
+    """Verify draggable Picture-in-Picture (`inset_enabled`) zoomed insets on both vector charts (`P05`) and microscopy (`P03`)."""
+    client = TestClient(app)
+    r = client.post(
+        "/api/v2/layout/compose",
+        json={
+            "panel_ids": ["P03", "P05"],
+            "roi_overrides": {
+                "P03": {
+                    "enabled": True,
+                    "x_norm": 0.45,
+                    "y_norm": 0.42,
+                    "w_norm": 0.30,
+                    "h_norm": 0.30,
+                    "label": "Coloc+",
+                    "color": "#38BDF8",
+                    "shape": "circle",
+                    "inset_enabled": True,
+                    "inset_pos": "tl",
+                    "inset_scale": 0.36,
+                    "show_leaders": True,
+                },
+                "P05": {
+                    "enabled": True,
+                    "x_norm": 0.48,
+                    "y_norm": 0.35,
+                    "w_norm": 0.28,
+                    "h_norm": 0.30,
+                    "label": "Core",
+                    "color": "#EF4444",
+                    "shape": "rounded",
+                    "inset_enabled": True,
+                    "inset_pos": "custom",
+                    "inset_x_norm": 0.06,
+                    "inset_y_norm": 0.56,
+                    "inset_scale": 0.38,
+                    "show_leaders": True,
+                },
+            },
+        },
+    )
+    assert r.status_code == 200
+    data = r.json()
+    assert data["audit"]["all_passed"], f"PiP inset failed gates: {data['audit']['gates']}"
+    slots = {s["panel_id"]: s for s in data["slots"]}
+    assert slots["P03"]["inset_box_mm"] is not None
+    assert slots["P05"]["inset_box_mm"] is not None
+    assert 'id="inset-layer-P03"' in data["modular_svg"]
+    assert 'id="inset-layer-P05"' in data["modular_svg"]
+
+
+

@@ -30,11 +30,14 @@ LegendPosMode = Literal[
     "hidden",
 ]
 LegendOrientMode = Literal["auto", "vertical", "horizontal"]
+ROIShapeMode = Literal["rect", "rounded", "circle", "ellipse"]
+ROILineStyle = Literal["dashed", "solid", "dotted"]
+ROIInsetPos = Literal["tr", "tl", "br", "bl", "custom"]
 
 
 @dataclass
 class ROIOverlaySpec:
-    """Non-destructive vector ROI box & physical scale-bar overlay for locked special figures."""
+    """Non-destructive vector ROI callout, multi-shape crop, PiP inset & physical scale-bar spec for any panel."""
 
     enabled: bool = False
     x_norm: float = 0.32
@@ -44,9 +47,24 @@ class ROIOverlaySpec:
     label: str = "ROI"
     color: str = "#F59E0B"
     dashed: bool = True
+    shape: ROIShapeMode = "rect"
+    line_style: ROILineStyle | None = None
+    stroke_pt: float = 0.85
+    show_leaders: bool = False
+    inset_enabled: bool = False
+    inset_pos: ROIInsetPos = "br"
+    inset_x_norm: float = 0.58
+    inset_y_norm: float = 0.54
+    inset_scale: float = 0.36
+    own_crop: bool = False
     scale_bar_um: float | None = None
     fov_width_um: float | None = None
     linked_source_id: str | None = None
+
+    def resolved_line_style(self) -> ROILineStyle:
+        if self.line_style in ("dashed", "solid", "dotted"):
+            return self.line_style
+        return "dashed" if self.dashed else "solid"
 
 
 @dataclass
@@ -283,6 +301,8 @@ class CompiledRaster:
     panel_id: str
     effective_dpi: float
     aspect_ratio_error: float
+    clip_id: str | None = None
+    is_overlay: bool = False
 
 
 @dataclass
@@ -295,6 +315,24 @@ class CompiledRawLockedSVG:
     h_mm: float
     scale_isotropic: float
     panel_id: str
+    clip_id: str | None = None
+    is_overlay: bool = False
+
+
+@dataclass
+class CompiledROIBoxMeta:
+    owner_id: str
+    box_mm: tuple[float, float, float, float]
+    x_norm: float
+    y_norm: float
+    w_norm: float
+    h_norm: float
+    shape: ROIShapeMode
+    line_style: ROILineStyle
+    color: str
+    stroke_pt: float
+    label: str
+    show_leaders: bool = False
 
 
 @dataclass
@@ -311,6 +349,8 @@ class CompiledPanelSlot:
     outer_box_mm: tuple[float, float, float, float] = (0.0, 0.0, 0.0, 0.0)
     spine_box_mm: tuple[float, float, float, float] = (0.0, 0.0, 0.0, 0.0)
     legend_box_mm: tuple[float, float, float, float] | None = None
+    inset_box_mm: tuple[float, float, float, float] | None = None
+    roi_boxes: list[CompiledROIBoxMeta] = field(default_factory=list)
     effective_legend_pos: str = "hidden"
     effective_legend_orient: str = "vertical"
     has_legend: bool = False
@@ -332,6 +372,7 @@ class CompositePageScene:
     bento_rows: list[BentoRow] = field(default_factory=list)
     row_bounds_mm: list[tuple[float, float]] = field(default_factory=list)
     clips_mm: dict[str, tuple[float, float, float, float]] = field(default_factory=dict)
+    clip_paths_mm: dict[str, list[PathSegment]] = field(default_factory=dict)
     rasters: list[CompiledRaster] = field(default_factory=list)
     locked_svgs: list[CompiledRawLockedSVG] = field(default_factory=list)
     paths: list[CompiledPath] = field(default_factory=list)

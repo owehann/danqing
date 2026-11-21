@@ -13,6 +13,9 @@ export type LegendPosMode =
   | "hidden";
 
 export type LegendOrientMode = "auto" | "vertical" | "horizontal";
+export type ROIShapeMode = "rect" | "rounded" | "circle" | "ellipse";
+export type ROILineStyle = "dashed" | "solid" | "dotted";
+export type ROIInsetPos = "tr" | "tl" | "br" | "bl" | "custom";
 
 export interface LayoutROIConfig {
   enabled: boolean;
@@ -23,9 +26,58 @@ export interface LayoutROIConfig {
   label: string;
   color: string;
   dashed: boolean;
+  shape?: ROIShapeMode;
+  line_style?: ROILineStyle | null;
+  stroke_pt?: number;
+  show_leaders?: boolean;
+  inset_enabled?: boolean;
+  inset_pos?: ROIInsetPos;
+  inset_x_norm?: number;
+  inset_y_norm?: number;
+  inset_scale?: number;
+  own_crop?: boolean;
   scale_bar_um: number | null;
   fov_width_um: number | null;
   linked_source_id: string | null;
+}
+
+export const DEFAULT_ROI_CONFIG: LayoutROIConfig = {
+  enabled: false,
+  x_norm: 0.28,
+  y_norm: 0.24,
+  w_norm: 0.34,
+  h_norm: 0.34,
+  label: "ROI",
+  color: "#F59E0B",
+  dashed: true,
+  shape: "rect",
+  line_style: "dashed",
+  stroke_pt: 0.85,
+  show_leaders: false,
+  inset_enabled: false,
+  inset_pos: "br",
+  inset_x_norm: 0.58,
+  inset_y_norm: 0.54,
+  inset_scale: 0.36,
+  own_crop: false,
+  scale_bar_um: null,
+  fov_width_um: null,
+  linked_source_id: null,
+};
+
+export interface LayoutROIBoxMeta {
+  owner_id: string;
+  box_mm: [number, number, number, number];
+  x_norm: number;
+  y_norm: number;
+  w_norm: number;
+  h_norm: number;
+  shape: ROIShapeMode;
+  line_style: ROILineStyle;
+  color: string;
+  stroke_pt: number;
+  label: string;
+  show_leaders: boolean;
 }
 
 export interface TextItemOverrideState {
@@ -220,6 +272,8 @@ export interface LayoutSlotMeta {
   outer_box_mm: [number, number, number, number];
   spine_box_mm: [number, number, number, number];
   legend_box_mm: [number, number, number, number] | null;
+  inset_box_mm?: [number, number, number, number] | null;
+  roi_boxes?: LayoutROIBoxMeta[];
   effective_legend_pos?: string;
   effective_legend_orient?: string;
   has_legend: boolean;
@@ -278,6 +332,7 @@ interface LayoutStudioState {
 
   selectedIds: string[];
   focusedPanelId: string;
+  focusedRoiOwnerId: string | null;
   focusedTextKey: string | null;
   inspectorTab: "page" | "panel";
   liveAnnouncement: string;
@@ -325,6 +380,7 @@ interface LayoutStudioState {
   movePanelOrder: (panelId: string, dir: -1 | 1) => void;
   selectQuickCount: (count: number) => void;
   setFocusedPanelId: (panelId: string, switchToPanelTab?: boolean) => void;
+  setFocusedRoiOwnerId: (ownerId: string | null, switchToPanelTab?: boolean) => void;
   setFocusedText: (panelId: string, itemKey: string | null, switchToPanelTab?: boolean) => void;
   setInspectorTab: (tab: "page" | "panel") => void;
   setLiveAnnouncement: (msg: string) => void;
@@ -339,6 +395,8 @@ interface LayoutStudioState {
   setSpanOverride: (panelId: string, cols: number) => void;
   setLockedOverride: (panelId: string, locked: boolean) => void;
   updateRoi: (panelId: string, patch: Partial<LayoutROIConfig>, immediate?: boolean) => void;
+  togglePanelRoi: (panelId: string) => void;
+  spawnDerivedRoiPanel: (sourcePanelId: string) => Promise<string | null>;
   updatePanelOverride: (
     panelId: string,
     patch: Partial<PanelOverrideState>,
@@ -471,6 +529,7 @@ export const useLayoutStudioStore = create<LayoutStudioState>((set, get) => ({
 
   selectedIds: [],
   focusedPanelId: "P01",
+  focusedRoiOwnerId: null,
   focusedTextKey: null,
   inspectorTab: "page",
   liveAnnouncement: "",
@@ -698,7 +757,16 @@ export const useLayoutStudioStore = create<LayoutStudioState>((set, get) => ({
     const changed = panelId !== get().focusedPanelId;
     set({
       focusedPanelId: panelId,
+      focusedRoiOwnerId: changed ? null : get().focusedRoiOwnerId,
       focusedTextKey: changed ? null : get().focusedTextKey,
+      inspectorTab: switchToPanelTab ? "panel" : get().inspectorTab,
+    });
+  },
+
+  setFocusedRoiOwnerId: (ownerId: string | null, switchToPanelTab = true) => {
+    set({
+      focusedRoiOwnerId: ownerId,
+      focusedTextKey: ownerId ? null : get().focusedTextKey,
       inspectorTab: switchToPanelTab ? "panel" : get().inspectorTab,
     });
   },
@@ -706,6 +774,7 @@ export const useLayoutStudioStore = create<LayoutStudioState>((set, get) => ({
   setFocusedText: (panelId: string, itemKey: string | null, switchToPanelTab = true) => {
     set({
       focusedPanelId: panelId,
+      focusedRoiOwnerId: itemKey ? null : get().focusedRoiOwnerId,
       focusedTextKey: itemKey,
       inspectorTab: switchToPanelTab ? "panel" : get().inspectorTab,
     });
@@ -800,26 +869,196 @@ export const useLayoutStudioStore = create<LayoutStudioState>((set, get) => ({
   },
 
   updateRoi: (panelId: string, patch: Partial<LayoutROIConfig>, immediate = false) => {
-    const cur = get().roiOverrides[panelId] || {
-      enabled: true,
-      x_norm: 0.25,
-      y_norm: 0.25,
-      w_norm: 0.3,
-      h_norm: 0.3,
-      label: "ROI",
-      color: "#F59E0B",
-      dashed: true,
-      scale_bar_um: null,
-      fov_width_um: null,
-      linked_source_id: null,
-    };
+    const panelMeta = get().panels.find((p) => p.panel_id === panelId);
+    const cur = get().roiOverrides[panelId] || panelMeta?.default_roi || { ...DEFAULT_ROI_CONFIG, enabled: true };
+    const nextLineStyle =
+      patch.line_style !== undefined
+        ? patch.line_style
+        : patch.dashed !== undefined
+          ? patch.dashed
+            ? "dashed"
+            : "solid"
+          : cur.line_style ?? (cur.dashed ? "dashed" : "solid");
+    const nextDashed = nextLineStyle !== "solid";
     set({
       roiOverrides: {
         ...get().roiOverrides,
-        [panelId]: { ...cur, ...patch },
+        [panelId]: {
+          ...DEFAULT_ROI_CONFIG,
+          ...cur,
+          ...patch,
+          line_style: nextLineStyle,
+          dashed: nextDashed,
+        },
       },
     });
     scheduleCompose(get, immediate);
+  },
+
+  togglePanelRoi: (panelId: string) => {
+    const panelMeta = get().panels.find((p) => p.panel_id === panelId);
+    const cur = get().roiOverrides[panelId] || panelMeta?.default_roi || DEFAULT_ROI_CONFIG;
+    const nextEnabled = !cur.enabled;
+    const safePatch: Partial<LayoutROIConfig> = {
+      enabled: nextEnabled,
+      x_norm: cur.w_norm > 0.04 ? cur.x_norm : 0.28,
+      y_norm: cur.h_norm > 0.04 ? cur.y_norm : 0.24,
+      w_norm: cur.w_norm > 0.04 ? cur.w_norm : 0.34,
+      h_norm: cur.h_norm > 0.04 ? cur.h_norm : 0.34,
+      label: cur.label || "ROI",
+      color: cur.color || "#F59E0B",
+    };
+    get().updateRoi(panelId, safePatch, true);
+    set({
+      focusedPanelId: panelId,
+      focusedRoiOwnerId: nextEnabled ? panelId : null,
+      focusedTextKey: null,
+      inspectorTab: "panel",
+    });
+  },
+
+  spawnDerivedRoiPanel: async (sourcePanelId: string) => {
+    const s = get();
+    const srcPanel = s.panels.find((p) => p.panel_id === sourcePanelId);
+    if (!srcPanel) return null;
+
+    // If user clicked from an already-derived panel, resolve to its root mother panel!
+    const initRoi = s.roiOverrides[sourcePanelId] || srcPanel.default_roi || DEFAULT_ROI_CONFIG;
+    const rootSrcId = initRoi.linked_source_id || sourcePanelId;
+    const rootPanel = s.panels.find((p) => p.panel_id === rootSrcId) || srcPanel;
+    const rootRoi = s.roiOverrides[rootSrcId] || rootPanel.default_roi || DEFAULT_ROI_CONFIG;
+
+    const existingLinkedIds = s.selectedIds.filter((pid) => {
+      const r = s.roiOverrides[pid] || s.panels.find((x) => x.panel_id === pid)?.default_roi;
+      return r?.linked_source_id === rootSrcId;
+    });
+    const hasPrimaryChild = existingLinkedIds.some((pid) => {
+      const r = s.roiOverrides[pid] || s.panels.find((x) => x.panel_id === pid)?.default_roi;
+      return !r?.own_crop;
+    });
+
+    const cycleColors = ["#F59E0B", "#38BDF8", "#EF4444", "#10B981", "#8B5CF6"];
+    const nextIdx = existingLinkedIds.length;
+    const isOwnCrop = hasPrimaryChild;
+
+    const nextRois = { ...s.roiOverrides };
+    let childRoiPayload: LayoutROIConfig;
+
+    if (!isOwnCrop) {
+      const ensuredRoot: LayoutROIConfig = {
+        ...DEFAULT_ROI_CONFIG,
+        ...rootRoi,
+        enabled: true,
+        x_norm: rootRoi.w_norm > 0.04 ? rootRoi.x_norm : 0.28,
+        y_norm: rootRoi.h_norm > 0.04 ? rootRoi.y_norm : 0.24,
+        w_norm: rootRoi.w_norm > 0.04 ? rootRoi.w_norm : 0.34,
+        h_norm: rootRoi.h_norm > 0.04 ? rootRoi.h_norm : 0.34,
+        label: rootRoi.label || "ROI 1",
+        color: rootRoi.color || "#F59E0B",
+        linked_source_id: null,
+        own_crop: false,
+      };
+      nextRois[rootSrcId] = ensuredRoot;
+      childRoiPayload = {
+        ...ensuredRoot,
+        linked_source_id: rootSrcId,
+        own_crop: false,
+      };
+    } else {
+      const col = cycleColors[nextIdx % cycleColors.length];
+      const ox = Math.min(0.58, 0.14 + ((nextIdx * 0.23) % 0.52));
+      const oy = Math.min(0.56, 0.16 + ((nextIdx * 0.19) % 0.48));
+      childRoiPayload = {
+        ...DEFAULT_ROI_CONFIG,
+        enabled: true,
+        x_norm: Number(ox.toFixed(2)),
+        y_norm: Number(oy.toFixed(2)),
+        w_norm: 0.3,
+        h_norm: 0.3,
+        label: `ROI ${nextIdx + 1}`,
+        color: col,
+        shape: rootRoi.shape || "rect",
+        line_style: rootRoi.line_style || (rootRoi.dashed ? "dashed" : "solid"),
+        dashed: (rootRoi.line_style || (rootRoi.dashed ? "dashed" : "solid")) !== "solid",
+        stroke_pt: rootRoi.stroke_pt ?? 0.85,
+        show_leaders: rootRoi.show_leaders ?? false,
+        scale_bar_um: rootRoi.scale_bar_um ? Number((rootRoi.scale_bar_um * 0.25).toFixed(1)) : null,
+        fov_width_um: rootRoi.fov_width_um,
+        linked_source_id: rootSrcId,
+        own_crop: true,
+      };
+    }
+
+    const res = await fetch("/api/v2/layout/derive-roi", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        source_panel_id: rootSrcId,
+        roi: childRoiPayload,
+      }),
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const addedPanel: LayoutPanelItem | undefined = data.panel;
+    if (!addedPanel) return null;
+
+    const newPid = addedPanel.panel_id;
+    nextRois[newPid] = { ...DEFAULT_ROI_CONFIG, ...addedPanel.default_roi, ...childRoiPayload };
+    const nextLocks = { ...get().lockedOverrides, [newPid]: true };
+
+    // Insert right beside the mother panel (or its last derived sibling) in Bento grid!
+    const anchorId = existingLinkedIds.length > 0 ? existingLinkedIds[existingLinkedIds.length - 1] : rootSrcId;
+    const baseRows = cloneRows(get().bentoRows ?? get().composed?.bento_rows);
+    let insertedInGrid = false;
+    for (let ri = 0; ri < baseRows.length; ri++) {
+      const r = baseRows[ri];
+      const bi = r.blocks.findIndex((b) => b.panel_ids.includes(anchorId));
+      if (bi >= 0) {
+        if (r.blocks.length < 4) {
+          const newW = Math.max(2.6, r.blocks[bi].weight * 0.68);
+          r.blocks.splice(bi + 1, 0, { panel_ids: [newPid], weight: newW });
+          normalizeRowWeights(r);
+        } else {
+          baseRows.splice(ri + 1, 0, {
+            blocks: [{ panel_ids: [newPid], weight: 12.0 }],
+            height_scale: 0.95,
+          });
+        }
+        insertedInGrid = true;
+        break;
+      }
+    }
+
+    let nextSel: string[];
+    let finalRows: BentoRowState[] | null;
+    if (insertedInGrid && baseRows.length > 0) {
+      finalRows = baseRows;
+      nextSel = flattenRowIds(baseRows);
+    } else {
+      finalRows = get().bentoRows;
+      const curSel = [...get().selectedIds];
+      const anchorPos = curSel.indexOf(anchorId);
+      if (anchorPos >= 0) {
+        curSel.splice(anchorPos + 1, 0, newPid);
+      } else {
+        curSel.push(newPid);
+      }
+      nextSel = curSel;
+    }
+
+    set({
+      panels: [...get().panels, addedPanel],
+      roiOverrides: nextRois,
+      lockedOverrides: nextLocks,
+      selectedIds: nextSel,
+      bentoRows: finalRows,
+      focusedPanelId: rootSrcId,
+      focusedRoiOwnerId: isOwnCrop ? newPid : rootSrcId,
+      focusedTextKey: null,
+      inspectorTab: "panel",
+    });
+    await get().refreshCompose();
+    return newPid;
   },
 
   updatePanelOverride: (

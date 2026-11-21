@@ -14,7 +14,9 @@ from PIL import Image
 from .ir import (
     BentoRow,
     CompiledCircle,
+    CompiledPanelSlot,
     CompiledPath,
+    CompiledROIBoxMeta,
     CompiledRaster,
     CompiledRawLockedSVG,
     CompiledText,
@@ -239,7 +241,7 @@ def _strip_outer_svg(svg_bytes: bytes) -> str:
     return txt
 
 
-def _crop_png_bytes(png_bytes: bytes, x_norm: float, y_norm: float, w_norm: float, h_norm: float) -> tuple[bytes, int, int]:
+def _crop_png_bytes(png_bytes: bytes, x_norm: float, y_norm: float, w_norm: float, h_norm: float, force_square: bool = False) -> tuple[bytes, int, int]:
     with Image.open(io.BytesIO(png_bytes)) as im:
         rgb = im.convert("RGB")
         W, H = rgb.size
@@ -247,10 +249,175 @@ def _crop_png_bytes(png_bytes: bytes, x_norm: float, y_norm: float, w_norm: floa
         y0 = max(0, min(H - 8, int(round(y_norm * H))))
         cw = max(8, min(W - x0, int(round(w_norm * W))))
         ch = max(8, min(H - y0, int(round(h_norm * H))))
+        if force_square:
+            side = max(8, min(cw, ch))
+            x0 = max(0, min(W - side, x0 + (cw - side) // 2))
+            y0 = max(0, min(H - side, y0 + (ch - side) // 2))
+            cw = ch = side
         sub = rgb.crop((x0, y0, x0 + cw, y0 + ch))
         buf = io.BytesIO()
         sub.save(buf, format="PNG", compress_level=9)
         return buf.getvalue(), cw, ch
+
+
+_BEZIER_KAPPA = 0.55228475
+
+
+def _rounded_rect_segs_mm(x0: float, y0: float, x1: float, y1: float, r_mm: float | None = None) -> list[PathSegment]:
+    w = max(0.2, x1 - x0)
+    h = max(0.2, y1 - y0)
+    r = min(r_mm if r_mm is not None else 0.18 * min(w, h), 0.46 * min(w, h), 3.4)
+    if r <= 0.15:
+        return _rect_segs_mm(x0, y0, x1, y1)
+    k = _BEZIER_KAPPA * r
+    return [
+        PathSegment("M", (x0 + r, y0)),
+        PathSegment("L", (x1 - r, y0)),
+        PathSegment("C", (x1 - r + k, y0, x1, y0 + r - k, x1, y0 + r)),
+        PathSegment("L", (x1, y1 - r)),
+        PathSegment("C", (x1, y1 - r + k, x1 - r + k, y1, x1 - r, y1)),
+        PathSegment("L", (x0 + r, y1)),
+        PathSegment("C", (x0 + r - k, y1, x0, y1 - r + k, x0, y1 - r)),
+        PathSegment("L", (x0, y0 + r)),
+        PathSegment("C", (x0, y0 + r - k, x0 + r - k, y0, x0 + r, y0)),
+        PathSegment("Z", ()),
+    ]
+
+
+def _ellipse_segs_mm(cx: float, cy: float, rx: float, ry: float) -> list[PathSegment]:
+    rx = max(0.15, rx)
+    ry = max(0.15, ry)
+    kx = _BEZIER_KAPPA * rx
+    ky = _BEZIER_KAPPA * ry
+    return [
+        PathSegment("M", (cx + rx, cy)),
+        PathSegment("C", (cx + rx, cy + ky, cx + kx, cy + ry, cx, cy + ry)),
+        PathSegment("C", (cx - kx, cy + ry, cx - rx, cy + ky, cx - rx, cy)),
+        PathSegment("C", (cx - rx, cy - ky, cx - kx, cy - ry, cx, cy - ry)),
+        PathSegment("C", (cx + kx, cy - ry, cx + rx, cy - ky, cx + rx, cy)),
+        PathSegment("Z", ()),
+    ]
+
+
+def _roi_shape_segs_mm(x0: float, y0: float, x1: float, y1: float, shape: str) -> list[PathSegment]:
+    if shape == "rounded":
+        return _rounded_rect_segs_mm(x0, y0, x1, y1)
+    if shape == "circle":
+        r = 0.5 * min(max(0.3, x1 - x0), max(0.3, y1 - y0))
+        return _ellipse_segs_mm(0.5 * (x0 + x1), 0.5 * (y0 + y1), r, r)
+    if shape == "ellipse":
+        return _ellipse_segs_mm(0.5 * (x0 + x1), 0.5 * (y0 + y1), 0.5 * (x1 - x0), 0.5 * (y1 - y0))
+    return _rect_segs_mm(x0, y0, x1, y1)
+
+
+def _roi_dash_mm(roi: ROIOverlaySpec) -> str | None:
+    ls = roi.resolved_line_style()
+    if ls == "solid":
+        return None
+    if ls == "dotted":
+        return "0.42,0.62"
+    return "1.15,0.78"
+
+
+def _roi_stroke_pt(roi: ROIOverlaySpec, fallback: float = 0.80) -> float:
+    val = float(roi.stroke_pt) if roi.stroke_pt and roi.stroke_pt > 0 else fallback
+    return max(0.45, min(1.60, val))
+
+
+def _resolve_roi_on_frame(
+    frame_mm: tuple[float, float, float, float],
+    roi: ROIOverlaySpec,
+) -> tuple[tuple[float, float, float, float], tuple[float, float, float, float]]:
+    """Map normalized ROI spec onto a physical panel frame `(fx0, fy0, fx1, fy1)` in mm.
+    When `roi.shape == 'circle'`, enforces an exact physical 1:1 circle and returns the corresponding normalized window.
+    """
+    fx0, fy0, fx1, fy1 = frame_mm
+    fw = max(2.0, fx1 - fx0)
+    fh = max(2.0, fy1 - fy0)
+    xn = max(0.0, min(0.92, float(roi.x_norm)))
+    yn = max(0.0, min(0.92, float(roi.y_norm)))
+    wn = max(0.06, min(1.0 - xn, float(roi.w_norm)))
+    hn = max(0.06, min(1.0 - yn, float(roi.h_norm)))
+    rx0 = fx0 + xn * fw
+    ry0 = fy0 + yn * fh
+    rw = wn * fw
+    rh = hn * fh
+    if roi.shape == "circle":
+        diam = max(1.2, min(rw, rh, fw, fh))
+        rcx = max(fx0 + 0.5 * diam, min(fx1 - 0.5 * diam, rx0 + 0.5 * rw))
+        rcy = max(fy0 + 0.5 * diam, min(fy1 - 0.5 * diam, ry0 + 0.5 * rh))
+        bx0, by0, bx1, by1 = rcx - 0.5 * diam, rcy - 0.5 * diam, rcx + 0.5 * diam, rcy + 0.5 * diam
+        eff_xn = max(0.0, min(0.94, (bx0 - fx0) / fw))
+        eff_yn = max(0.0, min(0.94, (by0 - fy0) / fh))
+        eff_wn = max(0.04, min(1.0 - eff_xn, diam / fw))
+        eff_hn = max(0.04, min(1.0 - eff_yn, diam / fh))
+        return (bx0, by0, bx1, by1), (eff_xn, eff_yn, eff_wn, eff_hn)
+    return (rx0, ry0, rx0 + rw, ry0 + rh), (xn, yn, wn, hn)
+
+
+def _shape_anchor_pair(
+    box_mm: tuple[float, float, float, float],
+    shape: str,
+    side: str,
+) -> tuple[tuple[float, float], tuple[float, float]]:
+    """Return the two perimeter attachment points on `side` ('left'|'right'|'top'|'bottom') for ROI leader lines."""
+    x0, y0, x1, y1 = box_mm
+    cx, cy = 0.5 * (x0 + x1), 0.5 * (y0 + y1)
+    rx, ry = 0.5 * (x1 - x0), 0.5 * (y1 - y0)
+    if shape in ("circle", "ellipse"):
+        if shape == "circle":
+            rx = ry = min(rx, ry)
+        c45 = 0.78
+        s45 = math.sqrt(max(0.0, 1.0 - c45 * c45))
+        if side == "right":
+            return ((cx + s45 * rx, cy - c45 * ry), (cx + s45 * rx, cy + c45 * ry))
+        if side == "left":
+            return ((cx - s45 * rx, cy - c45 * ry), (cx - s45 * rx, cy + c45 * ry))
+        if side == "bottom":
+            return ((cx - c45 * rx, cy + s45 * ry), (cx + c45 * rx, cy + s45 * ry))
+        return ((cx - c45 * rx, cy - s45 * ry), (cx + c45 * rx, cy - s45 * ry))
+    inset = min(1.2, 0.14 * min(x1 - x0, y1 - y0)) if shape == "rounded" else 0.0
+    if side == "right":
+        return ((x1, y0 + inset), (x1, y1 - inset))
+    if side == "left":
+        return ((x0, y0 + inset), (x0, y1 - inset))
+    if side == "bottom":
+        return ((x0 + inset, y1), (x1 - inset, y1))
+    return ((x0 + inset, y0), (x1 - inset, y0))
+
+
+def _emit_roi_leader_lines(
+    scene: CompositePageScene,
+    src_box: tuple[float, float, float, float],
+    dst_box: tuple[float, float, float, float],
+    roi: ROIOverlaySpec,
+    panel_id: str = "SHARED",
+) -> None:
+    scx, scy = 0.5 * (src_box[0] + src_box[2]), 0.5 * (src_box[1] + src_box[3])
+    dcx, dcy = 0.5 * (dst_box[0] + dst_box[2]), 0.5 * (dst_box[1] + dst_box[3])
+    dx, dy = dcx - scx, dcy - scy
+    if math.hypot(dx, dy) < 2.0:
+        return
+    if abs(dx) >= abs(dy):
+        src_side, dst_side = ("right", "left") if dx >= 0 else ("left", "right")
+    else:
+        src_side, dst_side = ("bottom", "top") if dy >= 0 else ("top", "bottom")
+    (sa1, sa2) = _shape_anchor_pair(src_box, roi.shape, src_side)
+    (da1, da2) = _shape_anchor_pair(dst_box, roi.shape, dst_side)
+    col = _normalize_hex_color(roi.color, "#F59E0B")
+    sw = max(0.45, min(1.20, 0.76 * _roi_stroke_pt(roi, 0.80)))
+    for p_start, p_end in ((sa1, da1), (sa2, da2)):
+        scene.paths.append(
+            CompiledPath(
+                segments_mm=_line_segs_mm(p_start[0], p_start[1], p_end[0], p_end[1]),
+                stroke=col,
+                stroke_opacity=0.72,
+                stroke_pt=sw,
+                dasharray_mm="1.10,0.80",
+                panel_id=panel_id,
+                role="ROI_LEADER",
+            )
+        )
 
 
 def _detect_shared_legend(
@@ -343,6 +510,467 @@ def _build_categorical_x_map(
     return (_u_map, length_ratio)
 
 
+def _emit_scale_bar(
+    scene: CompositePageScene,
+    panel_id: str,
+    ix0: float,
+    iy0: float,
+    draw_w: float,
+    draw_h: float,
+    scale_bar_um: float | None,
+    eff_fov_um: float | None,
+    eff_ann_pt: float,
+    font_family: str,
+    is_inset: bool = False,
+) -> None:
+    if not scale_bar_um or not eff_fov_um or eff_fov_um <= 0 or draw_w < 8.0 or draw_h < 8.0:
+        return
+    target_um = float(scale_bar_um)
+    bar_mm = (target_um / eff_fov_um) * draw_w
+    while bar_mm > 0.36 * draw_w and target_um > 5.0:
+        target_um *= 0.5
+        bar_mm = (target_um / eff_fov_um) * draw_w
+    while bar_mm < 0.12 * draw_w and target_um < 0.45 * eff_fov_um:
+        target_um *= 2.0
+        bar_mm = (target_um / eff_fov_um) * draw_w
+    sb_txt = f"{int(round(target_um))} µm" if target_um < 1000 else f"{target_um/1000.0:.1f} mm"
+    sb_pt = max(5.0, eff_ann_pt * (0.84 if is_inset else 0.92))
+    tw_sb, th_sb = measure_text_mm(sb_txt, sb_pt, bold=True, font_family=font_family)
+    content_w = max(bar_mm, tw_sb)
+    pill_x1 = ix0 + draw_w - (0.85 if is_inset else 1.2)
+    pill_x0 = max(ix0 + 0.8, pill_x1 - content_w - 1.8)
+    sb_cx = 0.5 * (pill_x0 + pill_x1)
+    bx0_sb = sb_cx - 0.5 * bar_mm
+    bx1_sb = sb_cx + 0.5 * bar_mm
+    by_sb = iy0 + draw_h - (1.25 if is_inset else 1.7)
+    bg_role = "INSET_DATA" if is_inset else "SCALEBAR_BG"
+    bar_role = "INSET_DATA" if is_inset else "SCALEBAR"
+    txt_role = "INSET_TEXT" if is_inset else "SCALEBAR_TEXT"
+    scene.paths.append(
+        CompiledPath(
+            segments_mm=_rect_segs_mm(pill_x0, by_sb - th_sb - 1.35, pill_x1, by_sb + 0.80),
+            fill="#0F172A",
+            fill_opacity=0.76,
+            stroke="none",
+            panel_id=panel_id,
+            role=bg_role,
+        )
+    )
+    scene.paths.append(
+        CompiledPath(
+            segments_mm=_line_segs_mm(bx0_sb, by_sb, bx1_sb, by_sb),
+            stroke="#FFFFFF",
+            stroke_pt=0.95,
+            panel_id=panel_id,
+            role=bar_role,
+        )
+    )
+    scene.texts.append(
+        _make_text(
+            sb_txt,
+            sb_cx,
+            by_sb - 0.60,
+            sb_pt,
+            font_family,
+            bold=True,
+            fill="#FFFFFF",
+            anchor="middle",
+            role=txt_role,
+            panel_id=panel_id,
+        )
+    )
+
+
+def _emit_zoomed_region(
+    scene: CompositePageScene,
+    src_p: PanelIR,
+    crop_norm: tuple[float, float, float, float],
+    target_box_mm: tuple[float, float, float, float],
+    roi_style: ROIOverlaySpec,
+    target_panel_id: str,
+    clip_suffix: str,
+    cfg: TypographyConfig,
+    src_ov: PanelStyleOverride,
+    target_ov: PanelStyleOverride,
+    is_inset: bool = False,
+    precrop_raster: tuple[bytes, int, int] | None = None,
+) -> None:
+    """Render a cropped zoom view of ANY panel (raster image, locked SVG schematic, or elastic vector chart)
+    into `target_box_mm` with lossless resolution, exact vector shape clipping, and color-synchronized border.
+    """
+    tx0, ty0, tx1, ty1 = target_box_mm
+    draw_w = max(2.0, tx1 - tx0)
+    draw_h = max(2.0, ty1 - ty0)
+    eff_xn, eff_yn, eff_wn, eff_hn = crop_norm
+
+    shape_segs = _roi_shape_segs_mm(tx0, ty0, tx1, ty1, roi_style.shape)
+    z_clip_id = f"zclip-{target_panel_id}-{clip_suffix}"
+    scene.clip_paths_mm[z_clip_id] = shape_segs
+
+    bg_role = "INSET_BG" if is_inset else "ZOOM_BG"
+    data_role = "INSET_DATA" if is_inset else "DATA_STROKE"
+    mk_role = "INSET_MARKER" if is_inset else "ZOOM_MARKER"
+    txt_role = "INSET_TEXT" if is_inset else "ROI_LABEL"
+    frame_role = "INSET_FRAME" if is_inset else "LOCKED_FRAME"
+
+    scene.paths.append(
+        CompiledPath(
+            segments_mm=shape_segs,
+            fill="#FFFFFF",
+            fill_opacity=0.98 if is_inset else 1.0,
+            stroke="none",
+            panel_id=target_panel_id,
+            role=bg_role,
+        )
+    )
+
+    eff_axis_sw = cfg.axis_stroke_pt * target_ov.stroke_scale
+    eff_data_sw = cfg.data_stroke_pt * target_ov.stroke_scale
+    eff_grid_sw = cfg.grid_stroke_pt * target_ov.stroke_scale
+    eff_marker_pt = cfg.marker_pt * target_ov.marker_scale
+    eff_ann_pt = cfg.annotation_pt * target_ov.font_scale
+    p_font = target_ov.panel_font_family or cfg.font_family
+
+    if src_p.rasters and src_p.locked_special and len(src_p.shapes) <= 4:
+        if precrop_raster is not None:
+            png_bytes, w_px, h_px = precrop_raster
+        else:
+            png_bytes, w_px, h_px = _crop_png_bytes(
+                src_p.rasters[0].png_bytes,
+                eff_xn,
+                eff_yn,
+                eff_wn,
+                eff_hn,
+                force_square=(roi_style.shape == "circle"),
+            )
+        sha = hashlib.sha256(png_bytes).hexdigest()
+        img_aspect = w_px / max(1e-6, float(h_px))
+        asp_err = 0.0 if is_inset else abs((draw_w / max(1e-9, draw_h)) / img_aspect - 1.0)
+        eff_dpi = w_px / max(1e-6, draw_w / 25.4)
+        scene.rasters.append(
+            CompiledRaster(
+                png_bytes=png_bytes,
+                sha256=sha,
+                width_px=w_px,
+                height_px=h_px,
+                x_mm=tx0,
+                y_mm=ty0,
+                w_mm=draw_w,
+                h_mm=draw_h,
+                panel_id=target_panel_id,
+                effective_dpi=eff_dpi,
+                aspect_ratio_error=asp_err,
+                clip_id=z_clip_id if roi_style.shape != "rect" else None,
+                is_overlay=is_inset,
+            )
+        )
+    elif src_p.locked_special:
+        vx, vy, vw, vh = src_p.viewbox
+        sub_vw = max(1.0, eff_wn * vw)
+        sub_vh = max(1.0, eff_hn * vh)
+        sub_vx = vx + eff_xn * vw
+        sub_vy = vy + eff_yn * vh
+        if roi_style.shape == "circle":
+            side_v = min(sub_vw, sub_vh)
+            sub_vx += 0.5 * (sub_vw - side_v)
+            sub_vy += 0.5 * (sub_vh - side_v)
+            sub_vw = sub_vh = side_v
+        s_iso = draw_w / max(1e-6, sub_vw)
+        scene.locked_svgs.append(
+            CompiledRawLockedSVG(
+                svg_inner_xml=_strip_outer_svg(src_p.raw_svg_bytes),
+                raw_vb=(sub_vx, sub_vy, sub_vw, sub_vh),
+                x_mm=tx0,
+                y_mm=ty0,
+                w_mm=draw_w,
+                h_mm=draw_h,
+                scale_isotropic=s_iso,
+                panel_id=target_panel_id,
+                clip_id=z_clip_id,
+                is_overlay=is_inset,
+            )
+        )
+    else:
+        rx0, ry0, rx1, ry1 = src_p.spine_box
+        rw_sp = max(1e-6, rx1 - rx0)
+        rh_sp = max(1e-6, ry1 - ry0)
+        cat_cs = sorted(tk.pos_raw for tk in src_p.ticks if tk.axis == "x")
+        if len(cat_cs) < 2:
+            cat_cs = sorted(t.x_raw for t in src_p.texts if t.role == "X_TICK")
+        u_x_src, _ = _build_categorical_x_map(
+            rx0,
+            rx1,
+            cat_cs,
+            src_ov.category_spacing if src_p.is_categorical_x else 1.0,
+        )
+
+        def _phi_z(xr: float, yr: float) -> tuple[float, float]:
+            ux = u_x_src(xr)
+            uy = (yr - ry0) / rh_sp
+            return (
+                tx0 + ((ux - eff_xn) / max(1e-6, eff_wn)) * draw_w,
+                ty0 + ((uy - eff_yn) / max(1e-6, eff_hn)) * draw_h,
+            )
+
+        for sh in src_p.shapes:
+            if sh.role == "SPINE_BORDER":
+                continue
+            if sh.role == "ERROR_CAP" and sh.cap_center is not None:
+                ux_c = u_x_src(sh.cap_center[0])
+                uy_c = (sh.cap_center[1] - ry0) / rh_sp
+                if not (eff_xn - 0.1 * eff_wn <= ux_c <= eff_xn + 1.1 * eff_wn and eff_yn - 0.1 * eff_hn <= uy_c <= eff_yn + 1.1 * eff_hn):
+                    continue
+                cx_m, cy_m = _phi_z(sh.cap_center[0], sh.cap_center[1])
+                hw_m = pt_to_mm(sh.cap_half_pt) * (0.9 if is_inset else 1.15)
+                scene.paths.append(
+                    CompiledPath(
+                        segments_mm=_line_segs_mm(cx_m - hw_m, cy_m, cx_m + hw_m, cy_m),
+                        stroke=sh.stroke,
+                        stroke_opacity=sh.stroke_opacity,
+                        stroke_pt=eff_axis_sw,
+                        clip_id=z_clip_id,
+                        panel_id=target_panel_id,
+                        role=data_role,
+                    )
+                )
+                continue
+
+            z_segs: list[PathSegment] = []
+            for seg in sh.segments:
+                if seg.op in ("M", "L"):
+                    z_segs.append(PathSegment(seg.op, _phi_z(seg.pts[0], seg.pts[1])))
+                elif seg.op == "C":
+                    q1 = _phi_z(seg.pts[0], seg.pts[1])
+                    q2 = _phi_z(seg.pts[2], seg.pts[3])
+                    qe = _phi_z(seg.pts[4], seg.pts[5])
+                    z_segs.append(PathSegment("C", (q1[0], q1[1], q2[0], q2[1], qe[0], qe[1])))
+                else:
+                    z_segs.append(PathSegment("Z", ()))
+
+            if sh.role == "GRID":
+                sw_pt = eff_grid_sw
+                dash_m = "0.9,0.7" if sh.dasharray else None
+            elif sh.role in ("BRACKET", "ERROR_STEM"):
+                sw_pt = eff_axis_sw
+                dash_m = None
+            else:
+                sw_pt = eff_data_sw if sh.stroke not in ("none", "transparent") else 0.0
+                dash_m = "1.0,0.8" if sh.dasharray else None
+
+            scene.paths.append(
+                CompiledPath(
+                    segments_mm=z_segs,
+                    fill=sh.fill,
+                    fill_opacity=sh.fill_opacity,
+                    stroke=sh.stroke,
+                    stroke_opacity=sh.stroke_opacity,
+                    stroke_pt=sw_pt,
+                    dasharray_mm=dash_m,
+                    clip_id=z_clip_id,
+                    panel_id=target_panel_id,
+                    role=data_role,
+                )
+            )
+
+        n_mk = len(src_p.markers)
+        dense_factor = 0.78 if n_mk > 250 else (0.90 if n_mk > 80 else 1.06)
+        base_r_mm = pt_to_mm(eff_marker_pt * dense_factor * (0.92 if is_inset else 1.15))
+        for mk in src_p.markers:
+            ux_m = u_x_src(mk.cx)
+            uy_m = (mk.cy - ry0) / rh_sp
+            if not (eff_xn - 0.12 * eff_wn <= ux_m <= eff_xn + 1.12 * eff_wn and eff_yn - 0.12 * eff_hn <= uy_m <= eff_yn + 1.12 * eff_hn):
+                continue
+            cx_m, cy_m = _phi_z(mk.cx, mk.cy)
+            if mk.is_proportional_bubble:
+                pitch = min(draw_w / max(1.0, src_p.n_x_categories * eff_wn), draw_h / max(1.0, src_p.n_y_categories * eff_hn))
+                r_m = min(0.42 * pitch, pt_to_mm(eff_marker_pt * 1.45 * mk.rel_size))
+            else:
+                r_m = base_r_mm
+            scene.circles.append(
+                CompiledCircle(
+                    cx_mm=cx_m,
+                    cy_mm=cy_m,
+                    r_mm=r_m,
+                    fill=mk.fill,
+                    fill_opacity=mk.fill_opacity,
+                    stroke=mk.stroke,
+                    stroke_pt=0.32 * target_ov.stroke_scale if mk.stroke not in ("none", "transparent") else 0.0,
+                    clip_id=z_clip_id,
+                    panel_id=target_panel_id,
+                    role=mk_role,
+                    norm_xy=None,
+                )
+            )
+
+        for an in src_p.texts:
+            if an.role != "ANNOTATION":
+                continue
+            ref_xr, ref_yr = an.target_raw if an.target_raw is not None else (an.x_raw, an.y_raw)
+            ux_a = u_x_src(ref_xr)
+            uy_a = (ref_yr - ry0) / rh_sp
+            if eff_xn <= ux_a <= eff_xn + eff_wn and eff_yn <= uy_a <= eff_yn + eff_hn:
+                ax_m, ay_m = _phi_z(an.x_raw, an.y_raw)
+                z_pt = max(5.0, eff_ann_pt * (0.88 if is_inset else 1.0))
+                wa, ha = measure_text_mm(an.text, z_pt, bold=an.bold, font_family=p_font)
+                ax_m = max(tx0 + 0.5 * wa + 0.7, min(tx1 - 0.5 * wa - 0.7, ax_m))
+                ay_m = max(ty0 + ha + 0.8, min(ty1 - 0.7, ay_m))
+                scene.texts.append(
+                    _make_text(
+                        an.text,
+                        ax_m,
+                        ay_m,
+                        z_pt,
+                        p_font,
+                        bold=an.bold,
+                        fill=an.fill,
+                        anchor="middle",
+                        role=txt_role,
+                        panel_id=target_panel_id,
+                    )
+                )
+
+    border_col = _normalize_hex_color(roi_style.color, "#F59E0B")
+    border_sw = _roi_stroke_pt(roi_style, max(0.65, eff_axis_sw))
+    scene.paths.append(
+        CompiledPath(
+            segments_mm=shape_segs,
+            fill="none",
+            stroke=border_col,
+            stroke_pt=border_sw,
+            dasharray_mm=None,
+            panel_id=target_panel_id,
+            role=frame_role,
+        )
+    )
+
+
+def _emit_panel_rois_and_inset(
+    scene: CompositePageScene,
+    sl: CompiledPanelSlot,
+    p: PanelIR,
+    roi_entries: list[tuple[str, ROIOverlaySpec]],
+    cfg: TypographyConfig,
+    ov: PanelStyleOverride,
+    eff_ann_pt: float,
+    eff_data_sw: float,
+) -> dict[str, tuple[float, float, float, float]]:
+    """Draw all active vector ROI callout shapes (rect/rounded/circle/ellipse) on mother panel `p`,
+    plus optional Picture-in-Picture zoomed inset (`inset_enabled`), and return `{owner_id: box_mm}`.
+    """
+    frame_mm = sl.spine_box_mm
+    fx0, fy0, fx1, fy1 = frame_mm
+    fw = max(2.0, fx1 - fx0)
+    fh = max(2.0, fy1 - fy0)
+    resolved_boxes: dict[str, tuple[float, float, float, float]] = {}
+
+    for owner_id, r_spec in roi_entries:
+        if not r_spec.enabled or r_spec.w_norm <= 0.03 or r_spec.h_norm <= 0.03:
+            continue
+        box_mm, eff_crop = _resolve_roi_on_frame(frame_mm, r_spec)
+        bx0, by0, bx1, by1 = box_mm
+        resolved_boxes[owner_id] = box_mm
+        r_col = _normalize_hex_color(r_spec.color, "#F59E0B")
+        r_sw = _roi_stroke_pt(r_spec, max(0.65, eff_data_sw))
+        sl.roi_boxes.append(
+            CompiledROIBoxMeta(
+                owner_id=owner_id,
+                box_mm=box_mm,
+                x_norm=eff_crop[0] if r_spec.shape == "circle" else r_spec.x_norm,
+                y_norm=eff_crop[1] if r_spec.shape == "circle" else r_spec.y_norm,
+                w_norm=eff_crop[2] if r_spec.shape == "circle" else r_spec.w_norm,
+                h_norm=eff_crop[3] if r_spec.shape == "circle" else r_spec.h_norm,
+                shape=r_spec.shape,
+                line_style=r_spec.resolved_line_style(),
+                color=r_col,
+                stroke_pt=r_sw,
+                label=r_spec.label,
+                show_leaders=bool(r_spec.show_leaders),
+            )
+        )
+        scene.paths.append(
+            CompiledPath(
+                segments_mm=_roi_shape_segs_mm(bx0, by0, bx1, by1, r_spec.shape),
+                fill="none",
+                stroke=r_col,
+                stroke_pt=r_sw,
+                dasharray_mm=_roi_dash_mm(r_spec),
+                panel_id=p.panel_id,
+                role="ROI_OVERLAY",
+            )
+        )
+        if r_spec.label:
+            lw, lh = measure_text_mm(r_spec.label, eff_ann_pt, bold=True, font_family=cfg.font_family)
+            lbl_y = by0 - 0.8 if (by0 - fy0) > (lh + 1.6) else (by0 + lh + 0.9)
+            lbl_x = min(fx1 - lw - 0.8, max(fx0 + 0.8, bx0))
+            badge_bg = "#0F172A" if r_col.upper() not in ("#000000", "#111827", "#1E293B") else "#FFFFFF"
+            scene.paths.append(
+                CompiledPath(
+                    segments_mm=_rounded_rect_segs_mm(lbl_x - 0.6, lbl_y - lh - 0.35, lbl_x + lw + 0.6, lbl_y + 0.45, r_mm=0.65),
+                    fill=badge_bg,
+                    fill_opacity=0.84,
+                    stroke="none",
+                    panel_id=p.panel_id,
+                    role="ROI_BADGE",
+                )
+            )
+            scene.texts.append(
+                _make_text(
+                    r_spec.label,
+                    lbl_x,
+                    lbl_y,
+                    eff_ann_pt,
+                    cfg.font_family,
+                    bold=True,
+                    fill=r_col,
+                    anchor="start",
+                    role="ROI_LABEL",
+                    panel_id=p.panel_id,
+                )
+            )
+
+        if owner_id == p.panel_id and r_spec.inset_enabled:
+            scale_frac = max(0.22, min(0.55, float(r_spec.inset_scale or 0.36)))
+            iw = max(8.0, min(0.60 * fw, scale_frac * fw))
+            iasp = 1.0 if r_spec.shape == "circle" else max(0.45, min(2.4, (bx1 - bx0) / max(1e-6, by1 - by0)))
+            ih = iw / iasp
+            if ih > 0.60 * fh:
+                ih = 0.60 * fh
+                iw = ih * iasp
+            pad_in = 1.1
+            if r_spec.inset_pos == "tl":
+                px0, py0 = fx0 + pad_in, fy0 + pad_in
+            elif r_spec.inset_pos == "tr":
+                px0, py0 = fx1 - iw - pad_in, fy0 + pad_in
+            elif r_spec.inset_pos == "bl":
+                px0, py0 = fx0 + pad_in, fy1 - ih - pad_in
+            elif r_spec.inset_pos == "custom":
+                px0 = fx0 + max(0.0, min(1.0, float(r_spec.inset_x_norm))) * fw
+                py0 = fy0 + max(0.0, min(1.0, float(r_spec.inset_y_norm))) * fh
+            else:
+                px0, py0 = fx1 - iw - pad_in, fy1 - ih - pad_in
+            px0 = max(fx0 + 0.6, min(fx1 - iw - 0.6, px0))
+            py0 = max(fy0 + 0.6, min(fy1 - ih - 0.6, py0))
+            inset_box = (px0, py0, px0 + iw, py0 + ih)
+            sl.inset_box_mm = inset_box
+            if r_spec.show_leaders:
+                _emit_roi_leader_lines(scene, box_mm, inset_box, r_spec, panel_id=p.panel_id)
+            _emit_zoomed_region(
+                scene,
+                src_p=p,
+                crop_norm=eff_crop,
+                target_box_mm=inset_box,
+                roi_style=r_spec,
+                target_panel_id=p.panel_id,
+                clip_suffix="pip",
+                cfg=cfg,
+                src_ov=ov,
+                target_ov=ov,
+                is_inset=True,
+            )
+
+    return resolved_boxes
+
+
 def _resolve_spec(cfg: TypographyConfig) -> JournalSpec:
     base = JOURNAL_SPECS.get(cfg.journal_id, JOURNAL_SPECS["nature_double"])
     w = cfg.custom_width_mm if (cfg.custom_width_mm and cfg.custom_width_mm >= 45.0) else base.width_mm
@@ -359,6 +987,7 @@ def compile_modular_scene(
     roi_overrides: dict[str, ROIOverlaySpec] | None = None,
     panel_overrides: dict[str, PanelStyleOverride] | None = None,
     bento_rows: list[BentoRow] | None = None,
+    source_lookup: dict[str, PanelIR] | None = None,
 ) -> CompositePageScene:
     """Compile selected panels through the 5-Pass Scale-Invariant Semantic Vector Compiler v2."""
     spec = _resolve_spec(cfg)
@@ -367,25 +996,60 @@ def compile_modular_scene(
     roi_overrides = roi_overrides or {}
     panel_overrides = panel_overrides or {}
 
+    raw_lookup: dict[str, PanelIR] = dict(source_lookup or {})
+    for p in panels:
+        raw_lookup[p.panel_id] = p
+
     eff_panels: list[PanelIR] = []
     locked_map: dict[str, bool] = {}
     for p in panels:
-        is_lk = locked_overrides.get(p.panel_id, p.locked_special)
+        p_roi = roi_overrides.get(p.panel_id, p.default_roi)
+        is_derived = bool(p_roi.linked_source_id and p_roi.linked_source_id in raw_lookup)
+        is_lk = True if is_derived else locked_overrides.get(p.panel_id, p.locked_special)
         locked_map[p.panel_id] = is_lk
-        if is_lk != p.locked_special:
+
+        dyn_aspect = p.ideal_aspect
+        if is_derived and p_roi.linked_source_id:
+            src_ref = raw_lookup[p_roi.linked_source_id]
+            eff_r = p_roi if p_roi.own_crop else roi_overrides.get(src_ref.panel_id, src_ref.default_roi)
+            if eff_r.shape == "circle":
+                dyn_aspect = 1.0
+            elif eff_r.w_norm > 0.03 and eff_r.h_norm > 0.03:
+                base_asp = (
+                    src_ref.rasters[0].width_px / max(1.0, float(src_ref.rasters[0].height_px))
+                    if src_ref.rasters
+                    else src_ref.ideal_aspect
+                )
+                dyn_aspect = max(0.55, min(2.2, base_asp * (eff_r.w_norm / max(0.05, eff_r.h_norm))))
+
+        if is_lk != p.locked_special or abs(dyn_aspect - p.ideal_aspect) > 1e-3:
             eff_panels.append(
                 replace(
                     p,
                     locked_special=is_lk,
-                    elasticity=("L0_LOCKED_SPECIAL" if (p.rasters and len(p.shapes) <= 4) else "T2_COUPLED_LOCKED")
-                    if is_lk
-                    else "L2_ELASTIC_CARTESIAN",
+                    ideal_aspect=dyn_aspect,
+                    elasticity=(
+                        "L0_LOCKED_SPECIAL"
+                        if (is_derived or (p.rasters and len(p.shapes) <= 4))
+                        else ("T2_COUPLED_LOCKED" if is_lk else "L2_ELASTIC_CARTESIAN")
+                    ),
                 )
             )
         else:
             eff_panels.append(p)
 
     panel_by_id = {p.panel_id: p for p in eff_panels}
+    all_panel_lookup: dict[str, PanelIR] = {**raw_lookup, **panel_by_id}
+
+    # Index all active ROI boxes per mother source panel (primary ROI + any multi-ROI `own_crop` children!)
+    rois_by_source: dict[str, list[tuple[str, ROIOverlaySpec]]] = {}
+    for p in eff_panels:
+        r_c = roi_overrides.get(p.panel_id, p.default_roi)
+        if not r_c.linked_source_id:
+            if r_c.enabled:
+                rois_by_source.setdefault(p.panel_id, []).append((p.panel_id, r_c))
+        elif r_c.own_crop and r_c.enabled:
+            rois_by_source.setdefault(r_c.linked_source_id, []).append((p.panel_id, r_c))
 
     # Pass 1: Shared Legend Detection (excluding panels where user manually positioned legend)
     hoisted_pids: set[str] = set()
@@ -471,6 +1135,77 @@ def compile_modular_scene(
                 cx_lg += iw
 
     margin_by_id = {p.panel_id: m for p, m in zip(eff_panels, margins)}
+    slot_by_id = {sl.panel_id: sl for sl in slots}
+
+    # Pre-compute physical spine frames of non-derived panels so derived zoom slots resolve exact crops regardless of grid order!
+    pre_frames_mm: dict[str, tuple[float, float, float, float]] = {}
+    for sl_pre in slots:
+        p_pre = panel_by_id[sl_pre.panel_id]
+        r_pre = roi_overrides.get(p_pre.panel_id, p_pre.default_roi)
+        if r_pre.linked_source_id:
+            continue
+        psx0, psy0, psx1, psy1 = sl_pre.spine_box_mm
+        if p_pre.locked_special:
+            paw, pah = max(8.0, psx1 - psx0), max(8.0, psy1 - psy0)
+            p_asp = (
+                p_pre.rasters[0].width_px / max(1e-6, float(p_pre.rasters[0].height_px))
+                if (p_pre.rasters and len(p_pre.shapes) <= 4)
+                else p_pre.viewbox[2] / max(1e-6, p_pre.viewbox[3])
+            )
+            if paw / pah > p_asp:
+                pdh = pah
+                pdw = pdh * p_asp
+            else:
+                pdw = paw
+                pdh = pdw / p_asp
+            pix0 = 0.5 * (psx0 + psx1) - 0.5 * pdw
+            piy0 = psy0 + 0.5 * (pah - pdh)
+            pre_frames_mm[p_pre.panel_id] = (pix0, piy0, pix0 + pdw, piy0 + pdh)
+        else:
+            ov_pre = panel_overrides.get(p_pre.panel_id, PanelStyleOverride())
+            rx0_p, _, rx1_p, _ = p_pre.spine_box
+            cats_p = sorted(tk.pos_raw for tk in p_pre.ticks if tk.axis == "x")
+            if len(cats_p) < 2:
+                cats_p = sorted(t.x_raw for t in p_pre.texts if t.role == "X_TICK")
+            _, cat_lr = _build_categorical_x_map(rx0_p, rx1_p, cats_p, ov_pre.category_spacing if p_pre.is_categorical_x else 1.0)
+            ew_ratio = max(0.40, min(1.0, ov_pre.frame_width_ratio * (cat_lr if cat_lr < 1.0 else 1.0)))
+            if ew_ratio < 0.999 and p_pre.elasticity != "L1_ISOTROPIC_VECTOR":
+                ntw = max(12.0, (psx1 - psx0) * ew_ratio)
+                mcx = 0.5 * (psx0 + psx1)
+                pre_frames_mm[p_pre.panel_id] = (mcx - 0.5 * ntw, psy0, mcx + 0.5 * ntw, psy1)
+            else:
+                pre_frames_mm[p_pre.panel_id] = (psx0, psy0, psx1, psy1)
+
+    compiled_roi_boxes_by_owner: dict[str, tuple[float, float, float, float]] = {}
+    pending_leaders: list[tuple[str, str, tuple[float, float, float, float], ROIOverlaySpec]] = []
+
+    def _emit_locked_panel_title(sl_cur: CompiledPanelSlot, p_cur: PanelIR, ov_cur: PanelStyleOverride, ix0_t: float, iy0_t: float, draw_w_t: float, eff_t_pt: float, font_t: str) -> None:
+        ox0_t, _, ox1_t, _ = sl_cur.outer_box_mm
+        max_tw_s = max(12.0, (ox1_t - ox0_t) - 6.0)
+        t_s = p_cur.title_hint
+        if not t_s:
+            return
+        tw_s, _ = measure_text_mm(t_s, eff_t_pt, bold=True, font_family=font_t)
+        while tw_s > max_tw_s and " " in t_s:
+            t_s = t_s.rsplit(" ", 1)[0]
+            tw_s, _ = measure_text_mm(t_s, eff_t_pt, bold=True, font_family=font_t)
+        lo_s = ox0_t + (4.6 if sl_cur.tag_label else 1.0) + 0.5 * tw_s
+        hi_s = max(lo_s, ox1_t - 0.8 - 0.5 * tw_s)
+        scene.texts.append(
+            _make_styled_text(
+                ov_cur,
+                "TITLE",
+                t_s,
+                max(lo_s, min(hi_s, ix0_t + 0.5 * draw_w_t)),
+                iy0_t - 1.15,
+                eff_t_pt,
+                font_t,
+                bold=True,
+                anchor="middle",
+                role="PANEL_TITLE",
+                panel_id=p_cur.panel_id,
+            )
+        )
 
     # Compile each panel slot (Note: `slots` order follows 2D Bento Grid blocks)
     for sl in slots:
@@ -515,7 +1250,81 @@ def compile_modular_scene(
                 )
             )
 
-        # ---------------- Pass 2: Locked Special Panels ----------------
+        # ---------------- Pass 2A: Universal Linked Zoom Panels (Raster, Diagram, OR Vector Chart!) ----------------
+        if roi_cfg.linked_source_id and roi_cfg.linked_source_id in all_panel_lookup:
+            avail_w = max(8.0, sx1 - sx0)
+            avail_h = max(8.0, sy1 - sy0)
+            src_p = all_panel_lookup[roi_cfg.linked_source_id]
+            src_primary_roi = roi_overrides.get(src_p.panel_id, src_p.default_roi)
+            eff_roi = roi_cfg if roi_cfg.own_crop else src_primary_roi
+            owner_key = p.panel_id if roi_cfg.own_crop else src_p.panel_id
+            fallback_src_frame = (0.0, 0.0, 60.0 * max(0.5, src_p.ideal_aspect), 60.0)
+            src_frame = pre_frames_mm.get(src_p.panel_id, fallback_src_frame)
+            src_box_mm, eff_crop = _resolve_roi_on_frame(src_frame, eff_roi)
+
+            precrop: tuple[bytes, int, int] | None = None
+            if src_p.rasters and src_p.locked_special and len(src_p.shapes) <= 4:
+                precrop = _crop_png_bytes(
+                    src_p.rasters[0].png_bytes,
+                    eff_crop[0],
+                    eff_crop[1],
+                    eff_crop[2],
+                    eff_crop[3],
+                    force_square=(eff_roi.shape == "circle"),
+                )
+                target_aspect = precrop[1] / max(1e-6, float(precrop[2]))
+            elif src_p.locked_special:
+                _, _, svw, svh = src_p.viewbox
+                target_aspect = 1.0 if eff_roi.shape == "circle" else ((eff_crop[2] * svw) / max(1e-6, eff_crop[3] * svh))
+            else:
+                target_aspect = (
+                    1.0
+                    if eff_roi.shape == "circle"
+                    else max(0.40, min(2.8, (src_box_mm[2] - src_box_mm[0]) / max(1e-6, src_box_mm[3] - src_box_mm[1])))
+                )
+
+            if avail_w / avail_h > target_aspect:
+                draw_h = avail_h
+                draw_w = draw_h * target_aspect
+            else:
+                draw_w = avail_w
+                draw_h = draw_w / target_aspect
+            ix0 = 0.5 * (sx0 + sx1) - 0.5 * draw_w
+            iy0 = sy0 + 0.5 * (avail_h - draw_h)
+            dst_box_mm = (ix0, iy0, ix0 + draw_w, iy0 + draw_h)
+            sl.spine_box_mm = dst_box_mm
+            sl.scale_x = draw_w / max(1e-6, p.raw_width_pt)
+            sl.scale_y = sl.scale_x
+
+            src_ov = panel_overrides.get(src_p.panel_id, PanelStyleOverride())
+            _emit_zoomed_region(
+                scene,
+                src_p=src_p,
+                crop_norm=eff_crop,
+                target_box_mm=dst_box_mm,
+                roi_style=eff_roi,
+                target_panel_id=p.panel_id,
+                clip_suffix="main",
+                cfg=cfg,
+                src_ov=src_ov,
+                target_ov=ov,
+                is_inset=False,
+                precrop_raster=precrop,
+            )
+
+            base_fov = src_primary_roi.fov_width_um or roi_cfg.fov_width_um
+            eff_fov_um = (base_fov * eff_crop[2]) if base_fov else roi_cfg.fov_width_um
+            sb_um = roi_cfg.scale_bar_um or (src_primary_roi.scale_bar_um * eff_crop[2] if src_primary_roi.scale_bar_um else None)
+            _emit_scale_bar(scene, p.panel_id, ix0, iy0, draw_w, draw_h, sb_um, eff_fov_um, eff_ann_pt, cfg.font_family)
+
+            if eff_roi.show_leaders and src_p.panel_id in slot_by_id:
+                pending_leaders.append((owner_key, src_p.panel_id, dst_box_mm, eff_roi))
+
+            if eff_show_title:
+                _emit_locked_panel_title(sl, p, ov, ix0, iy0, draw_w, eff_title_pt, p_font)
+            continue
+
+        # ---------------- Pass 2B: Non-Derived Locked Special Panels ----------------
         if p.locked_special:
             avail_w = max(8.0, sx1 - sx0)
             avail_h = max(8.0, sy1 - sy0)
@@ -525,22 +1334,6 @@ def compile_modular_scene(
                 png_bytes = r0.png_bytes
                 w_px, h_px = r0.width_px, r0.height_px
                 sha = r0.sha256
-                eff_fov_um = roi_cfg.fov_width_um
-
-                if roi_cfg.linked_source_id and roi_cfg.linked_source_id in panel_by_id:
-                    src_p = panel_by_id[roi_cfg.linked_source_id]
-                    src_roi = roi_overrides.get(src_p.panel_id, src_p.default_roi)
-                    if src_p.rasters and src_roi.enabled and src_roi.w_norm > 0.03 and src_roi.h_norm > 0.03:
-                        png_bytes, w_px, h_px = _crop_png_bytes(
-                            src_p.rasters[0].png_bytes,
-                            src_roi.x_norm,
-                            src_roi.y_norm,
-                            src_roi.w_norm,
-                            src_roi.h_norm,
-                        )
-                        sha = hashlib.sha256(png_bytes).hexdigest()
-                        if src_roi.fov_width_um:
-                            eff_fov_um = src_roi.fov_width_um * src_roi.w_norm
 
                 img_aspect = w_px / max(1e-6, float(h_px))
                 if avail_w / avail_h > img_aspect:
@@ -573,136 +1366,30 @@ def compile_modular_scene(
                         aspect_ratio_error=asp_err,
                     )
                 )
-                border_col = "#F59E0B" if roi_cfg.linked_source_id else "#1E293B"
                 scene.paths.append(
                     CompiledPath(
                         segments_mm=_rect_segs_mm(ix0, iy0, ix0 + draw_w, iy0 + draw_h),
                         fill="none",
-                        stroke=border_col,
+                        stroke="#1E293B",
                         stroke_pt=eff_axis_sw,
                         panel_id=p.panel_id,
                         role="LOCKED_FRAME",
                     )
                 )
-
-                if roi_cfg.enabled and not roi_cfg.linked_source_id and roi_cfg.w_norm > 0.03 and roi_cfg.h_norm > 0.03:
-                    rx = ix0 + max(0.0, min(0.95, roi_cfg.x_norm)) * draw_w
-                    ry = iy0 + max(0.0, min(0.95, roi_cfg.y_norm)) * draw_h
-                    rw = min(draw_w - (rx - ix0), roi_cfg.w_norm * draw_w)
-                    rh = min(draw_h - (ry - iy0), roi_cfg.h_norm * draw_h)
-                    scene.paths.append(
-                        CompiledPath(
-                            segments_mm=_rect_segs_mm(rx, ry, rx + rw, ry + rh),
-                            fill="none",
-                            stroke=roi_cfg.color,
-                            stroke_pt=max(0.65, eff_data_sw),
-                            dasharray_mm="1.1,0.75" if roi_cfg.dashed else None,
-                            panel_id=p.panel_id,
-                            role="ROI_OVERLAY",
-                        )
-                    )
-                    if roi_cfg.label:
-                        lw, lh = measure_text_mm(roi_cfg.label, eff_ann_pt, bold=True, font_family=cfg.font_family)
-                        lbl_y = ry - 0.8 if (ry - iy0) > (lh + 1.6) else (ry + lh + 0.9)
-                        lbl_x = min(ix0 + draw_w - lw - 0.8, max(ix0 + 0.8, rx))
-                        scene.paths.append(
-                            CompiledPath(
-                                segments_mm=_rect_segs_mm(lbl_x - 0.6, lbl_y - lh - 0.35, lbl_x + lw + 0.6, lbl_y + 0.45),
-                                fill="#0F172A",
-                                fill_opacity=0.80,
-                                stroke="none",
-                                panel_id=p.panel_id,
-                                role="ROI_BADGE",
-                            )
-                        )
-                        scene.texts.append(
-                            _make_text(
-                                roi_cfg.label,
-                                lbl_x,
-                                lbl_y,
-                                eff_ann_pt,
-                                cfg.font_family,
-                                bold=True,
-                                fill=roi_cfg.color,
-                                anchor="start",
-                                role="ROI_LABEL",
-                                panel_id=p.panel_id,
-                            )
-                        )
-
-                if roi_cfg.scale_bar_um and eff_fov_um and eff_fov_um > 0:
-                    target_um = roi_cfg.scale_bar_um
-                    bar_mm = (target_um / eff_fov_um) * draw_w
-                    while bar_mm > 0.36 * draw_w and target_um > 10.0:
-                        target_um *= 0.5
-                        bar_mm = (target_um / eff_fov_um) * draw_w
-                    sb_txt = f"{int(round(target_um))} µm" if target_um < 1000 else f"{target_um/1000.0:.1f} mm"
-                    tw_sb, th_sb = measure_text_mm(sb_txt, eff_ann_pt * 0.92, bold=True, font_family=cfg.font_family)
-                    content_w = max(bar_mm, tw_sb)
-                    pill_x1 = ix0 + draw_w - 1.2
-                    pill_x0 = max(ix0 + 1.0, pill_x1 - content_w - 2.0)
-                    sb_cx = 0.5 * (pill_x0 + pill_x1)
-                    bx0_sb = sb_cx - 0.5 * bar_mm
-                    bx1_sb = sb_cx + 0.5 * bar_mm
-                    by_sb = iy0 + draw_h - 1.7
-                    scene.paths.append(
-                        CompiledPath(
-                            segments_mm=_rect_segs_mm(pill_x0, by_sb - th_sb - 1.45, pill_x1, by_sb + 0.85),
-                            fill="#0F172A",
-                            fill_opacity=0.76,
-                            stroke="none",
-                            panel_id=p.panel_id,
-                            role="SCALEBAR_BG",
-                        )
-                    )
-                    scene.paths.append(
-                        CompiledPath(
-                            segments_mm=_line_segs_mm(bx0_sb, by_sb, bx1_sb, by_sb),
-                            stroke="#FFFFFF",
-                            stroke_pt=1.0,
-                            panel_id=p.panel_id,
-                            role="SCALEBAR",
-                        )
-                    )
-                    scene.texts.append(
-                        _make_text(
-                            sb_txt,
-                            sb_cx,
-                            by_sb - 0.65,
-                            max(5.0, eff_ann_pt * 0.92),
-                            cfg.font_family,
-                            bold=True,
-                            fill="#FFFFFF",
-                            anchor="middle",
-                            role="SCALEBAR_TEXT",
-                            panel_id=p.panel_id,
-                        )
-                    )
-
-                if eff_show_title and p.title_hint:
-                    max_tw_s = max(12.0, (ox1 - ox0) - 6.0)
-                    t_s = p.title_hint
-                    tw_s, _ = measure_text_mm(t_s, eff_title_pt, bold=True, font_family=p_font)
-                    while tw_s > max_tw_s and " " in t_s:
-                        t_s = t_s.rsplit(" ", 1)[0]
-                        tw_s, _ = measure_text_mm(t_s, eff_title_pt, bold=True, font_family=p_font)
-                    lo_s = ox0 + (4.6 if sl.tag_label else 1.0) + 0.5 * tw_s
-                    hi_s = max(lo_s, ox1 - 0.8 - 0.5 * tw_s)
-                    scene.texts.append(
-                        _make_styled_text(
-                            ov,
-                            "TITLE",
-                            t_s,
-                            max(lo_s, min(hi_s, ix0 + 0.5 * draw_w)),
-                            iy0 - 1.15,
-                            eff_title_pt,
-                            p_font,
-                            bold=True,
-                            anchor="middle",
-                            role="PANEL_TITLE",
-                            panel_id=p.panel_id,
-                        )
-                    )
+                _emit_scale_bar(scene, p.panel_id, ix0, iy0, draw_w, draw_h, roi_cfg.scale_bar_um, roi_cfg.fov_width_um, eff_ann_pt, cfg.font_family)
+                box_map = _emit_panel_rois_and_inset(
+                    scene,
+                    sl,
+                    p,
+                    rois_by_source.get(p.panel_id, []),
+                    cfg,
+                    ov,
+                    eff_ann_pt,
+                    eff_data_sw,
+                )
+                compiled_roi_boxes_by_owner.update(box_map)
+                if eff_show_title:
+                    _emit_locked_panel_title(sl, p, ov, ix0, iy0, draw_w, eff_title_pt, p_font)
             else:
                 vx, vy, vw, vh = p.viewbox
                 diag_aspect = vw / max(1e-6, vh)
@@ -730,30 +1417,19 @@ def compile_modular_scene(
                         panel_id=p.panel_id,
                     )
                 )
-                if eff_show_title and p.title_hint:
-                    max_tw_s = max(12.0, (ox1 - ox0) - 6.0)
-                    t_s = p.title_hint
-                    tw_s, _ = measure_text_mm(t_s, eff_title_pt, bold=True, font_family=p_font)
-                    while tw_s > max_tw_s and " " in t_s:
-                        t_s = t_s.rsplit(" ", 1)[0]
-                        tw_s, _ = measure_text_mm(t_s, eff_title_pt, bold=True, font_family=p_font)
-                    lo_s = ox0 + (4.6 if sl.tag_label else 1.0) + 0.5 * tw_s
-                    hi_s = max(lo_s, ox1 - 0.8 - 0.5 * tw_s)
-                    scene.texts.append(
-                        _make_styled_text(
-                            ov,
-                            "TITLE",
-                            t_s,
-                            max(lo_s, min(hi_s, ix0 + 0.5 * draw_w)),
-                            iy0 - 1.15,
-                            eff_title_pt,
-                            p_font,
-                            bold=True,
-                            anchor="middle",
-                            role="PANEL_TITLE",
-                            panel_id=p.panel_id,
-                        )
-                    )
+                box_map = _emit_panel_rois_and_inset(
+                    scene,
+                    sl,
+                    p,
+                    rois_by_source.get(p.panel_id, []),
+                    cfg,
+                    ov,
+                    eff_ann_pt,
+                    eff_data_sw,
+                )
+                compiled_roi_boxes_by_owner.update(box_map)
+                if eff_show_title:
+                    _emit_locked_panel_title(sl, p, ov, ix0, iy0, draw_w, eff_title_pt, p_font)
             continue
 
         # ---------------- Pass 3: Decoupled Reprojection + Lossless Categorical Gap Compression ----------------
@@ -1583,6 +2259,29 @@ def compile_modular_scene(
                             role="LEADER",
                         )
                     )
+
+        # Pass 4B: Vector-Chart ROI Overlays & Picture-in-Picture Zoomed Insets (`P05`..`P11` & uploaded charts!)
+        vec_rois = rois_by_source.get(p.panel_id, [])
+        if vec_rois:
+            box_map_v = _emit_panel_rois_and_inset(
+                scene,
+                sl,
+                p,
+                vec_rois,
+                cfg,
+                ov,
+                eff_ann_pt,
+                eff_data_sw,
+            )
+            compiled_roi_boxes_by_owner.update(box_map_v)
+
+    # Pass 5: Cross-Panel ROI Callout Leader Lines (rendered in top-most SHARED layer)
+    for owner_key, src_pid, dst_box_mm, eff_roi in pending_leaders:
+        src_box_resolved = compiled_roi_boxes_by_owner.get(owner_key)
+        if src_box_resolved is None and src_pid in pre_frames_mm:
+            src_box_resolved, _ = _resolve_roi_on_frame(pre_frames_mm[src_pid], eff_roi)
+        if src_box_resolved is not None:
+            _emit_roi_leader_lines(scene, src_box_resolved, dst_box_mm, eff_roi, panel_id="SHARED")
 
     return scene
 

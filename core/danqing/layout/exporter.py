@@ -49,6 +49,8 @@ def render_scene_svg(scene: CompositePageScene, show_guides: bool = False) -> st
         lines.append(
             f'    <clipPath id="{cid}"><rect x="{cx0 * K:.2f}" y="{cy0 * K:.2f}" width="{(cx1 - cx0) * K:.2f}" height="{(cy1 - cy0) * K:.2f}"/></clipPath>'
         )
+    for cid, segs in scene.clip_paths_mm.items():
+        lines.append(f'    <clipPath id="{cid}"><path d="{_segs_to_svg_d(segs, scale=K)}"/></clipPath>')
     for gid, stops in scene.gradients:
         if gid.startswith("grad-h-"):
             lines.append(f'    <linearGradient id="{gid}" x1="0%" y1="0%" x2="100%" y2="0%">')
@@ -89,12 +91,17 @@ def render_scene_svg(scene: CompositePageScene, show_guides: bool = False) -> st
 
     slot_by_id = {sl.panel_id: sl for sl in scene.slots}
     panel_ids = ["SHARED"] + [sl.panel_id for sl in scene.slots]
+    deferred_shared_leaders: list = []
+
     for pid in panel_ids:
         p_rasters = [r for r in scene.rasters if r.panel_id == pid]
         p_lsvgs = [ls for ls in scene.locked_svgs if ls.panel_id == pid]
         p_paths = [pt_item for pt_item in scene.paths if (pt_item.panel_id or "SHARED") == pid]
         p_circs = [c for c in scene.circles if (c.panel_id or "SHARED") == pid]
         p_txts = [t for t in scene.texts if (t.panel_id or "SHARED") == pid]
+        if pid == "SHARED":
+            deferred_shared_leaders.extend(cp for cp in p_paths if cp.role == "ROI_LEADER")
+            p_paths = [cp for cp in p_paths if cp.role != "ROI_LEADER"]
         if not (p_rasters or p_lsvgs or p_paths or p_circs or p_txts):
             continue
 
@@ -108,21 +115,26 @@ def render_scene_svg(scene: CompositePageScene, show_guides: bool = False) -> st
         else:
             p_attr = ""
         lines.append(f'  <g id="layer-{pid}"{p_attr}>')
-        for r in p_rasters:
-            b64 = base64.b64encode(r.png_bytes).decode("ascii")
-            lines.append(
-                f'    <image x="{r.x_mm * K:.2f}" y="{r.y_mm * K:.2f}" width="{r.w_mm * K:.2f}" height="{r.h_mm * K:.2f}" '
-                f'preserveAspectRatio="none" href="data:image/png;base64,{b64}"/>'
+
+        def _emit_raster(r_item) -> str:
+            b64 = base64.b64encode(r_item.png_bytes).decode("ascii")
+            clip_attr = f' clip-path="url(#{r_item.clip_id})"' if getattr(r_item, "clip_id", None) else ""
+            return (
+                f'    <image x="{r_item.x_mm * K:.2f}" y="{r_item.y_mm * K:.2f}" width="{r_item.w_mm * K:.2f}" height="{r_item.h_mm * K:.2f}" '
+                f'preserveAspectRatio="none"{clip_attr} href="data:image/png;base64,{b64}"/>'
             )
-        for ls in p_lsvgs:
-            vx, vy, _, _ = ls.raw_vb
-            inner_ns = ls.svg_inner_xml.replace('id="', f'id="lk-{pid}-').replace("url(#", f"url(#lk-{pid}-")
-            sc_px = ls.scale_isotropic * K
-            tx_l = ls.x_mm * K - vx * sc_px
-            ty_l = ls.y_mm * K - vy * sc_px
-            lines.append(
-                f'    <g transform="translate({tx_l:.3f},{ty_l:.3f}) scale({sc_px:.5f})">{inner_ns}</g>'
-            )
+
+        def _emit_lsvg(ls_item, ns_suffix: str = "") -> str:
+            vx, vy, _, _ = ls_item.raw_vb
+            inner_ns = ls_item.svg_inner_xml.replace('id="', f'id="lk-{pid}{ns_suffix}-').replace("url(#", f"url(#lk-{pid}{ns_suffix}-")
+            sc_px = ls_item.scale_isotropic * K
+            tx_l = ls_item.x_mm * K - vx * sc_px
+            ty_l = ls_item.y_mm * K - vy * sc_px
+            g_core = f'<g transform="translate({tx_l:.3f},{ty_l:.3f}) scale({sc_px:.5f})">{inner_ns}</g>'
+            if getattr(ls_item, "clip_id", None):
+                return f'    <g clip-path="url(#{ls_item.clip_id})">{g_core}</g>'
+            return f"    {g_core}"
+
         def _emit_path(cp_item) -> str:
             d = _segs_to_svg_d(cp_item.segments_mm, scale=K)
             sw_px = pt_to_mm(cp_item.stroke_pt) * K
@@ -167,22 +179,61 @@ def render_scene_svg(scene: CompositePageScene, show_guides: bool = False) -> st
 
         leg_roles = {"LEGEND_BG", "LEGEND_SWATCH", "COLORBAR"}
         leg_txt_roles = {"LEGEND", "INSET_LEGEND"}
-        main_paths = [cp for cp in p_paths if cp.role not in leg_roles]
+        inset_roles = {"INSET_BG", "INSET_DATA", "INSET_FRAME"}
+
+        base_rasters = [r for r in p_rasters if not getattr(r, "is_overlay", False)]
+        inset_rasters = [r for r in p_rasters if getattr(r, "is_overlay", False)]
+        base_lsvgs = [ls for ls in p_lsvgs if not getattr(ls, "is_overlay", False)]
+        inset_lsvgs = [ls for ls in p_lsvgs if getattr(ls, "is_overlay", False)]
+
+        zoom_bg_paths = [cp for cp in p_paths if cp.role == "ZOOM_BG"]
+        main_paths = [cp for cp in p_paths if cp.role not in (leg_roles | inset_roles | {"ZOOM_BG"})]
+        inset_bg_paths = [cp for cp in p_paths if cp.role == "INSET_BG"]
+        inset_data_paths = [cp for cp in p_paths if cp.role == "INSET_DATA"]
+        inset_frame_paths = [cp for cp in p_paths if cp.role == "INSET_FRAME"]
         leg_paths = sorted(
             [cp for cp in p_paths if cp.role in leg_roles],
             key=lambda cp: 0 if cp.role == "LEGEND_BG" else 1,
         )
-        main_circs = [cc for cc in p_circs if getattr(cc, "role", "MARKER") != "LEGEND_SWATCH"]
+
+        main_circs = [cc for cc in p_circs if getattr(cc, "role", "MARKER") not in ("LEGEND_SWATCH", "INSET_MARKER")]
+        inset_circs = [cc for cc in p_circs if getattr(cc, "role", "MARKER") == "INSET_MARKER"]
         leg_circs = [cc for cc in p_circs if getattr(cc, "role", "MARKER") == "LEGEND_SWATCH"]
-        main_txts = [ct for ct in p_txts if ct.role not in leg_txt_roles]
+
+        main_txts = [ct for ct in p_txts if ct.role not in (leg_txt_roles | {"INSET_TEXT"})]
+        inset_txts = [ct for ct in p_txts if ct.role == "INSET_TEXT"]
         leg_txts = [ct for ct in p_txts if ct.role in leg_txt_roles]
 
+        for cp in zoom_bg_paths:
+            lines.append(_emit_path(cp))
+        for r in base_rasters:
+            lines.append(_emit_raster(r))
+        for idx_ls, ls in enumerate(base_lsvgs):
+            lines.append(_emit_lsvg(ls, f"-b{idx_ls}"))
         for cp in main_paths:
             lines.append(_emit_path(cp))
         for cc in main_circs:
             lines.append(_emit_circle(cc))
         for ct in main_txts:
             lines.append(_emit_text(ct))
+
+        if inset_bg_paths or inset_rasters or inset_lsvgs or inset_data_paths or inset_circs or inset_txts or inset_frame_paths:
+            lines.append(f'    <g id="inset-layer-{pid}" data-inset-panel="{pid}">')
+            for cp in inset_bg_paths:
+                lines.append("  " + _emit_path(cp))
+            for r in inset_rasters:
+                lines.append("  " + _emit_raster(r))
+            for idx_ls, ls in enumerate(inset_lsvgs):
+                lines.append("  " + _emit_lsvg(ls, f"-pip{idx_ls}"))
+            for cp in inset_data_paths:
+                lines.append("  " + _emit_path(cp))
+            for cc in inset_circs:
+                lines.append("  " + _emit_circle(cc))
+            for ct in inset_txts:
+                lines.append("  " + _emit_text(ct))
+            for cp in inset_frame_paths:
+                lines.append("  " + _emit_path(cp))
+            lines.append("    </g>")
 
         if leg_paths or leg_circs or leg_txts:
             lines.append(f'    <g id="legend-layer-{pid}" data-legend-panel="{pid}">')
@@ -193,6 +244,20 @@ def render_scene_svg(scene: CompositePageScene, show_guides: bool = False) -> st
             for ct in leg_txts:
                 lines.append("  " + _emit_text(ct))
             lines.append("    </g>")
+        lines.append("  </g>")
+
+    if deferred_shared_leaders:
+        lines.append('  <g id="callout-leaders-layer">')
+        for cp in deferred_shared_leaders:
+            d = _segs_to_svg_d(cp.segments_mm, scale=K)
+            sw_px = pt_to_mm(cp.stroke_pt) * K
+            d_px = ",".join(f"{float(v) * K:.2f}" for v in cp.dasharray_mm.split(",")) if cp.dasharray_mm else ""
+            dash_attr = f' stroke-dasharray="{d_px}"' if d_px else ""
+            sop_attr = f' stroke-opacity="{cp.stroke_opacity:.3f}"' if cp.stroke_opacity < 0.999 else ""
+            lines.append(
+                f'    <path d="{d}" fill="none" stroke="{cp.stroke}"{sop_attr} '
+                f'stroke-width="{sw_px:.3f}"{dash_attr}/>'
+            )
         lines.append("  </g>")
 
     lines.append("</svg>")
@@ -283,8 +348,37 @@ def render_scene_pdf(scene: CompositePageScene) -> bytes:
         return alpha_cache[key]
 
     cmds: list[str] = [f"1 1 1 rg 0 0 {W_pt:.2f} {H_pt:.2f} re f"]
+    grad_dict = dict(scene.gradients)
+    kappa = 0.55228475
+    gs_solid = _gs_name(1.0, 1.0)
 
-    # 1. Lossless Raster Evidence XObjects (Gate L0 bit-identical RGB stream)
+    def _pdf_segs_str(segs: list[PathSegment]) -> str:
+        ops: list[str] = []
+        for s in segs:
+            if s.op == "M":
+                ops.append(f"{px(s.pts[0]):.3f} {py(s.pts[1]):.3f} m")
+            elif s.op == "L":
+                ops.append(f"{px(s.pts[0]):.3f} {py(s.pts[1]):.3f} l")
+            elif s.op == "C":
+                ops.append(
+                    f"{px(s.pts[0]):.3f} {py(s.pts[1]):.3f} {px(s.pts[2]):.3f} {py(s.pts[3]):.3f} "
+                    f"{px(s.pts[4]):.3f} {py(s.pts[5]):.3f} c"
+                )
+            elif s.op == "Z":
+                ops.append("h")
+        return " ".join(ops)
+
+    def _pdf_clip_op(clip_id: str | None) -> str:
+        if not clip_id:
+            return ""
+        if clip_id in scene.clips_mm:
+            cx0, cy0, cx1, cy1 = scene.clips_mm[clip_id]
+            return f"{px(cx0):.3f} {py(cy1):.3f} {(cx1 - cx0) * MM_TO_PT:.3f} {(cy1 - cy0) * MM_TO_PT:.3f} re W n"
+        if clip_id in scene.clip_paths_mm:
+            return f"{_pdf_segs_str(scene.clip_paths_mm[clip_id])} W n"
+        return ""
+
+    raster_draw_cmds: list[tuple[bool, str]] = []
     for idx, r in enumerate(scene.rasters):
         with Image.open(io.BytesIO(r.png_bytes)) as im:
             arr = np.asarray(im.convert("RGB"), dtype=np.uint8)
@@ -301,9 +395,11 @@ def render_scene_pdf(scene: CompositePageScene) -> bytes:
         h_p = r.h_mm * MM_TO_PT
         x_p = px(r.x_mm)
         y_p = py(r.y_mm + r.h_mm)
-        cmds.append(f"q {w_p:.3f} 0 0 {h_p:.3f} {x_p:.3f} {y_p:.3f} cm /{im_key} Do Q")
+        clip_s = _pdf_clip_op(getattr(r, "clip_id", None))
+        clip_part = f"{clip_s} " if clip_s else ""
+        raster_draw_cmds.append((bool(getattr(r, "is_overlay", False)), f"q {clip_part}{w_p:.3f} 0 0 {h_p:.3f} {x_p:.3f} {y_p:.3f} cm /{im_key} Do Q"))
 
-    # 2. Locked Special Schematics (rendered as high-resolution 600 DPI lossless XObject if present)
+    lsvg_draw_cmds: list[tuple[bool, str]] = []
     for idx, ls in enumerate(scene.locked_svgs):
         vx, vy, vw, vh = ls.raw_vb
         sub_svg = (
@@ -325,13 +421,13 @@ def render_scene_pdf(scene: CompositePageScene) -> bytes:
         xobjects[f"/{im_key}"] = st
         w_p = ls.w_mm * MM_TO_PT
         h_p = ls.h_mm * MM_TO_PT
-        cmds.append(f"q {w_p:.3f} 0 0 {h_p:.3f} {px(ls.x_mm):.3f} {py(ls.y_mm + ls.h_mm):.3f} cm /{im_key} Do Q")
+        clip_s = _pdf_clip_op(getattr(ls, "clip_id", None))
+        clip_part = f"{clip_s} " if clip_s else ""
+        lsvg_draw_cmds.append(
+            (bool(getattr(ls, "is_overlay", False)), f"q {clip_part}{w_p:.3f} 0 0 {h_p:.3f} {px(ls.x_mm):.3f} {py(ls.y_mm + ls.h_mm):.3f} cm /{im_key} Do Q")
+        )
 
-    # Gradient map lookup for Colorbar rects
-    grad_dict = dict(scene.gradients)
-
-    # 3. Vector Paths (exact `pt` strokes, clips, dashes)
-    for cp in scene.paths:
+    def _emit_pdf_path(cp) -> None:
         if cp.fill.startswith("url(#"):
             gid = cp.fill[5:-1]
             stops = grad_dict.get(gid, [(0.0, "#2E6F95"), (0.5, "#F4EFE6"), (1.0, "#C6593F")])
@@ -365,17 +461,17 @@ def render_scene_pdf(scene: CompositePageScene) -> bytes:
                             f"{px(gx0):.3f} {py(sy_bot + sh_m):.3f} {(gx1 - gx0) * MM_TO_PT:.3f} {sh_m * MM_TO_PT:.3f} re f"
                         )
             if cp.stroke in ("none", "transparent"):
-                continue
+                return
 
         f_rgb = _hex_to_rgb01(cp.fill)
         s_rgb = _hex_to_rgb01(cp.stroke) if cp.stroke_pt > 0 else None
         if f_rgb is None and s_rgb is None:
-            continue
+            return
 
         cmds.append("q")
-        if cp.clip_id and cp.clip_id in scene.clips_mm:
-            cx0, cy0, cx1, cy1 = scene.clips_mm[cp.clip_id]
-            cmds.append(f"{px(cx0):.3f} {py(cy1):.3f} {(cx1 - cx0) * MM_TO_PT:.3f} {(cy1 - cy0) * MM_TO_PT:.3f} re W n")
+        clip_s = _pdf_clip_op(cp.clip_id)
+        if clip_s:
+            cmds.append(clip_s)
         gs = _gs_name(cp.fill_opacity, cp.stroke_opacity)
         cmds.append(f"/{gs} gs")
         if f_rgb is not None:
@@ -387,35 +483,18 @@ def render_scene_pdf(scene: CompositePageScene) -> bytes:
                 cmds.append(f"[{' '.join(f'{v:.2f}' for v in d_nums)}] 0 d")
             else:
                 cmds.append("[] 0 d")
-
-        p_ops: list[str] = []
-        for s in cp.segments_mm:
-            if s.op == "M":
-                p_ops.append(f"{px(s.pts[0]):.3f} {py(s.pts[1]):.3f} m")
-            elif s.op == "L":
-                p_ops.append(f"{px(s.pts[0]):.3f} {py(s.pts[1]):.3f} l")
-            elif s.op == "C":
-                p_ops.append(
-                    f"{px(s.pts[0]):.3f} {py(s.pts[1]):.3f} {px(s.pts[2]):.3f} {py(s.pts[3]):.3f} "
-                    f"{px(s.pts[4]):.3f} {py(s.pts[5]):.3f} c"
-                )
-            elif s.op == "Z":
-                p_ops.append("h")
-
         paint_op = "B" if (f_rgb is not None and s_rgb is not None) else ("f" if f_rgb is not None else "S")
-        cmds.append(" ".join(p_ops) + f" {paint_op} Q")
+        cmds.append(f"{_pdf_segs_str(cp.segments_mm)} {paint_op} Q")
 
-    # 4. Isotropic Vector Circles (`eccentricity == 0.000` cubic Bézier circles in PDF points)
-    kappa = 0.55228475
-    for cc in scene.circles:
+    def _emit_pdf_circle(cc) -> None:
         f_rgb = _hex_to_rgb01(cc.fill)
         s_rgb = _hex_to_rgb01(cc.stroke) if cc.stroke_pt > 0 else None
         if f_rgb is None and s_rgb is None:
-            continue
+            return
         cmds.append("q")
-        if cc.clip_id and cc.clip_id in scene.clips_mm:
-            cx0, cy0, cx1, cy1 = scene.clips_mm[cc.clip_id]
-            cmds.append(f"{px(cx0):.3f} {py(cy1):.3f} {(cx1 - cx0) * MM_TO_PT:.3f} {(cy1 - cy0) * MM_TO_PT:.3f} re W n")
+        clip_s = _pdf_clip_op(cc.clip_id)
+        if clip_s:
+            cmds.append(clip_s)
         gs = _gs_name(cc.fill_opacity, 1.0)
         cmds.append(f"/{gs} gs")
         if f_rgb is not None:
@@ -434,14 +513,11 @@ def render_scene_pdf(scene: CompositePageScene) -> bytes:
         paint_op = "B" if (f_rgb is not None and s_rgb is not None) else ("f" if f_rgb is not None else "S")
         cmds.append(f"{c_path} {paint_op} Q")
 
-    # 5. Live Vector Typography (`BT /F1 <pt> Tf ... Tj ET`)
-    gs_solid = _gs_name(1.0, 1.0)
-    for ct in scene.texts:
+    def _emit_pdf_text(ct) -> None:
         rgb = _hex_to_rgb01(ct.fill) or (0.0, 0.0, 0.0)
         eff_fam = ct.font_family or scene.font_family
         w_mm_est, _ = measure_text_mm(ct.text, ct.font_pt, bold=ct.bold, font_family=eff_fam)
         shift_mm = -0.5 * w_mm_est if ct.anchor == "middle" else (-w_mm_est if ct.anchor == "end" else 0.0)
-        # In PDF, y increases upward, so SVG `rotate(angle_deg)` corresponds to `-angle_deg` in PDF CCW coordinates!
         pdf_rad = math.radians(-ct.angle_deg)
         ca, sa = math.cos(pdf_rad), math.sin(pdf_rad)
         ax_p = px(ct.x_mm) + (shift_mm * MM_TO_PT) * ca
@@ -457,6 +533,58 @@ def render_scene_pdf(scene: CompositePageScene) -> bytes:
             f"q /{gs_solid} gs BT {f_ref} {ct.font_pt:.2f} Tf {rgb[0]:.4f} {rgb[1]:.4f} {rgb[2]:.4f} rg "
             f"{ca:.5f} {sa:.5f} {-sa:.5f} {ca:.5f} {ax_p:.3f} {ay_p:.3f} Tm ({esc_txt}) Tj ET Q"
         )
+
+    # Layer 1: Zoom BG + Base Rasters + Base Locked Schematics
+    for cp in scene.paths:
+        if cp.role == "ZOOM_BG":
+            _emit_pdf_path(cp)
+    for is_ov, cmd_s in raster_draw_cmds:
+        if not is_ov:
+            cmds.append(cmd_s)
+    for is_ov, cmd_s in lsvg_draw_cmds:
+        if not is_ov:
+            cmds.append(cmd_s)
+
+    # Layer 2: Main Vector Paths, Circles & Texts (excluding PiP inset & top-level leaders)
+    inset_p_roles = {"ZOOM_BG", "INSET_BG", "INSET_DATA", "INSET_FRAME"}
+    for cp in scene.paths:
+        if cp.role in inset_p_roles or (cp.role == "ROI_LEADER" and (cp.panel_id or "SHARED") == "SHARED"):
+            continue
+        _emit_pdf_path(cp)
+    for cc in scene.circles:
+        if getattr(cc, "role", "MARKER") != "INSET_MARKER":
+            _emit_pdf_circle(cc)
+    for ct in scene.texts:
+        if ct.role != "INSET_TEXT":
+            _emit_pdf_text(ct)
+
+    # Layer 3: Picture-in-Picture Zoomed Insets
+    for cp in scene.paths:
+        if cp.role == "INSET_BG":
+            _emit_pdf_path(cp)
+    for is_ov, cmd_s in raster_draw_cmds:
+        if is_ov:
+            cmds.append(cmd_s)
+    for is_ov, cmd_s in lsvg_draw_cmds:
+        if is_ov:
+            cmds.append(cmd_s)
+    for cp in scene.paths:
+        if cp.role == "INSET_DATA":
+            _emit_pdf_path(cp)
+    for cc in scene.circles:
+        if getattr(cc, "role", "MARKER") == "INSET_MARKER":
+            _emit_pdf_circle(cc)
+    for ct in scene.texts:
+        if ct.role == "INSET_TEXT":
+            _emit_pdf_text(ct)
+    for cp in scene.paths:
+        if cp.role == "INSET_FRAME":
+            _emit_pdf_path(cp)
+
+    # Layer 4: Cross-Panel ROI Callout Leaders
+    for cp in scene.paths:
+        if cp.role == "ROI_LEADER" and (cp.panel_id or "SHARED") == "SHARED":
+            _emit_pdf_path(cp)
 
     resources = pikepdf.Dictionary(
         Font=pikepdf.Dictionary(

@@ -2,8 +2,10 @@ import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from "re
 import {
   ArrowDownToLine,
   ArrowRightToLine,
+  ArrowUpRight,
   ArrowUpToLine,
   Bold,
+  Circle,
   Columns2,
   CornerDownLeft,
   CornerDownRight,
@@ -13,13 +15,16 @@ import {
   EyeOff,
   GripVertical,
   Italic,
+  Maximize2,
   Minus,
   Move,
   Palette,
   Plus,
   RotateCcw,
+  ScanSearch,
   Sparkles,
   Square,
+  SquareRoundCorner,
   Type,
   X,
 } from "lucide-react";
@@ -27,11 +32,15 @@ import { useTranslation } from "react-i18next";
 import {
   type CanvasDropTarget,
   DEFAULT_PANEL_OVERRIDE,
+  DEFAULT_ROI_CONFIG,
   DEFAULT_TEXT_ITEM_OVERRIDE,
+  type LayoutROIBoxMeta,
   type LayoutROIConfig,
   type LayoutSlotMeta,
   type LayoutTextItemMeta,
   type LegendPosMode,
+  type ROILineStyle,
+  type ROIShapeMode,
   useLayoutStudioStore,
 } from "../../layout/layoutStore";
 
@@ -64,10 +73,22 @@ const SINGLE_TEXT_SWATCHES = [
   { id: "muted", hex: "#64748B" },
 ] as const;
 
+const ROI_QUICK_SWATCHES = [
+  { id: "amber", hex: "#F59E0B", labelKey: "roiColorAmber" },
+  { id: "cyan", hex: "#38BDF8", labelKey: "roiColorCyan" },
+  { id: "crimson", hex: "#EF4444", labelKey: "roiColorCrimson" },
+  { id: "emerald", hex: "#10B981", labelKey: "roiColorEmerald" },
+  { id: "cobalt", hex: "#2563EB", labelKey: "roiColorCobalt" },
+  { id: "black", hex: "#111827", labelKey: "roiColorBlack" },
+] as const;
+
+type RoiDragMode = "move" | "nw" | "ne" | "sw" | "se";
+
 export function LayoutCanvas(): React.ReactElement {
   const { t } = useTranslation();
   const composed = useLayoutStudioStore((s) => s.composed);
   const focusedPanelId = useLayoutStudioStore((s) => s.focusedPanelId);
+  const focusedRoiOwnerId = useLayoutStudioStore((s) => s.focusedRoiOwnerId);
   const focusedTextKey = useLayoutStudioStore((s) => s.focusedTextKey);
   const roiOverrides = useLayoutStudioStore((s) => s.roiOverrides);
   const panelOverrides = useLayoutStudioStore((s) => s.panelOverrides);
@@ -76,10 +97,13 @@ export function LayoutCanvas(): React.ReactElement {
   const liveAnnouncement = useLayoutStudioStore((s) => s.liveAnnouncement);
 
   const setFocusedPanelId = useLayoutStudioStore((s) => s.setFocusedPanelId);
+  const setFocusedRoiOwnerId = useLayoutStudioStore((s) => s.setFocusedRoiOwnerId);
   const setFocusedText = useLayoutStudioStore((s) => s.setFocusedText);
   const movePanelOrder = useLayoutStudioStore((s) => s.movePanelOrder);
   const movePanelOnGrid = useLayoutStudioStore((s) => s.movePanelOnGrid);
   const updateRoi = useLayoutStudioStore((s) => s.updateRoi);
+  const togglePanelRoi = useLayoutStudioStore((s) => s.togglePanelRoi);
+  const spawnDerivedRoiPanel = useLayoutStudioStore((s) => s.spawnDerivedRoiPanel);
   const updatePanelOverride = useLayoutStudioStore((s) => s.updatePanelOverride);
   const updateTextItemOverride = useLayoutStudioStore((s) => s.updateTextItemOverride);
   const resetTextItemOverride = useLayoutStudioStore((s) => s.resetTextItemOverride);
@@ -93,7 +117,9 @@ export function LayoutCanvas(): React.ReactElement {
   const panelGhostRef = useRef<HTMLDivElement | null>(null);
   const legToolbarRef = useRef<HTMLDivElement | null>(null);
   const txtToolbarRef = useRef<HTMLDivElement | null>(null);
+  const roiToolbarRef = useRef<HTMLDivElement | null>(null);
   const txtColorInputRef = useRef<HTMLInputElement | null>(null);
+  const roiColorInputRef = useRef<HTMLInputElement | null>(null);
 
   const [draggingPanelId, setDraggingPanelId] = useState<string | null>(null);
   const [draggingPanelTag, setDraggingPanelTag] = useState<string>("");
@@ -128,18 +154,20 @@ export function LayoutCanvas(): React.ReactElement {
     window.setTimeout(() => setLiveAnnouncement(msg), 60);
   };
 
-  // Clear any residual inline GPU transforms on legend handles once a fresh composed SVG lands
+  // Clear any residual inline GPU transforms on legend & PiP handles once a fresh composed SVG lands
   useLayoutEffect(() => {
     const paperEl = paperRef.current;
     if (!paperEl) return;
-    paperEl.querySelectorAll<HTMLElement>(".dq-layout-legend-box").forEach((el) => {
+    paperEl.querySelectorAll<HTMLElement>(".dq-layout-legend-box, .dq-layout-pip-box").forEach((el) => {
       el.style.transform = "";
     });
   }, [composed]);
 
   // Roving tabindex fallback for floating toolbars when native `focusgroup` is absent
   useEffect(() => {
-    const bar = focusedTextKey ? txtToolbarRef.current : legToolbarRef.current;
+    const bar = focusedTextKey
+      ? txtToolbarRef.current
+      : roiToolbarRef.current || legToolbarRef.current;
     if (!bar || "focusGroup" in HTMLElement.prototype) return;
     const items = Array.from(bar.querySelectorAll<HTMLButtonElement>("button"));
     if (!items.length) return;
@@ -159,7 +187,7 @@ export function LayoutCanvas(): React.ReactElement {
     };
     bar.addEventListener("focusin", onFocusIn);
     return () => bar.removeEventListener("focusin", onFocusIn);
-  }, [focusedPanelId, focusedTextKey, composed, legDragSlotId]);
+  }, [focusedPanelId, focusedRoiOwnerId, focusedTextKey, composed, legDragSlotId]);
 
   const hitTestTextItem = (
     slot: LayoutSlotMeta,
@@ -592,17 +620,20 @@ export function LayoutCanvas(): React.ReactElement {
     );
   };
 
-  // ---------------- 3. ROI Callout Box 120 FPS Direct CSS Drag + Commit on Release ----------------
+  // ---------------- 3. Universal ROI Callout 120 FPS Drag + 4-Corner Resize + PiP Inset Drag ----------------
   const startRoiDrag = (
     e: React.PointerEvent<HTMLElement>,
-    mode: "move" | "resize",
+    mode: RoiDragMode,
     slot: LayoutSlotMeta,
+    ownerId: string,
     roi: LayoutROIConfig,
     roiBoxEl: HTMLButtonElement | null,
   ): void => {
     if (e.button !== 0 || !composed || !roiBoxEl) return;
     e.stopPropagation();
     e.preventDefault();
+    setFocusedPanelId(slot.panel_id, true);
+    setFocusedRoiOwnerId(ownerId, true);
     const paperEl = paperRef.current;
     if (!paperEl) return;
     const activePid = e.pointerId;
@@ -610,55 +641,108 @@ export function LayoutCanvas(): React.ReactElement {
     const pxPerMmX = rect.width / composed.page_width_mm;
     const pxPerMmY = rect.height / composed.page_height_mm;
     const [sx0, sy0, sx1, sy1] = slot.spine_box_mm;
-    const imgWpx = Math.max(20, (sx1 - sx0) * pxPerMmX);
-    const imgHpx = Math.max(20, (sy1 - sy0) * pxPerMmY);
+    const fwMm = Math.max(2, sx1 - sx0);
+    const fhMm = Math.max(2, sy1 - sy0);
+    const imgWpx = Math.max(20, fwMm * pxPerMmX);
+    const imgHpx = Math.max(20, fhMm * pxPerMmY);
 
     const startX = e.clientX;
     const startY = e.clientY;
-    const orig = { ...roi };
+    const orig = { ...DEFAULT_ROI_CONFIG, ...roi };
+    const origRight = orig.x_norm + orig.w_norm;
+    const origBot = orig.y_norm + orig.h_norm;
+    const origStyle = {
+      left: roiBoxEl.style.left,
+      top: roiBoxEl.style.top,
+      width: roiBoxEl.style.width,
+      height: roiBoxEl.style.height,
+    };
     let nextPatch: Partial<LayoutROIConfig> = {};
     let moved = false;
 
-    document.documentElement.classList.add("dq-is-dragging");
+    const cleanup = (revert: boolean): void => {
+      document.documentElement.classList.remove("dq-is-dragging");
+      if (revert) {
+        roiBoxEl.style.left = origStyle.left;
+        roiBoxEl.style.top = origStyle.top;
+        roiBoxEl.style.width = origStyle.width;
+        roiBoxEl.style.height = origStyle.height;
+      }
+      document.removeEventListener("pointermove", onMove);
+      document.removeEventListener("pointerup", onUp);
+      document.removeEventListener("pointercancel", onCancel);
+      window.removeEventListener("keydown", onEsc);
+    };
 
     const onMove = (ev: PointerEvent): void => {
       if (ev.pointerId !== activePid) return;
-      moved = true;
-      const dx = (ev.clientX - startX) / imgWpx;
-      const dy = (ev.clientY - startY) / imgHpx;
-      const xn =
-        mode === "move"
-          ? Math.max(0, Math.min(1 - orig.w_norm, Number((orig.x_norm + dx).toFixed(3))))
-          : orig.x_norm;
-      const yn =
-        mode === "move"
-          ? Math.max(0, Math.min(1 - orig.h_norm, Number((orig.y_norm + dy).toFixed(3))))
-          : orig.y_norm;
-      const wn =
-        mode === "resize"
-          ? Math.max(0.08, Math.min(1 - orig.x_norm, Number((orig.w_norm + dx).toFixed(3))))
-          : orig.w_norm;
-      const hn =
-        mode === "resize"
-          ? Math.max(0.08, Math.min(1 - orig.y_norm, Number((orig.h_norm + dy).toFixed(3))))
-          : orig.h_norm;
-      nextPatch = mode === "move" ? { x_norm: xn, y_norm: yn } : { w_norm: wn, h_norm: hn };
+      const dxPx = ev.clientX - startX;
+      const dyPx = ev.clientY - startY;
+      if (!moved && Math.hypot(dxPx, dyPx) < 2.5) return;
+      if (!moved) {
+        moved = true;
+        document.documentElement.classList.add("dq-is-dragging");
+      }
+      const dx = dxPx / imgWpx;
+      const dy = dyPx / imgHpx;
+      let xn = orig.x_norm;
+      let yn = orig.y_norm;
+      let wn = orig.w_norm;
+      let hn = orig.h_norm;
 
-      // Update live overlay box at 120 FPS without touching network or React state!
-      roiBoxEl.style.left = `${((sx0 + xn * (sx1 - sx0)) / composed.page_width_mm) * 100}%`;
-      roiBoxEl.style.top = `${((sy0 + yn * (sy1 - sy0)) / composed.page_height_mm) * 100}%`;
-      roiBoxEl.style.width = `${((wn * (sx1 - sx0)) / composed.page_width_mm) * 100}%`;
-      roiBoxEl.style.height = `${((hn * (sy1 - sy0)) / composed.page_height_mm) * 100}%`;
+      if (mode === "move") {
+        xn = Math.max(0, Math.min(1 - orig.w_norm, orig.x_norm + dx));
+        yn = Math.max(0, Math.min(1 - orig.h_norm, orig.y_norm + dy));
+      } else if (mode === "se") {
+        wn = Math.max(0.06, Math.min(1 - orig.x_norm, orig.w_norm + dx));
+        hn = Math.max(0.06, Math.min(1 - orig.y_norm, orig.h_norm + dy));
+      } else if (mode === "nw") {
+        xn = Math.max(0, Math.min(origRight - 0.06, orig.x_norm + dx));
+        yn = Math.max(0, Math.min(origBot - 0.06, orig.y_norm + dy));
+        wn = origRight - xn;
+        hn = origBot - yn;
+      } else if (mode === "ne") {
+        yn = Math.max(0, Math.min(origBot - 0.06, orig.y_norm + dy));
+        hn = origBot - yn;
+        wn = Math.max(0.06, Math.min(1 - orig.x_norm, orig.w_norm + dx));
+      } else if (mode === "sw") {
+        xn = Math.max(0, Math.min(origRight - 0.06, orig.x_norm + dx));
+        wn = origRight - xn;
+        hn = Math.max(0.06, Math.min(1 - orig.y_norm, orig.h_norm + dy));
+      }
+
+      xn = Number(xn.toFixed(3));
+      yn = Number(yn.toFixed(3));
+      wn = Number(wn.toFixed(3));
+      hn = Number(hn.toFixed(3));
+      nextPatch = { x_norm: xn, y_norm: yn, w_norm: wn, h_norm: hn };
+
+      // Project exact physical box (enforcing 1:1 physical circle when shape === "circle")
+      let bx0 = sx0 + xn * fwMm;
+      let by0 = sy0 + yn * fhMm;
+      let bw = wn * fwMm;
+      let bh = hn * fhMm;
+      if (orig.shape === "circle") {
+        const diam = Math.min(bw, bh, fwMm, fhMm);
+        const cx = Math.max(sx0 + 0.5 * diam, Math.min(sx1 - 0.5 * diam, bx0 + 0.5 * bw));
+        const cy = Math.max(sy0 + 0.5 * diam, Math.min(sy1 - 0.5 * diam, by0 + 0.5 * bh));
+        bx0 = cx - 0.5 * diam;
+        by0 = cy - 0.5 * diam;
+        bw = diam;
+        bh = diam;
+      }
+
+      roiBoxEl.style.left = `${(bx0 / composed.page_width_mm) * 100}%`;
+      roiBoxEl.style.top = `${(by0 / composed.page_height_mm) * 100}%`;
+      roiBoxEl.style.width = `${(bw / composed.page_width_mm) * 100}%`;
+      roiBoxEl.style.height = `${(bh / composed.page_height_mm) * 100}%`;
     };
 
     const onUp = (ev: PointerEvent): void => {
       if (ev.pointerId !== activePid) return;
-      document.documentElement.classList.remove("dq-is-dragging");
-      document.removeEventListener("pointermove", onMove);
-      document.removeEventListener("pointerup", onUp);
-      document.removeEventListener("pointercancel", onUp);
+      cleanup(false);
       if (moved) {
-        updateRoi(slot.panel_id, nextPatch, true);
+        updateRoi(ownerId, nextPatch, true);
         announcePolite(
           t("layoutStudio.canvas.liveMovedRoi", {
             tag: (slot.tag_label || slot.panel_id).toUpperCase(),
@@ -667,38 +751,158 @@ export function LayoutCanvas(): React.ReactElement {
       }
     };
 
+    const onCancel = (ev: PointerEvent): void => {
+      if (ev.pointerId !== activePid) return;
+      cleanup(true);
+    };
+
+    const onEsc = (ev: KeyboardEvent): void => {
+      if (ev.key === "Escape" && moved) {
+        ev.preventDefault();
+        cleanup(true);
+        announcePolite(t("layoutStudio.canvas.liveCanceledDrag"));
+      }
+    };
+
     document.addEventListener("pointermove", onMove);
     document.addEventListener("pointerup", onUp);
-    document.addEventListener("pointercancel", onUp);
+    document.addEventListener("pointercancel", onCancel);
+    window.addEventListener("keydown", onEsc);
   };
 
   const handleRoiKeyDown = (
     e: React.KeyboardEvent<HTMLButtonElement>,
     slot: LayoutSlotMeta,
+    ownerId: string,
     roi: LayoutROIConfig,
   ): void => {
     const step = 0.025;
-    if (e.key === "ArrowLeft") {
+    if (e.shiftKey) {
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        updateRoi(ownerId, { w_norm: Math.min(1 - roi.x_norm, Number((roi.w_norm + step).toFixed(3))) }, true);
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        updateRoi(ownerId, { w_norm: Math.max(0.06, Number((roi.w_norm - step).toFixed(3))) }, true);
+      } else if (e.key === "ArrowDown") {
+        e.preventDefault();
+        updateRoi(ownerId, { h_norm: Math.min(1 - roi.y_norm, Number((roi.h_norm + step).toFixed(3))) }, true);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        updateRoi(ownerId, { h_norm: Math.max(0.06, Number((roi.h_norm - step).toFixed(3))) }, true);
+      } else {
+        return;
+      }
+    } else if (e.key === "ArrowLeft") {
       e.preventDefault();
-      updateRoi(slot.panel_id, { x_norm: Math.max(0, Number((roi.x_norm - step).toFixed(3))) }, true);
+      updateRoi(ownerId, { x_norm: Math.max(0, Number((roi.x_norm - step).toFixed(3))) }, true);
     } else if (e.key === "ArrowRight") {
       e.preventDefault();
-      updateRoi(
-        slot.panel_id,
-        { x_norm: Math.min(1 - roi.w_norm, Number((roi.x_norm + step).toFixed(3))) },
-        true,
-      );
+      updateRoi(ownerId, { x_norm: Math.min(1 - roi.w_norm, Number((roi.x_norm + step).toFixed(3))) }, true);
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      updateRoi(slot.panel_id, { y_norm: Math.max(0, Number((roi.y_norm - step).toFixed(3))) }, true);
+      updateRoi(ownerId, { y_norm: Math.max(0, Number((roi.y_norm - step).toFixed(3))) }, true);
     } else if (e.key === "ArrowDown") {
       e.preventDefault();
-      updateRoi(
-        slot.panel_id,
-        { y_norm: Math.min(1 - roi.h_norm, Number((roi.y_norm + step).toFixed(3))) },
-        true,
-      );
+      updateRoi(ownerId, { y_norm: Math.min(1 - roi.h_norm, Number((roi.y_norm + step).toFixed(3))) }, true);
+    } else {
+      return;
     }
+    announcePolite(
+      t("layoutStudio.canvas.liveMovedRoi", {
+        tag: (slot.tag_label || slot.panel_id).toUpperCase(),
+      }),
+    );
+  };
+
+  const startPipDrag = (
+    e: React.PointerEvent<HTMLButtonElement>,
+    slot: LayoutSlotMeta,
+  ): void => {
+    if (e.button !== 0 || !composed || !slot.inset_box_mm) return;
+    e.stopPropagation();
+    e.preventDefault();
+    const paperEl = paperRef.current;
+    if (!paperEl) return;
+    const activePid = e.pointerId;
+    const btnEl = e.currentTarget;
+    const svgGroup = paperEl.querySelector<SVGGElement>(`#inset-layer-${slot.panel_id}`);
+    const svgRoot = paperEl.querySelector("svg");
+    const rect = paperEl.getBoundingClientRect();
+    const pxPerMmX = rect.width / composed.page_width_mm;
+    const pxPerMmY = rect.height / composed.page_height_mm;
+    const [sx0, sy0, sx1, sy1] = slot.spine_box_mm;
+    const [ix0, iy0, ix1, iy1] = slot.inset_box_mm;
+    const iw = ix1 - ix0;
+    const ih = iy1 - iy0;
+    const fw = Math.max(2, sx1 - sx0);
+    const fh = Math.max(2, sy1 - sy0);
+
+    const startX = e.clientX;
+    const startY = e.clientY;
+    let finalNx = (ix0 - sx0) / fw;
+    let finalNy = (iy0 - sy0) / fh;
+    let moved = false;
+
+    const cleanup = (revert: boolean): void => {
+      document.documentElement.classList.remove("dq-is-dragging");
+      btnEl.style.transform = "";
+      if (revert) {
+        svgGroup?.removeAttribute("transform");
+      }
+      document.removeEventListener("pointermove", onMove);
+      document.removeEventListener("pointerup", onUp);
+      document.removeEventListener("pointercancel", onCancel);
+    };
+
+    const onMove = (ev: PointerEvent): void => {
+      if (ev.pointerId !== activePid) return;
+      const dxPx = ev.clientX - startX;
+      const dyPx = ev.clientY - startY;
+      if (!moved && Math.hypot(dxPx, dyPx) < 2.5) return;
+      if (!moved) {
+        moved = true;
+        document.documentElement.classList.add("dq-is-dragging");
+      }
+      const dxMm = dxPx / Math.max(0.1, pxPerMmX);
+      const dyMm = dyPx / Math.max(0.1, pxPerMmY);
+      const nextX0 = Math.max(sx0 + 0.6, Math.min(sx1 - iw - 0.6, ix0 + dxMm));
+      const nextY0 = Math.max(sy0 + 0.6, Math.min(sy1 - ih - 0.6, iy0 + dyMm));
+      finalNx = Number(((nextX0 - sx0) / fw).toFixed(3));
+      finalNy = Number(((nextY0 - sy0) / fh).toFixed(3));
+      const clDxPx = (nextX0 - ix0) * pxPerMmX;
+      const clDyPx = (nextY0 - iy0) * pxPerMmY;
+      btnEl.style.transform = `translate3d(${clDxPx}px, ${clDyPx}px, 0)`;
+      if (svgGroup && svgRoot) {
+        const vbW = svgRoot.viewBox.baseVal.width || (composed.page_width_mm * 96) / 25.4;
+        const vbH = svgRoot.viewBox.baseVal.height || (composed.page_height_mm * 96) / 25.4;
+        svgGroup.setAttribute(
+          "transform",
+          `translate(${(clDxPx * (vbW / Math.max(1, rect.width))).toFixed(2)}, ${(clDyPx * (vbH / Math.max(1, rect.height))).toFixed(2)})`,
+        );
+      }
+    };
+
+    const onUp = (ev: PointerEvent): void => {
+      if (ev.pointerId !== activePid) return;
+      cleanup(false);
+      if (moved) {
+        updateRoi(
+          slot.panel_id,
+          { inset_pos: "custom", inset_x_norm: finalNx, inset_y_norm: finalNy },
+          true,
+        );
+      }
+    };
+
+    const onCancel = (ev: PointerEvent): void => {
+      if (ev.pointerId !== activePid) return;
+      cleanup(true);
+    };
+
+    document.addEventListener("pointermove", onMove);
+    document.addEventListener("pointerup", onUp);
+    document.addEventListener("pointercancel", onCancel);
   };
 
   // ---------------- 4. Column & Row Splitters (120 FPS Guide Line + Commit on Release) ----------------
@@ -847,6 +1051,18 @@ export function LayoutCanvas(): React.ReactElement {
         : null,
     [focusedSlot, focusedTextKey],
   );
+  const activeRoiBox = useMemo<LayoutROIBoxMeta | null>(() => {
+    const list = focusedSlot?.roi_boxes || [];
+    if (!list.length) return null;
+    if (focusedRoiOwnerId) {
+      return list.find((rb) => rb.owner_id === focusedRoiOwnerId) || null;
+    }
+    // On pure locked panels (no legend toolbar), show the ROI toolbar automatically when ROI is enabled
+    if (focusedSlot && (!focusedSlot.has_legend || focusedSlot.locked_special)) {
+      return list[0];
+    }
+    return null;
+  }, [focusedSlot, focusedRoiOwnerId]);
   const legDraggingSlot = useMemo(
     () => (legDragSlotId ? composed?.slots.find((s) => s.panel_id === legDragSlotId) || null : null),
     [composed, legDragSlotId],
@@ -1110,21 +1326,14 @@ export function LayoutCanvas(): React.ReactElement {
                     : null;
 
                 const pRoi = roiOverrides[sl.panel_id];
-                const canDragRoi =
-                  isActive &&
-                  sl.locked_special &&
-                  Boolean(pRoi?.enabled) &&
-                  !pRoi?.linked_source_id &&
-                  (pRoi?.w_norm ?? 0) > 0.03;
-
-                const rLeft =
-                  ((sx0 + (pRoi?.x_norm ?? 0) * (sx1 - sx0)) / composed.page_width_mm) * 100;
-                const rTop =
-                  ((sy0 + (pRoi?.y_norm ?? 0) * (sy1 - sy0)) / composed.page_height_mm) * 100;
-                const rW = (((pRoi?.w_norm ?? 0.25) * (sx1 - sx0)) / composed.page_width_mm) * 100;
-                const rH = (((pRoi?.h_norm ?? 0.25) * (sy1 - sy0)) / composed.page_height_mm) * 100;
-
+                const slotRoiBoxes = sl.roi_boxes || [];
                 const canDragLegend = !sl.locked_special && Boolean(sl.legend_box_mm);
+                const showQuickRoiPill =
+                  isActive &&
+                  !draggingPanelId &&
+                  !legDragSlotId &&
+                  !pRoi?.linked_source_id &&
+                  slotRoiBoxes.length === 0;
 
                 return (
                   <React.Fragment key={sl.panel_id}>
@@ -1155,6 +1364,7 @@ export function LayoutCanvas(): React.ReactElement {
                             return;
                           }
                         }
+                        setFocusedRoiOwnerId(null, true);
                         setFocusedText(sl.panel_id, null, true);
                       }}
                     >
@@ -1195,6 +1405,22 @@ export function LayoutCanvas(): React.ReactElement {
                         <GripVertical size={11} strokeWidth={1.8} aria-hidden="true" />
                       </button>
 
+                      {showQuickRoiPill ? (
+                        <button
+                          type="button"
+                          className="dq-roi-quick-pill"
+                          aria-label={t("layoutStudio.canvas.roiQuickTriggerTitle")}
+                          title={t("layoutStudio.canvas.roiQuickTriggerTitle")}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            togglePanelRoi(sl.panel_id);
+                          }}
+                        >
+                          <ScanSearch size={11} strokeWidth={1.9} aria-hidden="true" />
+                          <span>{t("layoutStudio.canvas.roiQuickTrigger")}</span>
+                        </button>
+                      ) : null}
+
                       {slotDropZone ? (
                         <div className={`dq-layout-drop-badge dq-layout-drop-badge--${slotDropZone}`}>
                           <span>{dropLabelForZone(slotDropZone)}</span>
@@ -1223,11 +1449,15 @@ export function LayoutCanvas(): React.ReactElement {
                         })}
                         onClick={(e) => {
                           e.stopPropagation();
+                          setFocusedRoiOwnerId(null, true);
                           if (e.detail === 0) {
                             setFocusedText(sl.panel_id, null, true);
                           }
                         }}
-                        onPointerDown={(e) => startLegendDrag(e, sl)}
+                        onPointerDown={(e) => {
+                          setFocusedRoiOwnerId(null, false);
+                          startLegendDrag(e, sl);
+                        }}
                         onKeyDown={(e) => handleLegendKeyDown(e, sl)}
                       >
                         <span className="dq-layout-legend-grip" aria-hidden="true">
@@ -1280,36 +1510,107 @@ export function LayoutCanvas(): React.ReactElement {
                           );
                         })}
 
-                    {/* Draggable ROI Overlay on Locked Special Panel */}
-                    {canDragRoi && pRoi ? (
+                    {/* Universal Multi-ROI Callout Drag & 4-Corner Resize Boxes (on ANY raster OR vector panel!) */}
+                    {!draggingPanelId &&
+                      !legDragSlotId &&
+                      slotRoiBoxes.map((rb) => {
+                        const ownerRoi = roiOverrides[rb.owner_id] || DEFAULT_ROI_CONFIG;
+                        const [rbx0, rby0, rbx1, rby1] = rb.box_mm;
+                        const rLeftPct = (rbx0 / composed.page_width_mm) * 100;
+                        const rTopPct = (rby0 / composed.page_height_mm) * 100;
+                        const rWPct = ((rbx1 - rbx0) / composed.page_width_mm) * 100;
+                        const rHPct = ((rby1 - rby0) / composed.page_height_mm) * 100;
+                        const isRoiFocused =
+                          isActive &&
+                          (focusedRoiOwnerId === rb.owner_id ||
+                            (activeRoiBox?.owner_id === rb.owner_id && !focusedTextKey));
+                        const bRadius =
+                          rb.shape === "circle" || rb.shape === "ellipse"
+                            ? "50%"
+                            : rb.shape === "rounded"
+                              ? "7px"
+                              : "1px";
+
+                        return (
+                          <button
+                            key={`roi-${sl.panel_id}-${rb.owner_id}`}
+                            type="button"
+                            className={`dq-layout-roi-box${
+                              isRoiFocused ? " dq-layout-roi-box--focused" : ""
+                            }`}
+                            style={{
+                              left: `${rLeftPct}%`,
+                              top: `${rTopPct}%`,
+                              width: `${rWPct}%`,
+                              height: `${rHPct}%`,
+                              borderColor: rb.color,
+                              borderStyle: rb.line_style,
+                              borderRadius: bRadius,
+                            }}
+                            aria-label={t("layoutStudio.canvas.roiDragTitle")}
+                            title={t("layoutStudio.canvas.roiDragTitle")}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setFocusedPanelId(sl.panel_id, true);
+                              setFocusedRoiOwnerId(rb.owner_id, true);
+                            }}
+                            onPointerDown={(e) =>
+                              startRoiDrag(e, "move", sl, rb.owner_id, ownerRoi, e.currentTarget)
+                            }
+                            onKeyDown={(e) => handleRoiKeyDown(e, sl, rb.owner_id, ownerRoi)}
+                          >
+                            {isActive
+                              ? (["nw", "ne", "sw", "se"] as const).map((corner) => (
+                                  <span
+                                    key={corner}
+                                    className={`dq-layout-roi-knob dq-layout-roi-knob--${corner}`}
+                                    style={{ backgroundColor: rb.color }}
+                                    title={t("layoutStudio.canvas.roiResizeTitle")}
+                                    onPointerDown={(e) =>
+                                      startRoiDrag(
+                                        e,
+                                        corner,
+                                        sl,
+                                        rb.owner_id,
+                                        ownerRoi,
+                                        e.currentTarget.parentElement as HTMLButtonElement | null,
+                                      )
+                                    }
+                                  />
+                                ))
+                              : null}
+                          </button>
+                        );
+                      })}
+
+                    {/* Draggable Picture-in-Picture Zoomed Inset Handle */}
+                    {isActive && !draggingPanelId && !legDragSlotId && sl.inset_box_mm ? (
                       <button
                         type="button"
-                        className="dq-layout-roi-box"
+                        className="dq-layout-pip-box"
                         style={{
-                          left: `${rLeft}%`,
-                          top: `${rTop}%`,
-                          width: `${rW}%`,
-                          height: `${rH}%`,
+                          left: `${(sl.inset_box_mm[0] / composed.page_width_mm) * 100}%`,
+                          top: `${(sl.inset_box_mm[1] / composed.page_height_mm) * 100}%`,
+                          width: `${((sl.inset_box_mm[2] - sl.inset_box_mm[0]) / composed.page_width_mm) * 100}%`,
+                          height: `${((sl.inset_box_mm[3] - sl.inset_box_mm[1]) / composed.page_height_mm) * 100}%`,
+                          borderRadius:
+                            pRoi?.shape === "circle" || pRoi?.shape === "ellipse"
+                              ? "50%"
+                              : pRoi?.shape === "rounded"
+                                ? "7px"
+                                : "2px",
                         }}
-                        aria-label={t("layoutStudio.canvas.roiDragTitle")}
-                        title={t("layoutStudio.canvas.roiDragTitle")}
-                        onClick={(e) => e.stopPropagation()}
-                        onPointerDown={(e) => startRoiDrag(e, "move", sl, pRoi, e.currentTarget)}
-                        onKeyDown={(e) => handleRoiKeyDown(e, sl, pRoi)}
+                        aria-label={t("layoutStudio.canvas.roiPipDragTitle")}
+                        title={t("layoutStudio.canvas.roiPipDragTitle")}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setFocusedRoiOwnerId(sl.panel_id, true);
+                        }}
+                        onPointerDown={(e) => startPipDrag(e, sl)}
                       >
-                        <span
-                          className="dq-layout-roi-knob"
-                          title={t("layoutStudio.canvas.roiResizeTitle")}
-                          onPointerDown={(e) =>
-                            startRoiDrag(
-                              e,
-                              "resize",
-                              sl,
-                              pRoi,
-                              e.currentTarget.parentElement as HTMLButtonElement | null,
-                            )
-                          }
-                        />
+                        <span className="dq-layout-legend-grip" aria-hidden="true">
+                          <Move size={9} strokeWidth={2} />
+                        </span>
                       </button>
                     ) : null}
                   </React.Fragment>
@@ -1373,6 +1674,7 @@ export function LayoutCanvas(): React.ReactElement {
                     <div
                       ref={txtToolbarRef}
                       role="toolbar"
+                      {...({ focusgroup: "toolbar wrap" } as React.HTMLAttributes<HTMLDivElement>)}
                       aria-label={t("layoutStudio.canvas.txtToolbarLabel", {
                         text: focusedTextItem.text,
                       })}
@@ -1604,11 +1906,241 @@ export function LayoutCanvas(): React.ReactElement {
                 );
               })()}
 
-            {/* Contextual In-Place Legend Floating Mini-Toolbar (when no single text item is active) */}
+            {/* Contextual Universal ROI & Zoom Callout Floating Toolbar! */}
             {!isComparingNaive &&
               !draggingPanelId &&
               !legDragSlotId &&
               !focusedTextItem &&
+              focusedSlot &&
+              activeRoiBox && (() => {
+                const ownerId = activeRoiBox.owner_id;
+                const curRoi = { ...DEFAULT_ROI_CONFIG, ...(roiOverrides[ownerId] || {}) };
+                const curShape: ROIShapeMode = (curRoi.shape || activeRoiBox.shape || "rect") as ROIShapeMode;
+                const curLine: ROILineStyle = (curRoi.line_style || activeRoiBox.line_style || "dashed") as ROILineStyle;
+                const curColor = (curRoi.color || activeRoiBox.color || "#F59E0B").toUpperCase();
+                const [rbx0, rby0, rbx1, rby1] = activeRoiBox.box_mm;
+                const cxPct = Math.max(26, Math.min(74, ((0.5 * (rbx0 + rbx1)) / composed.page_width_mm) * 100));
+                const placeBelow = rby0 < 15.0;
+                const yPct = placeBelow
+                  ? ((rby1 + 1.0) / composed.page_height_mm) * 100
+                  : ((rby0 - 0.9) / composed.page_height_mm) * 100;
+                const fTag = (focusedSlot.tag_label || focusedSlot.panel_id).toUpperCase();
+
+                const nextLineCycle: Record<ROILineStyle, ROILineStyle> = {
+                  dashed: "solid",
+                  solid: "dotted",
+                  dotted: "dashed",
+                };
+
+                return (
+                  <>
+                    <input
+                      ref={roiColorInputRef}
+                      type="color"
+                      tabIndex={-1}
+                      aria-hidden="true"
+                      className="visually-hidden"
+                      value={curColor.startsWith("#") && curColor.length === 7 ? curColor : "#F59E0B"}
+                      onChange={(e) => updateRoi(ownerId, { color: e.target.value }, true)}
+                    />
+                    <div
+                      ref={roiToolbarRef}
+                      role="toolbar"
+                      {...({ focusgroup: "toolbar wrap" } as React.HTMLAttributes<HTMLDivElement>)}
+                      aria-label={t("layoutStudio.canvas.roiToolbarLabel", {
+                        label: activeRoiBox.label || "ROI",
+                      })}
+                      className={`dq-leg-toolbar${placeBelow ? " dq-leg-toolbar--below" : ""}`}
+                      style={{ left: `${cxPct}%`, top: `${yPct}%` }}
+                      onClick={(e) => e.stopPropagation()}
+                      onKeyDown={(e) => {
+                        if (e.key === "Escape") {
+                          e.preventDefault();
+                          setFocusedRoiOwnerId(null, true);
+                          return;
+                        }
+                        handleToolbarKeyDown(e);
+                      }}
+                    >
+                      <div
+                        role="group"
+                        aria-label={t("layoutStudio.canvas.roiGroupZoom")}
+                        className="dq-leg-toolbar__grp"
+                      >
+                        <button
+                          type="button"
+                          className="dq-leg-toolbar__btn dq-leg-toolbar__btn--text dq-leg-toolbar__btn--accent"
+                          aria-label={t("layoutStudio.canvas.roiSpawnTitle")}
+                          title={t("layoutStudio.canvas.roiSpawnTitle")}
+                          onClick={async () => {
+                            const created = await spawnDerivedRoiPanel(focusedSlot.panel_id);
+                            if (created) {
+                              announcePolite(t("layoutStudio.canvas.liveSpawnedRoi", { tag: fTag }));
+                            }
+                          }}
+                        >
+                          <Plus size={11} strokeWidth={2.2} aria-hidden="true" />
+                          <span>{t("layoutStudio.canvas.roiSpawnBtn")}</span>
+                        </button>
+
+                        {ownerId === focusedSlot.panel_id ? (
+                          <button
+                            type="button"
+                            className="dq-leg-toolbar__btn dq-leg-toolbar__btn--text"
+                            aria-pressed={Boolean(curRoi.inset_enabled)}
+                            aria-label={t("layoutStudio.canvas.roiPipTitle")}
+                            title={t("layoutStudio.canvas.roiPipTitle")}
+                            onClick={() =>
+                              updateRoi(ownerId, { inset_enabled: !curRoi.inset_enabled }, true)
+                            }
+                          >
+                            <Maximize2 size={11} strokeWidth={1.8} aria-hidden="true" />
+                            <span>{t("layoutStudio.canvas.roiPipBtn")}</span>
+                          </button>
+                        ) : null}
+                      </div>
+
+                      <span role="separator" aria-orientation="vertical" className="dq-leg-toolbar__sep" />
+
+                      <div
+                        role="group"
+                        aria-label={t("layoutStudio.canvas.roiGroupShape")}
+                        className="dq-leg-toolbar__grp"
+                      >
+                        <button
+                          type="button"
+                          className="dq-leg-toolbar__btn"
+                          aria-pressed={curShape === "rect"}
+                          aria-label={t("layoutStudio.canvas.roiShapeRect")}
+                          title={t("layoutStudio.canvas.roiShapeRect")}
+                          onClick={() => updateRoi(ownerId, { shape: "rect" }, true)}
+                        >
+                          <Square size={11} strokeWidth={1.9} aria-hidden="true" />
+                        </button>
+                        <button
+                          type="button"
+                          className="dq-leg-toolbar__btn"
+                          aria-pressed={curShape === "rounded"}
+                          aria-label={t("layoutStudio.canvas.roiShapeRounded")}
+                          title={t("layoutStudio.canvas.roiShapeRounded")}
+                          onClick={() => updateRoi(ownerId, { shape: "rounded" }, true)}
+                        >
+                          <SquareRoundCorner size={11} strokeWidth={1.9} aria-hidden="true" />
+                        </button>
+                        <button
+                          type="button"
+                          className="dq-leg-toolbar__btn"
+                          aria-pressed={curShape === "circle"}
+                          aria-label={t("layoutStudio.canvas.roiShapeCircle")}
+                          title={t("layoutStudio.canvas.roiShapeCircle")}
+                          onClick={() => updateRoi(ownerId, { shape: "circle" }, true)}
+                        >
+                          <Circle size={11} strokeWidth={1.9} aria-hidden="true" />
+                        </button>
+                        <button
+                          type="button"
+                          className="dq-leg-toolbar__btn"
+                          aria-pressed={curShape === "ellipse"}
+                          aria-label={t("layoutStudio.canvas.roiShapeEllipse")}
+                          title={t("layoutStudio.canvas.roiShapeEllipse")}
+                          onClick={() => updateRoi(ownerId, { shape: "ellipse" }, true)}
+                        >
+                          <svg width="13" height="10" viewBox="0 0 13 10" fill="none" aria-hidden="true">
+                            <ellipse cx="6.5" cy="5" rx="5.3" ry="3.6" stroke="currentColor" strokeWidth="1.7" />
+                          </svg>
+                        </button>
+                      </div>
+
+                      <span role="separator" aria-orientation="vertical" className="dq-leg-toolbar__sep" />
+
+                      <div
+                        role="group"
+                        aria-label={t("layoutStudio.canvas.roiGroupColor")}
+                        className="dq-leg-toolbar__grp"
+                      >
+                        {ROI_QUICK_SWATCHES.map((sw) => (
+                          <button
+                            key={sw.id}
+                            type="button"
+                            className="dq-leg-toolbar__btn"
+                            aria-pressed={curColor === sw.hex}
+                            aria-label={t(`layoutStudio.right.${sw.labelKey}`)}
+                            title={t(`layoutStudio.right.${sw.labelKey}`)}
+                            onClick={() => updateRoi(ownerId, { color: sw.hex }, true)}
+                          >
+                            <span
+                              className="dq-layout-color-chip__dot"
+                              style={{ backgroundColor: sw.hex }}
+                              aria-hidden="true"
+                            />
+                          </button>
+                        ))}
+                        <button
+                          type="button"
+                          className="dq-leg-toolbar__btn"
+                          aria-label={t("layoutStudio.right.legendColorCustom")}
+                          title={t("layoutStudio.right.legendColorCustom")}
+                          onClick={() => roiColorInputRef.current?.click()}
+                        >
+                          <Palette size={11} strokeWidth={1.8} aria-hidden="true" />
+                        </button>
+                      </div>
+
+                      <span role="separator" aria-orientation="vertical" className="dq-leg-toolbar__sep" />
+
+                      <div
+                        role="group"
+                        aria-label={t("layoutStudio.canvas.roiGroupStyle")}
+                        className="dq-leg-toolbar__grp"
+                      >
+                        <button
+                          type="button"
+                          className="dq-leg-toolbar__btn dq-leg-toolbar__btn--text"
+                          aria-label={t(`layoutStudio.right.roiLineStyles.${curLine}`)}
+                          title={t(`layoutStudio.right.roiLineStyles.${curLine}`)}
+                          onClick={() =>
+                            updateRoi(ownerId, { line_style: nextLineCycle[curLine] }, true)
+                          }
+                        >
+                          <span>{t(`layoutStudio.right.roiLineStyles.${curLine}`)}</span>
+                        </button>
+                        <button
+                          type="button"
+                          className="dq-leg-toolbar__btn dq-leg-toolbar__btn--text"
+                          aria-pressed={Boolean(curRoi.show_leaders)}
+                          aria-label={t("layoutStudio.canvas.roiToggleLeaders")}
+                          title={t("layoutStudio.canvas.roiToggleLeaders")}
+                          onClick={() =>
+                            updateRoi(ownerId, { show_leaders: !curRoi.show_leaders }, true)
+                          }
+                        >
+                          <ArrowUpRight size={11} strokeWidth={1.9} aria-hidden="true" />
+                          <span>{t("layoutStudio.canvas.roiLeadersShort")}</span>
+                        </button>
+                        <button
+                          type="button"
+                          className="dq-leg-toolbar__btn"
+                          aria-label={t("layoutStudio.canvas.roiHideBox")}
+                          title={t("layoutStudio.canvas.roiHideBox")}
+                          onClick={() => {
+                            updateRoi(ownerId, { enabled: false }, true);
+                            setFocusedRoiOwnerId(null, true);
+                          }}
+                        >
+                          <EyeOff size={11} strokeWidth={1.8} aria-hidden="true" />
+                        </button>
+                      </div>
+                    </div>
+                  </>
+                );
+              })()}
+
+            {/* Contextual In-Place Legend Floating Mini-Toolbar (when no single text item or ROI toolbar is active) */}
+            {!isComparingNaive &&
+              !draggingPanelId &&
+              !legDragSlotId &&
+              !focusedTextItem &&
+              !activeRoiBox &&
               focusedSlot &&
               focusedSlot.has_legend &&
               !focusedSlot.locked_special && (() => {
@@ -1661,6 +2193,7 @@ export function LayoutCanvas(): React.ReactElement {
                   <div
                     ref={legToolbarRef}
                     role="toolbar"
+                    {...({ focusgroup: "toolbar wrap" } as React.HTMLAttributes<HTMLDivElement>)}
                     aria-label={t("layoutStudio.canvas.legToolbarLabel", { tag: fTag })}
                     className={`dq-leg-toolbar${placeBelow ? " dq-leg-toolbar--below" : ""}`}
                     style={{ left: `${cxPct}%`, top: `${yPct}%` }}

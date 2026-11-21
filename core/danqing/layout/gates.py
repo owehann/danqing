@@ -73,10 +73,10 @@ def run_layout_gates(scene: CompositePageScene, source_panels: list[PanelIR], ma
     max_sw = max(strokes) if strokes else spec.data_stroke_pt
     g_l4_pass = (min_sw >= spec.min_stroke_pt - 0.05) and (max_sw <= 1.65)
 
-    # Gate L5: Zero Unintended Text-on-Text Collision (excluding deliberate user-dragged inset legends)
+    # Gate L5: Zero Unintended Text-on-Text Collision (excluding deliberate user-dragged inset legends & ROI callouts)
     collisions = 0
     n_txt = len(scene.texts)
-    skip_roles = ("ROI_LABEL", "SCALEBAR_TEXT", "INSET_LEGEND")
+    skip_roles = ("ROI_LABEL", "SCALEBAR_TEXT", "INSET_LEGEND", "INSET_TEXT")
     for i in range(n_txt):
         ti = scene.texts[i]
         if ti.role in skip_roles:
